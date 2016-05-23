@@ -1,3 +1,14 @@
+/******************************
+** ======= FUNCTIONS ======= **
+*******************************
+** 00. wio_formatGroups
+** 01. wio_getStats
+** 02. wio_applyStats
+** 03. wio_getNewAvatar
+******************************/
+
+
+/* -- 00. wio_formatGroups -- */
 // changes the formatting of the group legend
 function wio_formatGroups() {
   var groups = document.getElementById('wio_groups');
@@ -15,6 +26,8 @@ function wio_formatGroups() {
   }
 };
 
+
+/* -- 01. wio_getStats -- */
 // gets statistics via ajax
 function wio_getStats() {
   var storage = window.localStorage,
@@ -48,6 +61,8 @@ function wio_getStats() {
   }
 };
 
+
+/* -- 02. wio_applyStats -- */
 // applies statistics
 function wio_applyStats(stats) {
   var topics = document.getElementById('wio_total_topics'),
@@ -62,6 +77,8 @@ function wio_applyStats(stats) {
   }
 }
 
+
+/* -- 03. wio_getNewAvatar -- */
 // gets the new avatar for the latest user
 function wio_getNewAvatar() {
   var newMem = document.getElementById('wio_newest_user'),

@@ -30,18 +30,41 @@
         }
       },
 
+
       /* -- STEP 2 -- */
       {
-        info : 'Getting all.js',
+        info : 'Getting fa_edge.css',
         type : 'GET',
-         url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-all-the-pages/all.js',
+         url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/fa_edge.css',
         func : function(d) {
-          FAE.step[3].data.content = d;
+          FAE.step[3].data.edit_code = d;
         }
       },
 
 
       /* -- STEP 3 -- */
+      {
+        info : 'Installing fa_edge.css',
+        type : 'POST',
+         url : 'part=themes&sub=logos&mode=css&extended_admin=1',
+        data : {
+          edit_code : '',
+             submit : 'Submit'
+        }
+      },
+
+      /* -- STEP 4 -- */
+      {
+        info : 'Getting all.js',
+        type : 'GET',
+         url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-all-the-pages/all.js',
+        func : function(d) {
+          FAE.step[5].data.content = d;
+        }
+      },
+
+
+      /* -- STEP 5 -- */
       {
         info : 'Installing all.js',
         type : 'POST',
@@ -56,18 +79,18 @@
       },
 
 
-      /* -- STEP 4 -- */
+      /* -- STEP 6 -- */
       {
         info : 'Getting homepage.js',
         type : 'GET',
          url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-the-homepage/homepage.js',
         func : function(d) {
-          FAE.step[5].data.content = d;
+          FAE.step[7].data.content = d;
         }
       },
 
 
-      /* -- STEP 5 -- */
+      /* -- STEP 7 -- */
       {
         info : 'Installing homepage.js',
         type : 'POST',
@@ -122,6 +145,8 @@
     if (_userdata.user_id == 1 && admin) {
       FAE.tid = admin.href.replace(/.*?(&tid=.*)/, '$1'); // cache the tid
       FAE.next(); // begin installation
+    } else {
+      console.log('Only the founder can install this theme.');
     }
   });
 }());

@@ -1,0 +1,163 @@
+/******************************
+** === TABLE OF CONTENTS === **
+*******************************
+** 00. IMPORTS AND ANIMATIONS
+** 01. BASIC COLORS, FONTS, AND SETUP
+** 02. PAGE HEADER
+** 03. NAVBAR
+** 04. FOOTER
+** 05. SEARCH BARS
+** 06. CONTENT CONTAINERS AND LAYOUT
+** 07. CATEGORIES AND FORUMS
+** 08. TOPICS
+** 09. TABLES
+** 10. WIDGETS
+** 11. VOTE SYSTEM
+** 12. PAGINATION
+** 13. BUTTONS
+** 14. INPUTS
+** 15. PROFILE / TABS
+** 16. AVATARS
+** 17. MESSAGE EDITOR
+** 18. WHO IS ONLINE
+** 19. POST CONTENT
+** MISC. FIXES
+******************************/
+
+
+/* -- 00. IMPORTS AND ANIMATIONS -- */
+@import url(https://fonts.googleapis.com/css?family=Roboto); /* Roboto Font Family */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css); /* Font Awesome Icons */
+
+/* hot topic animation */
+@-webkit-keyframes hot-topic {
+    0% { transform:scale(0.8) }
+   50% { transform:scale(1.2) }
+  100% { transform:scale(0.8) }
+}
+
+@keyframes hot-topic {
+    0% { transform:scale(0.8) }
+   50% { transform:scale(1.2) }
+  100% { transform:scale(0.8) }
+}
+
+/* -- 01. BASIC COLORS, FONTS, AND SETUP -- */
+body {
+  font-size:12px;
+  font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* text-selection */
+::selection { color:#FFF; background-color:#69C; }
+::-moz-selection { color:#FFF; background-color:#69C; }
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width:17px;
+  height:17px;
+}
+::-webkit-scrollbar-track { background:#DDD; }
+::-webkit-scrollbar-thumb {
+  background-color:#69C;
+  border:2px solid #DDD;
+}
+
+/* scrollbar buttons */
+::-webkit-scrollbar-button {
+  color:#FFF;
+  background:url(http://i86.servimg.com/u/f86/18/21/41/30/webkit10.gif) no-repeat 0 0 #69C;
+  height:17px;
+  width:17px;
+}
+::-webkit-scrollbar-button:vertical:increment { background-position:-17px 0 }
+::-webkit-scrollbar-button:horizontal:decrement { background-position:-34px 0 }
+::-webkit-scrollbar-button:horizontal:increment { background-position:-51px 0 }
+
+/* hover / active scrollbar colors */
+::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-button:hover { background-color:#58B; }
+::-webkit-scrollbar-thumb:active, ::-webkit-scrollbar-button:active { background-color:#369; }
+
+h1, h2, h3, h4, h5, h6 { margin:0; }
+
+a {
+  color:#369;
+  text-decoration:none;
+}
+
+a:hover { color:#69C; }
+a:active {
+  color:#69C;
+  text-decoration:underline;
+}
+
+input:focus { outline:none; }
+
+fieldset {
+  border:none;
+  padding:0;
+  margin:0;
+}
+
+fieldset dl {
+  padding:4px 0;
+}
+
+fieldset dt {
+  display:block;
+  float:left;
+  text-align:left;
+  width:40%;
+}
+
+fieldset dt label, fieldset dt span, fieldset dt {
+  color:#333 !important;
+  font-weight:700;
+  text-align:left;
+}
+
+fieldset label {
+  cursor:default;
+  padding-right:5px;
+}
+
+fieldset dl:hover dt label, fieldset dl:hover dt span, fieldset dl:hover dt { color:#000 !important; }
+
+fieldset dd {
+  margin-bottom:3px;
+  margin-left:41%;
+  vertical-align:top;
+}
+
+#page-body { padding:6px; }
+#main-content:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+
+/* main colors */
+.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead {
+  color:#FFF;
+  background-color:#69C;
+}
+
+.color-secondary {
+  color:#FFF;
+  background-color:#345;
+}
+
+.color-tertiary {
+  color:#333;
+  background-color:#FFF;
+}
+
+/* floats and alignment */
+.clear, .clearfix, #main-content > .title, #main-content > .h3 { clear:both; }
+.right, .right-box { float:right; }
+.left, .left-box { float:left; }
+.center, .submit-buttons { text-align:center; }
+
+/* ignore floats */
+.left.fld_connexion { float:none; }

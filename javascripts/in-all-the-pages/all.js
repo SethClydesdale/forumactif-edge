@@ -127,17 +127,16 @@ function fa_navactif() {
 
     css : function() {
       var palette = fa_theme_color.palette[fa_theme_color.selected];
-      return '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, #main-search .search, .search-button, .pagination span a, .pagination span strong, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs { background-color:' + palette[1] + '; }'+
-             '.pagination span a:hover, .pagination span strong, a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, .search-button:hover { background-color:' + palette[2] + '; }'+
-             'a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, .search-button:focus, #tabs a:after { background-color:' + palette[3] + '; }'+
-             '.fa_pseudo_checkbox:hover, .fa_pseudo_radio:hover { border-color:' + palette[1] + '; }'+
-             '.fa_pseudo_checkbox:after { color:' + palette[1] + '; }'+
-             'img[src*="?poll"] { border-color:' + palette[2] + '; }'+
+      return '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, #main-search .search, .search-button, .pagination span a, .pagination span strong, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs, body div.sceditor-dropdown .button, .codebox dt, blockquote cite, .sceditor-container .sceditor-toolbar { background-color:' + palette[1] + '; }'+
+             '.pagination span a:hover, .pagination span strong, a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, .search-button:hover, body div.sceditor-dropdown .button:hover { background-color:' + palette[2] + '; }'+
+             'a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, .search-button:focus, #tabs a:after, body div.sceditor-dropdown .button:active, body div.sceditor-dropdown .button:focus { background-color:' + palette[3] + '; }'+
+             '.fa_pseudo_checkbox:after, h2.post-content, h3.post-content, h4.post-content { color:' + palette[1] + '; }'+
+             'img[src*="?poll"], .sceditor-container .sceditor-toolbar, .sceditor-container .sceditor-group { border-color:' + palette[2] + '; }'+
              '.color-secondary, .forum-status[style*="locked=true"] { background-color:' + palette[4] + '; }'+
              '.forum-status[style*="state=new"] { background-color:' + palette[0] + '; }'+
              '#search { background-color:' + palette[2] + '; }'+
              '#main-search .search, .search-button { border-color:' + palette[0] + '; }'+
-             'input[type="text"]:hover, input.post:hover, input.inputbox:hover, textarea:hover, select:hover, input[type="text"]:focus, input.post:focus, input.inputbox:focus, textarea:focus, select:focus { border-color:' + palette[1] + '; }'+
+             'input[type="text"]:hover, input.post:hover, input.inputbox:hover, textarea:hover, select:hover, input[type="text"]:focus, input.post:focus, input.inputbox:focus, textarea:focus, select:focus, body div.sceditor-dropdown input:focus, body div.sceditor-dropdown textarea:focus, .fa_pseudo_checkbox:hover, .fa_pseudo_radio:hover, .sceditor-container, h2.post-content, h3.post-content, h4.post-content { border-color:' + palette[1] + ' !important; }'+
              'a { color:' + palette[3] + '; }'+
              'a:hover, a:active { color:' + palette[2] + '; }'+
              '::selection { background-color:' + palette[1] + '; } ::-moz-selection { background-color:' + palette[1] + '; }'+

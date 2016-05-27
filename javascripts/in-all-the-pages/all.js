@@ -5,6 +5,8 @@
 ** 01. fa_navactif
 ** 02. fa_theme_changer
 ** 03. pseudoInputs
+** 04. toolbar search mod
+** 05. fae_sticky_nav_panel
 ******************************/
 
 
@@ -14,13 +16,15 @@ function fa_initForumModules(column_id) {
   var column = document.getElementById(column_id), menu;
 
   if (column) {
+    column.insertAdjacentHTML('afterbegin', '<div class="title module_column_title">Widget Menu</div>');
+
     menu = document.createElement('A');
     menu.href = '#';
     menu.title = 'Toggle widget menu';
-    menu.className = 'widget_menu column_' + column_id + ' color-secondary';
+    menu.className = 'widget_menu column_button_' + column_id + ' color-secondary';
 
     menu.onclick = function() {
-      var column = document.getElementById(this.className.replace(/.*?column_(right|left).*/, '$1'));
+      var column = document.getElementById(this.className.replace(/.*?column_button_(right|left).*/, '$1'));
       if (/active/.test(column.className)) {
         column.className = column.className.replace(/active/, '');
         this.className = this.className.replace(/active/, '');
@@ -127,11 +131,11 @@ function fa_navactif() {
 
     css : function() {
       var palette = fa_theme_color.palette[fa_theme_color.selected];
-      return '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, #main-search .search, .search-button, .pagination span a, .pagination span strong, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs, body div.sceditor-dropdown .button, .codebox dt, blockquote cite, .sceditor-container .sceditor-toolbar { background-color:' + palette[1] + '; }'+
+      return '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, #main-search .search, .search-button, .pagination span a, .pagination span strong, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs, body div.sceditor-dropdown .button, .codebox dt, blockquote cite, .sceditor-container .sceditor-toolbar, #cp-main h1:not(.title), body #fa_toolbar, body #fa_toolbar_hidden, body #fa_toolbar #fa_right #notif_list li.see_all, #fae_sticky_nav_panel a:after { background-color:' + palette[1] + '; }'+
              '.pagination span a:hover, .pagination span strong, a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, .search-button:hover, body div.sceditor-dropdown .button:hover { background-color:' + palette[2] + '; }'+
-             'a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, .search-button:focus, #tabs a:after, body div.sceditor-dropdown .button:active, body div.sceditor-dropdown .button:focus { background-color:' + palette[3] + '; }'+
+             'a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, .search-button:focus, #tabs a:after, body div.sceditor-dropdown .button:active, body div.sceditor-dropdown .button:focus, body #fa_search #fa_textarea, body #fa_search #fa_magnifier { background-color:' + palette[3] + '; }'+
              '.fa_pseudo_checkbox:after, h2.post-content, h3.post-content, h4.post-content { color:' + palette[1] + '; }'+
-             'img[src*="?poll"], .sceditor-container .sceditor-toolbar, .sceditor-container .sceditor-group { border-color:' + palette[2] + '; }'+
+             'img[src*="?poll"], .sceditor-container .sceditor-toolbar, .sceditor-container .sceditor-group, body #fa_toolbar, body #fa_toolbar_hidden { border-color:' + palette[2] + '; }'+
              '.color-secondary, .forum-status[style*="locked=true"] { background-color:' + palette[4] + '; }'+
              '.forum-status[style*="state=new"] { background-color:' + palette[0] + '; }'+
              '#search { background-color:' + palette[2] + '; }'+
@@ -181,3 +185,120 @@ $(function() {
     }
   }
 });
+
+
+/* -- 04. toolbar search mod -- */
+// gives the search bar a placeholder and attaches an event handler to the button
+window.fa_textarea_placeholer = 'Search...';
+
+$(function(){
+  $(function() {
+    var fa_magnifier = document.getElementById('fa_magnifier'),
+        fa_textarea = document.getElementById('fa_textarea');
+
+    if (fa_magnifier) {
+      fa_magnifier.onclick = function() {
+        this.parentNode.submit();
+      };
+    }
+
+    if (fa_textarea) {
+      fa_textarea.value = fa_textarea_placeholer;
+
+      fa_textarea.onfocus = function() {
+        if (this.value == fa_textarea_placeholer) {
+          this.value = '';
+        }
+      };
+
+      fa_textarea.onblur = function() {
+        if (!this.value) {
+          this.value = fa_textarea_placeholer;
+        }
+      };
+
+    }
+
+  });
+});
+
+
+/* -- 05. fae_sticky_nav_panel -- */
+// adds a sticky navigation for quick use when the navbar isn't visible
+(function() {
+  window.fae_sticky = {
+            // various user options
+            navbar : 'navbar',
+          position : 'left',
+             title : 'Quick Navigation',
+           tooltip : 'Toggle quick navigation',
+    additionalHTML : '',
+     alwaysVisible : false,
+
+    // listen for changes in the navbar's bottom rect
+    scroll : function() {
+      var rect = fae_sticky.navbar.getBoundingClientRect(),
+          position = fae_sticky.node[0].style[fae_sticky.position];
+
+      if (rect.bottom <= fae_sticky.offset[fae_sticky.tb_state] && position == '-30px') {
+        fae_sticky.node[0].style[fae_sticky.position] = '';
+      } else if (rect.bottom > fae_sticky.offset[fae_sticky.tb_state] && position != '-30px') {
+        fae_sticky.node[0].style[fae_sticky.position] = '-30px';
+        $(fae_sticky.node).removeClass('active');
+      }
+    },
+
+    // offsets for when the toolbar is hidden / shown
+    offset : {
+      fa_hide : 0,
+      fa_show : 30
+    }
+  };
+
+  // nodes used in the module
+  fae_sticky.node = [
+    // button
+    $('<a/>').attr({
+       href : '#',
+         id : 'fa_sticky_nav_button',
+      class : 'widget_menu column_button_' + fae_sticky.position + ' color-secondary',
+      style : 'z-index:30003;' + fae_sticky.position + ':-30px;',
+      title : fae_sticky.tooltip
+
+    }).click(function() {
+      $(fae_sticky.node)[['addClass', 'removeClass'][/active/.test(this.className) ? 1 : 0]]('active');
+      return false;
+    })[0],
+
+    // panel
+    $('<div/>').attr({
+         id : 'fae_sticky_nav_panel',
+      class : 'module_column column_' + fae_sticky.position + ' color-secondary',
+      style : 'z-index:30002;'
+
+    }).html('<div class="title module_column_title">' + fae_sticky.title + '</div><div class="module_inner"></div>')[0]
+  ];
+
+  $(function() {
+    fae_sticky.navbar = document.getElementById(fae_sticky.navbar); // get the old navbar
+
+    // then clone its contents and add it to the sticky panel
+    $('.module_inner', fae_sticky.node[1]).append($('a.mainmenu', fae_sticky.navbar).clone()).append(fae_sticky.additionalHTML);
+    $(document.body).append(fae_sticky.node);
+
+    if (!fae_sticky.alwaysVisible) {
+      fae_sticky.tb_state = my_getcookie('toolbar_state') || (_userdata.activate_toolbar ? 'fa_show' : 'fa_hide');
+      fae_sticky.scroll();
+
+      $(window).scroll(fae_sticky.scroll);
+
+      $(function() {
+        $('#fa_hide, #fa_show').click(function() {
+          fae_sticky.tb_state = this.id;
+        });
+      });
+    } else {
+      fae_sticky.node[0].style.left = '';
+    }
+  });
+}());

@@ -24,24 +24,22 @@ function fa_initForumModules(column_id) {
     menu.className = 'widget_menu column_button_' + column_id + ' color-secondary';
 
     menu.onclick = function() {
-      var column = document.getElementById(this.className.replace(/.*?column_button_(right|left).*/, '$1'));
-      if (/active/.test(column.className)) {
-        column.className = column.className.replace(/active/, '');
-        this.className = this.className.replace(/active/, '');
-      } else {
-        column.className += ' active';
-        this.className += ' active';
-      }
+      var column = document.getElementById(/left/.test(this.className) ? 'left' : 'right');
+
+      $([this, column])[/active/.test(this.className) ? 'removeClass' : 'addClass']('active');
       return false;
     };
-
-    // stack index
-    column.style.zIndex = 30000;
-    menu.style.zIndex = 30001;
 
     document.body.appendChild(menu);
   }
 };
+
+// give active panels a very high z-index so they display above other panels and buttons
+// forumotion replaces any z-index above 1000 w/999 in the stylesheet, so this must be applied via JS
+document.write('<style type="text/css">'+
+  '.module_column, .widget_menu { z-index:30000; }'+
+  '.module_column.active, .widget_menu.active { z-index:99999; }'+
+'</style>');
 
 
 /* -- 01. fa_navactif -- */
@@ -64,7 +62,7 @@ function fa_navactif() {
     selected : my_getcookie('fa_theme_color') || 'Select a theme',
 
     palette : {
-       'Select a theme' : '',
+       'Select a theme' : [],
          'Random theme' : [],
           'Persian Red' : ['#D44', '#C33', '#B22', '#900', '#522'], // hue 000
         'Chestnut Rose' : ['#D77', '#C66', '#B55', '#933', '#533'], // hue 000
@@ -131,12 +129,13 @@ function fa_navactif() {
 
     css : function() {
       var palette = fa_theme_color.palette[fa_theme_color.selected];
-      return '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, #main-search .search, .search-button, .pagination span a, .pagination span strong, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs, body div.sceditor-dropdown .button, .codebox dt, blockquote cite, .sceditor-container .sceditor-toolbar, #cp-main h1:not(.title), body #fa_toolbar, body #fa_toolbar_hidden, body #fa_toolbar #fa_right #notif_list li.see_all, #fae_sticky_nav_panel a:after { background-color:' + palette[1] + '; }'+
-             '.pagination span a:hover, .pagination span strong, a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, .search-button:hover, body div.sceditor-dropdown .button:hover { background-color:' + palette[2] + '; }'+
-             'a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, .search-button:focus, #tabs a:after, body div.sceditor-dropdown .button:active, body div.sceditor-dropdown .button:focus, body #fa_search #fa_textarea, body #fa_search #fa_magnifier { background-color:' + palette[3] + '; }'+
+      return '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, #main-search .search, .search-button, .pagination span a, .pagination span strong, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs, body div.sceditor-dropdown .button, .codebox dt, blockquote cite, .sceditor-container .sceditor-toolbar, body #fa_toolbar, body #fa_toolbar_hidden, body #fa_toolbar #fa_right #notif_list li.see_all, #fae_sticky_nav_panel a:after, img[src*="color=primary"], .table1 thead th, .breadcrumbs, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button { background-color:' + palette[1] + '; }'+
+             '#cp-main h1:not(.title) { background-color:' + palette[1] + '; }'+
+             '.pagination span a:hover, .pagination span strong, a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, .search-button:hover, body div.sceditor-dropdown .button:hover, img[src*="color=primary"]:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]::-webkit-file-upload-button:hover { background-color:' + palette[2] + '; }'+
+             'a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, input[type="file"]::-webkit-file-upload-button:active, a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, .search-button:focus, #tabs a:after, body div.sceditor-dropdown .button:active, body div.sceditor-dropdown .button:focus, body #fa_search #fa_textarea, body #fa_search #fa_magnifier, img[src*="color=primary"]:active, input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="file"]::-webkit-file-upload-button:focus { background-color:' + palette[3] + '; }'+
              '.fa_pseudo_checkbox:after, h2.post-content, h3.post-content, h4.post-content { color:' + palette[1] + '; }'+
              'img[src*="?poll"], .sceditor-container .sceditor-toolbar, .sceditor-container .sceditor-group, body #fa_toolbar, body #fa_toolbar_hidden { border-color:' + palette[2] + '; }'+
-             '.color-secondary, .forum-status[style*="locked=true"] { background-color:' + palette[4] + '; }'+
+             '.color-secondary, .forum-status[style*="locked=true"], img[src*="color=secondary"] { background-color:' + palette[4] + '; }'+
              '.forum-status[style*="state=new"] { background-color:' + palette[0] + '; }'+
              '#search { background-color:' + palette[2] + '; }'+
              '#main-search .search, .search-button { border-color:' + palette[0] + '; }'+
@@ -150,17 +149,35 @@ function fa_navactif() {
     }
   };
 
-  var selector = document.createElement('SELECT'), htmlStr = '', i;
+  var selector = document.createElement('SELECT'),
+      frag = document.createDocumentFragment(),
+      opt,
+      color,
+      i;
+
   selector.id = 'fa_theme_selector';
   selector.onchange = function() {
     fa_theme_color.change(this.value);
   };
 
   for (i in fa_theme_color.palette) {
-    if (!/Random theme|Select a theme/.test(i)) fa_theme_color.palette['Random theme'][fa_theme_color.palette['Random theme'].length] = i;
-    htmlStr += '<option value="' + i + '" ' + ( fa_theme_color.selected == i ? 'selected="true"' : '' ) + ' style="background-color:' + (/Random theme|Select a theme/.test(i) ? '#FFF;color:#000;' : fa_theme_color.palette[i][2]) + '">' + i + '</option>';
+    opt = document.createElement('OPTION');
+    color = /Random theme|Select a theme/.test(i) ? ['#FFF', '#000'] : [fa_theme_color.palette[i][2], ''];
+
+    if (!/Random theme|Select a theme/.test(i)) {
+      fa_theme_color.palette['Random theme'][fa_theme_color.palette['Random theme'].length] = i;
+    }
+
+    opt.value = i;
+    opt.innerHTML = i;
+    opt.selected = fa_theme_color.selected == i ? true : false;
+    opt.style.backgroundColor = color[0];
+    opt.style.color = color[1];
+
+    frag.appendChild(opt);
   }
-  selector.innerHTML = htmlStr;
+
+  selector.appendChild(frag);
 
   document.write('<style type="text/css">#fa_theme_selector { color:#FFF; border:1px solid transparent; float:left; outline:none; }</style>');
 
@@ -258,25 +275,20 @@ $(function(){
   // nodes used in the module
   fae_sticky.node = [
     // button
-    $('<a/>').attr({
+    $('<a class="widget_menu column_button_' + fae_sticky.position + ' color-secondary" />').attr({
        href : '#',
          id : 'fa_sticky_nav_button',
-      class : 'widget_menu column_button_' + fae_sticky.position + ' color-secondary',
-      style : 'z-index:30003;' + fae_sticky.position + ':-30px;',
+      style : fae_sticky.position + ':-30px;',
       title : fae_sticky.tooltip
 
     }).click(function() {
-      $(fae_sticky.node)[['addClass', 'removeClass'][/active/.test(this.className) ? 1 : 0]]('active');
+      $(fae_sticky.node)[/active/.test(this.className) ? 'removeClass' : 'addClass']('active');
       return false;
     })[0],
 
     // panel
-    $('<div/>').attr({
-         id : 'fae_sticky_nav_panel',
-      class : 'module_column column_' + fae_sticky.position + ' color-secondary',
-      style : 'z-index:30002;'
-
-    }).html('<div class="title module_column_title">' + fae_sticky.title + '</div><div class="module_inner"></div>')[0]
+    $('<div id="fae_sticky_nav_panel" class="module_column column_' + fae_sticky.position + ' color-secondary" />')
+    .html('<div class="title module_column_title">' + fae_sticky.title + '</div><div class="module_inner"></div>')[0]
   ];
 
   $(function() {

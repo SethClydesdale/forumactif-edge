@@ -7,6 +7,7 @@
 ** 03. pseudoInputs
 ** 04. toolbar search mod
 ** 05. fae_sticky_nav_panel
+** 06. image resizer
 ******************************/
 
 
@@ -129,16 +130,16 @@ function fa_navactif() {
 
     css : function() {
       var palette = fa_theme_color.palette[fa_theme_color.selected];
-      return '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, #main-search .search, .search-button, .pagination span a, .pagination span strong, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs, body div.sceditor-dropdown .button, .codebox dt, blockquote cite, .sceditor-container .sceditor-toolbar, body #fa_toolbar, body #fa_toolbar_hidden, body #fa_toolbar #fa_right #notif_list li.see_all, #fae_sticky_nav_panel a:after, img[src*="color=primary"], .table1 thead th, .breadcrumbs, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button { background-color:' + palette[1] + '; }'+
+      return '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, form.search-form input.search-keywords, input.search-button, .pagination span a, .pagination span strong, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs, body div.sceditor-dropdown .button, .codebox dt, blockquote cite, .sceditor-container .sceditor-toolbar, body #fa_toolbar, body #fa_toolbar_hidden, body #fa_toolbar #fa_right #notif_list li.see_all, #fae_sticky_nav_panel a:after, img[src*="color=primary"], .table1 thead th, .breadcrumbs, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button { background-color:' + palette[1] + '; }'+
              '#cp-main h1:not(.title) { background-color:' + palette[1] + '; }'+
-             '.pagination span a:hover, .pagination span strong, a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, .search-button:hover, body div.sceditor-dropdown .button:hover, img[src*="color=primary"]:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]::-webkit-file-upload-button:hover { background-color:' + palette[2] + '; }'+
-             'a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, input[type="file"]::-webkit-file-upload-button:active, a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, .search-button:focus, #tabs a:after, body div.sceditor-dropdown .button:active, body div.sceditor-dropdown .button:focus, body #fa_search #fa_textarea, body #fa_search #fa_magnifier, img[src*="color=primary"]:active, input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="file"]::-webkit-file-upload-button:focus { background-color:' + palette[3] + '; }'+
+             '.pagination span a:hover, .pagination span strong, a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, input.search-button:hover, body div.sceditor-dropdown .button:hover, img[src*="color=primary"]:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]::-webkit-file-upload-button:hover { background-color:' + palette[2] + '; }'+
+             'a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, input[type="file"]::-webkit-file-upload-button:active, a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, input.search-button:focus, #tabs a:after, body div.sceditor-dropdown .button:active, body div.sceditor-dropdown .button:focus, body #fa_search #fa_textarea, body #fa_search #fa_magnifier, img[src*="color=primary"]:active, input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="file"]::-webkit-file-upload-button:focus { background-color:' + palette[3] + '; }'+
              '.fa_pseudo_checkbox:after, h2.post-content, h3.post-content, h4.post-content { color:' + palette[1] + '; }'+
              'img[src*="?poll"], .sceditor-container .sceditor-toolbar, .sceditor-container .sceditor-group, body #fa_toolbar, body #fa_toolbar_hidden { border-color:' + palette[2] + '; }'+
              '.color-secondary, .forum-status[style*="locked=true"], img[src*="color=secondary"] { background-color:' + palette[4] + '; }'+
              '.forum-status[style*="state=new"] { background-color:' + palette[0] + '; }'+
-             '#search { background-color:' + palette[2] + '; }'+
-             '#main-search .search, .search-button { border-color:' + palette[0] + '; }'+
+             'form.search-form { background-color:' + palette[2] + '; }'+
+             'form.search-form input.search-keywords, input.search-button { border-color:' + palette[0] + '!important; }'+
              'input[type="text"]:hover, input.post:hover, input.inputbox:hover, textarea:hover, select:hover, input[type="text"]:focus, input.post:focus, input.inputbox:focus, textarea:focus, select:focus, body div.sceditor-dropdown input:focus, body div.sceditor-dropdown textarea:focus, .fa_pseudo_checkbox:hover, .fa_pseudo_radio:hover, .sceditor-container, h2.post-content, h3.post-content, h4.post-content { border-color:' + palette[1] + ' !important; }'+
              'a { color:' + palette[3] + '; }'+
              'a:hover, a:active { color:' + palette[2] + '; }'+
@@ -313,4 +314,135 @@ $(function(){
       fae_sticky.node[0].style.left = '';
     }
   });
+}());
+
+
+/* -- 06. image resizer -- */
+(function() {
+  window.fa_img_resizer = {
+    max_width : 400, // maximum image width (400px)
+    max_height : 250, // maximum image height (250px)
+
+    selector : '.postbody .content img, .mod_news img, .message-text img', // where images should be resized
+
+    options : {
+            bar : true, // resized image options bar
+        toggler : true, // Enlarge / Reduce Image
+      full_size : true, // Show full size
+       download : false, // Download image link
+       lightbox : true // lightbox effect
+    },
+
+    // texts
+    lang : {
+      full_size : '<i class="fa fa-external-link"></i> Show full size',
+        enlarge : '<i class="fa fa-search-plus"></i> Enlarge image',
+         reduce : '<i class="fa fa-search-minus"></i> Reduce image',
+       download : '<i class="fa fa-download"></i> Download image',
+       tooltip : 'Click to view full image'
+    },
+
+    // resize all images inside the "resizeIn" elements
+    resize : function() {
+      for (var a = $(fa_img_resizer.selector), i = 0, j = a.length; i < j; i++) {
+        if (!a[i].alt && (a[i].naturalWidth > fa_img_resizer.max_width || a[i].naturalHeight > fa_img_resizer.max_height)) {
+          a[i].className += ' fa_img_reduced';
+
+          // make the image a "link" if it's not wrapper with one
+          if (fa_img_resizer.options.lightbox && a[i].parentNode.tagName != 'A') {
+            a[i].style.cursor = 'pointer';
+            a[i].title = fa_img_resizer.lang.tooltip;
+
+            a[i].onclick = function() {
+              fa_img_resizer.lightbox(this);
+            };
+          }
+
+          // create the resize bar
+          if (fa_img_resizer.options.bar) {
+            (a[i].parentNode.tagName == 'A' ? a[i].parentNode : a[i]).insertAdjacentHTML('beforebegin',
+              '<div class="fa_img_resizer" style="width:' + (a[i].width - 8) + 'px;">'+
+                (fa_img_resizer.options.toggler ? '<a class="fa_img_enlarge" href="#" onclick="fa_img_resizer.toggle(this); return false;">' + fa_img_resizer.lang.enlarge + '</a>' : '')+
+                (fa_img_resizer.options.full_size ? '<a class="fa_img_full" href="/viewimage.forum?u=' + a[i].src + '" target="_blank">' + fa_img_resizer.lang.full_size + '</a>' : '')+
+                (fa_img_resizer.options.download && !/Firefox/.test(navigator.userAgent) && 'download' in document.createElement('A') ? '<a class="fa_img_download" href="' + a[i].src + '" target="_blank" download>' + fa_img_resizer.lang.download + '</a>' : '' )+
+              '</div>'
+            );
+          }
+        }
+      }
+    },
+
+    // toggle between enlarged and reduced image sizes
+    toggle : function(that) {
+      var img = that.parentNode.nextSibling;
+
+      if (img.tagName == 'A') {
+        img = img.getElementsByTagName('IMG')[0];
+      }
+
+      if (/fa_img_reduced/.test(img.className)) {
+        that.innerHTML = fa_img_resizer.lang.reduce;
+        that.className = 'fa_img_reduce';
+        img.className = img.className.replace(/fa_img_reduced/, 'fa_img_enlarged');
+      } else {
+        that.innerHTML = fa_img_resizer.lang.enlarge;
+        that.className = 'fa_img_enlarge';
+        img.className = img.className.replace(/fa_img_enlarged/, 'fa_img_reduced');
+      }
+
+      that.parentNode.style.width = img.width - 8 + 'px';
+    },
+
+    // lightbox effect
+    lightbox : function(that) {
+      var frag = document.createDocumentFragment(),
+          overlay = $('<div id="fa_img_lb_overlay" />')[0],
+          img = $('<img id="fa_img_lb_image" src="' + that.src + '" />')[0];
+
+      overlay.onclick = fa_img_resizer.kill_lightbox;
+      img.onclick = fa_img_resizer.kill_lightbox;
+
+      frag.appendChild(overlay);
+      frag.appendChild(img);
+      document.body.appendChild(frag);
+      document.body.style.overflow = 'hidden';
+
+      img.style.marginTop = '-' + (img.height / 2) + 'px';
+      img.style.marginLeft = '-' + (img.width / 2) + 'px';
+    },
+
+    // kill the lightbox
+    kill_lightbox : function() {
+      var overlay = document.getElementById('fa_img_lb_overlay'),
+          img = document.getElementById('fa_img_lb_image');
+
+      overlay && document.body.removeChild(overlay);
+      img && document.body.removeChild(img);
+      document.body.style.overflow = '';
+    }
+  };
+
+  // write styles into the document head
+  document.write(
+    '<style type="text/css">'+
+      fa_img_resizer.selector + ', .fa_img_reduced { max-width:' + fa_img_resizer.max_width + 'px; max-height:' + fa_img_resizer.max_height + 'px; }'+
+      '.fa_img_enlarged { max-width:100% !important; max-height:100% !important; }'+
+      '.fa_img_resizer { font-size:12px; text-align:left; padding:3px; margin:3px 0; background:#FFF; border:1px solid #CCC; }'+
+      '.fa_img_resizer a { margin:0 3px; }'+
+      '.fa_img_resizer i { font-size:14px; vertical-align:middle; }'+
+      '#fa_img_lb_overlay { background:rgba(0, 0, 0, 0.7); position:fixed; top:0; right:0; bottom:0; left:0; z-index:999999; cursor:pointer; }'+
+      '#fa_img_lb_image { max-height:100%; max-width:100%; position:fixed; left:50%; top:50%; z-index:9999999; cursor:pointer; }'+
+    '</style>'+
+    (!$('link[href$="font-awesome.min.css"]')[0] ? '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />' : '') // require font awesome
+  );
+
+  // begin modifying images when the page is loaded
+  $(window).load(fa_img_resizer.resize);
+
+  // kill forumactif's image resizer
+  if (window.resize_images) {
+    window.resize_images = function() {
+      return false;
+    };
+  }
 }());

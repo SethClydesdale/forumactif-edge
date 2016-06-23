@@ -8,6 +8,7 @@
 ** 04. toolbar search mod
 ** 05. fae_sticky_nav_panel
 ** 06. image resizer
+** 07. fae_toggle_category
 ******************************/
 
 
@@ -446,3 +447,20 @@ $(function(){
     };
   }
 }());
+
+
+/* -- 07. fae_toggle_category -- */
+function fae_toggle_category(that) {
+  var next = that.nextSibling;
+  that.className = 'title ';
+
+  if (next.style.display == 'none') {
+    next.style.display = '';
+    that.className += 'c_hide';
+    my_setcookie('fae_' + next.id, 'shown');
+  } else {
+    next.style.display = 'none';
+    that.className += 'c_show';
+    my_setcookie('fae_' + next.id, 'hidden');
+  }
+};

@@ -1,23 +1,29 @@
-<style type="text/css">#fae_log { background:#EEE; border:1px solid #CCC; height:150px; margin:6px 0; overflow-y:auto; }
+<style type="text/css">#fae_cp { font-size:12px; font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; padding:3px; }
+#fae_cp_main_title { font-size:24px; margin:6px 0; }
+#fae_cp .fae_cp_title { color:#FFF; font-size:16px; background:#69C; padding:6px 3px; margin:6px 0; }
+#fae_actions input { color:#FFF; background:#69C; border:none; padding:6px 9px; cursor:pointer; }
+#fae_actions input:hover { background:#58B; }
+#fae_log { background:#EEE; border:1px solid #CCC; height:150px; margin:6px 0; overflow-y:auto; }
 #fae_progress { background:#CCC; height:30px; width:100%; position:relative; }
 #fae_prog_bar { height:30px; background:#69C; width:0%; }
 #fae_prog_number { color:#FFF; font-size:16px; font-family:Arial; position:absolute; left:50%; top:50%; margin:-8px -8px 0 0; }
-
 .fae_msg_log { margin:3px; }</style>
 
-<h1 class="page-title">Forumactif Edge Control Panel</h1>
-<p>This panel allows you to install, uninstall, and update <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Get ready to experience your forum in a more modern and responsive way!</p>
+<div id="fae_cp">
+  <h1 id="fae_cp_main_title">Forumactif Edge Control Panel</h1>
+  <p id="fae_cp_desc">This panel allows you to install, uninstall, and update <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Get ready to experience your forum in a more modern and responsive way!</p>
 
-<h3 class="h3">Log</h3>
-<div id="fae_log"></div>
-<div id="fae_progress"></div>
+  <h3 class="fae_cp_title">Log</h3>
+  <div id="fae_log"></div>
+  <div id="fae_progress"></div>
 
-<div id="fae_actions" style="display:none;">
-  <h3 class="h3">Actions</h3>
-  <div id="fae_options">
-    <input id="fae_install" type="button" value="Install" />
-    <input id="fae_uninstall" type="button" value="Uninstall" style="display:none;" />
-    <input id="fae_update" type="button" value="Check for updates" style="display:none;" />
+  <div id="fae_actions" style="display:none;">
+    <h3 class="fae_cp_title">Actions</h3>
+    <div id="fae_options">
+      <input id="fae_install" type="button" value="Install" />
+      <input id="fae_uninstall" type="button" value="Uninstall" style="display:none;" />
+      <input id="fae_update" type="button" value="Check for updates" style="display:none;" />
+    </div>
   </div>
 </div>
 

@@ -53,7 +53,7 @@ FAE.step = [
   {
     info : 'Getting and deleting all JavaScript files to prevent install errors',
     type : 'GET',
-     url : 'mode=js&part=modules&sub=html',
+     url : '/admin/index.forum?part=modules&sub=html&extended_admin=1&tid=' + FAE.tid,
     func : function(d) {
       var form = $('#pageListHtml', d),
           file = $('input[type="checkbox"]', form),

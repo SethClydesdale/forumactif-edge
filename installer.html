@@ -29,7 +29,7 @@
 
 <script type="text/javascript">//<![CDATA[
 (function() {
-  var FAE = {
+  window.FAE = {
     logger : document.getElementById('fae_log'),
     log : function(str, css) {
       FAE.logger.insertAdjacentHTML('beforeend', '<div class="fae_msg_log" ' + (css ? 'style="' + css + '"' : '') + '>' + str + '</div>');
@@ -41,146 +41,9 @@
     progress : function() {
       var percent = FAE.index / FAE.quota * 100;
       FAE.bar.innerHTML = '<div id="fae_prog_bar" style="width:' + percent + '%;"></div><span id="fae_prog_number">' + (percent == 100 ? 'INSTALL COMPLETE' : percent + '%') + '</span>';
-    },
-
-
-    index : -1,
-    step : [
-
-
-      /* -- STEP 0 -- */
-      {
-        info : 'Changing forum version to phpbb3',
-        type : 'POST',
-         url : 'part=themes&sub=styles&mode=version&extended_admin=1',
-        data : {
-                     tpl : 'prosilver',
-              keep_theme : 2,
-          change_version : 'Save'
-        }
-      },
-
-
-      /* -- STEP 1 -- */
-      {
-        info : 'Unoptimizing and deactivating default CSS',
-        type : 'POST',
-         url : 'part=themes&sub=logos&mode=css&extended_admin=1',
-        data : {
-                 css_base : 0,
-             optimize_css : 0,
-          submit_base_css : 'Save'
-        }
-      },
-
-
-      /* -- STEP 2 -- */
-      {
-        info : 'Getting fa_edge.css',
-        type : 'GET',
-         url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/fa_edge.css',
-        func : function(d) {
-          FAE.step[3].data.edit_code = d;
-        }
-      },
-
-
-      /* -- STEP 3 -- */
-      {
-        info : 'Installing fa_edge.css',
-        type : 'POST',
-         url : 'part=themes&sub=logos&mode=css&extended_admin=1',
-        data : {
-          edit_code : '',
-             submit : 'Submit'
-        }
-      },
-
-      /* -- STEP 4 -- */
-      {
-        info : 'Getting all.js',
-        type : 'GET',
-         url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-all-the-pages/all.js',
-        func : function(d) {
-          FAE.step[5].data.content = d;
-        }
-      },
-
-
-      /* -- STEP 5 -- */
-      {
-        info : 'Installing all.js',
-        type : 'POST',
-         url : 'part=modules&sub=html&mode=js_edit&extended_admin=1',
-        data : {
-                     title : '[FA EDGE] ALL.JS',
-          'js_placement[]' : 'allpages',
-                   content : '',
-                      mode : 'save',
-                    submit : 'Submit'
-        }
-      },
-
-
-      /* -- STEP 6 -- */
-      {
-        info : 'Getting homepage.js',
-        type : 'GET',
-         url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-the-homepage/homepage.js',
-        func : function(d) {
-          FAE.step[7].data.content = d;
-        }
-      },
-
-
-      /* -- STEP 7 -- */
-      {
-        info : 'Installing homepage.js',
-        type : 'POST',
-         url : 'part=modules&sub=html&mode=js_edit&extended_admin=1',
-        data : {
-                     title : '[FA EDGE] HOMEPAGE.JS',
-          'js_placement[]' : 'index',
-                   content : '',
-                      mode : 'save',
-                    submit : 'Submit'
-        }
-      }
-
-
-    ],
-
-
-    // proceed to and execute the next step in the installation
-    next : function() {
-      if (++FAE.index >= FAE.quota) {
-        FAE.log('Install has completed successfully!', 'color:#8B5;font-weight:bold;');
-
-      } else {
-        var step = FAE.step[FAE.index];
-        FAE.log(step.info + '...');
-
-        if (step.type == 'POST') {
-          $.post('/admin/index.forum?' + step.url + FAE.tid, step.data, FAE.next);
-
-        } else if (step.type == 'GET') {
-          $.get(step.url, function(d) {
-            step.func(d);
-            FAE.next();
-          });
-
-        }
-
-      }
-
-      FAE.progress();
     }
 
-
   };
-
-  FAE.quota = FAE.step.length; // cache the step length
-  window.FAE = FAE; // define FAE in the global namespace
 
   // stuff that needs to be executed when the doc is ready
   $(function() {
@@ -193,9 +56,15 @@
       document.getElementById('fae_actions').style.display = 'block';
 
       document.getElementById('fae_install').onclick = function() {
-        var yes = confirm('Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme.');
+        var yes = confirm('Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\n\\nPlease make sure to backup all your personal content files such as CSS and JavaScripts before proceeding.');
         if (yes) {
-          FAE.next();
+          $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/install.js', function(d) {
+            var script = document.createElement('SCRIPT');
+            script.type = 'text/javascript';
+            script.text = d;
+            document.body.appendChild(script);
+            FAE.next();
+          });
         }
       };
 

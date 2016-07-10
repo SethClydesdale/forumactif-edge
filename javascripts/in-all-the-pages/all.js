@@ -9,6 +9,7 @@
 ** 05. fae_sticky_nav_panel
 ** 06. image resizer
 ** 07. fae_toggle_category
+** 08. sticky_nav_notifications
 ******************************/
 
 
@@ -141,13 +142,13 @@ function fa_navactif() {
              '.forum-status[style*="state=new"] { background-color:' + palette[0] + '; }'+
              'form.search-form { background-color:' + palette[2] + '; }'+
              'form.search-form input.search-keywords, input.search-button { border-color:' + palette[0] + '!important; }'+
-             'input[type="text"]:hover, input.post:hover, input.inputbox:hover, textarea:hover, select:hover, input[type="text"]:focus, input.post:focus, input.inputbox:focus, textarea:focus, select:focus, body div.sceditor-dropdown input:focus, body div.sceditor-dropdown textarea:focus, .fa_pseudo_checkbox:hover, .fa_pseudo_radio:hover, .sceditor-container, h2.post-content, h3.post-content, h4.post-content { border-color:' + palette[1] + ' !important; }'+
+             'input[type="text"]:hover, input.post:hover, input.inputbox:hover, textarea:hover, select:hover, input[type="text"]:focus, input.post:focus, input.inputbox:focus, textarea:focus, select:focus, body div.sceditor-dropdown input:focus, body div.sceditor-dropdown textarea:focus, .fa_pseudo_checkbox:hover, .fa_pseudo_radio:hover, .sceditor-container, h2.post-content, h3.post-content, h4.post-content, .lastpost-avatar, #wio_new_avatar, .avatar-mini img, .avatar { border-color:' + palette[1] + ' !important; }'+
              'a { color:' + palette[3] + '; }'+
              'a:hover, a:active { color:' + palette[2] + '; }'+
              '::selection { background-color:' + palette[1] + '; } ::-moz-selection { background-color:' + palette[1] + '; }'+
-             '::-webkit-scrollbar-thumb, ::-webkit-scrollbar-button { background-color:' + palette[1] + '; }'+
-             '::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-button:hover { background-color:' + palette[2] + '; }'+
-             '::-webkit-scrollbar-thumb:active, ::-webkit-scrollbar-button:active { background-color:' + palette[3] + '; }';
+             '::-webkit-scrollbar-thumb, ::-webkit-scrollbar-button:single-button { background-color:' + palette[1] + '; }'+
+             '::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-button:single-button:hover { background-color:' + palette[2] + '; }'+
+             '::-webkit-scrollbar-thumb:active, ::-webkit-scrollbar-button:single-button:active { background-color:' + palette[3] + '; }';
     }
   };
 
@@ -244,15 +245,20 @@ $(function(){
 
 /* -- 05. fae_sticky_nav_panel -- */
 // adds a sticky navigation for quick use when the navbar isn't visible
-(function() {
+$(function() {
   window.fae_sticky = {
             // various user options
             navbar : 'navbar',
           position : 'left',
              title : 'Quick Navigation',
            tooltip : 'Toggle quick navigation',
-    additionalHTML : '',
+    additionalHTML : '<div class="nav-actions"><a href="javascript:fae_sticky.copyURL();" title="Copy BBCode URL"><i class="fa fa-link"></i></a>' + ( _userdata.user_level == 1 ? '<a href="/admin" title="Admin Panel"><i class="fa fa-wrench"></i></a>' : '' ) + '<a href="#top" title="Top of page"><i class="fa fa-chevron-up"></i></a><a href="#bottom" title="Bottom of page"><i class="fa fa-chevron-down"></i></a></div>',
      alwaysVisible : false,
+
+    // copy page URL as bbcode
+    copyURL : function() {
+      window.prompt('Copy the BBCode URL below. (CTRL+C)', '[url=' + window.location + ']' + document.title + '[/url]');
+    },
 
     // listen for changes in the navbar's bottom rect
     scroll : function() {
@@ -293,29 +299,27 @@ $(function(){
     .html('<div class="title module_column_title">' + fae_sticky.title + '</div><div class="module_inner"></div>')[0]
   ];
 
-  $(function() {
-    fae_sticky.navbar = document.getElementById(fae_sticky.navbar); // get the old navbar
+  fae_sticky.navbar = document.getElementById(fae_sticky.navbar); // get the old navbar
 
-    // then clone its contents and add it to the sticky panel
-    $('.module_inner', fae_sticky.node[1]).append($('a.mainmenu', fae_sticky.navbar).clone()).append(fae_sticky.additionalHTML);
-    $(document.body).append(fae_sticky.node);
+  // then clone its contents and add it to the sticky panel
+  $('.module_inner', fae_sticky.node[1]).append($('a.mainmenu', fae_sticky.navbar).clone()).append(fae_sticky.additionalHTML);
+  $(document.body).append(fae_sticky.node);
 
-    if (!fae_sticky.alwaysVisible) {
-      fae_sticky.tb_state = my_getcookie('toolbar_state') || (_userdata.activate_toolbar ? 'fa_show' : 'fa_hide');
-      fae_sticky.scroll();
+  if (!fae_sticky.alwaysVisible) {
+    fae_sticky.tb_state = my_getcookie('toolbar_state') || (_userdata.activate_toolbar ? 'fa_show' : 'fa_hide');
+    fae_sticky.scroll();
 
-      $(window).scroll(fae_sticky.scroll);
+    $(window).scroll(fae_sticky.scroll);
 
-      $(function() {
-        $('#fa_hide, #fa_show').click(function() {
-          fae_sticky.tb_state = this.id;
-        });
+    $(function() {
+      $('#fa_hide, #fa_show').click(function() {
+        fae_sticky.tb_state = this.id;
       });
-    } else {
-      fae_sticky.node[0].style.left = '';
-    }
-  });
-}());
+    });
+  } else {
+    fae_sticky.node[0].style.left = '';
+  }
+});
 
 
 /* -- 06. image resizer -- */
@@ -464,3 +468,22 @@ function fae_toggle_category(that) {
     my_setcookie('fae_' + next.id, 'hidden');
   }
 };
+
+
+/* -- 08. sticky_nav_notifications -- */
+$(function() {
+  if (_userdata.session_logged_in) {
+    var nav = document.getElementById('fae_sticky_nav_panel'),
+        a = $('<a class="mainmenu" href="/profile?mode=editprofile&page_profil=notifications">Notifications</a>')[0];
+
+    if (nav) {
+      $('a[href="/privmsg?folder=inbox"]', nav).after(a);
+
+      $.get('/notification.forum', function(o) {
+        if (o && o.unread) {
+          a.insertAdjacentHTML('beforeend', ' <span id="sticky_notif_unread">(' + o.unread + ')</span>');
+        }
+      }, 'json');
+    }
+  }
+});

@@ -159,6 +159,40 @@ FAE.step = [
                   mode : 'save',
                 submit : 'Submit'
     }
+  },
+
+
+  /* -- STEP 12 -- */
+  {
+    info : 'Getting template agreement.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/agreement.html',
+    func : function(d) {
+      FAE.step[13].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 13 -- */
+  {
+    info : 'Installing template agreement.html',
+    type : 'POST',
+     url : 'part=modules&sub=html&mode=js_edit&extended_admin=1',
+    data : {
+      template : '',
+             t : 101,
+             l : 'main',
+      tpl_name : 'agreement',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 14 -- */
+  {
+    info : 'Publishing template agreement.html'
+    type : 'PUBLISH',
+     tpl : 101
   }
 ];
 
@@ -169,6 +203,11 @@ FAE.quota = FAE.step.length;
 FAE.next = function() {
   if (++FAE.index >= FAE.quota) {
     FAE.log('Install has completed successfully!', 'color:#8B5;font-weight:bold;');
+    FAE.log('Reloading the page in 3 seconds...');
+    FAE.log('<a href="javascript:window.location.reload();">Click here</a> if the page doesn\'t reload.');
+    window.setTimeout(function() {
+      window.location.reload();
+    }, 3000);
 
   } else {
     var step = FAE.step[FAE.index];
@@ -183,6 +222,8 @@ FAE.next = function() {
         FAE.next();
       });
 
+    } else if (step.type == 'PUBLISH') {
+      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + tpl + '&l=main&pub=1&tid=' + FAE.tid, FAE.next);
     }
 
   }

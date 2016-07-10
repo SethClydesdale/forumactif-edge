@@ -65,7 +65,7 @@ FAE.step = [
       }
 
       $.post(form[0].action, form.serialize() + '&attachments_submit=Delete', function(d) {
-        var confirmation = $('form[name="post"]', d);
+        var confirmation = $('form[method="post"]', d);
         $.post(confirmation[0].action, confirmation.serialize() + '&confirm=Yes');
       });
     }

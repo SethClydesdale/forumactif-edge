@@ -1,0 +1,92 @@
+<!-- BEGIN html_validation -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<div>
+	<div>
+		<div>
+			<div>
+				<div>
+
+<div>
+<!-- END html_validation -->
+</div>
+          <div class="footer-links right">
+							<!-- BEGIN switch_footer_links -->
+									<!-- BEGIN footer_link -->
+										<!-- BEGIN switch_separator -->&nbsp;|&nbsp;<!-- END switch_separator -->
+										{switch_footer_links.footer_link.FOOTER_LINK_SEPARATOR}<a name="bottom" class="copyright" href="{switch_footer_links.footer_link.U_FOOTER_LINK_HREF}" rel="{switch_footer_links.footer_link.FOOTER_LINK_REL}" target="{switch_footer_links.footer_link.FOOTER_LINK_TARGET}" title="{switch_footer_links.footer_link.L_FOOTER_LINK_TITLE}">{switch_footer_links.footer_link.L_FOOTER_LINK_TEXT}</a>
+									<!-- END footer_link -->
+							<!-- END switch_footer_links -->
+					</div>
+          <div class="clear"></div>
+
+					  <div class="copyright">
+					  	<strong>{ADMIN_LINK}</strong>
+					  </div>
+				</div>
+				{PROTECT_FOOTER}
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer_end" class="color-secondary">
+  <div id="footer_end_inner">
+    <div id="footer_end_left" class="footer_end_column"><a href="/forum">{L_HOME}</a></div>
+    <div id="footer_end_center" class="footer_end_column"><a href="#top" title="Back to top" id="back_top_top"><i class="fa fa-chevron-up"></i></a></div>
+    <div id="footer_end_right" class="footer_end_column"><a href="https://github.com/SethClydesdale/forumactif-edge/issues/new" title="Help improve Forumactif Edge" target="_blank">Submit Feedback</a> | <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a> v<span id="fae_version">1.0.0</span></div>
+  </div>
+</div>
+
+<!-- BEGIN switch_facebook_login -->
+<div id="fb-root"></div>
+<script type="text/javascript">
+    FB.init({
+      appId      : {switch_facebook_login.FACEBOOK_APP_ID},
+      cookie     : true,
+      xfbml      : true,
+      oauth      : true,
+      version    : 'v2.3'
+    });
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- END switch_facebook_login -->
+
+<!-- BEGIN switch_facebook_logout_TMP -->
+<script type="text/javascript">
+//<![CDATA[
+FB.Event.subscribe('auth.logout', function(response) {
+	if ($('a#logout'))
+	{
+		var lien_redir = $('a#logout').attr('href');
+
+		if ($('a#logout').attr('href') && $('a#logout').attr('href') != '')
+		{
+			document.location.href = 'http://{switch_facebook_logout.SERVER_NAME}/' + lien_redir;
+		}
+	}
+});
+
+$(document).ready( function() {
+	$('a#logout').click( function() {
+		FB.logout();
+	} );
+} );
+//]]>
+</script>
+<!-- END switch_facebook_logout_TMP -->
+
+<script type="text/javascript">
+//<![CDATA[
+	fa_endpage();
+//]]>
+</script>
+</body>
+</html>

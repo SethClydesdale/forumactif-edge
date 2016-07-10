@@ -177,7 +177,7 @@ FAE.step = [
   {
     info : 'Installing template agreement.html',
     type : 'POST',
-     url : 'part=modules&sub=html&mode=js_edit&extended_admin=1',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
     data : {
       template : '',
              t : 101,
@@ -223,7 +223,7 @@ FAE.next = function() {
       });
 
     } else if (step.type == 'PUBLISH') {
-      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + tpl + '&l=main&pub=1&tid=' + FAE.tid, FAE.next);
+      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=main&pub=1&tid=' + FAE.tid, FAE.next);
     }
 
   }

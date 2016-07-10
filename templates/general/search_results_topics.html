@@ -1,0 +1,65 @@
+<!-- BEGIN navmenu -->
+<div class="topic-actions">
+	<p>
+		<a class="nav" href="{U_INDEX}">{L_INDEX}</a> :: {L_SEARCH_TITLE}
+	</p>
+</div>
+<!-- END navmenu -->
+
+<form id="search_results_topics" action="{S_ACTION}" method="post" name="post" onsubmit="return verify_select();">
+	<h1 class="page-title">{L_SEARCH_MATCHES}</h1>
+  <div class="forum-category topicslist search">
+    <div class="title">{L_TOPICS}</div>
+    <!-- BEGIN searchresults -->
+    <div class="forum-block color-primary">
+      <div class="forum-block-inner">
+        <div class="forum-status" title="{searchresults.L_TOPIC_FOLDER_ALT}" style="background-image:url('{searchresults.TOPIC_FOLDER_IMG}');">
+        </div>
+
+        <div class="forum-info" {searchresults.TOPIC_ICON}>
+        	<span class="newpost-img">{searchresults.NEWEST_POST_IMG}</span>
+  				<span class="participated">{searchresults.PARTICIPATE_POST_IMG}</span>
+  			  <span class="topic-type">{searchresults.TOPIC_TYPE}</span>
+          <h2 class="topic-title">
+            <a class="topictitle" href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a>
+          </h2>
+
+  				<!-- BEGIN switch_description -->
+  				<div class="topic-desc">{searchresults.TOPIC_DESCRIPTION}</div>
+  				<!-- END switch_description -->
+
+  			  <div class="topic-info">
+            {searchresults.GOTO_PAGE_NEW}
+  				  <span class="topic-author">{searchresults.L_BY} <strong>{searchresults.TOPIC_AUTHOR}</strong></span>
+  				  <!-- BEGIN nav_tree -->{searchresults.TOPIC_NAV_TREE_NEW}<!-- END nav_tree -->
+          </div>
+        </div>
+
+        <div class="forum-stats">
+
+          <div class="posts">
+            <span class="number">{searchresults.REPLIES}</span><br/>
+            <small>{L_REPLIES}</small>
+          </div>
+
+          <div class="views">
+            <span class="number">{searchresults.VIEWS}</span><br/>
+            <small>{L_VIEWS}</small>
+          </div>
+
+        </div>
+
+        <div class="forum-lastpost">
+  				  <span>{searchresults.LAST_POST_AUTHOR}&nbsp;
+  			    {searchresults.LAST_POST_IMG}<br style="clear:left;" />{searchresults.LAST_POST_TIME}</span>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <!-- END searchresults -->
+  </div>
+
+	<p class="right-box"><a href="#top">{L_BACK_TO_TOP}</a></p>
+	<p class="pagination">{PAGINATION}</p>
+</form>
+<div class="clear"></div>

@@ -1,0 +1,197 @@
+{JAVASCRIPT}
+
+<!-- BEGIN switch_user_login_form_header -->
+<div class="content-block">
+  <div class="title">{L_LOGIN}</div>
+  <div class="txt-content">
+		<form action="{S_LOGIN_ACTION}" method="post" name="form_login">
+			<div class="user_login_form center">
+				<label>{L_USERNAME} : <input class="post" type="text" size="10" name="username" /></label>&nbsp;
+				<label>{L_PASSWORD} : <input class="post" type="password" size="10" name="password" /></label>&nbsp;
+				<label>{L_AUTO_LOGIN} : <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} /></label>&nbsp;
+				{S_HIDDEN_FIELDS}<input class="mainoption button1" type="submit" name="login" value="{L_LOGIN}" />
+				<!-- BEGIN switch_fb_connect -->
+				<span class="fb_or">{switch_user_login_form_header.switch_fb_connect.L_OR}</span>
+				<fb:login-button size="large" onlogin="window.location='/facebook_connect.forum'" scope="{switch_user_login_form_footer.switch_fb_connect.L_FB_PERMISSIONS}">{switch_user_login_form_footer.switch_fb_connect.L_FB_LOGIN_BUTTON}</fb:login-button>
+				<!-- END switch_fb_connect -->
+			</div>
+		</form>
+  </div>
+</div>
+<!-- END switch_user_login_form_header -->
+
+<!-- BEGIN message_admin_index -->
+	<div class="content-block introduction">
+	<!-- BEGIN message_admin_titre -->
+		<div class="title">{message_admin_index.message_admin_titre.MES_TITRE}</div>
+	<!-- END message_admin_titre -->
+
+	<!-- BEGIN message_admin_txt -->
+		<div class="txt-content">{message_admin_index.message_admin_txt.MES_TXT}</div>
+	<!-- END message_admin_txt -->
+	</div>
+<!-- END message_admin_index -->
+
+{CHATBOX_TOP}
+{BOARD_INDEX}
+
+<!-- BEGIN disable_viewonline -->
+<div id="who_is_online">
+
+  <div id="wio_left">
+    <div id="wio_activity" class="content-block">
+      <!-- BEGIN switch_viewonline_link -->
+    	<div class="title"><a href="{U_VIEWONLINE}" rel="nofollow">{L_WHO_IS_ONLINE}</a></div>
+    	<!-- END switch_viewonline_link -->
+
+    	<!-- BEGIN switch_viewonline_nolink -->
+    	<div class="title">{L_WHO_IS_ONLINE}</div>
+    	<!-- END switch_viewonline_nolink -->
+      <div class="txt-content">
+        <img src="{L_ONLINE_IMG}" id="i_whosonline" alt="{L_WHO_IS_ONLINE}" class="img-whois" />
+        {TOTAL_USERS_ONLINE}<br/>
+
+        {LOGGED_IN_USER_LIST}
+
+        {L_ONLINE_USERS}
+        {L_CONNECTED_MEMBERS}<br />
+        {L_WHOSBIRTHDAY_TODAY}{L_WHOSBIRTHDAY_WEEK}
+      </div>
+    </div>
+
+    <div id="wio_group_legend" class="content-block">
+      <div class="title">{LEGEND}</div>
+      <div class="txt-content">
+        <div id="wio_groups">{GROUP_LEGEND}</div>
+      </div>
+      <script type="text/javascript">if (window.wio_formatGroups) { wio_formatGroups(); }</script>
+    </div>
+
+  </div>
+
+  <div id="wio_right">
+    <div id="wio_statistics" class="content-block">
+      <!-- BEGIN switch_statistics_link -->
+    	<div class="title"><a href="{U_STATISTICS}" rel="nofollow">{L_STATISTICS}</a></div>
+    	<!-- END switch_statistics_link -->
+
+    	<!-- BEGIN switch_statistics_nolink -->
+    	<div class="title">{L_STATISTICS}</div>
+    	<!-- END switch_statistics_nolink -->
+
+      <div class="txt-content">
+
+        <div class="wio_row">
+          <div id="wio_newest_user" class="wio_stats">
+            <div id="wio_newest_inner">
+              <div id="wio_new_avatar"><img src="http://illiweb.com/fa/invision/pp-blank-thumb.png" /></div>
+              <div class="wio_value">{NEWEST_USER}</div>
+              <div id="wio_new_date"></div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <script type="text/javascript">if (window.wio_getNewAvatar) { wio_getNewAvatar(); }</script>
+
+          <div id="wio_total_posts" class="wio_stats"><span class="wio_value">{TOTAL_POSTS}</span></div>
+        </div>
+
+        <div class="wio_row">
+          <div id="wio_total_users" class="wio_stats"><span class="wio_value">{TOTAL_USERS}</span></div>
+          <div id="wio_total_topics" class="wio_stats"><span class="wio_value"><strong>N/A</strong></span></div>
+        </div>
+
+        <div class="wio_row">
+          <div id="wio_record_users" class="wio_stats"><span class="wio_value">{RECORD_USERS}</span></div>
+          <div id="wio_board_age" class="wio_stats"><span class="wio_value"><strong>N/A</strong></span></div>
+        </div>
+
+      </div>
+      <script type="text/javascript">if (window.wio_getStats) { wio_getStats(); }</script>
+    </div>
+
+
+    <!-- BEGIN switch_chatbox_activate -->
+    <div id="wio_chatters" class="content-block">
+      <div class="title"><a href="{S_JOIN_CHAT}" target="ChatBox">{CHATBOX_NAME}</a></div>
+      <div class="txt-content">
+      	{TOTAL_CHATTERS_ONLINE}&nbsp;:&nbsp;
+      	{CHATTERS_LIST}<br />
+    		<!-- BEGIN switch_chatbox_popup -->
+    		<div id="chatbox_popup"></div>
+    		<script type="text/javascript">
+    		insertChatBoxPopup('{disable_viewonline.switch_chatbox_activate.switch_chatbox_popup.U_FRAME_CHATBOX}', '{L_CLICK_TO_JOIN_CHAT}');
+    		</script>
+    		<!-- END switch_chatbox_popup -->
+      </div>
+    </div>
+    <!-- END switch_chatbox_activate -->
+  </div>
+  <div class="clear"></div>
+</div>
+<!-- END disable_viewonline -->
+
+{CHATBOX_BOTTOM}
+
+<!-- BEGIN switch_user_login_form_footer -->
+<div class="content-block">
+  <div class="title">{L_LOGIN}</div>
+  <div class="txt-content">
+		<form action="{S_LOGIN_ACTION}" method="post" name="form_login">
+			<div class="user_login_form center">
+				<label>{L_USERNAME} : <input class="post" type="text" size="10" name="username" /></label>&nbsp;
+				<label>{L_PASSWORD} : <input class="post" type="password" size="10" name="password" /></label>&nbsp;
+				<label>{L_AUTO_LOGIN} : <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} /></label>&nbsp;
+				{S_HIDDEN_FIELDS}<input class="mainoption button1" type="submit" name="login" value="{L_LOGIN}" />
+				<!-- BEGIN switch_fb_connect -->
+				<span class="fb_or">{switch_user_login_form_footer.switch_fb_connect.L_OR}</span>
+				<fb:login-button size="large" onlogin="window.location='/facebook_connect.forum'" scope="{switch_user_login_form_footer.switch_fb_connect.L_FB_PERMISSIONS}">{switch_user_login_form_footer.switch_fb_connect.L_FB_LOGIN_BUTTON}</fb:login-button>
+				<!-- END switch_fb_connect -->
+			</div>
+		</form>
+  </div>
+</div>
+<!-- END switch_user_login_form_footer -->
+
+<br style="clear:both" />
+
+<!-- BEGIN switch_legend -->
+<div id="picture_legend">
+  <div class="pic_legend_icon">
+	  <div class="forum-status" style="background-image:url('{FORUM_NEW_IMG}');" title="{L_NEW_POSTS}"></div>
+    {L_NEW_POSTS}
+  </div>
+
+  <div class="pic_legend_icon">
+	  <div class="forum-status" style="background-image:url('{FORUM_IMG}');" title="{L_NO_NEW_POSTS}"></div>
+    {L_NO_NEW_POSTS}
+  </div>
+
+  <div class="pic_legend_icon">
+	  <div class="forum-status" style="background-image:url('{FORUM_LOCKED_IMG}');" title="{L_FORUM_LOCKED}"></div>
+    {L_FORUM_LOCKED}
+  </div>
+</div>
+<!-- END switch_legend -->
+
+{AUTO_DST}
+
+<!-- BEGIN switch_fb_index_login -->
+<div id="fb-root"></div>
+<script>
+    FB.init({
+      appId      : {switch_fb_index_login.FACEBOOK_APP_ID},
+      cookie     : true,
+      xfbml      : true,
+      oauth      : true,
+      version    : 'v2.3'
+    });
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- END switch_fb_index_login -->

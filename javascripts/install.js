@@ -57,14 +57,15 @@ FAE.step = [
     func : function(d) {
       var form = $('#pageListHtml', d),
           file = $('input[type="checkbox"]', form),
+          serialized = form.serialize(),
           i = 0,
           j = file.length;
 
       for (; i < j; i++) {
-        file[i].checked = true;
+        serialized += '&selected_page%5B%5D=' + file[i].value;
       }
 
-      $.post(form[0].action, form.serialize() + '&attachments_submit=Delete', function(d) {
+      $.post(form[0].action, serialized + '&attachments_submit=Delete', function(d) {
         var confirmation = $('form[method="post"]', d);
         $.post(confirmation[0].action, confirmation.serialize() + '&confirm=Yes');
       });

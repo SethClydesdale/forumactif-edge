@@ -1,0 +1,140 @@
+<!-- BEGIN topics_list_box -->
+<!-- BEGIN row -->
+<!-- BEGIN header_table -->
+	<!-- BEGIN multi_selection -->
+		<script type="text/javascript">
+
+		function check_uncheck_main_{topics_list_box.row.header_table.BOX_ID}()
+		{
+			alert('MAIN');
+
+			var all_checked = true;
+
+			for (i = 0; (i < document.{topics_list_box.FORMNAME}.elements.length) && all_checked; i++)
+			{
+				if (document.{topics_list_box.FORMNAME}.elements[i].name == '{topics_list_box.FIELDNAME}[]{topics_list_box.row.header_table.BOX_ID}')
+				{
+					all_checked = document.{topics_list_box.FORMNAME}.elements[i].checked;
+				}
+			}
+
+			document.{topics_list_box.FORMNAME}.all_mark_{topics_list_box.row.header_table.BOX_ID}.checked = all_checked;
+		}
+
+		function check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}()
+		{
+			alert('ALL');
+
+			for (i = 0; i < document.{topics_list_box.FORMNAME}.length; i++)
+			{
+				if (document.{topics_list_box.FORMNAME}.elements[i].name == '{topics_list_box.FIELDNAME}[]{topics_list_box.row.header_table.BOX_ID}')
+				{
+					document.{topics_list_box.FORMNAME}.elements[i].checked = document.{topics_list_box.FORMNAME}.all_mark_{topics_list_box.row.header_table.BOX_ID}.checked;
+				}
+			}
+		}
+
+		</script>
+	<!-- END multi_selection -->
+
+	<div class="forum-category topicslist announcement">
+	  <div class="title">
+		  <!-- BEGIN multi_selection -->
+			<input onclick="check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}();" type="checkbox" name="all_mark_{topics_list_box.row.header_table.BOX_ID}" value="0" />
+			<!-- END multi_selection -->
+			{topics_list_box.row.L_TITLE}
+		</div>
+
+<!-- END header_table -->
+
+<!-- BEGIN header_row -->
+		<div class="title">{topics_list_box.row.L_TITLE}</div>
+<!-- END header_row -->
+
+<!-- BEGIN topic -->
+
+	<!-- BEGIN table_sticky -->
+  </div>
+	<div class="forum-category topicslist">
+	  <div class="title">
+		<!-- BEGIN multi_selection -->
+		<input onclick="check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}();" type="checkbox" name="all_mark_{topics_list_box.row.header_table.BOX_ID}" value="0" />
+		<!-- END multi_selection -->
+		{topics_list_box.row.topic.table_sticky.L_TITLE}
+	</div>
+	<!-- END table_sticky -->
+    <div class="forum-block color-primary">
+      <div class="forum-block-inner">
+      	<!-- BEGIN single_selection -->
+  			<span class="merge-box"><input type="radio" name="{topics_list_box.FIELDNAME}" value="{topics_list_box.row.FID}" {topics_list_box.row.L_SELECT} /></span>
+  			<!-- END single_selection -->
+
+        <div class="forum-status" title="{topics_list_box.row.L_TOPIC_FOLDER_ALT}" style="background-image:url('{topics_list_box.row.TOPIC_FOLDER_IMG}');">
+        </div>
+
+        <div class="forum-info" {topics_list_box.row.ICON}>
+        	<span class="newpost-img">{topics_list_box.row.NEWEST_POST_IMG}</span>
+  				<span class="participated">{topics_list_box.row.PARTICIPATE_POST_IMG}</span>
+  			  <span class="topic-type">{topics_list_box.row.TOPIC_TYPE}</span>
+          <h2 class="topic-title">
+            <a class="topictitle" href="{topics_list_box.row.U_VIEW_TOPIC}">{topics_list_box.row.TOPIC_TITLE}</a>
+          </h2>
+
+  				<!-- BEGIN switch_description -->
+  				<div class="topic-desc">{topics_list_box.row.topic.switch_description.TOPIC_DESCRIPTION}</div>
+  				<!-- END switch_description -->
+
+  			  <div class="topic-info">
+            {topics_list_box.row.GOTO_PAGE_NEW}
+  				  <span class="topic-author">{topics_list_box.row.L_BY} <strong>{topics_list_box.row.TOPIC_AUTHOR}</strong></span>
+  				  <!-- BEGIN nav_tree -->{topics_list_box.row.TOPIC_NAV_TREE_NEW}<!-- END nav_tree -->
+          </div>
+        </div>
+
+        <div class="forum-stats">
+
+          <div class="posts">
+            <span class="number">{topics_list_box.row.REPLIES}</span><br/>
+            <small>{L_REPLIES}</small>
+          </div>
+
+          <div class="views">
+            <span class="number">{topics_list_box.row.VIEWS}</span><br/>
+            <small>{L_VIEWS}</small>
+          </div>
+
+        </div>
+
+        <div class="forum-lastpost">
+          <!-- BEGIN avatar -->
+          <span class="lastpost-avatar">{topics_list_box.row.topic.avatar.LAST_POST_AVATAR}</span>
+          <div style="float:left;">
+          <!-- END avatar -->
+  				  <span>{topics_list_box.row.LAST_POST_AUTHOR}&nbsp;
+  			    {topics_list_box.row.LAST_POST_IMG}<br style="clear:left;" />{topics_list_box.row.LAST_POST_TIME}</span>
+          <!-- BEGIN avatar -->
+          </div>
+          <!-- END avatar -->
+
+        </div>
+
+  			<!-- BEGIN multi_selection -->
+  			<input onclick="javascript:check_uncheck_main_{topics_list_box.row.BOX_ID}();" type="checkbox" name="{topics_list_box.FIELDNAME}[]{topics_list_box.row.BOX_ID}" value="{topics_list_box.row.FID}" {topics_list_box.row.L_SELECT} />
+  			<!-- END multi_selection -->
+
+        <div class="clear"></div>
+      </div>
+    </div>
+<!-- END topic -->
+<!-- BEGIN no_topics -->
+<div class="forum-block">
+  <strong>{topics_list_box.row.L_NO_TOPICS}</strong>
+</div>
+<!-- END no_topics -->
+
+<!-- BEGIN bottom -->
+</div>
+<!-- END bottom -->
+<!-- BEGIN spacer --><br /><!-- END spacer -->
+<!-- END row -->
+<!-- END topics_list_box -->

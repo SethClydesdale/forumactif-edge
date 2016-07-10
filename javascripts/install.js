@@ -190,7 +190,7 @@ FAE.step = [
 
   /* -- STEP 14 -- */
   {
-    info : 'Publishing template agreement.html'
+    info : 'Publishing template agreement.html',
     type : 'PUBLISH',
      tpl : 101
   }

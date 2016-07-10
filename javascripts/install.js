@@ -48,18 +48,54 @@ FAE.step = [
     }
   },
 
+
   /* -- STEP 4 -- */
   {
-    info : 'Getting all.js',
+    info : 'Getting and deleting all JavaScript files to prevent install errors',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-all-the-pages/all.js',
+     url : 'mode=js&part=modules&sub=html',
     func : function(d) {
-      FAE.step[5].data.content = d;
+      var form = $('#pageListHtml', d),
+          file = $('input[type="checkbox"]', form),
+          i = 0,
+          j = file.length;
+
+      for (; i < j; i++) {
+        file[i].checked = true;
+      }
+
+      $.post(form[0].action, form.serialize() + '&attachments_submit=Delete', function(d) {
+        var confirmation = $('form[name="post"]', d);
+        $.post(confirmation[0].action, confirmation.serialize() + '&confirm=Yes');
+      });
     }
   },
 
 
   /* -- STEP 5 -- */
+  {
+    info : 'Enabling JavaScript codes management',
+    type : 'POST',
+     url : 'part=modules&sub=html&mode=js_delete&extended_admin=1&tid=58b8b351201e3d8925cba62d506c0bb7',
+    data : {
+      allow_js_module : 1,
+          conf_submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 6 -- */
+  {
+    info : 'Getting all.js',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-all-the-pages/all.js',
+    func : function(d) {
+      FAE.step[7].data.content = d;
+    }
+  },
+
+
+  /* -- STEP 7 -- */
   {
     info : 'Installing all.js',
     type : 'POST',
@@ -74,18 +110,18 @@ FAE.step = [
   },
 
 
-  /* -- STEP 6 -- */
+  /* -- STEP 8 -- */
   {
     info : 'Getting homepage.js',
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-the-homepage/homepage.js',
     func : function(d) {
-      FAE.step[7].data.content = d;
+      FAE.step[9].data.content = d;
     }
   },
 
 
-  /* -- STEP 7 -- */
+  /* -- STEP 9 -- */
   {
     info : 'Installing homepage.js',
     type : 'POST',
@@ -97,8 +133,33 @@ FAE.step = [
                   mode : 'save',
                 submit : 'Submit'
     }
-  }
+  },
 
+
+  /* -- STEP 10 -- */
+  {
+    info : 'Getting topics.js',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-the-topics/topics.js',
+    func : function(d) {
+      FAE.step[11].data.content = d;
+    }
+  },
+
+
+  /* -- STEP 11 -- */
+  {
+    info : 'Installing topics.js',
+    type : 'POST',
+     url : 'part=modules&sub=html&mode=js_edit&extended_admin=1',
+    data : {
+                 title : '[FA EDGE] TOPICS.JS',
+      'js_placement[]' : 'viewtopic',
+               content : '',
+                  mode : 'save',
+                submit : 'Submit'
+    }
+  }
 ];
 
 FAE.index = -1;

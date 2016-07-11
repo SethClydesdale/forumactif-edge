@@ -749,6 +749,204 @@ FAE.step = [
     info : 'Publishing template search_results_topics.html',
     type : 'PUBLISH',
      tpl : 120
+  },
+
+
+  /* -- STEP 66 -- */
+  {
+    info : 'Getting template topics_blog_box.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/topics_blog_box.html',
+    func : function(d) {
+      FAE.step[67].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 67 -- */
+  {
+    info : 'Installing template topics_blog_box.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 130,
+             l : 'main',
+      tpl_name : 'topics_blog_box',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 68 -- */
+  {
+    info : 'Publishing template topics_blog_box.html',
+    type : 'PUBLISH',
+     tpl : 130
+  },
+
+
+  /* -- STEP 69 -- */
+  {
+    info : 'Getting template topics_list_box.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/topics_list_box.html',
+    func : function(d) {
+      FAE.step[70].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 70 -- */
+  {
+    info : 'Installing template topics_list_box.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 124,
+             l : 'main',
+      tpl_name : 'topics_list_box',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 71 -- */
+  {
+    info : 'Publishing template topics_list_box.html',
+    type : 'PUBLISH',
+     tpl : 124
+  },
+
+
+  /* -- STEP 72 -- */
+  {
+    info : 'Getting template viewcomments_body.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/viewcomments_body.html',
+    func : function(d) {
+      FAE.step[73].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 73 -- */
+  {
+    info : 'Installing template viewcomments_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 131,
+             l : 'main',
+      tpl_name : 'viewcomments_body',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 74 -- */
+  {
+    info : 'Publishing template viewcomments_body.html',
+    type : 'PUBLISH',
+     tpl : 131
+  },
+
+
+  /* -- STEP 75 -- */
+  {
+    info : 'Getting template viewforum_body.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/viewforum_body.html',
+    func : function(d) {
+      FAE.step[76].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 76 -- */
+  {
+    info : 'Installing template viewforum_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 125,
+             l : 'main',
+      tpl_name : 'viewforum_body',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 77 -- */
+  {
+    info : 'Publishing template viewforum_body.html',
+    type : 'PUBLISH',
+     tpl : 125
+  },
+
+
+  /* -- STEP 78 -- */
+  {
+    info : 'Getting template viewonline_body.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/viewonline_body.html',
+    func : function(d) {
+      FAE.step[79].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 79 -- */
+  {
+    info : 'Installing template viewonline_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 126,
+             l : 'main',
+      tpl_name : 'viewonline_body',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 80 -- */
+  {
+    info : 'Publishing template viewonline_body.html',
+    type : 'PUBLISH',
+     tpl : 126
+  },
+
+
+  /* -- STEP 81 -- */
+  {
+    info : 'Getting template viewtopic_body.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/viewtopic_body.html',
+    func : function(d) {
+      FAE.step[82].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 82 -- */
+  {
+    info : 'Installing template viewtopic_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 127,
+             l : 'main',
+      tpl_name : 'viewtopic_body',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 83 -- */
+  {
+    info : 'Publishing template viewtopic_body.html',
+    type : 'PUBLISH',
+     tpl : 127
   }
 ];
 

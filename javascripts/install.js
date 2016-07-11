@@ -947,6 +947,599 @@ FAE.step = [
     info : 'Publishing template viewtopic_body.html',
     type : 'PUBLISH',
      tpl : 127
+  },
+
+  /* -- STEP 84 -- */
+  {
+    info : 'Getting template mod_chatbox.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_chatbox.html',
+    func : function(d) {
+      FAE.step[85].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 85 -- */
+  {
+    info : 'Installing template mod_chatbox.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 901,
+             l : 'main',
+      tpl_name : 'mod_chatbox',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 86 -- */
+  {
+    info : 'Publishing template mod_chatbox.html',
+    type : 'PUBLISH',
+     tpl : 901
+  },
+
+
+  /* -- STEP 87 -- */
+  {
+    info : 'Getting template mod_keywords.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_keywords.html',
+    func : function(d) {
+      FAE.step[88].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 88 -- */
+  {
+    info : 'Installing template mod_keywords.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 913,
+             l : 'main',
+      tpl_name : 'mod_keywords',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 89 -- */
+  {
+    info : 'Publishing template mod_keywords.html',
+    type : 'PUBLISH',
+     tpl : 913
+  },
+
+
+  /* -- STEP 90 -- */
+  {
+    info : 'Getting template mod_login.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_login.html',
+    func : function(d) {
+      FAE.step[91].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 91 -- */
+  {
+    info : 'Installing template mod_login.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 916,
+             l : 'main',
+      tpl_name : 'mod_login',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 92 -- */
+  {
+    info : 'Publishing template mod_login.html',
+    type : 'PUBLISH',
+     tpl : 916
+  },
+
+
+  /* -- STEP 93 -- */
+  {
+    info : 'Getting template mod_most_active_starters.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_most_active_starters.html',
+    func : function(d) {
+      FAE.step[94].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 94 -- */
+  {
+    info : 'Installing template mod_most_active_starters.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 919,
+             l : 'main',
+      tpl_name : 'mod_most_active_starters',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 95 -- */
+  {
+    info : 'Publishing template mod_most_active_starters.html',
+    type : 'PUBLISH',
+     tpl : 919
+  },
+
+
+  /* -- STEP 96 -- */
+  {
+    info : 'Getting template mod_most_active_topics.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_most_active_topics.html',
+    func : function(d) {
+      FAE.step[97].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 97 -- */
+  {
+    info : 'Installing template mod_most_active_topics.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 917,
+             l : 'main',
+      tpl_name : 'mod_most_active_topics',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 98 -- */
+  {
+    info : 'Publishing template mod_most_active_topics.html',
+    type : 'PUBLISH',
+     tpl : 917
+  },
+
+
+  /* -- STEP 99 -- */
+  {
+    info : 'Getting template mod_most_viewed_topics.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_most_viewed_topics.html',
+    func : function(d) {
+      FAE.step[100].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 100 -- */
+  {
+    info : 'Installing template mod_most_viewed_topics.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 918,
+             l : 'main',
+      tpl_name : 'mod_most_viewed_topics',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 101 -- */
+  {
+    info : 'Publishing template mod_most_viewed_topics.html',
+    type : 'PUBLISH',
+     tpl : 918
+  },
+
+
+  /* -- STEP 102 -- */
+  {
+    info : 'Getting template mod_news.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_news.html',
+    func : function(d) {
+      FAE.step[103].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 103 -- */
+  {
+    info : 'Installing template mod_news.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 902,
+             l : 'main',
+      tpl_name : 'mod_news',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 104 -- */
+  {
+    info : 'Publishing template mod_news.html',
+    type : 'PUBLISH',
+     tpl : 902
+  },
+
+
+  /* -- STEP 105 -- */
+  {
+    info : 'Getting template mod_poll.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_poll.html',
+    func : function(d) {
+      FAE.step[106].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 106 -- */
+  {
+    info : 'Installing template mod_poll.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 903,
+             l : 'main',
+      tpl_name : 'mod_poll',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 107 -- */
+  {
+    info : 'Publishing template mod_poll.html',
+    type : 'PUBLISH',
+     tpl : 903
+  },
+
+
+  /* -- STEP 108 -- */
+  {
+    info : 'Getting template mod_recent_topics.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_recent_topics.html',
+    func : function(d) {
+      FAE.step[109].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 109 -- */
+  {
+    info : 'Installing template mod_recent_topics.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 904,
+             l : 'main',
+      tpl_name : 'mod_recent_topics',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 110 -- */
+  {
+    info : 'Publishing template mod_recent_topics.html',
+    type : 'PUBLISH',
+     tpl : 904
+  },
+
+
+  /* -- STEP 111 -- */
+  {
+    info : 'Getting template mod_rss_feeds.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_rss_feeds.html',
+    func : function(d) {
+      FAE.step[112].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 112 -- */
+  {
+    info : 'Installing template mod_rss_feeds.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 915,
+             l : 'main',
+      tpl_name : 'mod_rss_feeds',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 113 -- */
+  {
+    info : 'Publishing template mod_rss_feeds.html',
+    type : 'PUBLISH',
+     tpl : 915
+  },
+
+
+  /* -- STEP 114 -- */
+  {
+    info : 'Getting template mod_search.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_search.html',
+    func : function(d) {
+      FAE.step[115].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 115 -- */
+  {
+    info : 'Installing template mod_search.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 905,
+             l : 'main',
+      tpl_name : 'mod_search',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 116 -- */
+  {
+    info : 'Publishing template mod_search.html',
+    type : 'PUBLISH',
+     tpl : 905
+  },
+
+
+  /* -- STEP 117 -- */
+  {
+    info : 'Getting template mod_social_bookmarking.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_social_bookmarking.html',
+    func : function(d) {
+      FAE.step[118].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 118 -- */
+  {
+    info : 'Installing template mod_social_bookmarking.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 914,
+             l : 'main',
+      tpl_name : 'mod_social_bookmarking',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 119 -- */
+  {
+    info : 'Publishing template mod_social_bookmarking.html',
+    type : 'PUBLISH',
+     tpl : 914
+  },
+
+
+  /* -- STEP 120 -- */
+  {
+    info : 'Getting template mod_statistics.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_statistics.html',
+    func : function(d) {
+      FAE.step[121].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 121 -- */
+  {
+    info : 'Installing template mod_statistics.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 906,
+             l : 'main',
+      tpl_name : 'mod_statistics',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 122 -- */
+  {
+    info : 'Publishing template mod_statistics.html',
+    type : 'PUBLISH',
+     tpl : 906
+  },
+
+
+  /* -- STEP 123 -- */
+  {
+    info : 'Getting template mod_top_post_users_month.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_top_post_users_month.html',
+    func : function(d) {
+      FAE.step[124].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 124 -- */
+  {
+    info : 'Installing template mod_top_post_users_month.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 921,
+             l : 'main',
+      tpl_name : 'mod_top_post_users_month',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 125 -- */
+  {
+    info : 'Publishing template mod_top_post_users_month.html',
+    type : 'PUBLISH',
+     tpl : 921
+  },
+
+
+  /* -- STEP 126 -- */
+  {
+    info : 'Getting template mod_top_post_users_week.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_top_post_users_week.html',
+    func : function(d) {
+      FAE.step[127].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 127 -- */
+  {
+    info : 'Installing template mod_top_post_users_week.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 920,
+             l : 'main',
+      tpl_name : 'mod_top_post_users_week',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 128 -- */
+  {
+    info : 'Publishing template mod_top_post_users_week.html',
+    type : 'PUBLISH',
+     tpl : 920
+  },
+
+
+  /* -- STEP 129 -- */
+  {
+    info : 'Getting template mod_top_posters.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_top_posters.html',
+    func : function(d) {
+      FAE.step[130].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 130 -- */
+  {
+    info : 'Installing template mod_top_posters.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 912,
+             l : 'main',
+      tpl_name : 'mod_top_posters',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 131 -- */
+  {
+    info : 'Publishing template mod_top_posters.html',
+    type : 'PUBLISH',
+     tpl : 912
+  },
+
+
+  /* -- STEP 132 -- */
+  {
+    info : 'Getting template mod_whoisonline.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_whoisonline.html',
+    func : function(d) {
+      FAE.step[133].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 133 -- */
+  {
+    info : 'Installing template mod_whoisonline.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 907,
+             l : 'main',
+      tpl_name : 'mod_whoisonline',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 134 -- */
+  {
+    info : 'Publishing template mod_whoisonline.html',
+    type : 'PUBLISH',
+     tpl : 907
+  },
+
+
+  /* -- STEP 135 -- */
+  {
+    info : 'Getting template standard.html',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/standard.html',
+    func : function(d) {
+      FAE.step[136].data.template = d;
+    }
+  },
+
+
+  /* -- STEP 136 -- */
+  {
+    info : 'Installing template standard.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 911,
+             l : 'main',
+      tpl_name : 'standard',
+        submit : 'Save'
+    }
+  },
+
+
+  /* -- STEP 137 -- */
+  {
+    info : 'Publishing template standard.html',
+    type : 'PUBLISH',
+     tpl : 911
   }
 ];
 

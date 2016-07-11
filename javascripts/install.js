@@ -408,7 +408,7 @@ FAE.step = [
     data : {
              t : 110,
              l : 'main',
-      tpl_name : '',
+      tpl_name : 'index_body',
         submit : 'Save'
     }
   },
@@ -760,9 +760,6 @@ FAE.next = function() {
   if (++FAE.index >= FAE.quota) {
     FAE.log('Install has completed successfully!', 'color:#8B5;font-weight:bold;');
     FAE.log('When you\'re finished, please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
-    window.setTimeout(function() {
-      window.location.reload();
-    }, 3000);
 
   } else {
     var step = FAE.step[FAE.index];

@@ -953,7 +953,7 @@ FAE.step = [
   {
     info : 'Getting template mod_chatbox.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_chatbox.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_chatbox.html',
     func : function(d) {
       FAE.step[85].data.template = d;
     }
@@ -986,7 +986,7 @@ FAE.step = [
   {
     info : 'Getting template mod_keywords.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_keywords.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_keywords.html',
     func : function(d) {
       FAE.step[88].data.template = d;
     }
@@ -1019,7 +1019,7 @@ FAE.step = [
   {
     info : 'Getting template mod_login.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_login.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_login.html',
     func : function(d) {
       FAE.step[91].data.template = d;
     }
@@ -1052,7 +1052,7 @@ FAE.step = [
   {
     info : 'Getting template mod_most_active_starters.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_most_active_starters.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_most_active_starters.html',
     func : function(d) {
       FAE.step[94].data.template = d;
     }
@@ -1085,7 +1085,7 @@ FAE.step = [
   {
     info : 'Getting template mod_most_active_topics.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_most_active_topics.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_most_active_topics.html',
     func : function(d) {
       FAE.step[97].data.template = d;
     }
@@ -1118,7 +1118,7 @@ FAE.step = [
   {
     info : 'Getting template mod_most_viewed_topics.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_most_viewed_topics.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_most_viewed_topics.html',
     func : function(d) {
       FAE.step[100].data.template = d;
     }
@@ -1151,7 +1151,7 @@ FAE.step = [
   {
     info : 'Getting template mod_news.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_news.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_news.html',
     func : function(d) {
       FAE.step[103].data.template = d;
     }
@@ -1184,7 +1184,7 @@ FAE.step = [
   {
     info : 'Getting template mod_poll.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_poll.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_poll.html',
     func : function(d) {
       FAE.step[106].data.template = d;
     }
@@ -1217,7 +1217,7 @@ FAE.step = [
   {
     info : 'Getting template mod_recent_topics.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_recent_topics.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_recent_topics.html',
     func : function(d) {
       FAE.step[109].data.template = d;
     }
@@ -1250,7 +1250,7 @@ FAE.step = [
   {
     info : 'Getting template mod_rss_feeds.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_rss_feeds.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_rss_feeds.html',
     func : function(d) {
       FAE.step[112].data.template = d;
     }
@@ -1283,7 +1283,7 @@ FAE.step = [
   {
     info : 'Getting template mod_search.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_search.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_search.html',
     func : function(d) {
       FAE.step[115].data.template = d;
     }
@@ -1316,7 +1316,7 @@ FAE.step = [
   {
     info : 'Getting template mod_social_bookmarking.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_social_bookmarking.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_social_bookmarking.html',
     func : function(d) {
       FAE.step[118].data.template = d;
     }
@@ -1349,7 +1349,7 @@ FAE.step = [
   {
     info : 'Getting template mod_statistics.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_statistics.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_statistics.html',
     func : function(d) {
       FAE.step[121].data.template = d;
     }
@@ -1382,7 +1382,7 @@ FAE.step = [
   {
     info : 'Getting template mod_top_post_users_month.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_top_post_users_month.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_top_post_users_month.html',
     func : function(d) {
       FAE.step[124].data.template = d;
     }
@@ -1415,7 +1415,7 @@ FAE.step = [
   {
     info : 'Getting template mod_top_post_users_week.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_top_post_users_week.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_top_post_users_week.html',
     func : function(d) {
       FAE.step[127].data.template = d;
     }
@@ -1448,7 +1448,7 @@ FAE.step = [
   {
     info : 'Getting template mod_top_posters.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_top_posters.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_top_posters.html',
     func : function(d) {
       FAE.step[130].data.template = d;
     }
@@ -1481,7 +1481,7 @@ FAE.step = [
   {
     info : 'Getting template mod_whoisonline.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/mod_whoisonline.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_whoisonline.html',
     func : function(d) {
       FAE.step[133].data.template = d;
     }
@@ -1514,7 +1514,7 @@ FAE.step = [
   {
     info : 'Getting template standard.html',
     type : 'GET',
-     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/standard.html',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/standard.html',
     func : function(d) {
       FAE.step[136].data.template = d;
     }
@@ -1557,16 +1557,25 @@ FAE.next = function() {
     FAE.log(step.info + '...');
 
     if (step.type == 'POST') {
-      $.post('/admin/index.forum?' + step.url + FAE.tid, step.data, FAE.next);
+      $.post('/admin/index.forum?' + step.url + FAE.tid, step.data, FAE.next).error(function() {
+        FAE.log('An error was encountered on step "' + step.info + '"', 'color:#E53;font-weight:bold;');
+        FAE.next();
+      });
 
     } else if (step.type == 'GET') {
       $.get(step.url, function(d) {
         step.func(d);
         FAE.next();
+      }).error(function() {
+        FAE.log('An error was encountered on step "' + step.info + '"', 'color:#E53;font-weight:bold;');
+        FAE.next();
       });
 
     } else if (step.type == 'PUBLISH') {
-      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=main&pub=1&tid=' + FAE.tid, FAE.next);
+      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=main&pub=1&tid=' + FAE.tid, FAE.next).error(function() {
+        FAE.log('An error was encountered on step "' + step.info + '"', 'color:#E53;font-weight:bold;');
+        FAE.next();
+      });;
     }
 
   }

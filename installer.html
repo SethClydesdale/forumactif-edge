@@ -72,10 +72,12 @@
         var uninstall = document.getElementById('fae_uninstall'),
             update = document.getElementById('fae_update');
 
+        document.getElementById('fae_install').value = 'Reinstall';
+
         $([uninstall, update]).show();
 
         uninstall.onclick = function() {
-          if (confirm('Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS and JavaScripts before proceeding. Click "Cancel" you don\'t want to uninstall Forumactif Edge yet.'.replace(/\\/g, ''))) {
+          if (confirm('Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.'.replace(/\\/g, ''))) {
 
           }
         };

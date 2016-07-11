@@ -6,7 +6,7 @@
 #fae_log { background:#EEE; border:1px solid #CCC; height:150px; margin:6px 0; overflow-y:auto; }
 #fae_progress { background:#CCC; height:30px; width:100%; position:relative; }
 #fae_prog_bar { height:30px; background:#69C; width:0%; }
-#fae_prog_number { color:#FFF; font-size:16px; font-family:Arial; position:absolute; left:50%; top:50%; margin:-8px -8px 0 0; }
+#fae_prog_number { color:#FFF; font-size:16px; line-height:30px; font-family:Arial; text-align:center; position:absolute; left:0; right:0; top:0; bottom:0; }
 .fae_msg_log { margin:3px; }</style>
 
 <div id="fae_cp">
@@ -39,7 +39,7 @@
 
     bar : document.getElementById('fae_progress'),
     progress : function() {
-      var percent = FAE.index / FAE.quota * 100;
+      var percent = (FAE.index / FAE.quota * 100).toFixed(2);
       FAE.bar.innerHTML = '<div id="fae_prog_bar" style="width:' + percent + '%;"></div><span id="fae_prog_number">' + (percent == 100 ? 'INSTALL COMPLETE' : percent + '%') + '</span>';
     }
 
@@ -56,8 +56,7 @@
       document.getElementById('fae_actions').style.display = 'block';
 
       document.getElementById('fae_install').onclick = function() {
-        var yes = confirm('Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\n\\nPlease make sure to backup all your personal content files such as CSS and JavaScripts before proceeding.');
-        if (yes) {
+        if (confirm('Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.'.replace(/\\/g, ''))) {
           $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/install.js', function(d) {
             var script = document.createElement('SCRIPT');
             script.type = 'text/javascript';
@@ -76,8 +75,7 @@
         $([uninstall, update]).show();
 
         uninstall.onclick = function() {
-          var yes = confirm('Are you sure you want to uninstall Forumactif Edge? You will lose your current changes to this theme.');
-          if (yes) {
+          if (confirm('Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS and JavaScripts before proceeding. Click "Cancel" you don\'t want to uninstall Forumactif Edge yet.'.replace(/\\/g, ''))) {
 
           }
         };

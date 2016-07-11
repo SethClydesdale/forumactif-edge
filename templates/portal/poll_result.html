@@ -1,0 +1,19 @@
+<p><b>{POLL_QUESTION}</b></p>
+<fieldset>
+	<!-- BEGIN poll_option -->
+	<dl>
+		<dt><label>{poll_option.POLL_OPTION_CAPTION}</label></dt>
+
+		<dd>
+			<span style="white-space:nowrap">
+                                <span class="poll_bar lcap color-primary" style="width:4px;"></span>
+                                <span class="poll_bar mcap color-primary" style="width:{poll_option.POLL_OPTION_IMG_WIDTH}px;">{poll_option.POLL_OPTION_PERCENT}</span>
+                                <span class="poll_bar rcap color-primary" style="width:4px;"></span>
+			</span>
+			<span class="poll-opt-result">[ {poll_option.POLL_OPTION_RESULT} ]</span>
+		</dd>
+
+	</dl>
+<!-- END poll_option -->
+</fieldset><br />
+<p><b>{L_TOTAL_VOTES} : {TOTAL_VOTES}</b></p>

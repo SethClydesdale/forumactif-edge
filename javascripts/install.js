@@ -3380,6 +3380,18 @@ FAE.step = [
       mode : 'header',
       submit : 'Save'
     }
+  },
+
+
+  // STEP 291
+  {
+    info : 'Resynchronizing forum',
+    type : 'POST',
+     url : 'mode=general&part=general&sub=general',
+    data : {
+      resync : 'on',
+      submit : 'Save'
+    }
   }
 ];
 
@@ -3389,8 +3401,8 @@ FAE.quota = FAE.step.length;
 // proceed to and execute the next step in the installation
 FAE.next = function() {
   if (++FAE.index >= FAE.quota) {
-    FAE.log('Install has completed successfully!', 'color:#8B5;font-weight:bold;');
-    FAE.log('When you\'re finished, please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+    FAE.log('Installation of Forumactif Edge has completed successfully!', 'color:#8B5;font-weight:bold;');
+    FAE.log('When you\'re finished, please <a href="javascript:window.location.reload();">click here</a> to reload the page and experience your forum in a new way!');
 
   } else {
     var step = FAE.step[FAE.index];
@@ -3416,6 +3428,6 @@ FAE.next = function() {
 
 // handler in case of any errors in the installation process
 FAE.error = function() {
-  FAE.log('An error was encountered on step ' + FAE.index + ' (' + FAE.step[FAE.index].info + ') of the installation. Please <a href="https://github.com/SethClydesdale/forumactif-edge/issues/new" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
+  FAE.log('An error was encountered on step ' + FAE.index + ' (' + FAE.step[FAE.index].info + ') of the installation process. Please <a href="https://github.com/SethClydesdale/forumactif-edge/issues/new" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
   FAE.next();
 };

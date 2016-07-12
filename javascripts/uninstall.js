@@ -8,6 +8,7 @@ FAE.step = [
     data : {
                  tpl : 'prosilver',
           keep_theme : 2,
+                code : 1,
       change_version : 'Save'
     }
   },
@@ -1326,7 +1327,10 @@ FAE.next = function() {
     if (step.type == 'POST') {
       $.post('/admin/index.forum?' + step.url + FAE.tid, step.data, FAE.next).error(FAE.error);
     } else if (step.type == 'GET') {
-      $.get('/admin/index.forum?' + step.url + FAE.tid, FAE.next).error(FAE.error);
+      $.get(step.url, function(d) {
+        step.func(d);
+        FAE.next();
+      }).error(FAE.error);
     }
 
   }

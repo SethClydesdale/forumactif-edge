@@ -3371,7 +3371,7 @@ FAE.step = [
   {
     info : 'Updating Headers and Navigation',
     type : 'POST',
-     url : 'part=themes&sub=index&mode=navbar&extended_admin=1'
+     url : 'part=themes&sub=index&mode=navbar&extended_admin=1',
     data : {
       logo_position : 0,
       show_sitename : 1,

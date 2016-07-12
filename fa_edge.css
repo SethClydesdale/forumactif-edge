@@ -358,7 +358,7 @@ center : text-align:center;
 
 
 /* -- 05. BUTTONS -- */
-a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, body div.sceditor-dropdown .button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button {
+a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, body div.sceditor-dropdown .button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"] {
   color:#FFF !important;
   font-size:13px;
   font-weight:normal;
@@ -371,12 +371,12 @@ a.button1, a.button2, button.button2, input.button1, input.button2, input.button
 }
 
 /* hover and focus states */
-a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, body div.sceditor-dropdown .button:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]::-webkit-file-upload-button:hover {
+a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, body div.sceditor-dropdown .button:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]:hover {
   background:#58B;
 }
 
-a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, body div.sceditor-dropdown .button:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, input[type="file"]::-webkit-file-upload-button:active,
-a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, body div.sceditor-dropdown .button:focus, input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="file"]::-webkit-file-upload-button:focus { background:#369; }
+a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, body div.sceditor-dropdown .button:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, input[type="file"]:active,
+a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, body div.sceditor-dropdown .button:focus, input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="file"]:focus { background:#369; }
 
 .submit-buttons {
   clear:both;
@@ -505,15 +505,14 @@ img[src*="size=l"] { padding:9px 16px; }
 
 /* -- 07. CATEGORIES AND FORUMS -- */
 .forum-category { margin:20px 0; }
-.forum-category .title {
+.forum-category .title, .traffic-exchange .title {
   font-size:12px;
   font-weight:bold;
-  margin:0 0 3px 0;
   position:relative;
 }
 
 /* category toggle */
-.forum-category .title:after {
+.forum-category .title:after, .traffic-exchange .title:after  {
   font-size:15px;
   font-family:FontAwesome;
   position:absolute;
@@ -1744,6 +1743,31 @@ blockquote cite:before { content:"\f10d"; }
 .spoiler > dt:before { content:"\f071"; }
 .hidecode > dt:before { content:"\f070"; }
 .attachbox > dt:before { content:"\f0c6"; }
+
+/* blog content */
+#bookmarks a img {
+  background:url(http://illiweb.com/fa/social_bookmarking/social_bookmarking.png) no-repeat scroll;
+  vertical-align:middle;
+  height:20px;
+  width:20px;
+}
+
+#bookmarks img.delicious { background-position:-10px -10px; }
+#bookmarks img.digg { background-position: -10px -50px; }
+#bookmarks img.excite { background-position:-9px -90px; }
+#bookmarks img.facebook { background-position:-9px -128px; }
+#bookmarks img.furl { background-position:-10px -166px; }
+#bookmarks img.google { background-position:-10px -206px; }
+#bookmarks img.live { background-position:-9px -246px; }
+#bookmarks img.netscape { background-position:-9px -284px; }
+#bookmarks img.newsvine { background-position:-9px -322px; }
+#bookmarks img.reddit { background-position:-10px -360px; }
+#bookmarks img.slashdot { background-position:-10px -400px; }
+#bookmarks img.smarking { background-position:-9px -440px; }
+#bookmarks img.stumbleupon { background-position:-10px -478px; }
+#bookmarks img.technorati { background-position:-10px -518px; }
+#bookmarks img.yahoo { background-position:-10px -558px; }
+#bookmarks img.twitter { background-position:-10px -598px; }
 
 
 /* -- 20. TOOLBAR -- */

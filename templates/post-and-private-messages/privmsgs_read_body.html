@@ -1,0 +1,86 @@
+<ul id="privmsgs-menu">
+ <li id="privmsgs-inbox">{INBOX_IMG}<span class="inbox-icon color-primary" onclick="this.previousSibling.click();"></span> {INBOX}</li>
+ <li id="privmsgs-sentbox">{SENTBOX_IMG}<span class="inbox-icon color-primary" onclick="this.previousSibling.click();"></span> {SENTBOX}</li>
+ <li id="privmsgs-outbox">{OUTBOX_IMG}<span class="inbox-icon color-primary" onclick="this.previousSibling.click();"></span> {OUTBOX}</li>
+ <li id="privmsgs-savebox">{SAVEBOX_IMG}<span class="inbox-icon color-primary" onclick="this.previousSibling.click();"></span> {SAVEBOX}</li>
+</ul>
+
+<form action="{S_PRIVMSGS_ACTION}" method="post">
+
+<!-- BEGIN switch_post_reply -->
+<div class="topic-actions">
+	<div class="buttons">
+		<div class="post-icon">{REPLY_PM_IMG}</div>
+	</div>
+</div>
+<div class="clear"></div>
+<!-- END switch_post_reply -->
+
+<h1 class="page-title">{BOX_NAME} :: {L_MESSAGE}</h1>
+<div class="content-block post">
+  <div class="title">{POST_SUBJECT}</div>
+	<div class="post-inner">
+  <div class="postprofile">
+    <dl>
+  		<dt>
+  			<div class="user-avatar">{AVATAR_FROM}</div>
+  			<strong class="username">{MESSAGE_FROM}</strong>
+  			<!-- BEGIN switch_user_contact -->
+  			<br />{PROFILE_IMG} {PM_IMG} {EMAIL_IMG} {WWW_IMG} {AIM_IMG} {YIM_IMG} {MSN_IMG} {SKYPE_IMG}
+  			<!-- END switch_user_contact -->
+  		</dt>
+  	</dl>
+  </div>
+
+	<div class="postbody">
+    <p class="author">{L_FROM} {MESSAGE_FROM} {L_TO} {MESSAGE_TO}, {POST_DATE}</p>
+
+		<ul class="profile-icons">
+			<!-- BEGIN switch_quote -->
+			<li>{QUOTE_PM_IMG}</li>
+			<!-- END switch_quote -->
+			<li>{EDIT_PM_IMG}</li>
+		</ul>
+
+		<div class="content">
+			{MESSAGE}
+		</div>
+	</div>
+  <div class="clear"></div>
+	</div>
+</div>
+<fieldset class="submit-buttons">
+	{S_HIDDEN_FIELDS}
+	<!-- BEGIN switch_save -->
+	<input class="button2" type="submit" name="save" value="{L_SAVE_MSG}" />&nbsp;&nbsp;
+	<!-- END switch_save -->
+	<!-- BEGIN switch_move_profile -->
+	<input class="button2" type="submit" name="moveprofile" value="{L_MOVE_PROFILE}" />&nbsp;&nbsp;
+	<!-- END switch_move_profile -->
+	<input class="button2" type="submit" name="delete" value="{L_DELETE_MSG}" />
+</fieldset>
+
+<!-- BEGIN switch_post_reply -->
+<div class="topic-actions">
+	<div class="buttons">
+		<div class="post-icon">{REPLY_PM_IMG}</div>
+	</div>
+</div>
+<div class="clear"></div>
+<!-- END switch_post_reply -->
+
+</form>
+
+<!-- BEGIN switch_review_box -->
+{TOPIC_REVIEW_BOX}
+<!-- END switch_review_box -->
+
+{JUMPBOX}
+
+<!-- BEGIN switch_image_resize -->
+<script type="text/javascript">
+//<![CDATA[
+$(resize_images({ 'selector' : '.postbody .content', 'max_width' : {switch_image_resize.IMG_RESIZE_WIDTH}, 'max_height' : {switch_image_resize.IMG_RESIZE_HEIGHT} }));
+//]]>
+</script>
+<!-- END switch_image_resize -->

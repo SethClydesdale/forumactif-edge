@@ -1,0 +1,1341 @@
+// uninstallation instructions
+FAE.step = [
+  // STEP 0
+  {
+    info : 'Changing forum version to phpbb3',
+    type : 'POST',
+     url : 'part=themes&sub=styles&mode=version&extended_admin=1',
+    data : {
+                 tpl : 'prosilver',
+          keep_theme : 2,
+      change_version : 'Save'
+    }
+  },
+
+
+  // STEP 1
+  {
+    info : 'Optimizing CSS',
+    type : 'POST',
+     url : 'part=themes&sub=logos&mode=css&extended_admin=1',
+    data : {
+      allow_css_perso : 0,
+             css_base : 1,
+         optimize_css : 1,
+      submit_base_css : 'Save'
+    }
+  },
+
+
+  // STEP 2
+  {
+    info : 'Getting and deleting all JavaScript files to prevent errors on the forum',
+    type : 'GET',
+     url : '/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid,
+    func : function(d) {
+      var form = $('#pageListHtml', d),
+          file = $('input[type="checkbox"]', form),
+          i = 0,
+          j = file.length;
+
+      for (; i < j; i++) {
+        file[i].checked = true;
+      }
+
+      $.post(form[0].action, form.serialize() + '&attachments_submit=Delete', function(d) {
+        var confirmation = $('form[method="post"]', d);
+        $.post(confirmation[0].action, confirmation.serialize() + '&confirm=Yes');
+      });
+    }
+  },
+
+
+  // STEP 3
+  {
+    info : 'Deleting template agreement.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 101,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 4
+  {
+    info : 'Deleting template buy_credits.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 105,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 5
+  {
+    info : 'Deleting template confirm_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 103,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 6
+  {
+    info : 'Deleting template error_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 106,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 7
+  {
+    info : 'Deleting template faq_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 107,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 8
+  {
+    info : 'Deleting template faq_dhtml.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 108,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 9
+  {
+    info : 'Deleting template greeting_popup.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 109,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 10
+  {
+    info : 'Deleting template index_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 110,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 11
+  {
+    info : 'Deleting template index_box.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 111,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 12
+  {
+    info : 'Deleting template jumpbox.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 112,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 13
+  {
+    info : 'Deleting template memberlist_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 113,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 14
+  {
+    info : 'Deleting template mentions_tooltip.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 134,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 15
+  {
+    info : 'Deleting template message_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 114,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 16
+  {
+    info : 'Deleting template overall_footer_begin.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 115,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 17
+  {
+    info : 'Deleting template overall_footer_end.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 133,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 18
+  {
+    info : 'Deleting template overall_header.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 116,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 19
+  {
+    info : 'Deleting template search_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 118,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 20
+  {
+    info : 'Deleting template search_results_posts.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 119,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 21
+  {
+    info : 'Deleting template search_results_topics.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 120,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 22
+  {
+    info : 'Deleting template search_username.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 121,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 23
+  {
+    info : 'Deleting template simple_footer.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 122,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 24
+  {
+    info : 'Deleting template simple_header.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 123,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 25
+  {
+    info : 'Deleting template topics_blog_box.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 130,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 26
+  {
+    info : 'Deleting template topics_list_box.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 124,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 27
+  {
+    info : 'Deleting template viewcomments_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 131,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 28
+  {
+    info : 'Deleting template viewforum_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 125,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 29
+  {
+    info : 'Deleting template viewonline_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 126,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 30
+  {
+    info : 'Deleting template viewtopic_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 127,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 31
+  {
+    info : 'Deleting template viewtopic_poll_ballot.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 128,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 32
+  {
+    info : 'Deleting template viewtopic_poll_result.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 129,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 33
+  {
+    info : 'Deleting template mod_chatbox.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 901,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 34
+  {
+    info : 'Deleting template mod_keywords.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 913,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 35
+  {
+    info : 'Deleting template mod_login.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 916,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 36
+  {
+    info : 'Deleting template mod_most_active_starters.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 919,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 37
+  {
+    info : 'Deleting template mod_most_active_topics.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 917,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 38
+  {
+    info : 'Deleting template mod_most_viewed_topics.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 918,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 39
+  {
+    info : 'Deleting template mod_news.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 902,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 40
+  {
+    info : 'Deleting template mod_poll.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 903,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 41
+  {
+    info : 'Deleting template mod_recent_topics.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 904,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 42
+  {
+    info : 'Deleting template mod_rss_feeds.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 915,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 43
+  {
+    info : 'Deleting template mod_search.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 905,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 44
+  {
+    info : 'Deleting template mod_social_bookmarking.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 914,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 45
+  {
+    info : 'Deleting template mod_statistics.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 906,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 46
+  {
+    info : 'Deleting template mod_top_post_users_month.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 921,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 47
+  {
+    info : 'Deleting template mod_top_post_users_week.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 920,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 48
+  {
+    info : 'Deleting template mod_top_posters.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 912,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 49
+  {
+    info : 'Deleting template mod_whoisonline.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 907,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 50
+  {
+    info : 'Deleting template standard.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 911,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 51
+  {
+    info : 'Deleting template album_cat_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 201,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 52
+  {
+    info : 'Deleting template album_cat_top10.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 202,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 53
+  {
+    info : 'Deleting template album_edit_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 203,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 54
+  {
+    info : 'Deleting template album_formsearch_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 204,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 55
+  {
+    info : 'Deleting template album_index_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 205,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 56
+  {
+    info : 'Deleting template album_modcp_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 206,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 57
+  {
+    info : 'Deleting template album_moderate_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 207,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 58
+  {
+    info : 'Deleting template album_nuffimage_box.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 208,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 59
+  {
+    info : 'Deleting template album_search_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 210,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 60
+  {
+    info : 'Deleting template album_showpage_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 211,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 61
+  {
+    info : 'Deleting template album_slideshow_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 212,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 62
+  {
+    info : 'Deleting template album_upload_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 213,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 63
+  {
+    info : 'Deleting template birthday_list_box.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 401,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 64
+  {
+    info : 'Deleting template calendar_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 402,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 65
+  {
+    info : 'Deleting template calendar_box.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 403,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 66
+  {
+    info : 'Deleting template calendar_overview_profil.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 404,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 67
+  {
+    info : 'Deleting template calendar_overview_topic.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 405,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 68
+  {
+    info : 'Deleting template calendar_scheduler_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 406,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 69
+  {
+    info : 'Deleting template groupcp_info_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 801,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 70
+  {
+    info : 'Deleting template groupcp_pending_info.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 802,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 71
+  {
+    info : 'Deleting template groupcp_user_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 803,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 72
+  {
+    info : 'Deleting template posting_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 501,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 73
+  {
+    info : 'Deleting template posting_poll_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 504,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 74
+  {
+    info : 'Deleting template posting_preview.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 505,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 75
+  {
+    info : 'Deleting template posting_topic_review.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 509,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 76
+  {
+    info : 'Deleting template privmsg_topic_review.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 510,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 77
+  {
+    info : 'Deleting template privmsgs_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 511,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 78
+  {
+    info : 'Deleting template privmsgs_popup.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 512,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 79
+  {
+    info : 'Deleting template privmsgs_preview.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 513,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 80
+  {
+    info : 'Deleting template privmsgs_read_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 514,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 81
+  {
+    info : 'Deleting template merge_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 601,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 82
+  {
+    info : 'Deleting template merge_select_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 602,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 83
+  {
+    info : 'Deleting template modcp_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 603,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 84
+  {
+    info : 'Deleting template modcp_move.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 604,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 85
+  {
+    info : 'Deleting template modcp_split.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 605,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 86
+  {
+    info : 'Deleting template modcp_viewip.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 606,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 87
+  {
+    info : 'Deleting template report_list_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 607,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 88
+  {
+    info : 'Deleting template report_popup_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 608,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 89
+  {
+    info : 'Deleting template report_view_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 609,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 90
+  {
+    info : 'Deleting template profile_add_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 701,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 91
+  {
+    info : 'Deleting template profile_avatar_gallery.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 702,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 92
+  {
+    info : 'Deleting template profile_edit_signature.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 704,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 93
+  {
+    info : 'Deleting template profile_send_email.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 705,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 94
+  {
+    info : 'Deleting template profile_send_pass.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 706,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 95
+  {
+    info : 'Deleting template profile_view_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 708,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 96
+  {
+    info : 'Deleting template rpg_sheet.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 710,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 97
+  {
+    info : 'Deleting template rpg_sheet_edit.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'main',
+            t : 711,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 98
+  {
+    info : 'Deleting template overall_header.html (mobile)',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+            l : 'mobile',
+            t : 1010,
+      confirm : 'Yes'
+    }
+  },
+
+
+  // STEP 99
+  {
+    info : 'Resynchronizing forum',
+    type : 'POST',
+     url : 'mode=general&part=general&sub=general',
+    data : {
+      resync : 'on',
+      submit : 'Save'
+    }
+  }
+];
+
+FAE.index = -1;
+FAE.quota = FAE.step.length;
+
+// proceed to and execute the next step in the uninstall
+FAE.next = function() {
+  if (++FAE.index >= FAE.quota) {
+    FAE.log('Uninstallation of Forumactif Edge has been completed successfully!', 'color:#8B5;font-weight:bold;');
+    FAE.log('When you\'re finished, please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+
+  } else {
+    var step = FAE.step[FAE.index];
+    FAE.log(step.info + '...');
+
+    if (step.type == 'POST') {
+      $.post('/admin/index.forum?' + step.url + FAE.tid, step.data, FAE.next).error(FAE.error);
+    } else if (step.type == 'GET') {
+      $.get('/admin/index.forum?' + step.url + FAE.tid, FAE.next).error(FAE.error);
+    }
+
+  }
+
+  FAE.progress();
+};
+
+// handler in case of any errors in the installation process
+FAE.error = function() {
+  FAE.log('An error was encountered on step ' + FAE.index + ' (' + FAE.step[FAE.index].info + ') of the uninstallation process. Please <a href="https://github.com/SethClydesdale/forumactif-edge/issues/new" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
+  FAE.next();
+};

@@ -1305,7 +1305,7 @@ FAE.step = [
      type : 'GET',
       url : '/admin/index.forum?part=themes&sub=index&mode=navbar&extended_admin=1&tid=' + FAE.tid,
      func : function(d) {
-       for (var a = $('form[method="post"]:first tr', d), i = 0, j = a.length, regex = new RegExp('FAE Control Panel|' + window.location.pathname, 'ig'); i < j; i++) {
+       for (var a = $('fieldset tr', d), i = 0, j = a.length, regex = new RegExp('FAE Control Panel|' + window.location.pathname, 'ig'); i < j; i++) {
          if (regex.test(a[i].innerHTML)) {
            $.get('/admin/' + $('a[href="#"]', a[i]).attr('onclick').replace(/.*?href='(.*?)'.*/, '$1'));
            break;

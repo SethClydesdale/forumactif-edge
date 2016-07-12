@@ -265,26 +265,21 @@ showHiddenMessage = function(id)
 <!-- BEGIN watchtopic -->
 <p class="right">{S_WATCH_TOPIC}</p>
 <!-- END watchtopic -->
+<div class="clear"></div>
 <!-- END switch_user_logged_in -->
 </div>
 
 <!-- BEGIN promot_trafic -->
-<div class="content-block" id="ptrafic_close" style="display:none;font-size:1.3em;line-height:1.4em">
-	<div class="txt-content">
-	<span class="gensmall"><a href="javascript:ShowHideLayer('ptrafic_open','ptrafic_close');"><img src="{TABS_MORE_IMG}" alt="+" align="" border="0" /></a></span>
-	<span class="ptrafic">&nbsp;{PROMOT_TRAFIC_TITLE}</span>
-  </div>
+<div class="content-block traffic-exchange" id="ptrafic_close" style="display:none;">
+  <div class="title c_show" onclick="ShowHideLayer('ptrafic_open','ptrafic_close');">{PROMOT_TRAFIC_TITLE}</div>
+	<div class="txt-content"></div>
 </div>
-<div class="content-block" id="ptrafic_open" style="display:'';font-size:1.3em;line-height:1.4em">
+<div class="content-block traffic-exchange" id="ptrafic_open" style="display:block;">
+  <div class="title c_hide" onclick="ShowHideLayer('ptrafic_open','ptrafic_close');">{PROMOT_TRAFIC_TITLE}</div>
 	<div class="txt-content">
-	<span class="gensmall"><a href="javascript:ShowHideLayer('ptrafic_open','ptrafic_close');"><img src="{TABS_LESS_IMG}" alt="-" align="" border="0" /></a></span>
-	<span class="ptrafic">&nbsp;{PROMOT_TRAFIC_TITLE}</span>
-	<div class="clear"></div>
-	<div>
 		<!-- BEGIN link -->
 		&raquo;&nbsp;<a href="{promot_trafic.link.U_HREF}" target="_blank" title="{promot_trafic.link.TITLE}" rel="nofollow">{promot_trafic.link.TITLE}</a><br />
 		<!-- END link -->
-	</div>
   </div>
 </div>
 <!-- END promot_trafic -->

@@ -55,8 +55,10 @@
       FAE.tid = admin.href.replace(/.*?(&tid=.*)/, '$1'); // cache the tid
       document.getElementById('fae_actions').style.display = 'block';
 
+      // Installation initialization
       document.getElementById('fae_install').onclick = function() {
-        if (confirm('Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.'.replace(/\\/g, ''))) {
+        if (confirm('Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.'.replace(/\\/g, ''))) {
+
           $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/install.js', function(d) {
             var script = document.createElement('SCRIPT');
             script.type = 'text/javascript';
@@ -64,6 +66,8 @@
             document.body.appendChild(script);
             FAE.next();
           });
+
+          document.getElementById('fae_options').style.display = 'none';
         }
       };
 
@@ -76,19 +80,30 @@
 
         $([uninstall, update]).show();
 
+        // Uninstallation initialization
         uninstall.onclick = function() {
-          if (confirm('Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.'.replace(/\\/g, ''))) {
+          if (confirm('Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.'.replace(/\\/g, ''))) {
 
+            $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/uninstall.js', function(d) {
+              var script = document.createElement('SCRIPT');
+              script.type = 'text/javascript';
+              script.text = d;
+              document.body.appendChild(script);
+              FAE.next();
+            });
+
+            document.getElementById('fae_options').style.display = 'none';
           }
         };
 
+        // Check for updates (INCOMPLETE)
         update.onclick = function() {
           FAE.log('Checking for updates on Github...');
         };
       }
 
     } else {
-      FAE.log('Only <a href="/u1">the founder</a> may use this control panel.', 'color:#E53;font-weight:bold;');
+      FAE.log('Only <a href="/u1">the founder</a> may use this control panel. Please contact them for assistance in installing Forumactif Edge.', 'color:#E53;font-weight:bold;');
     }
   });
 }());

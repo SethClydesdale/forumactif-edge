@@ -1,0 +1,49 @@
+<!-- BEGIN switch_groups_joined -->
+<h1 class="page-title">{L_USERGROUPS}</h1>
+	<!-- BEGIN switch_groups_member -->
+	<div class="content-block">
+    <h2 class="title">{L_GROUP_MEMBERSHIP_DETAILS}</h2>
+		<div class="txt-content">
+		<fieldset>
+			<dl>
+				<dt><label>{L_YOU_BELONG_GROUPS}</label></dt>
+				<dd>{GROUP_MEMBER_SELECT_NEW}</dd>
+			</dl>
+		</fieldset>
+		</div>
+	</div>
+	<!-- END switch_groups_member -->
+
+	<!-- BEGIN switch_groups_pending -->
+	<div class="content-block">
+		<div class="txt-content">
+		<fieldset>
+			<dl>
+				<dt><label>{L_PENDING_GROUPS}</label></dt>
+				<dd>{GROUP_PENDING_SELECT_NEW}</dd>
+			</dl>
+		</fieldset>
+		</div>
+	</div>
+	<!-- END switch_groups_pending -->
+<!-- END switch_groups_joined -->
+
+<!-- BEGIN switch_groups_remaining -->
+<div class="content-block">
+  <h2 class="title">{L_JOIN_A_GROUP}</h2>
+	<div class="txt-content">
+	<form action="{U_USERGROUP_ACTION}" method="get">
+	<fieldset>
+		<dl>
+			<dt><label>{L_SELECT_A_GROUP}</label></dt>
+			<dd>{GROUP_LIST_SELECT}&nbsp;<input class="button2" type="submit" value="{L_VIEW_INFORMATION}" />{S_HIDDEN_FIELDS}</dd>
+		</dl>
+	</fieldset>
+	</form>
+	</div>
+</div>
+<!-- END switch_groups_remaining -->
+
+<form action="{S_JUMPBOX_ACTION}" method="get" name="jumpbox" onsubmit="if(document.jumpbox.f.value == -1){return false;}">
+	<p class="right">{L_JUMP_TO}:&nbsp;{S_JUMPBOX_SELECT}&nbsp;<input class="button2" type="submit" value="{L_GO}" /></p>
+</form>

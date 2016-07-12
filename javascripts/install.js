@@ -3112,7 +3112,7 @@ FAE.step = [
      url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
     data : {
              t : 1010,
-             l : 'main',
+             l : 'mobile',
       tpl_name : 'overall_header',
         submit : 'Save'
     }
@@ -3124,6 +3124,17 @@ FAE.step = [
     info : 'Publishing template overall_header.html (mobile)',
     type : 'PUBLISH',
      tpl : 1010
+  },
+
+
+  /* -- STEP 282 -- */
+  {
+     info : 'Enabling custom templates',
+     type : 'POST',
+      url : 'mode=main&part=themes&sub=templates',
+     data : {
+       switchTemplates : 2
+     }
   }
 ];
 

@@ -1,0 +1,67 @@
+<form action="{S_SPLIT_ACTION}" method="post">
+<div class="breadcrumbs">
+	<p class="nomargin" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{U_INDEX}" itemprop="url"><span itemprop="title">{L_INDEX}</span></a>{NAV_CAT_DESC}</p>
+</div>
+
+<div class="content-block">
+  <h1 class="title">{L_SPLIT_TOPIC}</h1>
+	<div class="txt-content">
+	<div id="cp-main" class="mcp-main">
+	<br />
+	<div class="content-block">
+		<div class="txt-content">
+		<fieldset class="fields1">
+			<p>{L_SPLIT_TOPIC_EXPLAIN}</p>
+			<dl>
+				<dt><label>{L_SPLIT_SUBJECT}</label></dt>
+				<dd><input class="inputbox narrow" type="text" name="subject" maxlength="{MAX_TOPIC_LENGTH}" /></dd>
+			</dl>
+			<dl>
+				<dt><label>{L_SPLIT_FORUM}</label></dt>
+				<dd>{S_FORUM_SELECT}</dd>
+			</dl>
+		</fieldset>
+		</div>
+	</div>
+
+	<fieldset class="submit-buttons">
+		<input class="button2" type="submit" name="split_type_all" value="{L_SPLIT_POSTS}" />&nbsp;
+		<input class="button2" type="submit" name="split_type_beyond" value="{L_SPLIT_AFTER}" />
+	</fieldset><br />
+
+	<div class="content-block">
+		<div class="txt-content">
+		<div id="topicreview">
+			<!-- BEGIN postrow -->
+			<div class="content-block post {postrow.ROW_CLASS}">
+        <div class="title">
+          <h3 class="left">{postrow.POST_SUBJECT}</h3>
+          <div class="right">{postrow.L_SELECT} {postrow.S_SPLIT_CHECKBOX}</div>
+          <div class="clear"></div>
+        </div>
+
+				<div class="post-inner">
+					<div class="postbody">
+						<p class="author"><img src="{MINI_POST_IMG}" alt="{L_POST}" />{L_POSTED}: {postrow.POST_DATE} {postrow.L_TOPIC_BY} {postrow.POSTER_NAME}</p>
+						<div class="content">
+							{postrow.MESSAGE}
+						</div>
+					</div>
+				</div>
+			</div><br />
+			<!-- END postrow -->
+		</div>
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<fieldset class="submit-buttons">
+		<input class="button2" type="submit" name="split_type_all" value="{L_SPLIT_POSTS}" />&nbsp;
+		<input class="button2" type="submit" name="split_type_beyond" value="{L_SPLIT_AFTER}" />
+		{S_HIDDEN_FIELDS}
+	</fieldset>
+
+	</div>
+	<div class="clear"></div>
+	</div>
+</div>
+</form>

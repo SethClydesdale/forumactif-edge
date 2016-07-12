@@ -1,3 +1,7 @@
+// setup variables
+FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
+
+
 // installation instructions
 FAE.step = [
   // STEP 0
@@ -19,6 +23,7 @@ FAE.step = [
     type : 'POST',
      url : 'part=themes&sub=logos&mode=css&extended_admin=1',
     data : {
+      allow_css_perso : 0,
              css_base : 0,
          optimize_css : 0,
       submit_base_css : 'Save'
@@ -3121,9 +3126,10 @@ FAE.step = [
 
   // STEP 281
   {
-    info : 'Publishing template overall_header.html (mobile)',
-    type : 'PUBLISH',
-     tpl : 1010
+       info : 'Publishing template overall_header.html (mobile)',
+       type : 'PUBLISH',
+        tpl : 1010,
+     mobile : 1,
   },
 
 
@@ -3133,8 +3139,247 @@ FAE.step = [
      type : 'POST',
       url : 'mode=main&part=themes&sub=templates',
      data : {
-       switchTemplates : 2
+       switchTemplates : 2,
+                submit : 'Save'
      }
+  },
+
+
+  // STEP 283
+  {
+    info : 'Installing images for "General / explore"',
+    type : 'POST',
+     url : 'part=themes&sub=logos&mode=depart&page=general&mode=general&extended_admin=1',
+    data : {
+      i_logo : 'http://illiweb.com/fa/logo/logo_en.png',
+      i_background : FAE.eGIF,
+      i_back_title : FAE.eGIF,
+      i_back_catg : FAE.eGIF,
+      i_back_catd : FAE.eGIF,
+      i_vote_lcap : 'http://i86.servimg.com/u/f86/18/21/41/30/poll_c10.gif?poll=cap_l',
+      i_voting_bar : 'http://i86.servimg.com/u/f86/18/21/41/30/poll_m10.gif?poll=m',
+      i_vote_rcap : 'http://i86.servimg.com/u/f86/18/21/41/30/poll_c10.gif?poll=cap_r',
+      i_icon_mini_index : FAE.eGIF,
+      i_icon_mini_calendar : FAE.eGIF,
+      i_icon_mini_gallery : FAE.eGIF,
+      i_icon_mini_portal : FAE.eGIF,
+      i_icon_mini_faq : FAE.eGIF,
+      i_icon_mini_search : FAE.eGIF,
+      i_icon_mini_members : FAE.eGIF,
+      i_icon_mini_groups : FAE.eGIF,
+      i_icon_mini_profile : FAE.eGIF,
+      i_icon_mini_message : FAE.eGIF,
+      i_icon_mini_new_message : FAE.eGIF,
+      i_icon_mini_register : FAE.eGIF,
+      i_icon_mini_login : FAE.eGIF,
+      i_icon_mini_logout : FAE.eGIF,
+      i_whosonline : FAE.eGIF,
+      i_corners_left : FAE.eGIF,
+      i_corners_right : FAE.eGIF,
+      i_corners2_left : FAE.eGIF,
+      i_corners2_right : FAE.eGIF,
+      i_header_bg : FAE.eGIF,
+      i_list_bg : FAE.eGIF,
+      page : 'general',
+      submit : 'Save'
+    }
+  },
+
+
+  // STEP 284
+  {
+    info : 'Installing images for "Icons for the forum"',
+    type : 'POST',
+     url : 'part=themes&sub=logos&mode=depart&page=forum&mode=forum&extended_admin=1',
+    data : {
+      i_category : 'http://illiweb.com/fa/empty.gif?type=category&state=old',
+      i_category_new : 'http://illiweb.com/fa/empty.gif?type=category&state=new',
+      i_category_locked : 'http://illiweb.com/fa/empty.gif?type=category&locked=true',
+      i_folder_big : 'http://illiweb.com/fa/empty.gif?type=forum&state=old',
+      i_folder_new_big : 'http://illiweb.com/fa/empty.gif?type=forum&state=new',
+      i_folder_locked_big : 'http://illiweb.com/fa/empty.gif?type=forum&locked=true',
+      page : 'forum',
+      submit : 'Save'
+    }
+  },
+
+
+  // STEP 285
+  {
+    info : 'Installing images for "Icons for topics"',
+    type : 'POST',
+     url : 'part=themes&sub=logos&mode=depart&page=topics&mode=topics&extended_admin=1',
+    data : {
+      i_folder : 'http://illiweb.com/fa/empty.gif?type=topic&state=old',
+      i_folder_new : 'http://illiweb.com/fa/empty.gif?type=topic&state=new',
+      i_folder_new_hot : 'http://illiweb.com/fa/empty.gif?type=topic&state=new&hot=true',
+      i_folder_lock : 'http://illiweb.com/fa/empty.gif?type=topic&state=old&locked=true',
+      i_folder_lock_new : 'http://illiweb.com/fa/empty.gif?type=topic&state=new&locked=true',
+      i_folder_hot : 'http://illiweb.com/fa/empty.gif?type=topic&state=old&hot=true',
+      i_folder_announce : 'http://illiweb.com/fa/empty.gif?type=announcement&state=old',
+      i_folder_announce_new : 'http://illiweb.com/fa/empty.gif?type=announcement&state=new',
+      i_folder_global_announce : 'http://illiweb.com/fa/empty.gif?type=global&state=old',
+      i_folder_global_announce_new : 'http://illiweb.com/fa/empty.gif?type=global&state=new',
+      i_folder_sticky : 'http://illiweb.com/fa/empty.gif?type=pinned&state=old',
+      i_folder_sticky_new : 'http://illiweb.com/fa/empty.gif?type=pinned&state=new',
+      i_topic_delete : 'http://i86.servimg.com/u/f86/18/21/41/30/delete11.png?color=primary&size=s',
+      i_topic_lock : 'http://i86.servimg.com/u/f86/18/21/41/30/lock-f10.png?color=primary&size=s',
+      i_topic_merge : 'http://i86.servimg.com/u/f86/18/21/41/30/merge-10.png?color=primary&size=s',
+      i_topic_move : 'http://i86.servimg.com/u/f86/18/21/41/30/move-f10.png?color=primary&size=s',
+      i_topic_split : 'http://i86.servimg.com/u/f86/18/21/41/30/split-10.png?color=primary&size=s',
+      i_topic_trashcan : 'http://i86.servimg.com/u/f86/18/21/41/30/basket10.png?color=primary&size=s',
+      i_topic_unlock : 'http://i86.servimg.com/u/f86/18/21/41/30/unlock10.png?color=primary&size=s',
+      page : 'topics',
+      submit : 'Save'
+    }
+  },
+
+
+  // STEP 286
+  {
+    info : 'Installing images for "Mini-icons"',
+    type : 'POST',
+     url : 'part=themes&sub=logos&mode=depart&page=icons&mode=icons&extended_admin=1',
+    data : {
+      i_icon_minicat : 'http://i86.servimg.com/u/f86/18/21/41/30/post-f10.png',
+      i_icon_minicat_new : 'http://i86.servimg.com/u/f86/18/21/41/30/post-n10.png',
+      i_icon_minicat_locked : 'http://i86.servimg.com/u/f86/18/21/41/30/lock-f11.png',
+      i_icon_minitime : 'http://i86.servimg.com/u/f86/18/21/41/30/clock-10.png',
+      i_icon_minipost : 'http://i86.servimg.com/u/f86/18/21/41/30/post-f10.png',
+      i_icon_minipost_new : 'http://i86.servimg.com/u/f86/18/21/41/30/post-n10.png',
+      i_icon_minipost_lock : 'http://i86.servimg.com/u/f86/18/21/41/30/lock-f11.png',
+      i_icon_minipost_participate : 'http://i86.servimg.com/u/f86/18/21/41/30/partic10.png',
+      i_icon_latest_reply : 'http://i86.servimg.com/u/f86/18/21/41/30/lastpo10.png',
+      i_icon_newest_reply : 'http://i86.servimg.com/u/f86/18/21/41/30/lastpo11.png',
+      i_icon_calendar : 'http://i86.servimg.com/u/f86/18/21/41/30/calend10.png',
+      i_icon_tiny_topic : 'http://i86.servimg.com/u/f86/18/21/41/30/calend11.png',
+      i_icon_tiny_profile : 'http://i86.servimg.com/u/f86/18/21/41/30/birthd10.png',
+      i_icon_gender_male : 'http://i86.servimg.com/u/f86/18/21/41/30/male-f10.png',
+      i_icon_gender_female : 'http://i86.servimg.com/u/f86/18/21/41/30/female10.png',
+      i_up_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/up-f10.png',
+      i_down_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/down-f10.png',
+      i_left_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/prev-f10.png',
+      i_right_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/next-f10.png',
+      i_tabs_less : 'http://i86.servimg.com/u/f86/18/21/41/30/minus-11.png',
+      i_tabs_more : 'http://i86.servimg.com/u/f86/18/21/41/30/plus-f11.png',
+      i_icon_mini_online : 'http://i86.servimg.com/u/f86/18/21/41/30/online10.png',
+      i_icon_mini_offline : 'http://i86.servimg.com/u/f86/18/21/41/30/offlin10.png',
+      page : 'icons',
+      submit : 'Save'
+    }
+  },
+
+
+  // STEP 287
+  {
+    info : 'Installing images for "Buttons"',
+    type : 'POST',
+     url : 'part=themes&sub=logos&mode=depart&page=buttons&mode=buttons&extended_admin=1',
+    data : {
+      i_post : 'http://i86.servimg.com/u/f86/18/21/41/30/new-to11.png?color=primary&size=m',
+      i_reply : 'http://i86.servimg.com/u/f86/18/21/41/30/post-r10.png?color=primary&size=m',
+      i_reply_locked : 'http://i86.servimg.com/u/f86/18/21/41/30/locked11.png?color=secondary&size=m',
+      i_icon_quote : 'http://i86.servimg.com/u/f86/18/21/41/30/quote-12.png?color=primary&size=s',
+      i_icon_multiquote_off : 'http://i86.servimg.com/u/f86/18/21/41/30/multi-10.png?color=primary&size=s',
+      i_icon_multiquote_on : 'http://i86.servimg.com/u/f86/18/21/41/30/multi-10.png?color=secondary&size=s',
+      i_icon_thanks_off : 'http://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=primary&size=s',
+      i_icon_thanks_on : 'http://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=secondary&size=s',
+      i_icon_edit : 'http://i86.servimg.com/u/f86/18/21/41/30/edit-e11.png?color=primary&size=s',
+      i_icon_delete : 'http://i86.servimg.com/u/f86/18/21/41/30/delete10.png?color=primary&size=s',
+      i_icon_ip : 'http://i86.servimg.com/u/f86/18/21/41/30/ip-f10.png?color=primary&size=s',
+      i_icon_report : 'http://i86.servimg.com/u/f86/18/21/41/30/report10.png?color=primary&size=s',
+      i_icon_report_new : 'http://i86.servimg.com/u/f86/18/21/41/30/report10.png?color=secondary&size=s',
+      i_icon_report_locked : 'http://i86.servimg.com/u/f86/18/21/41/30/report12.png?color=secondary&size=s',
+      i_icon_lock_report : 'http://i86.servimg.com/u/f86/18/21/41/30/report12.png?color=primary&size=s',
+      i_icon_unlock_report : 'http://i86.servimg.com/u/f86/18/21/41/30/report13.png?color=primary&size=s',
+      i_icon_search : FAE.eGIF,
+      i_icon_profile : 'http://i86.servimg.com/u/f86/18/21/41/30/profil12.png?color=primary&size=s',
+      i_icon_www : 'http://i86.servimg.com/u/f86/18/21/41/30/websit10.png?color=primary&size=s',
+      i_icon_email : 'http://i86.servimg.com/u/f86/18/21/41/30/email-10.png?color=primary&size=s',
+      i_icon_pm : 'http://i86.servimg.com/u/f86/18/21/41/30/pm-f11.png?color=primary&size=s',
+      i_icon_fb : 'http://i86.servimg.com/u/f86/18/21/41/30/facebo11.png?color=primary&size=s',
+      i_icon_twitter : 'http://i86.servimg.com/u/f86/18/21/41/30/twitte10.png?color=primary&size=s',
+      i_icon_pinterest : 'http://i86.servimg.com/u/f86/18/21/41/30/pinter10.png?color=primary&size=s',
+      i_icon_aim : 'http://i86.servimg.com/u/f86/18/21/41/30/aim-f10.png?color=primary&size=s',
+      i_icon_icq_add : 'http://i86.servimg.com/u/f86/18/21/41/30/icq-f10.png?color=primary&size=s',
+      i_icon_msnm : 'http://i86.servimg.com/u/f86/18/21/41/30/msn-f10.png?color=primary&size=s',
+      i_icon_yim : 'http://i86.servimg.com/u/f86/18/21/41/30/yahoo-10.png?color=primary&size=s',
+      i_icon_skype : 'http://i86.servimg.com/u/f86/18/21/41/30/skype-10.png?color=primary&size=s',
+      i_icon_online : FAE.eGIF,
+      i_msg_newpost : 'http://i86.servimg.com/u/f86/18/21/41/30/new-pm10.png?color=primary&size=m',
+      i_msg_inbox : FAE.eGIF,
+      i_msg_sentbox : FAE.eGIF,
+      i_msg_outbox : FAE.eGIF,
+      i_msg_savebox : FAE.eGIF,
+      i_icon_ajax_edit : 'http://i86.servimg.com/u/f86/18/21/41/30/edit-f10.png',
+      i_icon_ajax_valid : 'http://i86.servimg.com/u/f86/18/21/41/30/valid-10.png',
+      i_icon_attachment_see : 'http://i86.servimg.com/u/f86/18/21/41/30/show-a10.png',
+      i_icon_attachment_download : 'http://i86.servimg.com/u/f86/18/21/41/30/downlo10.png',
+      page : 'buttons',
+      submit : 'Save'
+    }
+  },
+
+
+  // STEP 288
+  {
+    info : 'Installing images for "Gallery"',
+    type : 'POST',
+     url : 'part=themes&sub=logos&mode=depart&page=&mode=gallery&extended_admin=1',
+    data : {
+      upload_pic : 'http://i86.servimg.com/u/f86/18/21/41/30/upload10.png?color=primary&size=m',
+      link_public_galleries : 'http://i86.servimg.com/u/f86/18/21/41/30/public10.png',
+      link_personal_galleries : 'http://i86.servimg.com/u/f86/18/21/41/30/person10.png',
+      link_personal_gallery : 'http://i86.servimg.com/u/f86/18/21/41/30/user-g10.png',
+      backup_folder : 'http://i86.servimg.com/u/f86/18/21/41/30/backup10.png',
+      icon_moderate : 'http://i86.servimg.com/u/f86/18/21/41/30/modera10.png',
+      icon_stats : 'http://i86.servimg.com/u/f86/18/21/41/30/statis10.png',
+      icon_left_arrow3 : 'http://i86.servimg.com/u/f86/18/21/41/30/prev-f10.png',
+      icon_right_arrow3 : 'http://i86.servimg.com/u/f86/18/21/41/30/next-f10.png',
+      rating_star : 'http://i86.servimg.com/u/f86/18/21/41/30/star-f10.png',
+      rating_star_empty : 'http://i86.servimg.com/u/f86/18/21/41/30/star-e10.png',
+      icon_first_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/first-10.png',
+      icon_last_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/last-f10.png',
+      submit : 'Save'
+    }
+  },
+
+
+  // STEP 289
+  {
+    info : 'Updating Structure and Hierarchy',
+    type : 'POST',
+     url : 'part=themes&sub=index&mode=1&extended_admin=1',
+    data : {
+      splited_categories : 4,
+      last_topic_title : 1,
+      last_topic_avatar : 1,
+      last_topic_title_length : 16,
+      sub_level_links : 2,
+      moderators_links : 0,
+      display_viewonline : 1,
+      display_viewonline_bots : 1,
+      menu_id : 0,
+      mod_id : 1,
+      sub_id : 1,
+      submit : 'Save'
+    }
+  },
+
+
+  // STEP 290
+  {
+    info : 'Updating Headers and Navigation',
+    type : 'POST',
+     url : 'part=themes&sub=index&mode=navbar&extended_admin=1'
+    data : {
+      logo_position : 0,
+      show_sitename : 1,
+      show_icon_only : 0,
+      menu_position : 0,
+      mode : 'header',
+      submit : 'Save'
+    }
   }
 ];
 
@@ -3161,7 +3406,7 @@ FAE.next = function() {
       }).error(FAE.error);
 
     } else if (step.type == 'PUBLISH') {
-      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=main&pub=1&tid=' + FAE.tid, FAE.next).error(FAE.error);
+      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=' + ( step.mobile ? 'mobile' : 'main' ) + '&pub=1&tid=' + FAE.tid, FAE.next).error(FAE.error);
     }
 
   }

@@ -1,6 +1,6 @@
 // installation instructions
 FAE.step = [
-  /* -- STEP 0 -- */
+  // STEP 0
   {
     info : 'Changing forum version to phpbb3',
     type : 'POST',
@@ -13,7 +13,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 1 -- */
+  // STEP 1
   {
     info : 'Unoptimizing and deactivating default CSS',
     type : 'POST',
@@ -26,7 +26,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 2 -- */
+  // STEP 2
   {
     info : 'Getting fa_edge.min.css',
     type : 'GET',
@@ -37,7 +37,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 3 -- */
+  // STEP 3
   {
     info : 'Installing fa_edge.min.css',
     type : 'POST',
@@ -48,7 +48,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 4 -- */
+  // STEP 4
   {
     info : 'Getting and deleting all JavaScript files to prevent installation errors',
     type : 'GET',
@@ -71,7 +71,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 5 -- */
+  // STEP 5
   {
     info : 'Enabling JavaScript codes management',
     type : 'POST',
@@ -83,7 +83,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 6 -- */
+  // STEP 6
   {
     info : 'Getting all.js',
     type : 'GET',
@@ -94,7 +94,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 7 -- */
+  // STEP 7
   {
     info : 'Installing all.js',
     type : 'POST',
@@ -108,7 +108,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 8 -- */
+  // STEP 8
   {
     info : 'Getting homepage.js',
     type : 'GET',
@@ -119,7 +119,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 9 -- */
+  // STEP 9
   {
     info : 'Installing homepage.js',
     type : 'POST',
@@ -133,7 +133,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 10 -- */
+  // STEP 10
   {
     info : 'Getting topics.js',
     type : 'GET',
@@ -144,7 +144,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 11 -- */
+  // STEP 11
   {
     info : 'Installing topics.js',
     type : 'POST',
@@ -158,7 +158,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 12 -- */
+  // STEP 12
   {
     info : 'Getting template agreement.html',
     type : 'GET',
@@ -169,7 +169,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 13 -- */
+  // STEP 13
   {
     info : 'Installing template agreement.html',
     type : 'POST',
@@ -183,7 +183,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 14 -- */
+  // STEP 14
   {
     info : 'Publishing template agreement.html',
     type : 'PUBLISH',
@@ -191,7 +191,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 15 -- */
+  // STEP 15
   {
     info : 'Getting template buy_credits.html',
     type : 'GET',
@@ -202,7 +202,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 16 -- */
+  // STEP 16
   {
     info : 'Installing template buy_credits.html',
     type : 'POST',
@@ -216,7 +216,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 17 -- */
+  // STEP 17
   {
     info : 'Publishing template buy_credits.html',
     type : 'PUBLISH',
@@ -224,7 +224,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 18 -- */
+  // STEP 18
   {
     info : 'Getting template confirm_body.html',
     type : 'GET',
@@ -235,7 +235,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 19 -- */
+  // STEP 19
   {
     info : 'Installing template confirm_body.html',
     type : 'POST',
@@ -249,7 +249,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 20 -- */
+  // STEP 20
   {
     info : 'Publishing template confirm_body.html',
     type : 'PUBLISH',
@@ -257,7 +257,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 21 -- */
+  // STEP 21
   {
     info : 'Getting template error_body.html',
     type : 'GET',
@@ -268,7 +268,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 22 -- */
+  // STEP 22
   {
     info : 'Installing template error_body.html',
     type : 'POST',
@@ -282,7 +282,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 23 -- */
+  // STEP 23
   {
     info : 'Publishing template error_body.html',
     type : 'PUBLISH',
@@ -290,7 +290,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 24 -- */
+  // STEP 24
   {
     info : 'Getting template faq_body.html',
     type : 'GET',
@@ -301,7 +301,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 25 -- */
+  // STEP 25
   {
     info : 'Installing template faq_body.html',
     type : 'POST',
@@ -315,7 +315,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 26 -- */
+  // STEP 26
   {
     info : 'Publishing template faq_body.html',
     type : 'PUBLISH',
@@ -323,7 +323,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 27 -- */
+  // STEP 27
   {
     info : 'Getting template faq_dhtml.html',
     type : 'GET',
@@ -334,7 +334,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 28 -- */
+  // STEP 28
   {
     info : 'Installing template faq_dhtml.html',
     type : 'POST',
@@ -348,7 +348,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 29 -- */
+  // STEP 29
   {
     info : 'Publishing template faq_dhtml.html',
     type : 'PUBLISH',
@@ -356,7 +356,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 30 -- */
+  // STEP 30
   {
     info : 'Getting template greeting_popup.html',
     type : 'GET',
@@ -367,7 +367,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 31 -- */
+  // STEP 31
   {
     info : 'Installing template greeting_popup.html',
     type : 'POST',
@@ -381,7 +381,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 32 -- */
+  // STEP 32
   {
     info : 'Publishing template greeting_popup.html',
     type : 'PUBLISH',
@@ -389,7 +389,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 33 -- */
+  // STEP 33
   {
     info : 'Getting template index_body.html',
     type : 'GET',
@@ -400,7 +400,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 34 -- */
+  // STEP 34
   {
     info : 'Installing template index_body.html',
     type : 'POST',
@@ -414,7 +414,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 35 -- */
+  // STEP 35
   {
     info : 'Publishing template index_body.html',
     type : 'PUBLISH',
@@ -422,7 +422,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 36 -- */
+  // STEP 36
   {
     info : 'Getting template index_box.html',
     type : 'GET',
@@ -433,7 +433,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 37 -- */
+  // STEP 37
   {
     info : 'Installing template index_box.html',
     type : 'POST',
@@ -447,7 +447,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 38 -- */
+  // STEP 38
   {
     info : 'Publishing template index_box.html',
     type : 'PUBLISH',
@@ -455,7 +455,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 39 -- */
+  // STEP 39
   {
     info : 'Getting template jumpbox.html',
     type : 'GET',
@@ -466,7 +466,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 40 -- */
+  // STEP 40
   {
     info : 'Installing template jumpbox.html',
     type : 'POST',
@@ -480,7 +480,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 41 -- */
+  // STEP 41
   {
     info : 'Publishing template jumpbox.html',
     type : 'PUBLISH',
@@ -488,7 +488,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 42 -- */
+  // STEP 42
   {
     info : 'Getting template memberlist_body.html',
     type : 'GET',
@@ -499,7 +499,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 43 -- */
+  // STEP 43
   {
     info : 'Installing template memberlist_body.html',
     type : 'POST',
@@ -513,7 +513,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 44 -- */
+  // STEP 44
   {
     info : 'Publishing template memberlist_body.html',
     type : 'PUBLISH',
@@ -521,7 +521,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 45 -- */
+  // STEP 45
   {
     info : 'Getting template message_body.html',
     type : 'GET',
@@ -532,7 +532,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 46 -- */
+  // STEP 46
   {
     info : 'Installing template message_body.html',
     type : 'POST',
@@ -546,7 +546,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 47 -- */
+  // STEP 47
   {
     info : 'Publishing template message_body.html',
     type : 'PUBLISH',
@@ -554,7 +554,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 48 -- */
+  // STEP 48
   {
     info : 'Getting template overall_footer_begin.html',
     type : 'GET',
@@ -565,7 +565,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 49 -- */
+  // STEP 49
   {
     info : 'Installing template overall_footer_begin.html',
     type : 'POST',
@@ -579,7 +579,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 50 -- */
+  // STEP 50
   {
     info : 'Publishing template overall_footer_begin.html',
     type : 'PUBLISH',
@@ -587,7 +587,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 51 -- */
+  // STEP 51
   {
     info : 'Getting template overall_footer_end.html',
     type : 'GET',
@@ -598,7 +598,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 52 -- */
+  // STEP 52
   {
     info : 'Installing template overall_footer_end.html',
     type : 'POST',
@@ -612,7 +612,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 53 -- */
+  // STEP 53
   {
     info : 'Publishing template overall_footer_end.html',
     type : 'PUBLISH',
@@ -620,7 +620,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 54 -- */
+  // STEP 54
   {
     info : 'Getting template overall_header.html',
     type : 'GET',
@@ -631,7 +631,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 55 -- */
+  // STEP 55
   {
     info : 'Installing template overall_header.html',
     type : 'POST',
@@ -645,7 +645,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 56 -- */
+  // STEP 56
   {
     info : 'Publishing template overall_header.html',
     type : 'PUBLISH',
@@ -653,7 +653,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 57 -- */
+  // STEP 57
   {
     info : 'Getting template search_body.html',
     type : 'GET',
@@ -664,7 +664,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 58 -- */
+  // STEP 58
   {
     info : 'Installing template search_body.html',
     type : 'POST',
@@ -678,7 +678,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 59 -- */
+  // STEP 59
   {
     info : 'Publishing template search_body.html',
     type : 'PUBLISH',
@@ -686,7 +686,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 60 -- */
+  // STEP 60
   {
     info : 'Getting template search_results_posts.html',
     type : 'GET',
@@ -697,7 +697,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 61 -- */
+  // STEP 61
   {
     info : 'Installing template search_results_posts.html',
     type : 'POST',
@@ -711,7 +711,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 62 -- */
+  // STEP 62
   {
     info : 'Publishing template search_results_posts.html',
     type : 'PUBLISH',
@@ -719,7 +719,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 63 -- */
+  // STEP 63
   {
     info : 'Getting template search_results_topics.html',
     type : 'GET',
@@ -730,7 +730,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 64 -- */
+  // STEP 64
   {
     info : 'Installing template search_results_topics.html',
     type : 'POST',
@@ -744,7 +744,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 65 -- */
+  // STEP 65
   {
     info : 'Publishing template search_results_topics.html',
     type : 'PUBLISH',
@@ -752,7 +752,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 66 -- */
+  // STEP 66
   {
     info : 'Getting template topics_blog_box.html',
     type : 'GET',
@@ -763,7 +763,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 67 -- */
+  // STEP 67
   {
     info : 'Installing template topics_blog_box.html',
     type : 'POST',
@@ -777,7 +777,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 68 -- */
+  // STEP 68
   {
     info : 'Publishing template topics_blog_box.html',
     type : 'PUBLISH',
@@ -785,7 +785,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 69 -- */
+  // STEP 69
   {
     info : 'Getting template topics_list_box.html',
     type : 'GET',
@@ -796,7 +796,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 70 -- */
+  // STEP 70
   {
     info : 'Installing template topics_list_box.html',
     type : 'POST',
@@ -810,7 +810,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 71 -- */
+  // STEP 71
   {
     info : 'Publishing template topics_list_box.html',
     type : 'PUBLISH',
@@ -818,7 +818,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 72 -- */
+  // STEP 72
   {
     info : 'Getting template viewcomments_body.html',
     type : 'GET',
@@ -829,7 +829,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 73 -- */
+  // STEP 73
   {
     info : 'Installing template viewcomments_body.html',
     type : 'POST',
@@ -843,7 +843,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 74 -- */
+  // STEP 74
   {
     info : 'Publishing template viewcomments_body.html',
     type : 'PUBLISH',
@@ -851,7 +851,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 75 -- */
+  // STEP 75
   {
     info : 'Getting template viewforum_body.html',
     type : 'GET',
@@ -862,7 +862,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 76 -- */
+  // STEP 76
   {
     info : 'Installing template viewforum_body.html',
     type : 'POST',
@@ -876,7 +876,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 77 -- */
+  // STEP 77
   {
     info : 'Publishing template viewforum_body.html',
     type : 'PUBLISH',
@@ -884,7 +884,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 78 -- */
+  // STEP 78
   {
     info : 'Getting template viewonline_body.html',
     type : 'GET',
@@ -895,7 +895,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 79 -- */
+  // STEP 79
   {
     info : 'Installing template viewonline_body.html',
     type : 'POST',
@@ -909,7 +909,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 80 -- */
+  // STEP 80
   {
     info : 'Publishing template viewonline_body.html',
     type : 'PUBLISH',
@@ -917,7 +917,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 81 -- */
+  // STEP 81
   {
     info : 'Getting template viewtopic_body.html',
     type : 'GET',
@@ -928,7 +928,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 82 -- */
+  // STEP 82
   {
     info : 'Installing template viewtopic_body.html',
     type : 'POST',
@@ -942,14 +942,14 @@ FAE.step = [
   },
 
 
-  /* -- STEP 83 -- */
+  // STEP 83
   {
     info : 'Publishing template viewtopic_body.html',
     type : 'PUBLISH',
      tpl : 127
   },
 
-  /* -- STEP 84 -- */
+  // STEP 84
   {
     info : 'Getting template mod_chatbox.html',
     type : 'GET',
@@ -960,7 +960,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 85 -- */
+  // STEP 85
   {
     info : 'Installing template mod_chatbox.html',
     type : 'POST',
@@ -974,7 +974,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 86 -- */
+  // STEP 86
   {
     info : 'Publishing template mod_chatbox.html',
     type : 'PUBLISH',
@@ -982,7 +982,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 87 -- */
+  // STEP 87
   {
     info : 'Getting template mod_keywords.html',
     type : 'GET',
@@ -993,7 +993,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 88 -- */
+  // STEP 88
   {
     info : 'Installing template mod_keywords.html',
     type : 'POST',
@@ -1007,7 +1007,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 89 -- */
+  // STEP 89
   {
     info : 'Publishing template mod_keywords.html',
     type : 'PUBLISH',
@@ -1015,7 +1015,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 90 -- */
+  // STEP 90
   {
     info : 'Getting template mod_login.html',
     type : 'GET',
@@ -1026,7 +1026,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 91 -- */
+  // STEP 91
   {
     info : 'Installing template mod_login.html',
     type : 'POST',
@@ -1040,7 +1040,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 92 -- */
+  // STEP 92
   {
     info : 'Publishing template mod_login.html',
     type : 'PUBLISH',
@@ -1048,7 +1048,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 93 -- */
+  // STEP 93
   {
     info : 'Getting template mod_most_active_starters.html',
     type : 'GET',
@@ -1059,7 +1059,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 94 -- */
+  // STEP 94
   {
     info : 'Installing template mod_most_active_starters.html',
     type : 'POST',
@@ -1073,7 +1073,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 95 -- */
+  // STEP 95
   {
     info : 'Publishing template mod_most_active_starters.html',
     type : 'PUBLISH',
@@ -1081,7 +1081,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 96 -- */
+  // STEP 96
   {
     info : 'Getting template mod_most_active_topics.html',
     type : 'GET',
@@ -1092,7 +1092,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 97 -- */
+  // STEP 97
   {
     info : 'Installing template mod_most_active_topics.html',
     type : 'POST',
@@ -1106,7 +1106,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 98 -- */
+  // STEP 98
   {
     info : 'Publishing template mod_most_active_topics.html',
     type : 'PUBLISH',
@@ -1114,7 +1114,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 99 -- */
+  // STEP 99
   {
     info : 'Getting template mod_most_viewed_topics.html',
     type : 'GET',
@@ -1125,7 +1125,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 100 -- */
+  // STEP 100
   {
     info : 'Installing template mod_most_viewed_topics.html',
     type : 'POST',
@@ -1139,7 +1139,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 101 -- */
+  // STEP 101
   {
     info : 'Publishing template mod_most_viewed_topics.html',
     type : 'PUBLISH',
@@ -1147,7 +1147,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 102 -- */
+  // STEP 102
   {
     info : 'Getting template mod_news.html',
     type : 'GET',
@@ -1158,7 +1158,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 103 -- */
+  // STEP 103
   {
     info : 'Installing template mod_news.html',
     type : 'POST',
@@ -1172,7 +1172,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 104 -- */
+  // STEP 104
   {
     info : 'Publishing template mod_news.html',
     type : 'PUBLISH',
@@ -1180,7 +1180,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 105 -- */
+  // STEP 105
   {
     info : 'Getting template mod_poll.html',
     type : 'GET',
@@ -1191,7 +1191,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 106 -- */
+  // STEP 106
   {
     info : 'Installing template mod_poll.html',
     type : 'POST',
@@ -1205,7 +1205,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 107 -- */
+  // STEP 107
   {
     info : 'Publishing template mod_poll.html',
     type : 'PUBLISH',
@@ -1213,7 +1213,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 108 -- */
+  // STEP 108
   {
     info : 'Getting template mod_recent_topics.html',
     type : 'GET',
@@ -1224,7 +1224,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 109 -- */
+  // STEP 109
   {
     info : 'Installing template mod_recent_topics.html',
     type : 'POST',
@@ -1238,7 +1238,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 110 -- */
+  // STEP 110
   {
     info : 'Publishing template mod_recent_topics.html',
     type : 'PUBLISH',
@@ -1246,7 +1246,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 111 -- */
+  // STEP 111
   {
     info : 'Getting template mod_rss_feeds.html',
     type : 'GET',
@@ -1257,7 +1257,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 112 -- */
+  // STEP 112
   {
     info : 'Installing template mod_rss_feeds.html',
     type : 'POST',
@@ -1271,7 +1271,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 113 -- */
+  // STEP 113
   {
     info : 'Publishing template mod_rss_feeds.html',
     type : 'PUBLISH',
@@ -1279,7 +1279,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 114 -- */
+  // STEP 114
   {
     info : 'Getting template mod_search.html',
     type : 'GET',
@@ -1290,7 +1290,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 115 -- */
+  // STEP 115
   {
     info : 'Installing template mod_search.html',
     type : 'POST',
@@ -1304,7 +1304,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 116 -- */
+  // STEP 116
   {
     info : 'Publishing template mod_search.html',
     type : 'PUBLISH',
@@ -1312,7 +1312,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 117 -- */
+  // STEP 117
   {
     info : 'Getting template mod_social_bookmarking.html',
     type : 'GET',
@@ -1323,7 +1323,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 118 -- */
+  // STEP 118
   {
     info : 'Installing template mod_social_bookmarking.html',
     type : 'POST',
@@ -1337,7 +1337,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 119 -- */
+  // STEP 119
   {
     info : 'Publishing template mod_social_bookmarking.html',
     type : 'PUBLISH',
@@ -1345,7 +1345,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 120 -- */
+  // STEP 120
   {
     info : 'Getting template mod_statistics.html',
     type : 'GET',
@@ -1356,7 +1356,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 121 -- */
+  // STEP 121
   {
     info : 'Installing template mod_statistics.html',
     type : 'POST',
@@ -1370,7 +1370,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 122 -- */
+  // STEP 122
   {
     info : 'Publishing template mod_statistics.html',
     type : 'PUBLISH',
@@ -1378,7 +1378,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 123 -- */
+  // STEP 123
   {
     info : 'Getting template mod_top_post_users_month.html',
     type : 'GET',
@@ -1389,7 +1389,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 124 -- */
+  // STEP 124
   {
     info : 'Installing template mod_top_post_users_month.html',
     type : 'POST',
@@ -1403,7 +1403,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 125 -- */
+  // STEP 125
   {
     info : 'Publishing template mod_top_post_users_month.html',
     type : 'PUBLISH',
@@ -1411,7 +1411,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 126 -- */
+  // STEP 126
   {
     info : 'Getting template mod_top_post_users_week.html',
     type : 'GET',
@@ -1422,7 +1422,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 127 -- */
+  // STEP 127
   {
     info : 'Installing template mod_top_post_users_week.html',
     type : 'POST',
@@ -1436,7 +1436,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 128 -- */
+  // STEP 128
   {
     info : 'Publishing template mod_top_post_users_week.html',
     type : 'PUBLISH',
@@ -1444,7 +1444,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 129 -- */
+  // STEP 129
   {
     info : 'Getting template mod_top_posters.html',
     type : 'GET',
@@ -1455,7 +1455,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 130 -- */
+  // STEP 130
   {
     info : 'Installing template mod_top_posters.html',
     type : 'POST',
@@ -1469,7 +1469,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 131 -- */
+  // STEP 131
   {
     info : 'Publishing template mod_top_posters.html',
     type : 'PUBLISH',
@@ -1477,7 +1477,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 132 -- */
+  // STEP 132
   {
     info : 'Getting template mod_whoisonline.html',
     type : 'GET',
@@ -1488,7 +1488,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 133 -- */
+  // STEP 133
   {
     info : 'Installing template mod_whoisonline.html',
     type : 'POST',
@@ -1502,7 +1502,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 134 -- */
+  // STEP 134
   {
     info : 'Publishing template mod_whoisonline.html',
     type : 'PUBLISH',
@@ -1510,7 +1510,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 135 -- */
+  // STEP 135
   {
     info : 'Getting template standard.html',
     type : 'GET',
@@ -1521,7 +1521,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 136 -- */
+  // STEP 136
   {
     info : 'Installing template standard.html',
     type : 'POST',
@@ -1535,7 +1535,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 137 -- */
+  // STEP 137
   {
     info : 'Publishing template standard.html',
     type : 'PUBLISH',
@@ -1543,7 +1543,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 138 -- */
+  // STEP 138
   {
     info : 'Getting template album_cat_body.html',
     type : 'GET',
@@ -1554,7 +1554,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 139 -- */
+  // STEP 139
   {
     info : 'Installing template album_cat_body.html',
     type : 'POST',
@@ -1568,7 +1568,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 140 -- */
+  // STEP 140
   {
     info : 'Publishing template album_cat_body.html',
     type : 'PUBLISH',
@@ -1576,7 +1576,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 141 -- */
+  // STEP 141
   {
     info : 'Getting template album_cat_top10.html',
     type : 'GET',
@@ -1587,7 +1587,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 142 -- */
+  // STEP 142
   {
     info : 'Installing template album_cat_top10.html',
     type : 'POST',
@@ -1601,7 +1601,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 143 -- */
+  // STEP 143
   {
     info : 'Publishing template album_cat_top10.html',
     type : 'PUBLISH',
@@ -1609,7 +1609,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 144 -- */
+  // STEP 144
   {
     info : 'Getting template album_edit_body.html',
     type : 'GET',
@@ -1620,7 +1620,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 145 -- */
+  // STEP 145
   {
     info : 'Installing template album_edit_body.html',
     type : 'POST',
@@ -1634,7 +1634,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 146 -- */
+  // STEP 146
   {
     info : 'Publishing template album_edit_body.html',
     type : 'PUBLISH',
@@ -1642,7 +1642,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 147 -- */
+  // STEP 147
   {
     info : 'Getting template album_formsearch_body.html',
     type : 'GET',
@@ -1653,7 +1653,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 148 -- */
+  // STEP 148
   {
     info : 'Installing template album_formsearch_body.html',
     type : 'POST',
@@ -1667,7 +1667,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 149 -- */
+  // STEP 149
   {
     info : 'Publishing template album_formsearch_body.html',
     type : 'PUBLISH',
@@ -1675,7 +1675,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 150 -- */
+  // STEP 150
   {
     info : 'Getting template album_index_body.html',
     type : 'GET',
@@ -1686,7 +1686,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 151 -- */
+  // STEP 151
   {
     info : 'Installing template album_index_body.html',
     type : 'POST',
@@ -1700,7 +1700,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 152 -- */
+  // STEP 152
   {
     info : 'Publishing template album_index_body.html',
     type : 'PUBLISH',
@@ -1708,7 +1708,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 153 -- */
+  // STEP 153
   {
     info : 'Getting template album_modcp_body.html',
     type : 'GET',
@@ -1719,7 +1719,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 154 -- */
+  // STEP 154
   {
     info : 'Installing template album_modcp_body.html',
     type : 'POST',
@@ -1733,7 +1733,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 155 -- */
+  // STEP 155
   {
     info : 'Publishing template album_modcp_body.html',
     type : 'PUBLISH',
@@ -1741,7 +1741,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 156 -- */
+  // STEP 156
   {
     info : 'Getting template album_moderate_body.html',
     type : 'GET',
@@ -1752,7 +1752,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 157 -- */
+  // STEP 157
   {
     info : 'Installing template album_moderate_body.html',
     type : 'POST',
@@ -1766,7 +1766,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 158 -- */
+  // STEP 158
   {
     info : 'Publishing template album_moderate_body.html',
     type : 'PUBLISH',
@@ -1774,7 +1774,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 159 -- */
+  // STEP 159
   {
     info : 'Getting template album_nuffimage_box.html',
     type : 'GET',
@@ -1785,7 +1785,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 160 -- */
+  // STEP 160
   {
     info : 'Installing template album_nuffimage_box.html',
     type : 'POST',
@@ -1799,7 +1799,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 161 -- */
+  // STEP 161
   {
     info : 'Publishing template album_nuffimage_box.html',
     type : 'PUBLISH',
@@ -1807,7 +1807,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 162 -- */
+  // STEP 162
   {
     info : 'Getting template album_search_body.html',
     type : 'GET',
@@ -1818,7 +1818,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 163 -- */
+  // STEP 163
   {
     info : 'Installing template album_search_body.html',
     type : 'POST',
@@ -1832,7 +1832,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 164 -- */
+  // STEP 164
   {
     info : 'Publishing template album_search_body.html',
     type : 'PUBLISH',
@@ -1840,7 +1840,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 165 -- */
+  // STEP 165
   {
     info : 'Getting template album_showpage_body.html',
     type : 'GET',
@@ -1851,7 +1851,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 166 -- */
+  // STEP 166
   {
     info : 'Installing template album_showpage_body.html',
     type : 'POST',
@@ -1865,7 +1865,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 167 -- */
+  // STEP 167
   {
     info : 'Publishing template album_showpage_body.html',
     type : 'PUBLISH',
@@ -1873,7 +1873,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 168 -- */
+  // STEP 168
   {
     info : 'Getting template album_slideshow_body.html',
     type : 'GET',
@@ -1884,7 +1884,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 169 -- */
+  // STEP 169
   {
     info : 'Installing template album_slideshow_body.html',
     type : 'POST',
@@ -1898,7 +1898,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 170 -- */
+  // STEP 170
   {
     info : 'Publishing template album_slideshow_body.html',
     type : 'PUBLISH',
@@ -1906,7 +1906,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 171 -- */
+  // STEP 171
   {
     info : 'Getting template album_upload_body.html',
     type : 'GET',
@@ -1917,7 +1917,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 172 -- */
+  // STEP 172
   {
     info : 'Installing template album_upload_body.html',
     type : 'POST',
@@ -1931,7 +1931,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 173 -- */
+  // STEP 173
   {
     info : 'Publishing template album_upload_body.html',
     type : 'PUBLISH',
@@ -1939,7 +1939,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 174 -- */
+  // STEP 174
   {
     info : 'Getting template birthday_list_box.html',
     type : 'GET',
@@ -1950,7 +1950,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 175 -- */
+  // STEP 175
   {
     info : 'Installing template birthday_list_box.html',
     type : 'POST',
@@ -1964,7 +1964,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 176 -- */
+  // STEP 176
   {
     info : 'Publishing template birthday_list_box.html',
     type : 'PUBLISH',
@@ -1972,7 +1972,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 177 -- */
+  // STEP 177
   {
     info : 'Getting template calendar_body.html',
     type : 'GET',
@@ -1983,7 +1983,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 178 -- */
+  // STEP 178
   {
     info : 'Installing template calendar_body.html',
     type : 'POST',
@@ -1997,7 +1997,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 179 -- */
+  // STEP 179
   {
     info : 'Publishing template calendar_body.html',
     type : 'PUBLISH',
@@ -2005,7 +2005,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 180 -- */
+  // STEP 180
   {
     info : 'Getting template calendar_box.html',
     type : 'GET',
@@ -2016,7 +2016,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 181 -- */
+  // STEP 181
   {
     info : 'Installing template calendar_box.html',
     type : 'POST',
@@ -2030,7 +2030,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 182 -- */
+  // STEP 182
   {
     info : 'Publishing template calendar_box.html',
     type : 'PUBLISH',
@@ -2038,7 +2038,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 183 -- */
+  // STEP 183
   {
     info : 'Getting template calendar_overview_profil.html',
     type : 'GET',
@@ -2049,7 +2049,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 184 -- */
+  // STEP 184
   {
     info : 'Installing template calendar_overview_profil.html',
     type : 'POST',
@@ -2063,7 +2063,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 185 -- */
+  // STEP 185
   {
     info : 'Publishing template calendar_overview_profil.html',
     type : 'PUBLISH',
@@ -2071,7 +2071,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 186 -- */
+  // STEP 186
   {
     info : 'Getting template calendar_overview_topic.html',
     type : 'GET',
@@ -2082,7 +2082,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 187 -- */
+  // STEP 187
   {
     info : 'Installing template calendar_overview_topic.html',
     type : 'POST',
@@ -2096,7 +2096,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 188 -- */
+  // STEP 188
   {
     info : 'Publishing template calendar_overview_topic.html',
     type : 'PUBLISH',
@@ -2104,7 +2104,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 189 -- */
+  // STEP 189
   {
     info : 'Getting template calendar_scheduler_body.html',
     type : 'GET',
@@ -2115,7 +2115,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 190 -- */
+  // STEP 190
   {
     info : 'Installing template calendar_scheduler_body.html',
     type : 'POST',
@@ -2129,7 +2129,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 191 -- */
+  // STEP 191
   {
     info : 'Publishing template calendar_scheduler_body.html',
     type : 'PUBLISH',
@@ -2137,7 +2137,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 192 -- */
+  // STEP 192
   {
     info : 'Getting template groupcp_info_body.html',
     type : 'GET',
@@ -2148,7 +2148,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 193 -- */
+  // STEP 193
   {
     info : 'Installing template groupcp_info_body.html',
     type : 'POST',
@@ -2162,7 +2162,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 194 -- */
+  // STEP 194
   {
     info : 'Publishing template groupcp_info_body.html',
     type : 'PUBLISH',
@@ -2170,7 +2170,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 195 -- */
+  // STEP 195
   {
     info : 'Getting template groupcp_pending_info.html',
     type : 'GET',
@@ -2181,7 +2181,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 196 -- */
+  // STEP 196
   {
     info : 'Installing template groupcp_pending_info.html',
     type : 'POST',
@@ -2195,7 +2195,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 197 -- */
+  // STEP 197
   {
     info : 'Publishing template groupcp_pending_info.html',
     type : 'PUBLISH',
@@ -2203,7 +2203,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 198 -- */
+  // STEP 198
   {
     info : 'Getting template groupcp_user_body.html',
     type : 'GET',
@@ -2214,7 +2214,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 199 -- */
+  // STEP 199
   {
     info : 'Installing template groupcp_user_body.html',
     type : 'POST',
@@ -2228,7 +2228,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 200 -- */
+  // STEP 200
   {
     info : 'Publishing template groupcp_user_body.html',
     type : 'PUBLISH',
@@ -2236,7 +2236,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 201 -- */
+  // STEP 201
   {
     info : 'Getting template posting_body.html',
     type : 'GET',
@@ -2247,7 +2247,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 202 -- */
+  // STEP 202
   {
     info : 'Installing template posting_body.html',
     type : 'POST',
@@ -2261,7 +2261,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 203 -- */
+  // STEP 203
   {
     info : 'Publishing template posting_body.html',
     type : 'PUBLISH',
@@ -2269,7 +2269,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 204 -- */
+  // STEP 204
   {
     info : 'Getting template posting_poll_body.html',
     type : 'GET',
@@ -2280,7 +2280,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 205 -- */
+  // STEP 205
   {
     info : 'Installing template posting_poll_body.html',
     type : 'POST',
@@ -2294,7 +2294,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 206 -- */
+  // STEP 206
   {
     info : 'Publishing template posting_poll_body.html',
     type : 'PUBLISH',
@@ -2302,7 +2302,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 207 -- */
+  // STEP 207
   {
     info : 'Getting template posting_preview.html',
     type : 'GET',
@@ -2313,7 +2313,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 208 -- */
+  // STEP 208
   {
     info : 'Installing template posting_preview.html',
     type : 'POST',
@@ -2327,7 +2327,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 209 -- */
+  // STEP 209
   {
     info : 'Publishing template posting_preview.html',
     type : 'PUBLISH',
@@ -2335,7 +2335,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 210 -- */
+  // STEP 210
   {
     info : 'Getting template posting_topic_review.html',
     type : 'GET',
@@ -2346,7 +2346,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 211 -- */
+  // STEP 211
   {
     info : 'Installing template posting_topic_review.html',
     type : 'POST',
@@ -2360,7 +2360,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 212 -- */
+  // STEP 212
   {
     info : 'Publishing template posting_topic_review.html',
     type : 'PUBLISH',
@@ -2368,7 +2368,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 213 -- */
+  // STEP 213
   {
     info : 'Getting template privmsg_topic_review.html',
     type : 'GET',
@@ -2379,7 +2379,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 214 -- */
+  // STEP 214
   {
     info : 'Installing template privmsg_topic_review.html',
     type : 'POST',
@@ -2393,7 +2393,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 215 -- */
+  // STEP 215
   {
     info : 'Publishing template privmsg_topic_review.html',
     type : 'PUBLISH',
@@ -2401,7 +2401,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 216 -- */
+  // STEP 216
   {
     info : 'Getting template privmsgs_body.html',
     type : 'GET',
@@ -2412,7 +2412,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 217 -- */
+  // STEP 217
   {
     info : 'Installing template privmsgs_body.html',
     type : 'POST',
@@ -2426,7 +2426,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 218 -- */
+  // STEP 218
   {
     info : 'Publishing template privmsgs_body.html',
     type : 'PUBLISH',
@@ -2434,7 +2434,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 219 -- */
+  // STEP 219
   {
     info : 'Getting template privmsgs_popup.html',
     type : 'GET',
@@ -2445,7 +2445,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 220 -- */
+  // STEP 220
   {
     info : 'Installing template privmsgs_popup.html',
     type : 'POST',
@@ -2459,7 +2459,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 221 -- */
+  // STEP 221
   {
     info : 'Publishing template privmsgs_popup.html',
     type : 'PUBLISH',
@@ -2467,7 +2467,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 222 -- */
+  // STEP 222
   {
     info : 'Getting template privmsgs_preview.html',
     type : 'GET',
@@ -2478,7 +2478,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 223 -- */
+  // STEP 223
   {
     info : 'Installing template privmsgs_preview.html',
     type : 'POST',
@@ -2492,7 +2492,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 224 -- */
+  // STEP 224
   {
     info : 'Publishing template privmsgs_preview.html',
     type : 'PUBLISH',
@@ -2500,7 +2500,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 225 -- */
+  // STEP 225
   {
     info : 'Getting template privmsgs_read_body.html',
     type : 'GET',
@@ -2511,7 +2511,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 226 -- */
+  // STEP 226
   {
     info : 'Installing template privmsgs_read_body.html',
     type : 'POST',
@@ -2525,7 +2525,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 227 -- */
+  // STEP 227
   {
     info : 'Publishing template privmsgs_read_body.html',
     type : 'PUBLISH',
@@ -2533,7 +2533,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 228 -- */
+  // STEP 228
   {
     info : 'Getting template merge_body.html',
     type : 'GET',
@@ -2544,7 +2544,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 229 -- */
+  // STEP 229
   {
     info : 'Installing template merge_body.html',
     type : 'POST',
@@ -2558,7 +2558,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 230 -- */
+  // STEP 230
   {
     info : 'Publishing template merge_body.html',
     type : 'PUBLISH',
@@ -2566,7 +2566,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 231 -- */
+  // STEP 231
   {
     info : 'Getting template merge_select_body.html',
     type : 'GET',
@@ -2577,7 +2577,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 232 -- */
+  // STEP 232
   {
     info : 'Installing template merge_select_body.html',
     type : 'POST',
@@ -2591,7 +2591,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 233 -- */
+  // STEP 233
   {
     info : 'Publishing template merge_select_body.html',
     type : 'PUBLISH',
@@ -2599,7 +2599,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 234 -- */
+  // STEP 234
   {
     info : 'Getting template modcp_body.html',
     type : 'GET',
@@ -2610,7 +2610,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 235 -- */
+  // STEP 235
   {
     info : 'Installing template modcp_body.html',
     type : 'POST',
@@ -2624,7 +2624,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 236 -- */
+  // STEP 236
   {
     info : 'Publishing template modcp_body.html',
     type : 'PUBLISH',
@@ -2632,7 +2632,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 237 -- */
+  // STEP 237
   {
     info : 'Getting template modcp_move.html',
     type : 'GET',
@@ -2643,7 +2643,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 238 -- */
+  // STEP 238
   {
     info : 'Installing template modcp_move.html',
     type : 'POST',
@@ -2657,7 +2657,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 239 -- */
+  // STEP 239
   {
     info : 'Publishing template modcp_move.html',
     type : 'PUBLISH',
@@ -2665,7 +2665,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 240 -- */
+  // STEP 240
   {
     info : 'Getting template modcp_split.html',
     type : 'GET',
@@ -2676,7 +2676,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 241 -- */
+  // STEP 241
   {
     info : 'Installing template modcp_split.html',
     type : 'POST',
@@ -2690,7 +2690,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 242 -- */
+  // STEP 242
   {
     info : 'Publishing template modcp_split.html',
     type : 'PUBLISH',
@@ -2698,7 +2698,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 243 -- */
+  // STEP 243
   {
     info : 'Getting template modcp_viewip.html',
     type : 'GET',
@@ -2709,7 +2709,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 244 -- */
+  // STEP 244
   {
     info : 'Installing template modcp_viewip.html',
     type : 'POST',
@@ -2723,7 +2723,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 245 -- */
+  // STEP 245
   {
     info : 'Publishing template modcp_viewip.html',
     type : 'PUBLISH',
@@ -2731,7 +2731,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 246 -- */
+  // STEP 246
   {
     info : 'Getting template report_list_body.html',
     type : 'GET',
@@ -2742,7 +2742,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 247 -- */
+  // STEP 247
   {
     info : 'Installing template report_list_body.html',
     type : 'POST',
@@ -2756,7 +2756,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 248 -- */
+  // STEP 248
   {
     info : 'Publishing template report_list_body.html',
     type : 'PUBLISH',
@@ -2764,7 +2764,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 249 -- */
+  // STEP 249
   {
     info : 'Getting template report_popup_body.html',
     type : 'GET',
@@ -2775,7 +2775,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 250 -- */
+  // STEP 250
   {
     info : 'Installing template report_popup_body.html',
     type : 'POST',
@@ -2789,7 +2789,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 251 -- */
+  // STEP 251
   {
     info : 'Publishing template report_popup_body.html',
     type : 'PUBLISH',
@@ -2797,7 +2797,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 252 -- */
+  // STEP 252
   {
     info : 'Getting template report_view_body.html',
     type : 'GET',
@@ -2808,7 +2808,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 253 -- */
+  // STEP 253
   {
     info : 'Installing template report_view_body.html',
     type : 'POST',
@@ -2822,7 +2822,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 254 -- */
+  // STEP 254
   {
     info : 'Publishing template report_view_body.html',
     type : 'PUBLISH',
@@ -2830,7 +2830,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 255 -- */
+  // STEP 255
   {
     info : 'Getting template profile_add_body.html',
     type : 'GET',
@@ -2841,7 +2841,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 256 -- */
+  // STEP 256
   {
     info : 'Installing template profile_add_body.html',
     type : 'POST',
@@ -2855,7 +2855,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 257 -- */
+  // STEP 257
   {
     info : 'Publishing template profile_add_body.html',
     type : 'PUBLISH',
@@ -2863,7 +2863,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 258 -- */
+  // STEP 258
   {
     info : 'Getting template profile_avatar_gallery.html',
     type : 'GET',
@@ -2874,7 +2874,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 259 -- */
+  // STEP 259
   {
     info : 'Installing template profile_avatar_gallery.html',
     type : 'POST',
@@ -2888,7 +2888,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 260 -- */
+  // STEP 260
   {
     info : 'Publishing template profile_avatar_gallery.html',
     type : 'PUBLISH',
@@ -2896,7 +2896,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 261 -- */
+  // STEP 261
   {
     info : 'Getting template profile_edit_signature.html',
     type : 'GET',
@@ -2907,7 +2907,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 262 -- */
+  // STEP 262
   {
     info : 'Installing template profile_edit_signature.html',
     type : 'POST',
@@ -2921,7 +2921,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 263 -- */
+  // STEP 263
   {
     info : 'Publishing template profile_edit_signature.html',
     type : 'PUBLISH',
@@ -2929,7 +2929,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 264 -- */
+  // STEP 264
   {
     info : 'Getting template profile_send_email.html',
     type : 'GET',
@@ -2940,7 +2940,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 265 -- */
+  // STEP 265
   {
     info : 'Installing template profile_send_email.html',
     type : 'POST',
@@ -2954,7 +2954,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 266 -- */
+  // STEP 266
   {
     info : 'Publishing template profile_send_email.html',
     type : 'PUBLISH',
@@ -2962,7 +2962,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 267 -- */
+  // STEP 267
   {
     info : 'Getting template profile_send_pass.html',
     type : 'GET',
@@ -2973,7 +2973,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 268 -- */
+  // STEP 268
   {
     info : 'Installing template profile_send_pass.html',
     type : 'POST',
@@ -2987,7 +2987,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 269 -- */
+  // STEP 269
   {
     info : 'Publishing template profile_send_pass.html',
     type : 'PUBLISH',
@@ -2995,7 +2995,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 270 -- */
+  // STEP 270
   {
     info : 'Getting template profile_view_body.html',
     type : 'GET',
@@ -3006,7 +3006,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 271 -- */
+  // STEP 271
   {
     info : 'Installing template profile_view_body.html',
     type : 'POST',
@@ -3020,7 +3020,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 272 -- */
+  // STEP 272
   {
     info : 'Publishing template profile_view_body.html',
     type : 'PUBLISH',
@@ -3028,7 +3028,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 273 -- */
+  // STEP 273
   {
     info : 'Getting template rpg_sheet.html',
     type : 'GET',
@@ -3039,7 +3039,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 274 -- */
+  // STEP 274
   {
     info : 'Installing template rpg_sheet.html',
     type : 'POST',
@@ -3053,7 +3053,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 275 -- */
+  // STEP 275
   {
     info : 'Publishing template rpg_sheet.html',
     type : 'PUBLISH',
@@ -3061,7 +3061,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 276 -- */
+  // STEP 276
   {
     info : 'Getting template rpg_sheet_edit.html',
     type : 'GET',
@@ -3072,7 +3072,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 277 -- */
+  // STEP 277
   {
     info : 'Installing template rpg_sheet_edit.html',
     type : 'POST',
@@ -3086,7 +3086,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 278 -- */
+  // STEP 278
   {
     info : 'Publishing template rpg_sheet_edit.html',
     type : 'PUBLISH',
@@ -3094,7 +3094,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 279 -- */
+  // STEP 279
   {
     info : 'Getting template overall_header.html (mobile)',
     type : 'GET',
@@ -3105,7 +3105,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 280 -- */
+  // STEP 280
   {
     info : 'Installing template overall_header.html (mobile)',
     type : 'POST',
@@ -3119,7 +3119,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 281 -- */
+  // STEP 281
   {
     info : 'Publishing template overall_header.html (mobile)',
     type : 'PUBLISH',
@@ -3127,7 +3127,7 @@ FAE.step = [
   },
 
 
-  /* -- STEP 282 -- */
+  // STEP 282
   {
      info : 'Enabling custom templates',
      type : 'POST',

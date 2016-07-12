@@ -1,0 +1,88 @@
+<div class="content-block">
+  <h1 class="title">{L_TITLE}</h1>
+	<div class="txt-content">
+	<div id="cp-main" class="mcp-main">
+	<div class="content-block">
+    <h1 class="title">{L_IP_INFO}</h1>
+		<div class="txt-content">
+		<fieldset>
+		<dl>
+			<dt><label>{L_SUBJECT} : </label></dt>
+			<dd>{SUBJECT}</dd>
+		</dl>
+		<dl>
+			<dt><label>{L_POSTER} : </label></dt>
+			<dd>{POSTER}</dd>
+		</dl>
+		<dl>
+			<dt><label>{L_IP} : </label></dt>
+			<dd>{IP1} [ {IP2} ]</dd>
+		</dl>
+		<dl>
+			<dt><label>{L_POSTED} : </label></dt>
+			<dd>{POSTED}</dd>
+		</dl>
+		</fieldset>
+		</div>
+	</div>
+
+	<div class="content-block">
+		<table class="table1" cellspacing="1">
+			<thead class="title">
+				<tr>
+					<th class="name">{L_THIS_POST_IP}</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="row1">
+					<td>{IP} [ {POSTS} ]</td>
+					<td>[ <a href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a> ]</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table1" cellspacing="1">
+			<thead>
+				<tr>
+					<th class="name">{L_OTHER_USERS}</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+			<!-- BEGIN userrow -->
+				<tr class="{userrow.ROW_CLASS}">
+					<td><a href="{userrow.U_PROFILE}">{userrow.USERNAME}</a> [ {userrow.POSTS} ]</td>
+					<td><a title="{userrow.L_SEARCH_POSTS}" href="{userrow.U_SEARCHPOSTS}">{userrow.L_SEARCH}</a></td>
+				</tr>
+			<!-- END userrow -->
+			</tbody>
+		</table>
+		<table class="table1" cellspacing="1">
+			<thead>
+				<tr>
+					<th class="name">{L_OTHER_IPS}</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+			<!-- BEGIN iprow -->
+				<tr class="{iprow.ROW_CLASS}">
+					<td>{iprow.IP} [ {iprow.POSTS} ]</td>
+					<td>[ <a href="{iprow.U_LOOKUP_IP}">{L_LOOKUP_IP}</a> ]</td>
+				</tr>
+			<!-- END iprow -->
+			</tbody>
+		</table>
+		</div>
+	</div>
+
+	<div class="content-block">
+    <h1 class="title">{L_PREVIEW}</h1>
+		<div class="txt-content">
+		{PREVIEW_NEW}
+		</div>
+	</div>
+	<br />
+	</div>
+	</div>
+<br />

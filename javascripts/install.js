@@ -3398,7 +3398,7 @@ FAE.step = [
       action : 'insert',
       submit : 'Save'
     }
-  }
+  },
 
 
   // STEP 292

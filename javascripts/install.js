@@ -3386,6 +3386,23 @@ FAE.step = [
 
   // STEP 291
   {
+    info : 'Creating navigation link for control panel',
+    type : 'POST',
+     url : 'part=themes&sub=index&mode=navbar',
+    data : {
+      navbar_menu : 'FAE Control Panel',
+      navbar_image : '',
+      navbar_text : 'FAE Control Panel',
+      navbar_url : window.location.pathname,
+      navbar_admin : true,
+      action : 'insert',
+      submit : 'Save'
+    }
+  }
+
+
+  // STEP 292
+  {
     info : 'Resynchronizing forum',
     type : 'POST',
      url : 'mode=general&part=general&sub=general',

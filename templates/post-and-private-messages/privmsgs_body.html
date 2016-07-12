@@ -1,0 +1,84 @@
+<ul id="privmsgs-menu">
+ <li id="privmsgs-inbox">{INBOX_IMG}<span class="inbox-icon color-primary" onclick="this.previousSibling.click();"></span> {INBOX}</li>
+ <li id="privmsgs-sentbox">{SENTBOX_IMG}<span class="inbox-icon color-primary" onclick="this.previousSibling.click();"></span> {SENTBOX}</li>
+ <li id="privmsgs-outbox">{OUTBOX_IMG}<span class="inbox-icon color-primary" onclick="this.previousSibling.click();"></span> {OUTBOX}</li>
+ <li id="privmsgs-savebox">{SAVEBOX_IMG}<span class="inbox-icon color-primary" onclick="this.previousSibling.click();"></span> {SAVEBOX}</li>
+</ul>
+
+<form action="{S_PRIVMSGS_ACTION}" method="post" name="privmsg_list">
+
+<div class="topic-actions">
+	<div class="buttons">
+		<div class="post-icon">{POST_PM_IMG}</div>
+	</div>
+</div>
+<div class="clear"></div>
+
+<div class="content-block">
+	<div class="txt-content">
+	<!-- BEGIN switch_box_size_notice -->
+	<p class="left-box">{BOX_SIZE_STATUS}</p>
+	<!-- END switch_box_size_notice -->
+	<p class="right-box">
+		{L_DISPLAY_MESSAGES}: <select name="msgdays">
+		{S_SELECT_MSG_DAYS}
+		</select> <input class="button2" type="submit" name="submit_msgdays" value="{L_GO}" />
+	</p>
+	<div class="clear"></div>
+	</div>
+</div>
+
+  <div class="title">
+    <h2 class="left">{L_SUBJECT}</h2>
+    <div class="right mark">{L_MARK}</div>
+    <div class="clear"></div>
+  </div>
+
+	<!-- BEGIN listrow -->
+  <div class="forum-block privmsgs color-primary">
+    <div class="forum-block-inner">
+      <div class="forum-status" title="{listrow.PRIVMSG_FOLDER_ALT}" style="background-image:url('{listrow.PRIVMSG_FOLDER_IMG}');">
+      </div>
+
+      <div class="forum-info">
+        <a href="{listrow.U_READ}" class="topictitle">{listrow.SUBJECT}</a><br />
+        <span style="margin: 0 5px"><em>{listrow.FROM} - {listrow.DATE}</em></span>
+      </div>
+
+      <div class="right mark"><input type="checkbox" name="mark[]2" value="{listrow.S_MARK_ID}" /></div>
+      <div class="clear"></div>
+    </div>
+  </div>
+	<!-- END listrow -->
+	<!-- BEGIN switch_no_messages -->
+  <div class="forum-info">
+				<strong>{L_NO_MESSAGES}</strong>
+  </div>
+	<!-- END switch_no_messages -->
+
+<p class="right-box" style="margin: 0;"><a href="javascript:select_switch_privmsg(true);">{L_MARK_ALL}</a> :: <a href="javascript:select_switch_privmsg(false);">{L_UNMARK_ALL}</a></p>
+<div class="clear"></div>
+<p><span class="pagination">{PAGINATION}</span>{PAGE_NUMBER}</p>
+<div class="clear"></div>
+<div class="topic-actions">
+	<div class="buttons">
+		<div class="post-icon">{POST_PM_IMG}</div>
+	</div>
+	<div class="pagination">
+		<p>{S_HIDDEN_FIELDS}
+		<!-- BEGIN switch_save -->
+		<input class="button1" type="submit" name="save" value="{L_SAVE_MARKED}" />&nbsp;&nbsp;
+		<!-- END switch_save -->
+		<!-- BEGIN switch_move_profile -->
+		<input class="button1" type="submit" name="moveprofile" value="{L_MOVE_PROFILE_MARKED}" />&nbsp;&nbsp;
+		<!-- END switch_move_profile -->
+		<input class="button2" type="submit" name="delete" value="{L_DELETE_MARKED}" />&nbsp;&nbsp;
+		<input class="button2" type="submit" name="deleteall" value="{L_DELETE_ALL}" /></p>
+	</div>
+</div>
+</form>
+
+<div class="clear"></div>
+{JUMPBOX}
+
+<br style="clear:both" />

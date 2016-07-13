@@ -1,2 +1,16 @@
 # Forumactif Edge
-Forumactif Edge ( or FA Edge, FAE ) is a work in progress forum version for Forumotion forums built off the phpbb3 templates. The goal is to deliver a modern and resposive design which provides the user with numerous theme colors, so anyone can browse in the color of their choice.
+
+What is "Forumactif Edge" ? Forumactif Edge ( or FA Edge, FAE ) is a new modern and responsive forum theme for Forumotion forums, that is like an entirely new forum version in itself. It comes ready with numerous plugins, including a theme switcher that allows you to change the color of the theme to the one you prefer. Plus thanks to the theme's responsiveness you'll be able to browse your forum on your mobile device without any problems.
+
+Unlike the default versions provided by Forumotion, FAE is open source and managed by the community, so it will be constantly improving based on user feedback. This project is not officially a part of Forumactif ( Forumotion, E-toxic.. ), I have been wanting a new look for Forumotion forums for awhile, so I took it upon myself to create just that, for the entire community. 
+
+## Installation
+
+To install Forumactif Edge please read over the wiki by clicking the link below.
+
+[LINK_HERE]
+
+## Preview
+You can find a live preview of Forumactif Edge on the forum below.
+
+http://themedesign.forumotion.com/

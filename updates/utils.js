@@ -25,7 +25,7 @@ FAE.step = FAE.step.concat([
     func : function(d) {
       var form = $('#formenvoi', d)[0];
 
-      FAE.step[FAE.index + 1].url = form.action.replace(/\/admin\/index\.forum\?|&tid=.*$/g, '');
+      FAE.step[FAE.index + 1].url = form.action.replace(/^.*?\/admin\/index\.forum\?|&tid=.*$/g, '');
       FAE.step[FAE.index + 1].data = {
                    title : '[FA EDGE] VERSION-DATA.JS',
         'js_placement[]' : 'allpages',

@@ -1,5 +1,5 @@
 // final update steps ; update version manifest on forum + number on footer
-FAE.step.concat([
+FAE.step = FAE.step.concat([
 
   // Find where the version data file is being stored
   {

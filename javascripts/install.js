@@ -3390,22 +3390,25 @@ FAE.step = [
      type : 'GET',
       url : '/admin/index.forum?part=themes&sub=index&mode=navbar&extended_admin=1&tid=' + FAE.tid,
      func : function(d) {
-       for (var a = $('fieldset tr', d), i = 0, j = a.length, regex = new RegExp('FAE Control Panel|' + window.location.pathname, 'ig'); i < j; i++) {
-         if (!regex.test(a[i].innerHTML)) {
-
-           $.post('/admin/index.forum?part=themes&sub=index&mode=navbar&tid=' + FAE.tid, {
-             navbar_menu : 'FAE Control Panel',
-             navbar_image : '',
-             navbar_text : 'FAE Control Panel',
-             navbar_url : window.location.pathname,
-             navbar_admin : true,
-             action : 'insert',
-             submit : 'Save'
-           });
-
+       for (var a = $('fieldset tr', d), i = 0, j = a.length, regex = new RegExp('FAE Control Panel|' + window.location.pathname, 'ig'), hit = false; i < j; i++) {
+         if (regex.test(a[i].innerHTML)) {
+           hit = true;
            break;
          }
        }
+
+       if (!hit) {
+         $.post('/admin/index.forum?part=themes&sub=index&mode=navbar&tid=' + FAE.tid, {
+           navbar_menu : 'FAE Control Panel',
+           navbar_image : '',
+           navbar_text : 'FAE Control Panel',
+           navbar_url : window.location.pathname,
+           navbar_admin : true,
+           action : 'insert',
+           submit : 'Save'
+         });
+       }
+       
      }
   },
 

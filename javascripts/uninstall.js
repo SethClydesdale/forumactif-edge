@@ -1,6 +1,6 @@
 // uninstallation instructions
 FAE.step = [
-  // STEP 0
+  
   {
     info : 'Changing forum version to phpbb3',
     type : 'POST',
@@ -14,7 +14,6 @@ FAE.step = [
   },
 
 
-  // STEP 1
   {
     info : 'Optimizing CSS',
     type : 'POST',
@@ -28,7 +27,6 @@ FAE.step = [
   },
 
 
-  // STEP 2
   {
     info : 'Getting and deleting all JavaScript files to prevent errors on the forum',
     type : 'GET',
@@ -51,7 +49,6 @@ FAE.step = [
   },
 
 
-  // STEP 3
   {
     info : 'Deleting template agreement.html',
     type : 'POST',
@@ -64,7 +61,6 @@ FAE.step = [
   },
 
 
-  // STEP 4
   {
     info : 'Deleting template buy_credits.html',
     type : 'POST',
@@ -77,7 +73,6 @@ FAE.step = [
   },
 
 
-  // STEP 5
   {
     info : 'Deleting template confirm_body.html',
     type : 'POST',
@@ -90,7 +85,6 @@ FAE.step = [
   },
 
 
-  // STEP 6
   {
     info : 'Deleting template error_body.html',
     type : 'POST',
@@ -103,7 +97,6 @@ FAE.step = [
   },
 
 
-  // STEP 7
   {
     info : 'Deleting template faq_body.html',
     type : 'POST',
@@ -116,7 +109,6 @@ FAE.step = [
   },
 
 
-  // STEP 8
   {
     info : 'Deleting template faq_dhtml.html',
     type : 'POST',
@@ -129,7 +121,6 @@ FAE.step = [
   },
 
 
-  // STEP 9
   {
     info : 'Deleting template greeting_popup.html',
     type : 'POST',
@@ -142,7 +133,6 @@ FAE.step = [
   },
 
 
-  // STEP 10
   {
     info : 'Deleting template index_body.html',
     type : 'POST',
@@ -155,7 +145,6 @@ FAE.step = [
   },
 
 
-  // STEP 11
   {
     info : 'Deleting template index_box.html',
     type : 'POST',
@@ -168,7 +157,6 @@ FAE.step = [
   },
 
 
-  // STEP 12
   {
     info : 'Deleting template jumpbox.html',
     type : 'POST',
@@ -181,7 +169,6 @@ FAE.step = [
   },
 
 
-  // STEP 13
   {
     info : 'Deleting template memberlist_body.html',
     type : 'POST',
@@ -194,7 +181,6 @@ FAE.step = [
   },
 
 
-  // STEP 14
   {
     info : 'Deleting template mentions_tooltip.html',
     type : 'POST',
@@ -207,7 +193,6 @@ FAE.step = [
   },
 
 
-  // STEP 15
   {
     info : 'Deleting template message_body.html',
     type : 'POST',
@@ -220,7 +205,6 @@ FAE.step = [
   },
 
 
-  // STEP 16
   {
     info : 'Deleting template overall_footer_begin.html',
     type : 'POST',
@@ -233,7 +217,6 @@ FAE.step = [
   },
 
 
-  // STEP 17
   {
     info : 'Deleting template overall_footer_end.html',
     type : 'POST',
@@ -246,7 +229,6 @@ FAE.step = [
   },
 
 
-  // STEP 18
   {
     info : 'Deleting template overall_header.html',
     type : 'POST',
@@ -259,7 +241,6 @@ FAE.step = [
   },
 
 
-  // STEP 19
   {
     info : 'Deleting template search_body.html',
     type : 'POST',
@@ -272,7 +253,6 @@ FAE.step = [
   },
 
 
-  // STEP 20
   {
     info : 'Deleting template search_results_posts.html',
     type : 'POST',
@@ -285,7 +265,6 @@ FAE.step = [
   },
 
 
-  // STEP 21
   {
     info : 'Deleting template search_results_topics.html',
     type : 'POST',
@@ -298,7 +277,6 @@ FAE.step = [
   },
 
 
-  // STEP 22
   {
     info : 'Deleting template search_username.html',
     type : 'POST',
@@ -311,7 +289,6 @@ FAE.step = [
   },
 
 
-  // STEP 23
   {
     info : 'Deleting template simple_footer.html',
     type : 'POST',
@@ -324,7 +301,6 @@ FAE.step = [
   },
 
 
-  // STEP 24
   {
     info : 'Deleting template simple_header.html',
     type : 'POST',
@@ -337,7 +313,6 @@ FAE.step = [
   },
 
 
-  // STEP 25
   {
     info : 'Deleting template topics_blog_box.html',
     type : 'POST',
@@ -350,7 +325,6 @@ FAE.step = [
   },
 
 
-  // STEP 26
   {
     info : 'Deleting template topics_list_box.html',
     type : 'POST',
@@ -363,7 +337,6 @@ FAE.step = [
   },
 
 
-  // STEP 27
   {
     info : 'Deleting template viewcomments_body.html',
     type : 'POST',
@@ -376,7 +349,6 @@ FAE.step = [
   },
 
 
-  // STEP 28
   {
     info : 'Deleting template viewforum_body.html',
     type : 'POST',
@@ -389,7 +361,6 @@ FAE.step = [
   },
 
 
-  // STEP 29
   {
     info : 'Deleting template viewonline_body.html',
     type : 'POST',
@@ -402,7 +373,6 @@ FAE.step = [
   },
 
 
-  // STEP 30
   {
     info : 'Deleting template viewtopic_body.html',
     type : 'POST',
@@ -415,7 +385,6 @@ FAE.step = [
   },
 
 
-  // STEP 31
   {
     info : 'Deleting template viewtopic_poll_ballot.html',
     type : 'POST',
@@ -428,7 +397,6 @@ FAE.step = [
   },
 
 
-  // STEP 32
   {
     info : 'Deleting template viewtopic_poll_result.html',
     type : 'POST',
@@ -441,7 +409,6 @@ FAE.step = [
   },
 
 
-  // STEP 33
   {
     info : 'Deleting template mod_chatbox.html',
     type : 'POST',
@@ -454,7 +421,6 @@ FAE.step = [
   },
 
 
-  // STEP 34
   {
     info : 'Deleting template mod_keywords.html',
     type : 'POST',
@@ -467,7 +433,6 @@ FAE.step = [
   },
 
 
-  // STEP 35
   {
     info : 'Deleting template mod_login.html',
     type : 'POST',
@@ -480,7 +445,6 @@ FAE.step = [
   },
 
 
-  // STEP 36
   {
     info : 'Deleting template mod_most_active_starters.html',
     type : 'POST',
@@ -493,7 +457,6 @@ FAE.step = [
   },
 
 
-  // STEP 37
   {
     info : 'Deleting template mod_most_active_topics.html',
     type : 'POST',
@@ -506,7 +469,6 @@ FAE.step = [
   },
 
 
-  // STEP 38
   {
     info : 'Deleting template mod_most_viewed_topics.html',
     type : 'POST',
@@ -519,7 +481,6 @@ FAE.step = [
   },
 
 
-  // STEP 39
   {
     info : 'Deleting template mod_news.html',
     type : 'POST',
@@ -532,7 +493,6 @@ FAE.step = [
   },
 
 
-  // STEP 40
   {
     info : 'Deleting template mod_poll.html',
     type : 'POST',
@@ -545,7 +505,6 @@ FAE.step = [
   },
 
 
-  // STEP 41
   {
     info : 'Deleting template mod_recent_topics.html',
     type : 'POST',
@@ -558,7 +517,6 @@ FAE.step = [
   },
 
 
-  // STEP 42
   {
     info : 'Deleting template mod_rss_feeds.html',
     type : 'POST',
@@ -571,7 +529,6 @@ FAE.step = [
   },
 
 
-  // STEP 43
   {
     info : 'Deleting template mod_search.html',
     type : 'POST',
@@ -584,7 +541,6 @@ FAE.step = [
   },
 
 
-  // STEP 44
   {
     info : 'Deleting template mod_social_bookmarking.html',
     type : 'POST',
@@ -597,7 +553,6 @@ FAE.step = [
   },
 
 
-  // STEP 45
   {
     info : 'Deleting template mod_statistics.html',
     type : 'POST',
@@ -610,7 +565,6 @@ FAE.step = [
   },
 
 
-  // STEP 46
   {
     info : 'Deleting template mod_top_post_users_month.html',
     type : 'POST',
@@ -623,7 +577,6 @@ FAE.step = [
   },
 
 
-  // STEP 47
   {
     info : 'Deleting template mod_top_post_users_week.html',
     type : 'POST',
@@ -636,7 +589,6 @@ FAE.step = [
   },
 
 
-  // STEP 48
   {
     info : 'Deleting template mod_top_posters.html',
     type : 'POST',
@@ -649,7 +601,6 @@ FAE.step = [
   },
 
 
-  // STEP 49
   {
     info : 'Deleting template mod_whoisonline.html',
     type : 'POST',
@@ -662,7 +613,6 @@ FAE.step = [
   },
 
 
-  // STEP 50
   {
     info : 'Deleting template standard.html',
     type : 'POST',
@@ -675,7 +625,6 @@ FAE.step = [
   },
 
 
-  // STEP 51
   {
     info : 'Deleting template album_cat_body.html',
     type : 'POST',
@@ -688,7 +637,6 @@ FAE.step = [
   },
 
 
-  // STEP 52
   {
     info : 'Deleting template album_cat_top10.html',
     type : 'POST',
@@ -701,7 +649,6 @@ FAE.step = [
   },
 
 
-  // STEP 53
   {
     info : 'Deleting template album_edit_body.html',
     type : 'POST',
@@ -714,7 +661,6 @@ FAE.step = [
   },
 
 
-  // STEP 54
   {
     info : 'Deleting template album_formsearch_body.html',
     type : 'POST',
@@ -727,7 +673,6 @@ FAE.step = [
   },
 
 
-  // STEP 55
   {
     info : 'Deleting template album_index_body.html',
     type : 'POST',
@@ -740,7 +685,6 @@ FAE.step = [
   },
 
 
-  // STEP 56
   {
     info : 'Deleting template album_modcp_body.html',
     type : 'POST',
@@ -753,7 +697,6 @@ FAE.step = [
   },
 
 
-  // STEP 57
   {
     info : 'Deleting template album_moderate_body.html',
     type : 'POST',
@@ -766,7 +709,6 @@ FAE.step = [
   },
 
 
-  // STEP 58
   {
     info : 'Deleting template album_nuffimage_box.html',
     type : 'POST',
@@ -779,7 +721,6 @@ FAE.step = [
   },
 
 
-  // STEP 59
   {
     info : 'Deleting template album_search_body.html',
     type : 'POST',
@@ -792,7 +733,6 @@ FAE.step = [
   },
 
 
-  // STEP 60
   {
     info : 'Deleting template album_showpage_body.html',
     type : 'POST',
@@ -805,7 +745,6 @@ FAE.step = [
   },
 
 
-  // STEP 61
   {
     info : 'Deleting template album_slideshow_body.html',
     type : 'POST',
@@ -818,7 +757,6 @@ FAE.step = [
   },
 
 
-  // STEP 62
   {
     info : 'Deleting template album_upload_body.html',
     type : 'POST',
@@ -831,7 +769,6 @@ FAE.step = [
   },
 
 
-  // STEP 63
   {
     info : 'Deleting template birthday_list_box.html',
     type : 'POST',
@@ -844,7 +781,6 @@ FAE.step = [
   },
 
 
-  // STEP 64
   {
     info : 'Deleting template calendar_body.html',
     type : 'POST',
@@ -857,7 +793,6 @@ FAE.step = [
   },
 
 
-  // STEP 65
   {
     info : 'Deleting template calendar_box.html',
     type : 'POST',
@@ -870,7 +805,6 @@ FAE.step = [
   },
 
 
-  // STEP 66
   {
     info : 'Deleting template calendar_overview_profil.html',
     type : 'POST',
@@ -883,7 +817,6 @@ FAE.step = [
   },
 
 
-  // STEP 67
   {
     info : 'Deleting template calendar_overview_topic.html',
     type : 'POST',
@@ -896,7 +829,6 @@ FAE.step = [
   },
 
 
-  // STEP 68
   {
     info : 'Deleting template calendar_scheduler_body.html',
     type : 'POST',
@@ -909,7 +841,6 @@ FAE.step = [
   },
 
 
-  // STEP 69
   {
     info : 'Deleting template groupcp_info_body.html',
     type : 'POST',
@@ -922,7 +853,6 @@ FAE.step = [
   },
 
 
-  // STEP 70
   {
     info : 'Deleting template groupcp_pending_info.html',
     type : 'POST',
@@ -935,7 +865,6 @@ FAE.step = [
   },
 
 
-  // STEP 71
   {
     info : 'Deleting template groupcp_user_body.html',
     type : 'POST',
@@ -948,7 +877,6 @@ FAE.step = [
   },
 
 
-  // STEP 72
   {
     info : 'Deleting template posting_body.html',
     type : 'POST',
@@ -961,7 +889,6 @@ FAE.step = [
   },
 
 
-  // STEP 73
   {
     info : 'Deleting template posting_poll_body.html',
     type : 'POST',
@@ -974,7 +901,6 @@ FAE.step = [
   },
 
 
-  // STEP 74
   {
     info : 'Deleting template posting_preview.html',
     type : 'POST',
@@ -987,7 +913,6 @@ FAE.step = [
   },
 
 
-  // STEP 75
   {
     info : 'Deleting template posting_topic_review.html',
     type : 'POST',
@@ -1000,7 +925,6 @@ FAE.step = [
   },
 
 
-  // STEP 76
   {
     info : 'Deleting template privmsg_topic_review.html',
     type : 'POST',
@@ -1013,7 +937,6 @@ FAE.step = [
   },
 
 
-  // STEP 77
   {
     info : 'Deleting template privmsgs_body.html',
     type : 'POST',
@@ -1026,7 +949,6 @@ FAE.step = [
   },
 
 
-  // STEP 78
   {
     info : 'Deleting template privmsgs_popup.html',
     type : 'POST',
@@ -1039,7 +961,6 @@ FAE.step = [
   },
 
 
-  // STEP 79
   {
     info : 'Deleting template privmsgs_preview.html',
     type : 'POST',
@@ -1052,7 +973,6 @@ FAE.step = [
   },
 
 
-  // STEP 80
   {
     info : 'Deleting template privmsgs_read_body.html',
     type : 'POST',
@@ -1065,7 +985,6 @@ FAE.step = [
   },
 
 
-  // STEP 81
   {
     info : 'Deleting template merge_body.html',
     type : 'POST',
@@ -1078,7 +997,6 @@ FAE.step = [
   },
 
 
-  // STEP 82
   {
     info : 'Deleting template merge_select_body.html',
     type : 'POST',
@@ -1091,7 +1009,6 @@ FAE.step = [
   },
 
 
-  // STEP 83
   {
     info : 'Deleting template modcp_body.html',
     type : 'POST',
@@ -1104,7 +1021,6 @@ FAE.step = [
   },
 
 
-  // STEP 84
   {
     info : 'Deleting template modcp_move.html',
     type : 'POST',
@@ -1117,7 +1033,6 @@ FAE.step = [
   },
 
 
-  // STEP 85
   {
     info : 'Deleting template modcp_split.html',
     type : 'POST',
@@ -1130,7 +1045,6 @@ FAE.step = [
   },
 
 
-  // STEP 86
   {
     info : 'Deleting template modcp_viewip.html',
     type : 'POST',
@@ -1143,7 +1057,6 @@ FAE.step = [
   },
 
 
-  // STEP 87
   {
     info : 'Deleting template report_list_body.html',
     type : 'POST',
@@ -1156,7 +1069,6 @@ FAE.step = [
   },
 
 
-  // STEP 88
   {
     info : 'Deleting template report_popup_body.html',
     type : 'POST',
@@ -1169,7 +1081,6 @@ FAE.step = [
   },
 
 
-  // STEP 89
   {
     info : 'Deleting template report_view_body.html',
     type : 'POST',
@@ -1182,7 +1093,6 @@ FAE.step = [
   },
 
 
-  // STEP 90
   {
     info : 'Deleting template profile_add_body.html',
     type : 'POST',
@@ -1195,7 +1105,6 @@ FAE.step = [
   },
 
 
-  // STEP 91
   {
     info : 'Deleting template profile_avatar_gallery.html',
     type : 'POST',
@@ -1208,7 +1117,6 @@ FAE.step = [
   },
 
 
-  // STEP 92
   {
     info : 'Deleting template profile_edit_signature.html',
     type : 'POST',
@@ -1221,7 +1129,6 @@ FAE.step = [
   },
 
 
-  // STEP 93
   {
     info : 'Deleting template profile_send_email.html',
     type : 'POST',
@@ -1234,7 +1141,6 @@ FAE.step = [
   },
 
 
-  // STEP 94
   {
     info : 'Deleting template profile_send_pass.html',
     type : 'POST',
@@ -1247,7 +1153,6 @@ FAE.step = [
   },
 
 
-  // STEP 95
   {
     info : 'Deleting template profile_view_body.html',
     type : 'POST',
@@ -1260,7 +1165,6 @@ FAE.step = [
   },
 
 
-  // STEP 96
   {
     info : 'Deleting template rpg_sheet.html',
     type : 'POST',
@@ -1273,7 +1177,6 @@ FAE.step = [
   },
 
 
-  // STEP 97
   {
     info : 'Deleting template rpg_sheet_edit.html',
     type : 'POST',
@@ -1286,7 +1189,6 @@ FAE.step = [
   },
 
 
-  // STEP 98
   {
     info : 'Deleting template overall_header.html (mobile)',
     type : 'POST',
@@ -1299,7 +1201,6 @@ FAE.step = [
   },
 
 
-  // STEP 99
   {
      info : 'Deleting control panel navigation link',
      type : 'GET',
@@ -1315,7 +1216,6 @@ FAE.step = [
   },
 
 
-  // STEP 100
   {
     info : 'Resynchronizing forum',
     type : 'POST',
@@ -1354,7 +1254,7 @@ FAE.next = function() {
   FAE.progress();
 };
 
-// handler in case of any errors in the installation process
+// handler in case of any errors in the uninstallation process
 FAE.error = function() {
   FAE.log('An error was encountered on step ' + FAE.index + ' (' + FAE.step[FAE.index].info + ') of the uninstallation process. Please <a href="https://github.com/SethClydesdale/forumactif-edge/issues/new" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
   FAE.next();

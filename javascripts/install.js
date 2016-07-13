@@ -38,7 +38,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/fa_edge.min.css',
     func : function(d) {
-      FAE.step[3].data.edit_code = d;
+      FAE.step[FAE.index + 1].data.edit_code = d;
     }
   },
 
@@ -95,7 +95,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-all-the-pages/all.js',
     func : function(d) {
-      FAE.step[7].data.content = d;
+      FAE.step[FAE.index + 1].data.content = d;
     }
   },
 
@@ -120,7 +120,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-the-homepage/homepage.js',
     func : function(d) {
-      FAE.step[9].data.content = d;
+      FAE.step[FAE.index + 1].data.content = d;
     }
   },
 
@@ -145,7 +145,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/in-the-topics/topics.js',
     func : function(d) {
-      FAE.step[11].data.content = d;
+      FAE.step[FAE.index + 1].data.content = d;
     }
   },
 
@@ -170,7 +170,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/agreement.html',
     func : function(d) {
-      FAE.step[13].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -203,7 +203,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/buy_credits.html',
     func : function(d) {
-      FAE.step[16].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -236,7 +236,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/confirm_body.html',
     func : function(d) {
-      FAE.step[19].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -269,7 +269,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/error_body.html',
     func : function(d) {
-      FAE.step[22].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -302,7 +302,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/faq_body.html',
     func : function(d) {
-      FAE.step[25].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -335,7 +335,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/faq_dhtml.html',
     func : function(d) {
-      FAE.step[28].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -368,7 +368,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/greeting_popup.html',
     func : function(d) {
-      FAE.step[31].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -401,7 +401,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/index_body.html',
     func : function(d) {
-      FAE.step[34].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -434,7 +434,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/index_box.html',
     func : function(d) {
-      FAE.step[37].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -467,7 +467,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/jumpbox.html',
     func : function(d) {
-      FAE.step[40].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -500,7 +500,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/memberlist_body.html',
     func : function(d) {
-      FAE.step[43].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -533,7 +533,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/message_body.html',
     func : function(d) {
-      FAE.step[46].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -566,7 +566,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/overall_footer_begin.html',
     func : function(d) {
-      FAE.step[49].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -599,7 +599,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/overall_footer_end.html',
     func : function(d) {
-      FAE.step[52].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -632,7 +632,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/overall_header.html',
     func : function(d) {
-      FAE.step[55].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -665,7 +665,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/search_body.html',
     func : function(d) {
-      FAE.step[58].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -698,7 +698,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/search_results_posts.html',
     func : function(d) {
-      FAE.step[61].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -731,7 +731,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/search_results_topics.html',
     func : function(d) {
-      FAE.step[64].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -764,7 +764,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/topics_blog_box.html',
     func : function(d) {
-      FAE.step[67].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -797,7 +797,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/topics_list_box.html',
     func : function(d) {
-      FAE.step[70].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -830,7 +830,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/viewcomments_body.html',
     func : function(d) {
-      FAE.step[73].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -863,7 +863,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/viewforum_body.html',
     func : function(d) {
-      FAE.step[76].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -896,7 +896,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/viewonline_body.html',
     func : function(d) {
-      FAE.step[79].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -929,7 +929,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/general/viewtopic_body.html',
     func : function(d) {
-      FAE.step[82].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -961,7 +961,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_chatbox.html',
     func : function(d) {
-      FAE.step[85].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -994,7 +994,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_keywords.html',
     func : function(d) {
-      FAE.step[88].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1027,7 +1027,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_login.html',
     func : function(d) {
-      FAE.step[91].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1060,7 +1060,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_most_active_starters.html',
     func : function(d) {
-      FAE.step[94].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1093,7 +1093,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_most_active_topics.html',
     func : function(d) {
-      FAE.step[97].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1126,7 +1126,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_most_viewed_topics.html',
     func : function(d) {
-      FAE.step[100].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1159,7 +1159,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_news.html',
     func : function(d) {
-      FAE.step[103].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1192,7 +1192,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_poll.html',
     func : function(d) {
-      FAE.step[106].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1225,7 +1225,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_recent_topics.html',
     func : function(d) {
-      FAE.step[109].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1258,7 +1258,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_rss_feeds.html',
     func : function(d) {
-      FAE.step[112].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1291,7 +1291,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_search.html',
     func : function(d) {
-      FAE.step[115].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1324,7 +1324,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_social_bookmarking.html',
     func : function(d) {
-      FAE.step[118].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1357,7 +1357,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_statistics.html',
     func : function(d) {
-      FAE.step[121].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1390,7 +1390,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_top_post_users_month.html',
     func : function(d) {
-      FAE.step[124].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1423,7 +1423,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_top_post_users_week.html',
     func : function(d) {
-      FAE.step[127].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1456,7 +1456,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_top_posters.html',
     func : function(d) {
-      FAE.step[130].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1489,7 +1489,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/mod_whoisonline.html',
     func : function(d) {
-      FAE.step[133].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1522,7 +1522,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/portal/standard.html',
     func : function(d) {
-      FAE.step[136].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1555,7 +1555,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_cat_body.html',
     func : function(d) {
-      FAE.step[139].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1588,7 +1588,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_cat_top10.html',
     func : function(d) {
-      FAE.step[142].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1621,7 +1621,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_edit_body.html',
     func : function(d) {
-      FAE.step[145].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1654,7 +1654,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_formsearch_body.html',
     func : function(d) {
-      FAE.step[148].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1687,7 +1687,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_index_body.html',
     func : function(d) {
-      FAE.step[151].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1720,7 +1720,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_modcp_body.html',
     func : function(d) {
-      FAE.step[154].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1753,7 +1753,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_moderate_body.html',
     func : function(d) {
-      FAE.step[157].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1786,7 +1786,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_nuffimage_box.html',
     func : function(d) {
-      FAE.step[160].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1819,7 +1819,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_search_body.html',
     func : function(d) {
-      FAE.step[163].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1852,7 +1852,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_showpage_body.html',
     func : function(d) {
-      FAE.step[166].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1885,7 +1885,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_slideshow_body.html',
     func : function(d) {
-      FAE.step[169].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1918,7 +1918,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/gallery/album_upload_body.html',
     func : function(d) {
-      FAE.step[172].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1951,7 +1951,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/calendar/birthday_list_box.html',
     func : function(d) {
-      FAE.step[175].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -1984,7 +1984,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/calendar/calendar_body.html',
     func : function(d) {
-      FAE.step[178].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2017,7 +2017,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/calendar/calendar_box.html',
     func : function(d) {
-      FAE.step[181].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2050,7 +2050,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/calendar/calendar_overview_profil.html',
     func : function(d) {
-      FAE.step[184].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2083,7 +2083,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/calendar/calendar_overview_topic.html',
     func : function(d) {
-      FAE.step[187].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2116,7 +2116,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/calendar/calendar_scheduler_body.html',
     func : function(d) {
-      FAE.step[190].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2149,7 +2149,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/usergroups/groupcp_info_body.html',
     func : function(d) {
-      FAE.step[193].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2182,7 +2182,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/usergroups/groupcp_pending_info.html',
     func : function(d) {
-      FAE.step[196].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2215,7 +2215,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/usergroups/groupcp_user_body.html',
     func : function(d) {
-      FAE.step[199].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2248,7 +2248,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/post-and-private-messages/posting_body.html',
     func : function(d) {
-      FAE.step[202].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2281,7 +2281,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/post-and-private-messages/posting_poll_body.html',
     func : function(d) {
-      FAE.step[205].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2314,7 +2314,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/post-and-private-messages/posting_preview.html',
     func : function(d) {
-      FAE.step[208].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2347,7 +2347,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/post-and-private-messages/posting_topic_review.html',
     func : function(d) {
-      FAE.step[211].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2380,7 +2380,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/post-and-private-messages/privmsg_topic_review.html',
     func : function(d) {
-      FAE.step[214].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2413,7 +2413,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/post-and-private-messages/privmsgs_body.html',
     func : function(d) {
-      FAE.step[217].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2446,7 +2446,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/post-and-private-messages/privmsgs_popup.html',
     func : function(d) {
-      FAE.step[220].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2479,7 +2479,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/post-and-private-messages/privmsgs_preview.html',
     func : function(d) {
-      FAE.step[223].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2512,7 +2512,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/post-and-private-messages/privmsgs_read_body.html',
     func : function(d) {
-      FAE.step[226].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2545,7 +2545,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/moderation/merge_body.html',
     func : function(d) {
-      FAE.step[229].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2578,7 +2578,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/moderation/merge_select_body.html',
     func : function(d) {
-      FAE.step[232].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2611,7 +2611,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/moderation/modcp_body.html',
     func : function(d) {
-      FAE.step[235].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2644,7 +2644,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/moderation/modcp_move.html',
     func : function(d) {
-      FAE.step[238].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2677,7 +2677,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/moderation/modcp_split.html',
     func : function(d) {
-      FAE.step[241].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2710,7 +2710,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/moderation/modcp_viewip.html',
     func : function(d) {
-      FAE.step[244].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2743,7 +2743,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/moderation/report_list_body.html',
     func : function(d) {
-      FAE.step[247].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2776,7 +2776,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/moderation/report_popup_body.html',
     func : function(d) {
-      FAE.step[250].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2809,7 +2809,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/moderation/report_view_body.html',
     func : function(d) {
-      FAE.step[253].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2842,7 +2842,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/profile/profile_add_body.html',
     func : function(d) {
-      FAE.step[256].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2875,7 +2875,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/profile/profile_avatar_gallery.html',
     func : function(d) {
-      FAE.step[259].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2908,7 +2908,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/profile/profile_edit_signature.html',
     func : function(d) {
-      FAE.step[262].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2941,7 +2941,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/profile/profile_send_email.html',
     func : function(d) {
-      FAE.step[265].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -2974,7 +2974,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/profile/profile_send_pass.html',
     func : function(d) {
-      FAE.step[268].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -3007,7 +3007,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/profile/profile_view_body.html',
     func : function(d) {
-      FAE.step[271].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -3040,7 +3040,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/profile/rpg_sheet.html',
     func : function(d) {
-      FAE.step[274].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -3073,7 +3073,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/profile/rpg_sheet_edit.html',
     func : function(d) {
-      FAE.step[277].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -3106,7 +3106,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/templates/mobile-version/overall_header.html',
     func : function(d) {
-      FAE.step[280].data.template = d;
+      FAE.step[FAE.index + 1].data.template = d;
     }
   },
 
@@ -3419,7 +3419,7 @@ FAE.step = [
     type : 'GET',
      url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/version-data.js',
     func : function(d) {
-      FAE.step[293].data.content = d;
+      FAE.step[FAE.index + 1].data.content = d;
     }
   },
 

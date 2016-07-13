@@ -3386,22 +3386,56 @@ FAE.step = [
 
   // STEP 291
   {
-    info : 'Creating navigation link for control panel',
-    type : 'POST',
-     url : 'part=themes&sub=index&mode=navbar',
-    data : {
-      navbar_menu : 'FAE Control Panel',
-      navbar_image : '',
-      navbar_text : 'FAE Control Panel',
-      navbar_url : window.location.pathname,
-      navbar_admin : true,
-      action : 'insert',
-      submit : 'Save'
-    }
+     info : 'Creating navigation link for control panel',
+     type : 'GET',
+      url : '/admin/index.forum?part=themes&sub=index&mode=navbar&extended_admin=1&tid=' + FAE.tid,
+     func : function(d) {
+       for (var a = $('fieldset tr', d), i = 0, j = a.length, regex = new RegExp('FAE Control Panel|' + window.location.pathname, 'ig'); i < j; i++) {
+         if (!regex.test(a[i].innerHTML)) {
+
+           $.post('/admin/index.forum?part=themes&sub=index&mode=navbar&tid=' + FAE.tid, {
+             navbar_menu : 'FAE Control Panel',
+             navbar_image : '',
+             navbar_text : 'FAE Control Panel',
+             navbar_url : window.location.pathname,
+             navbar_admin : true,
+             action : 'insert',
+             submit : 'Save'
+           });
+
+           break;
+         }
+       }
+     }
   },
 
 
   // STEP 292
+  {
+    info : 'Getting version-data.js',
+    type : 'GET',
+     url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/version-data.js',
+    func : function(d) {
+      FAE.step[293].data.content = d;
+    }
+  },
+
+
+  // STEP 293
+  {
+    info : 'Installing version-data.js',
+    type : 'POST',
+     url : 'part=modules&sub=html&mode=js_edit&extended_admin=1',
+    data : {
+                 title : '[FA EDGE] VERSION-DATA.JS',
+      'js_placement[]' : 'allpages',
+                  mode : 'save',
+                submit : 'Submit'
+    }
+  },
+
+
+  // STEP 294
   {
     info : 'Resynchronizing forum',
     type : 'POST',

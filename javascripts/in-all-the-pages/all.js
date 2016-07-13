@@ -10,6 +10,7 @@
 ** 06. image resizer
 ** 07. fae_toggle_category
 ** 08. sticky_nav_notifications
+** 09. update_notifier
 ******************************/
 
 
@@ -485,5 +486,25 @@ $(function() {
         }
       }, 'json');
     }
+  }
+});
+
+
+/* -- 09. update_notifier -- */
+$(function() {
+  if (_userdata.user_id == 1 && !my_getcookie('fae_update_alerted')) {
+
+    $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/version-data.js', function(d) {
+      var script = document.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.text = d.replace(/forumactif_edge_version_data/, 'fae_github_version_data');
+      document.body.appendChild(script);
+
+      if (forumactif_edge_version_data.length < fae_github_version_data.length) {
+        alert('An update has been found for Forumactif Edge. When you\'re ready, please proceed to your FAE Control Panel and click "Check for updates" to begin the update process.');
+        my_setcookie('fae_update_alerted', '1');
+      }
+    });
+
   }
 });

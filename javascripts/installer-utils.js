@@ -10,7 +10,7 @@
     bar : document.getElementById('fae_progress'),
     progress : function() {
       var percent = (FAE.index / FAE.quota * 100).toFixed(2);
-      FAE.bar.innerHTML = '<div id="fae_prog_bar" style="width:' + percent + '%;"></div><span id="fae_prog_number">' + (percent == 100 ? 'INSTALL COMPLETE' : percent + '%') + '</span>';
+      FAE.bar.innerHTML = '<div id="fae_prog_bar" style="width:' + percent + '%;"></div><span id="fae_prog_number">' + (percent == 100 ? 'COMPLETE!' : percent + '%') + '</span>';
     },
 
 

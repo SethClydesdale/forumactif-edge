@@ -1391,6 +1391,7 @@ input:checked + .fa_pseudo_checkbox:after { font-size:14px; }
 }
 
 /* memberlist */
+td.avatar-mini { width:250px }
 .avatar-mini img {
   vertical-align:middle;
   margin-right:3px;

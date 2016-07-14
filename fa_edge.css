@@ -2231,7 +2231,7 @@ body #chatbox .cb-avatar, body #chatbox .cb-avatar img {
     white-space:nowrap;
     overflow-x:auto;
     width:100%;
-    padding:0;
+    padding:6px 0;
   }
 
   body div.sceditor-dropdown {

@@ -15,4 +15,4 @@ You can find a live and image preview of Forumactif Edge below.
 
 Forum : http://fmdesign.forumotion.com/forum
 
-![](http://i35.servimg.com/u/f35/18/21/41/30/previe10.png)
+![preview](http://i35.servimg.com/u/f35/18/21/41/30/previe10.png)

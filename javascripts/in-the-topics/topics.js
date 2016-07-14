@@ -3,13 +3,14 @@
 *******************************
 ** 00. group_color
 ** 01. ajax_reputation_counter
+** 02. profile_field_classifier
 ******************************/
 
 
 /* -- 00. group_color -- */
 $(function() {
   for (var a = $('.post'), i = 0, j = a.length, color, rgb, title; i < j; i++) {
-    color = $('.postprofile dt span[style*="color"]', a[i])[0];
+    color = $('.postprofile dt .username span[style*="color"]', a[i])[0];
 
     if (color) {
       title = $('.title', a[i]);
@@ -65,6 +66,18 @@ $(function(){
       });
 
       return false;
+    });
+  }
+});
+
+
+/* -- 02. profile_field_classifier -- */
+$(function() {
+  for (var field = $('.profile-field'), i = 0, j = field.length; i < j; i++) {
+    field[i].className += ' field_' + $('.label', field[i]).text().toLowerCase().replace(/ : /, '').replace(/[^a-z0-9]/g, function(s) {
+        var c = s.charCodeAt(0);
+        if (c == 32) return '-';
+        return '__' + ('000' + c.toString(16)).slice(-4);
     });
   }
 });

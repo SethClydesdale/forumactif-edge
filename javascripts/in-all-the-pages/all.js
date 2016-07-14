@@ -502,8 +502,9 @@ $(function() {
 
       if (forumactif_edge_version_data.length < fae_github_version_data.length) {
         alert('An update has been found for Forumactif Edge. When you\'re ready, please proceed to your FAE Control Panel and click "Check for updates" to begin the update process.');
-        my_setcookie('fae_update_alerted', '1');
       }
+
+      my_setcookie('fae_update_alerted', '1');
     });
 
   }

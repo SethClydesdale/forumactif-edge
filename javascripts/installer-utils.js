@@ -1,5 +1,8 @@
 (function() {
   window.FAE = {
+    raw : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/',
+    eGIF : 'http://illiweb.com/fa/empty.gif',
+
     logger : document.getElementById('fae_log'),
     log : function(str, css) {
       FAE.logger.insertAdjacentHTML('beforeend', '<div class="fae_msg_log" ' + (css ? 'style="' + css + '"' : '') + '>' + str + '</div>');
@@ -20,7 +23,7 @@
         FAE.log('Updates are about to begin, please do not close this tab.');
 
         // get the update utilities and begin the update process
-        $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/updates/utils.js', function(d) {
+        $.get(FAE.raw + 'updates/utils.js', function(d) {
           FAE.script(d);
           FAE.next();
         });
@@ -28,7 +31,7 @@
       } else {
         FAE.log('Getting update instructions for version ' + FAE.update_queue[FAE.update_index] + '... (' + (FAE.update_index + 1) + '/' + FAE.update_queue.length + ')');
 
-        $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/updates/' + FAE.update_queue[FAE.update_index] + '.js', function(d) {
+        $.get(FAE.raw + 'updates/' + FAE.update_queue[FAE.update_index] + '.js', function(d) {
           FAE.script(d);
           FAE.step = FAE.step.concat(FAE.update_step);
           FAE.getUpdates();
@@ -64,7 +67,7 @@
       document.getElementById('fae_install').onclick = function() {
         if (confirm('Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.'.replace(/\\/g, ''))) {
 
-          $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/install.js', function(d) {
+          $.get(FAE.raw + 'javascripts/install.js', function(d) {
             FAE.script(d);
             FAE.next();
           });
@@ -86,7 +89,7 @@
         uninstall.onclick = function() {
           if (confirm('Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.'.replace(/\\/g, ''))) {
 
-            $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/uninstall.js', function(d) {
+            $.get(FAE.raw + 'javascripts/uninstall.js', function(d) {
               FAE.script(d);
               FAE.next();
             });
@@ -101,7 +104,7 @@
           FAE.log('Checking for updates on Github...');
           document.getElementById('fae_options').style.display = 'none';
 
-          $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/javascripts/version-data.js', function(d) {
+          $.get(FAE.raw + 'javascripts/version-data.js', function(d) {
             FAE.script(d.replace(/forumactif_edge_version_data/, 'fae_github_version_data'));
             FAE.version_string = d; // save version data for later so we can update the forum version info
 

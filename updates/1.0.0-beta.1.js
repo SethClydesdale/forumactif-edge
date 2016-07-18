@@ -31,7 +31,7 @@ FAE.update_step = [
   {
     info : 'Adding new styles introduced in v1.0.0-beta.1'
     type : 'POST',
-     url : '',
+     url : 'part=themes&sub=logos&mode=css&extended_admin=1',
     data : {}
   },
 
@@ -53,7 +53,7 @@ FAE.update_step = [
   {
     info : 'Updating template index_box.html',
     type : 'POST',
-     url : '',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
     data : {
          t : 111,
          l : 'main',

@@ -6,7 +6,7 @@ Unlike the default versions provided by Forumotion, FAE is open source and manag
 
 ## Installing
 
-To install Forumactif Edge please read over the wiki by clicking the link below or in the side menu.
+To install Forumactif Edge please read over the wiki by clicking the link below.
 
 [Installing Forumactif Edge](https://github.com/SethClydesdale/forumactif-edge/wiki/Installing)
 

@@ -1,15 +1,15 @@
 /*
-  UPDATES DONE : 3/9
+  UPDATES DONE : 8/9
 
   TODO :
   X add View posts since last visit + other links that are missing in the index_box (DONE!)
   X add scrollbar to classic newest topics widget
-  - add share / action in topics
-  - add date / time + last visit to index_body
-  - add additional padding or line-height to navigation in mobile media query
+  X add share / action in topics
+  X add date / time + last visit to index_body
+  X add additional padding or line-height to navigation in mobile media query
   X index chatbox on top is not of adequate height
-  - http://fmdesign.forumotion.com/u1wall - pagination overflowing at bottom
-  - http://fmdesign.forumotion.com/search?search_id=newposts - forum posted in is missing
+  X pagination floats are not cleared
+  X sub-forum a topic is posted in during searches is missing
   - implement translation functionality
 
 */
@@ -24,7 +24,7 @@ FAE.update_step = [
       var form = $('form[method="post"]', d)[0];
 
       FAE.step[FAE.index + 1].data = {
-              edit_code : form.edit_code.value + '\n\n/* added in FAE v1.0.0-beta.1 */\n.linklist{margin:6px 0;padding-left:0}.linklist li{display:inline-block}\n#recent_topics_classical{max-height:200px;overflow-y:auto}\n.panel #chatbox_top{height:400px!important}',
+              edit_code : '@import url(http://ct1.addthis.com/static/r07/widget110.css);' + form.edit_code.value + '\n\n/* added in FAE v1.0.0-beta.1 */\n.linklist{margin:6px 0;padding-left:0}.linklist li{display:inline-block}\n#recent_topics_classical{max-height:200px;overflow-y:auto}\n.panel #chatbox_top{height:400px!important}\n#cp-main .pagination{float:none;text-align:right}\n@media (min-width:0px) and (max-width:768px){#navbar .mainmenu,#tabs a{line-height:50px}}\n.addthis_button,a[href="javascript:showhide(document.getElementById(\'plus_menu\'))"],#plus_menu{font-size:12px}\n.addthis_button:after{content:" • ";color:#333;}\n#plus_menu{background:#EEE;border:1px solid #CCC;padding:3px}',
                  submit : 'Submit'
       }
     }
@@ -32,7 +32,7 @@ FAE.update_step = [
 
 
   {
-    info : 'Adding new styles introduced in v1.0.0-beta.1'
+    info : 'Adding new styles introduced in v1.0.0-beta.1',
     type : 'POST',
      url : 'part=themes&sub=logos&mode=css&extended_admin=1',
     data : {}
@@ -105,4 +105,70 @@ FAE.update_step = [
     type : 'PUBLISH',
      tpl : 904
   },
+
+
+  {
+    info : 'Getting template index_body.html',
+    type : 'GET',
+     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=110&l=main&extended_admin=1&tid=' + FAE.tid,
+    func : function(d) {
+      var form = $('form[name="post"]', d)[0];
+
+      FAE.step[FAE.index + 1].data.template = form.template.value
+                                              .replace('{BOARD_INDEX}', '<div id="board_time_table">\n  <p id="board_current_time" class="left">{CURRENT_TIME}</p>\n  <!-- BEGIN switch_user_logged_in --><p id="board_last_visit" class="right">{LAST_VISIT_DATE}</p><!-- END switch_user_logged_in -->\n  <div class="clear"></div>\n</div>\n{BOARD_INDEX}');
+    }
+  },
+
+
+  {
+    info : 'Updating template index_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+           t : 110,
+           l : 'main',
+        name : 'index_body',
+      submit : 'Save'
+    }
+  },
+
+
+  {
+    info : 'Publishing template index_body.html',
+    type : 'PUBLISH',
+     tpl : 110
+  },
+
+
+  {
+    info : 'Getting template search_results_topics.html',
+    type : 'GET',
+     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=120&l=main&extended_admin=1&tid=' + FAE.tid,
+    func : function(d) {
+      var form = $('form[name="post"]', d)[0];
+
+      FAE.step[FAE.index + 1].data.template = form.template.value
+                                              .replace('<strong>{searchresults.TOPIC_AUTHOR}</strong>', '<strong>{searchresults.TOPIC_AUTHOR}</strong> {searchresults.L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_NAME}</a>');
+    }
+  },
+
+
+  {
+    info : 'Updating template search_results_topics.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+           t : 120,
+           l : 'main',
+        name : 'search_results_topics',
+      submit : 'Save'
+    }
+  },
+
+
+  {
+    info : 'Publishing template search_results_topics.html',
+    type : 'PUBLISH',
+     tpl : 120
+  }
 ];

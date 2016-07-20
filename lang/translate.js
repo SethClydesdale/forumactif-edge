@@ -1,7 +1,7 @@
 // translation instructions
 FAE.step = [
   {
-    info : 'Getting forum\'s stylesheet',
+    info : 'Getting your forum\'s stylesheet',
     type : 'GET',
      url : '/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid,
     func : function(d) {
@@ -15,7 +15,7 @@ FAE.step = [
 
 
   {
-    info : 'Translating and updating stylesheet',
+    info : 'Translating and updating your stylesheet',
     type : 'POST',
      url : 'part=themes&sub=logos&mode=css&extended_admin=1',
     data : {
@@ -25,31 +25,15 @@ FAE.step = [
 
 
   {
-    info : 'Getting translated buttons',
-    type : 'GET',
-     url : '/',
-    func : function(d) {
-      var i;
-      for (i in FAE.lang_new.images.buttons) {
-        FAE.step[FAE.index + 1].data[i] = FAE.lang_new.images.buttons[i];
-      }
-    }
-  },
-
-
-  {
-    info : 'Updating buttons',
+    info : 'Translating and updating button images',
     type : 'POST',
      url : 'part=themes&sub=logos&mode=depart&page=buttons&mode=buttons&extended_admin=1',
-    data : {
-      page : 'buttons',
-      submit : 'Save'
-    }
+    data : FAE.lang_new.images.buttons
   },
 
 
   {
-    info : 'Translating and updating gallery buttons',
+    info : 'Translating and updating gallery images',
     type : 'POST',
      url : 'part=themes&sub=logos&mode=depart&page=&mode=gallery&extended_admin=1',
     data : {

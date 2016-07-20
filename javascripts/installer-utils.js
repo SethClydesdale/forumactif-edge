@@ -1,56 +1,54 @@
 (function() {
-  window.FAE = {
-    raw : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/',
-    eGIF : 'http://illiweb.com/fa/empty.gif',
+  if (!window.FAE) {
+    window.FAE = new Object();
+  }
 
-    logger : document.getElementById('fae_log'),
-    log : function(str, css) {
-      FAE.logger.insertAdjacentHTML('beforeend', '<div class="fae_msg_log" ' + (css ? 'style="' + css + '"' : '') + '>' + str + '</div>');
-      FAE.logger.scrollTop = 99999;
-    },
+  FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
+  FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
 
+  FAE.logger = document.getElementById('fae_log');
+  FAE.log = function(str, css) {
+    FAE.logger.insertAdjacentHTML('beforeend', '<div class="fae_msg_log" ' + (css ? 'style="' + css + '"' : '') + '>' + str + '</div>');
+    FAE.logger.scrollTop = 99999;
+  };
 
-    bar : document.getElementById('fae_progress'),
-    progress : function() {
-      var percent = (FAE.index / FAE.quota * 100).toFixed(2);
-      FAE.bar.innerHTML = '<div id="fae_prog_bar" style="width:' + percent + '%;"></div><span id="fae_prog_number">' + (percent == 100 ? 'COMPLETE!' : percent + '%') + '</span>';
-    },
+  FAE.bar = document.getElementById('fae_progress');
+  FAE.progress = function() {
+    var percent = (FAE.index / FAE.quota * 100).toFixed(2);
+    FAE.bar.innerHTML = '<div id="fae_prog_bar" style="width:' + percent + '%;"></div><span id="fae_prog_number">' + (percent == 100 ? 'COMPLETE!' : percent + '%') + '</span>';
+  };
 
+  // get update files and combine their steps into one array for consecutive execution
+  FAE.getUpdates = function() {
+    if (++FAE.update_index >= FAE.update_quota) {
+      FAE.log('Updates are about to begin, please do not close this tab.');
 
-    // get update files and combine their steps into one array for consecutive execution
-    getUpdates : function() {
-      if (++FAE.update_index >= FAE.update_quota) {
-        FAE.log('Updates are about to begin, please do not close this tab.');
+      // get the update utilities and begin the update process
+      $.get(FAE.raw + 'updates/utils.js', function(d) {
+        FAE.script(d);
+        FAE.next();
+      });
 
-        // get the update utilities and begin the update process
-        $.get(FAE.raw + 'updates/utils.js', function(d) {
-          FAE.script(d);
-          FAE.next();
-        });
+    } else {
+      FAE.log('Getting update instructions for version ' + FAE.update_queue[FAE.update_index] + '... (' + (FAE.update_index + 1) + '/' + FAE.update_queue.length + ')');
 
-      } else {
-        FAE.log('Getting update instructions for version ' + FAE.update_queue[FAE.update_index] + '... (' + (FAE.update_index + 1) + '/' + FAE.update_queue.length + ')');
+      $.get(FAE.raw + 'updates/' + FAE.update_queue[FAE.update_index] + '.js', function(d) {
+        FAE.script(d);
+        FAE.step = FAE.step.concat(FAE.update_step);
+        FAE.getUpdates();
 
-        $.get(FAE.raw + 'updates/' + FAE.update_queue[FAE.update_index] + '.js', function(d) {
-          FAE.script(d);
-          FAE.step = FAE.step.concat(FAE.update_step);
-          FAE.getUpdates();
-
-        }).error(function() {
-          FAE.log('Update instructions for version ' + FAE.update_queue[FAE.update_index] + ' could not be found. Please <a href="https://github.com/SethClydesdale/forumactif-edge/issues/new" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
-          FAE.getUpdates();
-        });
-      }
-    },
-
-
-    script : function(content) {
-      var script = document.createElement('SCRIPT');
-      script.type = 'text/javascript';
-      script.text = content;
-      document.body.appendChild(script);
+      }).error(function() {
+        FAE.log('Update instructions for version ' + FAE.update_queue[FAE.update_index] + ' could not be found. Please <a href="https://github.com/SethClydesdale/forumactif-edge/issues/new" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
+        FAE.getUpdates();
+      });
     }
+  };
 
+  FAE.script = function(content) {
+    var script = document.createElement('SCRIPT');
+    script.type = 'text/javascript';
+    script.text = content;
+    document.body.appendChild(script);
   };
 
   // stuff that needs to be executed when the doc is ready

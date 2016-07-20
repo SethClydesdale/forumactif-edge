@@ -1,16 +1,16 @@
 /*
-  UPDATES DONE : 8/9
 
-  TODO :
-  X add View posts since last visit + other links that are missing in the index_box (DONE!)
-  X add scrollbar to classic newest topics widget
-  X add share / action in topics
-  X add date / time + last visit to index_body
-  X add additional padding or line-height to navigation in mobile media query
-  X index chatbox on top is not of adequate height
-  X pagination floats are not cleared
-  X sub-forum a topic is posted in during searches is missing
-  - implement translation functionality
+  # Changes in v1.0.0-beta.1
+
+  - View posts since last visit + other links missing on the index have been added
+  - date / time + last visit on the index has been added
+  - sub-forums in topic searches have been added
+  - scroll bar has been added to the classical recent topics widget
+  - share / action buttons above topics are visible again
+  - line-height on navigation has been increased by 10px to make scrolling easier on mobile
+  - height of chatbox on top of the index has been increased to 400px
+  - pagination overflowing in profiles has been fixed
+  - ability to translate forumactif edge has been added to the control panel
 
 */
 
@@ -24,7 +24,7 @@ FAE.update_step = [
       var form = $('form[method="post"]', d)[0];
 
       FAE.step[FAE.index + 1].data = {
-              edit_code : '@import url(http://ct1.addthis.com/static/r07/widget110.css);' + form.edit_code.value + '\n\n/* added in FAE v1.0.0-beta.1 */\n.linklist{margin:6px 0;padding-left:0}.linklist li{display:inline-block}\n#recent_topics_classical{max-height:200px;overflow-y:auto}\n.panel #chatbox_top{height:400px!important}\n#cp-main .pagination{float:none;text-align:right}\n@media (min-width:0px) and (max-width:768px){#navbar .mainmenu,#tabs a{line-height:50px}}\n.addthis_button,a[href="javascript:showhide(document.getElementById(\'plus_menu\'))"],#plus_menu{font-size:12px}\n.addthis_button:after{content:" • ";color:#333;}\n#plus_menu{background:#EEE;border:1px solid #CCC;padding:3px}',
+              edit_code : '@import url(http://ct1.addthis.com/static/r07/widget110.css);' + form.edit_code.value + '\n\n/* added in FAE v1.0.0-beta.1 */\n.linklist{margin:6px 0;padding-left:0}.linklist li{display:inline-block}\n#recent_topics_classical{max-height:250px;overflow-y:auto;overflow-x:hidden;text-overflow:ellipsis;white-space:nowrap}\n.panel #chatbox_top{height:400px!important}\n#cp-main .pagination{float:none;text-align:right}\n@media (min-width:0px) and (max-width:768px){#navbar .mainmenu,#tabs a{line-height:50px}}\n#at-whatsthis{right:0}\n.addthis_button,a[href="javascript:showhide(document.getElementById(\'plus_menu\'))"],#plus_menu{font-size:12px}\n.addthis_button:after{content:" • ";color:#333;}\n#plus_menu{background:#EEE;border:1px solid #CCC;padding:3px}\n#logo-desc{padding:60px 30px 30px 30px}\n#site-title,#site-title h1{font-size:24px;font-weight:normal}',
                  submit : 'Submit'
       }
     }
@@ -58,10 +58,10 @@ FAE.update_step = [
     type : 'POST',
      url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
     data : {
-           t : 111,
-           l : 'main',
-        name : 'index_box',
-      submit : 'Save'
+             t : 111,
+             l : 'main',
+      tpl_name : 'index_box',
+        submit : 'Save'
     }
   },
 
@@ -92,10 +92,10 @@ FAE.update_step = [
     type : 'POST',
      url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
     data : {
-           t : 904,
-           l : 'portal',
-        name : 'mod_recent_topics',
-      submit : 'Save'
+             t : 904,
+             l : 'portal',
+      tpl_name : 'mod_recent_topics',
+        submit : 'Save'
     }
   },
 
@@ -125,10 +125,10 @@ FAE.update_step = [
     type : 'POST',
      url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
     data : {
-           t : 110,
-           l : 'main',
-        name : 'index_body',
-      submit : 'Save'
+             t : 110,
+             l : 'main',
+      tpl_name : 'index_body',
+        submit : 'Save'
     }
   },
 
@@ -158,10 +158,10 @@ FAE.update_step = [
     type : 'POST',
      url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
     data : {
-           t : 120,
-           l : 'main',
-        name : 'search_results_topics',
-      submit : 'Save'
+             t : 120,
+             l : 'main',
+      tpl_name : 'search_results_topics',
+        submit : 'Save'
     }
   },
 

@@ -1,6 +1,8 @@
 // English Translation
 FAE.lang = {
 
+  language : 'English',
+
   css : {
     offline : 'OFFLINE',
     online : 'ONLINE',

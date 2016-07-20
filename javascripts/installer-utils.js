@@ -180,6 +180,7 @@
 
                   $.get(FAE.raw + 'lang/translate.js', function(d) {
                     FAE.script(d);
+                    FAE.next();
                   });
                 });
               });

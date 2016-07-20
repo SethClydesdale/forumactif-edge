@@ -13,6 +13,9 @@
 ** 09. update_notifier
 ******************************/
 
+// fae language (DO NOT DELETE)
+FAE.board_lang = 'English';
+
 
 /* -- 00. fa_initForumModules -- */
 // initiate the toggler for the widget columns

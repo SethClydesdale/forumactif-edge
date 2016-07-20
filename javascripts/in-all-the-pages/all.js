@@ -13,7 +13,11 @@
 ** 09. update_notifier
 ******************************/
 
-// fae language (DO NOT DELETE)
+// IMPORTANT DATA (DO NOT DELETE)
+if (!window.FAE) {
+  window.FAE = new Object();
+}
+
 FAE.board_lang = 'English';
 
 

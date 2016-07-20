@@ -1,7 +1,7 @@
 // translation instructions
 FAE.step = [
   {
-    info : 'Getting your forum\'s stylesheet',
+    info : 'Getting forum stylesheet',
     type : 'GET',
      url : '/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid,
     func : function(d) {
@@ -15,7 +15,7 @@ FAE.step = [
 
 
   {
-    info : 'Translating and updating your stylesheet',
+    info : 'Translating and updating stylesheet',
     type : 'POST',
      url : 'part=themes&sub=logos&mode=css&extended_admin=1',
     data : {

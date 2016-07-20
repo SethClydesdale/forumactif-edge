@@ -40,6 +40,8 @@
 
 FAE.lang = {
 
+  language : 'Français',
+
   css : {
     offline : 'HORS LIGNE',
     online : 'EN LIGNE',

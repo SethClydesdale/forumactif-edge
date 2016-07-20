@@ -166,7 +166,7 @@
               return alert('Forumactif Edge is already in ' + selected.innerHTML + '. Please choose another language.');
             }
 
-            if (confirm('Are you sure you want to change Forumactif Edge\'s language to ' + selected.innerHTML + ' ?')) {
+            if (confirm('Are you sure you want to change the language of Forumactif Edge to ' + selected.innerHTML + ' ?')) {
               FAE.log('Translation of Forumactif Edge will commence shortly. Please wait..');
               FAE.log('Getting ' + current.innerHTML + ' language data...');
 

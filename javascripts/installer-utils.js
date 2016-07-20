@@ -139,11 +139,11 @@
           // create and insert the translation action
           $(document.getElementById('fae_options')).append(
             $('<div style="float:right;">'+
-              '<input id="fae_translate" type="button" value="Change language" />'+
               '<select id="fae_selected_language">'+
                 '<option value="' + FAE.raw + 'lang/English.js">English</option>'+
                 '<option value="' + FAE.raw + 'lang/Français.js">Français</option>'+
               '</select>'+
+              '<input id="fae_translate" type="button" value="Change language" />'+
             '</div>')[0]
           );
 
@@ -151,6 +151,7 @@
           for (var a = document.getElementById('fae_selected_language').options, i = 0, j = a.length; i < j; i++) {
             if (FAE.board_lang == a[i].innerHTML) {
               a[i].selected = true;
+              a[i].id = 'fae_current_language';
               break;
             }
           }
@@ -158,13 +159,30 @@
           // function to be executed when the translation button is clicked
           document.getElementById('fae_translate').onclick = function() {
             var select = document.getElementById('fae_selected_language'),
+                current = document.getElementById('fae_current_language'),
                 selected = select.options[select.selectedIndex];
 
             if (FAE.board_lang == selected.innerHTML) {
-              return alert('Forumactif Edge\'s language is already in ' + selected.innerHTML + '.');
+              return alert('Forumactif Edge is already in ' + selected.innerHTML + '. Please choose another language.');
             }
 
             if (confirm('Are you sure you want to change Forumactif Edge\'s language to ' + selected.innerHTML + ' ?')) {
+              FAE.log('Translation of Forumactif Edge will commence shortly. Please wait..');
+              FAE.log('Getting ' + current.innerHTML + ' language data...');
+
+              $.get(current.value, function(d) {
+                FAE.log('Getting ' + selected.innerHTML + ' language data...');
+                FAE.script(d.replace('FAE.lang', 'FAE.lang_current'));
+
+                $.get(selected.value, function(d) {
+                  FAE.log('Language data has been loaded. The translation process will now begin, please do not close this tab.');
+                  FAE.script(d.replace('FAE.lang', 'FAE.lang_new'));
+
+                  $.get(FAE.raw + 'lang/translate.js', function(d) {
+                    FAE.script(d);
+                  });
+                });
+              });
 
             }
           };

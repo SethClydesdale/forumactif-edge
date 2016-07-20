@@ -29,8 +29,6 @@ FAE.lang = {
       i_icon_thanks_off : 'http://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=primary&size=s',
       i_icon_thanks_on : 'http://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=secondary&size=s',
       i_icon_edit : 'http://i86.servimg.com/u/f86/18/21/41/30/edit-e11.png?color=primary&size=s',
-      i_icon_delete : 'http://i86.servimg.com/u/f86/18/21/41/30/delete10.png?color=primary&size=s',
-      i_icon_ip : 'http://i86.servimg.com/u/f86/18/21/41/30/ip-f10.png?color=primary&size=s',
       i_msg_newpost : 'http://i86.servimg.com/u/f86/18/21/41/30/new-pm10.png?color=primary&size=m'
     },
 

@@ -151,7 +151,7 @@ FAE.quota = FAE.step.length;
 FAE.next = function() {
   if (++FAE.index >= FAE.quota) {
     FAE.log('Forumactif Edge has been translated successfully!', 'color:#8B5;font-weight:bold;');
-    FAE.log('When you\'re finished, please <a href="javascript:window.location.reload();">click here</a> to reload the page and confirm that the translation has been completed.');
+    FAE.log('When you\'re finished, please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
 
   } else {
     var step = FAE.step[FAE.index];

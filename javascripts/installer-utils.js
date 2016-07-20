@@ -126,6 +126,49 @@
             }
           });
         };
+
+
+        // create and insert translation button
+        if (window.location.host == 'generaltesting.forumotion.com') { // exclude all other forums for testing purposes
+
+          // set the board lang to English if it is undefined
+          if (!FAE.board_lang) {
+            FAE.board_lang = 'English';
+          }
+
+          // create and insert the translation action
+          $(document.getElementById('fae_options')).append(
+            $('<div style="float:right;">'+
+              '<input id="fae_translate" type="button" value="Change language" />'+
+              '<select id="fae_selected_language">'+
+                '<option value="' + FAE.raw + 'lang/English.js">English</option>'+
+                '<option value="' + FAE.raw + 'lang/Français.js">Français</option>'+
+              '</select>'+
+            '</div>')[0]
+          );
+
+          // set the selected translation
+          for (var a = document.getElementById('fae_selected_language').options, i = 0, j = a.length; i < j; i++) {
+            if (FAE.board_lang == a[i].innerHTML) {
+              a[i].selected = true;
+              break;
+            }
+          }
+
+          // function to be executed when the translation button is clicked
+          document.getElementById('fae_translate').onclick = function() {
+            var select = document.getElementById('fae_selected_language'),
+                selected = select.options[select.selectedIndex];
+
+            if (FAE.board_lang == selected.innerHTML) {
+              return alert('Forumactif Edge\'s language is already in ' + selected.innerHTML + '.');
+            }
+
+            if (confirm('Are you sure you want to change Forumactif Edge\'s language to ' + selected.innerHTML + ' ?')) {
+
+            }
+          };
+        }
       }
 
     } else {

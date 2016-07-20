@@ -438,8 +438,7 @@ $(function() {
       '.fa_img_resizer i { font-size:14px; vertical-align:middle; }'+
       '#fa_img_lb_overlay { background:rgba(0, 0, 0, 0.7); position:fixed; top:0; right:0; bottom:0; left:0; z-index:999999; cursor:pointer; }'+
       '#fa_img_lb_image { max-height:100%; max-width:100%; position:fixed; left:50%; top:50%; z-index:9999999; cursor:pointer; }'+
-    '</style>'+
-    (!$('link[href$="font-awesome.min.css"]')[0] ? '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />' : '') // require font awesome
+    '</style>'
   );
 
   // begin modifying images when the page is loaded

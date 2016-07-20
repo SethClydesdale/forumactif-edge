@@ -1,5 +1,5 @@
 // translation instructions
-FAE.step = {
+FAE.step = [
   {
     info : 'Getting forum\'s stylesheet',
     type : 'GET',
@@ -157,7 +157,7 @@ FAE.step = {
       submit : 'Save'
     }
   }
-};
+];
 
 
 FAE.index = -1;

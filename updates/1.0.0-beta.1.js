@@ -14,6 +14,8 @@
 
 */
 
+FAE.update_tag = 'https://github.com/SethClydesdale/forumactif-edge/releases/tag/v1.0.0-beta.1';
+
 FAE.update_step = [
 
   {

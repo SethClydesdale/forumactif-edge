@@ -182,6 +182,8 @@
             });
 
           }
+
+          document.getElementById('fae_options').style.display = 'none';
         };
       }
 

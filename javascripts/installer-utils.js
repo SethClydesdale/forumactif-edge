@@ -181,9 +181,8 @@
               });
             });
 
+            document.getElementById('fae_options').style.display = 'none';
           }
-
-          document.getElementById('fae_options').style.display = 'none';
         };
       }
 

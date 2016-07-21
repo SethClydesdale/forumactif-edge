@@ -34,6 +34,7 @@
 
       $.get(FAE.raw + 'updates/' + FAE.update_queue[FAE.update_index] + '.js', function(d) {
         FAE.script(d);
+        FAE.log('Please <a href="' + FAE.update_tag + '" target="_blank">Click here</a> to view the changes made in version ' + FAE.update_queue[FAE.update_index] + '.');
         FAE.step = FAE.step.concat(FAE.update_step);
         FAE.getUpdates();
 

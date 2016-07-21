@@ -1,3 +1,14 @@
+<ul id="search-links" class="linklist">
+	<!-- BEGIN switch_user_logged_in -->
+	<li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a>&nbsp;&bull;&nbsp;</li>
+	<li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a>&nbsp;&bull;&nbsp;</li>
+	<!-- END switch_user_logged_in -->
+	<li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
+	<!-- BEGIN switch_user_logged_in -->
+	<li class="right"><a href="{U_MARK_READ}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
+	<!-- END switch_user_logged_in -->
+</ul>
+
 <!-- BEGIN catrow -->
 	<!-- BEGIN tablehead -->
   <div class="forum-category">
@@ -72,3 +83,14 @@
   </div>
 	<!-- END tablefoot -->
 <!-- END catrow -->
+
+<!-- BEGIN switch_on_index -->
+<ul id="stat-links" class="linklist">
+	<li><a href="{U_TODAY_ACTIVE}">{L_TODAY_ACTIVE}</a>&nbsp;&bull;&nbsp;</li>
+	<li><a href="{U_TODAY_POSTERS}">{L_TODAY_POSTERS}</a>&nbsp;&bull;&nbsp;</li>
+	<li class="last"><a href="{U_OVERALL_POSTERS}">{L_OVERALL_POSTERS}</a></li>
+	<!-- BEGIN switch_delete_cookies -->
+	<li class="right"><a href="{switch_on_index.switch_delete_cookies.U_DELETE_COOKIES}" rel="nofollow">{switch_on_index.switch_delete_cookies.L_DELETE_COOKIES}</a></li>
+	<!-- END switch_delete_cookies -->
+</ul>
+<!-- END switch_on_index -->

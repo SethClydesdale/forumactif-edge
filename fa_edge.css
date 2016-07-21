@@ -31,6 +31,7 @@
 /* -- 00. IMPORTS AND ANIMATIONS -- */
 @import url(https://fonts.googleapis.com/css?family=Roboto); /* Roboto Font Family */
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css); /* Font Awesome Icons */
+@import url(http://ct1.addthis.com/static/r07/widget110.css); /* addthis */
 
 /* hot topic animation */
 @-webkit-keyframes hot-topic {
@@ -199,11 +200,12 @@ center : text-align:center;
 #logo { float:left; }
 
 /* banner padding */
-#logo-desc { padding:60px 0 30px 0; }
+#logo-desc { padding:60px 30px 30px 30px; }
 
 /* site title */
-#site-title {
-
+#site-title, #site-title h1 {
+  font-size:24px;
+  font-weight:normal;
 }
 
 /* site description */
@@ -503,6 +505,13 @@ img[src*="size=l"] { padding:9px 16px; }
 .jqmWindow .panel { text-align:center; }
 .jqmWindow .right-box { float:none; }
 .jqDrag { cursor:move; }
+
+/* linklists */
+.linklist {
+  margin:6px 0;
+  padding-left:0;
+}
+.linklist li { display:inline-block; }
 
 
 /* -- 07. CATEGORIES AND FORUMS -- */
@@ -867,6 +876,20 @@ img + .inbox-icon, .inbox-icon:hover { opacity:0.6; }
 
 .signature_div { padding:3px; }
 
+/* add_this / share */
+#at-whatsthis { right:0; }
+.addthis_button, a[href="javascript:showhide(document.getElementById('plus_menu'))"], #plus_menu { font-size:12px; }
+.addthis_button:after {
+  content:" • ";
+  color:#333;
+}
+
+#plus_menu {
+  background:#EEE;
+  border:1px solid #CCC;
+  padding:3px;
+}
+
 
 /* -- 09. TABLES -- */
 .table1, .forumline {
@@ -999,6 +1022,15 @@ img[src*="?poll"] {
   border-color:#58B;
 }
 
+/* recent topics */
+#recent_topics_classical {
+  max-height:200px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
 
 /* -- 11. VOTE SYSTEM -- */
 .vote * { display:inline-block; }
@@ -1066,6 +1098,12 @@ img[src*="?poll"] {
   height:auto;
   width:auto;
   margin:auto;
+}
+
+/* pagination fix on profiles */
+#cp-main .pagination {
+  float:none;
+  text-align:right;
 }
 
 
@@ -2095,7 +2133,7 @@ body #chatbox_contextmenu {
 }
 
 /* embedded chatbox */
-.panel #chatbox_bottom {
+.panel #chatbox_bottom, .panel #chatbox_top {
   height:400px !important;
 }
 
@@ -2115,6 +2153,7 @@ body #chatbox .cb-avatar, body #chatbox .cb-avatar img {
 
 /* SMALLER ; Mobile S to L */
 @media (min-width:0px) and (max-width:768px) {
+  #navbar .mainmenu, #tabs a { line-height:50px; }
   body #fa_toolbar, body #fa_toolbar_hidden { display:none; }
 
   /* PAGE HEADER */

@@ -2,15 +2,15 @@
 
   # Changes in v1.0.0-beta.1
 
-  - View posts since last visit + other links missing on the index have been added
-  - date / time + last visit on the index has been added
-  - sub-forums in topic searches have been added
-  - scroll bar has been added to the classical recent topics widget
-  - share / action buttons above topics are visible again
-  - line-height on navigation has been increased by 10px to make scrolling easier on mobile
-  - height of chatbox on top of the index has been increased to 400px
-  - pagination overflowing in profiles has been fixed
-  - ability to translate forumactif edge has been added to the control panel
+  - Added ability to translate forumactif edge in the control panel
+  - Added view posts since last visit + other links that were missing on the index
+  - Added date / time + last visit to the index
+  - Added sub-forums in topic searches
+  - Added scroll bar to the classical recent topics widget
+  - Added additional line-height to navigation as to make scrolling easier on mobile
+  - Fixed share / action buttons that were hidden in topics
+  - Fixed height of chatbox on top of the index so that it's equal to the chatbox on the bottom ( 400px )
+  - Fixed pagination overflowing in profiles
 
 */
 

@@ -138,6 +138,7 @@
             '<select id="fae_selected_language">'+
               '<option value="' + FAE.raw + 'lang/English.js">English</option>'+
               '<option value="' + FAE.raw + 'lang/Français.js">Français</option>'+
+              '<option value="' + FAE.raw + 'lang/Greek.js">Ελληνικά</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+
           '</div>')[0]

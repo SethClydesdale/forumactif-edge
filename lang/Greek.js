@@ -83,7 +83,7 @@ FAE.lang = {
 
       select_theme : 'Επιλογή Θέματος',
       random_theme : 'Τυχαίο Θέμα',
-      default_theme : "Εξ\\' ορισμού Θέμα",
+      default_theme : 'Εξ&apos; ορισμού Θέμα',
 
       toolbar_search_placeholder : 'Αναζήτηση...',
 

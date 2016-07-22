@@ -189,7 +189,7 @@ FAE.translate = function(o, str) {
   var i;
 
   for (i in o.from) {
-    str = str.replace(new RegExp(o.from[i].replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"), 'gm'), o.to[i]);
+    str = str.replace(new RegExp(o.from[i].replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), 'gm'), o.to[i]);
   }
 
   return str;

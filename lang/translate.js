@@ -87,6 +87,8 @@ FAE.step = [
                     page : form.page.value,
                   submit : 'Submit'
       };
+
+      my_setcookie('fa_theme_color', ''); // purge selected theme to prevent error
     }
   },
 

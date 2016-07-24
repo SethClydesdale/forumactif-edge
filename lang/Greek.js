@@ -118,16 +118,16 @@ FAE.lang = {
 
 
     logged_out_reply : {
-      main_title : '<h2 class="lor_maintitle">Create an account or log in to leave a reply</h2>',
-      main_desc : '<p class="lor_maindesc">You need to be a member in order to leave a reply.</p>',
+      main_title : '<h2 class="lor_maintitle">Δημιουργήστε έναν λογαριασμό ή συνδεθείτε για να απαντήσετε</h2>',
+      main_desc : '<p class="lor_maindesc">Προκειμένου να απαντήσετε πρέπει να είστε μέλος.</p>',
 
-      create_account_title : '<h3 class="lor_subtitle">Create an account</h3>',
-      create_account_desc : '<p class="lor_subdesc">Join our community by creating a new account. It\'s easy!</p>',
-      create_account_button : '<a href="/register" class="button1">Create a new account</a>',
+      create_account_title : '<h3 class="lor_subtitle">Δημιουργία Λογαριασμού</h3>',
+      create_account_desc : '<p class="lor_subdesc">Ενταχθείτε στην κοινότητά μας δημιουργώντας έναν λογαριασμό. Είναι πανεύκολο!</p>',
+      create_account_button : '<a href="/register" class="button1">Δημιουργία ενός νέου Λογαριασμού</a>',
 
-      log_in_title : '<h3 class="lor_subtitle">Log in</h3>',
-      log_in_desc : '<p class="lor_subdesc">Already have an account? No problem, log in here.</p>',
-      log_in_button : '<a href="/login" class="button1">Log in</a>'
+      log_in_title : '<h3 class="lor_subtitle">Σύνδεση</h3>',
+      log_in_desc : '<p class="lor_subdesc">Έχετε ήδη έναν λογαριασμό; Κανένα πρόβλημα, συνδεθείτε εδώ.</p>',
+      log_in_button : '<a href="/login" class="button1">Σύνδεση</a>'
     }
 
   }

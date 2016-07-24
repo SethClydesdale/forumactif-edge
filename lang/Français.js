@@ -152,6 +152,20 @@ FAE.lang = {
       back_to_top : 'Back to top',
       fae_feedback : 'Submit Feedback',
       fae_feedback_tooltip : 'Help improve Forumactif Edge'
+    },
+
+
+    logged_out_reply : {
+      main_title : '<h2 class="lor_maintitle">Create an account or log in to leave a reply</h2>',
+      main_desc : '<p class="lor_maindesc">You need to be a member in order to leave a reply.</p>',
+
+      create_account_title : '<h3 class="lor_subtitle">S\'enregistrer</h3>',
+      create_account_desc : '<p class="lor_subdesc">Join our community by creating a new account. It\'s easy!</p>',
+      create_account_button : '<a href="/register" class="button1">S\'enregistrer</a>',
+
+      log_in_title : '<h3 class="lor_subtitle">Connexion</h3>',
+      log_in_desc : '<p class="lor_subdesc">Already have an account? No problem, log in here.</p>',
+      log_in_button : '<a href="/login" class="button1">Connexion</a>'
     }
 
   }

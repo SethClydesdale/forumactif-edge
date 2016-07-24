@@ -102,7 +102,7 @@ FAE.step = [
 
 
   {
-    info : 'Getting overall_footer_end.html',
+    info : 'Getting template overall_footer_end.html',
     type : 'GET',
      url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=133&l=main&extended_admin=1' + FAE.tid,
     func : function(d) {
@@ -131,6 +131,72 @@ FAE.step = [
     info : 'Publishing template overall_footer_end.html',
     type : 'PUBLISH',
      tpl : 133
+  },
+
+
+  {
+    info : 'Getting template viewtopic_body.html',
+    type : 'GET',
+     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=127&l=main&extended_admin=1' + FAE.tid,
+    func : function(d) {
+      FAE.step[FAE.index + 1].data.template = FAE.translate({
+        from : FAE.lang_current.templates.logged_out_reply,
+          to : FAE.lang_new.templates.logged_out_reply
+      }, $('form[name="post"]', d)[0].template.value);
+    }
+  },
+
+
+  {
+    info : 'Translating and updating template viewtopic_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 127,
+             l : 'main',
+      tpl_name : 'viewtopic_body',
+        submit : 'Save'
+    }
+  },
+
+
+  {
+    info : 'Publishing template viewtopic_body.html',
+    type : 'PUBLISH',
+     tpl : 127
+  },
+
+
+  {
+    info : 'Getting template viewcomments_body.html',
+    type : 'GET',
+     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=131&l=main&extended_admin=1' + FAE.tid,
+    func : function(d) {
+      FAE.step[FAE.index + 1].data.template = FAE.translate({
+        from : FAE.lang_current.templates.logged_out_reply,
+          to : FAE.lang_new.templates.logged_out_reply
+      }, $('form[name="post"]', d)[0].template.value);
+    }
+  },
+
+
+  {
+    info : 'Translating and updating template viewcomments_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 131,
+             l : 'main',
+      tpl_name : 'viewcomments_body',
+        submit : 'Save'
+    }
+  },
+
+
+  {
+    info : 'Publishing template viewcomments_body.html',
+    type : 'PUBLISH',
+     tpl : 131
   },
 
 

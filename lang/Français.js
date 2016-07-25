@@ -116,8 +116,8 @@ FAE.lang = {
   javascripts : {
 
     '[FA EDGE] ALL.JS' : {
-      widget_menu_title : 'Widget Menu',
-      widget_menu_tooltip : 'Toggle widget menu',
+      widget_menu_title : '<div class="title module_column_title">Widget Menu</div>',
+      widget_menu_tooltip : "menu.title = 'Toggle widget menu';",
 
       select_theme : 'Select a theme',
       random_theme : 'Random theme',

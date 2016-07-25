@@ -86,8 +86,8 @@ FAE.lang = {
 
       toolbar_search_placeholder : 'Search...',
 
-      quick_nav_title : 'Quick Navigation',
-      quick_nav_tooltip : 'Toggle quick navigation',
+      quick_nav_title : "title : 'Quick Navigation'",
+      quick_nav_tooltip : "tooltip : 'Toggle quick navigation'",
       quick_nav_notif : 'Notifications',
       tool_copy_url_tooltip : 'Copy BBCode URL',
       tool_copy_url_prompt : 'Copy the BBCode URL below. (CTRL+C)',

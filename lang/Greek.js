@@ -78,8 +78,8 @@ FAE.lang = {
   javascripts : {
 
     '[FA EDGE] ALL.JS' : {
-      widget_menu_title : 'Μενού Widget',
-      widget_menu_tooltip : 'Κλείσιμο Μενού widget',
+      widget_menu_title : '<div class="title module_column_title">Μενού Widget</div>',
+      widget_menu_tooltip : "menu.title = 'Κλείσιμο Μενού Widget';",
 
       select_theme : 'Επιλογή Θέματος',
       random_theme : 'Τυχαίο Θέμα',

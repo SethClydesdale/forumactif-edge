@@ -3177,7 +3177,9 @@ FAE.next = function() {
       }).error(FAE.error);
 
     } else if (step.type == 'PUBLISH') {
-      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=' + ( step.mobile ? 'mobile' : 'main' ) + '&pub=1&tid=' + FAE.tid, FAE.next).error(FAE.error);
+      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=' + ( step.mobile ? 'mobile' : 'main' ) + '&pub=1&tid=' + FAE.tid, function() {
+        window.setTimeout(FAE.next, 1000);
+      }).error(FAE.error);
     }
 
   }

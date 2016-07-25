@@ -3167,18 +3167,18 @@ FAE.next = function() {
 
     if (step.type == 'POST') {
       $.post('/admin/index.forum?' + step.url + FAE.tid, step.data, function() {
-        window.setTimeout(FAE.next, 1000);
+        window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
 
     } else if (step.type == 'GET') {
       $.get(step.url, function(d) {
         step.func(d);
-        window.setTimeout(FAE.next, 1000);
+        window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
 
     } else if (step.type == 'PUBLISH') {
       $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=' + ( step.mobile ? 'mobile' : 'main' ) + '&pub=1&tid=' + FAE.tid, function() {
-        window.setTimeout(FAE.next, 1000);
+        window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
     }
 

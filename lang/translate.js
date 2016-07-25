@@ -6,10 +6,13 @@ FAE.step = [
      url : '/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid,
     func : function(d) {
       var form = $('form[method="post"]', d)[0];
-      FAE.step[FAE.index + 1].data.edit_code = FAE.translate({
-        from : FAE.lang_current.css,
-          to : FAE.lang_new.css
-      }, form.edit_code.value);
+
+      if (form) {
+        FAE.step[FAE.index + 1].data.edit_code = FAE.translate({
+          from : FAE.lang_current.css,
+            to : FAE.lang_new.css
+        }, form.edit_code.value);
+      }
     }
   },
 
@@ -106,10 +109,15 @@ FAE.step = [
     type : 'GET',
      url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=133&l=main&extended_admin=1' + FAE.tid,
     func : function(d) {
-      FAE.step[FAE.index + 1].data.template = FAE.translate({
-        from : FAE.lang_current.templates['overall_footer_end.html'],
-          to : FAE.lang_new.templates['overall_footer_end.html']
-      }, $('form[name="post"]', d)[0].template.value);
+      var form = $('form[name="post"]', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].data.template = FAE.translate({
+          from : FAE.lang_current.templates['overall_footer_end.html'],
+            to : FAE.lang_new.templates['overall_footer_end.html']
+        }, form.template.value);
+      }
+
     }
   },
 
@@ -139,10 +147,15 @@ FAE.step = [
     type : 'GET',
      url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=127&l=main&extended_admin=1' + FAE.tid,
     func : function(d) {
-      FAE.step[FAE.index + 1].data.template = FAE.translate({
-        from : FAE.lang_current.templates.logged_out_reply,
-          to : FAE.lang_new.templates.logged_out_reply
-      }, $('form[name="post"]', d)[0].template.value);
+      var form = $('form[name="post"]', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].data.template = FAE.translate({
+          from : FAE.lang_current.templates.logged_out_reply,
+            to : FAE.lang_new.templates.logged_out_reply
+        }, form.template.value);
+      }
+
     }
   },
 
@@ -172,10 +185,15 @@ FAE.step = [
     type : 'GET',
      url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=131&l=main&extended_admin=1' + FAE.tid,
     func : function(d) {
-      FAE.step[FAE.index + 1].data.template = FAE.translate({
-        from : FAE.lang_current.templates.logged_out_reply,
-          to : FAE.lang_new.templates.logged_out_reply
-      }, $('form[name="post"]', d)[0].template.value);
+      var form = $('form[name="post"]', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].data.template = FAE.translate({
+          from : FAE.lang_current.templates.logged_out_reply,
+            to : FAE.lang_new.templates.logged_out_reply
+        }, form.template.value);
+      }
+
     }
   },
 

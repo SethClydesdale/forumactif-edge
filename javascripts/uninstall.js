@@ -1,6 +1,6 @@
 // uninstallation instructions
 FAE.step = [
-  
+
   {
     info : 'Changing forum version to phpbb3',
     type : 'POST',
@@ -1241,11 +1241,13 @@ FAE.next = function() {
     FAE.log(step.info + '...');
 
     if (step.type == 'POST') {
-      $.post('/admin/index.forum?' + step.url + FAE.tid, step.data, FAE.next).error(FAE.error);
+      $.post('/admin/index.forum?' + step.url + FAE.tid, step.data, function() {
+        window.setTimeout(FAE.next, FAE.delay);
+      }).error(FAE.error);
     } else if (step.type == 'GET') {
       $.get(step.url, function(d) {
         step.func(d);
-        FAE.next();
+        window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
     }
 
@@ -1257,5 +1259,5 @@ FAE.next = function() {
 // handler in case of any errors in the uninstallation process
 FAE.error = function() {
   FAE.log('An error was encountered on step ' + FAE.index + ' (' + FAE.step[FAE.index].info + ') of the uninstallation process. Please <a href="https://github.com/SethClydesdale/forumactif-edge/issues/new" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
-  FAE.next();
+  window.setTimeout(FAE.next, FAE.delay);
 };

@@ -1,4 +1,5 @@
-// English Translation
+// German Translation
+// Translation by Bigtuber (http://fmdesign.forumotion.com/t729-forumactif-edge-german-translation#14318)
 FAE.lang = {
 
   language : 'Deutsch',

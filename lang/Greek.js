@@ -87,8 +87,8 @@ FAE.lang = {
 
       toolbar_search_placeholder : 'Αναζήτηση...',
 
-      quick_nav_title : 'Γρήγορη Πλοήγηση',
-      quick_nav_tooltip : 'Κλείσιμο Γρήγορης Πλοήγησης',
+      quick_nav_title : "title : 'Γρήγορη Πλοήγηση'",
+      quick_nav_tooltip : "tooltip : 'Κλείσιμο Γρήγορης Πλοήγησης'",
       quick_nav_notif : 'Ειδοποιήσεις',
       tool_copy_url_tooltip : 'Αντιγραφή συνδέσμου BBCode',
       tool_copy_url_prompt : 'Αντιγραφή του συνδέσμου BBCode πιο κάτω. (CTRL+C)',

@@ -22,15 +22,15 @@ FAE.lang = {
   images : {
 
     buttons : {
-      i_post : 'http://i35.servimg.com/u/f35/18/45/41/65/new-to10.png?color=primary&size=m',
-      i_reply : 'http://i35.servimg.com/u/f35/18/45/41/65/post-r11.png?color=primary&size=m',
-      i_reply_locked : 'http://i35.servimg.com/u/f35/18/45/41/65/locked12.png?color=secondary&size=m',
-      i_icon_quote : 'http://i35.servimg.com/u/f35/18/45/41/65/quote-11.png?color=primary&size=s',
-      i_icon_multiquote_off : 'http://i35.servimg.com/u/f35/18/45/41/65/multi-11.png?color=primary&size=s',
-      i_icon_multiquote_on : 'http://i35.servimg.com/u/f35/18/45/41/65/multi-11.png?color=secondary&size=s',
-      i_icon_thanks_off : 'http://i35.servimg.com/u/f35/18/45/41/65/thanks11.png?color=primary&size=s',
-      i_icon_thanks_on : 'http://i35.servimg.com/u/f35/18/45/41/65/thanks11.png?color=secondary&size=s',
-      i_icon_edit : 'http://i35.servimg.com/u/f35/18/45/41/65/edit-d10.png?color=primary&size=s',
+      i_post : 'http://i35.servimg.com/u/f35/18/21/60/73/new-to10.png?color=primary&size=m',
+      i_reply : 'http://i35.servimg.com/u/f35/18/21/60/73/post-r10.png?color=primary&size=m',
+      i_reply_locked : 'http://i35.servimg.com/u/f35/18/21/60/73/locked10.png?color=secondary&size=m',
+      i_icon_quote : 'http://i35.servimg.com/u/f35/18/21/60/73/quote-10.png?color=primary&size=s',
+      i_icon_multiquote_off : 'http://i35.servimg.com/u/f35/18/21/60/73/multi-10.png?color=primary&size=s',
+      i_icon_multiquote_on : 'http://i35.servimg.com/u/f35/18/21/60/73/multi-10.png?color=secondary&size=s',
+      i_icon_thanks_off : 'http://i35.servimg.com/u/f35/18/21/60/73/thanks10.png?color=primary&size=s',
+      i_icon_thanks_on : 'http://i35.servimg.com/u/f35/18/21/60/73/thanks10.png?color=secondary&size=s',
+      i_icon_edit : 'http://i35.servimg.com/u/f35/18/21/60/73/edit-d10.png?color=primary&size=s',
       i_icon_delete : 'http://i86.servimg.com/u/f86/18/21/41/30/delete10.png?color=primary&size=s',
       i_icon_ip : 'http://i86.servimg.com/u/f86/18/21/41/30/ip-f10.png?color=primary&size=s',
       i_icon_report : 'http://i86.servimg.com/u/f86/18/21/41/30/report10.png?color=primary&size=s',
@@ -52,7 +52,7 @@ FAE.lang = {
       i_icon_yim : 'http://i86.servimg.com/u/f86/18/21/41/30/yahoo-10.png?color=primary&size=s',
       i_icon_skype : 'http://i86.servimg.com/u/f86/18/21/41/30/skype-10.png?color=primary&size=s',
       i_icon_online : FAE.eGIF,
-      i_msg_newpost : 'http://i35.servimg.com/u/f35/18/45/41/65/new-pm11.png?color=primary&size=m',
+      i_msg_newpost : 'http://i35.servimg.com/u/f35/18/21/60/73/new-pm10.png?color=primary&size=m',
       i_msg_inbox : FAE.eGIF,
       i_msg_sentbox : FAE.eGIF,
       i_msg_outbox : FAE.eGIF,
@@ -117,7 +117,7 @@ FAE.lang = {
 
 
     logged_out_reply : {
-      main_title : '<h2 class="lor_maintitle">Erstelle Sie einen Account oder loggen Sie sich ein, um zu antworten</h2>',
+      main_title : '<h2 class="lor_maintitle">Erstellen Sie einen Account oder loggen Sie sich ein, um zu antworten</h2>',
       main_desc : '<p class="lor_maindesc">Sie müssen ein Mitglied sein, um antworten zu können.</p>',
 
       create_account_title : '<h3 class="lor_subtitle">Einen Account erstellen</h3>',

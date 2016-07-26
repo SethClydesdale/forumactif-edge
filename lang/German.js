@@ -86,8 +86,8 @@ FAE.lang = {
 
       toolbar_search_placeholder : 'Suchen...',
 
-      quick_nav_title : 'Schnelle Navigation',
-      quick_nav_tooltip : 'Schnelle Navigation umschalten',
+      quick_nav_title : "title : 'Schnelle Navigation'",
+      quick_nav_tooltip : "tooltip : 'Schnelle Navigation umschalten'",
       quick_nav_notif : 'Benachrichtigungen',
       tool_copy_url_tooltip : 'BBCode URL kopieren',
       tool_copy_url_prompt : 'Kopieren Sie die unten stehende BBCode URL. (CTRL+C)',

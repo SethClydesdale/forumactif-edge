@@ -1,5 +1,5 @@
 // Greek Translation
-// Translation by Luffy. (http://fmdesign.forumotion.com/t710-forumactif-edge-greek-translation#14037) Thanks!!
+// Translation by Luffy (http://fmdesign.forumotion.com/t710-forumactif-edge-greek-translation#14037)
 FAE.lang = {
 
   language : 'Ελληνικά',

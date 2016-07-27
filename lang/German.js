@@ -1,5 +1,5 @@
 // German Translation
-// Translation by Bigtuber (http://fmdesign.forumotion.com/t729-forumactif-edge-german-translation#14318)
+// Translation by Bigtuber & schiggysboard (http://fmdesign.forumotion.com/t729-forumactif-edge-german-translation#14318)
 FAE.lang = {
 
   language : 'Deutsch',
@@ -7,9 +7,9 @@ FAE.lang = {
   css : {
     offline : 'OFFLINE',
     online : 'ONLINE',
-    total_posts : 'Gesamt-Beiträge',
-    total_topics : 'Gesamt-Themen',
-    total_users : 'Gesamt-Mitglieder',
+    total_posts : 'Anzahl der Beiträge',
+    total_topics : 'Anzahl der Themen',
+    total_users : 'Anzahl der Mitglieder',
     record_users : 'Die meisten Besucher, die jemals online waren',
     board_age : 'Alter des Forums (in Tagen)',
     newest_member : 'Neuestes Mitglied',

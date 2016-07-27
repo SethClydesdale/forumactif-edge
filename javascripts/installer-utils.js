@@ -137,12 +137,12 @@
         $(document.getElementById('fae_options')).append(
           $('<div style="float:right;">'+
             '<select id="fae_selected_language">'+
-              '<option value="' + FAE.raw + 'lang/Arabic.js">العربية</option>'+
-              '<option value="' + FAE.raw + 'lang/Dutch.js">Dutch</option>'+
-              '<option value="' + FAE.raw + 'lang/English.js">English</option>'+
-              '<option value="' + FAE.raw + 'lang/Français.js">Français</option>'+
-              '<option value="' + FAE.raw + 'lang/German.js">Deutsch</option>'+
-              '<option value="' + FAE.raw + 'lang/Greek.js">Ελληνικά</option>'+
+              '<option value="Arabic">العربية</option>'+
+              '<option value="Dutch">Dutch</option>'+
+              '<option value="English">English</option>'+
+              '<option value="Français">Français</option>'+
+              '<option value="German">Deutsch</option>'+
+              '<option value="Greek">Ελληνικά</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+
           '</div>')[0]
@@ -173,7 +173,7 @@
             FAE.log('Translation of Forumactif Edge will commence shortly. Please wait..');
             FAE.log('Getting ' + current.innerHTML + ' language data...');
 
-            $.get(current.value, function(d) {
+            $.get(FAE.raw + 'lang/' + current.value + '.js', function(d) {
               FAE.log('Getting ' + selected.innerHTML + ' language data...');
               FAE.script(d.replace('FAE.lang', 'FAE.lang_current'));
 

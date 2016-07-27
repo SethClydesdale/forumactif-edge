@@ -154,7 +154,7 @@
             a[i].selected = true;
             a[i].id = 'fae_current_language';
             a[i].parentNode.insertBefore(a[i], a[0]);
-            a[0].insertAdjacentHTML('beforebegin', '<optgroup label="----------------"></optgroup>');
+            document.getElementById('fae_selected_language').options[0].insertAdjacentHTML('afterend', '<optgroup label="----------------"></optgroup>');
             break;
           }
         }

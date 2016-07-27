@@ -137,11 +137,12 @@
         $(document.getElementById('fae_options')).append(
           $('<div style="float:right;">'+
             '<select id="fae_selected_language">'+
+              '<option value="' + FAE.raw + 'lang/Arabic.js">العربية</option>'+
+              '<option value="' + FAE.raw + 'lang/Dutch.js">Dutch</option>'+
               '<option value="' + FAE.raw + 'lang/English.js">English</option>'+
               '<option value="' + FAE.raw + 'lang/Français.js">Français</option>'+
               '<option value="' + FAE.raw + 'lang/German.js">Deutsch</option>'+
               '<option value="' + FAE.raw + 'lang/Greek.js">Ελληνικά</option>'+
-              '<option value="' + FAE.raw + 'lang/Dutch.js">Dutch</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+
           '</div>')[0]
@@ -152,6 +153,8 @@
           if (FAE.board_lang == a[i].innerHTML) {
             a[i].selected = true;
             a[i].id = 'fae_current_language';
+            a[i].parentNode.insertBefore(a[i], a[0]);
+            a[i].insertAdjacentHTML('afterend', '<optgroup label="----------------"></optgroup>');
             break;
           }
         }

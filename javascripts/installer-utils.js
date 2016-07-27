@@ -154,7 +154,7 @@
             a[i].selected = true;
             a[i].id = 'fae_current_language';
             a[i].parentNode.insertBefore(a[i], a[0]);
-            a[0].insertAdjacentHTML('beforebegin', '<optgroup label="----------------"></optgroup>');
+            a[0].insertAdjacentHTML('afterend', '<optgroup label="----------------"></optgroup>');
             break;
           }
         }
@@ -177,7 +177,7 @@
               FAE.log('Getting ' + selected.innerHTML + ' language data...');
               FAE.script(d.replace('FAE.lang', 'FAE.lang_current'));
 
-              $.get(selected.value, function(d) {
+              $.get(FAE.raw + 'lang/' + selected.value + '.js', function(d) {
                 FAE.log('Language data has been loaded. The translation process will now begin, please do not close this tab.');
                 FAE.script(d.replace('FAE.lang', 'FAE.lang_new'));
 

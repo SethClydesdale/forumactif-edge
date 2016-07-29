@@ -10,7 +10,7 @@ FAE.lang = {
     total_posts : 'Totaal aantal berichten',
     total_topics : 'Totaal aantal topics',
     total_users : 'Totaal aantal leden',
-    record_users : 'Meeste leden ooit online',
+    record_users : 'Meeste leden ooit gelijktijdig online',
     board_age : 'Leeftijd van het forum (in dagen)',
     newest_member : 'Nieuwste lid',
     hidebox : 'Verborgen:',
@@ -69,7 +69,7 @@ FAE.lang = {
     },
 
     gallery : {
-      upload_pic : 'http://i35.servimg.com/u/f35/18/21/60/73/upload10.png?color=primary&size=m'
+      upload_pic : 'http://i35.servimg.com/u/f35/18/21/60/73/upload13.png?color=primary&size=m'
     }
 
   },

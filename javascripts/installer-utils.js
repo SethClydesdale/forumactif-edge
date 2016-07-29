@@ -143,6 +143,7 @@
               '<option value="Français">Français</option>'+
               '<option value="German">Deutsch</option>'+
               '<option value="Greek">Ελληνικά</option>'+
+              '<option value="Romanian">Romana</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+
           '</div>')[0]

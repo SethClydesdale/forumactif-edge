@@ -246,8 +246,7 @@
         // create and insert the theme switcher
         if (window.location.host == 'themedesign.forumotion.com') {
 
-          $(opts).after('<div class="clear" style="margin-top:12px;"></div>'+
-            '<div class="fae_cp_title">Theme Management</div>'+
+          $(opts).after('<div class="fae_cp_title clear" style="margin-top:24px;">Theme Management</div>'+
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
@@ -317,6 +316,8 @@ $('head').append(
     '.fae_label { display:inline-block; width:200px; }'+
     '.fae_help_me { color:#FFF; font-size:18px; background:#69C; border-radius:100%; text-align:center; vertical-align:middle; display:inline-block; height:24px; line-height:24px; width:24px; margin-right:3px; position:relative; cursor:help; }'+
     '.fae_help_tip { color:#333; font-size:12px; text-align:left; line-height:15px; background:#EEE; border:1px solid #CCC; display:inline-block; width:300px; padding:3px; position:absolute; left:28px; visibility:hidden; z-index:1; }'+
+    '#fae_cp label { margin-right:10px; }'+
+    '#fae_cp label input { vertical-align:text-bottom; }'+
     '.fae_help_me:hover .fae_help_tip { visibility:visible; }'+
   '</style>'
 );

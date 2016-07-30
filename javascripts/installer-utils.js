@@ -166,8 +166,10 @@
           FAE.board_lang = 'English'; // set the board lang to English if it is undefined
         }
 
+        var opts = document.getElementById('fae_options');
+
         // create and insert the translation action
-        $(document.getElementById('fae_options')).append(
+        $(opts).append(
           $('<div style="float:right;">'+
             '<select id="fae_selected_language">'+
               '<option value="Arabic">العربية</option>'+
@@ -239,6 +241,25 @@
             document.getElementById('fae_options').style.display = 'none';
           }
         };
+
+
+        // create and insert the theme switcher
+        if (window.location.host == 'themedesign.forumotion.com') {
+
+          $(opts).append(
+            $('<div style="text-align:right;">'+
+              '<select id="fae_selected_theme">'+
+                '<option value="fa_edge">Edge Default</option>'+
+                '<option value="fa_edge_dark">Edge Dark</option>'+
+              '</select>'+
+              '<input id="fae_change_css" type="button" value="Change theme" />'+
+              '<div>'+
+                'Minified : <input id="fae_theme_min" type="checkbox" checked />'+
+              '</div>'+
+            '</div>')[0]
+          );
+
+        }
 
 
         // setup and begin translation of control panel

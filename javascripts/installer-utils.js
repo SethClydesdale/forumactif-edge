@@ -261,7 +261,7 @@
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Leave this checked if you\'d like the stylesheet to be minified. Minified stylesheets take up less space, but aren\'t easy to edit. Uncheck this box if you want to edit the stylesheet of the selected theme.</span>'+
+                '<span class="fae_help_tip">Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.</span>'+
               '</span>'+
               '<span id="fae_label_min" class="fae_label">Minify Stylesheet : </span>'+
               '<label for="fae_theme_min_yes"><input type="radio" id="fae_theme_min_yes" name="fae_theme_min" value="1" checked> Yes</label>'+

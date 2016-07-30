@@ -246,7 +246,7 @@
         // create and insert the theme switcher
         if (window.location.host == 'themedesign.forumotion.com') {
 
-          $(opts).after('<div class="fae_cp_title clear" style="margin-top:24px;">Theme Management</div>'+
+          $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Theme Management</div>'+
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+

@@ -1,42 +1,5 @@
 // French Translation
-
-/*
-
-  REQUIRES TRANSLATION :
-
-  # CSS
-  - record_users
-  - chatbox_tip
-  - chatbox_no_away
-  - chatbox_no_online
-
-  # JAVASCRIPTS
-  - widget_menu_title
-  - widget_menu_tooltip
-  - select_theme
-  - random_theme
-  - default_theme
-  - quick_nav_title
-  - quick_nav_tooltip
-  - quick_nav_notif
-  - tool_copy_url_tooltip
-  - tool_copy_url_prompt
-  - tool_admin_panel
-  - tool_to_top
-  - tool_to_bottom
-  - img_resizer_full_size
-  - img_resizer_enlarge
-  - img_resizer_reduce
-  - img_resizer_download
-  - img_resizer_tooltip
-  - fae_update_found
-
-  # TEMPLATES
-  - back_to_top
-  - fae_feedback
-  - fae_feedback_tooltip
-
-*/
+// TRANSLATION IS PARTIAL
 
 FAE.lang = {
 
@@ -167,6 +130,41 @@ FAE.lang = {
       log_in_desc : '<p class="lor_subdesc">Already have an account? No problem, log in here.</p>',
       log_in_button : '<a href="/login" class="button1">Connexion</a>'
     }
+
+  },
+
+
+  fae_cp : {
+    fae_cp_main_title : 'Forumactif Edge Control Panel',
+    fae_cp_desc : 'This panel allows you to install, uninstall, and update <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Get ready to experience your forum in a more modern and responsive way!',
+    fae_log : 'Log',
+    fae_actions : 'Actions',
+
+    fae_install : 'Install',
+    fae_reinstall : 'Reinstall',
+    fae_install_complete : 'COMPLETE!',
+    fae_install_warning : 'Are you sure you want to {TYPE} Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.',
+
+    fae_uninstall : 'Uninstall',
+    fae_uninstall_warning : 'Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.',
+
+    fae_update : 'Check for updates',
+    fae_update_good : 'Forumactif Edge is up to date!',
+    fae_update_check : 'Checking for updates on Github...',
+    fae_update_prepare : 'Preparing to fetch update instructions, please do not close this tab...',
+    fae_update_start : 'Updates are about to begin, please do not close this tab.',
+    fae_update_fetch : 'Getting update instructions for version {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
+    fae_update_notes : 'Please <a href="{RELEASE_TAG}" target="_blank">Click here</a> to view the changes made in version {VERSION_STRING}.',
+    fae_update_error : 'Update instructions for version {VERSION_STRING} could not be found. Please <a href="https://github.com/SethClydesdale/forumactif-edge/issues/new" target="_blank">open a new issue</a> and provide this information for further assistance.',
+
+    fae_translate : 'Change language',
+    fae_translate_same : 'Forumactif Edge is already in {LANG}. Please choose another language.',
+    fae_translate_warning : 'Are you sure you want to change the language of Forumactif Edge to {LANG} ?',
+    fae_translate_start : 'Translation of Forumactif Edge will commence shortly. Please wait..',
+    fae_translate_get : 'Getting {LANG} language data...',
+    fae_translate_loaded : 'Language data has been loaded. The translation process will now begin, please do not close this tab.',
+
+    fae_err_not_founder : 'Only <a href="/u1">the founder</a> may use this control panel. Please contact them for assistance in installing Forumactif Edge.'
 
   }
 

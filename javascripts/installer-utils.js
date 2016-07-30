@@ -248,15 +248,13 @@
 
           $(opts).append(
             $('<div style="text-align:right;clear:both;margin-top:6px;">'+
+              '<span id="fae_label_min" class="fae_label">Minified :</span> <input id="fae_theme_min" type="checkbox" checked />'+
+              '<span id="fae_label_rtl" class="fae_label">Right-to-Left :</span> <input id="fae_theme_dir" type="checkbox" />'+
               '<select id="fae_selected_theme">'+
                 '<option value="fa_edge">Edge Default</option>'+
                 '<option value="fa_edge_dark">Edge Dark</option>'+
               '</select>'+
               '<input id="fae_change_css" type="button" value="Change theme" />'+
-              '<div>'+
-                '<span id="fae_label_min" class="fae_label">Minified :</span> <input id="fae_theme_min" type="checkbox" checked />'+
-                '<span id="fae_label_rtl" class="fae_label">Right-to-Left :</span> <input id="fae_theme_dir" type="checkbox" />'+
-              '</div>'+
             '</div>')[0]
           );
 

@@ -140,12 +140,12 @@ FAE.lang = {
     fae_log : 'Log',
     fae_actions : 'Actions',
 
-    fae_install : 'Install',
-    fae_reinstall : 'Reinstall',
+    fae_install : 'Installer',
+    fae_reinstall : 'Réinstaller',
     fae_install_complete : 'COMPLETE!',
     fae_install_warning : 'Are you sure you want to {TYPE} Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.',
 
-    fae_uninstall : 'Uninstall',
+    fae_uninstall : 'Désinstaller',
     fae_uninstall_warning : 'Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.',
 
     fae_update : 'Check for updates',

@@ -284,7 +284,8 @@
 
 
           document.getElementById('fae_change_css').onclick = function() {
-            var selected = document.getElementById('fae_selected_theme'),
+            var select = document.getElementById('fae_selected_theme'),
+                selected = select.options[select.selectedIndex],
                 stylesheet = selected.value + ( document.getElementById('fae_theme_min_yes').checked ? '.min' : '' ) + ( document.getElementById('fae_theme_dir_rtl').checked ? '-rtl' : '' ) + '.css';
 
             if (confirm( 'Are you sure you want to import the theme "' + selected.innerHTML + '" into Forumactif Edge ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'.replace(/\\/g, '') )) {

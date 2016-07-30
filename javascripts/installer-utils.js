@@ -289,9 +289,14 @@
                 stylesheet = selected.value + ( document.getElementById('fae_theme_min_yes').checked ? '.min' : '' ) + ( document.getElementById('fae_theme_dir_rtl').checked ? '-rtl' : '' ) + '.css';
 
             if (confirm( 'Are you sure you want to import the theme "' + selected.innerHTML + '" into Forumactif Edge ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'.replace(/\\/g, '') )) {
+              FAE.index = 1;
+              FAE.quota = 2;
+              FAE.progress();
               FAE.log('Getting ' + stylesheet + '...');
 
               $.get(FAE.raw + 'css/' + stylesheet, function(d) {
+                FAE.index++;
+                FAE.progress();
                 FAE.log('Installing ' + stylesheet + '...');
 
                 $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, {

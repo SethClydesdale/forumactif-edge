@@ -96,7 +96,7 @@
       // Installation initialization
       document.getElementById('fae_install').onclick = function() {
         if (confirm( (FAE.cp_lang.fae_install_warning ? FAE.parse_vars(FAE.cp_lang.fae_install_warning, {
-          '{TYPE}' : installed ? FAE.cp_lang.fae_install : FAE.cp_lang.fae_reinstall
+          '{TYPE}' : installed ?  FAE.cp_lang.fae_reinstall : FAE.cp_lang.fae_install
 
         }) : 'Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.').replace(/\\/g, '') )) {
 

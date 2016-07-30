@@ -96,7 +96,7 @@
       // Installation initialization
       document.getElementById('fae_install').onclick = function() {
         if (confirm( (FAE.cp_lang.fae_install_warning ? FAE.parse_vars(FAE.cp_lang.fae_install_warning, {
-          '{TYPE}' : installed ? FAE.cp_lang.install : FAE.cp_lang.reinstall
+          '{TYPE}' : installed ? FAE.cp_lang.fae_install : FAE.cp_lang.fae_reinstall
 
         }) : 'Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.').replace(/\\/g, '') )) {
 
@@ -246,18 +246,17 @@
           FAE.script(d.replace('FAE.lang', 'FAE.cp_lang'));
           FAE.cp_lang = FAE.cp_lang.fae_cp;
 
-          var lang = FAE.cp_lang,
-              title = $('.fae_cp_title', document.getElementById('fae_cp'));
+          var title = $('.fae_cp_title', document.getElementById('fae_cp'));
 
-          document.getElementById('fae_cp_main_title').innerHTML = lang.fae_cp_main_title;
-          document.getElementById('fae_cp_desc').innerHTML = lang.fae_cp_desc;
-          document.getElementById('fae_install').innerHTML = lang.fae_install;
-          document.getElementById('fae_uninstall').innerHTML = lang.fae_uninstall;
-          document.getElementById('fae_update').innerHTML = lang.fae_update;
-          document.getElementById('fae_translate').innerHTML = lang.fae_translate;
+          document.getElementById('fae_cp_main_title').innerHTML = FAE.cp_lang.fae_cp_main_title;
+          document.getElementById('fae_cp_desc').innerHTML = FAE.cp_lang.fae_cp_desc;
+          document.getElementById('fae_install').innerHTML = FAE.cp_lang.fae_install;
+          document.getElementById('fae_uninstall').innerHTML = FAE.cp_lang.fae_uninstall;
+          document.getElementById('fae_update').innerHTML = FAE.cp_lang.fae_update;
+          document.getElementById('fae_translate').innerHTML = FAE.cp_lang.fae_translate;
 
-          title[0].innerHTML = lang.fae_log;
-          title[1].innerHTML = lang.fae_actions;
+          title[0].innerHTML = FAE.cp_lang.fae_log;
+          title[1].innerHTML = FAE.cp_lang.fae_actions;
         });
       }
 

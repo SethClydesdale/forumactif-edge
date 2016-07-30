@@ -248,11 +248,10 @@
 
           $(opts).after('<div class="clear" style="margin-top:12px;"></div>'+
             '<div class="fae_cp_title">Theme Management</div>'+
-            '<p>This section allows you to import different themes for Forumactif Edge.</p>'+
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Choose the type of theme you want to apply to Forumactif Edge via the drop down.</span>'+
+                '<span class="fae_help_tip">This section allows you to import different themes for Forumactif Edge. Choose the theme you want to import from the drop down on the right.</span>'+
               '</span>'+
               '<span id="fae_label_theme" class="fae_label">Select a theme : </span>'+
               '<select id="fae_selected_theme">'+
@@ -266,7 +265,8 @@
                 '<span class="fae_help_tip">Leave this checked if you\'d like the stylesheet to be minified. Minified stylesheets take up less space, but aren\'t easy to edit. Uncheck this box if you want to edit the stylesheet of the selected theme.</span>'+
               '</span>'+
               '<span id="fae_label_min" class="fae_label">Minify Stylesheet : </span>'+
-              '<input id="fae_theme_min" type="checkbox" checked />'+
+              '<label for="fae_theme_min_yes"><input type="radio" id="fae_theme_min_yes" name="fae_theme_min" value="1" checked> Yes</label>'+
+              '<label for="fae_theme_min_no"><input type="radio" id="fae_theme_min_no" name="fae_theme_min" value="0"> No</label>'+
             '</div>'+
 
             '<div class="fae_cp_row">'+
@@ -274,7 +274,8 @@
                 '<span class="fae_help_tip">Changes the theme\'s text direction from left-to-right (ltr) to right-to-left. (rtl)</span>'+
               '</span>'+
               '<span id="fae_label_rtl" class="fae_label">Right-to-Left : </span>'+
-              '<input id="fae_theme_dir" type="checkbox" />'+
+              '<label for="fae_theme_dir_rtl"><input type="radio" id="fae_theme_dir_rtl" name="fae_theme_dir" value="1"> Yes</label>'+
+              '<label for="fae_theme_dir_ltr"><input type="radio" id="fae_theme_dir_ltr" name="fae_theme_dir" value="0" checked> No</label>'+
             '</div>'+
 
             '<div class="fae_cp_row">'+
@@ -315,7 +316,7 @@ $('head').append(
     '.fae_cp_row { margin:6px 0; }'+
     '.fae_label { display:inline-block; width:200px; }'+
     '.fae_help_me { color:#FFF; font-size:18px; background:#69C; border-radius:100%; text-align:center; vertical-align:middle; display:inline-block; height:24px; line-height:24px; width:24px; margin-right:3px; position:relative; cursor:help; }'+
-    '.fae_help_tip { color:#333; font-size:12px; line-height:15px; background:#EEE; border:1px solid #CCC; display:inline-block; width:300px; padding:3px; position:absolute; left:28px; visibility:hidden; z-index:1; }'+
+    '.fae_help_tip { color:#333; font-size:12px; text-align:left; line-height:15px; background:#EEE; border:1px solid #CCC; display:inline-block; width:300px; padding:3px; position:absolute; left:28px; visibility:hidden; z-index:1; }'+
     '.fae_help_me:hover .fae_help_tip { visibility:visible; }'+
   '</style>'
 );

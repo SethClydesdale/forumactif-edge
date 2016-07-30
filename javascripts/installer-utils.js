@@ -246,7 +246,7 @@
         // create and insert the theme switcher
         if (window.location.host == 'themedesign.forumotion.com') {
 
-          $(opts).append('<br class="clear" />'+
+          $(opts).after('<div class="clear" style="margin-top:12px;"></div>'+
             '<div class="fae_cp_title">Theme Management</div>'+
             '<p>This section allows you to import different themes for Forumactif Edge.</p>'+
 
@@ -259,19 +259,23 @@
             '</div>'+
 
             '<div class="fae_cp_row">'+
+              '<span class="fae_help_me">?'+
+                '<span class="fae_help_tip">Leave this checked if you\'d like the stylesheet to be minified. Minified stylesheets take up less space, but aren\'t easy to edit. Uncheck this box if you want to edit the stylesheet of the selected theme.</span>'+
+              '</span>'+
               '<span id="fae_label_min" class="fae_label">Minify Stylesheet : </span>'+
               '<input id="fae_theme_min" type="checkbox" checked />'+
-              '<p id="fae_theme_min_desc">Leave this checked if you\'d like the stylesheet to be minified. Minified stylesheets take up less space, but aren\'t easily editable. Uncheck this box if you want to edit the stylesheet of the selected theme.</p>'+
             '</div>'+
 
             '<div class="fae_cp_row">'+
+              '<span class="fae_help_me">?'+
+                '<span class="fae_help_tip">Changes the theme\'s text direction from left-to-right (ltr) to right-to-left. (rtl)</span>'+
+              '</span>'+
               '<span id="fae_label_rtl" class="fae_label">Right-to-Left : </span>'+
               '<input id="fae_theme_dir" type="checkbox" />'+
-              '<p id="fae_theme_dir_desc">Changes the theme\'s text direction from left-to-right (ltr) to right-to-left. (rtl)</p>'+
             '</div>'+
 
             '<div class="fae_cp_row">'+
-              '<input id="fae_change_css" type="button" value="Save theme changes" />'+
+              '<input id="fae_change_css" type="button" value="Import theme" />'+
             '</div>');
 
         }

@@ -270,7 +270,7 @@
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Changes the theme\'s text direction from left-to-right (ltr) to right-to-left. (rtl)</span>'+
+                '<span class="fae_help_tip">Changes the theme\'s text direction from left-to-right (ltr) to right-to-left (rtl) for rtl scripts.</span>'+
               '</span>'+
               '<span id="fae_label_rtl" class="fae_label">Right-to-Left : </span>'+
               '<label for="fae_theme_dir_rtl"><input type="radio" id="fae_theme_dir_rtl" name="fae_theme_dir" value="1"> Yes</label>'+
@@ -279,8 +279,31 @@
 
             '<div class="fae_cp_row">'+
               '<input id="fae_change_css" type="button" value="Import theme" />'+
-            '</div>');
+            '</div>'
+          );
 
+
+          document.getElementById('fae_change_css').onclick = function() {
+            var selected = document.getElementById('fae_selected_theme'),
+                stylesheet = selected.value + ( document.getElementById('fae_theme_min_yes').checked ? '.min' : '' ) + ( document.getElementById('fae_theme_dir_rtl').checked ? '-rtl' : '' ) + '.css';
+
+            if (confirm( 'Are you sure you want to import the theme "' + selected.innerHTML + '" into Forumactif Edge ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'.replace(/\\/g, '') )) {
+              FAE.log('Getting ' + stylesheet + '...');
+
+              $.get(FAE.raw + 'css/' + stylesheet, function(d) {
+                FAE.log('Installing ' + stylesheet + '...');
+
+                $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, {
+                  edit_code : d,
+                  submit : 'Submit'
+                }, function(d) {
+                  FAE.log(selected.innerHTML + ' has been imported successfully ! Please <a href="javascript:window.location.reload();">click here</a> to reload the page.', 'color:#8B5;font-weight:bold;');
+                });
+              });
+
+              document.getElementById('fae_options').style.display = 'none';
+            }
+          };
         }
 
 

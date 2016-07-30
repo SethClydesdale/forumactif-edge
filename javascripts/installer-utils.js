@@ -250,10 +250,10 @@
 
           document.getElementById('fae_cp_main_title').innerHTML = FAE.cp_lang.fae_cp_main_title;
           document.getElementById('fae_cp_desc').innerHTML = FAE.cp_lang.fae_cp_desc;
-          document.getElementById('fae_install').innerHTML = FAE.cp_lang.fae_install;
-          document.getElementById('fae_uninstall').innerHTML = FAE.cp_lang.fae_uninstall;
-          document.getElementById('fae_update').innerHTML = FAE.cp_lang.fae_update;
-          document.getElementById('fae_translate').innerHTML = FAE.cp_lang.fae_translate;
+          document.getElementById('fae_install').value = FAE.cp_lang.fae_install;
+          document.getElementById('fae_uninstall').value = FAE.cp_lang.fae_uninstall;
+          document.getElementById('fae_update').value = FAE.cp_lang.fae_update;
+          document.getElementById('fae_translate').value = FAE.cp_lang.fae_translate;
 
           title[0].innerHTML = FAE.cp_lang.fae_log;
           title[1].innerHTML = FAE.cp_lang.fae_actions;

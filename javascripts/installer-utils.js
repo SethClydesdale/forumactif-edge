@@ -85,7 +85,7 @@
 
   // stuff that needs to be executed when the doc is ready
   $(function() {
-    var admin = $('a[href^="/admin/"]')[0], // get the AP link so we can fetch the TID
+    var admin = $('a[href^="/admin/"]:last')[0], // get the AP link so we can fetch the TID
         installed = document.getElementById('fa_edge');
 
     // only allow the founder to install the theme

@@ -57,14 +57,16 @@ FAE.step = [
           i = 0,
           j = file.length;
 
-      for (; i < j; i++) {
-        file[i].checked = true;
-      }
+      if (form[0]) {
+        for (; i < j; i++) {
+          file[i].checked = true;
+        }
 
-      $.post(form[0].action, form.serialize() + '&attachments_submit=Delete', function(d) {
-        var confirmation = $('form[method="post"]', d);
-        $.post(confirmation[0].action, confirmation.serialize() + '&confirm=Yes');
-      });
+        $.post(form[0].action, form.serialize() + '&attachments_submit=Delete', function(d) {
+          var confirmation = $('form[method="post"]', d);
+          $.post(confirmation[0].action, confirmation.serialize() + '&confirm=Yes');
+        });
+      }
     }
   },
 

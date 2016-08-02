@@ -2,15 +2,19 @@
 
 What is "Forumactif Edge" ? Forumactif Edge ( or FA Edge, FAE ) is a new modern and responsive forum theme for [Forumotion](http://www.forumotion.com/) forums, that is like an entirely new forum version in itself. It comes ready with numerous plugins, including a theme switcher that allows you to change the color of the theme to the one you prefer, and a control panel that helps you with installation, uninstallation, and even updates ! Plus thanks to the theme's responsiveness you'll be able to browse your forum on your mobile device without any problems.
 
-Unlike the default versions provided by Forumotion, FAE is open source and managed by the community, so it will be constantly improving based on user feedback. This project is not officially a part of Forumactif ( Forumotion, E-toxic.. ), I have been wanting a new look for Forumotion forums for awhile, so I took it upon myself to create just that, for the entire community. 
+You should know that this project is not officially affiliated with Forumactif. This forum version is managed by the community, so it will constantly evolved based on **your** feedback.
 
-Find out more on [our wiki](https://github.com/SethClydesdale/forumactif-edge/wiki) !
+If you'd like to install Forumactif Edge you can find out more on our wiki by clicking [**here**](https://github.com/SethClydesdale/forumactif-edge/wiki/Installing).
 
-## Installing
+## FAQ
 
-To install Forumactif Edge please read over the wiki by clicking the link below.
+**Q : Is the installation safe ? Does it collect any data ?**
 
-[Installing Forumactif Edge](https://github.com/SethClydesdale/forumactif-edge/wiki/Installing)
+**A :** Yes, there's nothing to worry about ! Forumactif Edge collects no data during or after the installation. We're completely transparent, if you have any doubts feel free to review our source code !
+
+**Q : Why isn't Forumactif Edge in my language ?**
+
+**A :** I don't know every language since I'm only one person, as such I allow members of Forumactif Edge to submit translations. If a translation is not available for your language please [click here](https://github.com/SethClydesdale/forumactif-edge/wiki/Translating) to learn how to submit one.
 
 ## Preview
 You can find a live and image preview of Forumactif Edge below.

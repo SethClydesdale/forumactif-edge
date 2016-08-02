@@ -178,7 +178,7 @@
               '<option value="Français">Français</option>'+
               '<option value="German">Deutsch</option>'+
               '<option value="Greek">Ελληνικά</option>'+
-              ( window.location.host == 'themedesign.forumotion.com' ? '<option value="Italian">Italiano</option>' : '' )+
+              '<option value="Italian">Italiano</option>'+
               '<option value="Romanian">Romana</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+

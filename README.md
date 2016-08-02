@@ -1,6 +1,6 @@
 # Forumactif Edge
 
-What is "Forumactif Edge" ? Forumactif Edge ( or FA Edge, FAE ) is a new modern and responsive forum theme for [Forumotion](http://www.forumotion.com/) forums, that is like an entirely new forum version in itself. It comes ready with numerous plugins, including a theme switcher that allows you to change the color of the theme to the one you prefer, and a control panel that helps you with installation, uninstallation, and even updates ! Plus thanks to the theme's responsiveness you'll be able to browse your forum on your mobile device without any problems.
+What is "Forumactif Edge" ? Forumactif Edge ( or FA Edge, FAE ) is a new modern and responsive forum theme for [Forumotion](http://www.forumotion.com/) forums, that is like an entirely new forum version in itself. It comes ready with numerous plugins such as the ability to dynamically change the forum theme. Best of all it's responsive, so you can browse on your mobile device without any problems !
 
 You should know that this project is not officially affiliated with Forumactif. This forum version is managed by the community, so it will constantly evolve based on **your** feedback.
 

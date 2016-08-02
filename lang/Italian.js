@@ -159,7 +159,7 @@ FAE.lang = {
     fae_translate : 'Cambia lingua',
     fae_translate_same : 'Forumactif Edge non è disponibile in {LANG}.',
     fae_translate_warning : 'Sicuro di voler cambiare la lingua di Forumactif Edge in {LANG} ?',
-    fae_translate_start : 'La traduzione di FAR partirà tra poco..',
+    fae_translate_start : 'La traduzione di FAE partirà tra poco..',
     fae_translate_get : 'Ottenendo la lingua {LANG} .',
     fae_translate_loaded : 'Lingua caricata con successo. Il processo di traduzione sta per iniziare. Non chiudere questa pagina.',
 

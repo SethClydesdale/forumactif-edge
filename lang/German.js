@@ -15,7 +15,7 @@ FAE.lang = {
     newest_member : 'Neuestes Mitglied',
     hidebox : 'Versteckt:',
     chatbox_tip : 'Über diesen Bereich schweben, um zu sehen, wer online ist.',
-    chatbox_no_away : 'Keine Mitglieder sind zurzeit weg..',
+    chatbox_no_away : 'Keine Mitglieder sind zurzeit weg.',
     chatbox_no_online : 'Keine Mitglieder sind zurzeit online.',
   },
 

@@ -68,7 +68,7 @@
         FAE.log(FAE.cp_lang.fae_update_error ? FAE.parse_vars(FAE.cp_lang.fae_update_error, {
           '{VERSION_STRING}' : FAE.update_queue[FAE.update_index]
 
-        }) : 'Update instructions for version ' + FAE.update_queue[FAE.update_index] + ' could not be found. Please <a href="https://github.com/SethClydesdale/forumactif-edge/issues/new" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
+        }) : 'Update instructions for version ' + FAE.update_queue[FAE.update_index] + ' could not be found. Please <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
 
         FAE.getUpdates();
       });
@@ -96,7 +96,7 @@
       // Installation initialization
       document.getElementById('fae_install').onclick = function() {
         if (confirm( (FAE.cp_lang.fae_install_warning ? FAE.parse_vars(FAE.cp_lang.fae_install_warning, {
-          '{TYPE}' : installed ?  FAE.cp_lang.fae_reinstall : FAE.cp_lang.fae_install
+          '{INSTALL}' : installed ?  FAE.cp_lang.fae_reinstall : FAE.cp_lang.fae_install
 
         }) : 'Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.').replace(/\\/g, '') )) {
 
@@ -178,6 +178,7 @@
               '<option value="Français">Français</option>'+
               '<option value="German">Deutsch</option>'+
               '<option value="Greek">Ελληνικά</option>'+
+              ( window.location.host == 'themedesign.forumotion.com' ? '<option value="Italian">Italiano</option>' : '' )+
               '<option value="Romanian">Romana</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+

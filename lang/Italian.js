@@ -23,15 +23,15 @@ FAE.lang = {
   images : {
 
     buttons : {
-      i_post : 'http://i86.servimg.com/u/f86/18/21/41/30/new-to11.png?color=primary&size=m',
-      i_reply : 'http://i86.servimg.com/u/f86/18/21/41/30/post-r10.png?color=primary&size=m',
-      i_reply_locked : 'http://i86.servimg.com/u/f86/18/21/41/30/locked11.png?color=secondary&size=m',
-      i_icon_quote : 'http://i86.servimg.com/u/f86/18/21/41/30/quote-12.png?color=primary&size=s',
-      i_icon_multiquote_off : 'http://i86.servimg.com/u/f86/18/21/41/30/multi-10.png?color=primary&size=s',
-      i_icon_multiquote_on : 'http://i86.servimg.com/u/f86/18/21/41/30/multi-10.png?color=secondary&size=s',
-      i_icon_thanks_off : 'http://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=primary&size=s',
-      i_icon_thanks_on : 'http://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=secondary&size=s',
-      i_icon_edit : 'http://i86.servimg.com/u/f86/18/21/41/30/edit-e11.png?color=primary&size=s',
+      i_post : 'http://i35.servimg.com/u/f35/18/21/41/30/new-to10.png?color=primary&size=m',
+      i_reply : 'http://i35.servimg.com/u/f35/18/21/41/30/post-r11.png?color=primary&size=m',
+      i_reply_locked : 'http://i35.servimg.com/u/f35/18/21/41/30/locked13.png?color=secondary&size=m',
+      i_icon_quote : 'http://i35.servimg.com/u/f35/18/21/41/30/quote-13.png?color=primary&size=s',
+      i_icon_multiquote_off : 'http://i35.servimg.com/u/f35/18/21/41/30/multi-13.png?color=primary&size=s',
+      i_icon_multiquote_on : 'http://i35.servimg.com/u/f35/18/21/41/30/multi-13.png?color=secondary&size=s',
+      i_icon_thanks_off : 'http://i35.servimg.com/u/f35/18/21/41/30/thanks13.png?color=primary&size=s',
+      i_icon_thanks_on : 'http://i35.servimg.com/u/f35/18/21/41/30/thanks13.png?color=secondary&size=s',
+      i_icon_edit : 'http://i35.servimg.com/u/f35/18/21/41/30/edit-i10.png?color=primary&size=s',
       i_icon_delete : 'http://i86.servimg.com/u/f86/18/21/41/30/delete10.png?color=primary&size=s',
       i_icon_ip : 'http://i86.servimg.com/u/f86/18/21/41/30/ip-f10.png?color=primary&size=s',
       i_icon_report : 'http://i86.servimg.com/u/f86/18/21/41/30/report10.png?color=primary&size=s',
@@ -53,7 +53,7 @@ FAE.lang = {
       i_icon_yim : 'http://i86.servimg.com/u/f86/18/21/41/30/yahoo-10.png?color=primary&size=s',
       i_icon_skype : 'http://i86.servimg.com/u/f86/18/21/41/30/skype-10.png?color=primary&size=s',
       i_icon_online : FAE.eGIF,
-      i_msg_newpost : 'http://i86.servimg.com/u/f86/18/21/41/30/new-pm10.png?color=primary&size=m',
+      i_msg_newpost : 'http://i35.servimg.com/u/f35/18/21/41/30/new-pm10.png?color=primary&size=m',
       i_msg_inbox : FAE.eGIF,
       i_msg_sentbox : FAE.eGIF,
       i_msg_outbox : FAE.eGIF,
@@ -69,7 +69,7 @@ FAE.lang = {
     },
 
     gallery : {
-      upload_pic : 'http://i86.servimg.com/u/f86/18/21/41/30/upload10.png?color=primary&size=m'
+      upload_pic : 'http://i35.servimg.com/u/f35/18/21/41/30/upload11.png?color=primary&size=m'
     }
 
   },
@@ -96,13 +96,13 @@ FAE.lang = {
       tool_to_top : 'Top of page',
       tool_to_bottom : 'Bottom of page',
 
-      img_resizer_full_size : 'dimensione intera',
-      img_resizer_enlarge : 'allarga immagine',
+      img_resizer_full_size : 'Dimensione intera',
+      img_resizer_enlarge : 'Allarga immagine',
       img_resizer_reduce : 'Riduci immagine',
-      img_resizer_download : 'scarica immagine',
+      img_resizer_download : 'Scarica immagine',
       img_resizer_tooltip : 'Click to view full image',
 
-      fae_update_found : 'e stato trovato un\\\'aggiornamento per FA edge. Vai nel pannello di controllo FAE e clicca su "Cerca aggiornamenti" per poter ottenere la version più recente.'
+      fae_update_found : 'E stato trovato un\\\'aggiornamento per FA edge. Vai nel pannello di controllo FAE e clicca su "Cerca aggiornamenti" per poter ottenere la version più recente.'
     }
 
   },
@@ -111,22 +111,22 @@ FAE.lang = {
   templates : {
 
     'overall_footer_end.html' : {
-      back_to_top : 'torna su',
-      fae_feedback : 'lascia un feedback',
-      fae_feedback_tooltip : 'aiuto per FAE'
+      back_to_top : 'Torna su',
+      fae_feedback : 'Lascia un feedback',
+      fae_feedback_tooltip : 'Aiuto per FAE'
     },
 
 
     logged_out_reply : {
       main_title : '<h2 class="lor_maintitle">Crea un account o accedi per rispondere</h2>',
-      main_desc : '<p class="lor_maindesc">è necessario connettersi per poter rispondere.</p>',
+      main_desc : '<p class="lor_maindesc">È necessario connettersi per poter rispondere.</p>',
 
       create_account_title : '<h3 class="lor_subtitle">Registrati</h3>',
-      create_account_desc : '<p class="lor_subdesc">entra nella community creando un account, è facile!</p>',
+      create_account_desc : '<p class="lor_subdesc">Entra nella community creando un account, è facile!</p>',
       create_account_button : '<a href="/register" class="button1">Crea un nuovo account</a>',
 
       log_in_title : '<h3 class="lor_subtitle">Accedi</h3>',
-      log_in_desc : '<p class="lor_subdesc">hai già un\'account? Allora accedi!</p>',
+      log_in_desc : '<p class="lor_subdesc">Hai già un\'account? Allora accedi!</p>',
       log_in_button : '<a href="/login" class="button1">Accedi</a>'
     }
 

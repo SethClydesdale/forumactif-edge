@@ -4,7 +4,8 @@ What is "Forumactif Edge" ? Forumactif Edge ( or FA Edge, FAE ) is a new modern 
 
 You should know that this project is not officially affiliated with Forumactif. This forum version is managed by the community, so it will constantly evolve based on **your** feedback.
 
-If you'd like to install Forumactif Edge you can find out more on our wiki by clicking [**here**](https://github.com/SethClydesdale/forumactif-edge/wiki/Installing).
+If you'd like to install Forumactif Edge you can find out more on our wiki by clicking the link below.
+- [**How to install Forumactif Edge**](https://github.com/SethClydesdale/forumactif-edge/wiki/Installing)
 
 ## FAQ
 

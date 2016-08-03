@@ -25,32 +25,29 @@ FAE.step = [
      url : 'part=themes&sub=logos&mode=depart&page=icons&mode=icons&extended_admin=1',
     data : {
       i_icon_minicat : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/post-d10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/post-f10.png',
+      i_icon_minicat_new : 'http://i86.servimg.com/u/f86/18/21/41/30/post-n10.png',
       i_icon_minicat_locked : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/lock-d10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/lock-f11.png',
       i_icon_minitime : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/clock-10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/clock-10.png',
       i_icon_minipost : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/post-d10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/post-f10.png',
+      i_icon_minipost_new : 'http://i86.servimg.com/u/f86/18/21/41/30/post-n10.png',
       i_icon_minipost_lock : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/lock-d10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/lock-f11.png',
+      i_icon_minipost_participate : 'http://i86.servimg.com/u/f86/18/21/41/30/partic10.png',
       i_icon_latest_reply : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/lastpo10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/lastpo10.png',
+      i_icon_newest_reply : 'http://i86.servimg.com/u/f86/18/21/41/30/lastpo11.png',
       i_icon_calendar : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/calend11.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/calend10.png',
       i_icon_tiny_topic : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/calend10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/calend11.png',
       i_icon_tiny_profile : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/birthd10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/birthd10.png',
+      i_icon_gender_male : 'http://i86.servimg.com/u/f86/18/21/41/30/male-f10.png',
+      i_icon_gender_female : 'http://i86.servimg.com/u/f86/18/21/41/30/female10.png',
       i_up_arrow : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/up-d-f10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/up-f10.png',
       i_down_arrow : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/down-d10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/down-f10.png',
       i_left_arrow : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/prev-d10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/prev-f10.png',
       i_right_arrow : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/next-d10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/next-f10.png',
       i_tabs_less : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/minus-10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/minus-11.png',
       i_tabs_more : FAE.theme.dark ? 'http://i35.servimg.com/u/f35/18/21/41/30/plus-d10.png' : 'http://i86.servimg.com/u/f86/18/21/41/30/plus-f11.png',
-      submit : 'Save'
-    }
-  },
-
-
-  {
-    info : 'Installing images for "Buttons"',
-    type : 'POST',
-     url : 'part=themes&sub=logos&mode=depart&page=buttons&mode=buttons&extended_admin=1',
-    data : {
-      i_icon_attachment_see : 'http://i86.servimg.com/u/f86/18/21/41/30/show-a10.png',
-      i_icon_attachment_download : 'http://i86.servimg.com/u/f86/18/21/41/30/downlo10.png',
+      i_icon_mini_online : 'http://i86.servimg.com/u/f86/18/21/41/30/online10.png',
+      i_icon_mini_offline : 'http://i86.servimg.com/u/f86/18/21/41/30/offlin10.png',
+      page : 'icons',
       submit : 'Save'
     }
   },

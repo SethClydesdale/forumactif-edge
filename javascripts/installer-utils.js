@@ -343,5 +343,7 @@ $('head').append(
     '#fae_cp label { margin-right:10px; }'+
     '#fae_cp label input { vertical-align:text-bottom; }'+
     '.fae_help_me:hover .fae_help_tip { visibility:visible; }'+
+    'body #fae_cp { color:#333; background:#F6F6F6; border:1px solid #CCC; margin:50px 25px; padding:12px; }'+
+    '#fae_cp select, #fae_cp input { color:#333; background:#FFF; }'+
   '</style>'
 );

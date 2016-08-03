@@ -2,7 +2,7 @@ FAE.step = [
   {
     info : 'Getting ' + FAE.theme.stylesheet,
     type : 'GET',
-     url : FAE.raw + 'css/fa_edge.min.css',
+     url : FAE.raw + 'css/' + FAE.theme.stylesheet,
     func : function(d) {
       FAE.step[FAE.index + 1].data.edit_code = d;
     }

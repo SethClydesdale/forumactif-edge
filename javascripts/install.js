@@ -74,7 +74,7 @@ FAE.step = [
   {
     info : 'Enabling JavaScript codes management',
     type : 'POST',
-     url : 'part=modules&sub=html&mode=js_delete&extended_admin=1&tid=58b8b351201e3d8925cba62d506c0bb7',
+     url : 'part=modules&sub=html&mode=js_delete&extended_admin=1',
     data : {
       allow_js_module : 1,
           conf_submit : 'Save'

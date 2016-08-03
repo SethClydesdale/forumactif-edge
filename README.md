@@ -11,7 +11,7 @@ If you'd like to install Forumactif Edge you can find out more on our wiki by cl
 
 **Q : Is the installation safe ? Does it collect any data ?**
 
-**A :** Yes, there's nothing to worry about ! Forumactif Edge collects no data during or after the installation. We're completely transparent, if you have any doubts feel free to review our source code !
+**A :** Yes the installation is safe, there's nothing to worry about ! Forumactif Edge collects no data during or after the installation. We're completely transparent, if you have any doubts feel free to review our source code or [contact us](http://fmdesign.forumotion.com/t702-forumactif-edge-installation-questions#13928) to answer your questions !
 
 **Q : Why isn't Forumactif Edge in my language ?**
 

@@ -256,7 +256,7 @@
               '<span id="fae_label_theme" class="fae_label">Select a theme : </span>'+
               '<select id="fae_selected_theme">'+
                 '<option value="fa_edge">Edge Default</option>'+
-                '<option value="fa_edge_dark">Edge Dark</option>'+
+                '<option value="fa_edge-dark">Edge Dark</option>'+
               '</select>'+
             '</div>'+
 
@@ -290,24 +290,16 @@
                 stylesheet = selected.value + ( document.getElementById('fae_theme_min_yes').checked ? '.min' : '' ) + ( document.getElementById('fae_theme_dir_rtl').checked ? '-rtl' : '' ) + '.css';
 
             if (confirm( 'Are you sure you want to import the theme "' + selected.innerHTML + '" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'.replace(/\\/g, '') )) {
-              FAE.index = 0;
-              FAE.quota = 2;
-              FAE.progress();
-              FAE.log('Getting ' + stylesheet + '...');
+              FAE.theme = {
+                name : selected.innerHTML,
+                stylesheet : stylesheet,
+                dark : /-dark/i.test(stylesheet),
+                rtl : /-rtl/i.test(stylesheet)
+              };
 
-              $.get(FAE.raw + 'css/' + stylesheet, function(d) {
-                FAE.index++;
-                FAE.progress();
-                FAE.log('Installing ' + stylesheet + '...');
-
-                $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, {
-                  edit_code : d,
-                  submit : 'Submit'
-                }, function(d) {
-                  FAE.index++;
-                  FAE.progress();
-                  FAE.log(selected.innerHTML + ' has been imported successfully ! Please <a href="javascript:window.location.reload();">click here</a> to reload the page.', 'color:#8B5;font-weight:bold;');
-                });
+              $.get(FAE.raw + 'javascripts/change-theme.js', function(d) {
+                FAE.script(d);
+                FAE.next();
               });
 
               document.getElementById('fae_options').style.display = 'none';

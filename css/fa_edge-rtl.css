@@ -337,9 +337,9 @@ center : text-align:center;
   width:33%;
 }
 
-#footer_end_left { text-align:left; }
+#footer_end_left { text-align:right; }
 #footer_end_center { text-align:center; }
-#footer_end_right { text-align:right; }
+#footer_end_right { text-align:left; }
 
 /* back to top button */
 #back_top_top {
@@ -893,6 +893,7 @@ form[action^="/privmsg"] .postprofile dl, .search .postprofile dl { margin-top:0
   padding:3px;
 }
 
+hr { border-color:#CCC; }
 .signature_div { padding:3px; }
 
 /* add_this / share */
@@ -1160,7 +1161,6 @@ form.search-form input.search-keywords {
 
 input.search-button {
   color:#FFF;
-  font-family: FontAwesome;
   font-size:16px;
   text-align:center;
   background:#69C;

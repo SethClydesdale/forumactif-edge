@@ -13,7 +13,7 @@ $(function() {
     color = $('.postprofile dt .username span[style*="color"]', a[i])[0];
 
     if (color) {
-      title = $('.title', a[i]);
+      title = $('.title:first', a[i]);
 
       color = color.style.color;
       rgb = color.replace(/rgb\(|\)|\s/g, '').split(',');

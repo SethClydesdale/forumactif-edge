@@ -19,7 +19,7 @@ If you'd like to install Forumactif Edge you can find out more on our wiki by cl
 
 **Q : Is this theme REALLY free ?**
 
-**A :** Yes ! Ever since I helped design the new theme for Forumotion's support forums people have asked for it, **constantly**. Because of this, I decided that I'd design a forum version that was modern just like the support forums, so everyone could have an alternative without feeling left behind !
+**A :** Yes it's 100% free, no strings attached ! I wanted to create a modern and responsive theme forum Forumotion, because the current forum versions provided are dated and not mobile friendly. Forumactif Edge is the answer if you want a modern, mobile friendly design !
 
 ## Preview
 You can find a live and image preview of Forumactif Edge below.

@@ -249,116 +249,113 @@
 
 
         // create and insert the theme switcher
-        if (window.location.host == 'themedesign.forumotion.com') {
+        $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Theme Management</div>'+
 
-          $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Theme Management</div>'+
+          '<p id="fae_theme_desc">This section allows you to manage the default theme and colors for Forumactif Edge by importing a new theme from the Github repository.</p>'+
 
-            '<p id="fae_theme_desc">This section allows you to manage the default theme and colors for Forumactif Edge by importing a new theme from the Github repository.</p>'+
+          '<div class="fae_cp_row">'+
+            '<span class="fae_help_me">?'+
+              '<span class="fae_help_tip">Select the type of theme you want to import.</span>'+
+            '</span>'+
+            '<span id="fae_label_theme" class="fae_label">Select a theme : </span>'+
+            '<select id="fae_selected_theme">'+
+              '<option value="fa_edge" selected>Edge Default</option>'+
+              '<option value="fa_edge-dark">Edge Dark</option>'+
+            '</select>'+
+          '</div>'+
 
-            '<div class="fae_cp_row">'+
-              '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Select the type of theme you want to import.</span>'+
-              '</span>'+
-              '<span id="fae_label_theme" class="fae_label">Select a theme : </span>'+
-              '<select id="fae_selected_theme">'+
-                '<option value="fa_edge" selected>Edge Default</option>'+
-                '<option value="fa_edge-dark">Edge Dark</option>'+
-              '</select>'+
-            '</div>'+
+          '<div class="fae_cp_row">'+
+            '<span class="fae_help_me">?'+
+              '<span class="fae_help_tip">Select the default color for the chosen theme.</span>'+
+            '</span>'+
+            '<span id="fae_label_color" class="fae_label">Select a color : </span>'+
+            '<select id="fae_selected_color">'+
+              '<option value="Default" selected>Default</option>'+
+              '<option value="Persian Red" style="background:#b22;">Persian Red</option>'+
+              '<option value="Chestnut Rose" style="background:#b55;">Chestnut Rose</option>'+
+              '<option value="Eunry" style="background:#b88;">Eunry</option>'+
+              '<option value="Tuscany" style="background:#b52;">Tuscany</option>'+
+              '<option value="Antique Brass" style="background:#b85;">Antique Brass</option>'+
+              '<option value="Hokey Pokey" style="background:#b82;">Hokey Pokey</option>'+
+              '<option value="Earls Green" style="background:#bb2;">Earls Green</option>'+
+              '<option value="Laser" style="background:#bb5;">Laser</option>'+
+              '<option value="Pine Glade" style="background:#bb8;">Pine Glade</option>'+
+              '<option value="Celery" style="background:#8b2;">Celery</option>'+
+              '<option value="Wild Willow" style="background:#8b5;">Wild Willow</option>'+
+              '<option value="Atlantis" style="background:#5b2;">Atlantis</option>'+
+              '<option value="Apple" style="background:#2b2;">Apple</option>'+
+              '<option value="Mantis" style="background:#5b5;">Mantis</option>'+
+              '<option value="De York" style="background:#8b8;">De York</option>'+
+              '<option value="Mountain Meadow" style="background:#2b5;">Mountain Meadow</option>'+
+              '<option value="Emerald" style="background:#5b8;">Emerald</option>'+
+              '<option value="Shamrock" style="background:#2b8;">Shamrock</option>'+
+              '<option value="Turquoise" style="background:#2bb;">Turquoise</option>'+
+              '<option value="Downy" style="background:#5bb;">Downy</option>'+
+              '<option value="Sinbad" style="background:#8bb;">Sinbad</option>'+
+              '<option value="Curious Blue" style="background:#28b;">Curious Blue</option>'+
+              '<option value="Danube" style="background:#58b;">Danube</option>'+
+              '<option value="Mariner" style="background:#25b;">Mariner</option>'+
+              '<option value="Governor Bay" style="background:#22b;">Governor Bay</option>'+
+              '<option value="Blue Marguerite" style="background:#55b;">Blue Marguerite</option>'+
+              '<option value="Blue Bell" style="background:#88b;">Blue Bell</option>'+
+              '<option value="Purple Heart" style="background:#52b;">Purple Heart</option>'+
+              '<option value="Amethyst" style="background:#85b;">Amethyst</option>'+
+              '<option value="Purple" style="background:#82b;">Purple</option>'+
+              '<option value="Cerise" style="background:#b2b;">Cerise</option>'+
+              '<option value="Fuchsia Pink" style="background:#b5b;">Fuchsia Pink</option>'+
+              '<option value="Lilac" style="background:#b8b;">Lilac</option>'+
+              '<option value="Red Violet" style="background:#b28;">Red Violet</option>'+
+              '<option value="Hopbush" style="background:#b58;">Hopbush</option>'+
+              '<option value="Hibiscus" style="background:#b25;">Hibiscus</option>'+
+            '</select>'+
+          '</div>'+
 
-            '<div class="fae_cp_row">'+
-              '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Select the default color for the chosen theme.</span>'+
-              '</span>'+
-              '<span id="fae_label_color" class="fae_label">Select a color : </span>'+
-              '<select id="fae_selected_color">'+
-                '<option value="Default" selected>Default</option>'+
-                '<option value="Persian Red" style="background:#b22;">Persian Red</option>'+
-                '<option value="Chestnut Rose" style="background:#b55;">Chestnut Rose</option>'+
-                '<option value="Eunry" style="background:#b88;">Eunry</option>'+
-                '<option value="Tuscany" style="background:#b52;">Tuscany</option>'+
-                '<option value="Antique Brass" style="background:#b85;">Antique Brass</option>'+
-                '<option value="Hokey Pokey" style="background:#b82;">Hokey Pokey</option>'+
-                '<option value="Earls Green" style="background:#bb2;">Earls Green</option>'+
-                '<option value="Laser" style="background:#bb5;">Laser</option>'+
-                '<option value="Pine Glade" style="background:#bb8;">Pine Glade</option>'+
-                '<option value="Celery" style="background:#8b2;">Celery</option>'+
-                '<option value="Wild Willow" style="background:#8b5;">Wild Willow</option>'+
-                '<option value="Atlantis" style="background:#5b2;">Atlantis</option>'+
-                '<option value="Apple" style="background:#2b2;">Apple</option>'+
-                '<option value="Mantis" style="background:#5b5;">Mantis</option>'+
-                '<option value="De York" style="background:#8b8;">De York</option>'+
-                '<option value="Mountain Meadow" style="background:#2b5;">Mountain Meadow</option>'+
-                '<option value="Emerald" style="background:#5b8;">Emerald</option>'+
-                '<option value="Shamrock" style="background:#2b8;">Shamrock</option>'+
-                '<option value="Turquoise" style="background:#2bb;">Turquoise</option>'+
-                '<option value="Downy" style="background:#5bb;">Downy</option>'+
-                '<option value="Sinbad" style="background:#8bb;">Sinbad</option>'+
-                '<option value="Curious Blue" style="background:#28b;">Curious Blue</option>'+
-                '<option value="Danube" style="background:#58b;">Danube</option>'+
-                '<option value="Mariner" style="background:#25b;">Mariner</option>'+
-                '<option value="Governor Bay" style="background:#22b;">Governor Bay</option>'+
-                '<option value="Blue Marguerite" style="background:#55b;">Blue Marguerite</option>'+
-                '<option value="Blue Bell" style="background:#88b;">Blue Bell</option>'+
-                '<option value="Purple Heart" style="background:#52b;">Purple Heart</option>'+
-                '<option value="Amethyst" style="background:#85b;">Amethyst</option>'+
-                '<option value="Purple" style="background:#82b;">Purple</option>'+
-                '<option value="Cerise" style="background:#b2b;">Cerise</option>'+
-                '<option value="Fuchsia Pink" style="background:#b5b;">Fuchsia Pink</option>'+
-                '<option value="Lilac" style="background:#b8b;">Lilac</option>'+
-                '<option value="Red Violet" style="background:#b28;">Red Violet</option>'+
-                '<option value="Hopbush" style="background:#b58;">Hopbush</option>'+
-                '<option value="Hibiscus" style="background:#b25;">Hibiscus</option>'+
-              '</select>'+
-            '</div>'+
+          '<div class="fae_cp_row">'+
+            '<span class="fae_help_me">?'+
+              '<span class="fae_help_tip">Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.</span>'+
+            '</span>'+
+            '<span id="fae_label_min" class="fae_label">Minify Stylesheet : </span>'+
+            '<label for="fae_theme_min_yes"><input type="radio" id="fae_theme_min_yes" name="fae_theme_min" value="1" checked> Yes</label>'+
+            '<label for="fae_theme_min_no"><input type="radio" id="fae_theme_min_no" name="fae_theme_min" value="0"> No</label>'+
+          '</div>'+
 
-            '<div class="fae_cp_row">'+
-              '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.</span>'+
-              '</span>'+
-              '<span id="fae_label_min" class="fae_label">Minify Stylesheet : </span>'+
-              '<label for="fae_theme_min_yes"><input type="radio" id="fae_theme_min_yes" name="fae_theme_min" value="1" checked> Yes</label>'+
-              '<label for="fae_theme_min_no"><input type="radio" id="fae_theme_min_no" name="fae_theme_min" value="0"> No</label>'+
-            '</div>'+
+          '<div class="fae_cp_row">'+
+            '<span class="fae_help_me">?'+
+              '<span class="fae_help_tip">Changes the theme\'s text direction from left-to-right (ltr) to right-to-left (rtl) for rtl scripts.</span>'+
+            '</span>'+
+            '<span id="fae_label_rtl" class="fae_label">Right-to-Left : </span>'+
+            '<label for="fae_theme_dir_rtl"><input type="radio" id="fae_theme_dir_rtl" name="fae_theme_dir" value="1"> Yes</label>'+
+            '<label for="fae_theme_dir_ltr"><input type="radio" id="fae_theme_dir_ltr" name="fae_theme_dir" value="0" checked> No</label>'+
+          '</div>'+
 
-            '<div class="fae_cp_row">'+
-              '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Changes the theme\'s text direction from left-to-right (ltr) to right-to-left (rtl) for rtl scripts.</span>'+
-              '</span>'+
-              '<span id="fae_label_rtl" class="fae_label">Right-to-Left : </span>'+
-              '<label for="fae_theme_dir_rtl"><input type="radio" id="fae_theme_dir_rtl" name="fae_theme_dir" value="1"> Yes</label>'+
-              '<label for="fae_theme_dir_ltr"><input type="radio" id="fae_theme_dir_ltr" name="fae_theme_dir" value="0" checked> No</label>'+
-            '</div>'+
-
-            '<div class="fae_cp_row">'+
-              '<input id="fae_change_css" type="button" value="Import theme" />'+
-            '</div>'
-          );
+          '<div class="fae_cp_row">'+
+            '<input id="fae_change_css" type="button" value="Import theme" />'+
+          '</div>'
+        );
 
 
-          document.getElementById('fae_change_css').onclick = function() {
-            var select = document.getElementById('fae_selected_theme'),
-                selected = select.options[select.selectedIndex],
-                stylesheet = selected.value + ( document.getElementById('fae_theme_dir_rtl').checked ? '-rtl' : '' ) + ( document.getElementById('fae_theme_min_yes').checked ? '.min' : '' ) + '.css';
+        document.getElementById('fae_change_css').onclick = function() {
+          var select = document.getElementById('fae_selected_theme'),
+              selected = select.options[select.selectedIndex],
+              stylesheet = selected.value + ( document.getElementById('fae_theme_dir_rtl').checked ? '-rtl' : '' ) + ( document.getElementById('fae_theme_min_yes').checked ? '.min' : '' ) + '.css';
 
-            if (confirm( 'Are you sure you want to import the theme "' + selected.innerHTML + '" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'.replace(/\\/g, '') )) {
-              FAE.theme = {
-                name : selected.innerHTML,
-                stylesheet : stylesheet,
-                color : document.getElementById('fae_selected_color').value,
-                dark : /-dark/i.test(stylesheet),
-                rtl : /-rtl/i.test(stylesheet)
-              };
+          if (confirm( 'Are you sure you want to import the theme "' + selected.innerHTML + '" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'.replace(/\\/g, '') )) {
+            FAE.theme = {
+              name : selected.innerHTML,
+              stylesheet : stylesheet,
+              color : document.getElementById('fae_selected_color').value,
+              dark : /-dark/i.test(stylesheet),
+              rtl : /-rtl/i.test(stylesheet)
+            };
 
-              $.get(FAE.raw + 'javascripts/change-theme.js', function(d) {
-                FAE.script(d);
-                FAE.next();
-              });
+            $.get(FAE.raw + 'javascripts/change-theme.js', function(d) {
+              FAE.script(d);
+              FAE.next();
+            });
 
-              document.getElementById('fae_options').style.display = 'none';
-            }
-          };
-        }
+            document.getElementById('fae_options').style.display = 'none';
+          }
+        };
 
 
         // setup and begin translation of control panel

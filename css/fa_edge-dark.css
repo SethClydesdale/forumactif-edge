@@ -101,13 +101,13 @@ body {
 h1, h2, h3, h4, h5, h6 { margin:0; }
 
 a {
-  color:#E55;
+  color:#D44;
   text-decoration:none;
 }
 
-a:hover { color:#F66; }
+a:hover { color:#C33; }
 a:active {
-  color:#F77;
+  color:#C33;
   text-decoration:underline;
 }
 
@@ -437,7 +437,6 @@ img[src*="size=l"] { padding:9px 16px; }
 
 .content-block .title { margin:-1px -1px 3px -1px; }
 .txt-content > h2.u, .txt-content > .h3, .inner h1.page-title, .inner .h3 { margin:-11px -4px 13px -4px; }
-#cp-main.mcp-main h1 { margin:0 0 10px 0; }
 .title a, h2.u a, .h3 a, .h3 span, .table1 thead th a, .forumline tbody .catHead a {
   color:#FFF !important;
   text-decoration:none;
@@ -460,6 +459,9 @@ img[src*="size=l"] { padding:9px 16px; }
   color:#FFF !important;
   text-decoration:none;
 }
+
+/* override */
+#cp-main.mcp-main h1 { margin:0 0 10px 0; }
 
 /* logged out reply panel */
 #logged_out_reply { text-align:center; }
@@ -999,7 +1001,7 @@ table.portal {
 .module #calendar .table1 th {
   border-bottom:1px solid;
   border-right:1px solid;
-  border-color:#AAA;
+  border-color:#333;
 }
 
 .module #calendar .table1 th:last-child { border-right:none; }

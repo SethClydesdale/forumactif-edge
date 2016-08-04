@@ -9,7 +9,7 @@ FAE.step = [
           i, j;
 
       if (color_palette) {
-        for (i = 0, j = palette.length; i < j; i++) {
+        for (i = 0, j = color_palette.length; i < j; i++) {
           d = d.replace(new RegExp(color_palette[i], 'gim'), theme_palette[i]);
         }
       }

@@ -174,7 +174,7 @@
 
         // create and insert the translation action
         $(opts).append(
-          $('<div style="float:right;">'+
+          '<div style="float:right;">'+
             '<select id="fae_selected_language">'+
               '<option value="Arabic">العربية</option>'+
               '<option value="Dutch">Dutch</option>'+
@@ -186,7 +186,7 @@
               '<option value="Romanian">Romana</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+
-          '</div><div class="clear"></div>');
+          '</div><div class="clear"></div>'
         );
 
         // set the selected translation

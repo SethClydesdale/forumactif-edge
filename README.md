@@ -4,8 +4,10 @@ What is "Forumactif Edge" ? Forumactif Edge ( or FA Edge, FAE ) is a new modern 
 
 You should know that this project is not officially affiliated with Forumactif. This forum version is managed by the community, so it will constantly evolve based on **your** feedback.
 
-If you'd like to install Forumactif Edge you can find out more on our wiki by clicking the link below.
+If you'd like to install Forumactif Edge you can find out more by clicking the link below.
 - [**How to install Forumactif Edge**](https://github.com/SethClydesdale/forumactif-edge/wiki/Installing)
+
+Not ready to install yet ? No problem ! Take a look around, check out the FAQ and previews below, or visit [our wiki](https://github.com/SethClydesdale/forumactif-edge/wiki) to learn more about what Forumactif Edge has to offer !
 
 ## FAQ
 
@@ -28,6 +30,6 @@ You can find various previews of the theme below. [Click here](http://fmdesign.f
 
 ![](http://i35.servimg.com/u/f35/18/45/41/65/mobile10.png)
 
-**Feature Preview :** Forumactif Edge Launches with a theme changer that allows your members to browse in the color of their choice !
+**Feature Preview :** Forumactif Edge comes with a theme changer that allows your members to browse in the color of their choice, and to give your forum maximum space it docks widgets to a side panel !
 
 ![](http://i.imgur.com/rrAWjWL.gif)

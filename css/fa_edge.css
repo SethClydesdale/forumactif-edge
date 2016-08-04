@@ -182,6 +182,9 @@ fieldset dd {
 .center, .submit-buttons { text-align:center; }
 .nomargin { margin:0; }
 
+/* self clear floats */
+#logo-desc:after, .postprofile dl:after { content:""; display:table; clear:both; }
+
 /* ignore floats */
 .left.fld_connexion { float:none; }
 
@@ -400,6 +403,12 @@ img[src*="size=s"] { padding:4px 6px; }
 img[src*="size=m"] { padding:6px; }
 img[src*="size=l"] { padding:9px 16px; }
 
+/* "more" button */
+.sprite-tabs_more {
+  background:url(http://i86.servimg.com/u/f86/18/21/41/30/plus-f11.png) no-repeat;
+  height:11px;
+  width:11px;
+}
 
 /* -- 06. CONTENT CONTAINERS AND LAYOUT -- */
 .corners-top, .corners-bottom { display:none; }
@@ -428,7 +437,6 @@ img[src*="size=l"] { padding:9px 16px; }
 
 .content-block .title { margin:-1px -1px 3px -1px; }
 .txt-content > h2.u, .txt-content > .h3, .inner h1.page-title, .inner .h3 { margin:-11px -4px 13px -4px; }
-#cp-main.mcp-main h1 { margin:0 0 10px 0; }
 .title a, h2.u a, .h3 a, .h3 span, .table1 thead th a, .forumline tbody .catHead a {
   color:#FFF !important;
   text-decoration:none;
@@ -451,6 +459,9 @@ img[src*="size=l"] { padding:9px 16px; }
   color:#FFF !important;
   text-decoration:none;
 }
+
+/* override */
+#cp-main.mcp-main h1 { margin:0 0 10px 0; }
 
 /* logged out reply panel */
 #logged_out_reply { text-align:center; }
@@ -817,6 +828,10 @@ img + .inbox-icon, .inbox-icon:hover { opacity:0.6; }
   background:#8B5;
 }
 
+/* hide online indicator / profile in pms, searches... */
+form[action^="/privmsg"] .postprofile dl:before, .search .postprofile dl:before, form[action^="/privmsg"] ~ .content-block .postprofile { display:none; }
+form[action^="/privmsg"] .postprofile dl, .search .postprofile dl { margin-top:0; }
+
 /* profile offsets */
 .post-inner {
   margin-left:300px;
@@ -874,12 +889,13 @@ img + .inbox-icon, .inbox-icon:hover { opacity:0.6; }
   padding:3px;
 }
 
+hr { border-color:#CCC; }
 .signature_div { padding:3px; }
 
 /* add_this / share */
 #at-whatsthis { right:0; }
-.addthis_button, a[href="javascript:showhide(document.getElementById('plus_menu'))"], #plus_menu { font-size:12px; }
-.addthis_button:after {
+.addthis_button, a[href="javascript:showhide(document.getElementById('plus_menu'))"], #plus_menu, .pagination a[href$="mark=topics"], .pagination a[href$="watch=forum"] { font-size:12px; }
+.addthis_button:after, .pagination a[href$="mark=topics"]:after, .pagination a[href$="watch=forum"]:after {
   content:" • ";
   color:#333;
 }
@@ -915,6 +931,13 @@ img + .inbox-icon, .inbox-icon:hover { opacity:0.6; }
 
 .table1 tbody td:last-child, .forumline tbody td:last-child, .forumline tbody th:last-child {
   border-right:none;
+}
+
+/* portal fix */
+table.portal {
+  display:block;
+  max-width:100%;
+  overflow:auto;
 }
 
 
@@ -1099,6 +1122,8 @@ img[src*="?poll"] {
   width:auto;
   margin:auto;
 }
+
+a[href="javascript:Pagination();"] { font-size:12px; }
 
 /* pagination fix on profiles */
 #cp-main .pagination {
@@ -1411,6 +1436,14 @@ input:checked + .fa_pseudo_checkbox:after { font-size:14px; }
   padding:0;
 }
 
+/* friends list */
+.friends-foes-list {
+  display:inline-block;
+  text-align:right;
+  width:200px;
+  height:2em;
+}
+
 
 /* -- 16. AVATARS -- */
 .lastpost-avatar, .avatar-mini img, .avatar, #wio_new_avatar {
@@ -1474,6 +1507,11 @@ td.avatar-mini { width:250px }
 
 
 /* -- 17. MESSAGE EDITOR -- */
+#text_editor_textarea {
+  height:250px;
+  width:90%;
+}
+
 #message-box #textarea_content { width:100% !important; }
 #message-box {
   float:left;
@@ -1619,15 +1657,19 @@ td.avatar-mini { width:250px }
 .sceditor-button-source:after { content:"\f0f6"; }
 
 
-/* smilar and editor position */
+/* smiley and editor position */
 #smiley-box {
   float:right;
   margin-top:25px;
   width:18%;
 }
+#smiley-box iframe { width:100% !important; }
 
 fieldset.fields1 dt { width:10em; }
 fieldset.fields1 dd { margin-left:10em; }
+
+/* fix overflow of textarea */
+body .sceditor-container iframe, body .sceditor-container textarea { margin:0; }
 
 
 /* -- 18. WHO IS ONLINE -- */
@@ -1966,6 +2008,7 @@ body #fa_toolbar #fa_right #notif_list li a.delete {
 .breadcrumbs a {
   color:#FFF !important;
   font-size:12px;
+  white-space:nowrap;
 }
 
 .breadcrumbs a:after {
@@ -2156,6 +2199,12 @@ body #chatbox .cb-avatar, body #chatbox .cb-avatar img {
   #navbar .mainmenu, #tabs a { line-height:50px; }
   body #fa_toolbar, body #fa_toolbar_hidden { display:none; }
 
+  /* PORTAL */
+  table.portal > tbody > tr > td {
+    display:block;
+    width:100%;
+  }
+
   /* PAGE HEADER */
   #logo-desc {
     text-align:center;
@@ -2186,7 +2235,7 @@ body #chatbox .cb-avatar, body #chatbox .cb-avatar img {
     text-overflow:ellipsis;
    }
 
-  .last-post-icon, .forum-lastpost > div > span > a {
+  .last-post-icon, .forum-lastpost > div > span > a, .forum-lastpost a[href$="view=newest"] {
     position:absolute;
     top:50%;
     right:3px;
@@ -2290,10 +2339,14 @@ body #chatbox .cb-avatar, body #chatbox .cb-avatar img {
     margin-top:0 !important;
   }
 
-  body .sceditor-dropdown > p { margin:0; }
+  body .sceditor-dropdown > p {
+    margin:0;
+    height:100%;
+  }
 
   .sceditor-dropdown #obj_servimg {
     width:100% !important;
+    height:100% !important;
     border:none;
   }
 

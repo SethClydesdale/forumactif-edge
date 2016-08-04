@@ -20,7 +20,7 @@
   - Fixed placement of new post mini-icon in latest topics on mobile
   - Fixed portal overflowing page body on mobile
   - Fixed images in widgets social bookmarking and rss feed
-  - Fixed double scroll bars appearing on the servimg image uploader
+  - Fixed double scroll bars appearing on the servimg image uploader in mobile
   - Fixed CSS link in minified stylesheet that was linking to the old file location
   - Fixed group color being applied to elements in messages with the class ".title"
   - Fixed default text editor height and width so it's useable for noscript users
@@ -50,7 +50,7 @@ FAE.update_step = [
                 edit_code : form.edit_code.value
                             .replace('/master/fa_edge.css', '/master/css/fa_edge.css')
                             .replace('div[class]:first-child', 'div[class]:first-child:not(.breadcrumbs)')
-                            .replace(/#cp-main\.mcp-main h1\{margin:0 0 10px\}|#cp-main\.mcp-main h1 \{ margin:0 0 10px 0; \}/, '') + '\n\n/* added in FAE v1.0.0 */\n#logo-desc:after,.postprofile dl:after{content:"";display:table;clear:both}\n.pagination a[href$="mark=topics"],.pagination a[href$="watch=forum"]{font-size:12px}\n.pagination a[href$="mark=topics"]:after,.pagination a[href$="watch=forum"]:after{content:" • ";color:#333}\n@media (min-width:0px) and (max-width:768px) {.sceditor-dropdown #obj_servimg,body .sceditor-dropdown>p{height:100%!important}.forum-lastpost a[href$="view=newest"]{position:absolute;top:50%;right:3px;margin-top:-6px}table.portal>tbody>tr>td{display:block;width:100%}}\n.breadcrumbs a{white-space:nowrap}\n.friends-foes-list{display:inline-block;text-align:right;width:200px;height:2em}\nbody .sceditor-container iframe,body .sceditor-container textarea{margin:0}\n#smiley-box iframe{width:100%!important}\ntable.portal{display:block;max-width:100%;overflow:auto}\n#text_editor_textarea{height:250px;width:100%}\nform[action^="/privmsg"] .postprofile dl:before,.search .postprofile dl:before,form[action^="/privmsg"]~.content-block .postprofile{display:none}\nform[action^="/privmsg"] .postprofile dl,.search .postprofile dl{margin-top:0}\na[href="javascript:Pagination();"]{font-size:12px}\n.sprite-tabs_more{background:url(http://i86.servimg.com/u/f86/18/21/41/30/plus-f11.png) no-repeat;height:11px;width:11px}\n#cp-main.mcp-main h1{margin:0 0 10px}',
+                            .replace(/#cp-main\.mcp-main h1\{margin:0 0 10px\}|#cp-main\.mcp-main h1 \{ margin:0 0 10px 0; \}/, '') + '\n\n/* added in FAE v1.0.0 */\n#logo-desc:after,.postprofile dl:after{content:"";display:table;clear:both}\n.pagination a[href$="mark=topics"],.pagination a[href$="watch=forum"]{font-size:12px}\n.pagination a[href$="mark=topics"]:after,.pagination a[href$="watch=forum"]:after{content:" • ";color:#333}\n@media (min-width:0px) and (max-width:768px) {.sceditor-dropdown #obj_servimg,body .sceditor-dropdown>p{height:100%!important}.forum-lastpost a[href$="view=newest"]{position:absolute;top:50%;right:3px;margin-top:-6px}table.portal>tbody>tr>td{display:block;width:100%}}\n.breadcrumbs a{white-space:nowrap}\n.friends-foes-list{display:inline-block;text-align:right;width:200px;height:2em}\nbody .sceditor-container iframe,body .sceditor-container textarea{margin:0}\n#smiley-box iframe{width:100%!important}\ntable.portal{display:block;max-width:100%;overflow:auto}\n#text_editor_textarea{height:250px;width:90%}\nform[action^="/privmsg"] .postprofile dl:before,.search .postprofile dl:before,form[action^="/privmsg"]~.content-block .postprofile{display:none}\nform[action^="/privmsg"] .postprofile dl,.search .postprofile dl{margin-top:0}\na[href="javascript:Pagination();"]{font-size:12px}\n.sprite-tabs_more{background:url(http://i86.servimg.com/u/f86/18/21/41/30/plus-f11.png) no-repeat;height:11px;width:11px}\n#cp-main.mcp-main h1{margin:0 0 10px}',
                    submit : 'Submit'
         };
       }
@@ -169,6 +169,115 @@ FAE.update_step = [
     info : 'Publishing template album_modcp_body.html',
     type : 'PUBLISH',
      tpl : 206
+  },
+
+
+  {
+    info : 'Getting template album_moderate_body.html',
+    type : 'GET',
+     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=207&l=main&extended_admin=1&tid=' + FAE.tid,
+    func : function(d) {
+      var form = $('form[name="post"]', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].data.template = form.template.value
+                                                .replace('class="breadcrumbes"', 'class="breadcrumbs"');
+      }
+    }
+  },
+
+
+  {
+    info : 'Updating template album_moderate_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 207,
+             l : 'main',
+      tpl_name : 'album_moderate_body',
+        submit : 'Save'
+    }
+  },
+
+
+  {
+    info : 'Publishing template album_moderate_body.html',
+    type : 'PUBLISH',
+     tpl : 207
+  },
+
+
+  {
+    info : 'Getting template album_upload_body.html',
+    type : 'GET',
+     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=213&l=main&extended_admin=1&tid=' + FAE.tid,
+    func : function(d) {
+      var form = $('form[name="post"]', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].data.template = form.template.value
+                                                .replace('<!-- BEGIN switch_user_logged_in --><p class="right rightside">{LAST_VISIT_DATE}</p><!-- END switch_user_logged_in -->', '')
+                                                .replace('<p>{CURRENT_TIME}</p>', '')
+                                                .replace('class="topic-actions"', 'class="breadcrumbs"');
+      }
+    }
+  },
+
+
+  {
+    info : 'Updating template album_upload_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 213,
+             l : 'main',
+      tpl_name : 'album_upload_body',
+        submit : 'Save'
+    }
+  },
+
+
+  {
+    info : 'Publishing template album_upload_body.html',
+    type : 'PUBLISH',
+     tpl : 213
+  },
+
+
+  {
+    info : 'Getting template album_search_body.html',
+    type : 'GET',
+     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=210&l=main&extended_admin=1&tid=' + FAE.tid,
+    func : function(d) {
+      var form = $('form[name="post"]', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].data.template = form.template.value
+                                                .replace('<!-- BEGIN switch_user_logged_in --><p class="right rightside">{LAST_VISIT_DATE}</p><!-- END switch_user_logged_in -->', '')
+                                                .replace('<p>{CURRENT_TIME}</p>', '')
+                                                .replace('class="topic-actions"', 'class="breadcrumbs"');
+      }
+    }
+  },
+
+
+  {
+    info : 'Updating template album_search_body.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 210,
+             l : 'main',
+      tpl_name : 'album_search_body',
+        submit : 'Save'
+    }
+  },
+
+
+  {
+    info : 'Publishing template album_search_body.html',
+    type : 'PUBLISH',
+     tpl : 210
   },
 
 

@@ -264,7 +264,7 @@
               '<span class="fae_help_me">?'+
                 '<span class="fae_help_tip">Select the default color for the chosen theme.</span>'+
               '</span>'+
-              '<span id="fae_label_theme" class="fae_label">Select a color : </span>'+
+              '<span id="fae_label_color" class="fae_label">Select a color : </span>'+
               '<select id="fae_selected_color">'+
                 '<option value="Default" selected>Default</option>'+
                 '<option value="Persian Red" style="background:#b22;">Persian Red</option>'+
@@ -392,5 +392,6 @@ $('head').append(
     '.fae_help_me:hover .fae_help_tip { visibility:visible; }'+
     'body #fae_cp { color:#333; background:#F6F6F6; border:1px solid #CCC; margin:50px 25px; padding:12px; }'+
     '#fae_cp select, #fae_cp input { color:#333; background:#FFF; }'+
+    '#fae_selected_color option:not([value="Default"]) { color:#FFF; }'+
   '</style>'
 );

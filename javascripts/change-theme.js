@@ -6,16 +6,15 @@ FAE.step = [
     func : function(d) {
       var color_palette = FAE.color_palette[FAE.theme.color],
           theme_palette = FAE.theme_palette[FAE.theme.name],
-          css = d,
           i, j;
 
       if (color_palette) {
         for (i = 0, j = color_palette.length; i < j; i++) {
-          css = css.replace(new RegExp(color_palette[i], 'gim'), theme_palette[i]);
+          d = d.replace(new RegExp(theme_palette[i], 'gim'), color_palette[i]);
         }
       }
 
-      FAE.step[FAE.index + 1].data.edit_code = css;
+      FAE.step[FAE.index + 1].data.edit_code = d;
     }
   },
 

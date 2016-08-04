@@ -22,7 +22,7 @@ If you'd like to install Forumactif Edge you can find out more on our wiki by cl
 **A :** Yes it's 100% free, no strings attached ! I wanted to create a modern and responsive theme forum Forumotion, because the current forum versions provided are dated and not mobile friendly. Forumactif Edge is the answer if you want a modern, mobile friendly design !
 
 ## Preview
-You can find a live and image preview of Forumactif Edge below.
+You can find a live preview on the development forum and an image preview of Forumactif Edge below.
 
 Forum : http://fmdesign.forumotion.com/forum
 

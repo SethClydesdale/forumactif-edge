@@ -166,7 +166,11 @@
           FAE.board_lang = 'English'; // set the board lang to English if it is undefined
         }
 
-        var opts = document.getElementById('fae_options');
+        var opts = document.getElementById('fae_options'),
+            actdiv = $('<div style="float:left;" />');
+
+        $('#fae_install, #fae_uninstall, #fae_update').appendTo(actdiv);
+        $(opts).prepend(actdiv);
 
         // create and insert the translation action
         $(opts).append(
@@ -182,7 +186,7 @@
               '<option value="Romanian">Romana</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+
-          '</div>')[0]
+          '</div><div class="clear"></div>');
         );
 
         // set the selected translation

@@ -4,6 +4,16 @@ FAE.step = [
     type : 'GET',
      url : FAE.raw + 'css/' + FAE.theme.stylesheet,
     func : function(d) {
+      var color_palette = FAE.color_palette[FAE.theme.color],
+          theme_palette = FAE.theme_palette[FAE.theme.name],
+          i, j;
+
+      if (color_palette) {
+        for (i = 0, j = palette.length; i < j; i++) {
+          d = d.replace(new RegExp(color_palette[i], 'gim'), theme_palette[i]);
+        }
+      }
+
       FAE.step[FAE.index + 1].data.edit_code = d;
     }
   },
@@ -75,6 +85,50 @@ FAE.step = [
 
 FAE.index = -1;
 FAE.quota = FAE.step.length;
+
+FAE.theme_palette = {
+  'Edge Default' : ['#7AD', '#69C', '#58B', '#369', '#345'],
+  'Edge Dark' : ['#D44', '#C33', '#B22', '#900', '#522']
+};
+
+FAE.color_palette = {
+      'Persian Red' : ['#D44', '#C33', '#B22', '#900', '#522'],
+    'Chestnut Rose' : ['#D77', '#C66', '#B55', '#933', '#533'],
+            'Eunry' : ['#DAA', '#C99', '#B88', '#966', '#544'],
+          'Tuscany' : ['#D64', '#C63', '#B52', '#930', '#532'],
+    'Antique Brass' : ['#DA7', '#C96', '#B85', '#963', '#543'],
+      'Hokey Pokey' : ['#DA4', '#C93', '#B82', '#960', '#542'],
+      'Earls Green' : ['#DD4', '#CC3', '#BB2', '#990', '#552'],
+            'Laser' : ['#DD7', '#CC6', '#BB5', '#993', '#553'],
+       'Pine Glade' : ['#DDA', '#CC9', '#BB8', '#996', '#554'],
+           'Celery' : ['#AD4', '#9C3', '#8B2', '#690', '#452'],
+      'Wild Willow' : ['#AD7', '#9C6', '#8B5', '#693', '#453'],
+         'Atlantis' : ['#7D4', '#6C3', '#5B2', '#390', '#352'],
+            'Apple' : ['#4D4', '#3C3', '#2B2', '#090', '#252'],
+           'Mantis' : ['#7D7', '#6C6', '#5B5', '#393', '#353'],
+          'De York' : ['#ADA', '#9C9', '#8B8', '#696', '#454'],
+  'Mountain Meadow' : ['#4D7', '#3C6', '#2B5', '#093', '#253'],
+          'Emerald' : ['#7DA', '#6C9', '#5B8', '#396', '#354'],
+         'Shamrock' : ['#4DA', '#3C9', '#2B8', '#096', '#254'],
+        'Turquoise' : ['#4DD', '#3CC', '#2BB', '#099', '#255'],
+            'Downy' : ['#7DD', '#6CC', '#5BB', '#399', '#355'],
+           'Sinbad' : ['#ADD', '#9CC', '#8BB', '#699', '#455'],
+     'Curious Blue' : ['#4AD', '#39C', '#28B', '#069', '#245'],
+           'Danube' : ['#7AD', '#69C', '#58B', '#369', '#345'],
+          'Mariner' : ['#47D', '#36C', '#25B', '#039', '#235'],
+     'Governor Bay' : ['#44D', '#33C', '#22B', '#009', '#225'],
+  'Blue Marguerite' : ['#77D', '#66C', '#55B', '#339', '#335'],
+        'Blue Bell' : ['#AAD', '#99C', '#88B', '#669', '#445'],
+     'Purple Heart' : ['#74D', '#63C', '#52B', '#309', '#325'],
+         'Amethyst' : ['#A7D', '#96C', '#85B', '#639', '#435'],
+           'Purple' : ['#A4D', '#93C', '#82B', '#609', '#425'],
+           'Cerise' : ['#D4D', '#C3C', '#B2B', '#909', '#525'],
+     'Fuchsia Pink' : ['#D7D', '#C6C', '#B5B', '#939', '#535'],
+            'Lilac' : ['#DAD', '#C9C', '#B8B', '#969', '#545'],
+       'Red Violet' : ['#D4A', '#C39', '#B28', '#906', '#524'],
+          'Hopbush' : ['#D7A', '#C69', '#B58', '#936', '#534'],
+         'Hibiscus' : ['#D47', '#C36', '#B25', '#903', '#523']
+};
 
 // proceed to and execute the next step in the installation
 FAE.next = function() {

@@ -889,6 +889,7 @@ form[action^="/privmsg"] .postprofile dl, .search .postprofile dl { margin-top:0
   padding:3px;
 }
 
+hr { border-color:#333; }
 .signature_div { padding:3px; }
 
 /* add_this / share */
@@ -2036,7 +2037,7 @@ body #fa_toolbar #fa_right #notif_list li a.delete {
 
 /* -- 22. CHATBOX -- */
 html body.chatbox {
-  color:#999;
+  color:#AAA;
   background-color:#161616;
 }
 

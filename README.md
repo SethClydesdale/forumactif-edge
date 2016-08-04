@@ -24,7 +24,11 @@ If you'd like to install Forumactif Edge you can find out more on our wiki by cl
 ## Preview
 You can find a live preview on the development forum and an image preview of Forumactif Edge below.
 
-Forum : http://fmdesign.forumotion.com/forum
+**Live Preview :** http://fmdesign.forumotion.com/forum
 
 Forumactif Edge Launches with a theme changer that allows your members to browse in the color of their choice !
 ![](http://i.imgur.com/rrAWjWL.gif)
+
+**Mobile Preview :** Forumactif Edge is responsive, so that means it's mobile friendly ! Don't believe it ? Check Google's [Mobile-Friendly test](https://www.google.com/webmasters/tools/mobile-friendly/?url=fmdesign.forumotion.com%2Fforum) !
+
+![](http://i35.servimg.com/u/f35/18/45/41/65/mobile10.png)

@@ -1509,7 +1509,7 @@ td.avatar-mini { width:250px }
 /* -- 17. MESSAGE EDITOR -- */
 #text_editor_textarea {
   height:250px;
-  width:100%;
+  width:90%;
 }
 
 #message-box #textarea_content { width:100% !important; }

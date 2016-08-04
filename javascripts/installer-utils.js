@@ -249,9 +249,11 @@
 
           $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Theme Management</div>'+
 
+            '<p id="fae_theme_desc">This section allows you to manage the default theme and colors for Forumactif Edge by importing a new theme from the Github repository.</p>'+
+
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">This section allows you to import different themes for Forumactif Edge. Choose the theme you want to import from the drop down on the right.</span>'+
+                '<span class="fae_help_tip">Select the type of theme you want to import.</span>'+
               '</span>'+
               '<span id="fae_label_theme" class="fae_label">Select a theme : </span>'+
               '<select id="fae_selected_theme">'+

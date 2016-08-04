@@ -387,9 +387,9 @@ $('head').append(
   '<style type="text/css">'+
     '.fae_cp_row { margin:6px 0; }'+
     '.fae_label { display:inline-block; width:200px; }'+
-    '.fae_help_me { color:#FFF; font-size:18px; background:#69C; border-radius:100%; text-align:center; vertical-align:middle; display:inline-block; height:24px; line-height:24px; width:24px; margin-right:3px; position:relative; cursor:help; }'+
-    '.fae_help_tip { color:#333; font-size:12px; text-align:left; line-height:15px; background:#EEE; border:1px solid #CCC; display:inline-block; width:300px; padding:3px; position:absolute; left:28px; visibility:hidden; z-index:1; }'+
-    '#fae_cp label { margin-right:10px; }'+
+    '.fae_help_me { color:#FFF; font-size:18px; background:#69C; border-radius:100%; text-align:center; vertical-align:middle; display:inline-block; height:24px; line-height:24px; width:24px; margin:auto 3px; position:relative; cursor:help; }'+
+    '.fae_help_tip { color:#333; font-size:12px; line-height:15px; background:#EEE; border:1px solid #CCC; border-radius:3px; display:inline-block; width:300px; padding:3px; position:absolute; visibility:hidden; z-index:1; }'+
+    '#fae_cp label { margin-right:10px; display:inline-block; }'+
     '#fae_cp label input { vertical-align:text-bottom; }'+
     '.fae_help_me:hover .fae_help_tip { visibility:visible; }'+
     'body #fae_cp { color:#333; background:#F6F6F6; border:1px solid #CCC; margin:50px 25px; padding:12px; }'+

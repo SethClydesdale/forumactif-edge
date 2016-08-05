@@ -365,7 +365,7 @@ center : text-align:center;
   margin-top:0 !important;
 }
 
-#page-body { flex:1; }
+#page-body { flex:1 0 auto; }
 
 
 /* -- 05. BUTTONS -- */
@@ -2013,6 +2013,7 @@ body #fa_toolbar #fa_right #notif_list li a.delete {
 }
 
 .breadcrumbs a {
+  display:inline-block;
   color:#FFF !important;
   font-size:12px;
   white-space:nowrap;

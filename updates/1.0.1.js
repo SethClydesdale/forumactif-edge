@@ -48,7 +48,7 @@ FAE.update_step = [
 
       if (form) {
         FAE.step[FAE.index + 1].data.template = form.template.value
-                                                .replace('<span class="corners-bottom"><span></span></span></div>', '</div>'),
+                                                .replace('<span class="corners-bottom"><span></span></span></div>', '</div>')
                                                 .replace('<div id="topicreview">', '<div class="content-block" style="height:500px;position:relative;margin:15px;">\n<div id="topicreview" style="position:absolute;top:0;left:0;right:0;bottom:0;">');
       }
     }

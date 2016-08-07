@@ -98,7 +98,7 @@
       // this check is mainly for forums that have the security option "Confirm password to administration access" enabled
       $.get('/admin/index.forum', function(d) {
         if (!$('#change-font-size', d)[0]) {
-          FAE.log('Error : You have not logged into your <a href="/admin/index.forum">administration panel</a>. Please log in so that you can use the FAE Control Panel. (<a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Frequently-Asked-Questions" target="_blank" style="font-weight:normal;">What is this?</a>)', 'color:#E53;font-weight:bold;');
+          FAE.log('Error : You have not logged into your <a href="/admin/index.forum">administration panel</a>. Please log in so that you can use the FAE Control Panel. <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Frequently-Asked-Questions" target="_blank" style="font-weight:normal;"><em>(What is this?)</em></a>', 'color:#E53;font-weight:bold;');
           document.getElementById('fae_options').style.display = 'none';
         }
       });

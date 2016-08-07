@@ -93,6 +93,17 @@
       FAE.tid = admin.href.replace(/.*?(&tid=.*)/, '$1'); // cache the tid
       document.getElementById('fae_actions').style.display = 'block';
 
+
+      // to prevent errors, make sure that the administration panel is accessible before proceeding.
+      // this check is mainly for forums that have the security option "Confirm password to administration access" enabled
+      $.get('/admin/index.forum', function(d) {
+        if (!$('#change-font-size', d)[0]) {
+          FAE.log('Error : You have not logged into your <a href="/admin/index.forum">administration panel</a>. You must log in before you can use this control panel.', 'color:#E53;font-weight:bold;');
+          document.getElementById('fae_options').style.display = 'none';
+        }
+      });
+
+
       // Installation initialization
       document.getElementById('fae_install').onclick = function() {
         if (confirm( (FAE.cp_lang.fae_install_warning ? FAE.parse_vars(FAE.cp_lang.fae_install_warning, {

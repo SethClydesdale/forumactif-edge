@@ -1091,6 +1091,7 @@ img[src*="?poll"] {
 
 /* -- 12. PAGINATION -- */
 .pagination {
+  text-align:right;
   float:right;
   font-size:0;
 }
@@ -1123,7 +1124,10 @@ img[src*="?poll"] {
   margin:auto;
 }
 
-a[href="javascript:Pagination();"] { font-size:12px; }
+a[href="javascript:Pagination();"] {
+  font-size:12px;
+  margin:0 6px;
+}
 
 /* pagination fix on profiles */
 #cp-main .pagination {

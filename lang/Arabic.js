@@ -1,5 +1,5 @@
 // Arabic Translation
-// Translation by omarpop23 (http://fmdesign.forumotion.com/t740-forumactif-edge-arabic-translation#14583)
+// Translation by omarpop23, Michael_vx, Gin NeOs (http://fmdesign.forumotion.com/t740-forumactif-edge-arabic-translation#14583)
 FAE.lang = {
 
   language : 'العربية',
@@ -96,9 +96,9 @@ FAE.lang = {
       tool_to_top : 'أعلي المنتدى',
       tool_to_bottom : 'أسفل المنتدى',
 
-      img_resizer_full_size : 'عرض الحجم بالكامل',
-      img_resizer_enlarge : 'تصغير الصورة',
-      img_resizer_reduce : 'تكبير الصورة',
+      img_resizer_full_size : 'عرض المقاسات الاصليه',
+      img_resizer_enlarge : 'تكبير الصورة',
+      img_resizer_reduce : 'تصغير الصورة',
       img_resizer_download : 'تحميل الصورة',
       img_resizer_tooltip : 'أضغط هنا للعرض الطبيعي للصورة',
 
@@ -118,16 +118,16 @@ FAE.lang = {
 
 
     logged_out_reply : {
-      main_title : '<h2 class="lor_maintitle">انشئ حساب جديد او سجل دخولك لتترك رد</h2>',
-      main_desc : '<p class="lor_maindesc">لابد يكون لديك عضوية لتستطيع الرد سجل.</p>',
+      main_title : '<h2 class="lor_maintitle">للمشاركة انت بحاجه الى تسجيل الدخول او التسجيل</h2>',
+      main_desc : '<p class="lor_maindesc">يجب ان تعرف نفسك بتسجيل الدخول او بالاشتراك معنا للمشاركة</p>',
 
       create_account_title : '<h3 class="lor_subtitle">التسجيل</h3>',
-      create_account_desc : '<p class="lor_subdesc">انضم الينا عالمنا الآنز فعملية التسجيل سهله جدا !</p>',
+      create_account_desc : '<p class="lor_subdesc">انضم الينا لن يستغرق منك الا ثوانى معدودة!</p>',
       create_account_button : '<a href="/register" class="button1">أنشئ حساب جديد</a>',
 
-      log_in_title : '<h3 class="lor_subtitle">الدخول</h3>',
-      log_in_desc : '<p class="lor_subdesc">لديك عضوية؟ لا يوجد مشكلة سجل من هنا.</p>',
-      log_in_button : '<a href="/login" class="button1">الدخول</a>'
+      log_in_title : '<h3 class="lor_subtitle">تسجيل الدخول</h3>',
+      log_in_desc : '<p class="lor_subdesc">ليس لديك عضويه ؟ بضع ثوانى فقط لتسجيل حساب</p>',
+      log_in_button : '<a href="/login" class="button1">تسجيل الدخول</a>'
     }
 
   },

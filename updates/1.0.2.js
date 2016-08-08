@@ -6,6 +6,8 @@
   - Added additional check to ensure that the founder is logged into the admin panel before the control panel can be used. This fixes an error some founders encountered with the security option "Confirm password to administration access"
   - Added margin between "go to page" link in pagination so it's not touching the page buttons.
   - Fixed alignment of pagination elements so it's to the right.
+  - Fixed display of image resizer text. The icons were out of alignment on some scripts, such as RTL.
+  - Fixed a bug in the theme selector which would occur for some members when the board language was changed.
   - Corrected various translations for the Arabic language. (thanks to Michael_vx & Gin NeOs)
 
 */
@@ -72,6 +74,55 @@ FAE.update_step = [
     info : 'Publishing template mod_recent_topics.html',
     type : 'PUBLISH',
      tpl : 904
+  },
+
+
+  {
+    info : 'Locating all.js',
+    type : 'GET',
+     url : '/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid,
+    func : function(d) {
+      for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/; i < j; i++) {
+        if (regex.test(row[i].innerHTML)) {
+          FAE.step[FAE.index + 1].url = $('a', row[i])[1].href;
+          break;
+        }
+      }
+    }
+  },
+
+
+  {
+    info : 'Getting all.js',
+    type : 'GET',
+     url : '',
+    func : function(d) {
+      var form = $('#formenvoi', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].url = form.action.replace(/^.*?\/admin\/index\.forum\?|&tid=.*$/g, '');
+        FAE.step[FAE.index + 1].data = {
+                     title : '[FA EDGE] ALL.JS',
+          'js_placement[]' : 'allpages',
+                   content : form.content.value
+                             .replace('.fa_img_resizer a { margin:0 3px; }', '.fa_img_resizer a { display:inline-block; margin:0 3px; }')
+                             .replace("selector.id = 'fa_theme_selector';", "  if (!fa_theme_color.palette[fa_theme_color.selected]) {\n    for (i in fa_theme_color.palette) {\n      fa_theme_color.selected = i;\n      my_setcookie('fa_theme_color', i, true);\n      break;\n    }\n  }\n\nselector.id = 'fa_theme_selector';"),
+
+                      mode : 'save',
+                      page : form.page.value,
+                    submit : 'Submit'
+        };
+      }
+
+    }
+  },
+
+
+  {
+    info : 'Updating all.js',
+    type : 'POST',
+     url : '',
+    data : {}
   }
 ];
 

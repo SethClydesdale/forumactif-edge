@@ -369,6 +369,104 @@
         };
 
 
+        // exclude from other hosts for testing
+        if (window.location.host == 'themedesign.forumotion.com') {
+
+          // greate and insert general settings
+          $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">General Settings</div>'+
+
+            '<p id="fae_theme_desc">This section allows you to manage the general settings of Forumactif Edge.</p>'+
+
+            '<div class="fae_cp_row">'+
+              '<span class="fae_help_me">?'+
+                '<span class="fae_help_tip">Drag the slider to adjust the width of the forum.</span>'+
+              '</span>'+
+              '<span id="fae_label_min" class="fae_label">Forum width : </span>'+
+              '<input id="fae_forum_width" type="range" min="0" max="100" /> <span id="fae_fw_percent">100%</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<input id="fae_update_general" type="button" value="Save changes" />'+
+            '</div>'
+          );
+
+          // update the percentage counter
+          document.getElementById('fae_forum_width')[/trident/i.test(window.navigator.userAgent) ? 'onchange' : 'oninput'] = function() {
+            var val = +this.value,
+                body = document.getElementById('page-body');
+
+            document.getElementById('fae_fw_percent').innerHTML = val + '%';
+            body.style.width = val + '%';
+
+            if (val >= 100) {
+              body.style.padding = 0;
+            }
+          };
+
+          // get existing settings from the stylesheet
+          $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+            var form = $('form[method="post"]', d)[0],
+                width;
+
+            if (form) {
+
+              if (/\/\*!FAE_WIDTH\*\/#page-body\{width:\d+%;.*?\}/.test(form.edit_code.value)) {
+                width = form.edit_code.value.match(/\/\*!FAE_WIDTH\*\/#page-body\{width:(\d+)%;.*?\}/)[1];
+
+                document.getElementById('fae_forum_width').value = width;
+                document.getElementById('fae_fw_percent').innerHTML = width + '%';
+              } else {
+                document.getElementById('fae_forum_width').value = 90;
+                document.getElementById('fae_fw_percent').innerHTML = '90%';
+              }
+
+            }
+          });
+
+
+          // update the general settings
+          document.getElementById('fae_update_general').onclick = function() {
+            FAE.log('Updating general settings..');
+
+            var width = +document.getElementById('fae_forum_width').value,
+                val,
+                form;
+
+            // assign style rules to variables
+            width = '/*!FAE_WIDTH*/#page-body{width:' + width + '%;margin:0 auto;' + ( width >= 100 ? 'padding:0;' : '' ) + '}';
+
+            // get the stylesheet
+            $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+              form = $('form[method="post"]', d)[0];
+
+              if (form) {
+                val = form.edit_code.value;
+
+                if (/\/\*!FAE_WIDTH\*\/#page-body\{.*?\}/.test(form.edit_code.value)) {
+                  val = val.replace(/\/\*!FAE_WIDTH\*\/#page-body\{.*?\}/, width);
+                } else {
+                  val += '\n' + width;
+                }
+
+                // update the stylesheet
+                $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, {
+                  edit_code : val,
+                  submit : 'Save'
+
+                }, function(d) {
+                  FAE.log('General settings have been updated successfully !', 'font-weight:bold;color:#8B5;');
+                  FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+                });
+
+              }
+            });
+
+            document.getElementById('fae_options').style.display = 'none';
+          };
+
+        }
+
+
         // setup and begin translation of control panel
         $.get(FAE.raw + 'lang/' + document.getElementById('fae_selected_language').value + '.js', function(d) {
           FAE.script(d.replace('FAE.lang', 'FAE.cp_lang'));

@@ -427,7 +427,7 @@
               // navbar alignment
               if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
                 nav_dir = form.edit_code.value.match(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:(.*?)\}/)[1];
-                document.getElementById('fae_nav_dir-' nav_dir.toLowerCase()).checked = true;
+                document.getElementById('fae_nav_dir-' + nav_dir.toLowerCase()).checked = true;
               }
 
             }

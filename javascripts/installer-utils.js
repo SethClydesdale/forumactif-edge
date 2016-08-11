@@ -272,7 +272,7 @@
                 '<span class="fae_help_tip">Drag the slider to adjust the width of the forum.</span>'+
               '</span>'+
               '<span id="fae_label_min" class="fae_label">Forum width : </span>'+
-              '<input id="fae_forum_width" type="range" min="30" max="100" style="vertical-align:middle;" /> <span id="fae_fw_percent">100%</span>'+
+              '<input id="fae_forum_width" type="range" min="30" max="100" value="99" style="vertical-align:middle;" /> <span id="fae_fw_percent">99%</span>'+
             '</div>'+
 
             '<div class="fae_cp_row">'+
@@ -310,8 +310,8 @@
                 document.getElementById('fae_forum_width').value = width;
                 document.getElementById('fae_fw_percent').innerHTML = width + '%';
               } else {
-                document.getElementById('fae_forum_width').value = 100;
-                document.getElementById('fae_fw_percent').innerHTML = '100%';
+                document.getElementById('fae_forum_width').value = 99;
+                document.getElementById('fae_fw_percent').innerHTML = '99%';
               }
 
               // navbar alignment

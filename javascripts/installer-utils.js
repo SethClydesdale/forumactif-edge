@@ -382,7 +382,17 @@
                 '<span class="fae_help_tip">Drag the slider to adjust the width of the forum.</span>'+
               '</span>'+
               '<span id="fae_label_min" class="fae_label">Forum width : </span>'+
-              '<input id="fae_forum_width" type="range" min="0" max="100" /> <span id="fae_fw_percent">100%</span>'+
+              '<input id="fae_forum_width" type="range" min="0" max="100" style="vertical-align:middle;" /> <span id="fae_fw_percent">100%</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span class="fae_help_me">?'+
+                '<span class="fae_help_tip">Choose the alignment of the navbar links.</span>'+
+              '</span>'+
+              '<span id="fae_label_min" class="fae_label">Navbar alignment : </span>'+
+              '<label for="fae_nav_dir-left"><input type="radio" id="fae_nav_dir-left" name="fae_nav_dir" checked> Left</label>'+
+              '<label for="fae_nav_dir-center"><input type="radio" id="fae_nav_dir-center" name="fae_nav_dir"> Center</label>'+
+              '<label for="fae_nav_dir-right"><input type="radio" id="fae_nav_dir-right" name="fae_nav_dir"> Right</label>'+
             '</div>'+
 
             '<div class="fae_cp_row">'+
@@ -392,32 +402,32 @@
 
           // update the percentage counter
           document.getElementById('fae_forum_width')[/trident/i.test(window.navigator.userAgent) ? 'onchange' : 'oninput'] = function() {
-            var val = +this.value,
-                body = document.getElementById('page-body');
-
-            document.getElementById('fae_fw_percent').innerHTML = val + '%';
-            body.style.width = val + '%';
-
-            if (val >= 100) {
-              body.style.padding = 0;
-            }
+            document.getElementById('fae_fw_percent').innerHTML = this.value + '%';
           };
 
           // get existing settings from the stylesheet
           $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
             var form = $('form[method="post"]', d)[0],
-                width;
+                width,
+                nav_dir;
 
             if (form) {
 
+              // page width
               if (/\/\*!FAE_WIDTH\*\/#page-body\{width:\d+%;.*?\}/.test(form.edit_code.value)) {
                 width = form.edit_code.value.match(/\/\*!FAE_WIDTH\*\/#page-body\{width:(\d+)%;.*?\}/)[1];
 
                 document.getElementById('fae_forum_width').value = width;
                 document.getElementById('fae_fw_percent').innerHTML = width + '%';
               } else {
-                document.getElementById('fae_forum_width').value = 90;
-                document.getElementById('fae_fw_percent').innerHTML = '90%';
+                document.getElementById('fae_forum_width').value = 100;
+                document.getElementById('fae_fw_percent').innerHTML = '100%';
+              }
+
+              // navbar alignment
+              if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
+                nav_dir = form.edit_code.value.match(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:(.*?)\}/)[1];
+                document.getElementById('fae_nav_dir-' nav_dir.toLowerCase()).checked = true;
               }
 
             }
@@ -429,11 +439,15 @@
             FAE.log('Updating general settings..');
 
             var width = +document.getElementById('fae_forum_width').value,
+                nav_dir = document.getElementById('fae_nav_dir-left').checked ? 'left' :
+                          document.getElementById('fae_nav_dir-center').checked ? 'center' :
+                          document.getElementById('fae_nav_dir-right').checked ? 'right' : 'left',
                 val,
                 form;
 
             // assign style rules to variables
             width = '/*!FAE_WIDTH*/#page-body{width:' + width + '%;margin:0 auto;' + ( width >= 100 ? 'padding:0;' : '' ) + '}';
+            nav_dir = '/*!FAE_NAV_DIR*/#navbar{text-align:' + nav_dir + '}';
 
             // get the stylesheet
             $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
@@ -442,10 +456,18 @@
               if (form) {
                 val = form.edit_code.value;
 
+                // update stylesheet with new width rule
                 if (/\/\*!FAE_WIDTH\*\/#page-body\{.*?\}/.test(form.edit_code.value)) {
                   val = val.replace(/\/\*!FAE_WIDTH\*\/#page-body\{.*?\}/, width);
                 } else {
                   val += '\n' + width;
+                }
+
+                // update stylesheet with new nav alignment rule
+                if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
+                  val = val.replace(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/, nav_dir);
+                } else {
+                  val += '\n' + nav_dir;
                 }
 
                 // update the stylesheet

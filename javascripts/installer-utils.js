@@ -277,9 +277,9 @@
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Alignment of the navbar links.</span>'+
+                '<span class="fae_help_tip">Position of the navbar links.</span>'+
               '</span>'+
-              '<span id="fae_label_min" class="fae_label">Navbar alignment : </span>'+
+              '<span id="fae_label_min" class="fae_label">Navbar position : </span>'+
               '<label for="fae_nav_dir-left"><input type="radio" id="fae_nav_dir-left" name="fae_nav_dir" checked> Left</label>'+
               '<label for="fae_nav_dir-center"><input type="radio" id="fae_nav_dir-center" name="fae_nav_dir"> Center</label>'+
               '<label for="fae_nav_dir-right"><input type="radio" id="fae_nav_dir-right" name="fae_nav_dir"> Right</label>'+
@@ -287,9 +287,9 @@
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Alignment of the forum logo.</span>'+
+                '<span class="fae_help_tip">Position of the forum logo.</span>'+
               '</span>'+
-              '<span id="fae_label_min" class="fae_label">Logo alignment : </span>'+
+              '<span id="fae_label_min" class="fae_label">Logo position : </span>'+
               '<label for="fae_logo_dir-left"><input type="radio" id="fae_logo_dir-left" name="fae_logo_dir" checked> Left</label>'+
               '<label for="fae_logo_dir-center"><input type="radio" id="fae_logo_dir-center" name="fae_logo_dir"> Center</label>'+
               '<label for="fae_logo_dir-right"><input type="radio" id="fae_logo_dir-right" name="fae_logo_dir"> Right</label>'+
@@ -333,13 +333,13 @@
                 document.getElementById('fae_fw_percent').innerHTML = '99%';
               }
 
-              // navbar alignment
+              // navbar position
               if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
                 dir = form.edit_code.value.match(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:(.*?)\}/)[1];
                 document.getElementById('fae_nav_dir-' + dir.toLowerCase()).checked = true;
               }
 
-              // logo alignment
+              // logo position
               if (/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:.*?\}#logo\{float:.*?\}/.test(form.edit_code.value)) {
                 dir = form.edit_code.value.match(/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:(.*?)\}#logo\{float:.*?\}/)[1];
                 document.getElementById('fae_logo_dir-' + dir.toLowerCase()).checked = true;
@@ -396,14 +396,14 @@
                   val += '\n' + width;
                 }
 
-                // update stylesheet with new NAVBAR ALIGNMENT rule
+                // update stylesheet with new NAVBAR POSITION rule
                 if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
                   val = val.replace(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/, nav_dir);
                 } else {
                   val += '\n' + nav_dir;
                 }
 
-                // update stylesheet with new LOGO ALIGNMENT rule
+                // update stylesheet with new LOGO POSITION rule
                 if (/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:.*?\}#logo\{float:.*?\}/.test(form.edit_code.value)) {
                   val = val.replace(/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:.*?\}#logo\{float:.*?\}/, logo_dir);
                 } else {

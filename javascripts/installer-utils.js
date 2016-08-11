@@ -272,7 +272,7 @@
                 '<span class="fae_help_tip">Drag the slider to adjust the width of the forum.</span>'+
               '</span>'+
               '<span id="fae_label_min" class="fae_label">Forum width : </span>'+
-              '<input id="fae_forum_width" type="range" min="0" max="100" style="vertical-align:middle;" /> <span id="fae_fw_percent">100%</span>'+
+              '<input id="fae_forum_width" type="range" min="30" max="100" style="vertical-align:middle;" /> <span id="fae_fw_percent">100%</span>'+
             '</div>'+
 
             '<div class="fae_cp_row">'+

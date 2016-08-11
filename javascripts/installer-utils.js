@@ -277,12 +277,31 @@
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Choose the alignment of the navbar links.</span>'+
+                '<span class="fae_help_tip">Alignment of the navbar links.</span>'+
               '</span>'+
               '<span id="fae_label_min" class="fae_label">Navbar alignment : </span>'+
               '<label for="fae_nav_dir-left"><input type="radio" id="fae_nav_dir-left" name="fae_nav_dir" checked> Left</label>'+
               '<label for="fae_nav_dir-center"><input type="radio" id="fae_nav_dir-center" name="fae_nav_dir"> Center</label>'+
               '<label for="fae_nav_dir-right"><input type="radio" id="fae_nav_dir-right" name="fae_nav_dir"> Right</label>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span class="fae_help_me">?'+
+                '<span class="fae_help_tip">Alignment of the forum logo.</span>'+
+              '</span>'+
+              '<span id="fae_label_min" class="fae_label">Logo alignment : </span>'+
+              '<label for="fae_logo_dir-left"><input type="radio" id="fae_logo_dir-left" name="fae_logo_dir" checked> Left</label>'+
+              '<label for="fae_logo_dir-center"><input type="radio" id="fae_logo_dir-center" name="fae_logo_dir"> Center</label>'+
+              '<label for="fae_logo_dir-right"><input type="radio" id="fae_logo_dir-right" name="fae_logo_dir"> Right</label>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span class="fae_help_me">?'+
+                '<span class="fae_help_tip">Position of the post profile in topics.</span>'+
+              '</span>'+
+              '<span id="fae_label_min" class="fae_label">Profile position : </span>'+
+              '<label for="fae_profil_dir-left"><input type="radio" id="fae_profil_dir-left" name="fae_profil_dir" checked> Left</label>'+
+              '<label for="fae_profil_dir-right"><input type="radio" id="fae_profil_dir-right" name="fae_profil_dir"> Right</label>'+
             '</div>'+
 
             '<div class="fae_cp_row">'+
@@ -299,7 +318,7 @@
           $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
             var form = $('form[method="post"]', d)[0],
                 width,
-                nav_dir;
+                dir;
 
             if (form) {
 
@@ -316,8 +335,20 @@
 
               // navbar alignment
               if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
-                nav_dir = form.edit_code.value.match(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:(.*?)\}/)[1];
-                document.getElementById('fae_nav_dir-' + nav_dir.toLowerCase()).checked = true;
+                dir = form.edit_code.value.match(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:(.*?)\}/)[1];
+                document.getElementById('fae_nav_dir-' + dir.toLowerCase()).checked = true;
+              }
+
+              // logo alignment
+              if (/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:.*?\}#logo\{float:.*?\}/.test(form.edit_code.value)) {
+                dir = form.edit_code.value.match(/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:(.*?)\}#logo\{float:.*?\}/)[1];
+                document.getElementById('fae_logo_dir-' + dir.toLowerCase()).checked = true;
+              }
+
+              // profile position
+              if (/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/.test(form.edit_code.value)) {
+                dir = form.edit_code.value.match(/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:(.*?);.*?\}\.post-inner\{.*?\}/)[1];
+                document.getElementById('fae_profil_dir-' + dir.toLowerCase()).checked = true;
               }
 
             }
@@ -329,15 +360,27 @@
             FAE.log('Updating general settings..');
 
             var width = +document.getElementById('fae_forum_width').value,
+
                 nav_dir = document.getElementById('fae_nav_dir-left').checked ? 'left' :
                           document.getElementById('fae_nav_dir-center').checked ? 'center' :
                           document.getElementById('fae_nav_dir-right').checked ? 'right' : 'left',
+
+                logo_dir = document.getElementById('fae_logo_dir-left').checked ? 'left' :
+                           document.getElementById('fae_logo_dir-center').checked ? 'center' :
+                           document.getElementById('fae_logo_dir-right').checked ? 'right' : 'left',
+
+                profil_dir = document.getElementById('fae_profil_dir-left').checked ? 'left' :
+                             document.getElementById('fae_profil_dir-right').checked ? 'right' : 'left',
+                profil_dir2 = profil_dir == 'left' ? 'right' : 'left',
+
                 val,
                 form;
 
             // assign style rules to variables
             width = '/*!FAE_WIDTH*/#page-body{width:' + width + '%;margin:0 auto;' + ( width >= 100 ? 'padding:0;' : '' ) + '}';
             nav_dir = '/*!FAE_NAV_DIR*/#navbar{text-align:' + nav_dir + '}';
+            logo_dir = '/*!FAE_LOGO_DIR*/#logo-desc{text-align:' + logo_dir + '}#logo{float:' + ( logo_dir == 'center' ? 'none' : logo_dir ) + '}';
+            profil_dir = '/*!FAE_PROFIL_DIR*/.postprofile{float:' + profil_dir + ';margin-' + profil_dir + ':-300px;margin-' + profil_dir2 + ':0px}.post-inner{margin-' + profil_dir2 + ':0;margin-' + profil_dir + ':300px}';
 
             // get the stylesheet
             $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
@@ -346,18 +389,33 @@
               if (form) {
                 val = form.edit_code.value;
 
-                // update stylesheet with new width rule
+                // update stylesheet with new FORUM WIDTH rule
                 if (/\/\*!FAE_WIDTH\*\/#page-body\{.*?\}/.test(form.edit_code.value)) {
                   val = val.replace(/\/\*!FAE_WIDTH\*\/#page-body\{.*?\}/, width);
                 } else {
                   val += '\n' + width;
                 }
 
-                // update stylesheet with new nav alignment rule
+                // update stylesheet with new NAVBAR ALIGNMENT rule
                 if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
                   val = val.replace(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/, nav_dir);
                 } else {
                   val += '\n' + nav_dir;
+                }
+
+                // update stylesheet with new LOGO ALIGNMENT rule
+                if (/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:.*?\}#logo\{float:.*?\}/.test(form.edit_code.value)) {
+                  val = val.replace(/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:.*?\}#logo\{float:.*?\}/, logo_dir);
+                } else {
+                  val += '\n' + logo_dir;
+                }
+
+
+                // update stylesheet with new PROFILE POSITION rule
+                if (/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/.test(form.edit_code.value)) {
+                  val = val.replace(/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/, profil_dir);
+                } else {
+                  val += '\n' + profil_dir;
                 }
 
                 // update the stylesheet

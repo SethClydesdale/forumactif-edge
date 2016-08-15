@@ -134,37 +134,36 @@ FAE.lang = {
 
 
   fae_cp : {
-    fae_cp_main_title : 'Forumactif Edge Control Panel',
-    fae_cp_desc : 'This panel allows you to install, uninstall, and update <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Get ready to experience your forum in a more modern and responsive way!',
-    fae_log : 'Log',
-    fae_actions : 'Actions',
+    fae_cp_main_title : 'لوحة التحكم الخاصة بنسخة Forumactif Edge المتطورة.',
+    fae_cp_desc : 'لوحة التحكم هذه تمكنك من ثبيت/حذف نسخة <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. كن مستعد لتحصل علي نسخة حديثة و متطورة و تدعم نسخة الجوال!',
+    fae_log : 'السجل',
+    fae_actions : 'العمليات',
 
-    fae_install : 'Install',
-    fae_reinstall : 'Reinstall',
-    fae_install_complete : 'COMPLETE!',
-    fae_install_warning : 'Are you sure you want to {INSTALL} Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.',
+    fae_install : 'تثبيت',
+    fae_reinstall : 'اعادة التثبيت',
+    fae_install_complete : 'اكتمل التثبيت!',
+    fae_install_warning : 'هل انت متأكد انك تريد  {INSTALL} نسخة Forumactif Edge المتطورة؟ سوف يتم حذف التصميم الحالي و اكواد الجافا. من فضلك تأكد بانك تملك نسخة احتياطية من ملفاتك الشخصية الخاصة بالتصميم الحالي مثل القوالب و اكواد الجافا و الاكواد الانسيابية اضغط علي الغاء اذا لم تكن مستعد للتثبيت.',
 
-    fae_uninstall : 'Uninstall',
-    fae_uninstall_warning : 'Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.',
+    fae_uninstall : 'حذف',
+    fae_uninstall_warning : 'هل انت متأكد انك تريد حذف نسخة Forumactif Edge المتطورة؟ سيتم حذف جميع اكواد الجافا و القوالب و الاكواد الانسيابيه، سيعود التصميم الافتراضي للنسخة الثالثة.من فضلك تأكد بانك تملك نسخة احتياطية من ملفاتك الشخصية الخاصة بالتصميم الحالي مثل القوالب و اكواد الجافا و الاكواد الانسيابية اضغط علي الغاء اذا لم تكن مستعد لعملية الحذف.',
 
-    fae_update : 'Check for updates',
-    fae_update_good : 'Forumactif Edge is up to date!',
-    fae_update_check : 'Checking for updates on Github...',
-    fae_update_prepare : 'Preparing to fetch update instructions, please do not close this tab...',
-    fae_update_start : 'Updates are about to begin, please do not close this tab.',
-    fae_update_fetch : 'Getting update instructions for version {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
-    fae_update_notes : 'Please <a href="{RELEASE_TAG}" target="_blank">Click here</a> to view the changes made in version {VERSION_STRING}.',
-    fae_update_error : 'Update instructions for version {VERSION_STRING} could not be found. Please <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">open a new issue</a> and provide this information for further assistance.',
+    fae_update : 'التحقق من وجود تحديثات',
+    fae_update_good : 'لديك آخر اصدار من نسخة Forumactif Edge المتطورة!',
+    fae_update_check : 'جاري فحص التحديثات علي Github...',
+    fae_update_prepare : 'جاري التحضير لجلب معلومات التحديث ، من فضلك لا تغلق هذه النافذه.',
+    fae_update_start : 'التحديثات علي وشك التثبيت، من فضلك لا تغلق هذه النافذة.',
+    fae_update_fetch : 'جاري تحميل معلومات لنسخة {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
+    fae_update_notes : 'من فضلك <a href="{RELEASE_TAG}" target="_blank">اضغط هنا</a> لعرض التغيرات الجديدة {VERSION_STRING}.',
+    fae_update_error : 'معلومات التحديث لنسخة {VERSION_STRING} لا يمكن الوصول اليها. من فضلك <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">فتح موضوع جديد</a> و اخبرنا بهذه المعلومات لتقديم المزيد من المساعدة.',
 
-    fae_translate : 'Change language',
-    fae_translate_same : 'Forumactif Edge is already in {LANG}. Please choose another language.',
-    fae_translate_warning : 'Are you sure you want to change the language of Forumactif Edge to {LANG} ?',
-    fae_translate_start : 'Translation of Forumactif Edge will commence shortly. Please wait..',
-    fae_translate_get : 'Getting {LANG} language data...',
-    fae_translate_loaded : 'Language data has been loaded. The translation process will now begin, please do not close this tab.',
+    fae_translate : 'تغير اللغة',
+    fae_translate_same : 'نسخة Forumactif Edge المتطورة {LANG}. من فضلك اختار لغة آخرى.',
+    fae_translate_warning : 'هل انت متأكد انك تريد تغير لغة نسخة  Forumactif Edge الي {LANG} ?',
+    fae_translate_start : 'سوف تبدأ ترجمة نسخة Forumactif Edge رجاء الانتظار...',
+    fae_translate_get : 'جاري الحصول علي بيانات اللغة  {LANG} ...',
+    fae_translate_loaded : 'تم تحميل بيانات اللغة . عملية الترجمة علي وشك البدأ ، منفضلك لا تغلق هذه النافذة.',
 
-    fae_err_not_founder : 'Only <a href="/u1">the founder</a> may use this control panel. Please contact them for assistance in installing Forumactif Edge.'
-
+    fae_err_not_founder : 'وحده  <a href="/u1">منشئ المنتدي </a> القادر علي استخدام هذه اللوحة.'
   }
 
 };

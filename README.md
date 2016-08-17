@@ -20,25 +20,7 @@ Not ready to install yet ? No problem ! Take a look around, check out the FAQ an
 
 ## FAQ
 
-**Q : Is the installation safe ? Does it collect any data ?**
-
-**A :** Yes the installation is safe, there's nothing to worry about ! Forumactif Edge collects no data during or after the installation. We're completely transparent, if you have any doubts feel free to review our source code or [contact us](http://fmdesign.forumotion.com/t702-forumactif-edge-installation-questions#13928) to answer your questions !
-
-**Q : Why isn't Forumactif Edge in my language ?**
-
-**A :** I don't know every language since I'm only one person, as such I allow members of Forumactif Edge to submit translations. If a translation is not available for your language please [click here](https://github.com/SethClydesdale/forumactif-edge/wiki/Translating) to learn how to submit one.
-
-**Q : Is Forumactif Edge an official project of Forumotion ?**
-
-**A :** No, we are not officially affiliated with Forumactif or their parent company. Forumactif Edge is built by the community of Forumotion ! 
-
-**Q : Is this theme REALLY free ?**
-
-**A :** Yes it's 100% free, no strings attached ! I wanted to create a modern and responsive theme for Forumotion, because the current forum versions provided are dated and not mobile friendly. Forumactif Edge is the answer if you want a modern, mobile friendly design !
-
-***
-
-Is your question not answered here ? Check out the [full FAQ](https://github.com/SethClydesdale/forumactif-edge/wiki/Frequently-Asked-Questions) page or contact us on the [support forum](http://fmdesign.forumotion.com/t700-forumactif-edge-support) !
+Do you have any questions or concerns about Forumactif Edge ? If so, feel free to check out [our FAQ](https://github.com/SethClydesdale/forumactif-edge/wiki/Frequently-Asked-Questions) page or contact us on the [support forum](http://fmdesign.forumotion.com/t700-forumactif-edge-support) ! We're always ready to answer your questions ! :wink:
 
 ## Preview
 You can find various previews of the theme below. [Click here](http://fmdesign.forumotion.com/forum) if you'd like a live preview of Forumactif Edge.

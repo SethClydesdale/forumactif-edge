@@ -193,6 +193,7 @@
               '<option value="Français">Français</option>'+
               '<option value="German">Deutsch</option>'+
               '<option value="Greek">Ελληνικά</option>'+
+              '<option value="Hebrew">עברית</option>'+
               '<option value="Italian">Italiano</option>'+
               '<option value="Romanian">Romana</option>'+
             '</select>'+

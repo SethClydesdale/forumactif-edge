@@ -16,7 +16,7 @@ FAE.lang = {
     hidebox : 'Ascuns:',
     chatbox_tip : 'Hover over to see who is online.',
     chatbox_no_away : 'Nu sunt membri afk monentan..',
-    chatbox_no_online : 'Nu sunt membri online momentan.',
+    chatbox_no_online : 'Nu sunt membri online momentan.'
   },
 
 

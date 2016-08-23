@@ -16,7 +16,7 @@ FAE.lang = {
     hidebox : 'مخفي:',
     chatbox_tip : 'مرر اللفأرة لترى المتصل و الغائب.',
     chatbox_no_away : 'غائب.',
-    chatbox_no_online : 'مُتصل.',
+    chatbox_no_online : 'مُتصل.'
   },
 
 

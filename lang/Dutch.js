@@ -16,7 +16,7 @@ FAE.lang = {
     hidebox : 'Verborgen:',
     chatbox_tip : 'Beweeg hier met de muis over om te zien wie er online is.',
     chatbox_no_away : 'Momenteel zijn er geen leden inactief.',
-    chatbox_no_online : 'Er zijn geen leden online.',
+    chatbox_no_online : 'Er zijn geen leden online.'
   },
 
 

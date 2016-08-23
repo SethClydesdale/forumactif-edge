@@ -1,6 +1,5 @@
 // French Translation
-// TRANSLATION IS PARTIAL
-
+// Tanslation by DDril (http://fmdesign.forumotion.com/t960-forumactif-edge-french-translation#19376)
 FAE.lang = {
 
   language : 'Français',
@@ -11,13 +10,13 @@ FAE.lang = {
     total_posts : 'Total de messages',
     total_topics : 'Total de sujets',
     total_users : 'Total de membres',
-    record_users : 'Most Members Online',
+    record_users : 'Connexions simultanées',
     board_age : 'Âge du forum (en journées)',
-    newest_member : 'Nouveau Membre',
+    newest_member : 'Nouveau membre',
     hidebox : 'Caché:',
-    chatbox_tip : 'Hover over to see who is online.',
-    chatbox_no_away : 'No members are currently away.',
-    chatbox_no_online : 'No members are currently online.',
+    chatbox_tip : 'Survolez pour voir qui est en ligne.',
+    chatbox_no_away : 'Aucun membre absent..',
+    chatbox_no_online : 'Aucun membre en ligne.'
   },
 
 
@@ -79,31 +78,31 @@ FAE.lang = {
   javascripts : {
 
     '[FA EDGE] ALL.JS' : {
-      widget_menu_title : '<div class="title module_column_title">Widget Menu</div>',
-      widget_menu_tooltip : "menu.title = 'Toggle widget menu';",
+      widget_menu_title : '<div class="title module_column_title">Menu widget</div>',
+      widget_menu_tooltip : "menu.title = 'Cacher le menu widget';",
 
-      select_theme : 'Select a theme',
-      random_theme : 'Random theme',
-      default_theme : 'Default theme',
+      select_theme : 'Sélection du thème',
+      random_theme : 'Thème aléatoire',
+      default_theme : 'Thème par défaut',
 
       toolbar_search_placeholder : 'Rechercher...',
 
-      quick_nav_title : "title : 'Quick Navigation'",
-      quick_nav_tooltip : "tooltip : 'Toggle quick navigation'",
+      quick_nav_title : 'Navigation rapide',
+      quick_nav_tooltip : 'Cacher la navigation rapide',
       quick_nav_notif : 'Notifications',
-      tool_copy_url_tooltip : 'Copy BBCode URL',
-      tool_copy_url_prompt : 'Copy the BBCode URL below. (CTRL+C)',
-      tool_admin_panel : 'Admin Panel',
-      tool_to_top : 'Top of page',
-      tool_to_bottom : 'Bottom of page',
+      tool_copy_url_tooltip : 'Copier le BBcode URL',
+      tool_copy_url_prompt : "Copiez l\\'adresse BBcode URL. (CTRL+C)",
+      tool_admin_panel : "Panneau d\\'administration",
+      tool_to_top : 'Sommet de page',
+      tool_to_bottom : 'Bas de page',
 
-      img_resizer_full_size : 'Show full size',
-      img_resizer_enlarge : 'Enlarge image',
-      img_resizer_reduce : 'Reduce image',
-      img_resizer_download : 'Download image',
-      img_resizer_tooltip : 'Click to view full image',
+      img_resizer_full_size : 'Voir en grand',
+      img_resizer_enlarge : "Agrandir l\\'image",
+      img_resizer_reduce : "Réduire l\\'image",
+      img_resizer_download : "Télécharger l\\'image",
+      img_resizer_tooltip : 'Cliquez pour voir en entier',
 
-      fae_update_found : 'An update has been found for Forumactif Edge. When you\'re ready, please proceed to your FAE Control Panel and click "Check for updates" to begin the update process.'
+      fae_update_found : "Une mise à jour a été trouvé pour Forumactif Edge. Lorsque vous êtes prêt à l\\'installer, passez par le panneau de configuration FAE et cliquez sur \"Vérifier les mises à jour\" pour débutez le processus."
     }
 
   },
@@ -112,22 +111,22 @@ FAE.lang = {
   templates : {
 
     'overall_footer_end.html' : {
-      back_to_top : 'Back to top',
-      fae_feedback : 'Submit Feedback',
-      fae_feedback_tooltip : 'Help improve Forumactif Edge'
+      back_to_top : 'Revenir en haut',
+      fae_feedback : 'Soumettre un retour',
+      fae_feedback_tooltip : 'Aidez à améliorer Forumactif Edge'
     },
 
 
     logged_out_reply : {
-      main_title : '<h2 class="lor_maintitle">Create an account or log in to leave a reply</h2>',
-      main_desc : '<p class="lor_maindesc">You need to be a member in order to leave a reply.</p>',
+      main_title : '<h2 class="lor_maintitle">Créer un compte ou se connecter pour répondre</h2>',
+      main_desc : '<p class="lor_maindesc">Vous devez être membre pour répondre.</p>',
 
       create_account_title : '<h3 class="lor_subtitle">S\'enregistrer</h3>',
-      create_account_desc : '<p class="lor_subdesc">Join our community by creating a new account. It\'s easy!</p>',
+      create_account_desc : '<p class="lor_subdesc">Rejoignez notre communauté ! C\'est facile !</p>',
       create_account_button : '<a href="/register" class="button1">S\'enregistrer</a>',
 
       log_in_title : '<h3 class="lor_subtitle">Connexion</h3>',
-      log_in_desc : '<p class="lor_subdesc">Already have an account? No problem, log in here.</p>',
+      log_in_desc : '<p class="lor_subdesc">Vous êtes déjà membre ? Aucun soucis, cliquez ici pour vous connecter.</p>',
       log_in_button : '<a href="/login" class="button1">Connexion</a>'
     }
 
@@ -135,37 +134,36 @@ FAE.lang = {
 
 
   fae_cp : {
-    fae_cp_main_title : 'Forumactif Edge Control Panel',
-    fae_cp_desc : 'This panel allows you to install, uninstall, and update <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Get ready to experience your forum in a more modern and responsive way!',
+    fae_cp_main_title : 'Panneau de configuration de Forumactif Edge',
+    fae_cp_desc : 'Ce panneau vous permet d\'installer, de configurer, de désinstaller et de mettre à jour <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Préparez-vous à l\'expérience de votre forum d\'une manière plus souple et moderne.',
     fae_log : 'Log',
     fae_actions : 'Actions',
 
     fae_install : 'Installer',
     fae_reinstall : 'Réinstaller',
-    fae_install_complete : 'COMPLETE!',
-    fae_install_warning : 'Are you sure you want to {INSTALL} Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.',
+    fae_install_complete : 'COMPLET!',
+    fae_install_warning : '	Êtes-vous sûr de vouloir {INSTALL} Forumactif Edge? Ceci va modifier et supprimer tout votre Thème, CSS et JS installer sur votre forum.\\\n\\\nAssurez-vous d\'avoir sauvegarder votre CSS, votre thème et vos JavaScripts. Cliquez sur "Annuler" si vous n\'êtes pas prêt.',
 
     fae_uninstall : 'Désinstaller',
-    fae_uninstall_warning : 'Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.',
+    fae_uninstall_warning : '	Êtes-vous sûr de souhaiter désinstaller? Le CSS, le thème et le JavaScript installé sera supprimé ; Ce forum reviendra vers la version basique de phpBB3.\\\n\\\nAssurez-vous d\'avoir tout sauvegarder avant. Appuyez sur "Annuler" si vous ne voulez pas désinstaller Forumactif Edge.',
 
-    fae_update : 'Check for updates',
-    fae_update_good : 'Forumactif Edge is up to date!',
-    fae_update_check : 'Checking for updates on Github...',
-    fae_update_prepare : 'Preparing to fetch update instructions, please do not close this tab...',
-    fae_update_start : 'Updates are about to begin, please do not close this tab.',
-    fae_update_fetch : 'Getting update instructions for version {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
-    fae_update_notes : 'Please <a href="{RELEASE_TAG}" target="_blank">Click here</a> to view the changes made in version {VERSION_STRING}.',
-    fae_update_error : 'Update instructions for version {VERSION_STRING} could not be found. Please <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">open a new issue</a> and provide this information for further assistance.',
+    fae_update : 'Vérifiez les mises à jour',
+    fae_update_good : 'Forumactif Edge est à jour!',
+    fae_update_check : 'Vérification des fichiers sur Github...',
+    fae_update_prepare : 'Comparaison des versions, s\'il vous plaît ne fermez pas la page.',
+    fae_update_start : 'Les mises à jour sont prêtes, ne fermez pas la page.',
+    fae_update_fetch : 'Récolte les instructions de mises à jour de la {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
+    fae_update_notes : 'Veuillez appuyer <a href="{RELEASE_TAG}" target="_blank">Ici</a> to pour voir les modifications de la version {VERSION_STRING}.',
+    fae_update_error : 'Instruction de la mise à jour {VERSION_STRING} est introuvable. Veuillez <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">ouvrir une demande de support</a> et transmettez-nous les informations nécessaires pour l\'assistance.',
 
-    fae_translate : 'Change language',
-    fae_translate_same : 'Forumactif Edge is already in {LANG}. Please choose another language.',
-    fae_translate_warning : 'Are you sure you want to change the language of Forumactif Edge to {LANG} ?',
-    fae_translate_start : 'Translation of Forumactif Edge will commence shortly. Please wait..',
-    fae_translate_get : 'Getting {LANG} language data...',
-    fae_translate_loaded : 'Language data has been loaded. The translation process will now begin, please do not close this tab.',
+    fae_translate : 'Modifier le langage',
+    fae_translate_same : 'Forumactif Edge est déjà en {LANG}. Veuillez prendre une autre langue.',
+    fae_translate_warning : 'Êtes-vous sûr de vouloir changez la langue de Forumactif Edge vers {LANG} ?',
+    fae_translate_start : 'La traduction de Forumactif Edge commence sous peu, veuillez patienter...',
+    fae_translate_get : 'Récupération des données de langue de {LANG}...',
+    fae_translate_loaded : 'Les donnéees de la langue ont été chargée. Le processus de traduction va maintenance commencez. Veuillez ne pas fermer la page.',
 
-    fae_err_not_founder : 'Only <a href="/u1">the founder</a> may use this control panel. Please contact them for assistance in installing Forumactif Edge.'
-
+    fae_err_not_founder : 'Seul <a href="/u1">le fondateur</a> peut utiliser le panneau de configuration. Veuillez contactez ce dernier pour avoir les instruction.'
   }
 
 };

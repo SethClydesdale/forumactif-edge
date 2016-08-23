@@ -7,9 +7,9 @@ FAE.lang = {
   css : {
     offline : 'לא מחובר',
     online : 'מחובר',
-    total_posts : 'סה0022\\כ הודעות',
-    total_topics : 'סה0022\\כ נושאים',
-    total_users : 'סה0022\\כ משתמשים',
+    total_posts : 'סה\\0022כ הודעות',
+    total_topics : 'סה\\0022כ נושאים',
+    total_users : 'סה\\0022כ משתמשים',
     record_users : 'רוב המשתמשים שהתחברו',
     board_age : '(גיל הפורום (ימים',
     newest_member : 'המשתמש החדש ביותר שנרשם',

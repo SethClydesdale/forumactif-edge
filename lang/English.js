@@ -15,7 +15,7 @@ FAE.lang = {
     hidebox : 'Hidden:',
     chatbox_tip : 'Hover over to see who is online.',
     chatbox_no_away : 'No members are currently away.',
-    chatbox_no_online : 'No members are currently online.',
+    chatbox_no_online : 'No members are currently online.'
   },
 
 

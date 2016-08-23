@@ -16,7 +16,7 @@ FAE.lang = {
     hidebox : 'Κρυφό Περιεχόμενο:',
     chatbox_tip : 'Για να δείτε τις λίστες περάστε το ποντίκι σας πάνω από εδώ.',
     chatbox_no_away : 'Κανένα μέλος δεν είναι Απών..',
-    chatbox_no_online : 'Κανένα μέλος δεν είναι Συνδεδεμένο.',
+    chatbox_no_online : 'Κανένα μέλος δεν είναι Συνδεδεμένο.'
   },
 
 
@@ -134,36 +134,36 @@ FAE.lang = {
 
 
   fae_cp : {
-    fae_cp_main_title : 'Forumactif Edge Control Panel',
-    fae_cp_desc : 'This panel allows you to install, uninstall, and update <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Get ready to experience your forum in a more modern and responsive way!',
-    fae_log : 'Log',
-    fae_actions : 'Actions',
+    fae_cp_main_title : 'Πίνακας Ελέγχου Forumactif Edge',
+    fae_cp_desc : 'Αυτός ο πίνακας σας επιτρέπει να εγκαταστήσετε, να απενεγκαταστήσετε και να αναβαθμίσετε το <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a> φόρουμ σας. Ετοιμαστείτε να αντιμετωπίσετε την υπέροχη και μοναδική εμπειρία που προσφέρει το Forumactif Edge στο φόρουμ σας!',
+    fae_log : 'Πληροφορίες',
+    fae_actions : 'Ενέργειες',
 
-    fae_install : 'Install',
-    fae_reinstall : 'Reinstall',
-    fae_install_complete : 'COMPLETE!',
-    fae_install_warning : 'Are you sure you want to {INSTALL} Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.',
+    fae_install : 'Εγκατάσταση',
+    fae_reinstall : 'Εγκατάσταση Ξανά',
+    fae_install_complete : 'ΟΛΟΚΛΗΡΩΘΗΚΕ!',
+    fae_install_warning : 'Είστε σίγουροι ότι θέλετε να {INSTALL} το Forumactif Edge; Κάνοντας αυτή την ενέργεια συμφωνείτε στο να διαγραφεί το παρών θέμα του φόρουμ σας για να προστεθεί το νέο θέμα και να διαγραφούν όλα τα JavaScripts που έχετε εγκαταστήσει.\\\n\\\nΠαρακαλούμε όπως κρατήσετε αρχεία ασφαλείας για όλα τα απαραίτητα αρχεία που μπορεί να χρειαστείτε όπως CSS, Πρότυπα, JavaScripts και οπουδήποτε αλλού ίσως χρειαστεί προτού προχωρήσετε. Πατήστε "Ακύρωση" αν δεν είστε έτοιμοι να εγκαταστήσετε ξανά το Forumactif Edge.',
 
-    fae_uninstall : 'Uninstall',
-    fae_uninstall_warning : 'Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.',
+    fae_uninstall : 'Απεγκατάσταση',
+    fae_uninstall_warning : 'Είστε σίγουροι ότι θέλετε να απεγκαταστήσετε το Forumactif Edge; Το CSS, τα JavaScripts καθώς επίσης και τα Πρότυπα θα διαγραφούν τελείως. Το φόρουμ θα επιστρέψει στην αρχική του μορφή και στο αρχικό του phpbb3 θέμα.\\\n\\\nΠαρακαλούμε όπως κρατήσετε αρχεία ασφαλείας για όλα τα απαραίτητα αρχεία που μπορεί να χρειαστείτε όπως CSS, Πρότυπα, JavaScripts και οπουδήποτε αλλού ίσως χρειαστεί προτού προχωρήσετε. Πατήστε "Ακύρωση" αν δεν είστε έτοιμοι να απεγκαταστήσετε το Forumactif Edge ακόμα.',
 
-    fae_update : 'Check for updates',
-    fae_update_good : 'Forumactif Edge is up to date!',
-    fae_update_check : 'Checking for updates on Github...',
-    fae_update_prepare : 'Preparing to fetch update instructions, please do not close this tab...',
-    fae_update_start : 'Updates are about to begin, please do not close this tab.',
-    fae_update_fetch : 'Getting update instructions for version {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
-    fae_update_notes : 'Please <a href="{RELEASE_TAG}" target="_blank">Click here</a> to view the changes made in version {VERSION_STRING}.',
-    fae_update_error : 'Update instructions for version {VERSION_STRING} could not be found. Please <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">open a new issue</a> and provide this information for further assistance.',
+    fae_update : 'Έλεγχος για αναβαθμίσεις',
+    fae_update_good : 'Το Forumactif Edge είναι πλήρως αναβαθμίσμένο!',
+    fae_update_check : 'Γίνεται έλεγχος για αναβαθμίσεις στο Github...',
+    fae_update_prepare : 'Ετοιμασία για πληροφορίες αναβάθμισης, παρακαλούμε μην κλείσετε αυτή την καρτέλα...',
+    fae_update_start : 'Οι αναβαθμίσεις πρόκειται να ξεκινήσουν, παρακαλούμε μην κλείσετε αυτή την καρτέλα.',
+    fae_update_fetch : 'Παίρνουμε τις πληροφορίες αναβάθμισης για την μορφή {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
+    fae_update_notes : 'Παρακαλούμε <a href="{RELEASE_TAG}" target="_blank">Πατήστε Εδώ</a> για να δείτε τις αλλαγές που θα γίνουν για την μορφή {VERSION_STRING}.',
+    fae_update_error : 'Οι πληροφορίες αναβάθμισης για την μορφή {VERSION_STRING} δεν βρέθηκαν. Παρακαλούμε <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">ανοίξτε ένα νέο ticket υποστήριξης</a> και εισάγετε αυτές τις πληροφορίες για καλύτερη εξυπηρέτηση',
 
-    fae_translate : 'Change language',
-    fae_translate_same : 'Forumactif Edge is already in {LANG}. Please choose another language.',
-    fae_translate_warning : 'Are you sure you want to change the language of Forumactif Edge to {LANG} ?',
-    fae_translate_start : 'Translation of Forumactif Edge will commence shortly. Please wait..',
-    fae_translate_get : 'Getting {LANG} language data...',
-    fae_translate_loaded : 'Language data has been loaded. The translation process will now begin, please do not close this tab.',
+    fae_translate : 'Αλλαγή γλώσσας',
+    fae_translate_same : 'Το Forumactif Edge είναι ήδη στην γλώσσα {LANG}. Παρακαλούμε επιλέξτε μια άλλη γλώσσα.',
+    fae_translate_warning : 'Είστε σίγουροι ότι θέλετε να αλλάξετε την γλώσσα του Forumactif Edge σε {LANG} ?',
+    fae_translate_start : 'Οι μεταφράσεις του Forumactif Edge θα γίνουν σε λίγο. Παρακαλούμε περιμένετε..',
+    fae_translate_get : 'Παίρνουμε {LANG} γλωσσικές πληροφορίες...',
+    fae_translate_loaded : 'Οι γλωσιικές πληροφορίες έχουν παρθεί. Οι αλλαγές μετάφρασης θα ξεκινήσουν, παρακαλούμε μην κλείσετε την καρτέλα.',
 
-    fae_err_not_founder : 'Only <a href="/u1">the founder</a> may use this control panel. Please contact them for assistance in installing Forumactif Edge.'
+    fae_err_not_founder : 'Μόνο <a href="/u1">ο ιδρυτής</a> μπορεί να χρησιμοποιήσει αυτόν τον πίνακα ελέγχου. Παρακαλούμε επικοινωνήστε μαζί τους για άμεση εγκατάσταση του Forumactif Edge.'
 
   }
 

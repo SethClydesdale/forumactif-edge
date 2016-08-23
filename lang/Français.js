@@ -142,10 +142,10 @@ FAE.lang = {
     fae_install : 'Installer',
     fae_reinstall : 'Réinstaller',
     fae_install_complete : 'COMPLET!',
-    fae_install_warning : '	Êtes-vous sûr de vouloir {INSTALL} Forumactif Edge? Ceci va modifier et supprimer tout votre Thème, CSS et JS installer sur votre forum.\\\n\\\nAssurez-vous d\'avoir sauvegarder votre CSS, votre thème et vos JavaScripts. Cliquez sur "Annuler" si vous n\'êtes pas prêt.',
+    fae_install_warning : 'Êtes-vous sûr de vouloir {INSTALL} Forumactif Edge? Ceci va modifier et supprimer tout votre Thème, CSS et JS installer sur votre forum.\\\n\\\nAssurez-vous d\'avoir sauvegarder votre CSS, votre thème et vos JavaScripts. Cliquez sur "Annuler" si vous n\'êtes pas prêt.',
 
     fae_uninstall : 'Désinstaller',
-    fae_uninstall_warning : '	Êtes-vous sûr de souhaiter désinstaller? Le CSS, le thème et le JavaScript installé sera supprimé ; Ce forum reviendra vers la version basique de phpBB3.\\\n\\\nAssurez-vous d\'avoir tout sauvegarder avant. Appuyez sur "Annuler" si vous ne voulez pas désinstaller Forumactif Edge.',
+    fae_uninstall_warning : 'Êtes-vous sûr de souhaiter désinstaller? Le CSS, le thème et le JavaScript installé sera supprimé ; Ce forum reviendra vers la version basique de phpBB3.\\\n\\\nAssurez-vous d\'avoir tout sauvegarder avant. Appuyez sur "Annuler" si vous ne voulez pas désinstaller Forumactif Edge.',
 
     fae_update : 'Vérifiez les mises à jour',
     fae_update_good : 'Forumactif Edge est à jour!',

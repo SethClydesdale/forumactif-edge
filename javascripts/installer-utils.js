@@ -196,6 +196,7 @@
               '<option value="Hebrew">עברית</option>'+
               '<option value="Italian">Italiano</option>'+
               '<option value="Romanian">Romana</option>'+
+              '<option value="Vietnamese">Tiếng Việt</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+
           '</div><div class="clear"></div>'

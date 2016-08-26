@@ -190,6 +190,7 @@
               '<option value="Arabic">العربية</option>'+
               '<option value="Dutch">Dutch</option>'+
               '<option value="English">English</option>'+
+              '<option value="Filipino">Tagalog</option>'+
               '<option value="Français">Français</option>'+
               '<option value="German">Deutsch</option>'+
               '<option value="Greek">Ελληνικά</option>'+

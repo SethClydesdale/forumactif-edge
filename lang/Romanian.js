@@ -103,6 +103,11 @@ FAE.lang = {
       img_resizer_tooltip : 'Click to view full image',
 
       fae_update_found : 'An update has been found for Forumactif Edge. When you\'re ready, please proceed to your FAE Control Panel and click "Check for updates" to begin the update process.'
+    },
+
+
+    '[FA EDGE] TOPICS.JS' : {
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
     }
 
   },

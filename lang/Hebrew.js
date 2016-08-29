@@ -103,6 +103,11 @@ FAE.lang = {
       img_resizer_tooltip : 'לחץ להצגת התמונה המלאה',
 
       fae_update_found : '.כאשר תהיה מוכן, בבקשה המשך אל לוח הבקרה שלך ולחץ על "בדוק עדכונים" כדי להתחיל את תהליך העדכון .Forumactif Edge עדכון כבר נמצא בשביל'
+    },
+
+
+    '[FA EDGE] TOPICS.JS' : {
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
     }
 
   },

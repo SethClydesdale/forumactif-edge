@@ -103,6 +103,11 @@ FAE.lang = {
       img_resizer_tooltip : 'Click to view full image',
 
       fae_update_found : 'E stato trovato un\\\'aggiornamento per FA edge. Vai nel pannello di controllo FAE e clicca su "Cerca aggiornamenti" per poter ottenere la version più recente.'
+    },
+
+
+    '[FA EDGE] TOPICS.JS' : {
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
     }
 
   },

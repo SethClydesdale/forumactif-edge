@@ -103,6 +103,11 @@ FAE.lang = {
       img_resizer_tooltip : 'I-click ito upang tingnan ng lubos ang larawan',
 
       fae_update_found : 'Mayroong bagong update ang Forumactif Edge. Kapag ikaw ay handa na, mangyaring tumuloy sa iyong Mga Kontrols ng FAE at i-click ang "Mag check ng bagong update" upang simulan ang proseso ng update.'
+    },
+
+
+    '[FA EDGE] TOPICS.JS' : {
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
     }
 
   },

@@ -105,6 +105,55 @@ FAE.step = [
 
 
   {
+    info : 'Locating topics.js',
+    type : 'GET',
+     url : '/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid,
+    func : function(d) {
+      for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] TOPICS\.JS/; i < j; i++) {
+        if (regex.test(row[i].innerHTML)) {
+          FAE.step[FAE.index + 1].url = $('a', row[i])[1].href;
+          break;
+        }
+      }
+    }
+  },
+
+
+  {
+    info : 'Getting topics.js',
+    type : 'GET',
+     url : '',
+    func : function(d) {
+      var form = $('#formenvoi', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].url = form.action.replace(/^.*?\/admin\/index\.forum\?|&tid=.*$/g, '');
+        FAE.step[FAE.index + 1].data = {
+                     title : '[FA EDGE] TOPICS.JS',
+          'js_placement[]' : 'viewtopic',
+                   content : FAE.translate({
+                     from : FAE.lang_current.javascripts['[FA EDGE] TOPICS.JS'],
+                       to : FAE.lang_new.javascripts['[FA EDGE] TOPICS.JS']
+                   }, form.content.value),
+
+                      mode : 'save',
+                      page : form.page.value,
+                    submit : 'Submit'
+        };
+      }
+    }
+  },
+
+
+  {
+    info : 'Translating topics.js',
+    type : 'POST',
+     url : '',
+    data : {}
+  },
+
+
+  {
     info : 'Getting template overall_header.html',
     type : 'GET',
      url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=116&l=main&extended_admin=1' + FAE.tid,

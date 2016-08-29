@@ -361,6 +361,9 @@
           // update the general settings
           document.getElementById('fae_update_general').onclick = function() {
             FAE.log(FAE.cp_lang.general_settings ? FAE.cp_lang.general_settings.fae_gen_updating : 'Updating general settings..');
+            FAE.quota = 2;
+            FAE.index = 0;
+            FAE.progress();
 
             var width = +document.getElementById('fae_forum_width').value,
 
@@ -388,6 +391,8 @@
             // get the stylesheet
             $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
               form = $('form[method="post"]', d)[0];
+              FAE.index = 1;
+              FAE.progress();
 
               if (form) {
                 val = form.edit_code.value;
@@ -427,6 +432,9 @@
                   submit : 'Save'
 
                 }, function(d) {
+                  FAE.index = 2;
+                  FAE.progress();
+
                   FAE.log(FAE.cp_lang.general_settings ? FAE.cp_lang.general_settings.fae_gen_updated : 'General settings have been updated successfully !', 'font-weight:bold;color:#8B5;');
                   FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
                 });

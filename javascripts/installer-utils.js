@@ -268,21 +268,21 @@
           // greate and insert general settings
           $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">General Settings</div>'+
 
-            '<p id="fae_theme_desc">This section allows you to manage the general settings of Forumactif Edge.</p>'+
+            '<p id="fae_gen_desc">This section allows you to manage the general settings of Forumactif Edge.</p>'+
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Drag the slider to adjust the width of the forum.</span>'+
+                '<span class="fae_help_tip" id="fae_gen_tip-width">Drag the slider to adjust the width of the forum.</span>'+
               '</span>'+
-              '<span id="fae_label_min" class="fae_label">Forum width : </span>'+
+              '<span id="fae_label-width" class="fae_label">Forum width : </span>'+
               '<input id="fae_forum_width" type="range" min="30" max="100" value="99" style="vertical-align:middle;" /> <span id="fae_fw_percent">99%</span>'+
             '</div>'+
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Position of the navbar links.</span>'+
+                '<span class="fae_help_tip" id="fae_gen_tip-navbar">Position of the navbar links.</span>'+
               '</span>'+
-              '<span id="fae_label_min" class="fae_label">Navbar position : </span>'+
+              '<span id="fae_label-navbar" class="fae_label">Navbar position : </span>'+
               '<label for="fae_nav_dir-left"><input type="radio" id="fae_nav_dir-left" name="fae_nav_dir" checked> Left</label>'+
               '<label for="fae_nav_dir-center"><input type="radio" id="fae_nav_dir-center" name="fae_nav_dir"> Center</label>'+
               '<label for="fae_nav_dir-right"><input type="radio" id="fae_nav_dir-right" name="fae_nav_dir"> Right</label>'+
@@ -290,9 +290,9 @@
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Position of the forum logo.</span>'+
+                '<span class="fae_help_tip" id="fae_gen_tip-logo">Position of the forum logo.</span>'+
               '</span>'+
-              '<span id="fae_label_min" class="fae_label">Logo position : </span>'+
+              '<span id="fae_label-logo" class="fae_label">Logo position : </span>'+
               '<label for="fae_logo_dir-left"><input type="radio" id="fae_logo_dir-left" name="fae_logo_dir" checked> Left</label>'+
               '<label for="fae_logo_dir-center"><input type="radio" id="fae_logo_dir-center" name="fae_logo_dir"> Center</label>'+
               '<label for="fae_logo_dir-right"><input type="radio" id="fae_logo_dir-right" name="fae_logo_dir"> Right</label>'+
@@ -300,9 +300,9 @@
 
             '<div class="fae_cp_row">'+
               '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip">Position of the post profile in topics.</span>'+
+                '<span class="fae_help_tip" id="fae_gen_tip-profile">Position of the post profile in topics.</span>'+
               '</span>'+
-              '<span id="fae_label_min" class="fae_label">Profile position : </span>'+
+              '<span id="fae_label-profile" class="fae_label">Profile position : </span>'+
               '<label for="fae_profil_dir-left"><input type="radio" id="fae_profil_dir-left" name="fae_profil_dir" checked> Left</label>'+
               '<label for="fae_profil_dir-right"><input type="radio" id="fae_profil_dir-right" name="fae_profil_dir"> Right</label>'+
             '</div>'+
@@ -360,7 +360,7 @@
 
           // update the general settings
           document.getElementById('fae_update_general').onclick = function() {
-            FAE.log('Updating general settings..');
+            FAE.log(FAE.cp_lang.general_settings ? FAE.cp_lang.general_settings.fae_gen_updating : 'Updating general settings..');
 
             var width = +document.getElementById('fae_forum_width').value,
 
@@ -427,7 +427,7 @@
                   submit : 'Save'
 
                 }, function(d) {
-                  FAE.log('General settings have been updated successfully !', 'font-weight:bold;color:#8B5;');
+                  FAE.log(FAE.cp_lang.general_settings ? FAE.cp_lang.general_settings.fae_gen_updated : 'General settings have been updated successfully !', 'font-weight:bold;color:#8B5;');
                   FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
                 });
 
@@ -447,9 +447,9 @@
 
           '<div class="fae_cp_row">'+
             '<span class="fae_help_me">?'+
-              '<span class="fae_help_tip">Select the type of theme you want to import.</span>'+
+              '<span class="fae_help_tip" id="fae_theme_tip-theme">Select the type of theme you want to import.</span>'+
             '</span>'+
-            '<span id="fae_label_theme" class="fae_label">Select a theme : </span>'+
+            '<span id="fae_label-theme" class="fae_label">Select a theme : </span>'+
             '<select id="fae_selected_theme">'+
               '<option value="fa_edge" selected>Edge Default</option>'+
               '<option value="fa_edge-dark">Edge Dark</option>'+
@@ -458,9 +458,9 @@
 
           '<div class="fae_cp_row">'+
             '<span class="fae_help_me">?'+
-              '<span class="fae_help_tip">Select the default color for the chosen theme.</span>'+
+              '<span class="fae_help_tip" id="fae_theme_tip-color">Select the default color for the chosen theme.</span>'+
             '</span>'+
-            '<span id="fae_label_color" class="fae_label">Select a color : </span>'+
+            '<span id="fae_label-color" class="fae_label">Select a color : </span>'+
             '<select id="fae_selected_color">'+
               '<option value="Default" selected>Default</option>'+
               '<option value="Persian Red" style="background:#b22;">Persian Red</option>'+
@@ -504,34 +504,38 @@
 
           '<div class="fae_cp_row">'+
             '<span class="fae_help_me">?'+
-              '<span class="fae_help_tip">Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.</span>'+
+              '<span class="fae_help_tip" id="fae_theme_tip-minify">Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.</span>'+
             '</span>'+
-            '<span id="fae_label_min" class="fae_label">Minify Stylesheet : </span>'+
+            '<span id="fae_label-minify" class="fae_label">Minify Stylesheet : </span>'+
             '<label for="fae_theme_min_yes"><input type="radio" id="fae_theme_min_yes" name="fae_theme_min" value="1" checked> Yes</label>'+
             '<label for="fae_theme_min_no"><input type="radio" id="fae_theme_min_no" name="fae_theme_min" value="0"> No</label>'+
           '</div>'+
 
           '<div class="fae_cp_row">'+
             '<span class="fae_help_me">?'+
-              '<span class="fae_help_tip">Changes the theme\'s text direction from left-to-right (ltr) to right-to-left (rtl) for rtl scripts.</span>'+
+              '<span class="fae_help_tip" id="fae_theme_tip-rtl">Changes the theme\'s text direction from left-to-right (ltr) to right-to-left (rtl) for rtl scripts.</span>'+
             '</span>'+
-            '<span id="fae_label_rtl" class="fae_label">Right-to-Left : </span>'+
+            '<span id="fae_label-rtl" class="fae_label">Right-to-Left : </span>'+
             '<label for="fae_theme_dir_rtl"><input type="radio" id="fae_theme_dir_rtl" name="fae_theme_dir" value="1"> Yes</label>'+
             '<label for="fae_theme_dir_ltr"><input type="radio" id="fae_theme_dir_ltr" name="fae_theme_dir" value="0" checked> No</label>'+
           '</div>'+
 
           '<div class="fae_cp_row">'+
-            '<input id="fae_change_css" type="button" value="Import theme" />'+
+            '<input id="fae_import_theme" type="button" value="Import theme" />'+
           '</div>'
         );
 
 
-        document.getElementById('fae_change_css').onclick = function() {
+        document.getElementById('fae_import_theme').onclick = function() {
           var select = document.getElementById('fae_selected_theme'),
               selected = select.options[select.selectedIndex],
               stylesheet = selected.value + ( document.getElementById('fae_theme_dir_rtl').checked ? '-rtl' : '' ) + ( document.getElementById('fae_theme_min_yes').checked ? '.min' : '' ) + '.css';
 
-          if (confirm( 'Are you sure you want to import the theme "' + selected.innerHTML + '" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'.replace(/\\/g, '') )) {
+          if (confirm( (FAE.cp_lang.theme_management ? FAE.parse_vars(FAE.cp_lang.theme_management.fae_import_confirm, {
+            '{THEME_NAME}' : selected.innerHTML
+
+          }) : 'Are you sure you want to import the theme "' + selected.innerHTML + '" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.').replace(/\\/g, '') )) {
+
             FAE.theme = {
               name : selected.innerHTML,
               stylesheet : stylesheet,
@@ -555,17 +559,56 @@
           FAE.script(d.replace('FAE.lang', 'FAE.cp_lang'));
           FAE.cp_lang = FAE.cp_lang.fae_cp;
 
-          var title = $('.fae_cp_title', document.getElementById('fae_cp'));
+          var cp = document.getElementById('fae_cp'),
+              title = $('.fae_cp_title', cp),
+              a, i, j;
 
+          // MAIN CP TRANSLATION
           document.getElementById('fae_cp_main_title').innerHTML = FAE.cp_lang.fae_cp_main_title;
           document.getElementById('fae_cp_desc').innerHTML = FAE.cp_lang.fae_cp_desc;
+          document.getElementById('fae_cp_help').innerHTML = FAE.cp_lang.help;
           document.getElementById('fae_install').value = installed ? FAE.cp_lang.fae_reinstall : FAE.cp_lang.fae_install;
           document.getElementById('fae_uninstall').value = FAE.cp_lang.fae_uninstall;
           document.getElementById('fae_update').value = FAE.cp_lang.fae_update;
           document.getElementById('fae_translate').value = FAE.cp_lang.fae_translate;
 
+          // TITLES
           title[0].innerHTML = FAE.cp_lang.fae_log;
           title[1].innerHTML = FAE.cp_lang.fae_actions;
+
+          if (window.location.host == 'themedesign.forumotion.com') {
+            title[2].innerHTML = FAE.cp_lang.general_settings.title;
+            title[3].innerHTML = FAE.cp_lang.theme_management.title;
+
+            // LABELS
+            for (a = $('label', cp), i = 0, j = a.length; i < j; i++) {
+              a[i].innerHTML = a[i].innerHTML.replace(/\s\w+$/, FAE.cp_lang[$(a[i]).text().toLowerCase().slice(1)]);
+            }
+
+            // GENERAL SETTINGS
+            document.getElementById('fae_gen_desc').innerHTML = FAE.cp_lang.general_settings.fae_gen_desc;
+            document.getElementById('fa_label-width').innerHTML = FAE.cp_lang.general_settings['fa_label-width'];
+            document.getElementById('fae_gen_tip-width').innerHTML = FAE.cp_lang.general_settings['fae_gen_tip-width'];
+            document.getElementById('fae_label-navbar').innerHTML = FAE.cp_lang.general_settings['fae_label-navbar'];
+            document.getElementById('fae_gen_tip-navbar').innerHTML = FAE.cp_lang.general_settings['fae_gen_tip-navbar'];
+            document.getElementById('fae_label-logo').innerHTML = FAE.cp_lang.general_settings['fae_label-logo'];
+            document.getElementById('fae_gen_tip-logo').innerHTML = FAE.cp_lang.general_settings['fae_gen_tip-logo'];
+            document.getElementById('fae_label-profile').innerHTML = FAE.cp_lang.general_settings['fae_label-profile'];
+            document.getElementById('fae_gen_tip-profile').innerHTML = FAE.cp_lang.general_settings['fae_gen_tip-profile'];
+            document.getElementById('fae_update_general').innerHTML = FAE.cp_lang.general_settings.fae_update_general;
+
+            // THEME MANAGEMENT
+            document.getElementById('fae_theme_desc').innerHTML = FAE.cp_lang.theme_management.fae_theme_desc;
+            document.getElementById('fae_label-theme').innerHTML = FAE.cp_lang.theme_management['fae_label-theme'];
+            document.getElementById('fae_theme_tip-theme').innerHTML = FAE.cp_lang.theme_management['fae_theme_tip-theme'];
+            document.getElementById('fae_label-color').innerHTML = FAE.cp_lang.theme_management['fae_label-color'];
+            document.getElementById('fae_theme_tip-color').innerHTML = FAE.cp_lang.theme_management['fae_theme_tip-color'];
+            document.getElementById('fae_label-minify').innerHTML = FAE.cp_lang.theme_management['fae_label-minify'];
+            document.getElementById('fae_theme_tip-minify').innerHTML = FAE.cp_lang.theme_management['fae_theme_tip-minify'];
+            document.getElementById('fae_label-rtl').innerHTML = FAE.cp_lang.theme_management['fae_label-rtl'];
+            document.getElementById('fae_theme_tip-rtl').innerHTML = FAE.cp_lang.theme_management['fae_theme_tip-rtl'];
+            document.getElementById('fae_import_theme').innerHTML = FAE.cp_lang.theme_management.fae_import_theme;
+          }
         });
       }
 
@@ -575,7 +618,7 @@
   });
 
   // help link
-  $('#fae_cp').append('<div style="margin-top:12px"><a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank" style="float:right;"><strong>Help!</strong></a><div class="clear"></div></div>');
+  $('#fae_cp').append('<div style="margin-top:12px"><a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank" style="float:right;"><strong id="fae_cp_help">Help!</strong></a><div class="clear"></div></div>');
 
   // extra cp stylesheet
   $('head').append(

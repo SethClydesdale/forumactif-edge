@@ -179,7 +179,7 @@ FAE.lang = {
       title : 'General Settings',
       fae_gen_desc : 'This section allows you to manage the general settings of Forumactif Edge.',
 
-      'fa_label-width' : 'Forum width : ',
+      'fae_label-width' : 'Forum width : ',
       'fae_gen_tip-width' : 'Drag the slider to adjust the width of the forum.',
 
       'fae_label-navbar' : 'Navbar position : ',
@@ -204,8 +204,8 @@ FAE.lang = {
       'fae_label-theme' : 'Select a theme : ',
       'fae_theme_tip-theme' : 'Select the type of theme you want to import.',
 
-      'fae_label-color' : 'Select the default color for the chosen theme.',
-      'fae_theme_tip-color' : 'Select a color : ',
+      'fae_label-color' : 'Select a color : ',
+      'fae_theme_tip-color' : 'Select the default color for the chosen theme.',
 
       'fae_label-minify' : 'Minify Stylesheet : ',
       'fae_theme_tip-minify' : 'Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.',

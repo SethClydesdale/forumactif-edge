@@ -6,7 +6,7 @@
   - Added a "thank you" message to thanked posts.
   - Added 74 new theme colors.
   - Added new logo image for base installation.
-  - Added new translation aliases for overall_header, gereral settings, and theme management.
+  - Added new translation aliases for overall_header, topics.js, general settings, and theme management.
   - Added Filipino translation. (thanks to Wilson)
   - Added Hebrew translation. (thanks to Valoish)
   - Added Vietnamese translation. (thanks to Lorem)

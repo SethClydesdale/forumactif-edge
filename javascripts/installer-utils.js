@@ -587,7 +587,7 @@
 
             // GENERAL SETTINGS
             document.getElementById('fae_gen_desc').innerHTML = FAE.cp_lang.general_settings.fae_gen_desc;
-            document.getElementById('fa_label-width').innerHTML = FAE.cp_lang.general_settings['fa_label-width'];
+            document.getElementById('fae_label-width').innerHTML = FAE.cp_lang.general_settings['fae_label-width'];
             document.getElementById('fae_gen_tip-width').innerHTML = FAE.cp_lang.general_settings['fae_gen_tip-width'];
             document.getElementById('fae_label-navbar').innerHTML = FAE.cp_lang.general_settings['fae_label-navbar'];
             document.getElementById('fae_gen_tip-navbar').innerHTML = FAE.cp_lang.general_settings['fae_gen_tip-navbar'];

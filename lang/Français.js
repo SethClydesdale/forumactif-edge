@@ -169,12 +169,12 @@ FAE.lang = {
 
     fae_err_not_founder : 'Seul <a href="/u1">le fondateur</a> peut utiliser le panneau de configuration. Veuillez contactez ce dernier pour avoir les instruction.',
 
-    left : 'Left',
-    center : 'Center',
-    right : 'Right',
-    yes : 'Yes',
-    no : 'No',
-    help : 'Help!',
+    left : 'A gauche',
+    center : 'Centré',
+    right : 'A droite',
+    yes : 'Oui',
+    no : 'Non',
+    help : 'Aidez-moi!',
 
     general_settings : {
       title : 'General Settings',

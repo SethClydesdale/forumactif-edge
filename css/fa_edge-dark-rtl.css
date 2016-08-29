@@ -2500,6 +2500,7 @@ body #chatbox .cb-avatar, body #chatbox .cb-avatar img {
 
 
 /* -- MISC. FIXES -- */
+.forum-lastpost div[style="float:left;"] { float:right !important; }
 #divPub { position:absolute; bottom:0; left:0; } /* fix for forumotion adsense iframe that adds 1px below the footer */
 form[action^="/gallery/testing/gal_preply.htm"] ~ form > .jumpbox { display:none; } /* hide empty jumpbox in gallery */
 

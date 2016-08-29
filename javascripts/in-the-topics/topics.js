@@ -4,6 +4,7 @@
 ** 00. group_color
 ** 01. ajax_reputation_counter
 ** 02. profile_field_classifier
+** 03. thanked_post_message
 ******************************/
 
 
@@ -79,5 +80,33 @@ $(function() {
         if (c == 32) return '-';
         return '__' + ('000' + c.toString(16)).slice(-4);
     });
+  }
+});
+
+
+/* -- 03. thanked_post_message -- */
+$(function() {
+  var thanked = $('#main-content > .post[style*="background-color"]')[0];
+
+  if (thanked) {
+    thanked.className += ' thanked-post';
+    thanked.style.backgroundColor = '';
+
+    thanked.insertAdjacentHTML(
+      'beforeend',
+      '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
+      .replace('{USERNAME}', $(thanked).find('.username').text())
+    );
+
+    $('head').append('<style type="text/css">'+
+      '.thanked-post .thanked-message { color:#FFF; font-size:13px; background:#8B5; margin:10px -1px -1px -1px; padding:0px 15px; height:45px; line-height:45px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }'+
+      '.thanked-message .fa-thumbs-up { font-size:20px; margin-right:5px; vertical-align:-2px; }'+
+
+      '@media (min-width:0px) and (max-width:768px) {'+
+        '.thanked-post { padding-bottom:116px; }'+
+        '.thanked-post .thanked-message { position:absolute; bottom:0; left:0; right:0; }'+
+        '.thanked-post .postbody .profile-icons { bottom:44px; }'+
+      '}'+
+    '</style>');
   }
 });

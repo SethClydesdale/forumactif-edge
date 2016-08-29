@@ -103,6 +103,11 @@ FAE.lang = {
       img_resizer_tooltip : 'أضغط هنا للعرض الطبيعي للصورة',
 
       fae_update_found : 'تهانينا يتوفر تحديث جديد من نسخة المنتدي .'
+    },
+
+
+    '[FA EDGE] TOPICS.JS' : {
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
     }
 
   },

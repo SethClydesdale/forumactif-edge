@@ -103,6 +103,11 @@ FAE.lang = {
       img_resizer_tooltip : 'Πατήστε εδώ για να δείτε την εικόνα',
 
       fae_update_found : 'Μία αναβάθμιση βρέθηκε για το Forumactif Edge. Όταν είστε σε θέση, παρακαλούμε προχωρήστε στον Πίνακα Ελέγχου FAE και πατήστε το κουμπί "Check for updates" για την έναρξη της αναβάθμισης.'
+    },
+
+
+    '[FA EDGE] TOPICS.JS' : {
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
     }
 
   },

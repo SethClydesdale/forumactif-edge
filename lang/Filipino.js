@@ -109,6 +109,10 @@ FAE.lang = {
 
 
   templates : {
+    'overall_header.html' : {
+      announcements : '<div id="fa_ticker_title" class="title">Announcements</div>'
+    },
+    
 
     'overall_footer_end.html' : {
       back_to_top : 'Muling bumalik sa itaas',
@@ -163,8 +167,56 @@ FAE.lang = {
     fae_translate_get : 'Kinukuha ang datos ng wikang {LANG}...',
     fae_translate_loaded : 'Ang datos ng wika ay tapos ng makuha. Ang proseso ng pagsasalin ay sisimulan na ngayon, mangyaring huwag isara ang tab na ito.',
 
-    fae_err_not_founder : 'Tanging <a href="/u1">ang nagtatag</a> ng forum na ito ang may karapatang gumamit ng kontrols para sa FAE. Mangyaring makipag-ugnayan sa kanila o sa kaniya para sa pag-tulong sa pag-install ng Forumactif Edge.'
+    fae_err_not_founder : 'Tanging <a href="/u1">ang nagtatag</a> ng forum na ito ang may karapatang gumamit ng kontrols para sa FAE. Mangyaring makipag-ugnayan sa kanila o sa kaniya para sa pag-tulong sa pag-install ng Forumactif Edge.',
 
+    left : 'Left',
+    center : 'Center',
+    right : 'Right',
+    yes : 'Yes',
+    no : 'No',
+    help : 'Help!',
+
+    general_settings : {
+      title : 'General Settings',
+      fae_gen_desc : 'This section allows you to manage the general settings of Forumactif Edge.',
+
+      'fa_label-width' : 'Forum width : ',
+      'fae_gen_tip-width' : 'Drag the slider to adjust the width of the forum.',
+
+      'fae_label-navbar' : 'Navbar position : ',
+      'fae_gen_tip-navbar' : 'Position of the navbar links.',
+
+      'fae_label-logo' : 'Logo position : ',
+      'fae_gen_tip-logo' : 'Position of the forum logo.',
+
+      'fae_label-profile' : 'Profile position : ',
+      'fae_gen_tip-profile' : 'Position of the post profile in topics.',
+
+      fae_update_general : 'Save Changes',
+      fae_gen_updating : 'Updating general settings..',
+      fae_gen_updated : 'General settings have been updated successfully !'
+    },
+
+
+    theme_management : {
+      title : 'Theme Management',
+      fae_theme_desc : 'This section allows you to manage the default theme and colors for Forumactif Edge by importing a new theme from the Github repository.',
+
+      'fae_label-theme' : 'Select a theme : ',
+      'fae_theme_tip-theme' : 'Select the type of theme you want to import.',
+
+      'fae_label-color' : 'Select the default color for the chosen theme.',
+      'fae_theme_tip-color' : 'Select a color : ',
+
+      'fae_label-minify' : 'Minify Stylesheet : ',
+      'fae_theme_tip-minify' : 'Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.',
+
+      'fae_label-rtl' : 'Right-to-Left : ',
+      'fae_theme_tip-rtl' : 'Changes the theme\'s text direction from left-to-right (ltr) to right-to-left (rtl) for rtl scripts.',
+
+      fae_import_theme : 'Import theme',
+      fae_import_confirm : 'Are you sure you want to import the theme "{THEME_NAME}" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'
+    }
   }
 
 };

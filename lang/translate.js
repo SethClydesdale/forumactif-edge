@@ -105,6 +105,44 @@ FAE.step = [
 
 
   {
+    info : 'Getting template overall_header.html',
+    type : 'GET',
+     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=116&l=main&extended_admin=1' + FAE.tid,
+    func : function(d) {
+      var form = $('form[name="post"]', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].data.template = FAE.translate({
+          from : FAE.lang_current.templates['overall_header.html'],
+            to : FAE.lang_new.templates['overall_header.html']
+        }, form.template.value);
+      }
+
+    }
+  },
+
+
+  {
+    info : 'Translating and updating template overall_header.html',
+    type : 'POST',
+     url : 'part=themes&sub=templates&mode=edit_main&extended_admin=1',
+    data : {
+             t : 116,
+             l : 'main',
+      tpl_name : 'overall_header',
+        submit : 'Save'
+    }
+  },
+
+
+  {
+    info : 'Publishing template overall_header.html',
+    type : 'PUBLISH',
+     tpl : 116
+  },
+
+
+  {
     info : 'Getting template overall_footer_end.html',
     type : 'GET',
      url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=133&l=main&extended_admin=1' + FAE.tid,

@@ -5,8 +5,8 @@ FAE.lang = {
   language : 'עברית',
 
   css : {
-    offline : 'לא מחובר',
-    online : 'מחובר',
+    offline : 'לא מחובר\\00A0',
+    online : 'מחובר\\00A0',
     total_posts : 'סה\\0022כ הודעות',
     total_topics : 'סה\\0022כ נושאים',
     total_users : 'סה\\0022כ משתמשים',

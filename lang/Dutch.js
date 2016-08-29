@@ -103,6 +103,11 @@ FAE.lang = {
       img_resizer_tooltip : 'Klik om het volledige plaatje te laten zien',
 
       fae_update_found : 'Er is een update voor Forumactif Edge gevonden. Om het installatieproces te beginnen, klik op "Updates Zoeken" vanuit het FAE Controllepaneel.'
+    },
+
+
+    '[FA EDGE] TOPICS.JS' : {
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
     }
 
   },

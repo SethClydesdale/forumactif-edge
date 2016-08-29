@@ -123,7 +123,7 @@ FAE.update_step = [
 
 
 // RTL Language Updates
-if (FAE.board_lang == 'العربية' || 'עברית') {
+if (FAE.board_lang == 'العربية' || FAE.board_lang == 'עברית') {
 
   FAE.update_step = FAE.update_step.concat([
     {
@@ -135,7 +135,7 @@ if (FAE.board_lang == 'العربية' || 'עברית') {
 
         if (form) {
           FAE.step[FAE.index + 1].data = {
-                  edit_code : form.edit_code.value + '\n.forum-lastpost div[style="float:left;"]{float:right!important}',
+                  edit_code : form.edit_code.value + '\n/* added in FAE v1.1.0 - For RTL scripts only */\n.forum-lastpost div[style="float:left;"]{float:right!important}',
                      submit : 'Submit'
           };
         }

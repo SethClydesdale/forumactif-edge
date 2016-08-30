@@ -661,28 +661,14 @@
           }
 
           // GENERAL SETTINGS
-          document.getElementById('fae_gen_desc').innerHTML = FAE.cp_lang.general_settings.fae_gen_desc;
-          document.getElementById('fae_label-width').innerHTML = FAE.cp_lang.general_settings['fae_label-width'];
-          document.getElementById('fae_gen_tip-width').innerHTML = FAE.cp_lang.general_settings['fae_gen_tip-width'];
-          document.getElementById('fae_label-navbar').innerHTML = FAE.cp_lang.general_settings['fae_label-navbar'];
-          document.getElementById('fae_gen_tip-navbar').innerHTML = FAE.cp_lang.general_settings['fae_gen_tip-navbar'];
-          document.getElementById('fae_label-logo').innerHTML = FAE.cp_lang.general_settings['fae_label-logo'];
-          document.getElementById('fae_gen_tip-logo').innerHTML = FAE.cp_lang.general_settings['fae_gen_tip-logo'];
-          document.getElementById('fae_label-profile').innerHTML = FAE.cp_lang.general_settings['fae_label-profile'];
-          document.getElementById('fae_gen_tip-profile').innerHTML = FAE.cp_lang.general_settings['fae_gen_tip-profile'];
-          document.getElementById('fae_update_general').innerHTML = FAE.cp_lang.general_settings.fae_update_general;
+          for (i in FAE.cp_lang.general_settings) {
+            document.getElementById(i).innerHTML = FAE.cp_lang.general_settings[i];
+          }
 
           // THEME MANAGEMENT
-          document.getElementById('fae_theme_desc').innerHTML = FAE.cp_lang.theme_management.fae_theme_desc;
-          document.getElementById('fae_label-theme').innerHTML = FAE.cp_lang.theme_management['fae_label-theme'];
-          document.getElementById('fae_theme_tip-theme').innerHTML = FAE.cp_lang.theme_management['fae_theme_tip-theme'];
-          document.getElementById('fae_label-color').innerHTML = FAE.cp_lang.theme_management['fae_label-color'];
-          document.getElementById('fae_theme_tip-color').innerHTML = FAE.cp_lang.theme_management['fae_theme_tip-color'];
-          document.getElementById('fae_label-minify').innerHTML = FAE.cp_lang.theme_management['fae_label-minify'];
-          document.getElementById('fae_theme_tip-minify').innerHTML = FAE.cp_lang.theme_management['fae_theme_tip-minify'];
-          document.getElementById('fae_label-rtl').innerHTML = FAE.cp_lang.theme_management['fae_label-rtl'];
-          document.getElementById('fae_theme_tip-rtl').innerHTML = FAE.cp_lang.theme_management['fae_theme_tip-rtl'];
-          document.getElementById('fae_import_theme').innerHTML = FAE.cp_lang.theme_management.fae_import_theme;
+          for (i in FAE.cp_lang.theme_management) {
+            document.getElementById(i).innerHTML = FAE.cp_lang.theme_management[i];
+          }
 
         });
       }

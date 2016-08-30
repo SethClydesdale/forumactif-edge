@@ -662,12 +662,18 @@
 
           // GENERAL SETTINGS
           for (i in FAE.cp_lang.general_settings) {
-            document.getElementById(i).innerHTML = FAE.cp_lang.general_settings[i];
+            a = document.getElementById(i);
+            if (a) {
+              a.innerHTML = FAE.cp_lang.general_settings[i];
+            }
           }
 
           // THEME MANAGEMENT
           for (i in FAE.cp_lang.theme_management) {
-            document.getElementById(i).innerHTML = FAE.cp_lang.theme_management[i];
+            a = document.getElementById(i);
+            if (a) {
+              a.innerHTML = FAE.cp_lang.theme_management[i];
+            }
           }
 
         });

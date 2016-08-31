@@ -664,7 +664,7 @@
           for (i in FAE.cp_lang.general_settings) {
             a = document.getElementById(i);
             if (a) {
-              a.innerHTML = FAE.cp_lang.general_settings[i];
+              a[a.tagName == 'INPUT' ? 'value' : 'innerHTML'] = FAE.cp_lang.general_settings[i];
             }
           }
 
@@ -672,7 +672,7 @@
           for (i in FAE.cp_lang.theme_management) {
             a = document.getElementById(i);
             if (a) {
-              a.innerHTML = FAE.cp_lang.theme_management[i];
+              a[a.tagName == 'INPUT' ? 'value' : 'innerHTML'] = FAE.cp_lang.theme_management[i];
             }
           }
 

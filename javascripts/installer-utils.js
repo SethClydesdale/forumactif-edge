@@ -380,7 +380,7 @@
               form;
 
           // assign style rules to variables
-          width = '/*!FAE_WIDTH*/#page-body{width:' + ( width >= 100 ? 'auto' : width ) + '%;margin:0 auto;}';
+          width = '/*!FAE_WIDTH*/#page-body{width:' + ( width >= 100 ? 'auto;' : width + '%;margin:0 auto;' ) + '}';
           nav_dir = '/*!FAE_NAV_DIR*/#navbar{text-align:' + nav_dir + '}';
           logo_dir = '/*!FAE_LOGO_DIR*/#logo-desc{text-align:' + logo_dir + '}#logo{float:' + ( logo_dir == 'center' ? 'none' : logo_dir ) + '}';
           profil_dir = '/*!FAE_PROFIL_DIR*/.postprofile{float:' + profil_dir + ';margin-' + profil_dir + ':-300px;margin-' + profil_dir2 + ':0px}.post-inner{margin-' + profil_dir2 + ':0;margin-' + profil_dir + ':300px}';

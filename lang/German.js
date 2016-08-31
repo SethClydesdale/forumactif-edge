@@ -151,10 +151,10 @@ FAE.lang = {
     fae_install : 'Installieren',
     fae_reinstall : 'Reinstallieren',
     fae_install_complete : 'FERTIG!',
-    fae_install_warning : 'Sind Sie sicher, Forumactif Edge zu {INSTALL}? Dies wird Ihr aktuelles Thema überschreiben und Ihre aktuellen JavaScripts löschen.\\\n\\\nBitte stellen Sie sicher, alle persönlichen Inhalts-Dateien wie CSS, Templates, und JavaScripts bevor Sie fortfahren, zu sichern. Klicken Sie "Cancel" falls Sie nicht bereit sind,  Forumactif Edge zu installieren.',
+    fae_install_warning : 'Sind Sie sicher, Forumactif Edge zu {INSTALL}? Dies wird Ihr aktuelles Thema überschreiben und Ihre aktuellen JavaScripts löschen.\\\n\\\nBitte stellen Sie sicher, alle persönlichen Inhalts-Dateien wie CSS, Templates, und JavaScripts bevor Sie fortfahren, zu sichern. Klicken Sie auf "Abbrechen" falls Sie nicht bereit sind,  Forumactif Edge zu installieren.',
 
     fae_uninstall : 'Deinstallieren',
-    fae_uninstall_warning : 'Sind Sie sicher, Forumactif Edge zu deinstallieren? Alle CSS, JavaScript, und Template Veränderungen werden gelöscht ; Das Forum wird zum voreingestelltem phpbb3-Thema zurückgesetzt.\\\n\\\nBitte stellen Sie sicher, alle persönlichen Inhalts-Dateien wie CSS, Templates, und JavaScripts bevor Sie fortfahren, zu sichern. Klicken Sie "Cancel" falls Sie Forumactif Edge doch nicht deinstallieren möchten.',
+    fae_uninstall_warning : 'Sind Sie sicher, Forumactif Edge zu deinstallieren? Alle CSS, JavaScript, und Template-Veränderungen werden gelöscht; das Forum wird zum voreingestelltem phpbb3-Thema zurückgesetzt.\\\n\\\nBitte stellen Sie sicher, alle persönlichen Inhalts-Dateien wie CSS, Templates, und JavaScripts bevor Sie fortfahren, zu sichern. Klicken Sie auf "Abbrechen" falls Sie Forumactif Edge doch nicht deinstallieren möchten.',
 
     fae_update : 'Nach Updates überprüfen',
     fae_update_good : 'Forumactif Edge ist auf dem neuesten Stand!',
@@ -205,7 +205,7 @@ FAE.lang = {
 
     theme_management : {
       title : 'Thema-Management',
-      fae_theme_desc : 'Dieser Bereich elaubt es Ihnen, das voreingestellte Thema und Farben für Forumactif Edge zu verändern, indem Sie ein neues Thema von der Github-Repository importieren.',
+      fae_theme_desc : 'Dieser Bereich erlaubt es Ihnen, das voreingestellte Thema und Farben für Forumactif Edge zu verändern, indem Sie ein neues Thema von der Github-Repository importieren.',
 
       'fae_label-theme' : 'Ein Thema auswählen :',
       'fae_theme_tip-theme' : 'Wählen Sie den Typus des Themas aus, welchen Sie importieren möchten.',
@@ -220,7 +220,7 @@ FAE.lang = {
       'fae_theme_tip-rtl' : 'Verändert die Textausrichtung des Themas von rechtsläufig zu linksläufig für linksläufige Scripts.',
 
       fae_import_theme : 'Thema importieren',
-      fae_import_confirm : 'Sind Sie sich sicher, "{THEME_NAME}" zu importieren ?\\\n\\\nBitte stellen Sie sicher, ein Back-Up von Ihrem aktuellem CSS zu machen, da es überschrieben wird, wenn das neue Thema importiert wird. Klicken Sie "Cancel" falls Sie nicht dazu bereit sind, ein neues Thema zu importieren.'
+      fae_import_confirm : 'Sind Sie sich sicher, "{THEME_NAME}" zu importieren ?\\\n\\\nBitte stellen Sie sicher, ein Back-Up von Ihrem aktuellem CSS zu machen, da es überschrieben wird, wenn das neue Thema importiert wird. Klicken Sie auf "Abbrechen" falls Sie nicht dazu bereit sind, ein neues Thema zu importieren.'
     }
   }
 

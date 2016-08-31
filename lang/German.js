@@ -102,12 +102,12 @@ FAE.lang = {
       img_resizer_download : 'Bild downloaden',
       img_resizer_tooltip : 'Klicken, um gesamtes Bild anzuschauen',
 
-      fae_update_found : 'Es wurde ein Update für Forumactif Edge gefunden. Wenn Sie bereit sind, gehen Sie bitte zu Ihrem FAE Bedienungsfeld und klicken Sie auf "Nach Updates überprüfen", um den Update-Prozess zu starten.'
+      fae_update_found : 'Es wurde ein Update für Forumactif Edge gefunden. Wenn Sie bereit sind, gehen Sie bitte zu Ihrem FAE-Bedienungsfeld und klicken Sie auf "Nach Updates überprüfen", um den Update-Prozess zu starten.'
     },
 
 
     '[FA EDGE] TOPICS.JS' : {
-      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> Der Autor hat sich bei {USERNAME} bedankt!</div>'
     }
 
   },
@@ -115,7 +115,7 @@ FAE.lang = {
 
   templates : {
     'overall_header.html' : {
-      announcements : '<div id="fa_ticker_title" class="title">Announcements</div>'
+      announcements : '<div id="fa_ticker_title" class="title">Bekanntmachungen</div>'
     },
 
 
@@ -143,8 +143,8 @@ FAE.lang = {
 
 
   fae_cp : {
-    fae_cp_main_title : 'Forumactif Edge Bedienungsfeld',
-    fae_cp_desc : 'Dieses Bedienungsfeld erlaubt es Ihnen, <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a> zu installieren, deinstallieren, und aktualisieren <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Machen Sie sich bereit, Ihr Forum in einem modernen und ansprechendem Weg zu präsentieren!',
+    fae_cp_main_title : 'Forumactif Edge-Bedienungsfeld',
+    fae_cp_desc : 'Dieses Bedienungsfeld erlaubt es Ihnen, <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a> zu installieren, deinstallieren, und aktualisieren. Machen Sie sich bereit, Ihr Forum in einem modernen und ansprechendem Weg zu präsentieren!',
     fae_log : 'Protokoll',
     fae_actions : 'Aktionen',
 
@@ -174,53 +174,53 @@ FAE.lang = {
 
     fae_err_not_founder : 'Nur <a href="/u1">der Gründer</a> kann dieses Bedienungsfeld benutzen. Bitte kontaktieren Sie ihn, um Hilfe bezüglich der Installation von Forumactif Edge zu erhalten..',
 
-    left : 'Left',
-    center : 'Center',
-    right : 'Right',
-    yes : 'Yes',
-    no : 'No',
-    help : 'Help!',
+    left : 'Links',
+    center : 'Zentral',
+    right : 'Rechts',
+    yes : 'Ja',
+    no : 'Nein',
+    help : 'Hilfe!',
 
     general_settings : {
-      title : 'General Settings',
-      fae_gen_desc : 'This section allows you to manage the general settings of Forumactif Edge.',
+      title : 'Allgemeine Einstellungen',
+      fae_gen_desc : 'Dieser Bereich erlaubt es Ihnen, die allgemeinen Einstellungen von Forumactif Edge zu verwalten.',
 
-      'fae_label-width' : 'Forum width : ',
-      'fae_gen_tip-width' : 'Drag the slider to adjust the width of the forum.',
+      'fae_label-width' : 'Breite des Forums :',
+      'fae_gen_tip-width' : 'Ziehen Sie den Schieberegler, um die Breite des Forums einzustellen.',
 
-      'fae_label-navbar' : 'Navbar position : ',
-      'fae_gen_tip-navbar' : 'Position of the navbar links.',
+      'fae_label-navbar' : 'Position der Navigation :',
+      'fae_gen_tip-navbar' : 'Position der Links von der Navigation.',
 
-      'fae_label-logo' : 'Logo position : ',
-      'fae_gen_tip-logo' : 'Position of the forum logo.',
+      'fae_label-logo' : 'Position des Logos :',
+      'fae_gen_tip-logo' : 'Position des Logos von dem Forum.',
 
-      'fae_label-profile' : 'Profile position : ',
-      'fae_gen_tip-profile' : 'Position of the post profile in topics.',
+      'fae_label-profile' : 'Position des Profils :',
+      'fae_gen_tip-profile' : 'Position des Profils in den Beiträgen.',
 
-      fae_update_general : 'Save Changes',
-      fae_gen_updating : 'Updating general settings..',
-      fae_gen_updated : 'General settings have been updated successfully !'
+      fae_update_general : 'Einstellungen speichern',
+      fae_gen_updating : 'Aktualisiert allgemeine Einstellungen..',
+      fae_gen_updated : 'Allgemeine Einstellungen wurden erfolgreich aktualisiert !'
     },
 
 
     theme_management : {
-      title : 'Theme Management',
-      fae_theme_desc : 'This section allows you to manage the default theme and colors for Forumactif Edge by importing a new theme from the Github repository.',
+      title : 'Thema-Management',
+      fae_theme_desc : 'Dieser Bereich elaubt es Ihnen, das voreingestellte Thema und Farben für Forumactif Edge zu verändern, indem Sie ein neues Thema von der Github-Repository importieren.',
 
-      'fae_label-theme' : 'Select a theme : ',
-      'fae_theme_tip-theme' : 'Select the type of theme you want to import.',
+      'fae_label-theme' : 'Ein Thema auswählen :',
+      'fae_theme_tip-theme' : 'Wählen Sie den Typus des Themas aus, welchen Sie importieren möchten.',
 
-      'fae_label-color' : 'Select a color : ',
-      'fae_theme_tip-color' : 'Select the default color for the chosen theme.',
+      'fae_label-color' : 'Eine Farbe auswählen :',
+      'fae_theme_tip-color' : 'Wählen Sie die voreingestellte Farbe für das ausgewählte Thema aus.',
 
-      'fae_label-minify' : 'Minify Stylesheet : ',
-      'fae_theme_tip-minify' : 'Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.',
+      'fae_label-minify' : 'Minimiertes Stylesheet :',
+      'fae_theme_tip-minify' : 'Minimierte Stylesheets verbrauchen weniger Platz, aber sind nicht gerade ideal für das Bearbeiten. Wenn Sie den Stylesheet des ausgewählten Themas bearbeiten möchten, wählen Sie am besten "Nein".',
 
-      'fae_label-rtl' : 'Right-to-Left : ',
-      'fae_theme_tip-rtl' : 'Changes the theme\'s text direction from left-to-right (ltr) to right-to-left (rtl) for rtl scripts.',
+      'fae_label-rtl' : 'Linksläufig :',
+      'fae_theme_tip-rtl' : 'Verändert die Textausrichtung des Themas von rechtsläufig zu linksläufig für linksläufige Scripts.',
 
-      fae_import_theme : 'Import theme',
-      fae_import_confirm : 'Are you sure you want to import the theme "{THEME_NAME}" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'
+      fae_import_theme : 'Thema importieren',
+      fae_import_confirm : 'Sind Sie sich sicher, "{THEME_NAME}" zu importieren ?\\\n\\\nBitte stellen Sie sicher, ein Back-Up von Ihrem aktuellem CSS zu machen, da es überschrieben wird, wenn das neue Thema importiert wird. Klicken Sie "Cancel" falls Sie nicht dazu bereit sind, ein neues Thema zu importieren.'
     }
   }
 

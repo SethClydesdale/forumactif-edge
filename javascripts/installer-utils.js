@@ -329,8 +329,8 @@
               document.getElementById('fae_forum_width').value = width;
               document.getElementById('fae_fw_percent').innerHTML = width + '%';
             } else {
-              document.getElementById('fae_forum_width').value = 99;
-              document.getElementById('fae_fw_percent').innerHTML = '99%';
+              document.getElementById('fae_forum_width').value = 100;
+              document.getElementById('fae_fw_percent').innerHTML = '100%';
             }
 
             // navbar position
@@ -380,7 +380,7 @@
               form;
 
           // assign style rules to variables
-          width = '/*!FAE_WIDTH*/#page-body{width:' + width + '%;margin:0 auto;' + ( width >= 100 ? 'padding:0;' : '' ) + '}';
+          width = '/*!FAE_WIDTH*/#page-body{width:' + ( width >= 100 ? 'auto' : width ) + '%;margin:0 auto;}';
           nav_dir = '/*!FAE_NAV_DIR*/#navbar{text-align:' + nav_dir + '}';
           logo_dir = '/*!FAE_LOGO_DIR*/#logo-desc{text-align:' + logo_dir + '}#logo{float:' + ( logo_dir == 'center' ? 'none' : logo_dir ) + '}';
           profil_dir = '/*!FAE_PROFIL_DIR*/.postprofile{float:' + profil_dir + ';margin-' + profil_dir + ':-300px;margin-' + profil_dir2 + ':0px}.post-inner{margin-' + profil_dir2 + ':0;margin-' + profil_dir + ':300px}';

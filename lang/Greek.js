@@ -107,7 +107,7 @@ FAE.lang = {
 
 
     '[FA EDGE] TOPICS.JS' : {
-      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} έχει λάβει το Ευχαριστώ του συγγραφέα !</div>'
     }
 
   },
@@ -115,7 +115,7 @@ FAE.lang = {
 
   templates : {
     'overall_header.html' : {
-      announcements : '<div id="fa_ticker_title" class="title">Announcements</div>'
+      announcements : '<div id="fa_ticker_title" class="title">Ανακοινώσεις</div>'
     },
 
 
@@ -174,12 +174,12 @@ FAE.lang = {
 
     fae_err_not_founder : 'Μόνο <a href="/u1">ο ιδρυτής</a> μπορεί να χρησιμοποιήσει αυτόν τον πίνακα ελέγχου. Παρακαλούμε επικοινωνήστε μαζί τους για άμεση εγκατάσταση του Forumactif Edge.',
 
-    left : 'Left',
-    center : 'Center',
-    right : 'Right',
-    yes : 'Yes',
-    no : 'No',
-    help : 'Help!',
+    left : 'Αριστερά',
+    center : 'Κέντρο',
+    right : 'Δεξιά',
+    yes : 'Ναι',
+    no : 'Όχι',
+    help : 'Βοήθεια!',
 
     general_settings : {
       title : 'Γενικές Ρυθμίσεις',

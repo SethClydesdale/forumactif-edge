@@ -2447,6 +2447,12 @@ body #chatbox .cb-avatar, body #chatbox .cb-avatar img {
     float:none;
     width:100%;
   }
+
+  #new-message-link {
+    position:static;
+    float:left;
+    margin-top:11px;
+  }
 }
 
 

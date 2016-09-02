@@ -2,7 +2,7 @@
 
   # Changes in v1.1.1
 
-  - Fixed display of "New PM" image in profiles. (it no longer overlaps the navigation)
+  - Fixed display of "New PM" image in profiles on mobile. (it no longer overlaps the navigation)
   - Fixed forum width slider in General Settings, so that 100% returns the forum to the standard width.
   - Updated translation functionality in control panel.
   - Updated German translations.
@@ -33,7 +33,7 @@ FAE.update_step = [
 
 
   {
-    info : 'Adding updated styles for v1.0.2',
+    info : 'Adding updated styles for v1.1.1',
     type : 'POST',
      url : 'part=themes&sub=logos&mode=css&extended_admin=1',
     data : {}

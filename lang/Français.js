@@ -107,7 +107,7 @@ FAE.lang = {
 
 
     '[FA EDGE] TOPICS.JS' : {
-      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} a été remercié par le créateur du sujet !</div>'
     }
 
   },
@@ -115,7 +115,7 @@ FAE.lang = {
 
   templates : {
     'overall_header.html' : {
-      announcements : '<div id="fa_ticker_title" class="title">Announcements</div>'
+      announcements : '<div id="fa_ticker_title" class="title">Annonces</div>'
     },
 
 
@@ -174,53 +174,53 @@ FAE.lang = {
 
     fae_err_not_founder : 'Seul <a href="/u1">le fondateur</a> peut utiliser le panneau de configuration. Veuillez contactez ce dernier pour avoir les instruction.',
 
-    left : 'A gauche',
+    left : 'Gauche',
     center : 'Centré',
-    right : 'A droite',
+    right : 'Droite',
     yes : 'Oui',
     no : 'Non',
-    help : 'Aidez-moi!',
+    help : 'A l\'aide!',
 
     general_settings : {
-      title : 'General Settings',
-      fae_gen_desc : 'This section allows you to manage the general settings of Forumactif Edge.',
+      title : 'Paramètre généraux',
+      fae_gen_desc : 'Cette section vous permet de modifier les paramètres généraux.',
 
-      'fae_label-width' : 'Forum width : ',
-      'fae_gen_tip-width' : 'Drag the slider to adjust the width of the forum.',
+      'fae_label-width' : 'Largeur du forum :',
+      'fae_gen_tip-width' : 'Faites glisser pour ajuster la taille.',
 
-      'fae_label-navbar' : 'Navbar position : ',
-      'fae_gen_tip-navbar' : 'Position of the navbar links.',
+      'fae_label-navbar' : 'Positionnement du menu :',
+      'fae_gen_tip-navbar' : 'Régler la position du menu.',
 
-      'fae_label-logo' : 'Logo position : ',
-      'fae_gen_tip-logo' : 'Position of the forum logo.',
+      'fae_label-logo' : 'Positionnement de la bannière :',
+      'fae_gen_tip-logo' : 'Régler la position de la bannière.',
 
-      'fae_label-profile' : 'Profile position : ',
-      'fae_gen_tip-profile' : 'Position of the post profile in topics.',
+      'fae_label-profile' : 'Position du profile :',
+      'fae_gen_tip-profile' : 'Régler l\'emplacement du profile.',
 
-      fae_update_general : 'Save Changes',
-      fae_gen_updating : 'Updating general settings..',
-      fae_gen_updated : 'General settings have been updated successfully !'
+      fae_update_general : 'Sauvegarder',
+      fae_gen_updating : 'Téléverser les changements..',
+      fae_gen_updated : 'Les changements ont bien été sauvegardés !'
     },
 
 
     theme_management : {
-      title : 'Theme Management',
-      fae_theme_desc : 'This section allows you to manage the default theme and colors for Forumactif Edge by importing a new theme from the Github repository.',
+      title : 'Paramètre du thème',
+      fae_theme_desc : 'Cette section permet de récupérer des thèmes pour Forumactif Edge déposé sur Github.',
 
-      'fae_label-theme' : 'Select a theme : ',
-      'fae_theme_tip-theme' : 'Select the type of theme you want to import.',
+      'fae_label-theme' : 'Sélection du thème :',
+      'fae_theme_tip-theme' : 'Choisir le thème souhaité.',
 
-      'fae_label-color' : 'Select a color : ',
-      'fae_theme_tip-color' : 'Select the default color for the chosen theme.',
+      'fae_label-color' : 'Sélectionner une couleur :',
+      'fae_theme_tip-color' : 'Choisir la couleur par défaut de votre thème.',
 
-      'fae_label-minify' : 'Minify Stylesheet : ',
-      'fae_theme_tip-minify' : 'Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.',
+      'fae_label-minify' : 'Minimiser le CSS :',
+      'fae_theme_tip-minify' : 'Cette section permet de minimiser le CSS. En sélectionnant oui, il sera alléger des retours à la ligne, espace et commentaires, sur non, il sera complet.',
 
-      'fae_label-rtl' : 'Right-to-Left : ',
-      'fae_theme_tip-rtl' : 'Changes the theme\'s text direction from left-to-right (ltr) to right-to-left (rtl) for rtl scripts.',
+      'fae_label-rtl' : 'Droite à gauche :',
+      'fae_theme_tip-rtl' : 'Change la direction du texte, par exemple pour l\'arabe.',
 
-      fae_import_theme : 'Import theme',
-      fae_import_confirm : 'Are you sure you want to import the theme "{THEME_NAME}" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'
+      fae_import_theme : 'Importer le thème',
+      fae_import_confirm : 'Êtes-vous sûr de vouloir importer le thème "{THEME_NAME}" ?\\\n\\\nAssurez-vous d\'avoir fait une sauvegarde de votre CSS avant de cliquer sur Importer, sinon, veuillez cliquer sur annuler.'
     }
   }
 

@@ -89,7 +89,7 @@
         installed = document.getElementById('fa_edge');
 
     // only allow the founder to install the theme
-    if (_userdata.user_id == 1 && admin) {
+    if (_userdata.user_id == 1 && admin && !/page_html\?mode=preview/.test(window.location.href)) {
       FAE.tid = admin.href.replace(/.*?(&tid=.*)/, '$1'); // cache the tid
       document.getElementById('fae_actions').style.display = 'block';
 
@@ -678,6 +678,9 @@
 
         });
       }
+
+    } else if (/page_html\?mode=preview/.test(window.location.href)) {
+      FAE.log('The Forumactif Edge Control Panel cannot be used in preview mode. Please go to Admin Panel > Modules > HTML pages management and click the magnifying glass (<img src="http://illiweb.com/fa/admin/icones/voir.png"/>) for this page once you\'ve saved it.', 'color:#E53;font-weight:bold;');
 
     } else {
       FAE.log(FAE.cp_lang.fae_err_not_founder || 'Only <a href="/u1">the founder</a> may use this control panel. Please contact them for assistance in installing Forumactif Edge.', 'color:#E53;font-weight:bold;');

@@ -680,7 +680,7 @@
       }
 
     } else if (/page_html\?mode=preview/.test(window.location.href)) {
-      FAE.log('The Forumactif Edge Control Panel cannot be used in preview mode. Please go to Admin Panel > Modules > HTML pages management and click the magnifying glass (<img src="http://illiweb.com/fa/admin/icones/voir.png"/>) for this page once you\'ve saved it.', 'color:#E53;font-weight:bold;');
+      FAE.log('The Forumactif Edge Control Panel cannot be used in preview mode. Please go to Admin Panel > Modules > HTML pages management and click the magnifying glass (<img src="http://illiweb.com/fa/admin/icones/voir.png" style="vertical-align:middle;"/>) for this page once you\'ve saved it.', 'color:#E53;font-weight:bold;');
 
     } else {
       FAE.log(FAE.cp_lang.fae_err_not_founder || 'Only <a href="/u1">the founder</a> may use this control panel. Please contact them for assistance in installing Forumactif Edge.', 'color:#E53;font-weight:bold;');

@@ -195,6 +195,7 @@
               '<option value="German">Deutsch</option>'+
               '<option value="Greek">Ελληνικά</option>'+
               '<option value="Hebrew">עברית</option>'+
+              '<option value="Hungarian">Hungarian</option>'+
               '<option value="Italian">Italiano</option>'+
               '<option value="Romanian">Romana</option>'+
               '<option value="Vietnamese">Tiếng Việt</option>'+

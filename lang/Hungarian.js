@@ -107,7 +107,7 @@ FAE.lang = {
 
 
     '[FA EDGE] TOPICS.JS' : {
-      thanked_message : '<i class="fa fa-thumbs-up"></i> {USERNAME} köszönömben részesült a téma indítótól !'
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} köszönömben részesült a téma indítótól !</div>'
     }
 
   },

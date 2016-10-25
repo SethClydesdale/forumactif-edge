@@ -31,6 +31,7 @@
 /* -- 00. IMPORTS AND ANIMATIONS -- */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i); /* Roboto Font Family */
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css); /* Font Awesome Icons */
+@import url(https://dl.dropboxusercontent.com/s/rdhg16v1gk8icap/classified_ads-min.css); /* classified ads */
 @import url(http://ct1.addthis.com/static/r07/widget110.css); /* addthis */
 
 /* hot topic animation */
@@ -2502,3 +2503,5 @@ form[action^="/gallery/testing/gal_preply.htm"] ~ form > .jumpbox { display:none
 }
 
 #fym_banner { max-width:100%; } /* prevent fym banner from overflowing container */
+
+#fae_sticky_nav_panel a img[src$="empty.gif"]{display:none}

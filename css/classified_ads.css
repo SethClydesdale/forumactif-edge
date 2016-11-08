@@ -769,3 +769,7 @@ a.AD_Title {
 .forumbg .header select, .forumbg ul {
   padding:0;
 }
+
+.forum-stats .number:empty ~ * { display:none; } /* hide "posts" text */
+.AD_Header .AD_ContentLeft { margin-top:5px !important; } /* adjust vertical alignment of titles */
+.forumbg .row { margin-bottom:-10px; } /* negate .inner padding */

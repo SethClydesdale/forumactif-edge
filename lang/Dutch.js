@@ -1,5 +1,5 @@
 // Dutch (NL) Translation
-// Translation by Samantha (http://fmdesign.forumotion.com/t738-forumactif-edge-dutch-translation#14469)
+// Translation by Samantha and Joost (http://fmdesign.forumotion.com/t738-forumactif-edge-dutch-translation#14469)
 FAE.lang = {
 
   language : 'Dutch',
@@ -115,7 +115,7 @@ FAE.lang = {
 
   templates : {
     'overall_header.html' : {
-      announcements : '<div id="fa_ticker_title" class="title">Announcements</div>'
+      announcements : '<div id="fa_ticker_title" class="title">Mededelingen</div>'
     },
 
 

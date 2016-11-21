@@ -2249,11 +2249,11 @@ body #chatbox .cb-avatar, body #chatbox .cb-avatar img {
   }
 
   /* POSTS */
-  .post-inner { margin-left:0; }
+  .post-inner { margin:0 !important; }
   .postprofile {
     width:100%;
-    margin:-10px 0 10px 0;
-    float:none;
+    margin:-10px 0 10px 0 !important;
+    float:none !important;
   }
 
   .postprofile dl {

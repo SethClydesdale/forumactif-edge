@@ -23,7 +23,7 @@ FAE.lang = {
   images : {
 
     buttons : {
-      i_post : 'https://i37.servimg.com/u/f37/18/21/41/30/new-to10.png?color=primary&size=m',
+      i_post : 'https://i37.servimg.com/u/f37/18/21/41/30/new-to11.png?color=primary&size=m',
       i_reply : 'https://i37.servimg.com/u/f37/18/21/41/30/post-r10.png?color=primary&size=m',
       i_reply_locked : 'https://i37.servimg.com/u/f37/18/21/41/30/locked10.png?color=secondary&size=m',
       i_icon_quote : 'https://i37.servimg.com/u/f37/18/21/41/30/quote-10.png?color=primary&size=s',

@@ -8,14 +8,14 @@ FAE.lang = {
     offline : 'OFFLINE',
     online : 'ONLINE',
     total_posts : 'Totaal aantal berichten',
-    total_topics : 'Totaal aantal topics',
+    total_topics : 'Totaal aantal onderwerpen',
     total_users : 'Totaal aantal leden',
-    record_users : 'Meeste leden ooit gelijktijdig online',
+    record_users : 'Meeste leden ooit online',
     board_age : 'Leeftijd van het forum (in dagen)',
     newest_member : 'Nieuwste lid',
     hidebox : 'Verborgen:',
     chatbox_tip : 'Beweeg hier met de muis over om te zien wie er online is.',
-    chatbox_no_away : 'Momenteel zijn er geen leden inactief.',
+    chatbox_no_away : 'Er zijn geen leden inactief.',
     chatbox_no_online : 'Er zijn geen leden online.'
   },
 
@@ -23,7 +23,7 @@ FAE.lang = {
   images : {
 
     buttons : {
-      i_post : 'http://i35.servimg.com/u/f35/18/21/60/73/new-to11.png?color=primary&size=m',
+      i_post : 'https://i37.servimg.com/u/f37/18/45/41/65/new-to10.png?color=primary&size=m',
       i_reply : 'http://i35.servimg.com/u/f35/18/21/60/73/post-r11.png?color=primary&size=m',
       i_reply_locked : 'http://i35.servimg.com/u/f35/18/21/60/73/locked11.png?color=secondary&size=m',
       i_icon_quote : 'http://i35.servimg.com/u/f35/18/21/60/73/quote-11.png?color=primary&size=s',
@@ -69,7 +69,7 @@ FAE.lang = {
     },
 
     gallery : {
-      upload_pic : 'http://i35.servimg.com/u/f35/18/21/60/73/upload13.png?color=primary&size=m'
+      upload_pic : 'https://i37.servimg.com/u/f37/18/45/41/65/upload10.png?color=primary&size=m'
     }
 
   },
@@ -81,33 +81,33 @@ FAE.lang = {
       widget_menu_title : '<div class="title module_column_title">Widget Menu</div>',
       widget_menu_tooltip : "menu.title = 'Widget menu laten zien of verbergen';",
 
-      select_theme : 'Kies een thema',
+      select_theme : 'Kies een thema ...',
       random_theme : 'Willekeurig thema',
       default_theme : 'Standaard thema',
 
-      toolbar_search_placeholder : 'Zoeken...',
+      toolbar_search_placeholder : 'Zoeken ...',
 
       quick_nav_title : "title : 'Snelle Navigatie'",
-      quick_nav_tooltip : "tooltip : 'Snelle Navigatie (de)activeren'",
-      quick_nav_notif : 'Notificaties',
+      quick_nav_tooltip : "tooltip : 'Snelle Navigatie (de-)activeren'",
+      quick_nav_notif : 'Notificatie types aanpassen',
       tool_copy_url_tooltip : 'Kopieer BBCode URL',
-      tool_copy_url_prompt : 'Kopieer BBCode URL hierbeneden. (CTRL+C)',
+      tool_copy_url_prompt : 'Kopieer BBCode URL hieronder (CTRL+C)',
       tool_admin_panel : 'Beheerderspaneel',
       tool_to_top : 'Top van de pagina',
       tool_to_bottom : 'Bodem van de pagina',
 
-      img_resizer_full_size : 'Op ware grootte laten zien',
+      img_resizer_full_size : 'Ware grootte',
       img_resizer_enlarge : 'Vergroot plaatje',
       img_resizer_reduce : 'Verklein plaatje',
       img_resizer_download : 'Download plaatje',
-      img_resizer_tooltip : 'Klik om het volledige plaatje te laten zien',
+      img_resizer_tooltip : 'Klik om het volledige plaatje te zien',
 
-      fae_update_found : 'Er is een update voor Forumactif Edge gevonden. Om het installatieproces te beginnen, klik op "Updates Zoeken" vanuit het FAE Controllepaneel.'
+      fae_update_found : 'Er is een update voor Forumactif Edge beschikbaar. Klik op "Updates Zoeken" vanuit het FAE Beheerderspaneel om het installatieproces te beginnen.'
     },
 
 
     '[FA EDGE] TOPICS.JS' : {
-      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} has been thanked by the topic starter !</div>'
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} werd bedankt door diegene die het onderwerp had gestart !</div>'
     }
 
   },
@@ -127,100 +127,100 @@ FAE.lang = {
 
 
     logged_out_reply : {
-      main_title : '<h2 class="lor_maintitle">Registreer of meld je aan om te kunnen reageren</h2>',
-      main_desc : '<p class="lor_maindesc">Je moet lid zijn om te kunnen reageren.</p>',
+      main_title : '<h2 class="lor_maintitle">Registreer of log in om te kunnen reageren</h2>',
+      main_desc : '<p class="lor_maindesc">U dient een geregistreerd lid te zijn om te kunnen reageren.</p>',
 
-      create_account_title : '<h3 class="lor_subtitle">Registreer</h3>',
-      create_account_desc : '<p class="lor_subdesc">Word lid van onze community door te registreren. Het is makkelijk!</p>',
-      create_account_button : '<a href="/register" class="button1">Maak een nieuw account</a>',
+      create_account_title : '<h3 class="lor_subtitle">Registreren</h3>',
+      create_account_desc : '<p class="lor_subdesc">Word nu lid van onze community door hier te registreren. Het is makkelijk!</p>',
+      create_account_button : '<a href="/register" class="button1">Registeren</a>',
 
-      log_in_title : '<h3 class="lor_subtitle">Aanmelden</h3>',
-      log_in_desc : '<p class="lor_subdesc">Heb je al een account? Geen probleem! Meld je hier aan.</p>',
-      log_in_button : '<a href="/login" class="button1">Aanmelden</a>'
+      log_in_title : '<h3 class="lor_subtitle">Inloggen</h3>',
+      log_in_desc : '<p class="lor_subdesc">Bent u al lid? Welkom terug! U kunt hier inloggen.</p>',
+      log_in_button : '<a href="/login" class="button1">Inloggen</a>'
     }
 
   },
 
 
   fae_cp : {
-    fae_cp_main_title : 'Forumactif Edge Control Panel',
-    fae_cp_desc : 'This panel allows you to install, uninstall, and update <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Get ready to experience your forum in a more modern and responsive way!',
-    fae_log : 'Log',
-    fae_actions : 'Actions',
+    fae_cp_main_title : 'Forumactif Edge Beheerderspaneel',
+    fae_cp_desc : 'Via dit paneel kunt u <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a> installeren, installaties ongedaan maken en updaten. Ervaar het forum op een modernere en sympathiekere wijze dan ooit tevoren!',
+    fae_log : 'Logbestand',
+    fae_actions : 'Acties',
 
-    fae_install : 'Install',
-    fae_reinstall : 'Reinstall',
-    fae_install_complete : 'COMPLETE!',
-    fae_install_warning : 'Are you sure you want to {INSTALL} Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.',
+    fae_install : 'Installeren',
+    fae_reinstall : 'Herinstalleren',
+    fae_install_complete : 'KLAAR!',
+    fae_install_warning : 'Weet u zeker dat u Forumactif Edge wilt {INSTALL} ? Het huidige thema, inclusief uw CSS, zal worden overschreven en al uw JavaScripts zullen worden verwijderd.\\\n\\\nWij adviseren u om een backup te maken van al uw persoonlijk aangepaste content bestanden, zoals CSS, de templates en al uw JavaScripts, alvorens door te gaan met de installatie. Klik op "Cancel" als u nu nog niet door wilt gaan met de installatie van Forumactif Edge.',
 
-    fae_uninstall : 'Uninstall',
-    fae_uninstall_warning : 'Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.',
+    fae_uninstall : 'Installatie ongedaan maken',
+    fae_uninstall_warning : 'Weet u zeker dat u de installatie van Forumactif Edge ongedaan wilt maken? Alle huidige CSS, JavaScripts en templates zullen worden verwijderd. Het forum zal worden teruggezet naar het standaard phpBB3 thema.\\\n\\\nWij adviseren u om een backup te maken van al uw persoonlijk aangepaste content bestanden, zoals CSS, de templates en al uw JavaScripts alvorens door te gaan met de installatie. Klik op "Cancel" als u nu nog niet door wilt gaan met de de-installatie van Forumactif Edge.',
 
-    fae_update : 'Check for updates',
-    fae_update_good : 'Forumactif Edge is up to date!',
-    fae_update_check : 'Checking for updates on Github...',
-    fae_update_prepare : 'Preparing to fetch update instructions, please do not close this tab...',
-    fae_update_start : 'Updates are about to begin, please do not close this tab.',
-    fae_update_fetch : 'Getting update instructions for version {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
-    fae_update_notes : 'Please <a href="{RELEASE_TAG}" target="_blank">Click here</a> to view the changes made in version {VERSION_STRING}.',
-    fae_update_error : 'Update instructions for version {VERSION_STRING} could not be found. Please <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">open a new issue</a> and provide this information for further assistance.',
+    fae_update : 'Updates zoeken',
+    fae_update_good : 'Gefeliciteerd! Forumactif Edge is helemaal up to date!',
+    fae_update_check : 'Bezig met zoeken naar updates op Github ...',
+    fae_update_prepare : 'Bezig met laden van de update instructies. Sluit dit tabblad a.u.b. NIET! ...',
+    fae_update_start : 'Bezig met starten van het update proces. Sluit dit tabblad a.u.b. NIET! ...',
+    fae_update_fetch : 'Bezig met laden van update instructies voor versie {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
+    fae_update_notes : '<a href="{RELEASE_TAG}" target="_blank">Klik hier</a> om de wijzigingen te bekijken van versie {VERSION_STRING}.',
+    fae_update_error : 'De update instructies voor versie {VERSION_STRING} konden niet worden gevonden. Maak alstublieft <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">hier</a> een support ticket aan (Engels) met alle benodigde informatie over dit probleem, zodat we u zo spoedig mogelijk verdere assistentie kunnen verlenen.',
 
-    fae_translate : 'Change language',
-    fae_translate_same : 'Forumactif Edge is already in {LANG}. Please choose another language.',
-    fae_translate_warning : 'Are you sure you want to change the language of Forumactif Edge to {LANG} ?',
-    fae_translate_start : 'Translation of Forumactif Edge will commence shortly. Please wait..',
-    fae_translate_get : 'Getting {LANG} language data...',
-    fae_translate_loaded : 'Language data has been loaded. The translation process will now begin, please do not close this tab.',
+    fae_translate : 'Wijzig taal',
+    fae_translate_same : 'Forumactif Edge wordt reeds weergegeven in {LANG}. Kies een andere taal.',
+    fae_translate_warning : 'Weet u zeker dat u de taalweergave in Forumactif Edge wilt wijzigen naar {LANG} ?',
+    fae_translate_start : 'Bezig met voorbereiden van de taalwijziging. Even geduld a.u.b. ...',
+    fae_translate_get : 'Bezig met laden van de taal data voor {LANG} ...',
+    fae_translate_loaded : 'De nieuwe taal is geladen. De taalwijzigingen worden nu doorgevoerd. Sluit dit tabblad a.u.b. NIET! ...',
 
-    fae_err_not_founder : 'Only <a href="/u1">the founder</a> may use this control panel. Please contact them for assistance in installing Forumactif Edge.',
+    fae_err_not_founder : 'lechts <a href="/u1">de eigenaar</a> is gemachtigd het FAE Beheerderspaneel te gebruiken. Neem daarom contact op met de eigenaar van het forum voor verdere hulp bij de installatie van Forumactif Edge of (het wijzigen van) één van de componenten.',
 
-    left : 'Left',
-    center : 'Center',
-    right : 'Right',
-    yes : 'Yes',
-    no : 'No',
+    left : 'Links',
+    center : 'Centreren',
+    right : 'Rechts',
+    yes : 'Ja',
+    no : 'Nee',
     help : 'Help!',
 
     general_settings : {
-      title : 'General Settings',
-      fae_gen_desc : 'This section allows you to manage the general settings of Forumactif Edge.',
+      title : 'Algemene Instellingen',
+      fae_gen_desc : 'In deze sectie kunt u de algemene instellingen van Forumactif Edge beheren.',
 
-      'fae_label-width' : 'Forum width : ',
-      'fae_gen_tip-width' : 'Drag the slider to adjust the width of the forum.',
+      'fae_label-width' : 'Forum breedte :',
+      'fae_gen_tip-width' : 'Pas de forum breedte aan door de schuif naar links of naar rechts te bewegen.',
 
-      'fae_label-navbar' : 'Navbar position : ',
-      'fae_gen_tip-navbar' : 'Position of the navbar links.',
+      'fae_label-navbar' : 'Navigatiebalk positie :',
+      'fae_gen_tip-navbar' : 'Positie van de navigatiebalk links.',
 
-      'fae_label-logo' : 'Logo position : ',
-      'fae_gen_tip-logo' : 'Position of the forum logo.',
+      'fae_label-logo' : 'Logo positie :',
+      'fae_gen_tip-logo' : 'Positie van het logo van het forum.',
 
-      'fae_label-profile' : 'Profile position : ',
-      'fae_gen_tip-profile' : 'Position of the post profile in topics.',
+      'fae_label-profile' : 'Profiel positie :',
+      'fae_gen_tip-profile' : 'Positie van het profiel in de onderwerpen en berichten.',
 
-      fae_update_general : 'Save Changes',
-      fae_gen_updating : 'Updating general settings..',
-      fae_gen_updated : 'General settings have been updated successfully !'
+      fae_update_general : 'Wijzigingen opslaan',
+      fae_gen_updating : 'Bezig met het opslaan van de wijzigingen in de Algemene Instellingen ...',
+      fae_gen_updated : 'De wijzigingen in de Algemene Instellingen zijn succesvol opgeslagen!'
     },
 
 
     theme_management : {
-      title : 'Theme Management',
-      fae_theme_desc : 'This section allows you to manage the default theme and colors for Forumactif Edge by importing a new theme from the Github repository.',
+      title : 'Thema Beheer',
+      fae_theme_desc : 'In deze sectie kunt u het standaard thema en de kleuren binnen Forumactif Edge aanpassen en beheren door nieuwe thema\'s uit de database op Github te importeren.',
 
-      'fae_label-theme' : 'Select a theme : ',
-      'fae_theme_tip-theme' : 'Select the type of theme you want to import.',
+      'fae_label-theme' : 'Kies een thema :',
+      'fae_theme_tip-theme' : 'Kies het type thema dat u wilt importeren.',
 
-      'fae_label-color' : 'Select a color : ',
-      'fae_theme_tip-color' : 'Select the default color for the chosen theme.',
+      'fae_label-color' : 'Kies een kleur :',
+      'fae_theme_tip-color' : 'Kies de standaard kleur voor het gekozen thema.',
 
-      'fae_label-minify' : 'Minify Stylesheet : ',
-      'fae_theme_tip-minify' : 'Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.',
+      'fae_label-minify' : 'CSS optimaliseren :',
+      'fae_theme_tip-minify' : 'Geoptimaliseerde CSS neemt minder plaats in en maakt uw forum sneller, maar het maakt het ook moeilijker om deze als beheerder te lezen of aan te passen. Indien u de CSS voor het gekozen thema in de toekomst wenst aan te passen en u bent niet bekend met CSS, kies dan "Nee".',
 
-      'fae_label-rtl' : 'Right-to-Left : ',
-      'fae_theme_tip-rtl' : 'Changes the theme\'s text direction from left-to-right (ltr) to right-to-left (rtl) for rtl scripts.',
+      'fae_label-rtl' : 'Rechts-naar-Links schrijven :',
+      'fae_theme_tip-rtl' : 'Wijzigt binnen het thema welke kant op wordt geschreven (Links-naar-Rechts of Rechts-naar-Links). In sommige talen, zoals in het Arabisch, is dit anders.',
 
-      fae_import_theme : 'Import theme',
-      fae_import_confirm : 'Are you sure you want to import the theme "{THEME_NAME}" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'
+      fae_import_theme : 'Importeer thema',
+      fae_import_confirm : 'Weet u zeker dat u het "{THEME_NAME}" thema wilt importeren ?\\\n\\\nTijdens de installatie van het nieuwe thema zal de volledige CSS worden vervangen. Weest u er alstublieft zeker van dat u een backup heeft van uw huidige CSS als u deze wilt bewaren. Kies "Cancel" als u er nu nog niet klaar voor bent het nieuwe thema te importeren.'
     }
   }
 

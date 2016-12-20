@@ -78,8 +78,8 @@ FAE.lang = {
   javascripts : {
 
     '[FA EDGE] ALL.JS' : {
-      widget_menu_title : '<div class="title module_column_title">Widget Menu</div>',
-      widget_menu_tooltip : "menu.title = 'Toggle widget menu';",
+      widget_menu_title : '<div class="title module_column_title">Menu Widget</div>',
+      widget_menu_tooltip : "menu.title = 'Alternar o widget menu';",
 
       select_theme : 'Selecionar um tema',
       random_theme : 'Tema Aleatório',
@@ -100,7 +100,7 @@ FAE.lang = {
       img_resizer_enlarge : 'Aumentar imagem',
       img_resizer_reduce : 'Reduzir imagem',
       img_resizer_download : 'Baixar imagem',
-      img_resizer_tooltip : 'Clique para ver completo',
+      img_resizer_tooltip : 'Clique para ver imagem completa',
 
       fae_update_found : 'Foi encontrada uma atualização para FA edge. Vá no painel de controle da FAE e clique em "Verificar atualizações" para obter a versão mais recente.'
     },
@@ -127,16 +127,16 @@ FAE.lang = {
 
 
     logged_out_reply : {
-      main_title : '<h2 class="lor_maintitle">Criar uma conta ou fazer login para responder</h2>',
+      main_title : '<h2 class="lor_maintitle">Crie uma conta ou faça login para responder</h2>',
       main_desc : '<p class="lor_maindesc">Você deve ser um membro para responder.</p>',
 
       create_account_title : '<h3 class="lor_subtitle">Crie uma Conta</h3>',
       create_account_desc : '<p class="lor_subdesc">Junte-se a nossa comunidade! É fácil!</p>',
       create_account_button : '<a href="/register" class="button1">Criar nova conta</a>',
 
-      log_in_title : '<h3 class="lor_subtitle">Logar</h3>',
+      log_in_title : '<h3 class="lor_subtitle">Entrar</h3>',
       log_in_desc : '<p class="lor_subdesc">Já é um membro? Não se preocupe, clique aqui para entrar.</p>',
-      log_in_button : '<a href="/login" class="button1">Logar</a>'
+      log_in_button : '<a href="/login" class="button1">Entrar</a>'
     }
 
   },
@@ -169,7 +169,7 @@ FAE.lang = {
     fae_translate_same : 'O Forumactif Edge já está em {LANG}. Por Favor escolha outro idioma',
     fae_translate_warning : 'Tem certeza de que deseja alterar o idioma do Forumactif Edge para {LANG} ?',
     fae_translate_start : 'A tradução do Forumactif Edge começara em breve. Por Favor aguarde..',
-    fae_translate_get : 'Recebendo {LANG} dados do idioma...',
+    fae_translate_get : 'Recebendo dados do idioma {LANG}...',
     fae_translate_loaded : 'Os dados do idioma foram carregados. O processo de tradução irá começar, por favor, não feche esta guia.',
 
     fae_err_not_founder : 'Somente <a href="/u1">o fundador</a> pode usar este painel de controle. Entre em contato com eles para obter ajuda na instalação do Forumactif Edge.',

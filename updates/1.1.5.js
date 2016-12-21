@@ -66,8 +66,15 @@ if (FAE.board_lang == 'Dutch') {
       type : 'GET',
        url : FAE.raw + 'lang/translate.js',
       func : function(d) {
-        FAE.script(d);
-        FAE.update_step = FAE.update_step.concat(FAE.step);
+        FAE.script(
+          d.replace('FAE.step', 'FAE.new_step')
+           .replace('FAE.index', 'FAE.faux_index')
+           .replace('FAE.quota', 'FAE.faux_quota')
+           .replace('FAE.next', 'FAE.faux_next')
+           .replace('FAE.error', 'FAE.faux_error')
+        );
+        
+        FAE.update_step = FAE.update_step.concat(FAE.new_step);
       }
     }
   ]);

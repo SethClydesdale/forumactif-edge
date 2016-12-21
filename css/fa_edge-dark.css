@@ -2514,3 +2514,5 @@ form[action^="/gallery/testing/gal_preply.htm"] ~ form > .jumpbox { display:none
 #fym_banner { max-width:100%; } /* prevent fym banner from overflowing container */
 
 #fae_sticky_nav_panel a img[src$="empty.gif"]{display:none}
+#memberlist .avatar-mini + td { max-width:250px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+#profile-advanced-right .module div[style="text-align:center;"] img:first-child { max-width:100%; }

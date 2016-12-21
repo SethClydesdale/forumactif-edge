@@ -2,7 +2,7 @@
 
   # Changes in v1.1.5
 
-  - Fixed hobbies width in memberlist from taking up the entire page.
+  - Fixed "humor" width in memberlist from taking up the entire page.
   - Fixed large avatars overflowing their container in the user profile page.
   - Updated Arabic translation.
   - Updated Portuguese translation.
@@ -24,7 +24,7 @@ FAE.update_step = [
       if (form) {
         FAE.step[FAE.index + 1].data = {
                 edit_code : form.edit_code.value +
-                            '\n/* added in FAE v1.1.5 */\n#memberlist .avatar-mini+td{max-width:200px}\n#profile-advanced-right .module div[style="text-align:center;"] img:first-child{max-width:100%}',
+                            '\n/* added in FAE v1.1.5 */\n#memberlist .avatar-mini+td{max-width:250px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}\n#profile-advanced-right .module div[style="text-align:center;"] img:first-child{max-width:100%}',
                    submit : 'Submit'
         };
       }

@@ -144,7 +144,7 @@ FAE.lang = {
 
   fae_cp : {
     fae_cp_main_title : 'Forumactif Edge Beheerderspaneel',
-    fae_cp_desc : 'Via dit paneel kunt u <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a> installeren, installaties ongedaan maken en updaten. Ervaar het forum op een modernere en sympathiekere wijze dan ooit tevoren!',
+    fae_cp_desc : 'Via dit paneel kunt u <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a> configureren, installeren, installaties ongedaan maken en updaten. Ervaar het forum op een modernere en sympathiekere wijze dan ooit tevoren!',
     fae_log : 'Logbestand',
     fae_actions : 'Acties',
 

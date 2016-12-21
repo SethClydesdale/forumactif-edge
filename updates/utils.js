@@ -141,7 +141,7 @@ FAE.updateTranslation = function(o) {
       FAE.script(d.replace('FAE.lang', 'FAE.lang_new'));
 
       $.get(FAE.raw + 'lang/translate.js', function(d) {
-        FAE.script(d);
+        FAE.script(d.replace("FAE.log('When you\'re finished, please <a href=\"javascript:window.location.reload();\">click here</a> to reload the page.');", ''));
         FAE.next();
       });
     });

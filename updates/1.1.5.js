@@ -44,16 +44,30 @@ if (FAE.board_lang == 'Dutch') {
 
   FAE.update_step = FAE.update_step.concat([
     {
-      info : 'Updating Dutch translation.',
+      info : 'Getting old Dutch translation',
       type : 'GET',
-       url : '/',
-      func : function() {
+       url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/v1.1.4/lang/Dutch.js',
+      func : function(d) {
+        FAE.script(d.replace('FAE.lang', 'FAE.lang_current'));
+      }
+    },
 
-        FAE.updateTranslation({
-          oldFile : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/v1.1.4/lang/Dutch.js',
-          newFile : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/lang/Dutch.js'
-        });
+    {
+      info : 'Getting new Dutch translation',
+      type : 'GET',
+       url : 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/lang/Dutch.js',
+      func : function(d) {
+        FAE.script(d.replace('FAE.lang', 'FAE.lang_new'));
+      }
+    },
 
+    {
+      info : 'Preparing to update Dutch translation',
+      type : 'GET',
+       url : FAE.raw + 'lang/translate.js',
+      func : function(d) {
+        FAE.script(d);
+        FAE.update_step = FAE.update_step.concat(FAE.step);
       }
     }
   ]);

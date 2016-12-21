@@ -68,13 +68,15 @@ if (FAE.board_lang == 'Dutch') {
       func : function(d) {
         FAE.script(
           d.replace('FAE.step', 'FAE.new_step')
+           .replace(/FAE.step/g, 'FAE.update_step')
            .replace('FAE.index', 'FAE.faux_index')
            .replace('FAE.quota', 'FAE.faux_quota')
            .replace('FAE.next', 'FAE.faux_next')
            .replace('FAE.error', 'FAE.faux_error')
         );
-        
+
         FAE.update_step = FAE.update_step.concat(FAE.new_step);
+        FAE.quota = FAE.step.length;
       }
     }
   ]);

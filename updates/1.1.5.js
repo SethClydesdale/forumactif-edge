@@ -69,10 +69,10 @@ if (FAE.board_lang == 'Dutch') {
         FAE.script(
           d.replace('FAE.step', 'FAE.new_step')
            .replace(/FAE.step/g, 'FAE.update_step')
-           .replace('FAE.index', 'FAE.faux_index')
-           .replace('FAE.quota', 'FAE.faux_quota')
-           .replace('FAE.next', 'FAE.faux_next')
-           .replace('FAE.error', 'FAE.faux_error')
+           .replace('FAE.index = -1', 'FAE.faux_index = -1')
+           .replace('FAE.quota = FAE.step.length', 'FAE.faux_quota = FAE.step.length')
+           .replace('FAE.next = function', 'FAE.faux_next = function')
+           .replace('FAE.error = function', 'FAE.faux_error = function')
         );
 
         FAE.update_step = FAE.update_step.concat(FAE.new_step);

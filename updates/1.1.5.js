@@ -62,13 +62,12 @@ if (FAE.board_lang == 'Dutch') {
     },
 
     {
-      info : 'Preparing to update Dutch translation',
+      info : 'Update for the Dutch translation has been queued.',
       type : 'GET',
        url : FAE.raw + 'lang/translate.js',
       func : function(d) {
         FAE.script(
           d.replace('FAE.step', 'FAE.new_step')
-           .replace(/FAE.step/g, 'FAE.update_step')
            .replace('FAE.index = -1', 'FAE.faux_index = -1')
            .replace('FAE.quota = FAE.step.length', 'FAE.faux_quota = FAE.step.length')
            .replace('FAE.next = function', 'FAE.faux_next = function')

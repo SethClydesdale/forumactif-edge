@@ -24,7 +24,7 @@ FAE.update_step = [
       if (form) {
         FAE.step[FAE.index + 1].data = {
                 edit_code : form.edit_code.value +
-                            '\n/* added in FAE v1.1.4 */\n#memberlist .avatar-mini+td{max-width:200px}\n#profile-advanced-right .module div[style="text-align:center;"] img:first-child{max-width:100%}',
+                            '\n/* added in FAE v1.1.5 */\n#memberlist .avatar-mini+td{max-width:200px}\n#profile-advanced-right .module div[style="text-align:center;"] img:first-child{max-width:100%}',
                    submit : 'Submit'
         };
       }

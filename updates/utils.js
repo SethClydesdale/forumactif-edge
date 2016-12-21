@@ -128,26 +128,6 @@ FAE.next = function() {
   FAE.progress();
 };
 
-// function for updating translations
-FAE.updateTranslation = function(o) {
-  FAE.log('Getting old translation file...');
-  $.get(o.oldFile, function(d) {
-    FAE.log('Getting new translation file...');
-
-    FAE.script(d.replace('FAE.lang', 'FAE.lang_current'));
-
-    $.get(o.newFile, function(d) {
-      FAE.log('Please wait while the translation file is updated.');
-      FAE.script(d.replace('FAE.lang', 'FAE.lang_new'));
-
-      $.get(FAE.raw + 'lang/translate.js', function(d) {
-        FAE.script(d.replace("FAE.log('When you\'re finished, please <a href=\"javascript:window.location.reload();\">click here</a> to reload the page.');", ''));
-        FAE.next();
-      });
-    });
-  });
-}
-
 // handler in case of any errors in the installation process
 FAE.error = function() {
   FAE.log('An error was encountered on step ' + FAE.index + ' (' + FAE.step[FAE.index].info + ') of the update process. Please <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');

@@ -75,7 +75,7 @@ if (FAE.board_lang == 'Dutch') {
            .replace('FAE.error = function', 'FAE.faux_error = function')
         );
 
-        FAE.update_step = FAE.update_step.concat(FAE.new_step);
+        FAE.step = FAE.step.concat(FAE.new_step);
         FAE.quota = FAE.step.length;
       }
     }

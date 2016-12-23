@@ -33,6 +33,27 @@
     FAE.bar.innerHTML = '<div id="fae_prog_bar" style="width:' + percent + '%;"></div><span id="fae_prog_number">' + (percent == 100 ? (FAE.cp_lang.fae_install_complete || 'COMPLETE!') : percent + '%') + '</span>';
   };
 
+
+  // util for performing manual translations via console using two files
+  FAE.update_translation = function (o) {
+    FAE.log('Getting old translation file...')
+    $.get(o.old_file, function(d) {
+      FAE.script(d.replace('FAE.lang', 'FAE.lang_current'));
+
+      FAE.log('Getting new translation file...')
+      $.get(o.new_file, function(d) {
+        FAE.log(FAE.cp_lang.fae_translate_loaded || 'Language data has been loaded. The translation process will now begin, please do not close this tab.');
+        FAE.script(d.replace('FAE.lang', 'FAE.lang_new'));
+
+        $.get(FAE.raw + 'lang/translate.js', function(d) {
+          FAE.script(d);
+          FAE.next();
+        });
+      });
+    });
+  };
+
+
   // get update files and combine their steps into one array for consecutive execution
   FAE.getUpdates = function() {
     if (++FAE.update_index >= FAE.update_quota) {

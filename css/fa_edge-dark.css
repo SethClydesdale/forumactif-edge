@@ -30,9 +30,8 @@
 
 /* -- 00. IMPORTS AND ANIMATIONS -- */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i); /* Roboto Font Family */
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css); /* Font Awesome Icons */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css); /* Font Awesome Icons */
 @import url(https://dl.dropboxusercontent.com/s/rdhg16v1gk8icap/classified_ads-min.css); /* classified ads */
-@import url(http://ct1.addthis.com/static/r07/widget110.css); /* addthis */
 
 /* hot topic animation */
 @-webkit-keyframes hot-topic {
@@ -894,6 +893,9 @@ hr { border-color:#333; }
 .signature_div { padding:3px; }
 
 /* add_this / share */
+.topic-actions > p.right, .topic-actions > p.right > span { margin:0 3px; }
+.topic-actions > .pagination { margin:3px; }
+
 #at-whatsthis { right:0; }
 .addthis_button, a[href="javascript:showhide(document.getElementById('plus_menu'))"], #plus_menu, .pagination a[href$="mark=topics"], .pagination a[href$="watch=forum"] { font-size:12px; }
 .addthis_button:after, .pagination a[href$="mark=topics"]:after, .pagination a[href$="watch=forum"]:after {
@@ -1683,6 +1685,14 @@ body .sceditor-container iframe, body .sceditor-container textarea { margin:0; }
 
 
 /* -- 18. WHO IS ONLINE -- */
+#i_whosonline {
+  float:left;
+  margin-right:6px;
+}
+
+#i_whosonline[src$="empty.gif"] { display:none; }
+#wio_activity .txt-content > br:last-child { clear:both; }
+
 #who_is_online .content-block { margin:12px 0; }
 #wio_left .content-block { margin-right:6px; }
 

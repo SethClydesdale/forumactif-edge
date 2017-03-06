@@ -53,7 +53,7 @@ FAE.update_step = [
       if (form) {
         FAE.step[FAE.index + 1].data.template = form.template.value
                                                 .replace("    _atc.cwait = 0;\n    $('.addthis_button').mouseup(function(){\n        if ($('#at15s').css('display') == 'block') {\n            addthis_close();\n        }\n    });", '')
-                                                .replace('http://www.addthis.com/bookmark.php?v=250&amp;pub=forumotion', '#')
+                                                .replace(/<a class="addthis_button" href=".*?">{L_SHARE}<\/a>/, '<a class="addthis_button" href="#">{L_SHARE}</a>')
                                                 .replace('{JS_DIR}addthis/addthis_widget.js', '//s7.addthis.com/js/300/addthis_widget.js#pubid=forumotion');
       }
     }
@@ -90,7 +90,7 @@ FAE.update_step = [
       if (form) {
         FAE.step[FAE.index + 1].data.template = form.template.value
                                                 .replace("    _atc.cwait = 0;\n    $('.addthis_button').mouseup(function(){\n        if ($('#at15s').css('display') == 'block') {\n            addthis_close();\n        }\n    });", '')
-                                                .replace('http://www.addthis.com/bookmark.php?v=250&amp;pub=forumotion', '#')
+                                                .replace(/<a class="addthis_button" href=".*?">{L_SHARE}<\/a>/, '<a class="addthis_button" href="#">{L_SHARE}</a>')
                                                 .replace('{JS_DIR}addthis/addthis_widget.js', '//s7.addthis.com/js/300/addthis_widget.js#pubid=forumotion');
       }
     }

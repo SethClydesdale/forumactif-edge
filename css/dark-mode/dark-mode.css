@@ -10,10 +10,6 @@ fieldset dl:hover dt label, fieldset dl:hover dt span, fieldset dl:hover dt {
   color:#CCC !important;
 }
 
-.jqmOverlay {
-  background-color:#000;
-}
-
 .color-tertiary, html body.chatbox {
   background-color:#161616;
 }
@@ -63,7 +59,7 @@ fieldset dl:hover dt label, fieldset dl:hover dt span, fieldset dl:hover dt {
     border-bottom:1px solid #333;
   }
 
-  .postbody .profile-icons{
+  .postbody .profile-icons {
     background:#1A1A1A;
     border-top:1px solid #333;
   }

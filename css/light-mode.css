@@ -1,0 +1,70 @@
+fieldset dt label, fieldset dt span, fieldset dt {
+  color:#333 !important;
+}
+
+.color-tertiary, .content-block, .panel, .module, .lor_maintitle, .lor_subtitle, .lor_maindesc, .lor_subdesc, .forum-block, .addthis_button:after, .pagination a[href$="mark=topics"]:after, .pagination a[href$="watch=forum"]:after, input[type="text"], input.inputbox, input.post, textarea, select, body div.sceditor-dropdown input, body div.sceditor-dropdown textarea, body .sceditor-container textarea, html body.chatbox {
+  color:#333;
+}
+
+fieldset dl:hover dt label, fieldset dl:hover dt span, fieldset dl:hover dt {
+  color:#000 !important;
+}
+
+.color-tertiary, html body.chatbox {
+  background-color:#FFF;
+}
+
+::-webkit-scrollbar-track {
+  background-color:#DDD;
+}
+
+.lor_panel, .jqmWindow, .gallery, .postprofile dl, .module #calendar .table1 td:not([class*="row"]), input[type="text"], input.inputbox, input.post, textarea, select, body div.sceditor-dropdown input, body div.sceditor-dropdown textarea, .fa_pseudo_checkbox, .fa_pseudo_radio, #profile-advanced-details .panel > .inner > ol > li, .lastpost-avatar, .avatar-mini img, .avatar, #wio_new_avatar, body .sceditor-container textarea, .codebox, blockquote, .attachbox, body #chatbox_contextmenu, body #chatbox .cb-avatar, body #chatbox_contextmenu {
+  background-color:#FFF;
+}
+
+.content-block, .panel, .module, .forum-block-inner, #plus_menu, .table1, .forumline {
+  background-color:#EEE;
+}
+
+.info-gallery {
+  background-color:#F6F6F6;
+}
+
+.vote .vote-bar, .vote .vote-no-bar, .fa_pseudo_radio:before {
+  background-color:#CCC;
+}
+
+.forum-status, .forum-status[style*="state=old"], .postprofile dl:before {
+  background-color:#999;
+}
+
+.online .postprofile dl:before {
+  background-color:#8B5;
+}
+
+.forum-block:hover .forum-block-inner {
+  background:rgba(255, 255, 255, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  border-color:#DDD;
+}
+
+.content-block, .panel, .module, .lor_panel, .jqmWindow, .gallery, .info-gallery, .postprofile dl, hr, #plus_menu, .forumline, .ucp-main .table1, .forum-block, .table1 tbody td, .forumline tbody td, .forumline tbody th, .module #calendar .table1, .module #calendar .table1 th, input[type="text"], input.inputbox, input.post, textarea, select, body div.sceditor-dropdown input, body div.sceditor-dropdown textarea, .fa_pseudo_checkbox, .fa_pseudo_radio, .codebox, blockquote, .attachbox, #profile-advanced-details .panel > .inner > ol > li, body #fa_menulist, body #fa_toolbar #fa_right #notif_list {
+  border-color:#CCC;
+}
+
+#fa_menulist:before, #notif_list:before {
+  border-bottom-color:#CCC;
+}
+
+@media (min-width:0px) and (max-width:768px) {
+  .postprofile dl {
+    border-bottom:1px solid #CCC;
+  }
+
+  .postbody .profile-icons {
+    background:#FFF;
+    border-top:1px solid #CCC;
+  }
+}

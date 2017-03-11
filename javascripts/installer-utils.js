@@ -636,6 +636,15 @@
 
           }) : 'Are you sure you want to import the theme "' + selected.innerHTML + '" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.').replace(/\\/g, '') )) {
 
+            // reset dark mode cookies and clear sessionStorage
+            my_setcookie('fae_light-switch', '', true);
+            my_setcookie('fae_light-switch-mode', '', true);
+            
+            if (window.sessionStorage) {
+              window.sessionStorage.faeLightSwitch = '';
+            }
+
+            // theme settings
             FAE.theme = {
               name : selected.innerHTML,
               stylesheet : stylesheet,

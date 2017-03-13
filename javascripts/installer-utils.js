@@ -220,6 +220,7 @@
               '<option value="Italian">Italiano</option>'+
               '<option value="Portuguese">Português</option>'+
               '<option value="Romanian">Romana</option>'+
+              '<option value="Spanish">Español</option>'+
               '<option value="Vietnamese">Tiếng Việt</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+
@@ -639,7 +640,7 @@
             // reset dark mode cookies and clear sessionStorage
             my_setcookie('fae_light-switch', '', true);
             my_setcookie('fae_light-switch-mode', '', true);
-            
+
             if (window.sessionStorage) {
               window.sessionStorage.faeLightSwitch = '';
             }

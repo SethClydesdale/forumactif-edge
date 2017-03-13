@@ -1,0 +1,68 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i);
+
+
+/* -- GENERAL -- */
+* {
+  margin:0;
+  padding:0;
+}
+
+body {
+  font-size:12px;
+  font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.block {
+  padding:30px;
+}
+
+.whiteBlock {
+  color:#333;
+  background-color:#FFF;
+}
+
+.blueBlock {
+  color:#FFF;
+  background-color:#69C;
+}
+
+.darkBlock {
+  color:#FFF;
+  background-color:#345;
+}
+
+.center {
+  text-align:center;
+}
+
+
+/* -- HEADER -- */
+#header {
+  padding:30px;
+}
+
+#page-title {
+  font-size:36px;
+  text-transform:uppercase;
+}
+
+#page-title b {
+  color:#39C;
+}
+
+
+/* -- CONTENT -- */
+.title {
+  font-size:32px;
+  font-family:"Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform:uppercase;
+}
+
+p {
+  font-size:15px;
+  margin:10px 0;
+}
+
+
+/* -- FOOTER -- */

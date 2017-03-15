@@ -222,10 +222,22 @@
               '<option value="Romanian">Romana</option>'+
               '<option value="Spanish">Español</option>'+
               '<option value="Vietnamese">Tiếng Việt</option>'+
+              '<option value="ADD">Submit a New Translation</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+
           '</div><div class="clear"></div>'
         );
+
+        document.getElementById('fae_selected_language').onchange = function () {
+          var button = document.getElementById('fae_translate');
+
+          if (this.value == 'ADD') {
+            button.dataSet.original = button.value;
+            button.value = 'Submit';
+          } else if (button.dataSet.original && button.value != button.dataSet.original) {
+            button.value = button.dataSet.original;
+          }
+        };
 
         // set the selected translation
         for (var a = document.getElementById('fae_selected_language').options, i = 0, j = a.length; i < j; i++) {
@@ -240,9 +252,17 @@
 
         // function to be executed when the translation button is clicked
         document.getElementById('fae_translate').onclick = function() {
+
           var select = document.getElementById('fae_selected_language'),
               current = document.getElementById('fae_current_language'),
               selected = select.options[select.selectedIndex];
+
+          if (select.value == 'ADD' && confirm("You've chosen to submit a new translation. If this is correct, please click 'OK' and proceed to the translation page, otherwise click 'cancel' and choose another language.")) {
+            window.location.href = 'http://fmdesign.forumotion.com/t706-forumactif-edge-translations#13996';
+            return;
+          } else {
+            return;
+          }
 
           if (FAE.board_lang == selected.innerHTML) {
             return alert(FAE.cp_lang.fae_translate_same ? FAE.parse_vars(FAE.cp_lang.fae_translate_same, {

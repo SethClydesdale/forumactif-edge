@@ -10,7 +10,7 @@ What does Forumactif Edge offer ?
 - Side panels for widgets and quick navigation so your forum has maximum space and accessibility.
 - Automatic color coding of posts based on usergroup affiliation.
 - Built in counter for reputation votes.
-- and more...
+- [and more...](https://github.com/SethClydesdale/forumactif-edge/wiki/Features)
 
 Forumactif Edge will constantly evolve because it's open source and managed by the community. That means we'll take feedback, suggestions, and reports from the community -- that's right, **your** voice can shape the future of this project ! If you'd like to install Forumactif Edge on your Forumotion forum, please see the wiki link below which includes detailed instructions on how to install the theme along with additional information on Forumactif Edge that's constantly changing.
 

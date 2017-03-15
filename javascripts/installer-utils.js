@@ -232,10 +232,10 @@
           var button = document.getElementById('fae_translate');
 
           if (this.value == 'ADD') {
-            button.dataSet.original = button.value;
+            button.dataset.original = button.value;
             button.value = 'Submit';
-          } else if (button.dataSet.original && button.value != button.dataSet.original) {
-            button.value = button.dataSet.original;
+          } else if (button.dataset.original && button.value != button.dataset.original) {
+            button.value = button.dataset.original;
           }
         };
 

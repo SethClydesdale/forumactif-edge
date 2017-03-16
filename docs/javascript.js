@@ -18,10 +18,6 @@
       overlay.addEventListener('click', closePreview);
 
       video.id = 'previewVideo';
-      video.width = window.innerWidth / 1.1;
-      video.height = window.innerWidth / 2;
-      video.style.marginLeft = '-' + ((video.width / 2) + 12) + 'px';
-      video.style.marginTop = '-' + ((video.height / 2) + 3) + 'px';
       video.innerHTML = '<source src="video/' + this.dataset.video + '" type="video/mp4">Your browser does not support the video tag.';
       video.addEventListener('ended', closePreview);
 

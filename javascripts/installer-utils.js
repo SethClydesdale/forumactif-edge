@@ -510,7 +510,7 @@
             '<span id="fae_label-color" class="fae_label">Select a color : </span>'+
             '<select id="fae_selected_color">'+
               '<option value="Default" selected>Default</option>'+
-              '<option value="Custom" selected>Custom color</option>'+
+              '<option value="Custom">Custom color</option>'+
               '<option value="Silver" style="background-color: rgb(187, 187, 187);">Silver</option>'+
               '<option value="Dusty Gray" style="background-color: rgb(136, 136, 136);">Dusty Gray</option>'+
               '<option value="Dove Gray" style="background-color: rgb(85, 85, 85);">Dove Gray</option>'+
@@ -660,7 +660,6 @@
         }
 
         picker.value = '#6699CC';
-        picker.style.margin = '3px';
         picker.style.display = 'none';
 
         FAE.custom_color = ['#7AD', '#69C', '#58B', '#369', '#345'];
@@ -716,10 +715,7 @@
             };
 
             $.get(FAE.raw + 'javascripts/change-theme.js', function(d) {
-              FAE.script(d);
-
-              FAE.color_palette['Custom'] = FAE.custom_color;
-
+              FAE.script(d.replace("FAE.color_palette = {", "FAE.color_palette = {" + "'Custom' : [" + FAE.custom_color.toString() + "],"));
               FAE.next();
             });
 
@@ -798,6 +794,7 @@
       '#fae_cp label input { vertical-align:text-bottom; }'+
       '.fae_help_me:hover .fae_help_tip { visibility:visible; }'+
       'body #fae_cp { color:#333; background:#F6F6F6; border:1px solid #CCC; margin:50px 25px; padding:12px; }'+
+      '#fae_custom_color { padding:0; vertical-align:middle; }'+
       '#fae_cp select, #fae_cp input { color:#333; background:#FFF; }'+
       '#fae_selected_color option:not([value="Default"]) { color:#FFF; }'+
     '</style>'

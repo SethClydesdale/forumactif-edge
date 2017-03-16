@@ -240,7 +240,7 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
   float:left;
 }
 
-#footer > .col {
+#footer .col {
   width:40%;
   margin-left:10%;
 }
@@ -329,7 +329,7 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
     width:80%;
   }
 
-  #footer > .col, #footer-end .col {
+  #footer .col, #footer-end .col {
     text-align:center;
     float:none;
     display:block;
@@ -337,7 +337,7 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
     margin:0 0 30px 0;
   }
 
-  #footer > .col:last-child, #footer-end .col:last-child { margin:0; }
+  #footer .col:last-child, #footer-end .col:last-child { margin:0; }
 
   a.button {
     font-size:15px;

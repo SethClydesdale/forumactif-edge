@@ -727,6 +727,96 @@
         };
 
 
+        if (window.location.host == 'themedesign.forumotion.com') {
+        // create and insert the plugin manager
+        $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Plugin Management</div>'+
+
+          '<p id="fae_plugin_desc">This section allows you to manage the settings of core-plugins for Forumactif Edge.</p>'+
+
+          '<div class="fae_cp_row">'+
+            '<span class="fae_help_me">?'+
+              '<span class="fae_help_tip" id="fae_theme_tip-qnp">Position of the Quick Navigation side menu.</span>'+
+            '</span>'+
+            '<span id="fae_label-minify" class="fae_label">Quick Navigation Position : </span>'+
+            '<label for="fae_qnp_left"><input type="radio" id="fae_qnp_left" name="fae_qnp" value="1" checked> Left</label>'+
+            '<label for="fae_qnp_right"><input type="radio" id="fae_qnp_right" name="fae_qnp" value="0"> Right</label>'+
+          '</div>'+
+
+          '<div class="fae_cp_row">'+
+            '<input id="fae_save_plugins" type="button" value="Save Changes" />'+
+          '</div>'
+        );
+
+        document.getElementById('fae_save_plugins').onclick = function () {
+          var qnp = document.getElementById('fae_qnp_left').checked ? : 'left' :
+                    document.getElementById('fae_qnp_right').checked ? 'right' : 'left';
+
+          FAE.log('Locating [FA EDGE] ALL.JS...');
+          FAE.quota = 3;
+          FAE.index = 0;
+          FAE.progress();
+
+          $.get('/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
+            for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/, all; i < j; i++) {
+              if (regex.test(row[i].innerHTML)) {
+                all = $('a', row[i])[1].href;
+                break;
+              }
+            }
+
+            if (all) {
+              FAE.log('[FA EDGE] ALL.JS found !');
+              FAE.log('Getting [FA EDGE] ALL.JS...');
+              FAE.index = 1;
+              FAE.progress();
+
+              $.get(all, function (d) {
+                var form = $('#formenvoi', d)[0];
+
+                if (form) {
+                  FAE.log('Updating your plugins...');
+                  FAE.index = 2;
+                  FAE.progress();
+
+                  $.post(form.action.replace(/^.*?\/admin\/index\.forum\?|&tid=.*$/g, ''), {
+                               title : '[FA EDGE] ALL.JS',
+                    'js_placement[]' : 'allpages',
+                             content : form.value
+                                       // quick nav position
+                                       .replace(/position : '.*?'/, "position : '" + qnp + "'"),
+                                mode : 'save',
+                                page : form.page.value,
+                              submit : 'Submit'
+
+                  }, function (d) {
+                    FAE.log('Plugins have been updated successfully !', 'font-weight:bold;color:#8B5;');
+                    FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+                    FAE.index = 3;
+                    FAE.progress();
+                  });
+
+                } else {
+                  FAE.log('Error getting "[FA EDGE] ALL.JS", please try again or contact <a href="http://fmdesign.forumotion.com/f32-support" target="_blank">the support</a> for more information.', 'color:#E53;font-weight:bold;');
+                  FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+                }
+              });
+
+
+            } else {
+              FAE.log('"[FA EDGE] ALL.JS" could not be found. Please make sure that you did not rename the original ALL.JS file, contact <a href="http://fmdesign.forumotion.com/f32-support" target="_blank">the support</a> for more information.', 'color:#E53;font-weight:bold;');
+              FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+            }
+
+          });
+
+          FAE.log('Your plugin settings have been updated successfully !', 'font-weight:bold;color:#8B5;');
+          FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+
+          document.getElementById('fae_options').style.display = 'none';
+        };
+        }
+
+
         // setup and begin translation of control panel
         $.get(FAE.raw + 'lang/' + document.getElementById('fae_selected_language').value + '.js', function(d) {
           FAE.script(d.replace('FAE.lang', 'FAE.cp_lang'));

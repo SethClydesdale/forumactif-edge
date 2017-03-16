@@ -510,6 +510,7 @@
             '<span id="fae_label-color" class="fae_label">Select a color : </span>'+
             '<select id="fae_selected_color">'+
               '<option value="Default" selected>Default</option>'+
+              '<option value="Custom" selected>Custom color</option>'+
               '<option value="Silver" style="background-color: rgb(187, 187, 187);">Silver</option>'+
               '<option value="Dusty Gray" style="background-color: rgb(136, 136, 136);">Dusty Gray</option>'+
               '<option value="Dove Gray" style="background-color: rgb(85, 85, 85);">Dove Gray</option>'+
@@ -647,6 +648,46 @@
         );
 
 
+        var selector = document.getElementById('fae_selected_color'),
+            picker = document.createElement('INPUT');
+
+        picker.id = 'fae_custom_color';
+
+        try {
+          picker.type = 'color';
+        } catch (error) {
+          picker.type = 'text';
+        }
+
+        picker.value = '#6699CC';
+        picker.style.margin = '3px';
+        picker.style.display = 'none';
+
+        FAE.custom_color = ['#7AD', '#69C', '#58B', '#369', '#345'];
+
+        picker.onchange = function () {
+          var val = this.value.toUpperCase();
+
+          FAE.custom_color = [
+            fae_editColor(val, +1),
+            val,
+            fae_editColor(val, -1),
+            fae_editColor(val, -3),
+            fae_editColor(val, 'darken')
+          ];
+        };
+
+        selector.parentNode.appendChild(picker);
+        selector.onchange = function () {
+          var picker = document.getElementById('fae_custom_color');
+
+          if (this.value == 'Custom') {
+            picker.style.display = '';
+          } else {
+            picker.style.display = 'none';
+          }
+        };
+
         document.getElementById('fae_import_theme').onclick = function() {
           var select = document.getElementById('fae_selected_theme'),
               selected = select.options[select.selectedIndex],
@@ -676,6 +717,9 @@
 
             $.get(FAE.raw + 'javascripts/change-theme.js', function(d) {
               FAE.script(d);
+
+              FAE.color_palette['Custom'] = FAE.custom_color;
+
               FAE.next();
             });
 
@@ -759,3 +803,35 @@
     '</style>'
   );
 }());
+
+function fae_editColor (str, op) {
+  var letter = { 'F' : 15, 'E' : 14, 'D' : 13, 'C' : 12, 'B' : 11, 'A' : 10 },
+      hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'],
+      neg = [0, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6];
+
+  str = str.split('');
+
+  for (var i = 1; i < 7; i++) {
+    if (letter[str[i]]) {
+      str[i] = letter[str[i]];
+    } else {
+      str[i] = +str[i];
+    }
+
+    if (op == 'darken') {
+      str[i] = neg[str[i]];
+    } else {
+      str[i] += op;
+    }
+
+    if (str[i] > 15) {
+      str[i] = 15;
+    } else if (str[i] < 0) {
+      str[i] = 0;
+    }
+
+    str[i] = hex[str[i]];
+  }
+
+  return str.join('');
+};

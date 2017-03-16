@@ -748,8 +748,7 @@
         );
 
         document.getElementById('fae_save_plugins').onclick = function () {
-          var qnp = document.getElementById('fae_qnp_left').checked ? : 'left' :
-                    document.getElementById('fae_qnp_right').checked ? 'right' : 'left';
+          var qnp = document.getElementById('fae_qnp_right').checked ? 'right' : 'left';
 
           FAE.log('Locating [FA EDGE] ALL.JS...');
           FAE.quota = 3;

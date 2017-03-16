@@ -807,7 +807,7 @@
       '#fae_maintenance { color:#333; font-size:16px; font-weight:bold; text-align:center; background:#EB3; padding:16px 12px; margin:-13px -13px 12px -13px; }'+
       '#fae_maintenance i { font-size:28px; vertical-align:-4px; margin-right:6px; }'+
       '#fae_maintenance a { color:#666; text-decoration:underline; }'+
-      '#fae_maintenance a:hover { color:#000; text-decoration:none; }'
+      '#fae_maintenance a:hover { color:#000; text-decoration:none; }'+
     '</style>'
   );
 }());

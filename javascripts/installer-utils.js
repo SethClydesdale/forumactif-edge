@@ -715,7 +715,11 @@
             };
 
             $.get(FAE.raw + 'javascripts/change-theme.js', function(d) {
-              FAE.script(d.replace("FAE.color_palette = {", "FAE.color_palette = {" + "'Custom' : [" + FAE.custom_color.toString() + "],"));
+              for (var i = 0, j = FAE.custom_color.length, str = "'Custom' : ["; i < j; i++) {
+                str += "'" + FAE.custom_color[i] + "'" + (i + 1 == j ? '' : ',');
+              }
+
+              FAE.script(d.replace("FAE.color_palette = {", "FAE.color_palette = {" + str + "],"));
               FAE.next();
             });
 

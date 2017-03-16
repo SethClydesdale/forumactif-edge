@@ -18,7 +18,7 @@
       overlay.addEventListener('click', closePreview);
 
       video.id = 'previewVideo';
-      video.innerHTML = '<source src="video/' + this.dataset.video + '" type="video/mp4">Your browser does not support the video tag.';
+      video.innerHTML = '<source src="https://sethclydesdale.github.io/forumactif-edge/video/' + this.dataset.video + '" type="video/mp4">Your browser does not support the video tag.';
       video.addEventListener('ended', closePreview);
 
       frag.appendChild(overlay);

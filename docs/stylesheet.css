@@ -278,8 +278,10 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
   padding:3px 12px;
   border-radius:10px;
   position:fixed;
-  top:50%;
-  left:50%;
+  top:10%;
+  left:10%;
+  width:80%;
+  height:80%;
 }
 
 #previewOverlay, #previewVideo {
@@ -294,11 +296,28 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
 
 
 /* -- RESPONSIVENESS -- */
+@media (max-width:1280px) {
+  #previewVideo {
+    top:20%;
+    height:60%;
+  }
+}
+
 @media (max-width:920px) {
   .bubbleBox, .bubbleRow.x4 .bubbleBox { width:49%; }
+
+  #previewVideo {
+    top:30%;
+    height:40%;
+  }
 }
 
 @media (max-width:720px) {
+  #previewVideo {
+    top:35%;
+    height:35%;
+  }
+
   #page-title, #header-links {
     text-align:center;
     float:none;

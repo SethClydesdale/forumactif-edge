@@ -780,7 +780,7 @@
                   $.post(form.action.replace(/^.*?\/admin\/index\.forum\?|&tid=.*$/g, ''), {
                                title : '[FA EDGE] ALL.JS',
                     'js_placement[]' : 'allpages',
-                             content : form.value
+                             content : form.content.value
                                        // quick nav position
                                        .replace(/position : '.*?'/, "position : '" + qnp + "'"),
                                 mode : 'save',

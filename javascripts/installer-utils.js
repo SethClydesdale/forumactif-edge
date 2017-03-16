@@ -3,6 +3,7 @@
     window.FAE = new Object();
   }
 
+  FAE.maintenance = true;
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -785,6 +786,10 @@
   // help link
   $('#fae_cp').append('<div style="margin-top:12px"><a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank" style="float:right;"><strong id="fae_cp_help">Help!</strong></a><div class="clear"></div></div>');
 
+  if (FAE.maintenance) {
+    $('#fae_cp').prepend('<div id="fae_maintenance"><i class="fa fa-warning"></i>Maintenance is currently being performed on the Control Panel. Don\'t worry if you notice anything strange, we\'ll get things back to normal shortly. For more information, please read about "<a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Maintenance" target="_blank">Maintenance</a>" on our wiki.</div>');
+  }
+
   // extra cp stylesheet
   $('head').append(
     '<style type="text/css">'+
@@ -799,6 +804,10 @@
       '#fae_custom_color { padding:0; vertical-align:middle; }'+
       '#fae_cp select, #fae_cp input { color:#333; background:#FFF; }'+
       '#fae_selected_color option:not([value="Default"]):not([value="Custom"]) { color:#FFF; }'+
+      '#fae_maintenance { color:#333; font-size:16px; font-weight:bold; text-align:center; background:#EB3; padding:16px 12px; margin:-13px -13px 12px -13px; }'+
+      '#fae_maintenance i { font-size:28px; vertical-align:-4px; margin-right:6px; }'+
+      '#fae_maintenance a { color:#666; text-decoration:underline; }'+
+      '#fae_maintenance a:hover { color:#000; text-decoration:none; }'
     '</style>'
   );
 }());

@@ -395,7 +395,7 @@
             if (/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/.test(form.edit_code.value)) {
               dir = form.edit_code.value.match(/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:(.*?);.*?\}\.post-inner\{.*?\}/)[1];
               document.getElementById('fae_profil_dir-' + dir.toLowerCase()).checked = true;
-            } else if (/\/\*!FAE_PROFIL_DIR\*\/\.post-inner\{margin:0!important\}/) {
+            } else if (/\/\*!FAE_PROFIL_DIR\*\/\.post-inner\{margin:0!important\}/.test(form.edit_code.value)) {
               document.getElementById('fae_profil_dir-center').checked = true;
             }
 

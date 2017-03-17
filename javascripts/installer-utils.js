@@ -749,31 +749,29 @@
 
 
         // get existing settings from ALL.JS
-        window.setTimeout(function() {
-          $.get('/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
-            for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/, all; i < j; i++) {
-              if (regex.test(row[i].innerHTML)) {
-                all = $('a', row[i])[1].href;
-                break;
+        $.get('/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
+          for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/, all; i < j; i++) {
+            if (regex.test(row[i].innerHTML)) {
+              all = $('a', row[i])[1].href;
+              break;
+            }
+          }
+
+          if (all) {
+
+            $.get(all, function (d) {
+              var form = $('#formenvoi', d)[0],
+                  js;
+
+              if (form) {
+                js = form.content.value;
+
+                document.getElementById('fae_qnp_' + (/position : 'right'/.test(js) ? 'right' : 'left')).checked = true;
               }
-            }
+            });
 
-            if (all) {
-
-              $.get(all, function (d) {
-                var form = $('#formenvoi', d)[0],
-                    js;
-
-                if (form) {
-                  js = form.content.value;
-
-                  document.getElementById('fae_qnp_' + (/position : 'right'/.test(js) ? 'right' : 'left')).checked = true;
-                }
-              });
-
-            }
-          });
-        }, 1000); // add a delay since the last request (stylesheet req for general settings)
+          }
+        });
 
 
         // submit plugin settings on click

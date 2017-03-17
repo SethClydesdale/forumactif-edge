@@ -729,7 +729,7 @@
 
         if (window.location.host == 'themedesign.forumotion.com') {
         // create and insert the plugin manager
-        $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Plugin Management</div>'+
+        $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Plugin Manager</div>'+
 
           '<p id="fae_plugin_desc">This section allows you to manage the settings of core-plugins for Forumactif Edge.</p>'+
 
@@ -737,9 +737,18 @@
             '<span class="fae_help_me">?'+
               '<span class="fae_help_tip" id="fae_theme_tip-qnp">Position of the Quick Navigation side menu.</span>'+
             '</span>'+
-            '<span id="fae_label-minify" class="fae_label">Quick Navigation Position : </span>'+
+            '<span id="fae_label-qnp" class="fae_label">Quick Navigation Position : </span>'+
             '<label for="fae_qnp_left"><input type="radio" id="fae_qnp_left" name="fae_qnp" value="1" checked> Left</label>'+
             '<label for="fae_qnp_right"><input type="radio" id="fae_qnp_right" name="fae_qnp" value="0"> Right</label>'+
+          '</div>'+
+
+          '<div class="fae_cp_row">'+
+            '<span class="fae_help_me">?'+
+              '<span class="fae_help_tip" id="fae_theme_tip-qns">By default the Quick Navigation only shows when the navbar is out of view. Enabling this option will allow the Quick Navigation to always be visible.</span>'+
+            '</span>'+
+            '<span id="fae_label-qns" class="fae_label">Always show Quick Navigation : </span>'+
+            '<label for="fae_qns_yes"><input type="radio" id="fae_qns_yes" name="fae_qns" value="1"> Yes</label>'+
+            '<label for="fae_qns_no"><input type="radio" id="fae_qns_no" name="fae_qns" value="0" checked> No</label>'+
           '</div>'+
 
           '<div class="fae_cp_row">'+
@@ -767,6 +776,7 @@
                 js = form.content.value;
 
                 document.getElementById('fae_qnp_' + (/position : 'right'/.test(js) ? 'right' : 'left')).checked = true;
+                document.getElementById('fae_qns_' + (/alwaysVisible : true,/.test(js) ? 'yes' : 'no')).checked = true;
               }
             });
 
@@ -776,7 +786,8 @@
 
         // submit plugin settings on click
         document.getElementById('fae_save_plugins').onclick = function () {
-          var qnp = document.getElementById('fae_qnp_right').checked ? 'right' : 'left';
+          var qnp = document.getElementById('fae_qnp_right').checked ? 'right' : 'left',
+              qns = document.getElementById('fae_qns_yes') ? true : false;
 
           FAE.log('Locating [FA EDGE] ALL.JS...');
           FAE.quota = 3;
@@ -809,8 +820,8 @@
                                title : '[FA EDGE] ALL.JS',
                     'js_placement[]' : 'allpages',
                              content : form.content.value
-                                       // quick nav position
-                                       .replace(/position : '.*?'/, "position : '" + qnp + "'"),
+                                       .replace(/position : '.*?'/, "position : '" + qnp + "'") // quick nav position
+                                       .replace(/alwaysVisible : .*?,/, "alwaysVisible : " + qns + ","), // quick nav visibility
                                 mode : 'save',
                                 page : form.page.value,
                               submit : 'Submit'

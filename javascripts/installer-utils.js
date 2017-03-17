@@ -937,7 +937,7 @@
                     input = a[i].getElementsByTagName('INPUT');
                     val = input[0].value;
 
-                    fae_themeList += '"' + input[1].value + '" : ["' + ( fae_editColor(val, +1) + '", "' + val + '", "' + fae_editColor(val, -1) + '", "' + fae_editColor(val, -3) + '", "' + fae_editColor(val, 'darken') ) + '"]' + (i + 1 == j.length ? ',' : '') + '\n';
+                    fae_themeList += '"' + input[1].value + '" : ["' + ( fae_editColor(val, +1) + '", "' + val + '", "' + fae_editColor(val, -1) + '", "' + fae_editColor(val, -3) + '", "' + fae_editColor(val, 'darken') ) + '"]' + (i + 1 == j ? '' : ',') + '\n';
                   }
 
                   $.post(form.action, {

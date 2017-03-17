@@ -12,6 +12,9 @@
 ** 08. sticky_nav_notifications
 ** 09. update_notifier
 ** 10. topic_icon_formatter
+** 11. dark mode
+** 12. copy code button
+** 13. local frame styler
 ******************************/
 
 // IMPORTANT DATA (DO NOT DELETE)
@@ -70,11 +73,14 @@ function fa_navactif() {
 /* -- 02. fa_theme_changer -- */
 // theme selector for the forum
 (function() {
+  var cc = my_getcookie('fae_custom-theme');
+
   window.fa_theme_color = {
     selected : my_getcookie('fa_theme_color') || 'Select a theme',
 
     palette : {
        'Select a theme' : [],
+         'Custom theme' : [ cc ? fae_editColor(cc, +1) : '#77AADD', cc || '#6699CC', cc ? fae_editColor(cc, -1) : '#5588BB', cc ? fae_editColor(cc, -3) : '#336699', cc ? fae_editColor(cc, 'darken') : '#334455' ],
          'Random theme' : [],
                'Silver' : ['#DDD', '#CCC', '#BBB', '#999', '#555'], // hue 000
            'Dusty Gray' : ['#AAA', '#999', '#888', '#666', '#444'], // hue 000
@@ -194,19 +200,48 @@ function fa_navactif() {
 
       my_setcookie('fa_theme_color', color, true);
 
-      if (color != 'Select a theme') {
+      if (color != 'Select a theme' && color != 'Custom theme') {
         fa_theme_color.selected = color == 'Random theme' ? fa_theme_color.palette['Random theme'][Math.floor(Math.random() * fa_theme_color.palette['Random theme'].length)] : color;
         fa_theme_color.selector.style.backgroundColor = fa_theme_color.palette[fa_theme_color.selected][1];
         fa_theme_color.selector.style.borderColor = fa_theme_color.palette[fa_theme_color.selected][2];
         fa_theme_color.selector.firstChild.innerHTML = 'Default theme';
 
         if (style) head.removeChild(style);
+        fa_theme_color.picker.style.display = 'none';
+
+        $(head).append('<style type="text/css" id="fa_theme_style">' + fa_theme_color.css() + '</style>');
+
+      } else if (color == 'Custom theme') {
+        fa_theme_color.selected = 'Custom theme';
+
+        if (style) {
+          head.removeChild(style);
+        }
+
+        var val = fa_theme_color.picker.value.toUpperCase();
+        my_setcookie('fae_custom-theme', val, true);
+
+        fa_theme_color.picker.style.display = '';
+        fa_theme_color.selector.style.backgroundColor = val;
+        fa_theme_color.selector.style.borderColor = fae_editColor(val, -1);
+
+        window.fa_theme_color.palette['Custom theme'] = [
+          fae_editColor(val, +1),
+          val,
+          fae_editColor(val, -1),
+          fae_editColor(val, -3),
+          fae_editColor(val, 'darken')
+        ];
+
         $(head).append('<style type="text/css" id="fa_theme_style">' + fa_theme_color.css() + '</style>');
 
       } else {
         if (style) {
           head.removeChild(style);
         }
+
+        fa_theme_color.picker.style.display = 'none';
+
         fa_theme_color.selector.style.backgroundColor = '#999';
         fa_theme_color.selector.style.borderColor = '#888';
         fa_theme_color.selector.firstChild.innerHTML = 'Select a theme';
@@ -215,17 +250,17 @@ function fa_navactif() {
 
     css : function() {
       var palette = fa_theme_color.palette[fa_theme_color.selected];
-      return '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, form.search-form input.search-keywords, input.search-button, .pagination span a, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs, body div.sceditor-dropdown .button, .codebox dt, blockquote cite, .sceditor-container .sceditor-toolbar, body #fa_toolbar, body #fa_toolbar_hidden, body #fa_toolbar #fa_right #notif_list li.see_all, #fae_sticky_nav_panel a:after, img[src*="color=primary"], .table1 thead th, .breadcrumbs, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"], .forumbg li.header { background-color:' + palette[1] + '; }'+
+      return '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, form.search-form input.search-keywords, input.search-button, .pagination span a, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs, body div.sceditor-dropdown .button, .codebox dt, blockquote cite, .sceditor-container .sceditor-toolbar, body #fa_toolbar, body #fa_toolbar_hidden, body #fa_toolbar #fa_right #notif_list li.see_all, #fae_sticky_nav_panel a:after, img[src*="color=primary"], .table1 thead th, .breadcrumbs, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"], .forumbg li.header, #chatbox_header, body #chatbox_footer { background-color:' + palette[1] + '; }'+
              '#cp-main h1:not(.title) { background-color:' + palette[1] + '; }'+
              '.pagination span a:hover, a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, input.search-button:hover, body div.sceditor-dropdown .button:hover, img[src*="color=primary"]:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]:hover { background-color:' + palette[2] + '; }'+
              '.pagination span a:active, .pagination span a:focus, .pagination span strong, a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, input[type="file"]:active, a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, input.search-button:focus, #tabs a:after, body div.sceditor-dropdown .button:active, body div.sceditor-dropdown .button:focus, body #fa_search #fa_textarea, body #fa_search #fa_magnifier, img[src*="color=primary"]:active, input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="file"]:focus { background-color:' + palette[3] + '; }'+
-             '.fa_pseudo_checkbox:after, h2.post-content, h3.post-content, h4.post-content { color:' + palette[1] + '; }'+
+             '.fa_pseudo_checkbox:after, h2.post-content, h3.post-content, h4.post-content, .codebox .fae_copy-code:before { color:' + palette[1] + '; }'+
              'img[src*="?poll"], .sceditor-container .sceditor-toolbar, .sceditor-container .sceditor-group, body #fa_toolbar, body #fa_toolbar_hidden { border-color:' + palette[2] + '; }'+
              '.color-secondary, .forum-status[style*="locked=true"], img[src*="color=secondary"] { background-color:' + palette[4] + '; }'+
              '.forum-status[style*="state=new"] { background-color:' + palette[0] + '; }'+
              'form.search-form { background-color:' + palette[2] + '; }'+
              'form.search-form input.search-keywords, input.search-button { border-color:' + palette[0] + '!important; }'+
-             'input[type="text"]:hover, input.post:hover, input.inputbox:hover, textarea:hover, select:hover, input[type="text"]:focus, input.post:focus, input.inputbox:focus, textarea:focus, select:focus, body div.sceditor-dropdown input:focus, body div.sceditor-dropdown textarea:focus, .fa_pseudo_checkbox:hover, .fa_pseudo_radio:hover, .sceditor-container, h2.post-content, h3.post-content, h4.post-content, .lastpost-avatar, #wio_new_avatar, .avatar-mini img, .avatar { border-color:' + palette[1] + ' !important; }'+
+             'input[type="text"]:hover, input.post:hover, input.inputbox:hover, textarea:hover, select:hover, input[type="text"]:focus, input.post:focus, input.inputbox:focus, textarea:focus, select:focus, body div.sceditor-dropdown input:focus, body div.sceditor-dropdown textarea:focus, .fa_pseudo_checkbox:hover, .fa_pseudo_radio:hover, .sceditor-container, h2.post-content, h3.post-content, h4.post-content, .lastpost-avatar, #wio_new_avatar, .avatar-mini img, .avatar, #chatbox, #chatbox_members, #chatbox_members > h4.away, #chatbox_members > ul.away-users, body #chatbox .cb-avatar { border-color:' + palette[1] + ' !important; }'+
              'a { color:' + palette[3] + '; }'+
              'a:hover, a:active { color:' + palette[2] + '; }'+
              '::selection { background-color:' + palette[1] + '; } ::-moz-selection { background-color:' + palette[1] + '; }'+
@@ -236,6 +271,7 @@ function fa_navactif() {
   };
 
   var selector = document.createElement('SELECT'),
+      picker = document.createElement('INPUT'),
       frag = document.createDocumentFragment(),
       opt,
       color,
@@ -254,11 +290,25 @@ function fa_navactif() {
     fa_theme_color.change(this.value);
   };
 
+  picker.id = 'fae_custom-theme';
+
+  try {
+    picker.type = 'color';
+  } catch (error) {
+    picker.type = 'text';
+  }
+
+  picker.value = cc || '#6699CC';
+  picker.style.display = my_getcookie('fae_custom-theme') ? '' : 'none';
+  picker.onchange = function () {
+    fa_theme_color.change('Custom theme');
+  };
+
   for (i in fa_theme_color.palette) {
     opt = document.createElement('OPTION');
-    color = /Random theme|Select a theme/.test(i) ? ['#FFF', '#000'] : [fa_theme_color.palette[i][2], ''];
+    color = /Random theme|Select a theme|Custom theme/.test(i) ? ['#FFF', '#000'] : [fa_theme_color.palette[i][2], ''];
 
-    if (!/Random theme|Select a theme/.test(i)) {
+    if (!/Random theme|Select a theme|Custom theme/.test(i)) {
       fa_theme_color.palette['Random theme'][fa_theme_color.palette['Random theme'].length] = i;
     }
 
@@ -273,16 +323,50 @@ function fa_navactif() {
 
   selector.appendChild(frag);
 
-  document.write('<style type="text/css">#fa_theme_selector { color:#FFF; border:1px solid transparent; float:left; outline:none; }</style>');
+  document.write('<style type="text/css">#fa_theme_selector { color:#FFF; border:1px solid transparent; float:left; outline:none; } #fae_custom-theme { margin:3px; }</style>');
 
   fa_theme_color.selector = selector;
+  fa_theme_color.picker = picker;
   fa_theme_color.change(fa_theme_color.selected);
 
   $(function() {
     var body = document.getElementById('page-body');
+    body.insertBefore(picker, body.firstChild);
     body.insertBefore(selector, body.firstChild);
   });
 }());
+
+function fae_editColor (str, op) {
+  var letter = { 'F' : 15, 'E' : 14, 'D' : 13, 'C' : 12, 'B' : 11, 'A' : 10 },
+      hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'],
+      neg = [0, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6];
+
+  str = str.toUpperCase().split('');
+
+  for (var i = 1; i < 7; i++) {
+    if (letter[str[i]]) {
+      str[i] = letter[str[i]];
+    } else {
+      str[i] = +str[i];
+    }
+
+    if (op == 'darken') {
+      str[i] = neg[str[i]];
+    } else {
+      str[i] += op;
+    }
+
+    if (str[i] > 15) {
+      str[i] = 15;
+    } else if (str[i] < 0) {
+      str[i] = 0;
+    }
+
+    str[i] = hex[str[i]];
+  }
+
+  return str.join('');
+};
 
 
 /* -- 03. pseudoInputs -- */
@@ -408,7 +492,7 @@ $(function() {
       });
     });
   } else {
-    fae_sticky.node[0].style.left = '';
+    fae_sticky.node[0].style[fae_sticky.position] = '';
   }
 });
 
@@ -614,4 +698,151 @@ $(function() {
 
     $('head').append('<style type="text/css">.topic-icon{vertical-align:middle;margin:0 3px;}</style>');
   }
+});
+
+
+/* -- 11. dark mode -- */
+(function() {
+  window.fae_lightSwitchMode = my_getcookie('fae_light-switch-mode') || 'dark';
+
+  document.write('<style type="text/css">#fae_light-switch-container{margin:6px 0}#fae_light-switch-label{font-weight:700;vertical-align:middle}#fae_light-switch{background-color:rgba(0,0,0,.25);vertical-align:middle;display:inline-block;position:relative;height:26px;width:56px;border-radius:20px;cursor:pointer;overflow:hidden}#fae_light-switch>input{display:none}#fae_light-switch>div{background-color:rgba(255,255,255,.5);position:absolute;top:3px;left:3px;height:20px;width:20px;border-radius:20px;transition:.4s;font-size:13px;font-weight:700;line-height:22px}#fae_light-switch>div:before{content:"ON";margin-left:-24px;color:transparent;transition:.4s}#fae_light-switch>div:after{content:"OFF";margin-left:30px;color:rgba(255,255,255,.5);transition:.4s}#fae_light-switch>input:checked+div{background-color:#FFF;left:33px}#fae_light-switch>input:checked+div:before{color:#FFF}#fae_light-switch>input:checked+div:after{color:transparent}</style>');
+
+  var footer = '.footer-links.left',
+
+      cookie = my_getcookie('fae_light-switch'),
+      rgb,
+      button,
+      container,
+
+      changeTheme = function (cookie) {
+        var button = document.querySelector('#fae_light-switch input');
+
+        if ((button && button.checked) || cookie == 'on') {
+          my_setcookie('fae_light-switch', 'on', true);
+
+          if (window.sessionStorage && window.sessionStorage.faeLightSwitch) {
+            $('head').append('<style type="text/css" id="fae_light-switch-css">' + window.sessionStorage.faeLightSwitch + '</style>');
+          } else {
+            $.get('https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/css/dark-mode/' + fae_lightSwitchMode + '-mode.min.css', function (d) {
+              $('head').append('<style type="text/css" id="fae_light-switch-css">' + d + '</style>');
+
+              if (window.sessionStorage) {
+                window.sessionStorage.faeLightSwitch = d;
+              }
+            });
+          }
+
+        } else {
+          var css = document.getElementById('fae_light-switch-css');
+
+          my_setcookie('fae_light-switch', 'off', true);
+
+          if (css) {
+            document.head.removeChild(css);
+          }
+        }
+      };
+
+  cookie && changeTheme(cookie);
+
+  $(function() {
+    if (!my_getcookie('fae_light-switch-mode')) {
+      rgb = window.getComputedStyle(document.body, null).getPropertyValue('background-color').replace(/rgb\(|\)|\s/g, '').split(',');
+      fae_lightSwitchMode = Math.round(((parseInt(rgb[0]) * 299) + (parseInt(rgb[1]) * 587) + (parseInt(rgb[2]) * 114)) /1000) > 125 ? 'dark' : 'light';
+
+      my_setcookie('fae_light-switch-mode', fae_lightSwitchMode, true);
+    }
+
+    footer = document.querySelector(footer);
+
+    if (footer) {
+      button = document.createElement('LABEL');
+      button.id = 'fae_light-switch';
+      button.innerHTML = '<input type="checkbox" ' + (cookie == 'on' ? 'checked="true"' : '') + '/><div></div>';
+      button.firstChild.onchange = changeTheme;
+
+      container = document.createElement('DIV');
+      container.id = 'fae_light-switch-container';
+      container.innerHTML = '<span id="fae_light-switch-label">' + (fae_lightSwitchMode == 'dark' ? 'Dark Mode : ' : 'Light Mode : ') + '</span>';
+
+      container.appendChild(button);
+      footer.appendChild(container);
+    }
+  });
+}());
+
+
+/* -- 12. copy code button -- */
+$.getScript('https://cdn.jsdelivr.net/clipboard.js/1.5.16/clipboard.min.js', function() {
+  window.fae_copyCode = {
+    copy : 'Copy Code',
+    copied : 'Copied !'
+  };
+
+  $(function() {
+    var a = $('.codebox dt').not('.spoiler > dt, .hidecode > dt'),
+        i = 0,
+        j = a.length;
+
+    if (a[0]) {
+      $('head').append('<style type="text/css">.fae_copy-code{float:right;cursor:pointer}.fae_copy-code:before{content:"\\f0ea";font-size:13px;font-family:FontAwesome;text-align:center;color:#69C;background:#FFF;border-radius:100%;display:inline-block;width:19px;height:19px;line-height:19px;margin:-1px 3px 0 3px}.codebox .fae_copy-code:hover:before{color:#EB5}.codebox .fae_copy-code.fae_copied:before{content:"\\f00c";font-weight:700;color:#8B5}</style>');
+
+      for (; i < j; i++) {
+        a[i].insertAdjacentHTML('beforeend', '<span class="fae_copy-code">' + fae_copyCode.copy + '</span>');
+      }
+
+      new Clipboard('.fae_copy-code',{
+        target : function (copy) {
+          if (copy.innerHTML != fae_copyCode.copied) {
+            return $(copy).closest('.codebox').find('code')[0];
+          }
+        },
+
+        text : function (copy) {
+          if (copy.innerHTML != fae_copyCode.copied) {
+            copy.innerHTML = fae_copyCode.copied;
+            copy.className += ' fae_copied';
+
+            window.setTimeout(function() {
+              copy.innerHTML = fae_copyCode.copy;
+              copy.className = copy.className.replace('fae_copied', '');
+            }, 1000);
+          }
+        }
+      });
+    }
+
+  });
+});
+
+
+
+/* -- 13. local frame styler -- */
+// global function for getting local iframes
+function fae_styleLocalFrames () {
+  var frame = $('iframe[src^="/"], object[data^="/"]'),
+      i = 0,
+      j = frame.length;
+
+  for (; i < j; i++) {
+    try {
+      var head = $('head', frame[i].contentDocument || frame[i].contentWindow.document);
+
+      $('#fa_theme_style, #fae_light-switch-css', head).remove();
+      head.append($('#fa_theme_style, #fae_light-switch-css').clone());
+
+    } catch (error) {
+      window.console && console.log(error);
+    }
+  }
+
+};
+
+
+// waits for frames to load (such as chatbox and smilies) and then applies preferred styles to them
+$(window).load(function() {
+  fae_styleLocalFrames();
+  $('iframe[src^="/"]').on('load', fae_styleLocalFrames);
+  $('object[data^="/"]').attr('onload', 'fae_styleLocalFrames();');
+  $('#fae_custom-theme, #fa_theme_selector, #fae_light-switch input').on('change', fae_styleLocalFrames);
 });

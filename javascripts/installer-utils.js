@@ -3,7 +3,7 @@
     window.FAE = new Object();
   }
 
-  FAE.maintenance = false;
+  FAE.maintenance = true;
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -346,6 +346,7 @@
             '</span>'+
             '<span id="fae_label-profile" class="fae_label">Profile position : </span>'+
             '<label for="fae_profil_dir-left"><input type="radio" id="fae_profil_dir-left" name="fae_profil_dir" checked> Left</label>'+
+            '<label for="fae_profil_dir-center"><input type="radio" id="fae_profil_dir-center" name="fae_profil_dir"> Center</label>'+
             '<label for="fae_profil_dir-right"><input type="radio" id="fae_profil_dir-right" name="fae_profil_dir"> Right</label>'+
           '</div>'+
 
@@ -394,6 +395,8 @@
             if (/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/.test(form.edit_code.value)) {
               dir = form.edit_code.value.match(/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:(.*?);.*?\}\.post-inner\{.*?\}/)[1];
               document.getElementById('fae_profil_dir-' + dir.toLowerCase()).checked = true;
+            } else if (/\/\*!FAE_PROFIL_DIR\*\/\.post-inner\{margin:0!important\}/) {
+              document.getElementById('fae_profil_dir-center').checked = true;
             }
 
           }
@@ -418,6 +421,7 @@
                          document.getElementById('fae_logo_dir-right').checked ? 'right' : 'left',
 
               profil_dir = document.getElementById('fae_profil_dir-left').checked ? 'left' :
+                           document.getElementById('fae_profil_dir-center').checked ? 'center' :
                            document.getElementById('fae_profil_dir-right').checked ? 'right' : 'left',
               profil_dir2 = profil_dir == 'left' ? 'right' : 'left',
 
@@ -428,7 +432,12 @@
           width = '/*!FAE_WIDTH*/#page-body{width:' + ( width >= 100 ? 'auto;' : width + '%;margin:0 auto;' ) + '}';
           nav_dir = '/*!FAE_NAV_DIR*/#navbar{text-align:' + nav_dir + '}';
           logo_dir = '/*!FAE_LOGO_DIR*/#logo-desc{text-align:' + logo_dir + '}#logo{float:' + ( logo_dir == 'center' ? 'none' : logo_dir ) + '}';
-          profil_dir = '/*!FAE_PROFIL_DIR*/.postprofile{float:' + profil_dir + ';margin-' + profil_dir + ':-300px;margin-' + profil_dir2 + ':0px}.post-inner{margin-' + profil_dir2 + ':0;margin-' + profil_dir + ':300px}';
+          profil_dir = '/*!FAE_PROFIL_DIR*/' + (
+            profil_dir == 'center' ?
+            '.post-inner{margin:0!important}.postprofile{width:100%;margin:-10px 0 10px!important;float:none!important}.postprofile dl{width:100%;border:none;border-bottom:1px solid rgba(0,0,0,.2);padding-top:3px}.field-info,.postprofile dt{width:auto}.postprofile dt,.user-avatar{float:left}.postprofile .username{display:inline-block;padding-top:8px}.field-info{float:right;text-align:left}.profile-field .label,.profile-field .value{display:inline}.contact-info{text-align:left;clear:both}.profile-field,.user-avatar{margin:0 3px}.user-avatar img{max-height:100px;max-width:100px}'
+            :
+            '.postprofile{float:' + profil_dir + ';margin-' + profil_dir + ':-300px;margin-' + profil_dir2 + ':0px}.post-inner{margin-' + profil_dir2 + ':0;margin-' + profil_dir + ':300px}'
+          ) + '/*!END_FAE_PROFIL_DIR*/';
 
           // get the stylesheet
           $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
@@ -462,8 +471,8 @@
 
 
               // update stylesheet with new PROFILE POSITION rule
-              if (/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/.test(form.edit_code.value)) {
-                val = val.replace(/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/, profil_dir);
+              if (/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}|\/\*!FAE_PROFIL_DIR\*\/.*?\/\*!END_FAE_PROFIL_DIR\*\//.test(form.edit_code.value)) {
+                val = val.replace(/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}|\/\*!FAE_PROFIL_DIR\*\/.*?\/\*!END_FAE_PROFIL_DIR\*\//, profil_dir);
               } else {
                 val += '\n' + profil_dir;
               }

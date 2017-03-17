@@ -787,7 +787,7 @@
         // submit plugin settings on click
         document.getElementById('fae_save_plugins').onclick = function () {
           var qnp = document.getElementById('fae_qnp_right').checked ? 'right' : 'left',
-              qns = document.getElementById('fae_qns_yes') ? true : false;
+              qns = document.getElementById('fae_qns_yes').checked ? true : false;
 
           FAE.log('Locating [FA EDGE] ALL.JS...');
           FAE.quota = 3;

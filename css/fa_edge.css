@@ -1796,7 +1796,7 @@ h2.post-content, h3.post-content, h4.post-content {
   display:block;
 }
 
-.hidecode dt:after { content:"Hidden:"; }
+.hidecode > dt:after { content:"Hidden:"; }
 
 .codebox dd {
   margin:0;

@@ -937,7 +937,7 @@
                     input = a[i].getElementsByTagName('INPUT');
                     val = input[0].value;
 
-                    fae_themeList += input[1].value + ' : ["' + ( fae_editColor(val, +1) + '", ' + val + ', "' + fae_editColor(val, -1) + '", "' + fae_editColor(val, -3) + '", "' + fae_editColor(val, 'darken') ) + '"]' + (i + 1 == j.length ? ',' : '') + '\n';
+                    fae_themeList += '"' + input[1].value + '" : ["' + ( fae_editColor(val, +1) + '", "' + val + '", "' + fae_editColor(val, -1) + '", "' + fae_editColor(val, -3) + '", "' + fae_editColor(val, 'darken') ) + '"]' + (i + 1 == j.length ? ',' : '') + '\n';
                   }
 
                   $.post(form.action, {
@@ -1084,7 +1084,7 @@ function fae_editColor (str, op) {
       hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'],
       neg = [0, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6];
 
-  str = str.split('');
+  str = str.toUpperCase().split('');
 
   for (var i = 1; i < 7; i++) {
     if (letter[str[i]]) {

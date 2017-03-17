@@ -738,7 +738,7 @@
 
         if (window.location.host == 'themedesign.forumotion.com') {
         // create and insert the plugin manager
-        $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Plugin Manager</div>'+
+        $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Plugin Management</div>'+
 
           '<p id="fae_plugin_desc">This section allows you to manage the settings of core-plugins for Forumactif Edge.</p>'+
 
@@ -758,6 +758,19 @@
             '<span id="fae_label-qns" class="fae_label">Always show Quick Navigation : </span>'+
             '<label for="fae_qns_yes"><input type="radio" id="fae_qns_yes" name="fae_qns" value="1"> Yes</label>'+
             '<label for="fae_qns_no"><input type="radio" id="fae_qns_no" name="fae_qns" value="0" checked> No</label>'+
+          '</div>'+
+
+          '<div class="fae_cp_row">'+
+            '<span class="fae_help_me">?'+
+              '<span class="fae_help_tip" id="fae_theme_tip-tso">This tool allows you to edit the theme selector list, giving you the option to add, delete, and edit themes.</span>'+
+            '</span>'+
+            '<span id="fae_label-tso" class="fae_label">Theme Selector Options : </span>'+
+            '<div id="fae_themer">'+
+              '<div id="fae_theme_options"></div>'+
+              ''+
+              '<input id="fae_themer_add" type="button" value="New Theme"/>'+
+              '<input id="fae_themer_import" type="button" value="Import Default"/>'+
+            '</div>'+
           '</div>'+
 
           '<div class="fae_cp_row">'+
@@ -792,6 +805,101 @@
           }
         });
 
+        // build theme color manager
+        function fae_compileThemes (msg, obj, init) {
+          var opts = document.getElementById('fae_theme_options'),
+              html = '', k, c;
+
+          opts.innerHTML = msg;
+
+          if (init) {
+            window.fae_themeList = '';
+          }
+
+          window.fae_color_support = document.createElement('INPUT');
+
+          try {
+            fae_color_support.type = 'color';
+            fae_color_support = true;
+          } catch (error) {
+            fae_color_support.type = false;
+          }
+
+          for (k in obj) {
+            if (obj[k].length == 5 && k != 'Custom theme') {
+              c = obj[k][1];
+              html += '<div class="theme_opt"><input class="color_block" type="' + (fae_color_support ? 'color' : 'text') + '" value="' + (c.length == 4 ? '#' + c.charAt(1) + c.charAt(1) + c.charAt(2) + c.charAt(2) + c.charAt(3) + c.charAt(3) : c) + '"/><input class="color_name" type="text" value="' + k + '"/><i class="fa fa-times" title="Delete Theme"></i><i class="fa fa-sort-up" title="Move Up"></i><i class="fa fa-sort-desc" title="Move Down"></i></div>';
+            } else if (init) {
+              fae_themeList += k + ' : [' + ( obj[k].length == 5 ? "cc ? fae_editColor(cc, +1) : '#77AADD', cc || '#6699CC', cc ? fae_editColor(cc, -1) : '#5588BB', cc ? fae_editColor(cc, -3) : '#336699', cc ? fae_editColor(cc, 'darken') : '#334455'" : '' ) + '],\n';
+            }
+          }
+
+          opts.innerHTML = html;
+        };
+
+        fae_compileThemes('Compiling themes, please wait...', fa_theme_color.palette, true);
+
+
+        // add a new random theme
+        document.getElementById('fae_themer_add').onclick = function () {
+          var hex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'],
+              opts = document.getElementById('fae_theme_options'),
+              i = 0,
+              color = '#';
+
+          while (i < 6) {
+            color += hex[Math.floor(Math.random() * hex.length)];
+            i++
+          }
+
+          opts.insertAdjacentHTML('beforeend', '<div class="theme_opt"><input class="color_block" type="' + (fae_color_support ? 'color' : 'text') + '" value="' + color + '"/><input class="color_name" type="text" value="New Theme ' + document.querySelectorAll('.theme_opt').length + '"/><i class="fa fa-times" title="Delete Theme"></i><i class="fa fa-sort-up" title="Move Up"></i><i class="fa fa-sort-desc" title="Move Down"></i></div>');
+          opts.lastChild.scrollIntoView();
+        };
+
+        // theme option events
+        $(document).on('click', '.theme_opt .fa', function (e) {
+          var that = e.target,
+              opts = document.getElementById('fae_theme_options'),
+              next;
+
+          switch (that.className) {
+            case 'fa fa-times' :
+              opts.removeChild(that.parentNode);
+              break;
+
+            case 'fa fa-sort-up' :
+              opts.insertBefore(that.parentNode, that.parentNode.previousSibling);
+              break;
+
+            case 'fa fa-sort-desc' :
+              next = that.parentNode.nextSibling.nextSibling;
+              next ? opts.insertBefore(that.parentNode, next) : opts.appendChild(that.parentNode);
+              break;
+          }
+
+          that.parentNode.scrollIntoView();
+        });
+
+
+        // import default themes
+        document.getElementById('fae_themer_import').onclick = function () {
+          if (confirm('Do you want to import the default theme list from Github ?')) {
+            var that = this;
+
+            that.disabled = true;
+            document.getElementById('fae_theme_options').innerHTML = 'Contacting Github, please wait...';
+
+            $.get(FAE.raw + 'javascripts/in-all-the-pages/all.js', function(d) {
+              FAE.script(d.match(/palette : {[\s\S]*?}/)[0].replace('palette :', 'fae_default_themes ='));
+              fae_compileThemes('Compiling themes, please wait...', fae_default_themes);
+            });
+
+            window.setTimeout(function() {
+              that.disabled = false;
+            }, 10000);
+          }
+        };
+
 
         // submit plugin settings on click
         document.getElementById('fae_save_plugins').onclick = function () {
@@ -825,12 +933,20 @@
                   FAE.index = 2;
                   FAE.progress();
 
+                  for (var a = document.querySelectorAll('.theme_opt'), i = 0, j = a.length, input, val; i < j; i ++) {
+                    input = a[i].getElementsByTagName('INPUT');
+                    val = input[0].value;
+
+                    fae_themeList += input[1].value + ' : ["' + ( fae_editColor(val, +1) + '", ' + val + ', "' + fae_editColor(val, -1) + '", "' + fae_editColor(val, -3) + '", "' + fae_editColor(val, 'darken') ) + '"]' + (i + 1 == j.length ? ',' : '') + '\n';
+                  }
+
                   $.post(form.action, {
                                title : '[FA EDGE] ALL.JS',
                     'js_placement[]' : 'allpages',
                              content : form.content.value
                                        .replace(/position : '.*?'/, "position : '" + qnp + "'") // quick nav position
-                                       .replace(/alwaysVisible : .*?,/, "alwaysVisible : " + qns + ","), // quick nav visibility
+                                       .replace(/alwaysVisible : .*?,/, "alwaysVisible : " + qns + ",") // quick nav visibility
+                                       .replace(/palette : {[\s\S]*?}/, 'palette : {\n' + fae_themeList + '\n}'), // theme selector
                                 mode : 'save',
                                 page : form.page.value,
                               submit : 'Submit'
@@ -928,8 +1044,8 @@
   $('head').append(
     '<style type="text/css">'+
       '.fae_cp_row { margin:6px 0; }'+
-      '.fae_label { display:inline-block; width:200px; }'+
-      '.fae_help_me { color:#FFF; font-size:18px; background:#69C; border-radius:100%; text-align:center; vertical-align:middle; display:inline-block; height:24px; line-height:24px; width:24px; margin:auto 3px; position:relative; cursor:help; }'+
+      '.fae_label { display:inline-block; width:200px; vertical-align:top; margin-top:5px; }'+
+      '.fae_help_me { color:#FFF; font-size:18px; background:#69C; border-radius:100%; text-align:center; vertical-align:top; display:inline-block; height:24px; line-height:24px; width:24px; margin:auto 3px; position:relative; cursor:help; }'+
       '.fae_help_tip { color:#333; font-size:12px; line-height:15px; background:#EEE; border:1px solid #CCC; border-radius:3px; display:inline-block; width:300px; padding:3px; position:absolute; visibility:hidden; z-index:1; }'+
       '#fae_cp label { margin-right:10px; display:inline-block; }'+
       '#fae_cp label input { vertical-align:text-bottom; }'+
@@ -942,6 +1058,23 @@
       '#fae_maintenance i { font-size:28px; vertical-align:-4px; margin-right:6px; }'+
       '#fae_maintenance a { color:#666; text-decoration:underline; }'+
       '#fae_maintenance a:hover { color:#000; text-decoration:none; }'+
+      '#fae_themer { display:inline-block; }'+
+      '#fae_themer_add { background:#8B5 !important; }'+
+      '#fae_themer_add:hover { background:#7A4 !important; }'+
+      '#fae_themer_import[disabled] { opacity:0.5; }'+
+      '#fae_theme_options { height:153px; border:1px solid #CCC; overflow:auto; margin-bottom:3px; padding:3px; }'+
+      '#fae_theme_options .color_block { background:none !important; border:1px solid transparent; padding:0; }'+
+      '#fae_theme_options .color_block:hover { border-color:#69C; }'+
+      '#fae_theme_options .color_name { color:#333; background:#FFF !important; border:1px solid #CCC; cursor:text; }'+
+      '#fae_theme_options .color_name:hover, #fae_theme_options .color_name:focus { border-color:#69C; }'+
+      '.theme_opt i { color:#FFF; font-size:16px; text-align:center; display:inline-block; vertical-align:middle; height:20px; width:20px; line-height:20px; border-radius:20px; margin:0 3px; cursor:pointer; transition:200ms; }'+
+      '.theme_opt i.fa-times { background:#E53; }'+
+      '.theme_opt i[class*="sort"] { background:#69C; }'+
+      '.theme_opt i.fa-times { line-height:19px; }'+
+      '.theme_opt i.fa-sort-up { line-height:26px; }'+
+      '.theme_opt i.fa-sort-desc { line-height:14px; }'+
+      '.theme_opt:first-child i.fa-sort-up, .theme_opt:last-child i.fa-sort-desc { display:none; }'+
+      '.theme_opt i:hover { transform:scale(1.2); }'+
     '</style>'
   );
 }());

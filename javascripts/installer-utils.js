@@ -777,7 +777,7 @@
                   FAE.index = 2;
                   FAE.progress();
 
-                  $.post(form.action.replace(/^.*?\/admin\/index\.forum\?|&tid=.*$/g, ''), {
+                  $.post(form.action, {
                                title : '[FA EDGE] ALL.JS',
                     'js_placement[]' : 'allpages',
                              content : form.content.value

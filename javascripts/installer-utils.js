@@ -3,7 +3,7 @@
     window.FAE = new Object();
   }
 
-  FAE.maintenance = true;
+  FAE.maintenance = false;
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -736,7 +736,6 @@
         };
 
 
-        if (window.location.host == 'themedesign.forumotion.com') {
         // create and insert the plugin manager
         $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Plugin Management</div>'+
 
@@ -974,7 +973,6 @@
 
           document.getElementById('fae_options').style.display = 'none';
         };
-        }
 
 
         // setup and begin translation of control panel

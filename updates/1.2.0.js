@@ -125,22 +125,6 @@ FAE.update_step = [
 
 
   {
-    info : 'Getting overall_footer_end.html',
-    type : 'GET',
-     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=133&l=main&extended_admin=1' + FAE.tid,
-    func : function(d) {
-      var form = $('form[name="post"]', d)[0];
-
-      if (form) {
-        FAE.step[FAE.index + 1].data.template = form.template.value
-                                                .replace("https://github.com/SethClydesdale/forumactif-edge", "https://sethclydesdale.github.io/forumactif-edge/")
-                                                .replace(/<!-- BEGIN switch_facebook_login -->[\s\S]*?<!-- END switch_facebook_logout_TMP -->/, '<!-- BEGIN switch_facebook_login -->\n<div id="fb-root"></div>\n<script type="text/javascript">\n    $(document).ready( function() {\n        $(\'div.fb-login-button, span.fb-login-button\').attr({\n            "data-scope": "{switch_facebook_login.FB_SCOPE}",\n            "data-max-rows": "{switch_facebook_login.FB_MAX_ROWS}",\n            "data-size": "{switch_facebook_login.FB_BUTTON_SIZE}",\n            "data-show-faces": "{switch_facebook_login.FB_SHOW_FACES}",\n            "data-auto-logout-link": "{switch_facebook_login.FB_AUTO_LOGOUT}"\n        });\n \n        $(\'div.fb-login-button, span.fb-login-button\').each(function() {\n            if(typeof $(this).attr(\'onlogin\') == typeof undefined || $(this).attr(\'onlogin\') === false) {\n                $(this).attr(\'onlogin\', \'{switch_facebook_login.FB_ONLOGIN}\');\n            }\n            if($(this).html() == \'\') {\n                $(this).html(\'{switch_facebook_login.FB_LABEL}\');\n            }\n        });\n \n \n        FB.init({\n            appId  : "{switch_facebook_login.FB_APP_ID}",\n            cookie  : {switch_facebook_login.FB_COOKIE},\n            xfbml  : {switch_facebook_login.FB_XFBML},\n            oauth  : {switch_facebook_login.FB_OAUTH},\n            version : \'{switch_facebook_login.FB_VERSION}\'\n        });\n \n        (function(d, s, id){\n            var js, fjs = d.getElementsByTagName(s)[0];\n            if (d.getElementById(id)) {return;}\n            js = d.createElement(s); js.id = id;\n            js.src = "//connect.facebook.net/{switch_facebook_login.FB_LOCAL}/sdk.js";\n            fjs.parentNode.insertBefore(js, fjs);\n        }(document, \'script\', \'facebook-jssdk\'));\n \n    });\n    function onLoginFB() {\n        window.location.replace(\'{switch_facebook_login.FB_ONLOGIN_URL}\')\n    }\n</script>\n<!-- END switch_facebook_login -->')
-      }
-    }
-  },
-
-
-  {
     info : 'Getting template profile_add_body.html',
     type : 'GET',
      url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=701&l=main&extended_admin=1&tid=' + FAE.tid,
@@ -211,6 +195,22 @@ FAE.update_step = [
     info : 'Publishing template mod_login.html',
     type : 'PUBLISH',
      tpl : 916
+  },
+
+
+  {
+    info : 'Getting overall_footer_end.html',
+    type : 'GET',
+     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=133&l=main&extended_admin=1' + FAE.tid,
+    func : function(d) {
+      var form = $('form[name="post"]', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].data.template = form.template.value
+                                                .replace("https://github.com/SethClydesdale/forumactif-edge", "https://sethclydesdale.github.io/forumactif-edge/")
+                                                .replace(/<!-- BEGIN switch_facebook_login -->[\s\S]*?<!-- END switch_facebook_logout_TMP -->/, '<!-- BEGIN switch_facebook_login -->\n<div id="fb-root"></div>\n<script type="text/javascript">\n    $(document).ready( function() {\n        $(\'div.fb-login-button, span.fb-login-button\').attr({\n            "data-scope": "{switch_facebook_login.FB_SCOPE}",\n            "data-max-rows": "{switch_facebook_login.FB_MAX_ROWS}",\n            "data-size": "{switch_facebook_login.FB_BUTTON_SIZE}",\n            "data-show-faces": "{switch_facebook_login.FB_SHOW_FACES}",\n            "data-auto-logout-link": "{switch_facebook_login.FB_AUTO_LOGOUT}"\n        });\n \n        $(\'div.fb-login-button, span.fb-login-button\').each(function() {\n            if(typeof $(this).attr(\'onlogin\') == typeof undefined || $(this).attr(\'onlogin\') === false) {\n                $(this).attr(\'onlogin\', \'{switch_facebook_login.FB_ONLOGIN}\');\n            }\n            if($(this).html() == \'\') {\n                $(this).html(\'{switch_facebook_login.FB_LABEL}\');\n            }\n        });\n \n \n        FB.init({\n            appId  : "{switch_facebook_login.FB_APP_ID}",\n            cookie  : {switch_facebook_login.FB_COOKIE},\n            xfbml  : {switch_facebook_login.FB_XFBML},\n            oauth  : {switch_facebook_login.FB_OAUTH},\n            version : \'{switch_facebook_login.FB_VERSION}\'\n        });\n \n        (function(d, s, id){\n            var js, fjs = d.getElementsByTagName(s)[0];\n            if (d.getElementById(id)) {return;}\n            js = d.createElement(s); js.id = id;\n            js.src = "//connect.facebook.net/{switch_facebook_login.FB_LOCAL}/sdk.js";\n            fjs.parentNode.insertBefore(js, fjs);\n        }(document, \'script\', \'facebook-jssdk\'));\n \n    });\n    function onLoginFB() {\n        window.location.replace(\'{switch_facebook_login.FB_ONLOGIN_URL}\')\n    }\n</script>\n<!-- END switch_facebook_login -->')
+      }
+    }
   },
 
 

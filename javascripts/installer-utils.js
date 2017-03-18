@@ -889,7 +889,11 @@
             document.getElementById('fae_theme_options').innerHTML = 'Contacting Github, please wait...';
 
             $.get(FAE.raw + 'javascripts/in-all-the-pages/all.js', function(d) {
-              FAE.script(d.match(/palette : {[\s\S]*?}/)[0].replace('palette :', 'fae_default_themes ='));
+              FAE.script(
+                'fae_default_themes = {' +
+                  d.match(/palette : {[\s\S]*?'.*?' : \[\],[\s\S]*?'.*?' : \[\],([\s\S]*?)}/)[1] +
+                '}'
+              );
               fae_compileThemes('Compiling themes, please wait...', fae_default_themes);
             });
 

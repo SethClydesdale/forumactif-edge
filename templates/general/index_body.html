@@ -10,10 +10,14 @@
 				<label>{L_PASSWORD} : <input class="post" type="password" size="10" name="password" /></label>&nbsp;
 				<label>{L_AUTO_LOGIN} : <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} /></label>&nbsp;
 				{S_HIDDEN_FIELDS}<input class="mainoption button1" type="submit" name="login" value="{L_LOGIN}" />
-				<!-- BEGIN switch_fb_connect -->
-				<span class="fb_or">{switch_user_login_form_header.switch_fb_connect.L_OR}</span>
-				<fb:login-button size="large" onlogin="window.location='/facebook_connect.forum'" scope="{switch_user_login_form_footer.switch_fb_connect.L_FB_PERMISSIONS}">{switch_user_login_form_footer.switch_fb_connect.L_FB_LOGIN_BUTTON}</fb:login-button>
-				<!-- END switch_fb_connect -->
+        <!-- BEGIN switch_social_login -->
+        <div class="social_btn">
+            <!-- BEGIN fb_connect -->
+            <div class="fb-login-button"></div>
+            <!-- END fb_connect -->
+            &nbsp;
+        </div>
+        <!-- END switch_social_login -->
 			</div>
 		</form>
   </div>
@@ -147,10 +151,14 @@
 				<label>{L_PASSWORD} : <input class="post" type="password" size="10" name="password" /></label>&nbsp;
 				<label>{L_AUTO_LOGIN} : <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} /></label>&nbsp;
 				{S_HIDDEN_FIELDS}<input class="mainoption button1" type="submit" name="login" value="{L_LOGIN}" />
-				<!-- BEGIN switch_fb_connect -->
-				<span class="fb_or">{switch_user_login_form_footer.switch_fb_connect.L_OR}</span>
-				<fb:login-button size="large" onlogin="window.location='/facebook_connect.forum'" scope="{switch_user_login_form_footer.switch_fb_connect.L_FB_PERMISSIONS}">{switch_user_login_form_footer.switch_fb_connect.L_FB_LOGIN_BUTTON}</fb:login-button>
-				<!-- END switch_fb_connect -->
+        <!-- BEGIN switch_social_login -->
+        <div class="social_btn">
+            <!-- BEGIN fb_connect -->
+            <div class="fb-login-button"></div>
+            <!-- END fb_connect -->
+            &nbsp;
+        </div>
+        <!-- END switch_social_login -->
 			</div>
 		</form>
   </div>

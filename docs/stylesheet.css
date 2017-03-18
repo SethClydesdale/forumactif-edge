@@ -201,7 +201,7 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
 .giveTip { position:relative; }
 .giveTip:before {
   color:#FFF;
-  content:"Click bubbles to view demos!";
+  content:attr(data-tip);
   background-color:rgba(0, 0, 0, 0.5);
   padding:0 6px;
   font-size:14px;

@@ -16,7 +16,7 @@ Forumactif Edge will constantly evolve because it's open source and managed by t
 
 - [**How to install Forumactif Edge**](https://github.com/SethClydesdale/forumactif-edge/wiki/Installing)
 
-Not ready to install yet ? No problem ! Take a look around, check out the FAQ and previews below, or visit [our wiki](https://github.com/SethClydesdale/forumactif-edge/wiki) to learn more about what Forumactif Edge has to offer !
+Not ready to install yet ? No problem ! Take a look around, check out the FAQ and previews below, or visit [our website](https://sethclydesdale.github.io/forumactif-edge/) to learn more about what Forumactif Edge has to offer !
 
 ## FAQ
 

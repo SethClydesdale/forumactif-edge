@@ -258,10 +258,11 @@
               current = document.getElementById('fae_current_language'),
               selected = select.options[select.selectedIndex];
 
-          if (select.value == 'ADD' && confirm("You've chosen to submit a new translation. If this is correct, please click 'OK' and proceed to the translation page, otherwise click 'cancel' and choose another language.")) {
-            window.location.href = 'http://fmdesign.forumotion.com/t706-forumactif-edge-translations#13996';
-            return;
-          } else {
+          if (select.value == 'ADD') {
+            if (confirm("You've chosen to submit a new translation. If this is correct, please click 'OK' and proceed to the translation page, otherwise click 'cancel' and choose another language.")) {
+              window.location.href = 'http://fmdesign.forumotion.com/t706-forumactif-edge-translations#13996';
+            }
+            
             return;
           }
 

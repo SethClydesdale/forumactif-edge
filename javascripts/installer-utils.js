@@ -434,7 +434,7 @@
           logo_dir = '/*!FAE_LOGO_DIR*/#logo-desc{text-align:' + logo_dir + '}#logo{float:' + ( logo_dir == 'center' ? 'none' : logo_dir ) + '}';
           profil_dir = '/*!FAE_PROFIL_DIR*/' + (
             profil_dir == 'center' ?
-            '.post-inner{margin:0!important}.postprofile{width:100%;margin:-10px 0 10px!important;float:none!important}.postprofile dl{width:100%;border:none;border-bottom:1px solid rgba(0,0,0,.2);padding-top:3px}.field-info,.postprofile dt{width:auto}.postprofile dt,.user-avatar{float:left}.postprofile .username{display:inline-block;padding-top:8px}.field-info{float:right;text-align:left}.profile-field .label,.profile-field .value{display:inline}.contact-info{text-align:left;clear:both}.profile-field,.user-avatar{margin:0 3px}.user-avatar img{max-height:100px;max-width:100px}'
+            '.post-inner{margin:0!important}.postprofile{width:100%;margin:-10px 0 10px!important;float:none!important}.postprofile dl{width:100%;border:none;border-bottom:1px solid rgba(0,0,0,.2);padding-top:3px}.field-info,.postprofile dt{width:auto}.postprofile dt,.user-avatar{float:left;white-space:nowrap}.postprofile .username{display:inline-block;padding-top:8px}.field-info{float:right;text-align:left}.profile-field .label,.profile-field .value{display:inline}.contact-info{text-align:left;clear:both}.profile-field,.user-avatar{margin:0 3px}.user-avatar img{max-height:100px;max-width:100px}'
             :
             '.postprofile{float:' + profil_dir + ';margin-' + profil_dir + ':-300px;margin-' + profil_dir2 + ':0px}.post-inner{margin-' + profil_dir2 + ':0;margin-' + profil_dir + ':300px}'
           ) + '/*!END_FAE_PROFIL_DIR*/';

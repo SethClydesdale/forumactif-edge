@@ -3,7 +3,8 @@
     window.FAE = new Object();
   }
 
-  FAE.maintenance = true;
+  FAE.maintenance = false;
+  FAE.cp_rev = '1.2.0';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -318,9 +319,9 @@
 
         // insert category toggle bar
         $(opts).append(
-          '<div class="fae_cp_title" style="margin-top:24px;">Configuration</div>'+
+          '<div class="fae_cp_title" id="fae_title-configuration" style="margin-top:24px;">Configuration</div>'+
 
-          '<p id="fae_nav_desc">Clicking the buttons below take you to different sections of the control panel, which allow you to manage the Configuration of Forumactif Edge. Go ahead and explore each of these sections, so you can get started on personalizing your theme. If you need more information, <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">click here</a> to view the control panel guide.</p>'+
+          '<p id="fae_nav_desc">Clicking the buttons below will take you to different sections of the control panel, which allow you to manage the Configuration of Forumactif Edge. Go ahead and explore each of these sections, so you can get started on personalizing your theme. If you need more information, <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">click here</a> to view the control panel guide.</p>'+
 
           '<div id="fae_cp_navbar">'+
             '<input type="button" value="General Settings" data-tab="category-general" style="background-color:#8B5;" />'+
@@ -344,7 +345,7 @@
         // create and insert general settings
         $(opts).append('<div id="category-general" style="display:block;">'+
 
-          '<div class="fae_cp_title" style="margin-top:24px;">General Settings</div>'+
+          '<div class="fae_cp_title" id="fae_title-general_settings" style="margin-top:24px;">General Settings</div>'+
 
           '<p id="fae_gen_desc">This section allows you to manage the general settings of Forumactif Edge.</p>'+
 
@@ -535,7 +536,7 @@
 
         // create and insert the theme switcher
         $(opts).append('<div id="category-theme" style="display:none;">'+
-          '<div class="fae_cp_title clear" style="margin-top:24px;">Theme Management</div>'+
+          '<div class="fae_cp_title" id="fae_title-theme_management" style="margin-top:24px;">Theme Management</div>'+
 
           '<p id="fae_theme_desc">This section allows you to manage the default theme and colors for Forumactif Edge by importing a new theme from the Github repository.</p>'+
 
@@ -776,7 +777,7 @@
         // create and insert colors manager
         $(opts).append('<div id="category-color" style="display:none;">'+
 
-          '<div class="fae_cp_title clear" style="margin-top:24px;">Colors</div>'+
+          '<div class="fae_cp_title" id="fae_title-colors" style="margin-top:24px;">Colors</div>'+
 
           '<p id="fae_colors_desc">This section allows you to change the colors of your forum theme. Select a color from below and preview the result in the window on the right to get started. When you are finished, click "Save Changes" to apply your new colors.</p>'+
 
@@ -1207,7 +1208,7 @@
         // create and insert the plugin manager
         $(opts).append('<div id="category-plugin" style="display:none;">'+
 
-          '<div class="fae_cp_title clear" style="margin-top:24px;">Plugin Management</div>'+
+          '<div class="fae_cp_title" id="fae_title-plugin_management" style="margin-top:24px;">Plugin Management</div>'+
 
           '<p id="fae_plugin_desc">This section allows you to manage the settings of core-plugins for Forumactif Edge.</p>'+
 
@@ -1461,8 +1462,8 @@
           // TITLES
           title[0].innerHTML = FAE.cp_lang.fae_log;
           title[1].innerHTML = FAE.cp_lang.fae_actions;
-          title[2].innerHTML = FAE.cp_lang.general_settings.title;
-          title[3].innerHTML = FAE.cp_lang.theme_management.title;
+          document.getElementById('fae_title-general_settings').innerHTML = FAE.cp_lang.general_settings.title;
+          document.getElementById('fae_title-theme_management').innerHTML = FAE.cp_lang.theme_management.title;
 
           // LABELS
           for (a = $('label', cp), i = 0, j = a.length; i < j; i++) {
@@ -1496,8 +1497,14 @@
     }
   });
 
-  // help link
-  $('#fae_cp').append('<div style="margin-top:12px"><a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank" style="float:right;"><strong id="fae_cp_help">Help!</strong></a><div class="clear"></div></div>');
+  // help link and version
+  $('#fae_cp').append(
+    '<div style="margin-top:12px">'+
+      '<span style="float:left;">faecp-v' + FAE.cp_rev + '</span>'+
+      '<a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank" style="float:right;"><strong id="fae_cp_help">Help!</strong></a>'+
+      '<div class="clear"></div>'+
+    '</div>'
+  );
 
   if (FAE.maintenance) {
     $('#fae_cp').prepend('<div id="fae_maintenance"><i class="fa fa-warning"></i>Maintenance is currently being performed on the Control Panel. Don\'t worry if you notice anything strange, we\'ll get things back to normal shortly. For more information, please read about "<a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Maintenance" target="_blank">Maintenance</a>" on our wiki.</div>');

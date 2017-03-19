@@ -4,7 +4,7 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.2.0';
+  FAE.cp_rev = '1.2.1';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -784,7 +784,7 @@
           '<div class="fae_options_column">'+
 
             '<h3 class="post-content">Primary Colors</h3>'+
-            '<p id="fae_colors_desc2">You can adjust the 5 primary color shades for Forumactif Edge with the options below.</p>'+
+            '<p id="fae_colors_desc2">The options below allow you to adjust the 5 primary color shades for Forumactif Edge.</p>'+
 
             '<div class="fae_cp_row">'+
               '<span id="fae_label-color-p1" class="fae_label">Primary Color 1 : </span>'+
@@ -828,49 +828,8 @@
             '<br/>'+
 
 
-            '<h3 class="post-content">Font Settings</h3>'+
-            '<p id="fae_colors_desc3">You can change the font color, size, and font face with the options below.</p>'+
-
-            '<div class="fae_cp_row">'+
-              '<span id="fae_label-color-f0" class="fae_label">Main Font Color : </span>'+
-              '<span class="fae_colors">'+
-                (FAE.colorSupport ? '<input type="color" value="#333333" class="fae_color_picker" />' : '')+
-                '<input id="fae_color-f0" type="text" value="#333333" maxlength="7" class="fae_text_input" />'+
-              '</span>'+
-            '</div>'+
-
-            '<div class="fae_cp_row">'+
-              '<span id="fae_label-color-f1" class="fae_label">Main Font Size : </span>'+
-              '<span class="fae_colors">'+
-                '<input id="fae_color-f1" type="text" value="12px" class="fae_text_input" data-ignore="true" />'+
-              '</span>'+
-            '</div>'+
-
-            '<div class="fae_cp_row">'+
-              '<span id="fae_label-color-f2" class="fae_label">Main Font Face : </span>'+
-              '<span class="fae_colors">'+
-                '<input id="fae_color-f2" type="text" value="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif" class="fae_text_input max" data-ignore="true" />'+
-              '</span>'+
-            '</div>'+
-
-            '<div class="fae_cp_row">'+
-              '<span id="fae_label-color-f3" class="fae_label">Title Font Face : </span>'+
-              '<span class="fae_colors">'+
-                '<input id="fae_color-f3" type="text" value="Trebuchet MS, Arial, Verdana, Sans-serif" class="fae_text_input max" data-ignore="true" />'+
-              '</span>'+
-            '</div>'+
-
-            '<div class="fae_cp_row">'+
-              '<span id="fae_label-color-f4" class="fae_label">Code Font Face : </span>'+
-              '<span class="fae_colors">'+
-                '<input id="fae_color-f4" type="text" value="Monaco, DejaVu Sans Mono, Bitstream Vera Sans Mono, Lucida Console, monospace" class="fae_text_input max" data-ignore="true" />'+
-              '</span>'+
-            '</div>'+
-            '<br/>'+
-
-
-            '<h3 class="post-content">Background Colors</h3>'+
-            '<p id="fae_colors_desc3">The options below allow you to change the various background colors of the forum.</p>'+
+            '<h3 class="post-content">General Colors</h3>'+
+            '<p id="fae_colors_desc3">The options below allow you to change various colors of the forum.</p>'+
 
             '<div class="fae_cp_row">'+
               '<span id="fae_label-color-bg1" class="fae_label">Main Background Color 1 : </span>'+
@@ -885,6 +844,14 @@
               '<span class="fae_colors">'+
                 (FAE.colorSupport ? '<input type="color" value="#EEEEEE" class="fae_color_picker" />' : '')+
                 '<input id="fae_color-bg2" type="text" value="#EEEEEE" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-m1" class="fae_label">Main Border Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#CCCCCC" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-m1" type="text" value="#CCCCCC" maxlength="7" class="fae_text_input" />'+
               '</span>'+
             '</div>'+
 
@@ -919,31 +886,85 @@
                 '<input id="fae_color-bg6" type="text" value="#FFFFFF" maxlength="7" class="fae_text_input" />'+
               '</span>'+
             '</div>'+
-            '<br/>'+
-
-
-            '<h3 class="post-content">Miscellaneous</h3>'+
-            '<p id="fae_colors_desc3">The options below allow you to change some miscellaneous colors of the forum.</p>'+
 
             '<div class="fae_cp_row">'+
-              '<span class="fae_help_me" style="visibility:hidden;">?'+
-                '<span class="fae_help_tip"></span>'+
-              '</span>'+
-              '<span id="fae_label-color-m1" class="fae_label">Border Color : </span>'+
-              '<span class="fae_colors">'+
-                (FAE.colorSupport ? '<input type="color" value="#CCCCCC" class="fae_color_picker" />' : '')+
-                '<input id="fae_color-m1" type="text" value="#CCCCCC" maxlength="7" class="fae_text_input" />'+
-              '</span>'+
-            '</div>'+
-
-            '<div class="fae_cp_row">'+
-              '<span class="fae_help_me">?'+
-                '<span class="fae_help_tip" id="fae_theme_tip-m2">This color is only visible in webkit browsers, such as Google Chrome.</span>'+
-              '</span>'+
               '<span id="fae_label-color-m2" class="fae_label">Scrollbar Background Color : </span>'+
               '<span class="fae_colors">'+
                 (FAE.colorSupport ? '<input type="color" value="#DDDDDD" class="fae_color_picker" />' : '')+
                 '<input id="fae_color-m2" type="text" value="#DDDDDD" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+            '<br/>'+
+
+
+            '<h3 class="post-content">Font Settings</h3>'+
+            '<p id="fae_colors_desc3">The options below allow you to change the font color, size, and family, of the forum.</p>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f0" class="fae_label">Text Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#333333" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-f0" type="text" value="#333333" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f5" class="fae_label">Link Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#336699" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-f5" type="text" value="#336699" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f6" class="fae_label">Visited Link Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#336699" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-f6" type="text" value="#336699" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f7" class="fae_label">Hover Link Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#6699CC" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-f7" type="text" value="#6699CC" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f8" class="fae_label">Active Link Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#77AADD" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-f8" type="text" value="#77AADD" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f1" class="fae_label">Main Font Size : </span>'+
+              '<span class="fae_colors">'+
+                '<input id="fae_color-f1" type="text" value="12px" class="fae_text_input" data-ignore="true" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f2" class="fae_label">Main Font Face : </span>'+
+              '<span class="fae_colors">'+
+                '<input id="fae_color-f2" type="text" value="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif" class="fae_text_input max" data-ignore="true" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f3" class="fae_label">Title Font Face : </span>'+
+              '<span class="fae_colors">'+
+                '<input id="fae_color-f3" type="text" value="Trebuchet MS, Arial, Verdana, Sans-serif" class="fae_text_input max" data-ignore="true" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f4" class="fae_label">Code Font Face : </span>'+
+              '<span class="fae_colors">'+
+                '<input id="fae_color-f4" type="text" value="Monaco, DejaVu Sans Mono, Bitstream Vera Sans Mono, Lucida Console, monospace" class="fae_text_input max" data-ignore="true" />'+
               '</span>'+
             '</div>'+
             '<br/>'+
@@ -977,6 +998,10 @@
               f2 = document.getElementById('fae_color-f2').value,
               f3 = document.getElementById('fae_color-f3').value,
               f4 = document.getElementById('fae_color-f4').value,
+              f5 = document.getElementById('fae_color-f5').value,
+              f6 = document.getElementById('fae_color-f6').value,
+              f7 = document.getElementById('fae_color-f7').value,
+              f8 = document.getElementById('fae_color-f8').value,
 
               // background colors
               bg1 = document.getElementById('fae_color-bg1').value,
@@ -1018,8 +1043,6 @@
          'form.search-form { background-color:' + p3 + '; }'+
          'form.search-form input.search-keywords, input.search-button { border-color:' + p2 + '!important; }'+
          'input[type="text"]:hover, input.post:hover, input.inputbox:hover, textarea:hover, select:hover, input[type="text"]:focus, input.post:focus, input.inputbox:focus, textarea:focus, select:focus, body div.sceditor-dropdown input:focus, body div.sceditor-dropdown textarea:focus, .fa_pseudo_checkbox:hover, .fa_pseudo_radio:hover, .sceditor-container, h2.post-content, h3.post-content, h4.post-content, .lastpost-avatar, #wio_new_avatar, .avatar-mini img, .avatar, #chatbox, #chatbox_members, #chatbox_members > h4.away, #chatbox_members > ul.away-users, body #chatbox .cb-avatar { border-color:' + p1 + ' !important; }'+
-         'a { color:' + p4 + '; }'+
-         'a:hover, a:active { color:' + p3 + '; }'+
          '::selection { background-color:' + p1 + '; } ::-moz-selection { background-color:' + p1 + '; }'+
          '::-webkit-scrollbar-thumb, ::-webkit-scrollbar-button:single-button { background-color:' + p1 + '; }'+
          '::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-button:single-button:hover { background-color:' + p3 + '; }'+
@@ -1029,6 +1052,10 @@
           '.color-tertiary, .content-block, .panel, .module, .lor_maintitle, .lor_subtitle, .lor_maindesc, .lor_subdesc, .forum-block, .addthis_button:after, .pagination a[href$="mark=topics"]:after, .pagination a[href$="watch=forum"]:after, input[type="text"], input.inputbox, input.post, textarea, select, body div.sceditor-dropdown input, body div.sceditor-dropdown textarea, body .sceditor-container textarea, html body.chatbox { color:/*!FAE_F0*/' + ( f0 == '#' ? empty : f0 ) + '/*FAE_F0!*/; }'+
           'fieldset dt label, fieldset dt span, fieldset dt { color:' + ( f0 == '#' ? empty : f0 ) + '!important; }'+
           'fieldset dl:hover dt label, fieldset dl:hover dt span, fieldset dl:hover dt { color:' + ( f0 == '#' ? empty : fae_editColor(f0, -3) ) + '!important; }'+
+          'a { color:/*!FAE_F5*/' + ( f5 == '#' ? empty : f5 ) + '/*FAE_F5!*/; }'+
+          'a:visited { color:/*!FAE_F6*/' + ( f6 == '#' ? empty : f6 ) + '/*FAE_F6!*/; }'+
+          'a:hover { color:/*!FAE_F7*/' + ( f7 == '#' ? empty : f7 ) + '/*FAE_F7!*/; }'+
+          'a:active { color:/*!FAE_F8*/' + ( f8 == '#' ? empty : f8 ) + '/*FAE_F8!*/; }'+
 
           'body, #navbar .mainmenu, #tabs a, .forum-category .title, .traffic-exchange .title, .profile-field .label, .profile-field .value, .addthis_button, a[href="javascript:showhide(document.getElementById(\'plus_menu\'))"], #plus_menu, .pagination a[href$="mark=topics"], .pagination a[href$="watch=forum"], a[href="javascript:Pagination();"], .breadcrumbs a { font-size:/*!FAE_F1*/' + f1[0] + '/*FAE_F1!*/; }'+ // 12px
           '.lor_maintitle, .lor_subtitle { font-size:' + ( f1[1] * 3 + f1[2] ) + '; }'+ // 36px

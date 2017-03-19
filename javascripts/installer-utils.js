@@ -3,11 +3,19 @@
     window.FAE = new Object();
   }
 
-  FAE.maintenance = false;
+  FAE.maintenance = true;
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
   FAE.cp_lang = {};
+  FAE.colorSupport = document.createElement('INPUT');
+
+  try {
+    FAE.colorSupport.type = 'color';
+    FAE.colorSupport = true;
+  } catch (error) {
+    FAE.colorSupport.type = false;
+  }
 
   // parse variables in strings for translations
   FAE.parse_vars = function(str, o) {
@@ -262,7 +270,7 @@
             if (confirm("You've chosen to submit a new translation. If this is correct, please click 'OK' and proceed to the translation page, otherwise click 'cancel' and choose another language.")) {
               window.location.href = 'http://fmdesign.forumotion.com/t706-forumactif-edge-translations#13996';
             }
-            
+
             return;
           }
 
@@ -308,8 +316,35 @@
         };
 
 
+        // insert category toggle bar
+        $(opts).append(
+          '<div class="fae_cp_title" style="margin-top:24px;">Configuration</div>'+
+
+          '<p id="fae_nav_desc">Clicking the buttons below take you to different sections of the control panel, which allow you to manage the Configuration of Forumactif Edge. Go ahead and explore each of these sections, so you can get started on personalizing your theme. If you need more information, <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">click here</a> to view the control panel guide.</p>'+
+
+          '<div id="fae_cp_navbar">'+
+            '<input type="button" value="General Settings" data-tab="category-general" style="background-color:#8B5;" />'+
+            '<input type="button" value="Colors" data-tab="category-color" />'+
+            '<input type="button" value="Theme Management" data-tab="category-theme" />'+
+            '<input type="button" value="Plugin Management" data-tab="category-plugin" />'+
+          '</div>'
+        );
+
+        $('#fae_cp_navbar input').click(function() {
+          document.querySelector('#fae_options [id^="category-"][style*="block"]').style.display = 'none';
+          document.querySelector('#fae_cp_navbar [style*="background-color"]').style.backgroundColor = '';
+
+          document.getElementById(this.dataset.tab).style.display = 'block';
+          this.style.backgroundColor = '#8B5';
+
+          return false;
+        });
+
+
         // create and insert general settings
-        $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">General Settings</div>'+
+        $(opts).append('<div id="category-general" style="display:block;">'+
+
+          '<div class="fae_cp_title" style="margin-top:24px;">General Settings</div>'+
 
           '<p id="fae_gen_desc">This section allows you to manage the general settings of Forumactif Edge.</p>'+
 
@@ -353,8 +388,8 @@
 
           '<div class="fae_cp_row">'+
             '<input id="fae_update_general" type="button" value="Save changes" />'+
-          '</div>'
-        );
+          '</div>'+
+        '</div>');
 
         // update the percentage counter
         document.getElementById('fae_forum_width')[/trident/i.test(window.navigator.userAgent) ? 'onchange' : 'oninput'] = function() {
@@ -499,7 +534,8 @@
 
 
         // create and insert the theme switcher
-        $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Theme Management</div>'+
+        $(opts).append('<div id="category-theme" style="display:none;">'+
+          '<div class="fae_cp_title clear" style="margin-top:24px;">Theme Management</div>'+
 
           '<p id="fae_theme_desc">This section allows you to manage the default theme and colors for Forumactif Edge by importing a new theme from the Github repository.</p>'+
 
@@ -655,8 +691,8 @@
 
           '<div class="fae_cp_row">'+
             '<input id="fae_import_theme" type="button" value="Import theme" />'+
-          '</div>'
-        );
+          '</div>'+
+        '</div>');
 
 
         var selector = document.getElementById('fae_selected_color'),
@@ -737,8 +773,441 @@
         };
 
 
+        // create and insert colors manager
+        $(opts).append('<div id="category-color" style="display:none;">'+
+
+          '<div class="fae_cp_title clear" style="margin-top:24px;">Colors</div>'+
+
+          '<p id="fae_colors_desc">This section allows you to change the colors of your forum theme. Select a color from below and preview the result in the window on the right to get started. When you are finished, click "Save Changes" to apply your new colors.</p>'+
+
+          '<div class="fae_options_column">'+
+
+            '<h3 class="post-content">Primary Colors</h3>'+
+            '<p id="fae_colors_desc2">You can adjust the 5 primary color shades for Forumactif Edge with the options below.</p>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-p1" class="fae_label">Primary Color 1 : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#6699CC" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-p1" type="text" value="#6699CC" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-p2" class="fae_label">Primary Color 2 : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#77AADD" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-p2" type="text" value="#77AADD" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-p3" class="fae_label">Primary Color 3 : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#5588BB" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-p3" type="text" value="#5588BB" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-p4" class="fae_label">Primary Color 4 : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#336699" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-p4" type="text" value="#336699" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-p5" class="fae_label">Primary Color 5 : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#334455" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-p5" type="text" value="#334455" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+            '<br/>'+
+
+
+            '<h3 class="post-content">Font Settings</h3>'+
+            '<p id="fae_colors_desc3">You can change the font color, size, and font face with the options below.</p>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f0" class="fae_label">Main Font Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#333333" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-f0" type="text" value="#333333" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f1" class="fae_label">Main Font Size : </span>'+
+              '<span class="fae_colors">'+
+                '<input id="fae_color-f1" type="text" value="12px" class="fae_text_input" data-ignore="true" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f2" class="fae_label">Main Font Face : </span>'+
+              '<span class="fae_colors">'+
+                '<input id="fae_color-f2" type="text" value="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif" class="fae_text_input max" data-ignore="true" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f3" class="fae_label">Title Font Face : </span>'+
+              '<span class="fae_colors">'+
+                '<input id="fae_color-f3" type="text" value="Trebuchet MS, Arial, Verdana, Sans-serif" class="fae_text_input max" data-ignore="true" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-f4" class="fae_label">Code Font Face : </span>'+
+              '<span class="fae_colors">'+
+                '<input id="fae_color-f4" type="text" value="Monaco, DejaVu Sans Mono, Bitstream Vera Sans Mono, Lucida Console, monospace" class="fae_text_input max" data-ignore="true" />'+
+              '</span>'+
+            '</div>'+
+            '<br/>'+
+
+
+            '<h3 class="post-content">Background Colors</h3>'+
+            '<p id="fae_colors_desc3">The options below allow you to change the various background colors of the forum.</p>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-bg1" class="fae_label">Main Background Color 1 : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#FFFFFF" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-bg1" type="text" value="#FFFFFF" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-bg2" class="fae_label">Main Background Color 2 : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#EEEEEE" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-bg2" type="text" value="#EEEEEE" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-bg3" class="fae_label">Vote Bar / Checkbox Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#CCCCCC" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-bg3" type="text" value="#CCCCCC" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-bg4" class="fae_label">Forum Read / Offline Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#999999" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-bg4" type="text" value="#999999" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-bg5" class="fae_label">Online Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#88BB55" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-bg5" type="text" value="#88BB55" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span id="fae_label-color-bg6" class="fae_label">Row Hover Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#FFFFFF" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-bg6" type="text" value="#FFFFFF" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+            '<br/>'+
+
+
+            '<h3 class="post-content">Miscellaneous</h3>'+
+            '<p id="fae_colors_desc3">The options below allow you to change some miscellaneous colors of the forum.</p>'+
+
+            '<div class="fae_cp_row">'+
+              '<span class="fae_help_me" style="visibility:hidden;">?'+
+                '<span class="fae_help_tip"></span>'+
+              '</span>'+
+              '<span id="fae_label-color-m1" class="fae_label">Border Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#CCCCCC" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-m1" type="text" value="#CCCCCC" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+
+            '<div class="fae_cp_row">'+
+              '<span class="fae_help_me">?'+
+                '<span class="fae_help_tip" id="fae_theme_tip-m2">This color is only visible in webkit browsers, such as Google Chrome.</span>'+
+              '</span>'+
+              '<span id="fae_label-color-m2" class="fae_label">Scrollbar Background Color : </span>'+
+              '<span class="fae_colors">'+
+                (FAE.colorSupport ? '<input type="color" value="#DDDDDD" class="fae_color_picker" />' : '')+
+                '<input id="fae_color-m2" type="text" value="#DDDDDD" maxlength="7" class="fae_text_input" />'+
+              '</span>'+
+            '</div>'+
+            '<br/>'+
+
+          '</div>'+
+
+          '<div class="fae_options_column">'+
+            '<h3 class="post-content" style="margin-left:3px;">Preview</h3>'+
+            '<iframe id="fae_colors_preview" src="/forum"></iframe>'+
+          '</div>'+
+
+          '<div class="fae_cp_row clear">'+
+            '<input id="fae_save_colors" type="button" value="Save Changes" />'+
+            '<input id="fae_default_colors" type="button" value="Revert Back to Default Colors" />'+
+          '</div>'+
+        '</div>');
+
+
+        // helper function to build our CSS string
+        function fae_compileColors () {
+              // primary colors
+          var p1 = document.getElementById('fae_color-p1').value,
+              p2 = document.getElementById('fae_color-p2').value,
+              p3 = document.getElementById('fae_color-p3').value,
+              p4 = document.getElementById('fae_color-p4').value,
+              p5 = document.getElementById('fae_color-p5').value,
+
+              // font config
+              f0 = document.getElementById('fae_color-f0').value,
+              f1 = [document.getElementById('fae_color-f1').value],
+              f2 = document.getElementById('fae_color-f2').value,
+              f3 = document.getElementById('fae_color-f3').value,
+              f4 = document.getElementById('fae_color-f4').value,
+
+              // background colors
+              bg1 = document.getElementById('fae_color-bg1').value,
+              bg2 = document.getElementById('fae_color-bg2').value,
+              bg3 = document.getElementById('fae_color-bg3').value,
+              bg4 = document.getElementById('fae_color-bg4').value,
+              bg5 = document.getElementById('fae_color-bg5').value,
+              bg6 = document.getElementById('fae_color-bg6').value,
+
+              // misc
+              m1 = document.getElementById('fae_color-m1').value,
+              m2 = document.getElementById('fae_color-m2').value,
+
+              empty = 'transparent',
+              int;
+
+          bg1 = bg1 == '#' ? empty : bg1;
+          p1 = p1 == '#' ? empty : p1;
+          p2 = p2 == '#' ? empty : p2;
+          p3 = p3 == '#' ? empty : p3;
+          p4 = p4 == '#' ? empty : p4;
+          m1 = m1 == '#' ? empty : m1;
+          m2 = m2 == '#' ? empty : m2;
+
+          f1[1] = f1[0].replace(/.*?(\d+).*/, '$1');
+          f1[2] = f1[0].replace(/.*?([^0-9\.]+).*/, '$1');
+
+          return '/*!FAE_COLORS*/\n'+
+
+          // primary colors
+          '.color-primary, .title, h2.u, .h3, .inner h1.page-title, .mainmenu:after, .forumline tbody .catHead, form.search-form input.search-keywords, input.search-button, .pagination span a, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, img[src*="?poll"], .fa_pseudo_radio:after, #tabs, body div.sceditor-dropdown .button, .codebox dt, blockquote cite, .sceditor-container .sceditor-toolbar, body #fa_toolbar, body #fa_toolbar_hidden, body #fa_toolbar #fa_right #notif_list li.see_all, #fae_sticky_nav_panel a:after, img[src*="color=primary"], .table1 thead th, .breadcrumbs, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"], .forumbg li.header, #chatbox_header, body #chatbox_footer { background-color:/*!FAE_P1*/' + p1 + '/*FAE_P1!*/; }'+
+         '#cp-main h1:not(.title) { background-color:' + p1 + '; }'+
+         '.pagination span a:hover, a.button1:hover, a.button2:hover, button.button2:hover, input.button1:hover, input.button2:hover, input.button:hover, #profile-advanced-add a:hover, input.search-button:hover, body div.sceditor-dropdown .button:hover, img[src*="color=primary"]:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]:hover { background-color:/*!FAE_P3*/' + p3 + '/*FAE_P3!*/; }'+
+         '.pagination span a:active, .pagination span a:focus, .pagination span strong, a.button1:active, a.button2:active, button.button2:active, input.button1:active, input.button2:active, input.button:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active, input[type="file"]:active, a.button1:focus, a.button2:focus, button.button2:focus, input.button1:focus, input.button2:focus, input.button:focus, input.search-button:focus, #tabs a:after, body div.sceditor-dropdown .button:active, body div.sceditor-dropdown .button:focus, body #fa_search #fa_textarea, body #fa_search #fa_magnifier, img[src*="color=primary"]:active, input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="file"]:focus { background-color:/*!FAE_P4*/' + p4 + '/*FAE_P4!*/; }'+
+         '.fa_pseudo_checkbox:after, h2.post-content, h3.post-content, h4.post-content, .codebox .fae_copy-code:before { color:' + p1 + '; }'+
+         'img[src*="?poll"], .sceditor-container .sceditor-toolbar, .sceditor-container .sceditor-group, body #fa_toolbar, body #fa_toolbar_hidden { border-color:' + p3 + '; }'+
+         '.color-secondary, .forum-status[style*="locked=true"], img[src*="color=secondary"] { background-color:/*!FAE_P5*/' + ( p5 == '#' ? empty : p5 ) + '/*FAE_P5!*/; }'+
+         '.forum-status[style*="state=new"] { background-color:/*!FAE_P2*/' + p2 + '/*FAE_P2!*/; }'+
+         'form.search-form { background-color:' + p3 + '; }'+
+         'form.search-form input.search-keywords, input.search-button { border-color:' + p2 + '!important; }'+
+         'input[type="text"]:hover, input.post:hover, input.inputbox:hover, textarea:hover, select:hover, input[type="text"]:focus, input.post:focus, input.inputbox:focus, textarea:focus, select:focus, body div.sceditor-dropdown input:focus, body div.sceditor-dropdown textarea:focus, .fa_pseudo_checkbox:hover, .fa_pseudo_radio:hover, .sceditor-container, h2.post-content, h3.post-content, h4.post-content, .lastpost-avatar, #wio_new_avatar, .avatar-mini img, .avatar, #chatbox, #chatbox_members, #chatbox_members > h4.away, #chatbox_members > ul.away-users, body #chatbox .cb-avatar { border-color:' + p1 + ' !important; }'+
+         'a { color:' + p4 + '; }'+
+         'a:hover, a:active { color:' + p3 + '; }'+
+         '::selection { background-color:' + p1 + '; } ::-moz-selection { background-color:' + p1 + '; }'+
+         '::-webkit-scrollbar-thumb, ::-webkit-scrollbar-button:single-button { background-color:' + p1 + '; }'+
+         '::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-button:single-button:hover { background-color:' + p3 + '; }'+
+         '::-webkit-scrollbar-thumb:active, ::-webkit-scrollbar-button:single-button:active { background-color:' + p4 + '; }'+
+
+          // font config
+          '.color-tertiary, .content-block, .panel, .module, .lor_maintitle, .lor_subtitle, .lor_maindesc, .lor_subdesc, .forum-block, .addthis_button:after, .pagination a[href$="mark=topics"]:after, .pagination a[href$="watch=forum"]:after, input[type="text"], input.inputbox, input.post, textarea, select, body div.sceditor-dropdown input, body div.sceditor-dropdown textarea, body .sceditor-container textarea, html body.chatbox { color:/*!FAE_F0*/' + ( f0 == '#' ? empty : f0 ) + '/*FAE_F0!*/; }'+
+          'fieldset dt label, fieldset dt span, fieldset dt { color:' + ( f0 == '#' ? empty : f0 ) + '!important; }'+
+          'fieldset dl:hover dt label, fieldset dl:hover dt span, fieldset dl:hover dt { color:' + ( f0 == '#' ? empty : fae_editColor(f0, -3) ) + '!important; }'+
+
+          'body, #navbar .mainmenu, #tabs a, .forum-category .title, .traffic-exchange .title, .profile-field .label, .profile-field .value, .addthis_button, a[href="javascript:showhide(document.getElementById(\'plus_menu\'))"], #plus_menu, .pagination a[href$="mark=topics"], .pagination a[href$="watch=forum"], a[href="javascript:Pagination();"], .breadcrumbs a { font-size:/*!FAE_F1*/' + f1[0] + '/*FAE_F1!*/; }'+ // 12px
+          '.lor_maintitle, .lor_subtitle { font-size:' + ( f1[1] * 3 + f1[2] ) + '; }'+ // 36px
+          '#site-title, #site-title h1 { font-size:' + ( f1[1] * 2 + f1[2] ) + '; }'+ // 24px
+          '.wio_value strong { font-size:' + ( f1[1] * 1.835 + f1[2] ) + '; }'+ // 22px
+          '.post .post-number, .post .title h2 { font-size:' + ( f1[1] * 1.75 + f1[2] ) + '; }'+ // 21px
+          '.lor_subtitle { font-size:' + ( f1[1] * 1.67 + f1[2] ) + '; }'+ // 20px
+          '.vote .vote-button-plus, .vote .vote-button-minus, .breadcrumbs a:after { font-size:' + ( f1[1] * 1.5 + f1[2] ) + '; }'+ // 18px
+          '.pagination span a, .pagination span strong { font-size:' + ( f1[1] * 12 * 1.42 + f1[2] ) + '; }'+ // 17px
+          '.forum-stats .number, input.search-button, .breadcrumbs a:first-child:before, #chatbox_members:after { font-size:' + ( f1[1] * 1.335 + f1[2] ) + '; }'+ // 16px
+          '.forum-category .title:after, .traffic-exchange .title:after, .topic-info .pagination a, form.search-form input.search-keywords { font-size:' + ( f1[1] * 1.25 + f1[2] ) + '; }'+ // 15px
+          '#privmsgs-menu, .codebox dt, blockquote cite, .attachbox > dt, #wio_newest_inner:before, #wio_newest_user strong, #wio_groups a, .pwd_img, .vote_num, a.forumtitle, a.topictitle, .lor_maindesc, .lor_subdesc, #fae_sticky_nav_panel a, .title, h2.u, .h3, .inner h1.page-title, #cp-main h1:not(.title) { font-size:' + ( f1[1] * 1.17 + f1[2] ) + '; }'+ // 14px
+          '.post .content, .wio_stats:after, a.button1, a.button2, button.button2, input.button1, input.button2, input.button, #profile-advanced-add a, body div.sceditor-dropdown .button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"] { font-size:' + ( f1[1] * 1.085 + f1[2] ) + '; }'+ // 13px
+
+          'body, body #fa_toolbar { font-family:/*!FAE_F2*/' + f2 + '/*FAE_F2!*/; }'+
+          'h2.post-content, h3.post-content, h4.post-content, #navbar .mainmenu, #tabs a, .title, h2.u, .h3, .inner h1.page-title, #cp-main h1:not(.title) { font-family:/*!FAE_F3*/' + f3 + '/*FAE_F3!*/; }'+
+          '.codebox code { font-family:/*!FAE_F4*/' + f4 + '/*FAE_F4!*/; }'+
+
+          // background colors
+          '.color-tertiary, html body.chatbox, .lor_panel, .jqmWindow, .gallery, .postprofile dl, .module #calendar .table1 td:not([class*="row"]), input[type="text"], input.inputbox, input.post, textarea, select, body div.sceditor-dropdown input, body div.sceditor-dropdown textarea, .fa_pseudo_checkbox, .fa_pseudo_radio, #profile-advanced-details .panel > .inner > ol > li, .lastpost-avatar, .avatar-mini img, .avatar, #wio_new_avatar, body .sceditor-container textarea, .codebox, blockquote, .attachbox, body #chatbox_contextmenu, body #chatbox .cb-avatar, body #chatbox_contextmenu, .info-gallery { background-color:/*!FAE_BG1*/' + bg1 + '/*FAE_BG1!*/; }'+
+          '.content-block, .panel, .module, .forum-block-inner, #plus_menu, .table1, .forumline { background-color:/*!FAE_BG2*/' + ( bg2 == '#' ? empty : bg2 ) + '/*FAE_BG2!*/; }'+
+          '.vote .vote-bar, .vote .vote-no-bar, .fa_pseudo_radio:before { background-color:/*!FAE_BG3*/' + ( bg3 == '#' ? empty : bg3 ) + '/*FAE_BG3!*/; }'+
+          '.forum-status, .forum-status[style*="state=old"], .postprofile dl:before { background-color:/*!FAE_BG4*/' + ( bg4 == '#' ? empty : bg4 ) + '/*FAE_BG4!*/; }'+
+          '.online .postprofile dl:before { background-color:/*!FAE_BG5*/' + ( bg5 == '#' ? empty : bg5 ) + '/*FAE_BG5!*/; }'+
+          '.forum-block:hover .forum-block-inner { background-color:/*!FAE_BG6*//*HEX:' + bg6 + '*/' + ( bg6 == '#' ? empty : 'rgba(' + ( [(int = parseInt(bg6.slice(1), 16)) >> 16 & 255, int >> 8 & 255, int & 255].join() ) + ',0.8)' ) + '/*FAE_BG6!*/; }'+
+
+          // misc
+          '.content-block, .panel, .module, .lor_panel, .jqmWindow, .gallery, .info-gallery, .postprofile dl, hr, #plus_menu, .forumline, .ucp-main .table1, .forum-block, .table1 tbody td, .forumline tbody td, .forumline tbody th, .module #calendar .table1, .module #calendar .table1 th, input[type="text"], input.inputbox, input.post, textarea, select, body div.sceditor-dropdown input, body div.sceditor-dropdown textarea, .fa_pseudo_checkbox, .fa_pseudo_radio, .codebox, blockquote, .attachbox, #profile-advanced-details .panel > .inner > ol > li, body #fa_menulist, body #fa_toolbar #fa_right #notif_list { border-color:/*!FAE_M1*/' + m1 + '/*FAE_M1!*/; }'+
+          '#fa_menulist:before, #notif_list:before { border-bottom-color:' + m1 + '; }'+
+          '::-webkit-scrollbar-track { background-color:/*!FAE_M2*/' + m2 + '/*FAE_M2!*/; }'+
+          '::-webkit-scrollbar-thumb { border-color:' + m2 + '; }'+
+
+          // responsive rules
+          '@media (min-width:0px) and (max-width:768px) {'+
+            '.postprofile dl { border-bottom:1px solid ' + m1 + '; }'+
+            '.postbody .profile-icons { background:' + bg1 + '; border-top:1px solid ' + m1 + '; }'+
+          '}'+
+
+          '\n/*FAE_COLORS!*/';
+        };
+
+
+        // helper function to update preview frame
+        function fae_colorPreview () {
+          var frame = document.getElementById('fae_colors_preview'),
+              head;
+
+          try {
+            head = $('head', frame.contentDocument || frame.contentWindow.document);
+
+            $('#fae_stylesheet_preview', head).remove();
+            head.append('<style id="fae_stylesheet_preview" type="text/css">' + fae_compileColors() + '</style>');
+
+          } catch (error) {
+            console.log(error);
+          }
+        };
+
+
+        // bind events to color and text inputs
+        for (var a = document.querySelectorAll('.fae_colors input'), i = 0, j = a.length; i < j; i++) {
+          switch (a[i].type) {
+            case 'color' :
+              a[i].onchange = function () {
+                this.nextSibling.value = this.value.toUpperCase();
+                fae_colorPreview();
+              };
+              break;
+
+            case 'text' :
+              a[i].oninput = function () {
+                if (!this.dataset.ignore) {
+                  if (this.value == 0) {
+                    this.value = '#';
+                  }
+
+                  this.previousSibling.value = this.value;
+                }
+
+                fae_colorPreview();
+              };
+              break;
+
+            case 'checkbox' :
+              a[i].onchange = function () {
+                var prev = this.previousSibling;
+
+                if (!this.checked) {
+                  prev.disabled = true;
+                  prev.previousSibling.disabled = true;
+                } else {
+                  prev.disabled = false;
+                  prev.previousSibling.disabled = false;
+                }
+
+                fae_colorPreview();
+              };
+              break;
+          }
+        }
+
+
+        // reapply preview when the frame is reloaded
+        document.getElementById('fae_colors_preview').onload = fae_colorPreview;
+
+
+        // get existing settings from the stylesheet
+        $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+          var css = $('form[method="post"]', d)[0];
+
+          if (css) {
+            css = css.edit_code.value;
+
+            for (var a = document.querySelectorAll('[id^="fae_color-"]'), i = 0, j = a.length, id, color, input; i < j; i++) {
+              try {
+                id = a[i].id.replace(/fae_color-/, '');
+                input = document.getElementById('fae_color-' + id);
+                color = css.match(new RegExp('/\\*!FAE_' + id.toUpperCase() + '\\*/([\\s\\S]+)/\\*FAE_' + id.toUpperCase() + '!\\*/'))[1];
+
+                input.value = color == 'transparent' ? '#' : color.replace(/\/\*HEX:(.*?)\*\/rgba.*/, '$1');
+                input.previousSibling.value = input.value;
+              } catch (e) {}
+            }
+          }
+        });
+
+
+        // update the forum's colors
+        $('#fae_save_colors, #fae_default_colors').click(function() {
+          var save = this.id == 'fae_save_colors';
+
+          if (save || confirm('Are you sure you want to delete your custom color settings, and revert back to the default forum colors?')) {
+
+            FAE.log(save ? 'Updating the forum colors..' : 'Reverting back to default color settings..');
+            FAE.quota = 2;
+            FAE.index = 0;
+            FAE.progress();
+
+            // get the stylesheet
+            $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+              var form = $('form[method="post"]', d)[0],
+                  val, regex;
+
+              FAE.index = 1;
+              FAE.progress();
+
+              if (form) {
+                val = form.edit_code.value;
+                regex = /\/\*!FAE_COLORS\*\/[\s\S]+\/\*FAE_COLORS!\*\//;
+
+                if (regex.test(val)) {
+                  val = val.replace(regex, '');
+                }
+
+                // update the stylesheet
+                $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, {
+                  edit_code : val + (save ? '\n' + fae_compileColors() : ''),
+                  submit : 'Save'
+
+                }, function(d) {
+                  FAE.index = 2;
+                  FAE.progress();
+
+                  FAE.log(save ? 'Forum colors have been updated successfully !' : 'Forum colors have been changed back to their default settings !', 'font-weight:bold;color:#8B5;');
+                  FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+                });
+
+              }
+            });
+
+            document.getElementById('fae_options').style.display = 'none';
+          }
+        });
+
+
+
         // create and insert the plugin manager
-        $(opts).append('<div class="fae_cp_title clear" style="margin-top:24px;">Plugin Management</div>'+
+        $(opts).append('<div id="category-plugin" style="display:none;">'+
+
+          '<div class="fae_cp_title clear" style="margin-top:24px;">Plugin Management</div>'+
 
           '<p id="fae_plugin_desc">This section allows you to manage the settings of core-plugins for Forumactif Edge.</p>'+
 
@@ -775,8 +1244,8 @@
 
           '<div class="fae_cp_row">'+
             '<input id="fae_save_plugins" type="button" value="Save Changes" />'+
-          '</div>'
-        );
+          '</div>'+
+        '</div>');
 
 
         // get existing settings from ALL.JS
@@ -816,19 +1285,10 @@
             window.fae_themeList = '';
           }
 
-          window.fae_color_support = document.createElement('INPUT');
-
-          try {
-            fae_color_support.type = 'color';
-            fae_color_support = true;
-          } catch (error) {
-            fae_color_support.type = false;
-          }
-
           for (k in obj) {
             if (obj[k].length == 5 && k != 'Custom theme') {
               c = obj[k][1];
-              html += '<div class="theme_opt"><input class="color_block" type="' + (fae_color_support ? 'color' : 'text') + '" value="' + (c.length == 4 ? '#' + c.charAt(1) + c.charAt(1) + c.charAt(2) + c.charAt(2) + c.charAt(3) + c.charAt(3) : c) + '"/><input class="color_name" type="text" value="' + k + '"/><i class="fa fa-times" title="Delete Theme"></i><i class="fa fa-sort-up" title="Move Up"></i><i class="fa fa-sort-desc" title="Move Down"></i></div>';
+              html += '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + (c.length == 4 ? '#' + c.charAt(1) + c.charAt(1) + c.charAt(2) + c.charAt(2) + c.charAt(3) + c.charAt(3) : c) + '"/><input class="color_name fae_text_input" type="text" value="' + k + '"/><i class="fa fa-times" title="Delete Theme"></i><i class="fa fa-sort-up" title="Move Up"></i><i class="fa fa-sort-desc" title="Move Down"></i></div>';
             } else if (init) {
               fae_themeList += '"' + k + '" : [' + ( obj[k].length == 5 ? "cc ? fae_editColor(cc, +1) : '#77AADD', cc || '#6699CC', cc ? fae_editColor(cc, -1) : '#5588BB', cc ? fae_editColor(cc, -3) : '#336699', cc ? fae_editColor(cc, 'darken') : '#334455'" : '' ) + '],\n';
             }
@@ -852,7 +1312,7 @@
             i++
           }
 
-          opts.insertAdjacentHTML('beforeend', '<div class="theme_opt"><input class="color_block" type="' + (fae_color_support ? 'color' : 'text') + '" value="' + color + '"/><input class="color_name" type="text" value="New Theme ' + document.querySelectorAll('.theme_opt').length + '"/><i class="fa fa-times" title="Delete Theme"></i><i class="fa fa-sort-up" title="Move Up"></i><i class="fa fa-sort-desc" title="Move Down"></i></div>');
+          opts.insertAdjacentHTML('beforeend', '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + color + '"/><input class="color_name fae_text_input" type="text" value="New Theme ' + document.querySelectorAll('.theme_opt').length + '"/><i class="fa fa-times" title="Delete Theme"></i><i class="fa fa-sort-up" title="Move Up"></i><i class="fa fa-sort-desc" title="Move Down"></i></div>');
           opts.lastChild.scrollIntoView();
         };
 
@@ -1064,12 +1524,12 @@
       '#fae_themer { display:inline-block; }'+
       '#fae_themer_add { background:#8B5 !important; }'+
       '#fae_themer_add:hover { background:#7A4 !important; }'+
-      '#fae_themer_import[disabled] { opacity:0.5; }'+
+      '#fae_options [disabled] { opacity:0.5; }'+
       '#fae_theme_options { height:153px; border:1px solid #CCC; overflow:auto; margin-bottom:3px; padding:3px; }'+
-      '#fae_theme_options .color_block { background:none !important; border:1px solid transparent; padding:0; }'+
-      '#fae_theme_options .color_block:hover { border-color:#69C; }'+
-      '#fae_theme_options .color_name { color:#333; background:#FFF !important; border:1px solid #CCC; cursor:text; }'+
-      '#fae_theme_options .color_name:hover, #fae_theme_options .color_name:focus { border-color:#69C; }'+
+      '#fae_options .fae_color_picker { background:none !important; border:1px solid transparent; padding:0; margin-right:3px; }'+
+      '#fae_options .fae_color_picker:hover { border-color:#69C; }'+
+      '#fae_options .fae_text_input { color:#333; background:#FFF !important; border:1px solid #CCC; cursor:text; }'+
+      '#fae_options .fae_text_input:hover, #fae_theme_options .color_name:focus { border-color:#69C; }'+
       '.theme_opt i { color:#FFF; font-size:16px; text-align:center; display:inline-block; vertical-align:middle; height:20px; width:20px; line-height:20px; border-radius:20px; margin:0 3px; cursor:pointer; transition:200ms; }'+
       '.theme_opt i.fa-times { background:#E53; }'+
       '.theme_opt i[class*="sort"] { background:#69C; }'+
@@ -1078,6 +1538,10 @@
       '.theme_opt i.fa-sort-desc { line-height:14px; }'+
       '.theme_opt:first-child i.fa-sort-up, .theme_opt:last-child i.fa-sort-desc { display:none; }'+
       '.theme_opt i:hover { transform:scale(1.2); }'+
+      '.fae_options_column { float:left; width:50%; }'+
+      '.fae_colors .fae_text_input { width:75px; }'+
+      '.fae_colors .fae_text_input.max { width:30%; }'+
+      '#fae_colors_preview { border:1px solid rgba(0, 0, 0, 0.2); width:99%; margin:0 3px; height:500px; }'+
     '</style>'
   );
 }());

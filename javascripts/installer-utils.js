@@ -1330,7 +1330,7 @@
           }
 
           for (k in obj) {
-            if (obj[k].length == 5 && k != 'Custom theme') {
+            if (obj[k].length == 5 && k != FAE.cp_custom_theme) {
               c = obj[k][1];
               html += '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + (c.length == 4 ? '#' + c.charAt(1) + c.charAt(1) + c.charAt(2) + c.charAt(2) + c.charAt(3) + c.charAt(3) : c) + '"/><input class="color_name fae_text_input" type="text" value="' + k + '"/><i class="fa fa-times"></i><i class="fa fa-sort-up"></i><i class="fa fa-sort-desc"></i></div>';
             } else if (init) {
@@ -1340,8 +1340,6 @@
 
           opts.innerHTML = html;
         };
-
-        fae_compileThemes('Compiling themes, please wait...', fa_theme_color.palette, true);
 
 
         // add a new random theme
@@ -1479,6 +1477,10 @@
         // setup and begin translation of control panel
         $.get(FAE.raw + 'lang/' + document.getElementById('fae_selected_language').value + '.js', function(d) {
           FAE.script(d.replace('FAE.lang', 'FAE.cp_lang'));
+
+          FAE.cp_custom_theme = FAE.cp_lang.javascripts['[FA EDGE] ALL.JS'].custom_theme || 'Custom theme';
+          fae_compileThemes((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_import_compiling) || 'Compiling themes, please wait...', fa_theme_color.palette, true);
+
           FAE.cp_lang = FAE.cp_lang.fae_cp;
 
           var cp = document.getElementById('fae_cp'),

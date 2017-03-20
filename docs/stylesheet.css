@@ -25,7 +25,7 @@ p {
 }
 
 /* transitions */
-#header-links a, a.button, .bubble , #webpage-lang { transition:200ms; }
+#header-links a, a.button, .bubble, #webpage-lang { transition:200ms; }
 
 /* Title Fonts */
 .title, .bubbleTitle, .footerTitle {
@@ -104,12 +104,20 @@ a:active { color:#7AD; }
   color:#FFF;
   font-size:16px;
   font-weight:bold;
+  text-align:center;
   text-transform:uppercase;
   background-color:#345;
   display:inline-block;
-  padding:6px 12px;
+  height:32px;
+  line-height:32px;
+  padding:0px 12px;
   margin:6px 1px;
   border-radius:5px;
+}
+
+#webpage-lang {
+  vertical-align:top;
+  border:none;
 }
 
 #header-links a:hover, #webpage-lang:hover { background-color:#69C; }

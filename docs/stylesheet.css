@@ -118,10 +118,13 @@ a:active { color:#7AD; }
 #webpage-lang {
   vertical-align:top;
   border:none;
+  cursor:pointer;
 }
 
-#header-links a:hover, #webpage-lang:hover { background-color:#69C; }
-#webpage-lang:focus { outline:none; }
+#header-links a:hover, #webpage-lang:hover, #webpage-lang:focus {
+  background-color:#69C;
+  outline:none;
+}
 
 
 /* -- PREVIEW IMAGE -- */

@@ -4,7 +4,7 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.2.3';
+  FAE.cp_rev = '1.2.4';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -242,7 +242,7 @@
               '<option value="Romanian">Romana</option>'+
               '<option value="Spanish">Español</option>'+
               '<option value="Vietnamese">Tiếng Việt</option>'+
-              '<option value="ADD">Submit a New Translation</option>'+
+              '<option value="ADD" id="translate_submit_option">Submit a New Translation</option>'+
             '</select>'+
             '<input id="fae_translate" type="button" value="Change language" />'+
           '</div><div class="clear"></div>'
@@ -253,7 +253,7 @@
 
           if (this.value == 'ADD') {
             button.dataset.original = button.value;
-            button.value = 'Submit';
+            button.value = FAE.cp_lang.fae_translate_submit || 'Submit';
           } else if (button.dataset.original && button.value != button.dataset.original) {
             button.value = button.dataset.original;
           }
@@ -278,7 +278,7 @@
               selected = select.options[select.selectedIndex];
 
           if (select.value == 'ADD') {
-            if (confirm("You've chosen to submit a new translation. If this is correct, please click 'OK' and proceed to the translation page, otherwise click 'cancel' and choose another language.")) {
+            if (confirm(FAE.cp_lang.fae_translate_submit_confirm || 'You have chosen to submit a new translation. If this is correct, please click "OK" and proceed to the translation page, otherwise click "cancel" and choose another language.')) {
               window.location.href = 'http://fmdesign.forumotion.com/t706-forumactif-edge-translations#13996';
             }
 
@@ -414,48 +414,46 @@
         };
 
         // get existing settings from the stylesheet
-        window.setTimeout(function() {
-          $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
-            var form = $('form[method="post"]', d)[0],
-                width,
-                dir;
-  
-            if (form) {
-  
-              // page width
-              if (/\/\*!FAE_WIDTH\*\/#page-body\{width:\d+%;.*?\}/.test(form.edit_code.value)) {
-                width = form.edit_code.value.match(/\/\*!FAE_WIDTH\*\/#page-body\{width:(\d+)%;.*?\}/)[1];
-  
-                document.getElementById('fae_forum_width').value = width;
-                document.getElementById('fae_fw_percent').innerHTML = width + '%';
-              } else {
-                document.getElementById('fae_forum_width').value = 100;
-                document.getElementById('fae_fw_percent').innerHTML = '100%';
-              }
-  
-              // navbar position
-              if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
-                dir = form.edit_code.value.match(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:(.*?)\}/)[1];
-                document.getElementById('fae_nav_dir-' + dir.toLowerCase()).checked = true;
-              }
-  
-              // logo position
-              if (/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:.*?\}#logo\{float:.*?\}/.test(form.edit_code.value)) {
-                dir = form.edit_code.value.match(/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:(.*?)\}#logo\{float:.*?\}/)[1];
-                document.getElementById('fae_logo_dir-' + dir.toLowerCase()).checked = true;
-              }
-  
-              // profile position
-              if (/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/.test(form.edit_code.value)) {
-                dir = form.edit_code.value.match(/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:(.*?);.*?\}\.post-inner\{.*?\}/)[1];
-                document.getElementById('fae_profil_dir-' + dir.toLowerCase()).checked = true;
-              } else if (/\/\*!FAE_PROFIL_DIR\*\/\.post-inner\{margin:0!important\}/.test(form.edit_code.value)) {
-                document.getElementById('fae_profil_dir-center').checked = true;
-              }
-  
+        $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+          var form = $('form[method="post"]', d)[0],
+              width,
+              dir;
+
+          if (form) {
+
+            // page width
+            if (/\/\*!FAE_WIDTH\*\/#page-body\{width:\d+%;.*?\}/.test(form.edit_code.value)) {
+              width = form.edit_code.value.match(/\/\*!FAE_WIDTH\*\/#page-body\{width:(\d+)%;.*?\}/)[1];
+
+              document.getElementById('fae_forum_width').value = width;
+              document.getElementById('fae_fw_percent').innerHTML = width + '%';
+            } else {
+              document.getElementById('fae_forum_width').value = 100;
+              document.getElementById('fae_fw_percent').innerHTML = '100%';
             }
-          });
-        }, 500); // add delay to reduce rapid requests
+
+            // navbar position
+            if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
+              dir = form.edit_code.value.match(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:(.*?)\}/)[1];
+              document.getElementById('fae_nav_dir-' + dir.toLowerCase()).checked = true;
+            }
+
+            // logo position
+            if (/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:.*?\}#logo\{float:.*?\}/.test(form.edit_code.value)) {
+              dir = form.edit_code.value.match(/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:(.*?)\}#logo\{float:.*?\}/)[1];
+              document.getElementById('fae_logo_dir-' + dir.toLowerCase()).checked = true;
+            }
+
+            // profile position
+            if (/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/.test(form.edit_code.value)) {
+              dir = form.edit_code.value.match(/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:(.*?);.*?\}\.post-inner\{.*?\}/)[1];
+              document.getElementById('fae_profil_dir-' + dir.toLowerCase()).checked = true;
+            } else if (/\/\*!FAE_PROFIL_DIR\*\/\.post-inner\{margin:0!important\}/.test(form.edit_code.value)) {
+              document.getElementById('fae_profil_dir-center').checked = true;
+            }
+
+          }
+        });
 
 
         // update the general settings
@@ -542,7 +540,7 @@
                 FAE.progress();
 
                 FAE.log(FAE.cp_lang.general_settings ? FAE.cp_lang.general_settings.fae_gen_updated : 'General settings have been updated successfully !', 'font-weight:bold;color:#8B5;');
-                FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+                FAE.log(FAE.cp_lang.reload_page || 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
               });
 
             }
@@ -801,8 +799,8 @@
 
           '<div class="fae_options_column">'+
 
-            '<h3 class="post-content">Primary Colors</h3>'+
-            '<p id="fae_colors_desc2">The options below allow you to adjust the 5 primary color shades for Forumactif Edge.</p>'+
+            '<h3 class="post-content" id="fae_colors_title-primary">Primary Colors</h3>'+
+            '<p id="fae_colors_desc-primary">The options below allow you to adjust the 5 primary color shades for Forumactif Edge.</p>'+
 
             '<div class="fae_cp_row">'+
               '<span id="fae_label-color-p1" class="fae_label">Primary Color 1 : </span>'+
@@ -846,8 +844,8 @@
             '<br/>'+
 
 
-            '<h3 class="post-content">General Colors</h3>'+
-            '<p id="fae_colors_desc3">The options below allow you to change various colors of the forum.</p>'+
+            '<h3 class="post-content" id="fae_colors_title-general">General Colors</h3>'+
+            '<p id="fae_colors_desc-general">The options below allow you to change various colors of the forum.</p>'+
 
             '<div class="fae_cp_row">'+
               '<span id="fae_label-color-bg1" class="fae_label">Main Background Color 1 : </span>'+
@@ -915,8 +913,8 @@
             '<br/>'+
 
 
-            '<h3 class="post-content">Font Settings</h3>'+
-            '<p id="fae_colors_desc3">The options below allow you to change the font color, size, and family, of the forum.</p>'+
+            '<h3 class="post-content" id="fae_colors_title-font">Font Settings</h3>'+
+            '<p id="fae_colors_desc-font">The options below allow you to change the font color, size, and family, of the forum.</p>'+
 
             '<div class="fae_cp_row">'+
               '<span id="fae_label-color-f0" class="fae_label">Text Color : </span>'+
@@ -990,7 +988,7 @@
           '</div>'+
 
           '<div class="fae_options_column">'+
-            '<h3 class="post-content" style="margin-left:3px;">Preview</h3>'+
+            '<h3 class="post-content" style="margin-left:3px;" id="fae_colors_title-preview">Preview</h3>'+
             '<iframe id="fae_colors_preview" src="/forum"></iframe>'+
           '</div>'+
 
@@ -1181,35 +1179,33 @@
 
 
         // get existing settings from the stylesheet
-        window.setTimeout(function() {
-          $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
-            var css = $('form[method="post"]', d)[0];
+        $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+          var css = $('form[method="post"]', d)[0];
 
-            if (css) {
-              css = css.edit_code.value;
+          if (css) {
+            css = css.edit_code.value;
 
-              for (var a = document.querySelectorAll('[id^="fae_color-"]'), i = 0, j = a.length, id, color, input; i < j; i++) {
-                try {
-                  id = a[i].id.replace(/fae_color-/, '');
-                  input = document.getElementById('fae_color-' + id);
-                  color = css.match(new RegExp('/\\*!FAE_' + id.toUpperCase() + '\\*/([\\s\\S]+)/\\*FAE_' + id.toUpperCase() + '!\\*/'))[1];
+            for (var a = document.querySelectorAll('[id^="fae_color-"]'), i = 0, j = a.length, id, color, input; i < j; i++) {
+              try {
+                id = a[i].id.replace(/fae_color-/, '');
+                input = document.getElementById('fae_color-' + id);
+                color = css.match(new RegExp('/\\*!FAE_' + id.toUpperCase() + '\\*/([\\s\\S]+)/\\*FAE_' + id.toUpperCase() + '!\\*/'))[1];
 
-                  input.value = color == 'transparent' ? '#' : color.replace(/\/\*HEX:(.*?)\*\/rgba.*/, '$1');
-                  input.previousSibling.value = input.value;
-                } catch (e) {}
-              }
+                input.value = color == 'transparent' ? '#' : color.replace(/\/\*HEX:(.*?)\*\/rgba.*/, '$1');
+                input.previousSibling.value = input.value;
+              } catch (e) {}
             }
-          });
-        }, 1000); // add delay to reduce rapid requests
+          }
+        });
 
 
         // update the forum's colors
         $('#fae_save_colors, #fae_default_colors').click(function() {
           var save = this.id == 'fae_save_colors';
 
-          if (save || confirm('Are you sure you want to delete your custom color settings, and revert back to the default forum colors?')) {
+          if (save || confirm((FAE.cp_lang.colors && FAE.cp_lang.colors.confirm_update) || 'Are you sure you want to delete your custom color settings, and revert back to the default forum colors?')) {
 
-            FAE.log(save ? 'Updating the forum colors..' : 'Reverting back to default color settings..');
+            FAE.log(save ? ((FAE.cp_lang.colors && FAE.cp_lang.colors.updating) || 'Updating the forum colors..') : ((FAE.cp_lang.colors && FAE.cp_lang.colors.reverting) || 'Reverting back to default color settings..'));
             FAE.quota = 2;
             FAE.index = 0;
             FAE.progress();
@@ -1239,8 +1235,8 @@
                   FAE.index = 2;
                   FAE.progress();
 
-                  FAE.log(save ? 'Forum colors have been updated successfully !' : 'Forum colors have been changed back to their default settings !', 'font-weight:bold;color:#8B5;');
-                  FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+                  FAE.log(save ? ((FAE.cp_lang.colors && FAE.cp_lang.colors.updated) || 'Forum colors have been updated successfully !') : ((FAE.cp_lang.colors && FAE.cp_lang.colors.reverted) || 'Forum colors have been changed back to their default settings !'), 'font-weight:bold;color:#8B5;');
+                  FAE.log(FAE.cp_lang.reload_page || 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
                 });
 
               }
@@ -1261,7 +1257,7 @@
 
           '<div class="fae_cp_row">'+
             '<span class="fae_help_me">?'+
-              '<span class="fae_help_tip" id="fae_theme_tip-qnp">Position of the Quick Navigation side menu.</span>'+
+              '<span class="fae_help_tip" id="fae_plugin_tip-qnp">Position of the Quick Navigation side menu.</span>'+
             '</span>'+
             '<span id="fae_label-qnp" class="fae_label">Quick Navigation Position : </span>'+
             '<label for="fae_qnp_left"><input type="radio" id="fae_qnp_left" name="fae_qnp" value="1" checked> Left</label>'+
@@ -1270,7 +1266,7 @@
 
           '<div class="fae_cp_row">'+
             '<span class="fae_help_me">?'+
-              '<span class="fae_help_tip" id="fae_theme_tip-qns">By default the Quick Navigation only shows when the navbar is out of view. Enabling this option will allow the Quick Navigation to always be visible.</span>'+
+              '<span class="fae_help_tip" id="fae_plugin_tip-qns">By default the Quick Navigation only shows when the navbar is out of view. Enabling this option will allow the Quick Navigation to always be visible.</span>'+
             '</span>'+
             '<span id="fae_label-qns" class="fae_label">Always show Quick Navigation : </span>'+
             '<label for="fae_qns_yes"><input type="radio" id="fae_qns_yes" name="fae_qns" value="1"> Yes</label>'+
@@ -1279,7 +1275,7 @@
 
           '<div class="fae_cp_row">'+
             '<span class="fae_help_me">?'+
-              '<span class="fae_help_tip" id="fae_theme_tip-tso">This tool allows you to edit the theme selector list, giving you the option to add, delete, and edit themes.</span>'+
+              '<span class="fae_help_tip" id="fae_plugin_tip-tso">This tool allows you to edit the theme selector list, giving you the option to add, delete, and edit themes.</span>'+
             '</span>'+
             '<span id="fae_label-tso" class="fae_label">Theme Selector Options : </span>'+
             '<div id="fae_themer">'+
@@ -1297,32 +1293,30 @@
 
 
         // get existing settings from ALL.JS
-        window.setTimeout(function() {
-          $.get('/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
-            for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/, all; i < j; i++) {
-              if (regex.test(row[i].innerHTML)) {
-                all = $('a', row[i])[1].href;
-                break;
+        $.get('/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
+          for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/, all; i < j; i++) {
+            if (regex.test(row[i].innerHTML)) {
+              all = $('a', row[i])[1].href;
+              break;
+            }
+          }
+
+          if (all) {
+
+            $.get(all, function (d) {
+              var form = $('#formenvoi', d)[0],
+                  js;
+
+              if (form) {
+                js = form.content.value;
+
+                document.getElementById('fae_qnp_' + (/position : 'right'/.test(js) ? 'right' : 'left')).checked = true;
+                document.getElementById('fae_qns_' + (/alwaysVisible : true,/.test(js) ? 'yes' : 'no')).checked = true;
               }
-            }
+            });
 
-            if (all) {
-
-              $.get(all, function (d) {
-                var form = $('#formenvoi', d)[0],
-                    js;
-
-                if (form) {
-                  js = form.content.value;
-
-                  document.getElementById('fae_qnp_' + (/position : 'right'/.test(js) ? 'right' : 'left')).checked = true;
-                  document.getElementById('fae_qns_' + (/alwaysVisible : true,/.test(js) ? 'yes' : 'no')).checked = true;
-                }
-              });
-
-            }
-          });
-        }, 2000); // add delay to reduce rapid requests
+          }
+        });
 
         // build theme color manager
         function fae_compileThemes (msg, obj, init) {
@@ -1338,7 +1332,7 @@
           for (k in obj) {
             if (obj[k].length == 5 && k != 'Custom theme') {
               c = obj[k][1];
-              html += '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + (c.length == 4 ? '#' + c.charAt(1) + c.charAt(1) + c.charAt(2) + c.charAt(2) + c.charAt(3) + c.charAt(3) : c) + '"/><input class="color_name fae_text_input" type="text" value="' + k + '"/><i class="fa fa-times" title="Delete Theme"></i><i class="fa fa-sort-up" title="Move Up"></i><i class="fa fa-sort-desc" title="Move Down"></i></div>';
+              html += '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + (c.length == 4 ? '#' + c.charAt(1) + c.charAt(1) + c.charAt(2) + c.charAt(2) + c.charAt(3) + c.charAt(3) : c) + '"/><input class="color_name fae_text_input" type="text" value="' + k + '"/><i class="fa fa-times"></i><i class="fa fa-sort-up"></i><i class="fa fa-sort-desc"></i></div>';
             } else if (init) {
               fae_themeList += '"' + k + '" : [' + ( obj[k].length == 5 ? "cc ? fae_editColor(cc, +1) : '#77AADD', cc || '#6699CC', cc ? fae_editColor(cc, -1) : '#5588BB', cc ? fae_editColor(cc, -3) : '#336699', cc ? fae_editColor(cc, 'darken') : '#334455'" : '' ) + '],\n';
             }
@@ -1362,7 +1356,7 @@
             i++
           }
 
-          opts.insertAdjacentHTML('beforeend', '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + color + '"/><input class="color_name fae_text_input" type="text" value="New Theme ' + document.querySelectorAll('.theme_opt').length + '"/><i class="fa fa-times" title="Delete Theme"></i><i class="fa fa-sort-up" title="Move Up"></i><i class="fa fa-sort-desc" title="Move Down"></i></div>');
+          opts.insertAdjacentHTML('beforeend', '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + color + '"/><input class="color_name fae_text_input" type="text" value="New Theme ' + document.querySelectorAll('.theme_opt').length + '"/><i class="fa fa-times"></i><i class="fa fa-sort-up"></i><i class="fa fa-sort-desc"></i></div>');
           opts.lastChild.scrollIntoView();
         };
 
@@ -1393,11 +1387,11 @@
 
         // import default themes
         document.getElementById('fae_themer_import').onclick = function () {
-          if (confirm('Do you want to import the default theme list from Github ?')) {
+          if (confirm((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_import_confirm) || 'Do you want to import the default theme list from Github ?')) {
             var that = this;
 
             that.disabled = true;
-            document.getElementById('fae_theme_options').innerHTML = 'Contacting Github, please wait...';
+            document.getElementById('fae_theme_options').innerHTML = (FAE.cp_lang.plugin_management && FAE.cp_lang.fae_importing) || 'Contacting Github, please wait...';
 
             $.get(FAE.raw + 'javascripts/in-all-the-pages/all.js', function(d) {
               FAE.script(
@@ -1405,7 +1399,7 @@
                   d.match(/palette : {[\s\S]*?'.*?' : \[\],[\s\S]*?'.*?' : \[\],([\s\S]*?)}/)[1] +
                 '}'
               );
-              fae_compileThemes('Compiling themes, please wait...', fae_default_themes);
+              fae_compileThemes((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_import_compiling) || 'Compiling themes, please wait...', fae_default_themes);
             });
 
             window.setTimeout(function() {
@@ -1420,7 +1414,7 @@
           var qnp = document.getElementById('fae_qnp_right').checked ? 'right' : 'left',
               qns = document.getElementById('fae_qns_yes').checked ? true : false;
 
-          FAE.log('Locating [FA EDGE] ALL.JS...');
+          FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_finding_plugins) || 'Locating [FA EDGE] ALL.JS...');
           FAE.quota = 3;
           FAE.index = 0;
           FAE.progress();
@@ -1434,8 +1428,8 @@
             }
 
             if (all) {
-              FAE.log('[FA EDGE] ALL.JS found !');
-              FAE.log('Getting [FA EDGE] ALL.JS...');
+              FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_plugins_found) || '[FA EDGE] ALL.JS found !');
+              FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_getting_plugins) || 'Getting [FA EDGE] ALL.JS...');
               FAE.index = 1;
               FAE.progress();
 
@@ -1443,7 +1437,7 @@
                 var form = $('#formenvoi', d)[0];
 
                 if (form) {
-                  FAE.log('Updating your plugins...');
+                  FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_updating_plugins) || 'Updating your plugins...');
                   FAE.index = 2;
                   FAE.progress();
 
@@ -1466,24 +1460,16 @@
                               submit : 'Submit'
 
                   }, function (d) {
-                    FAE.log('Plugins have been updated successfully !', 'font-weight:bold;color:#8B5;');
-                    FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
+                    FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_plugins_updated) || 'Plugins have been updated successfully !', 'font-weight:bold;color:#8B5;');
+                    FAE.log(FAE.cp_lang.reload_page || 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
                     FAE.index = 3;
                     FAE.progress();
                   });
 
-                } else {
-                  FAE.log('Error getting "[FA EDGE] ALL.JS", please try again or contact <a href="http://fmdesign.forumotion.com/f32-support" target="_blank">the support</a> for more information.', 'color:#E53;font-weight:bold;');
-                  FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
                 }
               });
 
-
-            } else {
-              FAE.log('"[FA EDGE] ALL.JS" could not be found. Please make sure that you did not rename the original ALL.JS file, contact <a href="http://fmdesign.forumotion.com/f32-support" target="_blank">the support</a> for more information.', 'color:#E53;font-weight:bold;');
-              FAE.log('Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
             }
-
           });
 
           document.getElementById('fae_options').style.display = 'none';
@@ -1549,6 +1535,12 @@
           document.getElementById('fae_uninstall').value = FAE.cp_lang.fae_uninstall;
           document.getElementById('fae_update').value = FAE.cp_lang.fae_update;
           document.getElementById('fae_translate').value = FAE.cp_lang.fae_translate;
+          document.getElementById('translate_submit_option').innerHTML = FAE.cp_lang.fae_translate_submit_option || 'Submit a New Translation';
+
+          if (FAE.cp_lang.configuration_title && FAE.cp_lang.configuration_desc) {
+            document.getElementById('fae_title-configuration').innerHTML = FAE.cp_lang.configuration_title;
+            document.getElementById('fae_nav_desc').innerHTML = FAE.cp_lang.configuration_desc;
+          }
 
           // TITLES AND TABS
           title[0].innerHTML = FAE.cp_lang.fae_log;
@@ -1588,11 +1580,31 @@
             }
           }
 
+          // COLORS
+          if (FAE.cp_lang.colors) {
+            for (i in FAE.cp_lang.colors) {
+              a = document.getElementById(i);
+              if (a) {
+                a[a.tagName == 'INPUT' ? 'value' : 'innerHTML'] = FAE.cp_lang.colors[i];
+              }
+            }
+          }
+
           // THEME MANAGEMENT
           for (i in FAE.cp_lang.theme_management) {
             a = document.getElementById(i);
             if (a) {
               a[a.tagName == 'INPUT' ? 'value' : 'innerHTML'] = FAE.cp_lang.theme_management[i];
+            }
+          }
+
+          // PLUGIN MANAGEMENT
+          if (FAE.cp_lang.plugin_management) {
+            for (i in FAE.cp_lang.plugin_management) {
+              a = document.getElementById(i);
+              if (a) {
+                a[a.tagName == 'INPUT' ? 'value' : 'innerHTML'] = FAE.cp_lang.plugin_management[i];
+              }
             }
           }
 

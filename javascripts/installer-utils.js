@@ -148,8 +148,24 @@
         FAE.log(FAE.cp_lang.fae_err_not_founder || 'Only <a href="/u1">the founder</a> can access the installation action. Please contact them for assistance for installing Forumactif Edge.', 'color:#E53;font-weight:bold;');
       } else {
         document.getElementById('fae_actions').style.display = 'block';
-        FAE.log('Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core feature for personalizing your forum via the "Customization" section below.', 'color:#C93;font-weight:bold;');
+        FAE.log('Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core features for personalizing your forum via the "Customization" section below.', 'color:#C93;font-weight:bold;');
       }
+
+      // automatically check FAE version data
+      window.setTimeout(function() {
+        $.get(FAE.raw + 'javascripts/version-data.js', function (d) {
+          var local = forumactif_edge_version_data[forumactif_edge_version_data.length - 1],
+              github = d.replace(/[\s\S]*?'(.*?)'[^,][\s\S]*/, '$1'),
+              equal = local == github;
+
+          FAE.log('Your installed version of Forumactif Edge is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/v' + local + '" target="_blank">v' + local + '</a>. The current release of Forumactif Edge on Github is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/v' + github + '" target="_blank">v' + github + '</a>. <a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of changes.');
+          FAE.log(
+            equal ? (FAE.cp_lang.fae_update_good || 'Forumactif Edge is up to date!') :
+                    'There are updates available for Foruactif Edge. Check out <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">the wiki</a> for more information about updating.',
+            'color:' + ( equal ? '#8B5' : '#C93' ) + ';font-weight:bold;'
+          );
+        });
+      }, 1000);
 
 
       // to prevent errors, make sure that the administration panel is accessible before proceeding.

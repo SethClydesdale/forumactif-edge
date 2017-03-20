@@ -52,4 +52,10 @@
     }
   };
 
+
+  /* -- CHANGE LANGUAGE -- */
+  document.getElementById('webpage-lang').onchange = function () {
+    window.location.href = 'https://sethclydesdale.github.io/forumactif-edge' + this.value;
+  };
+
 }());

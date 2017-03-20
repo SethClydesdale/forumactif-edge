@@ -4,7 +4,7 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.2.2';
+  FAE.cp_rev = '1.2.3';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -120,9 +120,35 @@
         installed = document.getElementById('fa_edge');
 
     // only allow the founder to install the theme
-    if (_userdata.user_id == 1 && admin && !/page_html\?mode=preview/.test(window.location.href)) {
+    if (admin && !/page_html\?mode=preview/.test(window.location.href)) {
+      FAE.log('Welcome to the FAE Control Panel! The FAE CP will allow you to install, update, translate, and customize Forumactif Edge. To learn more about using the FAE CP, it is recommended that you read over the <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">Control Panel Guide</a> on the Github wiki.');
+
       FAE.tid = admin.href.replace(/.*?(&tid=.*)/, '$1'); // cache the tid
-      document.getElementById('fae_actions').style.display = 'block';
+
+      if (_userdata.user_id == 1) {
+        document.getElementById('fae_actions').style.display = 'block';
+
+        // Installation initialization
+        document.getElementById('fae_install').onclick = function() {
+          if (confirm( (FAE.cp_lang.fae_install_warning ? FAE.parse_vars(FAE.cp_lang.fae_install_warning, {
+            '{INSTALL}' : installed ?  FAE.cp_lang.fae_reinstall : FAE.cp_lang.fae_install
+
+          }) : 'Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.').replace(/\\/g, '') )) {
+
+            $.get(FAE.raw + 'javascripts/install.js', function(d) {
+              FAE.script(d);
+              FAE.next();
+            });
+
+            document.getElementById('fae_options').style.display = 'none';
+          }
+        };
+      } else if (!installed) {
+        FAE.log(FAE.cp_lang.fae_err_not_founder || 'Only <a href="/u1">the founder</a> can access the installation action. Please contact them for assistance for installing Forumactif Edge.', 'color:#E53;font-weight:bold;');
+      } else {
+        FAE.log('Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core feature for personalizing your forum via the "Customization" section below.', 'color:#C93;font-weight:bold;');
+        document.getElementById('fae_actions').firstChild.style.display = 'none';
+      }
 
 
       // to prevent errors, make sure that the administration panel is accessible before proceeding.
@@ -134,22 +160,6 @@
         }
       });
 
-
-      // Installation initialization
-      document.getElementById('fae_install').onclick = function() {
-        if (confirm( (FAE.cp_lang.fae_install_warning ? FAE.parse_vars(FAE.cp_lang.fae_install_warning, {
-          '{INSTALL}' : installed ?  FAE.cp_lang.fae_reinstall : FAE.cp_lang.fae_install
-
-        }) : 'Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.').replace(/\\/g, '') )) {
-
-          $.get(FAE.raw + 'javascripts/install.js', function(d) {
-            FAE.script(d);
-            FAE.next();
-          });
-
-          document.getElementById('fae_options').style.display = 'none';
-        }
-      };
 
       // extra actions for when the theme is installed.
       if (installed) {
@@ -1518,9 +1528,6 @@
 
     } else if (/page_html\?mode=preview/.test(window.location.href)) {
       FAE.log(FAE.cp_lang.fae_err_no_preview || 'The Forumactif Edge Control Panel cannot be used in preview mode. Please go to Admin Panel > Modules > HTML pages management and click the magnifying glass (<img src="http://illiweb.com/fa/admin/icones/voir.png" style="vertical-align:middle;"/>) for this page once you\'ve saved it.', 'color:#E53;font-weight:bold;');
-
-    } else {
-      FAE.log(FAE.cp_lang.fae_err_not_founder || 'Only <a href="/u1">the founder</a> may use this control panel. Please contact them for assistance in installing Forumactif Edge.', 'color:#E53;font-weight:bold;');
     }
   });
 

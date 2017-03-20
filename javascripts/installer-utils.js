@@ -158,12 +158,14 @@
               github = d.replace(/[\s\S]*?'(.*?)'[^,][\s\S]*/, '$1'),
               equal = local == github;
 
-          FAE.log('Your installed version of Forumactif Edge is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/v' + local + '" target="_blank">v' + local + '</a>. The current release of Forumactif Edge on Github is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/v' + github + '" target="_blank">v' + github + '</a>. <a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of changes.');
+          FAE.log('Your installed version of Forumactif Edge is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/v' + local + '" target="_blank">v' + local + '</a>.');
+          FAE.log('The current release of Forumactif Edge on Github is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/v' + github + '" target="_blank">v' + github + '</a>.');
           FAE.log(
             equal ? (FAE.cp_lang.fae_update_good || 'Forumactif Edge is up to date!') :
                     'There are updates available for Foruactif Edge. Check out <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">the wiki</a> for more information about updating.',
             'color:' + ( equal ? '#8B5' : '#C93' ) + ';font-weight:bold;'
           );
+          FAE.log('<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of releases for Forumactif Edge.');
         });
       }, 1000);
 

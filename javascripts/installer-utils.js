@@ -3,7 +3,7 @@
     window.FAE = new Object();
   }
 
-  FAE.maintenance = true;
+  FAE.maintenance = false;
   FAE.cp_rev = '1.2.3';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
@@ -148,7 +148,7 @@
         FAE.log(FAE.cp_lang.fae_err_not_founder || 'Only <a href="/u1">the founder</a> can access the installation action. Please contact them for assistance for installing Forumactif Edge.', 'color:#E53;font-weight:bold;');
       } else {
         document.getElementById('fae_actions').style.display = 'block';
-        FAE.log('Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core features for personalizing your forum via the "Customization" section below.', 'color:#C93;font-weight:bold;');
+        FAE.log('Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core features for personalizing your forum via the "Configuration" section below.', 'color:#C93;font-weight:bold;');
       }
 
       // automatically check FAE version data

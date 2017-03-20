@@ -1561,7 +1561,7 @@
 
           if (FAE.cp_lang.colors) {
             colors.innerHTML = FAE.cp_lang.colors.title || 'Colors';
-            docment.getElementById('faetab-colors').value = colors.innerHTML;
+            document.getElementById('faetab-colors').value = colors.innerHTML;
           }
 
           if (FAE.cp_lang.plugin_management) {

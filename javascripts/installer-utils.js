@@ -4,7 +4,7 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.2.1';
+  FAE.cp_rev = '1.2.2';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -1559,7 +1559,7 @@
       '#fae_themer_add { background:#8B5 !important; }'+
       '#fae_themer_add:hover { background:#7A4 !important; }'+
       '#fae_options [disabled] { opacity:0.5; }'+
-      '#fae_theme_options { height:153px; border:1px solid #CCC; overflow:auto; margin-bottom:3px; padding:3px; }'+
+      '#fae_theme_options { height:153px; border:1px solid #CCC; overflow:auto; margin-bottom:3px; padding:6px; width:100%; white-space:nowrap; }'+
       '#fae_options .fae_color_picker { background:none !important; border:1px solid transparent; padding:0; margin-right:3px; }'+
       '#fae_options .fae_color_picker:hover { border-color:#69C; }'+
       '#fae_options .fae_text_input { color:#333; background:#FFF !important; border:1px solid #CCC; cursor:text; }'+

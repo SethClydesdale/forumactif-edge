@@ -414,46 +414,48 @@
         };
 
         // get existing settings from the stylesheet
-        $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
-          var form = $('form[method="post"]', d)[0],
-              width,
-              dir;
-
-          if (form) {
-
-            // page width
-            if (/\/\*!FAE_WIDTH\*\/#page-body\{width:\d+%;.*?\}/.test(form.edit_code.value)) {
-              width = form.edit_code.value.match(/\/\*!FAE_WIDTH\*\/#page-body\{width:(\d+)%;.*?\}/)[1];
-
-              document.getElementById('fae_forum_width').value = width;
-              document.getElementById('fae_fw_percent').innerHTML = width + '%';
-            } else {
-              document.getElementById('fae_forum_width').value = 100;
-              document.getElementById('fae_fw_percent').innerHTML = '100%';
+        window.setTimeout(function() {
+          $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+            var form = $('form[method="post"]', d)[0],
+                width,
+                dir;
+  
+            if (form) {
+  
+              // page width
+              if (/\/\*!FAE_WIDTH\*\/#page-body\{width:\d+%;.*?\}/.test(form.edit_code.value)) {
+                width = form.edit_code.value.match(/\/\*!FAE_WIDTH\*\/#page-body\{width:(\d+)%;.*?\}/)[1];
+  
+                document.getElementById('fae_forum_width').value = width;
+                document.getElementById('fae_fw_percent').innerHTML = width + '%';
+              } else {
+                document.getElementById('fae_forum_width').value = 100;
+                document.getElementById('fae_fw_percent').innerHTML = '100%';
+              }
+  
+              // navbar position
+              if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
+                dir = form.edit_code.value.match(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:(.*?)\}/)[1];
+                document.getElementById('fae_nav_dir-' + dir.toLowerCase()).checked = true;
+              }
+  
+              // logo position
+              if (/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:.*?\}#logo\{float:.*?\}/.test(form.edit_code.value)) {
+                dir = form.edit_code.value.match(/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:(.*?)\}#logo\{float:.*?\}/)[1];
+                document.getElementById('fae_logo_dir-' + dir.toLowerCase()).checked = true;
+              }
+  
+              // profile position
+              if (/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/.test(form.edit_code.value)) {
+                dir = form.edit_code.value.match(/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:(.*?);.*?\}\.post-inner\{.*?\}/)[1];
+                document.getElementById('fae_profil_dir-' + dir.toLowerCase()).checked = true;
+              } else if (/\/\*!FAE_PROFIL_DIR\*\/\.post-inner\{margin:0!important\}/.test(form.edit_code.value)) {
+                document.getElementById('fae_profil_dir-center').checked = true;
+              }
+  
             }
-
-            // navbar position
-            if (/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:.*?\}/.test(form.edit_code.value)) {
-              dir = form.edit_code.value.match(/\/\*!FAE_NAV_DIR\*\/#navbar\{text-align:(.*?)\}/)[1];
-              document.getElementById('fae_nav_dir-' + dir.toLowerCase()).checked = true;
-            }
-
-            // logo position
-            if (/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:.*?\}#logo\{float:.*?\}/.test(form.edit_code.value)) {
-              dir = form.edit_code.value.match(/\/\*!FAE_LOGO_DIR\*\/#logo-desc\{text-align:(.*?)\}#logo\{float:.*?\}/)[1];
-              document.getElementById('fae_logo_dir-' + dir.toLowerCase()).checked = true;
-            }
-
-            // profile position
-            if (/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:.*?;.*?\}\.post-inner\{.*?\}/.test(form.edit_code.value)) {
-              dir = form.edit_code.value.match(/\/\*!FAE_PROFIL_DIR\*\/\.postprofile\{float:(.*?);.*?\}\.post-inner\{.*?\}/)[1];
-              document.getElementById('fae_profil_dir-' + dir.toLowerCase()).checked = true;
-            } else if (/\/\*!FAE_PROFIL_DIR\*\/\.post-inner\{margin:0!important\}/.test(form.edit_code.value)) {
-              document.getElementById('fae_profil_dir-center').checked = true;
-            }
-
-          }
-        });
+          });
+        }, 500); // add delay to reduce rapid requests
 
 
         // update the general settings
@@ -1179,24 +1181,26 @@
 
 
         // get existing settings from the stylesheet
-        $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
-          var css = $('form[method="post"]', d)[0];
+        window.setTimeout(function() {
+          $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+            var css = $('form[method="post"]', d)[0];
 
-          if (css) {
-            css = css.edit_code.value;
+            if (css) {
+              css = css.edit_code.value;
 
-            for (var a = document.querySelectorAll('[id^="fae_color-"]'), i = 0, j = a.length, id, color, input; i < j; i++) {
-              try {
-                id = a[i].id.replace(/fae_color-/, '');
-                input = document.getElementById('fae_color-' + id);
-                color = css.match(new RegExp('/\\*!FAE_' + id.toUpperCase() + '\\*/([\\s\\S]+)/\\*FAE_' + id.toUpperCase() + '!\\*/'))[1];
+              for (var a = document.querySelectorAll('[id^="fae_color-"]'), i = 0, j = a.length, id, color, input; i < j; i++) {
+                try {
+                  id = a[i].id.replace(/fae_color-/, '');
+                  input = document.getElementById('fae_color-' + id);
+                  color = css.match(new RegExp('/\\*!FAE_' + id.toUpperCase() + '\\*/([\\s\\S]+)/\\*FAE_' + id.toUpperCase() + '!\\*/'))[1];
 
-                input.value = color == 'transparent' ? '#' : color.replace(/\/\*HEX:(.*?)\*\/rgba.*/, '$1');
-                input.previousSibling.value = input.value;
-              } catch (e) {}
+                  input.value = color == 'transparent' ? '#' : color.replace(/\/\*HEX:(.*?)\*\/rgba.*/, '$1');
+                  input.previousSibling.value = input.value;
+                } catch (e) {}
+              }
             }
-          }
-        });
+          });
+        }, 1000); // add delay to reduce rapid requests
 
 
         // update the forum's colors
@@ -1293,30 +1297,32 @@
 
 
         // get existing settings from ALL.JS
-        $.get('/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
-          for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/, all; i < j; i++) {
-            if (regex.test(row[i].innerHTML)) {
-              all = $('a', row[i])[1].href;
-              break;
-            }
-          }
-
-          if (all) {
-
-            $.get(all, function (d) {
-              var form = $('#formenvoi', d)[0],
-                  js;
-
-              if (form) {
-                js = form.content.value;
-
-                document.getElementById('fae_qnp_' + (/position : 'right'/.test(js) ? 'right' : 'left')).checked = true;
-                document.getElementById('fae_qns_' + (/alwaysVisible : true,/.test(js) ? 'yes' : 'no')).checked = true;
+        window.setTimeout(function() {
+          $.get('/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
+            for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/, all; i < j; i++) {
+              if (regex.test(row[i].innerHTML)) {
+                all = $('a', row[i])[1].href;
+                break;
               }
-            });
+            }
 
-          }
-        });
+            if (all) {
+
+              $.get(all, function (d) {
+                var form = $('#formenvoi', d)[0],
+                    js;
+
+                if (form) {
+                  js = form.content.value;
+
+                  document.getElementById('fae_qnp_' + (/position : 'right'/.test(js) ? 'right' : 'left')).checked = true;
+                  document.getElementById('fae_qns_' + (/alwaysVisible : true,/.test(js) ? 'yes' : 'no')).checked = true;
+                }
+              });
+
+            }
+          });
+        }, 2000); // add delay to reduce rapid requests
 
         // build theme color manager
         function fae_compileThemes (msg, obj, init) {

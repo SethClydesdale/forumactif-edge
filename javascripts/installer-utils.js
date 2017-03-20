@@ -1575,7 +1575,7 @@
       '.fae_options_column { float:left; width:50%; }'+
       '.fae_colors .fae_text_input { width:75px; }'+
       '.fae_colors .fae_text_input.max { width:30%; }'+
-      '#fae_colors_preview { border:1px solid rgba(0, 0, 0, 0.2); width:99%; margin:0 3px; height:500px; }'+
+      '#fae_colors_preview { border:1px solid rgba(0, 0, 0, 0.2); width:99%; margin:0 3px; height:900px; }'+
     '</style>'
   );
 }());

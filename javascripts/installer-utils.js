@@ -148,9 +148,6 @@
         FAE.log(FAE.cp_lang.fae_err_not_founder || 'Only <a href="/u1">the founder</a> can access the installation action. Please contact them for assistance for installing Forumactif Edge.', 'color:#E53;font-weight:bold;');
       } else {
         document.getElementById('fae_actions').style.display = 'block';
-        document.getElementById('fae_install').style.display = 'none';
-        document.querySelector('#fae_actions .fae_cp_title').style.display = 'none';
-
         FAE.log('Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core feature for personalizing your forum via the "Customization" section below.', 'color:#C93;font-weight:bold;');
       }
 
@@ -168,56 +165,56 @@
       // extra actions for when the theme is installed.
       if (installed) {
 
+        var uninstall = document.getElementById('fae_uninstall'),
+            update = document.getElementById('fae_update');
+
+        document.getElementById('fae_install').value = FAE.cp_lang.reinstall || 'Reinstall';
+
         if (founder) {
-          var uninstall = document.getElementById('fae_uninstall'),
-              update = document.getElementById('fae_update');
-
-          document.getElementById('fae_install').value = FAE.cp_lang.reinstall || 'Reinstall';
-
           $([uninstall, update]).show();
-
-          // Uninstallation initialization
-          uninstall.onclick = function() {
-            if (confirm( (FAE.cp_lang.fae_uninstall_warning || 'Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.').replace(/\\/g, '') )) {
-
-              $.get(FAE.raw + 'javascripts/uninstall.js', function(d) {
-                FAE.script(d);
-                FAE.next();
-              });
-
-              document.getElementById('fae_options').style.display = 'none';
-            }
-          };
-
-
-          // Check for updates
-          update.onclick = function() {
-            FAE.log(FAE.cp_lang.fae_update_check || 'Checking for updates on Github...');
-            document.getElementById('fae_options').style.display = 'none';
-
-            $.get(FAE.raw + 'javascripts/version-data.js', function(d) {
-              FAE.script(d.replace(/forumactif_edge_version_data/, 'fae_github_version_data'));
-              FAE.version_string = d; // save version data for later so we can update the forum version info
-
-              if (forumactif_edge_version_data.length < fae_github_version_data.length) {
-
-                FAE.update_queue = fae_github_version_data.slice(forumactif_edge_version_data.length, fae_github_version_data.length);
-                FAE.update_index = -1;
-                FAE.update_quota = FAE.update_queue.length;
-
-                FAE.log(FAE.update_queue.length + ' update' + ( i == 1 ? '' : 's' ) + ' found.');
-                FAE.log(FAE.cp_lang.fae_update_prepare || 'Preparing to fetch update instructions, please do not close this tab...');
-
-                FAE.step = [];
-                FAE.getUpdates();
-
-              } else {
-                FAE.log(FAE.cp_lang.fae_update_good || 'Forumactif Edge is up to date!', 'color:#8B5;font-weight:bold;');
-                document.getElementById('fae_options').style.display = 'block';
-              }
-            });
-          };
         }
+
+        // Uninstallation initialization
+        uninstall.onclick = function() {
+          if (confirm( (FAE.cp_lang.fae_uninstall_warning || 'Are you sure you want to uninstall Forumactif Edge? All CSS, JavaScript, and Template changes will be deleted ; The forum will be reverted to the default phpbb3 theme. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you don\'t want to uninstall Forumactif Edge yet.').replace(/\\/g, '') )) {
+
+            $.get(FAE.raw + 'javascripts/uninstall.js', function(d) {
+              FAE.script(d);
+              FAE.next();
+            });
+
+            document.getElementById('fae_options').style.display = 'none';
+          }
+        };
+
+
+        // Check for updates
+        update.onclick = function() {
+          FAE.log(FAE.cp_lang.fae_update_check || 'Checking for updates on Github...');
+          document.getElementById('fae_options').style.display = 'none';
+
+          $.get(FAE.raw + 'javascripts/version-data.js', function(d) {
+            FAE.script(d.replace(/forumactif_edge_version_data/, 'fae_github_version_data'));
+            FAE.version_string = d; // save version data for later so we can update the forum version info
+
+            if (forumactif_edge_version_data.length < fae_github_version_data.length) {
+
+              FAE.update_queue = fae_github_version_data.slice(forumactif_edge_version_data.length, fae_github_version_data.length);
+              FAE.update_index = -1;
+              FAE.update_quota = FAE.update_queue.length;
+
+              FAE.log(FAE.update_queue.length + ' update' + ( i == 1 ? '' : 's' ) + ' found.');
+              FAE.log(FAE.cp_lang.fae_update_prepare || 'Preparing to fetch update instructions, please do not close this tab...');
+
+              FAE.step = [];
+              FAE.getUpdates();
+
+            } else {
+              FAE.log(FAE.cp_lang.fae_update_good || 'Forumactif Edge is up to date!', 'color:#8B5;font-weight:bold;');
+              document.getElementById('fae_options').style.display = 'block';
+            }
+          });
+        };
 
 
         // create and insert translation button
@@ -228,111 +225,115 @@
         var opts = document.getElementById('fae_options'),
             actdiv = $('<div style="float:left;" />');
 
-        if (founder) {
-          $('#fae_install, #fae_uninstall, #fae_update').appendTo(actdiv);
-          $(opts).prepend(actdiv);
+        $('#fae_install, #fae_uninstall, #fae_update').appendTo(actdiv);
+        $(opts).prepend(actdiv);
 
-          // create and insert the translation action
-          $(opts).append(
-            '<div style="float:right;">'+
-              '<select id="fae_selected_language">'+
-                '<option value="Arabic">العربية</option>'+
-                '<option value="Dutch">Dutch</option>'+
-                '<option value="English">English</option>'+
-                '<option value="Filipino">Tagalog</option>'+
-                '<option value="Français">Français</option>'+
-                '<option value="German">Deutsch</option>'+
-                '<option value="Greek">Ελληνικά</option>'+
-                '<option value="Hebrew">עברית</option>'+
-                '<option value="Hungarian">Hungarian</option>'+
-                '<option value="Italian">Italiano</option>'+
-                '<option value="Portuguese">Português</option>'+
-                '<option value="Romanian">Romana</option>'+
-                '<option value="Spanish">Español</option>'+
-                '<option value="Vietnamese">Tiếng Việt</option>'+
-                '<option value="ADD">Submit a New Translation</option>'+
-              '</select>'+
-              '<input id="fae_translate" type="button" value="Change language" />'+
-            '</div><div class="clear"></div>'
-          );
+        // create and insert the translation action
+        $(opts).append(
+          '<div id="fae_translation_block" style="float:right;">'+
+            '<select id="fae_selected_language">'+
+              '<option value="Arabic">العربية</option>'+
+              '<option value="Dutch">Dutch</option>'+
+              '<option value="English">English</option>'+
+              '<option value="Filipino">Tagalog</option>'+
+              '<option value="Français">Français</option>'+
+              '<option value="German">Deutsch</option>'+
+              '<option value="Greek">Ελληνικά</option>'+
+              '<option value="Hebrew">עברית</option>'+
+              '<option value="Hungarian">Hungarian</option>'+
+              '<option value="Italian">Italiano</option>'+
+              '<option value="Portuguese">Português</option>'+
+              '<option value="Romanian">Romana</option>'+
+              '<option value="Spanish">Español</option>'+
+              '<option value="Vietnamese">Tiếng Việt</option>'+
+              '<option value="ADD">Submit a New Translation</option>'+
+            '</select>'+
+            '<input id="fae_translate" type="button" value="Change language" />'+
+          '</div><div class="clear"></div>'
+        );
 
-          document.getElementById('fae_selected_language').onchange = function () {
-            var button = document.getElementById('fae_translate');
+        document.getElementById('fae_selected_language').onchange = function () {
+          var button = document.getElementById('fae_translate');
 
-            if (this.value == 'ADD') {
-              button.dataset.original = button.value;
-              button.value = 'Submit';
-            } else if (button.dataset.original && button.value != button.dataset.original) {
-              button.value = button.dataset.original;
+          if (this.value == 'ADD') {
+            button.dataset.original = button.value;
+            button.value = 'Submit';
+          } else if (button.dataset.original && button.value != button.dataset.original) {
+            button.value = button.dataset.original;
+          }
+        };
+
+        // set the selected translation
+        for (var a = document.getElementById('fae_selected_language').options, i = 0, j = a.length; i < j; i++) {
+          if (FAE.board_lang == a[i].innerHTML) {
+            a[i].selected = true;
+            a[i].id = 'fae_current_language';
+            a[i].parentNode.insertBefore(a[i], a[0]);
+            a[0].insertAdjacentHTML('afterend', '<optgroup label="----------------"></optgroup>');
+            break;
+          }
+        }
+
+        // function to be executed when the translation button is clicked
+        document.getElementById('fae_translate').onclick = function() {
+
+          var select = document.getElementById('fae_selected_language'),
+              current = document.getElementById('fae_current_language'),
+              selected = select.options[select.selectedIndex];
+
+          if (select.value == 'ADD') {
+            if (confirm("You've chosen to submit a new translation. If this is correct, please click 'OK' and proceed to the translation page, otherwise click 'cancel' and choose another language.")) {
+              window.location.href = 'http://fmdesign.forumotion.com/t706-forumactif-edge-translations#13996';
             }
-          };
 
-          // set the selected translation
-          for (var a = document.getElementById('fae_selected_language').options, i = 0, j = a.length; i < j; i++) {
-            if (FAE.board_lang == a[i].innerHTML) {
-              a[i].selected = true;
-              a[i].id = 'fae_current_language';
-              a[i].parentNode.insertBefore(a[i], a[0]);
-              a[0].insertAdjacentHTML('afterend', '<optgroup label="----------------"></optgroup>');
-              break;
-            }
+            return;
           }
 
-          // function to be executed when the translation button is clicked
-          document.getElementById('fae_translate').onclick = function() {
-
-            var select = document.getElementById('fae_selected_language'),
-                current = document.getElementById('fae_current_language'),
-                selected = select.options[select.selectedIndex];
-
-            if (select.value == 'ADD') {
-              if (confirm("You've chosen to submit a new translation. If this is correct, please click 'OK' and proceed to the translation page, otherwise click 'cancel' and choose another language.")) {
-                window.location.href = 'http://fmdesign.forumotion.com/t706-forumactif-edge-translations#13996';
-              }
-
-              return;
-            }
-
-            if (FAE.board_lang == selected.innerHTML) {
-              return alert(FAE.cp_lang.fae_translate_same ? FAE.parse_vars(FAE.cp_lang.fae_translate_same, {
-                '{LANG}' : selected.innerHTML
-
-              }) : 'Forumactif Edge is already in ' + selected.innerHTML + '. Please choose another language.');
-            }
-
-            if (confirm(FAE.cp_lang.fae_translate_warning ? FAE.parse_vars(FAE.cp_lang.fae_translate_warning, {
+          if (FAE.board_lang == selected.innerHTML) {
+            return alert(FAE.cp_lang.fae_translate_same ? FAE.parse_vars(FAE.cp_lang.fae_translate_same, {
               '{LANG}' : selected.innerHTML
 
-            }) : 'Are you sure you want to change the language of Forumactif Edge to ' + selected.innerHTML + ' ?')) {
+            }) : 'Forumactif Edge is already in ' + selected.innerHTML + '. Please choose another language.');
+          }
 
-              FAE.log(FAE.cp_lang.fae_translate_start || 'Translation of Forumactif Edge will commence shortly. Please wait..');
+          if (confirm(FAE.cp_lang.fae_translate_warning ? FAE.parse_vars(FAE.cp_lang.fae_translate_warning, {
+            '{LANG}' : selected.innerHTML
+
+          }) : 'Are you sure you want to change the language of Forumactif Edge to ' + selected.innerHTML + ' ?')) {
+
+            FAE.log(FAE.cp_lang.fae_translate_start || 'Translation of Forumactif Edge will commence shortly. Please wait..');
+            FAE.log(FAE.cp_lang.fae_translate_get ? FAE.parse_vars(FAE.cp_lang.fae_translate_get, {
+              '{LANG}' : current.innerHTML
+
+            }) : 'Getting ' + current.innerHTML + ' language data...');
+
+            $.get(FAE.raw + 'lang/' + current.value + '.js', function(d) {
               FAE.log(FAE.cp_lang.fae_translate_get ? FAE.parse_vars(FAE.cp_lang.fae_translate_get, {
-                '{LANG}' : current.innerHTML
+                '{LANG}' : selected.innerHTML
 
-              }) : 'Getting ' + current.innerHTML + ' language data...');
+              }) : 'Getting ' + selected.innerHTML + ' language data...');
 
-              $.get(FAE.raw + 'lang/' + current.value + '.js', function(d) {
-                FAE.log(FAE.cp_lang.fae_translate_get ? FAE.parse_vars(FAE.cp_lang.fae_translate_get, {
-                  '{LANG}' : selected.innerHTML
+              FAE.script(d.replace('FAE.lang', 'FAE.lang_current'));
 
-                }) : 'Getting ' + selected.innerHTML + ' language data...');
+              $.get(FAE.raw + 'lang/' + selected.value + '.js', function(d) {
+                FAE.log(FAE.cp_lang.fae_translate_loaded || 'Language data has been loaded. The translation process will now begin, please do not close this tab.');
+                FAE.script(d.replace('FAE.lang', 'FAE.lang_new'));
 
-                FAE.script(d.replace('FAE.lang', 'FAE.lang_current'));
-
-                $.get(FAE.raw + 'lang/' + selected.value + '.js', function(d) {
-                  FAE.log(FAE.cp_lang.fae_translate_loaded || 'Language data has been loaded. The translation process will now begin, please do not close this tab.');
-                  FAE.script(d.replace('FAE.lang', 'FAE.lang_new'));
-
-                  $.get(FAE.raw + 'lang/translate.js', function(d) {
-                    FAE.script(d);
-                    FAE.next();
-                  });
+                $.get(FAE.raw + 'lang/translate.js', function(d) {
+                  FAE.script(d);
+                  FAE.next();
                 });
               });
+            });
 
-              document.getElementById('fae_options').style.display = 'none';
-            }
-          };
+            document.getElementById('fae_options').style.display = 'none';
+          }
+        };
+
+
+        // hide actions for non-founders
+        if (!founder) {
+          $('#fae_actions .fae_cp_title, #fae_install, #fae_translation_block').hide();
         }
 
 

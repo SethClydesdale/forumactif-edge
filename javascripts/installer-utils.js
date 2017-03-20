@@ -122,8 +122,6 @@
 
     // only allow the founder to install the theme
     if (admin && !/page_html\?mode=preview/.test(window.location.href)) {
-      FAE.log(FAE.cp_lang.welcome_message || 'Welcome to the FAE Control Panel! The FAE CP will allow you to install, update, translate, and customize Forumactif Edge. To learn more about using the FAE CP, it is recommended that you read over the <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">Control Panel Guide</a> on the Github wiki.');
-
       FAE.tid = admin.href.replace(/.*?(&tid=.*)/, '$1'); // cache the tid
 
       if (founder) {
@@ -144,39 +142,10 @@
             document.getElementById('fae_options').style.display = 'none';
           }
         };
-      } else if (!installed) {
-        FAE.log(FAE.cp_lang.fae_err_not_founder || 'Only <a href="/u1">the founder</a> can access the installation action. Please contact them for assistance for installing Forumactif Edge.', 'color:#E53;font-weight:bold;');
-      } else {
+
+      } else if (installed) {
         document.getElementById('fae_actions').style.display = 'block';
-        FAE.log(FAE.cp_lang.co_admin || 'Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core features for personalizing your forum via the "Configuration" section below.', 'color:#C93;font-weight:bold;');
       }
-
-      // automatically check FAE version data
-      window.setTimeout(function() {
-        $.get(FAE.raw + 'javascripts/version-data.js', function (d) {
-          var local = 'v' + forumactif_edge_version_data[forumactif_edge_version_data.length - 1],
-              github = 'v' + d.replace(/[\s\S]*?'(.*?)'[^,][\s\S]*/, '$1'),
-              equal = local == github;
-
-          FAE.log(FAE.cp_lang.auto_version_local ? FAE.parse_vars(FAE.cp_lang.auto_version_local, {
-            '{VERSION_STRING}' : local
-
-          }) : 'Your installed version of Forumactif Edge is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/' + local + '" target="_blank">' + local + '</a>.');
-
-          FAE.log(FAE.cp_lang.auto_version_github ? FAE.parse_vars(FAE.cp_lang.auto_version_github, {
-            '{VERSION_STRING}' : github
-
-          }) : 'The current release of Forumactif Edge on Github is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/' + github + '" target="_blank">' + github + '</a>.');
-
-          FAE.log(
-            equal ? (FAE.cp_lang.fae_update_good || 'Forumactif Edge is up to date!') :
-                    (FAE.cp_lang.update_waiting || 'There are updates available for Foruactif Edge. Check out <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">the wiki</a> for more information about updating.'),
-            'color:' + ( equal ? '#8B5' : '#C93' ) + ';font-weight:bold;'
-          );
-
-          FAE.log(FAE.cp_lang.release_list || '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of releases for Forumactif Edge.');
-        });
-      }, 1000);
 
 
       // to prevent errors, make sure that the administration panel is accessible before proceeding.
@@ -371,10 +340,10 @@
           '<p id="fae_nav_desc">Clicking the buttons below will take you to different sections of the control panel, which allow you to manage the Configuration of Forumactif Edge. Go ahead and explore each of these sections, so you can get started on personalizing your theme. If you need more information, <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">click here</a> to view the control panel guide.</p>'+
 
           '<div id="fae_cp_navbar">'+
-            '<input type="button" value="General Settings" data-tab="category-general" style="background-color:#8B5;" />'+
-            '<input type="button" value="Colors" data-tab="category-color" />'+
-            '<input type="button" value="Theme Management" data-tab="category-theme" />'+
-            '<input type="button" value="Plugin Management" data-tab="category-plugin" />'+
+            '<input id="faetab-general-settings" type="button" value="General Settings" data-tab="category-general" style="background-color:#8B5;" />'+
+            '<input id="faetab-colors" type="button" value="Colors" data-tab="category-color" />'+
+            '<input id="faetab-theme-management" type="button" value="Theme Management" data-tab="category-theme" />'+
+            '<input id="faetab-plugin-management" type="button" value="Plugin Management" data-tab="category-plugin" />'+
           '</div>'
         );
 
@@ -1524,6 +1493,48 @@
               title = $('.fae_cp_title', cp),
               a, i, j;
 
+          // WELCOME MESSAGES
+          FAE.log(FAE.cp_lang.welcome_message || 'Welcome to the FAE Control Panel! The FAE CP will allow you to install, update, translate, and customize Forumactif Edge. To learn more about using the FAE CP, it is recommended that you read over the <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">Control Panel Guide</a> on the Github wiki.');
+
+          if (!founder && !installed) {
+            FAE.log(FAE.cp_lang.fae_err_not_founder || 'Only <a href="/u1">the founder</a> can access the installation action. Please contact them for assistance for installing Forumactif Edge.', 'color:#E53;font-weight:bold;');
+          } else {
+            FAE.log(FAE.cp_lang.co_admin || 'Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core features for personalizing your forum via the "Configuration" section below.', 'color:#C93;font-weight:bold;');
+          }
+
+          // AUTOMATIC VERSION CHECK
+          $.get(FAE.raw + 'javascripts/version-data.js', function (d) {
+            var local = 'v' + forumactif_edge_version_data[forumactif_edge_version_data.length - 1],
+                github = 'v' + d.replace(/[\s\S]*?'(.*?)'[^,][\s\S]*/, '$1'),
+                equal = local == github;
+
+            FAE.log('<hr>'); // add separation
+
+            // log local version
+            FAE.log(FAE.cp_lang.auto_version_local ? FAE.parse_vars(FAE.cp_lang.auto_version_local, {
+              '{VERSION_STRING}' : local
+
+            }) : 'Your installed version of Forumactif Edge is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/' + local + '" target="_blank">' + local + '</a>.');
+
+            // log latest github version
+            FAE.log(FAE.cp_lang.auto_version_github ? FAE.parse_vars(FAE.cp_lang.auto_version_github, {
+              '{VERSION_STRING}' : github
+
+            }) : 'The current release of Forumactif Edge on Github is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/' + github + '" target="_blank">' + github + '</a>.');
+
+            // log version status
+            FAE.log(
+              equal ? (FAE.cp_lang.fae_update_good || 'Forumactif Edge is up to date!') :
+                      (FAE.cp_lang.update_waiting || 'There are updates available for Foruactif Edge. Check out <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">the wiki</a> for more information about updating.'),
+              'color:' + ( equal ? '#8B5' : '#C93' ) + ';font-weight:bold;'
+            );
+
+            // log release list
+            FAE.log(FAE.cp_lang.release_list || '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of releases for Forumactif Edge.');
+
+            FAE.log('<hr>'); // add separation
+          });
+
           // MAIN CP TRANSLATION
           document.getElementById('fae_cp_main_title').innerHTML = FAE.cp_lang.fae_cp_main_title;
           document.getElementById('fae_cp_desc').innerHTML = FAE.cp_lang.fae_cp_desc;
@@ -1536,8 +1547,11 @@
           // TITLES
           title[0].innerHTML = FAE.cp_lang.fae_log;
           title[1].innerHTML = FAE.cp_lang.fae_actions;
-          document.getElementById('fae_title-general_settings').innerHTML = FAE.cp_lang.general_settings.title;
-          document.getElementById('fae_title-theme_management').innerHTML = FAE.cp_lang.theme_management.title;
+
+          $('#fae_title-general_settings, #faetab-general-settings').html(FAE.cp_lang.general_settings.title || 'General Settings');
+          $('#fae_title-theme_management, #faetab-theme-management').html(FAE.cp_lang.theme_management.title || 'Theme Management');
+          $('#fae_title-colors, #faetab-colors').html(FAE.cp_lang.colors.title || 'Colors');
+          $('#fae_title-plugin_management, #faetab-plugin-management').html(FAE.cp_lang.plugin_management.title || 'Plugin Management');
 
           // LABELS
           for (a = $('label', cp), i = 0, j = a.length; i < j; i++) {

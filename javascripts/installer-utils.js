@@ -1498,7 +1498,7 @@
 
           if (!founder && !installed) {
             FAE.log(FAE.cp_lang.fae_err_not_founder || 'Only <a href="/u1">the founder</a> can access the installation action. Please contact them for assistance for installing Forumactif Edge.', 'color:#E53;font-weight:bold;');
-          } else {
+          } else if (!founder) {
             FAE.log(FAE.cp_lang.co_admin || 'Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core features for personalizing your forum via the "Configuration" section below.', 'color:#C93;font-weight:bold;');
           }
 
@@ -1544,14 +1544,30 @@
           document.getElementById('fae_update').value = FAE.cp_lang.fae_update;
           document.getElementById('fae_translate').value = FAE.cp_lang.fae_translate;
 
-          // TITLES
+          // TITLES AND TABS
           title[0].innerHTML = FAE.cp_lang.fae_log;
           title[1].innerHTML = FAE.cp_lang.fae_actions;
 
-          $('#fae_title-general_settings, #faetab-general-settings').html(FAE.cp_lang.general_settings.title || 'General Settings');
-          $('#fae_title-theme_management, #faetab-theme-management').html(FAE.cp_lang.theme_management.title || 'Theme Management');
-          $('#fae_title-colors, #faetab-colors').html(FAE.cp_lang.colors.title || 'Colors');
-          $('#fae_title-plugin_management, #faetab-plugin-management').html(FAE.cp_lang.plugin_management.title || 'Plugin Management');
+          var general = document.getElementById('fae_title-general_settings'),
+              theme = document.getElementById('fae_title-theme_management'),
+              colors = document.getElementById('fae_title-colors'),
+              plugin = document.getElementById('fae_title-plugin_management');
+
+          general.innerHTML = FAE.cp_lang.general_settings.title || 'General Settings';
+          document.getElementById('faetab-general-settings').value = general.innerHTML;
+
+          theme.innerHTML = FAE.cp_lang.theme_management.title || 'Theme Management';
+          document.getElementById('faetab-theme-management').value = theme.innerHTML;
+
+          if (FAE.cp_lang.colors) {
+            colors.innerHTML = FAE.cp_lang.colors.title || 'Colors';
+            docment.getElementById('faetab-colors').value = colors.innerHTML;
+          }
+
+          if (FAE.cp_lang.plugin_management) {
+            plugin.innerHTML = FAE.cp_lang.plugin_management.title || 'Plugin Management';
+            document.getElementById('faetab-plugin-management').value = plugin.innerHTML;
+          }
 
           // LABELS
           for (a = $('label', cp), i = 0, j = a.length; i < j; i++) {

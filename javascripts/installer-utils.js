@@ -1210,6 +1210,14 @@
             FAE.index = 0;
             FAE.progress();
 
+            // reset dark mode cookies and clear sessionStorage
+            my_setcookie('fae_light-switch', '', true);
+            my_setcookie('fae_light-switch-mode', '', true);
+
+            if (window.sessionStorage) {
+              window.sessionStorage.faeLightSwitch = '';
+            }
+
             // get the stylesheet
             $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
               var form = $('form[method="post"]', d)[0],

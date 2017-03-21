@@ -1095,7 +1095,7 @@
           '.content-block, .panel, .module, .forum-block-inner, #plus_menu, .table1, .forumline { background-color:/*!FAE_BG2*/' + ( bg2 == '#' ? empty : bg2 ) + '/*FAE_BG2!*/; }'+
           '.vote .vote-bar, .vote .vote-no-bar, .fa_pseudo_radio:before { background-color:/*!FAE_BG3*/' + ( bg3 == '#' ? empty : bg3 ) + '/*FAE_BG3!*/; }'+
           '.forum-status, .forum-status[style*="state=old"], .postprofile dl:before { background-color:/*!FAE_BG4*/' + ( bg4 == '#' ? empty : bg4 ) + '/*FAE_BG4!*/; }'+
-          '.online .postprofile dl:before, .thanked-message { background-color:/*!FAE_BG5*/' + ( bg5 == '#' ? empty : bg5 ) + '/*FAE_BG5!*/; }'+
+          '.online .postprofile dl:before, .thanked-post .thanked-message { background-color:/*!FAE_BG5*/' + ( bg5 == '#' ? empty : bg5 ) + '/*FAE_BG5!*/; }'+
           '.forum-block:hover .forum-block-inner { background-color:/*!FAE_BG6*//*HEX:' + bg6 + '*/' + ( bg6 == '#' ? empty : 'rgba(' + ( [(int = parseInt(bg6.slice(1), 16)) >> 16 & 255, int >> 8 & 255, int & 255].join() ) + ',0.8)' ) + '/*FAE_BG6!*/; }'+
 
           // misc

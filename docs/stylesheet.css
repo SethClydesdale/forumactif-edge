@@ -116,6 +116,7 @@ a:active { color:#7AD; }
 }
 
 #webpage-lang {
+  font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   vertical-align:top;
   border:none;
   cursor:pointer;

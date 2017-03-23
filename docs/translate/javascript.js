@@ -2,7 +2,6 @@
 var textarea = document.getElementById('webpage-code'),
     preview = document.getElementById('webpage-preview'),
     GET = new XMLHttpRequest(),
-    loaded = false,
     original = ''; // used to store original webpage code
 
 // setup the preview and translation columns
@@ -48,7 +47,6 @@ function initTranslator (string) {
 
     translations.innerHTML = '';
     translations.appendChild(frag);
-    loaded = true;
   }
 
   // open the iframe and apply the webpage code
@@ -57,7 +55,7 @@ function initTranslator (string) {
   preview.close();
 
   // wait until the frame contents are loaded, and then compole our translations by targeting elements we want to translate
-  loaded ? setup() : preview.addEventListener('DOMContentLoaded', setup);
+  preview.addEventListener('DOMContentLoaded', setup);
 
 }
 
@@ -83,7 +81,7 @@ try {
     e.returnValue = warning;
     return warning;
   };
-  
+
 } catch (e) {
   textarea.value = 'ERROR';
 }

@@ -1362,7 +1362,7 @@
             i++
           }
 
-          opts.insertAdjacentHTML('beforeend', '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + color + '"/><input class="color_name fae_text_input" type="text" value="' ( (FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_themer_add) || 'New Theme ' ) + document.querySelectorAll('.theme_opt').length + '"/><i class="fa fa-times"></i><i class="fa fa-sort-up"></i><i class="fa fa-sort-desc"></i></div>');
+          opts.insertAdjacentHTML('beforeend', '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + color + '"/><input class="color_name fae_text_input" type="text" value="' + ( (FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_themer_add) || 'New Theme ' ) + document.querySelectorAll('.theme_opt').length + '"/><i class="fa fa-times"></i><i class="fa fa-sort-up"></i><i class="fa fa-sort-desc"></i></div>');
           opts.lastChild.scrollIntoView();
         };
 

@@ -4,7 +4,7 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.2.4';
+  FAE.cp_rev = '1.2.5';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -1362,7 +1362,7 @@
             i++
           }
 
-          opts.insertAdjacentHTML('beforeend', '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + color + '"/><input class="color_name fae_text_input" type="text" value="New Theme ' + document.querySelectorAll('.theme_opt').length + '"/><i class="fa fa-times"></i><i class="fa fa-sort-up"></i><i class="fa fa-sort-desc"></i></div>');
+          opts.insertAdjacentHTML('beforeend', '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + color + '"/><input class="color_name fae_text_input" type="text" value="' ( (FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_themer_add) || 'New Theme ' ) + document.querySelectorAll('.theme_opt').length + '"/><i class="fa fa-times"></i><i class="fa fa-sort-up"></i><i class="fa fa-sort-desc"></i></div>');
           opts.lastChild.scrollIntoView();
         };
 
@@ -1393,11 +1393,11 @@
 
         // import default themes
         document.getElementById('fae_themer_import').onclick = function () {
-          if (confirm((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_import_confirm) || 'Do you want to import the default theme list from Github ?')) {
+          if (confirm((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_import_confirm) || 'Do you want to import the default theme list from Github ?')) {
             var that = this;
 
             that.disabled = true;
-            document.getElementById('fae_theme_options').innerHTML = (FAE.cp_lang.plugin_management && FAE.cp_lang.fae_importing) || 'Contacting Github, please wait...';
+            document.getElementById('fae_theme_options').innerHTML = (FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_importing) || 'Contacting Github, please wait...';
 
             $.get(FAE.raw + 'javascripts/in-all-the-pages/all.js', function(d) {
               FAE.script(
@@ -1405,7 +1405,7 @@
                   d.match(/palette : {[\s\S]*?'.*?' : \[\],[\s\S]*?'.*?' : \[\],([\s\S]*?)}/)[1] +
                 '}'
               );
-              fae_compileThemes((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_import_compiling) || 'Compiling themes, please wait...', fae_default_themes);
+              fae_compileThemes((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_import_compiling) || 'Compiling themes, please wait...', fae_default_themes);
             });
 
             window.setTimeout(function() {
@@ -1420,7 +1420,7 @@
           var qnp = document.getElementById('fae_qnp_right').checked ? 'right' : 'left',
               qns = document.getElementById('fae_qns_yes').checked ? true : false;
 
-          FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_finding_plugins) || 'Locating [FA EDGE] ALL.JS...');
+          FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_finding_plugins) || 'Locating [FA EDGE] ALL.JS...');
           FAE.quota = 3;
           FAE.index = 0;
           FAE.progress();
@@ -1434,8 +1434,8 @@
             }
 
             if (all) {
-              FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_plugins_found) || '[FA EDGE] ALL.JS found !');
-              FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_getting_plugins) || 'Getting [FA EDGE] ALL.JS...');
+              FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_plugins_found) || '[FA EDGE] ALL.JS found !');
+              FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_getting_plugins) || 'Getting [FA EDGE] ALL.JS...');
               FAE.index = 1;
               FAE.progress();
 
@@ -1443,7 +1443,7 @@
                 var form = $('#formenvoi', d)[0];
 
                 if (form) {
-                  FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_updating_plugins) || 'Updating your plugins...');
+                  FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_updating_plugins) || 'Updating your plugins...');
                   FAE.index = 2;
                   FAE.progress();
 
@@ -1466,7 +1466,7 @@
                               submit : 'Submit'
 
                   }, function (d) {
-                    FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_plugins_updated) || 'Plugins have been updated successfully !', 'font-weight:bold;color:#8B5;');
+                    FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_plugins_updated) || 'Plugins have been updated successfully !', 'font-weight:bold;color:#8B5;');
                     FAE.log(FAE.cp_lang.reload_page || 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
                     FAE.index = 3;
                     FAE.progress();
@@ -1487,7 +1487,7 @@
           FAE.script(d.replace('FAE.lang', 'FAE.cp_lang'));
 
           FAE.cp_custom_theme = FAE.cp_lang.javascripts['[FA EDGE] ALL.JS'].custom_theme || 'Custom theme';
-          fae_compileThemes((FAE.cp_lang.plugin_management && FAE.cp_lang.fae_import_compiling) || 'Compiling themes, please wait...', fa_theme_color.palette, true);
+          fae_compileThemes((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_import_compiling) || 'Compiling themes, please wait...', fa_theme_color.palette, true);
 
           FAE.cp_lang = FAE.cp_lang.fae_cp;
 

@@ -244,7 +244,7 @@ FAE.lang = {
       'fae_label-color-m1' : 'Main Border Color : ',
       'fae_label-color-bg3' : 'Vote Bar / Checkbox Color : ',
       'fae_label-color-bg4' : 'Forum Read / Offline Color : ',
-      'fae_label-color-bg5' : 'Online Color : ',
+      'fae_label-color-bg5' : 'Online / Thanks Color : ',
       'fae_label-color-bg6' : 'Row Hover Color : ',
       'fae_label-color-m2' : 'Scrollbar Background Color : ',
 

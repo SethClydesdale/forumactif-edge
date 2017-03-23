@@ -10,11 +10,13 @@ function initTranslator (string) {
   textarea.value = string;
 
   function setup () {
-    for (var toTranslate = preview.querySelectorAll('.title, .bubbleTitle, p, .button, .footertitle, #header-links a, .linklist li, #footer-end .col, [data-tip]'), translations = document.getElementById('translations'), frag = document.createDocumentFragment(), i = 0, j = toTranslate.length, html = '', text, row; i < j; i++) {
+    for (var toTranslate = preview.querySelectorAll('title, meta[name="description"], meta[name="keywords"], .title, .bubbleTitle, p, .button, .footertitle, #header-links a, .linklist li, #footer-end .col, [data-tip]'), translations = document.getElementById('translations'), frag = document.createDocumentFragment(), i = 0, j = toTranslate.length, html = '', text, row; i < j; i++) {
       text = document.createElement('TEXTAREA');
       text.className = 'translation';
-      text.value = toTranslate[i].dataset.tip ? toTranslate[i].outerHTML.replace(/.*?data-tip="(.*?)".*/, '$1') : toTranslate[i].outerHTML.replace(/^<.*?>/, '').replace(/<\/[^>]*?>$/, '');
-      text.dataset.alias = toTranslate[i].dataset.tip ? text.value : toTranslate[i].outerHTML;
+      text.value = toTranslate[i].dataset.tip ? toTranslate[i].outerHTML.replace(/.*?data-tip="(.*?)".*/, '$1') :
+                   toTranslate[i].tagName == 'META' ? toTranslate[i].outerHTML.replace(/.*?content="(.*?)".*/, '$1') :
+                   toTranslate[i].outerHTML.replace(/^<.*?>/, '').replace(/<\/[^>]*?>$/, '');
+      text.dataset.alias = (toTranslate[i].dataset.tip || toTranslate[i].tagName == 'META') ? text.value : toTranslate[i].outerHTML;
       text.onkeyup = function () {
         // get all translations
         for (var a = document.querySelectorAll('.translation'), i = 0, j = a.length, replacement = original, openTag, endTag; i < j; i++) {
@@ -39,7 +41,7 @@ function initTranslator (string) {
 
       row = document.createElement('DIV');
       row.className = 'alias-row';
-      row.innerHTML = '<div class="alias">' + text.value + '</div>';
+      row.innerHTML = '<div class="alias">' + (toTranslate[i].tagName == 'META' ? '<b>' + toTranslate[i].outerHTML.replace(/.*?name="(.*?)".*/, '$1') + ' : </b>' : toTranslate[i].tagName == 'TITLE' ? '<b>title : </b>' : '') + text.value + '</div>';
 
       row.appendChild(text);
       frag.appendChild(row);

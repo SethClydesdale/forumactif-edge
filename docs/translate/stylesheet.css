@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i);
+
+body {
+  color:#333;
+  font-size:13px;
+  font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color:#FFF;
+  padding:0;
+  margin:0;
+}
+
+a {
+  color:#369;
+  text-decoration:none;
+}
+
+a:hover { color:#69C; }
+a:active { color:#7AD; }
+
+.center { text-align:center; }
+.right { float:right; }
+.left { float:left; }
+
+.clear { clear:both; }
+.clear:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+#content {
+  width:100%;
+}
+
+.column {
+  width:50%;
+  float:left;
+}
+
+.inner {
+  padding:3px;
+}
+
+h1, h3, p {
+  margin:6px 0;
+}
+
+h1, h3 {
+  color:#FFF;
+  font-family:"Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background:#69C;
+  padding:6px;
+}
+
+.alias-row {
+  margin-bottom:12px;
+  padding-bottom:6px;
+  border-bottom:2px solid #CCC;
+}
+
+.alias, .translation {
+  padding:3px;
+  width:100%;
+}
+
+.alias:before, .alias:after {
+  font-weight:bold;
+  display:block;
+}
+
+.alias:before { content:"Original : "; }
+.alias:after {
+  content:"Translation : ";
+  margin-top:12px;
+}
+
+.translation {
+  font-size:13px;
+  font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-height:75px;
+}
+
+#translations {
+  height:450px;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+#webpage-preview {
+  height:450px;
+  width:100%;
+  border:none;
+}
+
+#webpage-code {
+  height:200px;
+  width:100%;
+}
+
+.button {
+  color:#FFF;
+  font-size:16px;
+  font-weight:bold;
+  background:#69C;
+  padding:6px 12px;
+  margin:3px;
+  border:none;
+  cursor:pointer;
+  outline:none;
+}
+
+.button:hover { background:#58B; }
+.button:focus { background:#47A; }
+
+#footer {
+  color:#FFF;
+  background-color:#345;
+  padding:18px;
+  margin-top:12px;
+}
+
+#footer a { color:#CCC; }
+#footer a:hover { color:#FFF; }
+#footer a:active { color:#FF8; }

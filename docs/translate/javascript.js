@@ -77,6 +77,13 @@ try {
   document.getElementById('update').onclick = function () {
     initTranslator(textarea.value);
   };
+
+  window.onbeforeunload = function (e) {
+    var warning = 'Are you sure you want to leave ? Any changes you have made will be lost.';
+    e.returnValue = warning;
+    return warning;
+  };
+  
 } catch (e) {
   textarea.value = 'ERROR';
 }

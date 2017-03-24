@@ -82,8 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'Bảng công cụ chuyển đổi';",
 
       select_theme : 'Chọn một giao diện',
+      custom_theme : 'Custom theme',
       random_theme : 'Giao diện ngẫu nhiên',
       default_theme : 'Giao diện mặc định',
+
+      dark_mode : 'Dark Mode : ',
+      light_mode : 'Light Mode : ',
+
+      code_copy : 'Copy Code',
+      code_copied : 'Copied !',
 
       toolbar_search_placeholder : 'Tìm kiếm...',
 

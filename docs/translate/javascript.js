@@ -19,7 +19,7 @@ function initTranslator (string) {
                    toTranslate[i].tagName == 'META' ? toTranslate[i].outerHTML.replace(/.*?content="(.*?)".*/, '$1') :
                    toTranslate[i].outerHTML.replace(/^<.*?>/, '').replace(/<\/[^>]*?>$/, '');
       text.dataset.alias = (toTranslate[i].dataset.tip || toTranslate[i].tagName == 'META') ? text.value : toTranslate[i].outerHTML;
-      text.onkeydown = function () {
+      text.onkeyup = function () {
         // get all translations
         for (var a = document.querySelectorAll('.translation'), i = 0, j = a.length, replacement = original, openTag, endTag; i < j; i++) {
           try {

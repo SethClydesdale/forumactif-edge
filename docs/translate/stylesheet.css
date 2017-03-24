@@ -73,7 +73,7 @@ h1 {
   margin-bottom:0;
 }
 
-.alias, .translation {
+.alias {
   padding:3px;
   width:100%;
 }
@@ -95,13 +95,12 @@ textarea {
   background:#EEE;
   border:1px solid #CCC;
   border-radius:5px;
-  padding:6px !important;
+  padding:6px;
+  width:90%;
   outline:none;
 }
 
-.translation {
-  min-height:75px;
-}
+.translation { min-height:75px; }
 
 textarea:hover { border-color:#369; }
 textarea:focus { border-color:#69C; }
@@ -127,7 +126,8 @@ textarea:focus { border-color:#69C; }
 
 #webpage-code {
   height:200px;
-  width:100%;
+  display:block;
+  margin:0 auto;
 }
 
 .button {

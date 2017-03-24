@@ -27,7 +27,7 @@ function initTranslator (string) {
       for (var a = document.querySelectorAll('.translation'), i = 0, j = a.length, replacement = original, openTag, endTag; i < j; i++) {
         try {
           openTag = a[i].dataset.alias.match(/(^<.*?>)/)[1];
-          endTag = a[i].dataset.alias.match(/(<\/.*?>$)/)[1];
+          endTag = a[i].dataset.alias.match(/(<\/[^>]*?>$)/)[1];
         } catch (e) {
           openTag = '';
           endTag = '';

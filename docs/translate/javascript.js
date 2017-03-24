@@ -4,6 +4,7 @@ var textarea = document.getElementById('webpage-code'),
     preview,
     writing = false,
     scrollPosition = 0,
+    delay = 250,
     GET = new XMLHttpRequest(),
     original = ''; // used to store original webpage code
 
@@ -59,7 +60,7 @@ function updatePreview (value, init) {
     writing = true;
     init ? writePreview(value) : window.setTimeout(function () {
       writePreview(value);
-    }, 100);
+    }, delay);
   }
 };
 

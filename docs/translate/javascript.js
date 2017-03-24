@@ -12,7 +12,7 @@ var textarea = document.getElementById('webpage-code'),
 function initTranslator (string) {
   original = string;
   textarea.value = string;
-  updatePreview(textarea.value, true);
+  updatePreview(true);
 
   // compile our translations by targeting elements we want to translate
   for (var toTranslate = preview.querySelectorAll('title, meta[name="description"], meta[name="keywords"], .title, .bubbleTitle, p, .button, .footertitle, #header-links a, .linklist li, #footer-end .col, [data-tip]'), translations = document.getElementById('translations'), frag = document.createDocumentFragment(), i = 0, j = toTranslate.length, html = '', text, row; i < j; i++) {
@@ -38,7 +38,7 @@ function initTranslator (string) {
 
       textarea.value = replacement; // update the webpage code
 
-      updatePreview(textarea.value);
+      updatePreview();
     }
 
     row = document.createElement('DIV');
@@ -55,19 +55,17 @@ function initTranslator (string) {
 
 
 // delays writing to the document to prevent duplication of the page on Firefox
-function updatePreview (value, init) {
+function updatePreview (init) {
   if (!writing) {
     writing = true;
-    init ? writePreview(value) : window.setTimeout(function () {
-      writePreview(value);
-    }, delay);
+    init ? writePreview() : window.setTimeout(writePreview, delay);
   }
 };
 
 // open the iframe and apply the webpage code, as well as restore the scroll position
 function writePreview (value) {
   preview.open();
-  preview.write(value);
+  preview.write(textarea.value);
   preview.close();
 
   frame.contentWindow.scrollTo(0, scrollPosition); // restore scroll position

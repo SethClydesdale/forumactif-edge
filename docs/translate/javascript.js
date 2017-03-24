@@ -2,6 +2,7 @@
 var textarea = document.getElementById('webpage-code'),
     frame = document.getElementById('webpage-preview'),
     preview,
+    writing = false,
     scrollPosition = 0,
     GET = new XMLHttpRequest(),
     original = ''; // used to store original webpage code
@@ -10,7 +11,7 @@ var textarea = document.getElementById('webpage-code'),
 function initTranslator (string) {
   original = string;
   textarea.value = string;
-  updatePreview(textarea.value);
+  updatePreview(textarea.value, true);
 
   // compile our translations by targeting elements we want to translate
   for (var toTranslate = preview.querySelectorAll('title, meta[name="description"], meta[name="keywords"], .title, .bubbleTitle, p, .button, .footertitle, #header-links a, .linklist li, #footer-end .col, [data-tip]'), translations = document.getElementById('translations'), frag = document.createDocumentFragment(), i = 0, j = toTranslate.length, html = '', text, row; i < j; i++) {
@@ -52,8 +53,18 @@ function initTranslator (string) {
 };
 
 
+// delays writing to the document to prevent duplication of the page on Firefox
+function updatePreview (value, init) {
+  if (!writing) {
+    writing = true;
+    init ? writePreview(value) : window.setTimeout(function () {
+      writePreview(value);
+    }, 100);
+  }
+};
+
 // open the iframe and apply the webpage code, as well as restore the scroll position
-function updatePreview (value) {
+function writePreview (value) {
   preview.open();
   preview.write(value);
   preview.close();
@@ -64,6 +75,8 @@ function updatePreview (value) {
   frame.contentWindow.onscroll = function () {
     scrollPosition = preview.body.scrollTop || preview.documentElement.scrollTop;
   };
+
+  writing = false;
 };
 
 

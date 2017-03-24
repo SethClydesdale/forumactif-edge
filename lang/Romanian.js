@@ -82,8 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'Toggle widget menu';",
 
       select_theme : 'Selecteaza o tema',
+      custom_theme : 'Custom theme',
       random_theme : 'Tema random',
       default_theme : 'Tema Implicita',
+
+      dark_mode : 'Dark Mode : ',
+      light_mode : 'Light Mode : ',
+
+      code_copy : 'Copy Code',
+      code_copied : 'Copied !',
 
       toolbar_search_placeholder : 'Cauta...',
 

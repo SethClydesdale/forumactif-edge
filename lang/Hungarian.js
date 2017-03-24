@@ -82,8 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'Modul menü kapcsoló';",
 
       select_theme : 'Témaválasztó',
+      custom_theme : 'Custom theme',
       random_theme : 'Véletlenszerű téma',
       default_theme : 'Alapértelmezett téma',
+
+      dark_mode : 'Dark Mode : ',
+      light_mode : 'Light Mode : ',
+
+      code_copy : 'Copy Code',
+      code_copied : 'Copied !',
 
       toolbar_search_placeholder : 'Keresés...',
 

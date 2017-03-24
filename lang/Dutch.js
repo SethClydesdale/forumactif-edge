@@ -82,8 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'Widget menu laten zien of verbergen';",
 
       select_theme : 'Kies een thema ...',
+      custom_theme : 'Custom theme',
       random_theme : 'Willekeurig thema',
       default_theme : 'Standaard thema',
+
+      dark_mode : 'Dark Mode : ',
+      light_mode : 'Light Mode : ',
+
+      code_copy : 'Copy Code',
+      code_copied : 'Copied !',
 
       toolbar_search_placeholder : 'Zoeken ...',
 

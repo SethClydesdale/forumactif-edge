@@ -82,8 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'Κλείσιμο Μενού Widget';",
 
       select_theme : 'Επιλογή Θέματος',
+      custom_theme : 'Custom theme',
       random_theme : 'Τυχαίο Θέμα',
       default_theme : 'Εξ&apos; ορισμού Θέμα',
+
+      dark_mode : 'Dark Mode : ',
+      light_mode : 'Light Mode : ',
+
+      code_copy : 'Copy Code',
+      code_copied : 'Copied !',
 
       toolbar_search_placeholder : 'Αναζήτηση...',
 

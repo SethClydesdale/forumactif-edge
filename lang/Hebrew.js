@@ -82,8 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'הפעל תפריט יישומון';",
 
       select_theme : 'סכמת צבעים',
+      custom_theme : 'Custom theme',
       random_theme : 'ערכת צבע אקראית',
       default_theme : 'ערכת צבעי ברירת מחדל',
+
+      dark_mode : 'Dark Mode : ',
+      light_mode : 'Light Mode : ',
+
+      code_copy : 'Copy Code',
+      code_copied : 'Copied !',
 
       toolbar_search_placeholder : 'חיפוש...',
 

@@ -82,8 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'Cacher le menu widget';",
 
       select_theme : 'Sélection du thème',
+      custom_theme : 'Custom theme',
       random_theme : 'Thème aléatoire',
       default_theme : 'Thème par défaut',
+
+      dark_mode : 'Dark Mode : ',
+      light_mode : 'Light Mode : ',
+
+      code_copy : 'Copy Code',
+      code_copied : 'Copied !',
 
       toolbar_search_placeholder : 'Rechercher...',
 

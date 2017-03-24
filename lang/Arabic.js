@@ -82,8 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'قائمة جانبية';",
 
       select_theme : 'الرجاء إختيار لون',
+      custom_theme : 'Custom theme',
       random_theme : 'لون عشوائي',
       default_theme : 'اللون الافتراضي',
+
+      dark_mode : 'Dark Mode : ',
+      light_mode : 'Light Mode : ',
+
+      code_copy : 'Copy Code',
+      code_copied : 'Copied !',
 
       toolbar_search_placeholder : 'بحث...',
 

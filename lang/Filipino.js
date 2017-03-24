@@ -82,8 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'I-toggle ang modyul menu';",
 
       select_theme : 'Pumili ng theme',
+      custom_theme : 'Custom theme',
       random_theme : 'Kahit ano ang piliin na theme',
       default_theme : 'Normal na theme',
+
+      dark_mode : 'Dark Mode : ',
+      light_mode : 'Light Mode : ',
+
+      code_copy : 'Copy Code',
+      code_copied : 'Copied !',
 
       toolbar_search_placeholder : 'Hanapin...',
 

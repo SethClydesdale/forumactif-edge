@@ -93,7 +93,21 @@ try {
   GET.send();
 
   document.getElementById('update').onclick = function () {
-    initTranslator(textarea.value);
+    var that = this;
+
+    if (that.value != 'Updated!') {
+      that.dataset.original = that.value;
+      that.value = 'Updated!';
+      that.style.backgroundColor = '#8B5';
+      that.blur();
+
+      initTranslator(textarea.value);
+
+      window.setTimeout(function() {
+        that.value = that.dataset.original;
+        that.style.backgroundColor = '';
+      }, 1000);
+    }
   };
 
   // warn before leaving page, in case changes haven't been saved

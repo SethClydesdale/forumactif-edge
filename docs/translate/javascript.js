@@ -54,8 +54,6 @@ function initTranslator (string) {
 
 // open the iframe and apply the webpage code, as well as restore the scroll position
 function updatePreview (value) {
-  preview.documentElement.innerHTML = '';
-
   preview.open();
   preview.write(value);
   preview.close();

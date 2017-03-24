@@ -82,8 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'Modul-Menü umschalten';",
 
       select_theme : 'Ein Thema auswählen',
+      custom_theme : 'Custom theme',
       random_theme : 'Zufälliges Thema',
       default_theme : 'Voreingestelltes Thema',
+
+      dark_mode : 'Dark Mode : ',
+      light_mode : 'Light Mode : ',
+
+      code_copy : 'Copy Code',
+      code_copied : 'Copied !',
 
       toolbar_search_placeholder : 'Suchen...',
 

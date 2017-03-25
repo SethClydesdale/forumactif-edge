@@ -30,7 +30,7 @@ p {
 }
 
 /* transitions */
-#header-links a, a.button, .bubble, #webpage-lang { transition:200ms; }
+#header-links > a, a.button, .bubble, #webpage-lang { transition:200ms; }
 
 /* Title Fonts */
 .title, .bubbleTitle, .footerTitle {
@@ -106,7 +106,7 @@ a:active { color:#7AD; }
 #page-title b:last-child { color:#69C; }
 #header-links { float:right; }
 
-#header-links a, #webpage-lang {
+#header-links > a, #webpage-lang {
   color:#FFF;
   font-size:16px;
   font-weight:bold;
@@ -128,7 +128,7 @@ a:active { color:#7AD; }
   cursor:pointer;
 }
 
-#header-links a:hover, #webpage-lang:hover, #webpage-lang:focus {
+#header-links > a:hover, #webpage-lang:hover, #webpage-lang:focus {
   background-color:#69C;
   outline:none;
 }

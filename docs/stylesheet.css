@@ -101,6 +101,7 @@ a:active { color:#7AD; }
   float:left;
 }
 
+#page-title a { color:#333; }
 #page-title b { color:#39C; }
 #page-title b:last-child { color:#69C; }
 #header-links { float:right; }

@@ -303,6 +303,35 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
 
 .giveTip:hover:before, .giveTip:hover:after { opacity:0; }
 
+
+/* -- SITEMAP -- */
+#sitemap dl {
+  float:left;
+  width:33%;
+  margin:24px 0;
+}
+
+#sitemap dt, #sitemap dd { margin-right:30px; }
+#sitemap dt, #sitemap dt a { color:#69C; }
+
+#sitemap dt {
+  font-size:16px;
+  border-bottom:2px solid #69C;
+  padding-bottom:6px;
+  margin-bottom:6px;
+}
+
+#sitemap dd { font-size:14px; }
+#sitemap dd:before {
+  content:"\f04d";
+  color:#69C;
+  font-size:7px;
+  font-family:FontAwesome;
+  vertical-align:3px;
+  margin-right:6px;
+}
+
+
 /* -- FOOTER -- */
 .col {
   display:inline-block;
@@ -397,6 +426,11 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
   .bubbleBox, .bubbleRow.x4 .bubbleBox {
     display:block;
     width:80%;
+  }
+
+  #sitemap dl {
+    float:none;
+    width:100%;
   }
 
   #footer .col, #footer-end .col {

@@ -30,7 +30,7 @@ p {
 }
 
 /* transitions */
-#header-links > a, a.button, .bubble { transition:200ms; }
+#header-links > a, #header-links noscript a, a.button, .bubble { transition:200ms; }
 
 /* Title Fonts */
 .title, .bubbleTitle, .footerTitle {
@@ -106,7 +106,7 @@ a:active { color:#7AD; }
 #page-title b:last-child { color:#69C; }
 #header-links { float:right; }
 
-#header-links > a {
+#header-links > a, #header-links noscript a {
   color:#FFF;
   font-size:16px;
   font-weight:bold;
@@ -121,7 +121,7 @@ a:active { color:#7AD; }
   border-radius:5px;
 }
 
-#header-links > a:hover { background-color:#69C; }
+#header-links > a:hover, #header-links noscript a:hover { background-color:#69C; }
 
 /* language selector */
 #header-links > a#lang-selector {

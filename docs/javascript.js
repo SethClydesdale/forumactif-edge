@@ -59,12 +59,11 @@
       list = document.createElement('DIV'),
       frag = document.createDocumentFragment(),
       links = document.getElementById('header-links'),
-      GET = new XMLHttpRequest(),
-      langCode = window.location.href.replace(/.*?\/forumactif-edge\/(.*?)\//, '$1');
+      GET = new XMLHttpRequest();
 
   a.id = 'lang-selector';
   a.href = '#';
-  a.innerHTML = langCode.length > 2 ? 'EN' : langCode.toUpperCase();
+  a.innerHTML = (document.documentElement.lang || 'EN').toUpperCase();
   a.onclick = function () {
     var rect = this.getBoundingClientRect(),
         list = document.getElementById('lang-list');

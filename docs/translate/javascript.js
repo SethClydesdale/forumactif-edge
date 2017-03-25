@@ -33,7 +33,7 @@ function initTranslator (string) {
           endTag = '';
         }
 
-        replacement = replacement.replace(new RegExp(a[i].dataset.alias, 'g'), openTag + a[i].value + endTag);
+        replacement = replacement.replace(new RegExp(a[i].dataset.alias.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), openTag + a[i].value + endTag);
       }
 
       textarea.value = replacement; // update the webpage code

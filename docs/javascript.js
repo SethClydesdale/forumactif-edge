@@ -53,9 +53,60 @@
   };
 
 
-  /* -- CHANGE LANGUAGE -- */
-  document.getElementById('webpage-lang').onchange = function () {
-    window.location.href = 'https://sethclydesdale.github.io/forumactif-edge' + this.value;
+  /* -- LANGUAGE SELECTOR -- */
+  // create language selector
+  var a = document.createElement('A'),
+      list = document.createElement('DIV'),
+      frag = document.createDocumentFragment(),
+      links = document.getElementById('header-links'),
+      GET = new XMLHttpRequest(),
+      langCode = window.location.href.replace(/.*?\/forumactif-edge\/(.*?)\//, '$1');
+
+  a.id = 'lang-selector';
+  a.href = '#';
+  a.innerHTML = langCode.length > 2 ? 'EN' : langCode.toUpperCase();
+  a.onclick = function () {
+    var rect = this.getBoundingClientRect(),
+        list = document.getElementById('lang-list');
+
+    list.style.display = list.style.display == 'none' ? 'block' : 'none';
+    list.style.top = rect.top + 36 + 'px';
+    list.style.right = (rect.right - rect.left) - 18 + 'px';
+
+    return false;
   };
+
+  list.id = 'lang-list';
+  list.style.display = 'none';
+  list.innerHTML = 'Loading...';
+  list.onmouseleave = function () {
+    this.style.display = 'none';
+  };
+
+  // get language list from the languages page
+  if (window.sessionStorage && sessionStorage.langList) {
+    list.innerHTML = sessionStorage.langList;
+  } else {
+    GET.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        for (var lang = this.responseText.match(/(<a class="button big" href=".*?">.*?<\/a>)/g), i = 0, j = lang.length, html = ''; i < j; i++) {
+          html += lang[i].replace(/class="[^"]*?"/, '');
+        }
+
+        document.getElementById('lang-list').innerHTML = html;
+
+        if (window.sessionStorage) {
+          sessionStorage.langList = html;
+        }
+      }
+    };
+
+    GET.open('GET', 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/docs/languages/index.html', true);
+    GET.send();
+  }
+
+  frag.appendChild(a);
+  frag.appendChild(list);
+  links.appendChild(frag);
 
 }());

@@ -17,7 +17,12 @@
 body {
   font-size:12px;
   font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display:flex;
+  min-height:100vh;
+  flex-direction:column;
 }
+
+#content { flex:1 0 auto; }
 
 p {
   font-size:15px;
@@ -137,6 +142,7 @@ a:active { color:#7AD; }
 
 
 /* -- BUTTONS -- */
+.buttonBox { margin:12px 0; }
 a.button {
   color:#FFF;
   font-size:18px;
@@ -150,6 +156,11 @@ a.button {
   line-height:50px;
   border-radius:5px;
   padding:0 30px;
+}
+
+a.big.button {
+  width:30%;
+  min-width:150px;
 }
 
 a.button:hover, .blueBlock a.button { background-color:#345; }
@@ -174,6 +185,7 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
   vertical-align:top;
 }
 
+.big.bubbleBox { width:100%; }
 .bubbleRow.x4 .bubbleBox { width:35%; }
 .bubble {
   color:#FFF;
@@ -187,10 +199,23 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
 }
 
 .bubble i { line-height:60px; }
+.big .bubble i { line-height:80px; }
+.big .bubble {
+  font-size:50px;
+  height:80px;
+  width:80px;
+  margin-bottom:16px;
+}
+
 .bubble:hover {
   color:#69C;
   background-color:#FFF;
   transform:scale(1.2);
+}
+
+.bubble.noClick {
+  cursor:default;
+  transform:scale(1);
 }
 
 .whiteBlock .bubble { background-color:#69C; }

@@ -1080,7 +1080,7 @@
           '.post .post-number, .post .title h2 { font-size:' + ( f1[1] * 1.75 + f1[2] ) + '; }'+ // 21px
           '.lor_subtitle { font-size:' + ( f1[1] * 1.67 + f1[2] ) + '; }'+ // 20px
           '.vote .vote-button-plus, .vote .vote-button-minus, .breadcrumbs a:after { font-size:' + ( f1[1] * 1.5 + f1[2] ) + '; }'+ // 18px
-          '.pagination span a, .pagination span strong { font-size:' + ( f1[1] * 12 * 1.42 + f1[2] ) + '; }'+ // 17px
+          '.pagination span a, .pagination span strong { font-size:' + ( f1[1] * 1.42 + f1[2] ) + '; }'+ // 17px
           '.forum-stats .number, input.search-button, .breadcrumbs a:first-child:before, #chatbox_members:after { font-size:' + ( f1[1] * 1.335 + f1[2] ) + '; }'+ // 16px
           '.forum-category .title:after, .traffic-exchange .title:after, .topic-info .pagination a, form.search-form input.search-keywords { font-size:' + ( f1[1] * 1.25 + f1[2] ) + '; }'+ // 15px
           '#privmsgs-menu, .codebox dt, blockquote cite, .attachbox > dt, #wio_newest_inner:before, #wio_newest_user strong, #wio_groups a, .pwd_img, .vote_num, a.forumtitle, a.topictitle, .lor_maindesc, .lor_subdesc, #fae_sticky_nav_panel a, .title, h2.u, .h3, .inner h1.page-title, #cp-main h1:not(.title) { font-size:' + ( f1[1] * 1.17 + f1[2] ) + '; }'+ // 14px

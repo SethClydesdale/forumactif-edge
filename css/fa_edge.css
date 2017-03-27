@@ -889,7 +889,11 @@ form[action^="/privmsg"] .postprofile dl, .search .postprofile dl { margin-top:0
   padding:3px;
 }
 
-hr { border-color:#CCC; }
+hr {
+  border:none;
+  border-top:1px solid #CCC;
+}
+
 .signature_div { padding:3px; }
 
 /* add_this / share */

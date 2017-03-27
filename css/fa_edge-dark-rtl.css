@@ -893,7 +893,11 @@ form[action^="/privmsg"] .postprofile dl, .search .postprofile dl { margin-top:0
   padding:3px;
 }
 
-hr { border-color:#333; }
+hr {
+  border:none;
+  border-top:1px solid #333;
+}
+
 .signature_div { padding:3px; }
 
 /* add_this / share */

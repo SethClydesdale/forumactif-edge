@@ -1,7 +1,7 @@
 /* ************************************************
 ** DO NOT MODIFY OR DISABLE THIS JAVASCRIPT.
 ** IT IS ESSENTIAL FOR UPDATING YOUR FORUM THEME.
-** FORUMACTIF EDGE (https://github.com/SethClydesdale/forumactif-edge)
+** FORUMACTIF EDGE (https://sethclydesdale.github.io/forumactif-edge/)
 **************************************************/
 window.forumactif_edge_version_data = [
   '1.0.0-beta',
@@ -17,5 +17,6 @@ window.forumactif_edge_version_data = [
   '1.1.5',
   '1.1.6',
   '1.1.7',
-  '1.2.0'
+  '1.2.0',
+  '1.2.1'
 ];

@@ -27,7 +27,7 @@ FAE.update_step = [
         var rgb = window.getComputedStyle(document.body, null).getPropertyValue('background-color').replace(/rgb\(|\)|\s/g, '').split(',');
 
         FAE.step[FAE.index + 1].data = {
-                edit_code : form.edit_code.value + 'hr { border:none; border-top:1px solid ' + ( Math.round(((parseInt(rgb[0]) * 299) + (parseInt(rgb[1]) * 587) + (parseInt(rgb[2]) * 114)) /1000) > 125 ? '#CCC' : '#333' ) + '; }',
+                edit_code : form.edit_code.value + '\n/* added in FAE v1.2.1 */\nhr { border:none; border-top:1px solid ' + ( Math.round(((parseInt(rgb[0]) * 299) + (parseInt(rgb[1]) * 587) + (parseInt(rgb[2]) * 114)) /1000) > 125 ? '#CCC' : '#333' ) + '; }',
                    submit : 'Submit'
         };
       }

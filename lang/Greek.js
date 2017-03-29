@@ -1,5 +1,5 @@
 // Greek Translation
-// Translation by Luffy (http://fmdesign.forumotion.com/t710-forumactif-edge-greek-translation#14037)
+// Translation by Luffy and Van-Helsing (http://fmdesign.forumotion.com/t710-forumactif-edge-greek-translation#14037)
 FAE.lang = {
 
   language : 'Ελληνικά',
@@ -82,15 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'Κλείσιμο Μενού Widget';",
 
       select_theme : 'Επιλογή Θέματος',
-      custom_theme : 'Custom theme',
+      custom_theme : 'Προσαρμοσμένο θέμα',
       random_theme : 'Τυχαίο Θέμα',
       default_theme : 'Εξ&apos; ορισμού Θέμα',
 
-      dark_mode : 'Dark Mode : ',
-      light_mode : 'Light Mode : ',
+      dark_mode : 'Νυχτερινή λειτουργία :',
+      light_mode : 'Λειτουργία ημέρας :',
 
-      code_copy : 'Copy Code',
-      code_copied : 'Copied !',
+      code_copy : 'Αντιγραφή κώδικα',
+      code_copied : 'Αντιγράφηκε',
 
       toolbar_search_placeholder : 'Αναζήτηση...',
 
@@ -178,8 +178,23 @@ FAE.lang = {
     fae_translate_start : 'Οι μεταφράσεις του Forumactif Edge θα γίνουν σε λίγο. Παρακαλούμε περιμένετε..',
     fae_translate_get : 'Παίρνουμε {LANG} γλωσσικές πληροφορίες...',
     fae_translate_loaded : 'Οι γλωσιικές πληροφορίες έχουν παρθεί. Οι αλλαγές μετάφρασης θα ξεκινήσουν, παρακαλούμε μην κλείσετε την καρτέλα.',
+    fae_translate_submit : 'Υποβολή',
+    fae_translate_submit_option : 'Υποβάλετε μια νέα μετάφραση',
+    fae_translate_submit_confirm : 'Έχετε επιλέξει να υποβάλλετε μια νέα μετάφραση. Εάν η επιλογή σας είναι σωστή πατήστε ΟΚ για να μεταφερθείτε στη σελίδα μετάφρασης, διαφορετικά πατήστε ακύρωση και επιλέξτε διαφορετική γλώσσα.',
 
-    fae_err_not_founder : 'Μόνο <a href="/u1">ο ιδρυτής</a> μπορεί να χρησιμοποιήσει αυτόν τον πίνακα ελέγχου. Παρακαλούμε επικοινωνήστε μαζί τους για άμεση εγκατάσταση του Forumactif Edge.',
+    configuration_title : 'Ρυθμίσεις',
+    configuration_desc : 'Clicking the buttons below will take you to different sections of the control panel, which allow you to manage the Configuration of Forumactif Edge. Go ahead and explore each of these sections, so you can get started on personalizing your theme. If you need more information, <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">click here</a> to view the control panel guide.',
+
+    fae_err_not_founder : 'Only <a href="/u1">the founder</a> can access the installation action. Please contact them for assistance for installing Forumactif Edge.',
+    co_admin : 'Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core features for personalizing your forum via the "Configuration" section below.',
+    reload_page : 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.',
+
+
+    welcome_message : 'Welcome to the FAE Control Panel! The FAE CP will allow you to install, update, translate, and customize Forumactif Edge. To learn more about using the FAE CP, it is recommended that you read over the <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">Control Panel Guide</a> on the Github wiki.',
+    auto_version_local : 'Your installed version of Forumactif Edge is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
+    auto_version_github : 'The current release of Forumactif Edge on Github is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
+    update_waiting : 'There are updates available for Foruactif Edge. Check out <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">the wiki</a> for more information about updating.',
+    release_list : '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of releases for Forumactif Edge.',
 
     left : 'Αριστερά',
     center : 'Κέντρο',
@@ -210,6 +225,53 @@ FAE.lang = {
     },
 
 
+    colors : {
+      title : 'Colors',
+      fae_colors_desc : 'Αυτός ο τομέας σας επιτρέπει να αλλάξετε τα χρώματα του θέματος του φόρουμ σας. Επιλέξτε ένα απο τα παρακάτω χρώματα και δείτε την προεπισκόπιση στα δεξιά να έχει ξεκινήσει. Όταν τελειώσετε πατήστε "Ενημέρωση Χρωμάτων" για να εφαρμοστούν οι αλλαγές.',
+      'fae_colors_title-preview' : 'Προεπισκόπηση',
+
+      'fae_colors_title-primary' : 'Πρωτεύοντα Χρώματα',
+      'fae_colors_desc-primary' : 'Αυτές οι επιλογές σας επιτρέπουν να ρυθμίσετετα 5 πρωτεύωντα χρώματα σκιών για το Forumactif Edge.',
+      'fae_label-color-p1' : 'Πρωτεύων Χρώμα 1 : ',
+      'fae_label-color-p2' : 'Πρωτεύων Χρώμα 2 : ',
+      'fae_label-color-p3' : 'Πρωτεύων Χρώμα 3 : ',
+      'fae_label-color-p4' : 'Πρωτεύων Χρώμα 4 : ',
+      'fae_label-color-p5' : 'Πρωτεύων Χρώμα 5 : ',
+
+      'fae_colors_title-general' : 'Γενικά Χρώματα',
+      'fae_colors_desc-general' : 'Οι παρακάτω επιλογές σας επιτρέπουν να αλλάξατε διάφορα χρώματα του φόρουμ',
+      'fae_label-color-bg1' : 'Κύριο Χρώμα Φόντου 1 : ',
+      'fae_label-color-bg2' : 'Κύριο Χρώμα Φόντου 2 : ',
+      'fae_label-color-m1' : 'Κύριο Χρώμα Περιγράμματος : ',
+      'fae_label-color-bg3' : 'Ράβδος ψηφοφορίας / Πλαίσιο Ελέγχου : ',
+      'fae_label-color-bg4' : 'Χρώμα Αναγνωσμένου Φόρουμ / Εκτός Σύνδεσης : ',
+      'fae_label-color-bg5' : 'Χρώμα σε σύνδεση / Ευχαριστίας : ',
+      'fae_label-color-bg6' : 'Row Hover Color : ',
+      'fae_label-color-m2' : 'Χρώμα Φόντου Ράβδου κύλισης : ',
+
+      'fae_colors_title-font' : 'Ρυθμίσεις Γραμματοσειρών',
+      'fae_colors_desc-font' : 'Οι παρακάτω επιλογές σας επιτρέπουν να αλλάξετε το χρώμα γραμματοσειράς, το μέγεθος, και τον τύπο γραμματοσειράς του φόρουμ.',
+      'fae_label-color-f0' : 'Χρώμα Κειμένου : ',
+      'fae_label-color-f5' : 'Χρώμα Συνδέσμου : ',
+      'fae_label-color-f6' : 'Χρώμα Επισκεπτόμενου Συνδέσμου : ',
+      'fae_label-color-f7' : 'Hover Link Color : ',
+      'fae_label-color-f8' : 'Χρώμα Ενεργού Συνδέσμου : ',
+      'fae_label-color-f1' : 'Κυρίως Μέγεθος Γραμματοσειράς : ',
+      'fae_label-color-f2' : 'Κύρια Γραμματοσειρά : ',
+      'fae_label-color-f3' : 'Τίτλος Γραμματοσειράς : ',
+      'fae_label-color-f4' : 'Κωδικός Γραμματοσειράς : ',
+
+      fae_save_colors : 'Ενημέρωση Χρωμάτων',
+      fae_default_colors : 'Επαναφορά στα αρχικά χρώματα',
+
+      confirm_update : 'Are you sure you want to delete your custom color settings, and revert back to the default forum colors?',
+      updating : 'Ενημέρωση των χρωμάτων του φόρουμ',
+      updated : 'Τα χρώματα του φόρουμ ενημερώθηκαν επιτυχώς !',
+      reverting : 'Επαναφορά στα αρχικά χρώματα του φόρουμ',
+      reverted : 'Έγινα επαναφορά στα αρχικά χρώματα του φόρουμ !'
+    },
+
+
     theme_management : {
       title : 'Ρυθμίσεις Θέματος',
       fae_theme_desc : 'Αυτός ο τομέας σας επιτρέπει να ρυθμίσετε το εξ ορισμού θέμα του φόρουμ όπως επίσης και τα χρώματα του Forumactif Edge ανεβάζοντας τις πληροφορίες από την πλατφόρμα και το ιστορικό στο Github.',
@@ -228,6 +290,34 @@ FAE.lang = {
 
       fae_import_theme : 'Εισαγωγή Θέματος',
       fae_import_confirm : 'Είσαι σίγουρος(η) ότι θέλετε να ανεβάσετε το "{THEME_NAME}" ?\\\n\\\nΠαρακαλούμε όπως δημιουργήσετε αντίγραφα ασφαλείας έτσι ώστε να αποθηκεύσετε όλους τους κώδικες και την όποια δουλειά έχετε κάνει στο φόρουμ, καθώς η εισαγωγή αυτού του θέματος θα διαγράψει οτιδήποτε υπάρχει στο φόρουμ προκειμένου να εγκαταστήσει πλήρως και όπως πρέπει το νέο θέμα. Αν δεν είστε έτοιμοι ακόμα πατήστε "Ακύρωση".'
+    },
+
+
+    plugin_management : {
+      title : 'Διαχείριση προσθέτων',
+      fae_plugin_desc : 'Αυτός ο τομέας σας επιτρέπει να διαχειριστείτε τις ρυθμίσεις των προσθέτων του πυρήνα του Forumactif Edge.',
+
+      'fae_label-qnp' : 'Θέση Γρήγορης Πλοήγησης : ',
+      'fae_plugin_tip-qnp' : 'Θέση της γρήγορης πλοήγησης στο πλευρικό μενού.',
+
+      'fae_label-qns' : 'Να εμφανίζεται πάντα η γρήγορη πλοήγηση : ',
+      'fae_plugin_tip-qns' : 'By default the Quick Navigation only shows when the navbar is out of view. Enabling this option will allow the Quick Navigation to always be visible.',
+
+      'fae_label-tso' : 'Ρυθμίσεις επιλογέα θεμάτων : ',
+      'fae_plugin_tip-tso' : 'This tool allows you to edit the theme selector list, giving you the option to add, delete, and edit themes.',
+
+      fae_themer_add : 'Νέο θέμα',
+      fae_themer_import : 'Εισαγωγή εξ\'ορισμού θέματος',
+      fae_import_confirm : 'Θέλετε να εισάγετε το εξ\' ορισμού θέμα απο το GitHub;',
+      fae_importing : 'Επικοινωνία με το GitHub, παρακαλούμε περιμένετε...',
+      fae_compiling : 'Μεταγλώτιση θεμάτων, παρακαλούμε περιμένετε...',
+
+      fae_save_plugins : 'Ενημέρωση προσθέτων',
+      fae_finding_plugins : 'Εντοπισμός [FA EDGE] ALL.JS',
+      fae_plugins_found : 'Το [FA EDGE] ALL.JS εντοπίστηκε!',
+      fae_getting_plugins : 'Λήψη του [FA EDGE] ALL.JS...',
+      fae_updating_plugins : 'Ενημέρωση των προσθέτων σας...',
+      fae_plugins_updated : 'Τα πρόσθετα ενημερώθηκαν επιτυχώς !'
     }
   }
 

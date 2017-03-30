@@ -114,6 +114,50 @@
     document.body.appendChild(script);
   };
 
+
+  // extra cp stylesheet
+  $('head').append(
+    '<style type="text/css" id="fae_cp_css">'+
+      '.fae_cp_row { margin:6px 0; }'+
+      '.fae_label { display:inline-block; width:200px; vertical-align:top; margin-top:5px; }'+
+      '.fae_help_me { color:#FFF; font-size:18px; background:#69C; border-radius:100%; text-align:center; vertical-align:top; display:inline-block; height:24px; line-height:24px; width:24px; margin:auto 3px; position:relative; cursor:help; }'+
+      '.fae_help_tip { color:#333; font-size:12px; line-height:15px; background:#EEE; border:1px solid #CCC; border-radius:3px; display:inline-block; width:300px; padding:3px; position:absolute; visibility:hidden; z-index:1; }'+
+      '#fae_cp label { margin-right:10px; display:inline-block; }'+
+      '#fae_cp label input { vertical-align:text-bottom; }'+
+      '.fae_help_me:hover .fae_help_tip { visibility:visible; }'+
+      'body #fae_cp { color:#333; background:#F6F6F6; border:1px solid #CCC; margin:50px 25px; padding:12px; }'+
+      '#fae_custom_color { padding:0; vertical-align:middle; }'+
+      '#fae_cp select, #fae_cp input { color:#333; background:#FFF; }'+
+      '#fae_selected_color option:not([value="Default"]):not([value="Custom"]) { color:#FFF; }'+
+      '#fae_maintenance { color:#333; font-size:16px; font-weight:bold; text-align:center; background:#EB3; padding:16px 12px; margin:-13px -13px 12px -13px; }'+
+      '#fae_maintenance i { font-size:28px; vertical-align:-4px; margin-right:6px; }'+
+      '#fae_maintenance a { color:#666; text-decoration:underline; }'+
+      '#fae_maintenance a:hover { color:#000; text-decoration:none; }'+
+      '#fae_themer { display:inline-block; }'+
+      '#fae_themer_add { background:#8B5 !important; }'+
+      '#fae_themer_add:hover { background:#7A4 !important; }'+
+      '#fae_options [disabled] { opacity:0.5; }'+
+      '#fae_theme_options { height:153px; border:1px solid #CCC; overflow:auto; margin-bottom:3px; padding:6px; width:100%; white-space:nowrap; }'+
+      '#fae_options .fae_color_picker { background:none !important; border:1px solid transparent; padding:0; margin-right:3px; }'+
+      '#fae_options .fae_color_picker:hover { border-color:#69C; }'+
+      '#fae_options .fae_text_input { color:#333; background:#FFF !important; border:1px solid #CCC; cursor:text; }'+
+      '#fae_options .fae_text_input:hover, #fae_theme_options .color_name:focus { border-color:#69C; }'+
+      '.theme_opt i { color:#FFF; font-size:16px; text-align:center; display:inline-block; vertical-align:middle; height:20px; width:20px; line-height:20px; border-radius:20px; margin:0 3px; cursor:pointer; transition:200ms; }'+
+      '.theme_opt i.fa-times { background:#E53; }'+
+      '.theme_opt i[class*="sort"] { background:#69C; }'+
+      '.theme_opt i.fa-times { line-height:19px; }'+
+      '.theme_opt i.fa-sort-up { line-height:26px; }'+
+      '.theme_opt i.fa-sort-desc { line-height:14px; }'+
+      '.theme_opt:first-child i.fa-sort-up, .theme_opt:last-child i.fa-sort-desc { display:none; }'+
+      '.theme_opt i:hover { transform:scale(1.2); }'+
+      '.fae_options_column { float:left; width:50%; }'+
+      '.fae_colors .fae_text_input { width:75px; }'+
+      '.fae_colors .fae_text_input.max { width:30%; }'+
+      '#fae_colors_preview { border:1px solid rgba(0, 0, 0, 0.2); width:99%; margin:0 3px; height:900px; }'+
+    '</style>'
+  );
+
+
   // stuff that needs to be executed when the doc is ready
   $(function() {
     var admin = $('a[href^="/admin/"]').not('.mainmenu')[0], // get the AP link so we can fetch the TID
@@ -1680,48 +1724,6 @@
   if (FAE.maintenance) {
     $('#fae_cp').prepend('<div id="fae_maintenance"><i class="fa fa-warning"></i>Maintenance is currently being performed on the Control Panel. Don\'t worry if you notice anything strange, we\'ll get things back to normal shortly. For more information, please read about "<a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Maintenance" target="_blank">Maintenance</a>" on our wiki.</div>');
   }
-
-  // extra cp stylesheet
-  $('head').append(
-    '<style type="text/css" id="fae_cp_css">'+
-      '.fae_cp_row { margin:6px 0; }'+
-      '.fae_label { display:inline-block; width:200px; vertical-align:top; margin-top:5px; }'+
-      '.fae_help_me { color:#FFF; font-size:18px; background:#69C; border-radius:100%; text-align:center; vertical-align:top; display:inline-block; height:24px; line-height:24px; width:24px; margin:auto 3px; position:relative; cursor:help; }'+
-      '.fae_help_tip { color:#333; font-size:12px; line-height:15px; background:#EEE; border:1px solid #CCC; border-radius:3px; display:inline-block; width:300px; padding:3px; position:absolute; visibility:hidden; z-index:1; }'+
-      '#fae_cp label { margin-right:10px; display:inline-block; }'+
-      '#fae_cp label input { vertical-align:text-bottom; }'+
-      '.fae_help_me:hover .fae_help_tip { visibility:visible; }'+
-      'body #fae_cp { color:#333; background:#F6F6F6; border:1px solid #CCC; margin:50px 25px; padding:12px; }'+
-      '#fae_custom_color { padding:0; vertical-align:middle; }'+
-      '#fae_cp select, #fae_cp input { color:#333; background:#FFF; }'+
-      '#fae_selected_color option:not([value="Default"]):not([value="Custom"]) { color:#FFF; }'+
-      '#fae_maintenance { color:#333; font-size:16px; font-weight:bold; text-align:center; background:#EB3; padding:16px 12px; margin:-13px -13px 12px -13px; }'+
-      '#fae_maintenance i { font-size:28px; vertical-align:-4px; margin-right:6px; }'+
-      '#fae_maintenance a { color:#666; text-decoration:underline; }'+
-      '#fae_maintenance a:hover { color:#000; text-decoration:none; }'+
-      '#fae_themer { display:inline-block; }'+
-      '#fae_themer_add { background:#8B5 !important; }'+
-      '#fae_themer_add:hover { background:#7A4 !important; }'+
-      '#fae_options [disabled] { opacity:0.5; }'+
-      '#fae_theme_options { height:153px; border:1px solid #CCC; overflow:auto; margin-bottom:3px; padding:6px; width:100%; white-space:nowrap; }'+
-      '#fae_options .fae_color_picker { background:none !important; border:1px solid transparent; padding:0; margin-right:3px; }'+
-      '#fae_options .fae_color_picker:hover { border-color:#69C; }'+
-      '#fae_options .fae_text_input { color:#333; background:#FFF !important; border:1px solid #CCC; cursor:text; }'+
-      '#fae_options .fae_text_input:hover, #fae_theme_options .color_name:focus { border-color:#69C; }'+
-      '.theme_opt i { color:#FFF; font-size:16px; text-align:center; display:inline-block; vertical-align:middle; height:20px; width:20px; line-height:20px; border-radius:20px; margin:0 3px; cursor:pointer; transition:200ms; }'+
-      '.theme_opt i.fa-times { background:#E53; }'+
-      '.theme_opt i[class*="sort"] { background:#69C; }'+
-      '.theme_opt i.fa-times { line-height:19px; }'+
-      '.theme_opt i.fa-sort-up { line-height:26px; }'+
-      '.theme_opt i.fa-sort-desc { line-height:14px; }'+
-      '.theme_opt:first-child i.fa-sort-up, .theme_opt:last-child i.fa-sort-desc { display:none; }'+
-      '.theme_opt i:hover { transform:scale(1.2); }'+
-      '.fae_options_column { float:left; width:50%; }'+
-      '.fae_colors .fae_text_input { width:75px; }'+
-      '.fae_colors .fae_text_input.max { width:30%; }'+
-      '#fae_colors_preview { border:1px solid rgba(0, 0, 0, 0.2); width:99%; margin:0 3px; height:900px; }'+
-    '</style>'
-  );
 }());
 
 function fae_editColor (str, op) {

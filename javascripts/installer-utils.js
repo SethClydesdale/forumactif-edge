@@ -3,8 +3,8 @@
     window.FAE = new Object();
   }
 
-  FAE.maintenance = false;
-  FAE.cp_rev = '1.2.5';
+  FAE.maintenance = true;
+  FAE.cp_rev = '1.2.6';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -40,7 +40,7 @@
   FAE.bar = document.getElementById('fae_progress');
   FAE.progress = function() {
     var percent = (FAE.index / FAE.quota * 100).toFixed(2);
-    FAE.bar.innerHTML = '<div id="fae_prog_bar" style="width:' + percent + '%;"></div><span id="fae_prog_number">' + (percent == 100 ? (FAE.cp_lang.fae_install_complete || 'COMPLETE!') : percent + '%') + '</span>';
+    FAE.bar.innerHTML = '<div id="fae_prog_bar" class="color-primary" style="width:' + percent + '%;"></div><span id="fae_prog_number">' + (percent == 100 ? (FAE.cp_lang.fae_install_complete || 'COMPLETE!') : percent + '%') + '</span>';
   };
 
 
@@ -1619,6 +1619,46 @@
           }
 
         });
+
+
+        // Adjusts the CP styles to reflect the selected theme
+        try {
+          var css = document.querySelector('#main-content > style').sheet;
+          css.cssRules[2].style.background = '';
+          css.cssRules[3].style.background = '';
+          css.cssRules[3].style.border = '';
+          css.cssRules[3].style.color = '';
+          css.cssRules[5].style.background = '';
+          css.cssRules[5].style.border = '';
+          css.cssRules[6].style.background = 'rgba(0, 0, 0, 0.2)';
+          css.cssRules[7].style.background = '';
+          css.deleteRule(4);
+
+          css = document.getElementById('fae_cp_css').sheet;
+          css.cssRules[2].style.background = '';
+          css.cssRules[7].style.background = 'rgba(0, 0, 0, 0.04)';
+          css.cssRules[7].style.border = '';
+          css.cssRules[7].style.color = '';
+          css.cssRules[19].style.border = '';
+          css.cssRules[22].style.background = '';
+          css.cssRules[22].style.border = '';
+          css.cssRules[22].style.color = '';
+          css.deleteRule(21);
+          css.deleteRule(9);
+
+          document.getElementById('fae_cp').className = 'content-block';
+          document.getElementById('fae_log').className = 'content-block';
+          document.getElementById('fae_progress').className = 'content-block';
+          document.getElementById('fae_theme_options').className = 'content-block';
+
+          for (var a = document.querySelectorAll('.fae_cp_title'), i = 0, j = a.length; i < j; i++) {
+            a[i].className += ' title';
+          }
+
+          for (var a = document.querySelectorAll('.fae_help_me'), i = 0, j = a.length; i < j; i++) {
+            a[i].className += ' color-primary';
+          }
+        } catch (e) {}
       }
 
     } else if (/page_html\?mode=preview/.test(window.location.href)) {

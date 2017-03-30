@@ -1641,7 +1641,7 @@
 
   // extra cp stylesheet
   $('head').append(
-    '<style type="text/css">'+
+    '<style type="text/css" id="fae_cp_css">'+
       '.fae_cp_row { margin:6px 0; }'+
       '.fae_label { display:inline-block; width:200px; vertical-align:top; margin-top:5px; }'+
       '.fae_help_me { color:#FFF; font-size:18px; background:#69C; border-radius:100%; text-align:center; vertical-align:top; display:inline-block; height:24px; line-height:24px; width:24px; margin:auto 3px; position:relative; cursor:help; }'+

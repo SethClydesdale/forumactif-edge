@@ -284,6 +284,7 @@
               '<option value="Italian">Italiano</option>'+
               '<option value="Portuguese">Português</option>'+
               '<option value="Romanian">Romana</option>'+
+              '<option value="Russian">Русский</option>'+
               '<option value="Spanish">Español</option>'+
               '<option value="Vietnamese">Tiếng Việt</option>'+
               '<option value="ADD" id="translate_submit_option">Submit a New Translation</option>'+

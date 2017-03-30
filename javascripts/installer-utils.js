@@ -3,7 +3,7 @@
     window.FAE = new Object();
   }
 
-  FAE.maintenance = true;
+  FAE.maintenance = false;
   FAE.cp_rev = '1.2.6';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
@@ -1666,8 +1666,7 @@
 
 
         // Adjusts the CP styles to reflect the selected theme
-        if (window.location.host == 'themedesign.forumotion.com') {
-        //try {
+        try {
           var css = document.querySelector('#main-content > style').sheet;
           css.cssRules[2].style.background = '';
           css.cssRules[3].style.background = '';
@@ -1696,15 +1695,11 @@
           document.getElementById('fae_progress').className = 'content-block';
           document.getElementById('fae_theme_options').className = 'content-block';
 
-          for (var a = document.querySelectorAll('.fae_cp_title'), i = 0, j = a.length; i < j; i++) {
-            a[i].className += ' title';
-          }
-
-          for (var a = document.querySelectorAll('.fae_help_me'), i = 0, j = a.length; i < j; i++) {
+          for (var a = document.querySelectorAll('.fae_cp_title, .fae_help_me'), i = 0, j = a.length; i < j; i++) {
             a[i].className += ' color-primary';
           }
-        //} catch (e) {}
-        }
+
+        } catch (e) {}
       }
 
     } else if (/page_html\?mode=preview/.test(window.location.href)) {

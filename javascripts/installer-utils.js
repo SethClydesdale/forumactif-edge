@@ -1622,7 +1622,8 @@
 
 
         // Adjusts the CP styles to reflect the selected theme
-        try {
+        if (window.location.host == 'themedesign.forumotion.com') {
+        //try {
           var css = document.querySelector('#main-content > style').sheet;
           css.cssRules[2].style.background = '';
           css.cssRules[3].style.background = '';
@@ -1658,7 +1659,8 @@
           for (var a = document.querySelectorAll('.fae_help_me'), i = 0, j = a.length; i < j; i++) {
             a[i].className += ' color-primary';
           }
-        } catch (e) {}
+        //} catch (e) {}
+        }
       }
 
     } else if (/page_html\?mode=preview/.test(window.location.href)) {

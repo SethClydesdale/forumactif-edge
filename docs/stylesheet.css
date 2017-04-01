@@ -33,7 +33,19 @@ p {
 #header-links > a, #header-links noscript a, a.button, .bubble { transition:200ms; }
 
 /* Title Fonts */
-.title, .bubbleTitle, .footerTitle {
+.sub-title {
+  color:#69C;
+  font-size:24px;
+  border-bottom:2px solid #69C;
+  padding-bottom:6px;
+}
+
+.section-title {
+  font-size:18px;
+  margin:16px 0;
+}
+
+.title, .bubbleTitle, .footerTitle, .sub-title, .section-title {
   font-family:"Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 

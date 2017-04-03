@@ -333,6 +333,157 @@ function fa_navactif() {
     var body = document.getElementById('page-body');
     body.insertBefore(picker, body.firstChild);
     body.insertBefore(selector, body.firstChild);
+
+    /* THEME CHANGER UI */
+    if (fa_theme_color.selector) {
+      var frag = document.createDocumentFragment();
+
+      // create the theme picker
+      window.fae_theme_picker = document.createElement('A');
+      fae_theme_picker.href = '#';
+      fae_theme_picker.dataset.selectedIndex = fa_theme_color.selector.selectedIndex;
+      fae_theme_picker.innerHTML = fa_theme_color.selector.options[fa_theme_color.selector.selectedIndex].innerHTML;
+      fae_theme_picker.style.width = fa_theme_color.selector.getBoundingClientRect().width - 12 + 'px';
+      fae_theme_picker.style.backgroundColor = fa_theme_color.selector.style.backgroundColor;
+      fae_theme_picker.style.borderColor = fa_theme_color.selector.style.borderColor;
+      fae_theme_picker.id = 'fae_theme_picker';
+      fae_theme_picker.onclick = function () {
+        return false;
+      };
+
+      // show / hide the theme picker on click
+      document.addEventListener('click', function (e) {
+        var that = e.target;
+
+        if (that.id == 'fae_theme_picker') {
+
+          if (fae_theme_list.className == 'theme_list_hidden') {
+            var offset = that.getBoundingClientRect(),
+                selected = fae_theme_list.querySelector('[data-index="' + fae_theme_picker.dataset.selectedIndex + '"]');
+
+            fae_theme_list.className = '';
+            fae_theme_list.style.left = offset.left + 'px';
+            fae_theme_list.style.marginTop = offset.height + 1 + 'px';
+
+            fae_hover_theme(selected);
+            fae_theme_list.scrollTop = (selected.offsetTop - fae_theme_list.getBoundingClientRect().height) + (selected.getBoundingClientRect().height + 2);
+
+          } else {
+            fae_theme_list.className = 'theme_list_hidden';
+          }
+
+        } else if (!fae_theme_list.className) {
+          fae_theme_list.className = 'theme_list_hidden';
+        }
+      });
+
+      // change the theme when the up or down arrows are pressed
+      fae_theme_picker.onkeydown = function (e) {
+        var index = +fae_theme_picker.dataset.selectedIndex;
+            next = fae_theme_list.querySelector('[data-index="' + (e.keyCode == 38 ? index - 1 : e.keyCode == 40 ? index + 1 : index) + '"]');
+
+        if (next && next.className != 'pseudo-hover') {
+          next.click();
+          fae_hover_theme(next);
+        }
+
+        return false;
+      };
+
+      // hover the selected option / last hovered option
+      window.fae_hover_theme = function (that) {
+        var hovered = document.querySelector('.pseudo-hover');
+
+        if (hovered) {
+          hovered.className = '';
+        }
+
+        that.className = 'pseudo-hover';
+      };
+
+      // change the theme picker style when the custom theme is changed
+      document.getElementById('fae_custom-theme').addEventListener('change', function () {
+        fae_theme_picker.style.backgroundColor = fa_theme_color.selector.style.backgroundColor;
+        fae_theme_picker.style.borderColor = fa_theme_color.selector.style.borderColor;
+      });
+
+
+      // create the theme list
+      window.fae_theme_list = document.createElement('DIV');
+      fae_theme_list.id = 'fae_theme_list';
+      fae_theme_list.className = 'theme_list_hidden';
+      fae_theme_list.style.width = fa_theme_color.selector.getBoundingClientRect().width + 'px';
+
+      // prevent unwanted window scrolling when the theme list has been scrolled all the way from the top or bottom
+      fae_theme_list.onwheel = function (e) {
+        if ((fae_theme_list.scrollTop == (fae_theme_list.scrollHeight - fae_theme_list.clientHeight) && e.deltaY > 0) || fae_theme_list.scrollTop == 0 && e.deltaY < 0) {
+          return false;
+        }
+      };
+
+      // hide the theme list on scroll
+      window.addEventListener('scroll', function () {
+        if (!fae_theme_list.className) {
+          fae_theme_list.className = 'theme_list_hidden';
+        }
+      });
+
+      // get the original theme options and create new options for the updated UI
+      for (var opts = fa_theme_color.selector.options, i = 0, j = opts.length, option; i < j; i++) {
+        option = document.createElement('A');
+        option.href = '#';
+        option.dataset.index = i;
+        option.innerHTML = opts[i].innerHTML;
+        option.style.color = opts[i].style.color || '#FFF';
+        option.style.backgroundColor = opts[i].style.backgroundColor;
+
+        // apply the selected theme to both the new UI and hidden select element
+        option.onclick = function () {
+          var color = fa_theme_color.selector.options[this.dataset.index];
+
+          color.selected = true;
+          fae_theme_picker.innerHTML = fa_theme_color.selector.value;
+          fae_theme_picker.dataset.selectedIndex = this.dataset.index;
+
+          fa_theme_color.change(color.value);
+
+          fae_theme_picker.style.backgroundColor = fa_theme_color.selector.style.backgroundColor;
+          fae_theme_picker.style.borderColor = fa_theme_color.selector.style.borderColor;
+
+          fae_theme_list.className = 'theme_list_hidden';
+          fae_theme_picker.focus();
+
+          return false;
+        };
+
+        // update selected option on hover
+        option.onmouseover = function () {
+          fae_hover_theme(this);
+        };
+
+        fae_theme_list.appendChild(option);
+      }
+
+      // add the theme picker, list, and style to the document
+      frag.appendChild(fae_theme_picker);
+      frag.appendChild(fae_theme_list);
+
+      $('head').append(
+        '<style type="text/css">'+
+          'a#fae_theme_picker{color:#FFF;font-size:13px;font-family:Arial;background:#999;border:1px solid #888;position:relative;display:inline-block;padding:6px;margin:1px;float:left;text-decoration:none;outline:none;}'+
+          '#fae_theme_picker:after{content:"\\f0dd";font-family:FontAwesome;position:absolute;right:4px}'+
+          '#fae_theme_list{background:#FFF;border:1px solid rgba(0,0,0,.175);position:absolute;max-height:335px;overflow:auto;overflow-x:hidden;z-index:1;white-space:nowrap;visibility:visible}'+
+          '#fae_theme_list.theme_list_hidden{visibility:hidden}'+
+          '#fae_theme_list a{font-family:Arial;display:block;padding:6px;text-decoration:none}'+
+          '#fae_theme_list a.pseudo-hover{color:#FFF!important;background:#28F!important}'+
+          '@media (max-width: 768px) and (min-width: 0px) {body #fae_theme_picker{float:right;width:240px !important;margin:0 0 6px}body #fae_theme_list{width:252px !important}}'+
+        '</style>'
+      );
+
+      fa_theme_color.selector.parentNode.insertBefore(frag, fa_theme_color.selector);
+      fa_theme_color.selector.style.display = 'none'; // hide to original theme selector element
+    }
+
   });
 }());
 

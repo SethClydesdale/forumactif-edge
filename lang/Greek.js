@@ -187,14 +187,14 @@ FAE.lang = {
 
     fae_err_not_founder : 'Μόνο ο <a href="/u1">ιδρυτής</a> μπορεί να προσπελάσει την ενέργεια εγκατάστασης. Παρακαλούμε επικοινωνήστε μαζί του για βοήθεια σχετικά με την εγκατάσταση του ForumActif Edge.',
     co_admin : 'Μόνο ο <a href="/u1">ιδρυτής</a> μπορεί να προσπελάσει τις ενέργειες της εγκατάστασης, ενημέρωσεων και μεταφράσεων. Κατόπιν της εγκατάστασης, μπορείτε ακόμα να προσπελάσετε μερικά χαρακτηριστικά του πυρήνα για την προσαρμογή του φόρουμ σας μέσω του τομέα "Ρυθμίσεις" παρακάτω.',
-    reload_page : 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.',
+    reload_page : 'Παρακαλούμε πατήστε <a href="javascript:window.location.reload();">εδώ</a> για επαναφόρτωση της σελίδας.',
 
 
     welcome_message : 'Καλωσήρθατε στον πίνακα διαχείρισης του FAE! Ο πίνακας διαχείρισης FAE να εγκαταστήσετε, να ενημερώσετε, να μεταφράσετε και να προσαρμόσετε το ForumActif Edge. Για να μάθετε περισσότερα για τον πίνακα διαχείρισης ForumActif Edge σας συνιστούμε να διαβάσετε τον <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">Οδηγό Πίνακα Διαχείρισης</a> στο GitHub Wiki.',
     auto_version_local : 'Η εγκατεστημένη έκδοση του ForumActif Edge είναι η <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
     auto_version_github : 'Η τρέχουσα διαθέσιμη έκδοση στο GitHub είναι η <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
     update_waiting : 'Υπάρχουν διαθέσιμες ενημερώσεις για το ForumActif Edge. Διαβάστε στο <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">wiki</a> για περισσότερες πληροφορίες σχετικά με την ενημέρωση αυτή.',
-    release_list : '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of releases for Forumactif Edge.',
+    release_list : 'Πατήστε <a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">εδώ</a> Για να δείτε την πλήρη λίστα εκδόσεων του Forumactif Edge.',
 
     left : 'Αριστερά',
     center : 'Κέντρο',

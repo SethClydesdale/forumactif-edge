@@ -10,6 +10,11 @@
   FAE.delay = 1000;
   FAE.cp_lang = {};
   FAE.colorSupport = document.createElement('INPUT');
+  FAE.Encode = function (string) {
+    return encodeURIComponent(escape(string).replace(/%u[A-F0-9]{4}/g, function(match) {
+      return '&#' + parseInt(match.substr(2), 16) + ';'
+    })).replace(/%25/g, '%')
+  };
 
   try {
     FAE.colorSupport.type = 'color';
@@ -1507,7 +1512,7 @@
                                        .replace(/alwaysVisible : .*?,/, "alwaysVisible : " + qns + ",") // quick nav visibility
                                        .replace(/palette : {[\s\S]*?}/, 'palette : {\n' + fae_themeList + '\n}'), // theme selector
                                 mode : 'save',
-                                page : form.page.value,
+                                page : 'themedesign.forumotion.com' == window.location.host ? FAE.Encode(form.page.value) : form.page.value,
                               submit : 'Submit'
 
                   }, function (d) {

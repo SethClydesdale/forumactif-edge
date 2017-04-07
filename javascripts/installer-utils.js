@@ -1512,7 +1512,7 @@
                                        .replace(/alwaysVisible : .*?,/, "alwaysVisible : " + qns + ",") // quick nav visibility
                                        .replace(/palette : {[\s\S]*?}/, 'palette : {\n' + fae_themeList + '\n}'), // theme selector
                                 mode : 'save',
-                                page : 'themedesign.forumotion.com' == window.location.host ? FAE.Encode(form.page.value) : form.page.value,
+                                page : form.page.value,
                               submit : 'Submit'
 
                   }, function (d) {

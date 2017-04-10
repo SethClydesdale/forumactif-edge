@@ -312,7 +312,7 @@ FAE.lang = {
       fae_importing : 'En contactant Github, veuillez patienter...',
       fae_compiling : 'Compilation de thèmes, veuillez patienter...',
 
-      fae_save_plugins : 'Mise à jour des modules...',
+      fae_save_plugins : 'Mise à jour des modules',
       fae_finding_plugins : 'Localisation du module [FA EDGE] ALL.JS...',
       fae_plugins_found : 'Le module [FA EDGE] ALL.JS a été trouvé !',
       fae_getting_plugins : 'Obtention du module [FA EDGE] ALL.JS...',

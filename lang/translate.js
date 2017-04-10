@@ -331,6 +331,15 @@ FAE.next = function() {
     FAE.log(step.info + '...');
 
     if (step.type == 'POST') {
+
+      if (!FAE.UTF8) {
+        for (var check = ['edit_code', 'content', 'template'], i = 0, j = check.length; i < j; i++) {
+          if (step.data[check[i]]) {
+            step.data[check[i]] = FAE.Encode(step.data[check[i]]);
+          }
+        }
+      }
+
       $.post('/admin/index.forum?' + step.url + FAE.tid, step.data, function() {
         window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);

@@ -4,16 +4,23 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.2.6';
+  FAE.cp_rev = '1.2.7';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
   FAE.cp_lang = {};
   FAE.colorSupport = document.createElement('INPUT');
+
+  FAE.UTF8 = /UTF-8/.test(document.characterSet);
   FAE.Encode = function (string) {
-    return encodeURIComponent(escape(string).replace(/%u[A-F0-9]{4}/g, function(match) {
-      return '&#' + parseInt(match.substr(2), 16) + ';'
-    })).replace(/%25/g, '%')
+    if (!FAE.UTF8) {
+      return encodeURIComponent(escape(string).replace(/%u[A-F0-9]{4}/g, function(match) {
+        return '&#' + parseInt(match.substr(2), 16) + ';'
+      })).replace(/%25/g, '%');
+
+    } else {
+      return string;
+    }
   };
 
   try {
@@ -582,7 +589,7 @@
 
               // update the stylesheet
               $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, {
-                edit_code : val,
+                edit_code : FAE.Encode(val),
                 submit : 'Save'
 
               }, function(d) {
@@ -1286,7 +1293,7 @@
 
                 // update the stylesheet
                 $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, {
-                  edit_code : val + (save ? '\n' + fae_compileColors() : ''),
+                  edit_code : FAE.Encode(val + (save ? '\n' + fae_compileColors() : '')),
                   submit : 'Save'
 
                 }, function(d) {
@@ -1507,10 +1514,11 @@
                   $.post(form.action, {
                                title : '[FA EDGE] ALL.JS',
                     'js_placement[]' : 'allpages',
-                             content : form.content.value
+                             content : FAE.Encode(form.content.value
                                        .replace(/position : '.*?'/, "position : '" + qnp + "'") // quick nav position
                                        .replace(/alwaysVisible : .*?,/, "alwaysVisible : " + qns + ",") // quick nav visibility
                                        .replace(/palette : {[\s\S]*?}/, 'palette : {\n' + fae_themeList + '\n}'), // theme selector
+                                        )
                                 mode : 'save',
                                 page : form.page.value,
                               submit : 'Submit'

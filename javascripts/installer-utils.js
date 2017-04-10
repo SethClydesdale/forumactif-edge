@@ -12,14 +12,36 @@
   FAE.colorSupport = document.createElement('INPUT');
 
   FAE.UTF8 = true || /UTF-8/i.test(document.characterSet);
-  FAE.Encode = function (string) {
-    if (!FAE.UTF8) {
-      return encodeURIComponent(escape(string).replace(/%u[A-F0-9]{4}/g, function(match) {
-        return '&#' + parseInt(match.substr(2), 16) + ';'
-      })).replace(/%25/g, '%');
+  FAE.Encode = function (object) {
+    if (!FAE.UTF8 || window.location.host == 'themedesign.forumotion.com') {
+      var data = '',
+          val = ['edit_code', 'content', 'template'],
+          match = false,
+          j = val.length,
+          i, k;
+
+      for (k in object) {
+        match = false;
+
+        // find and encode the necessary values
+        for (i = 0; i < j; i++) {
+          if (k == val[i]) {
+            object[k] = encodeURIComponent(escape(object[k]).replace(/%u[A-F0-9]{4}/g, function(match) {
+              return '&#' + parseInt(match.substr(2), 16) + ';'
+            })).replace(/%25/g, '%');
+
+            match = true;
+            break;
+          }
+        }
+
+        data += encodeURIComponent(k) + '=' + (match ? object[k] : encodeURIComponent(object[k])) + '&';
+      }
+
+      return data.slice(0, data.length - 1);
 
     } else {
-      return string;
+      return object;
     }
   };
 
@@ -588,11 +610,11 @@
               }
 
               // update the stylesheet
-              $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, {
-                edit_code : FAE.Encode(val),
+              $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, FAE.Encode({
+                edit_code : val,
                 submit : 'Save'
 
-              }, function(d) {
+              }), function(d) {
                 FAE.index = 2;
                 FAE.progress();
 
@@ -1292,11 +1314,11 @@
                 }
 
                 // update the stylesheet
-                $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, {
-                  edit_code : FAE.Encode(val + (save ? '\n' + fae_compileColors() : '')),
+                $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, FAE.Encode({
+                  edit_code : val + (save ? '\n' + fae_compileColors() : ''),
                   submit : 'Save'
 
-                }, function(d) {
+                }), function(d) {
                   FAE.index = 2;
                   FAE.progress();
 
@@ -1511,20 +1533,19 @@
                     fae_themeList += '"' + input[1].value + '" : ["' + ( fae_editColor(val, +1) + '", "' + val + '", "' + fae_editColor(val, -1) + '", "' + fae_editColor(val, -3) + '", "' + fae_editColor(val, 'darken') ) + '"]' + (i + 1 == j ? '' : ',') + '\n';
                   }
 
-                  $.post(form.action, {
+                  $.post(form.action, FAE.Encode({
                                title : '[FA EDGE] ALL.JS',
                     'js_placement[]' : 'allpages',
-                             content : FAE.Encode(form.content.value
+                             content : form.content.value
                                        .replace(/position : '.*?'/, "position : '" + qnp + "'") // quick nav position
                                        .replace(/alwaysVisible : .*?,/, "alwaysVisible : " + qns + ",") // quick nav visibility
-                                       .replace(/palette : {[\s\S]*?}/, 'palette : {\n' + fae_themeList + '\n}') // theme selector
-                                     ),
+                                       .replace(/palette : {[\s\S]*?}/, 'palette : {\n' + fae_themeList + '\n}'), // theme selector
 
                                 mode : 'save',
                                 page : form.page.value,
                               submit : 'Submit'
 
-                  }, function (d) {
+                  }), function (d) {
                     FAE.log((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_plugins_updated) || 'Plugins have been updated successfully !', 'font-weight:bold;color:#8B5;');
                     FAE.log(FAE.cp_lang.reload_page || 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
                     FAE.index = 3;

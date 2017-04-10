@@ -1517,8 +1517,9 @@
                              content : FAE.Encode(form.content.value
                                        .replace(/position : '.*?'/, "position : '" + qnp + "'") // quick nav position
                                        .replace(/alwaysVisible : .*?,/, "alwaysVisible : " + qns + ",") // quick nav visibility
-                                       .replace(/palette : {[\s\S]*?}/, 'palette : {\n' + fae_themeList + '\n}'), // theme selector
-                                        )
+                                       .replace(/palette : {[\s\S]*?}/, 'palette : {\n' + fae_themeList + '\n}') // theme selector
+                                     ),
+                                     
                                 mode : 'save',
                                 page : form.page.value,
                               submit : 'Submit'

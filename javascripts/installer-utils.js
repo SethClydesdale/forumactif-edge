@@ -11,7 +11,7 @@
   FAE.cp_lang = {};
   FAE.colorSupport = document.createElement('INPUT');
 
-  FAE.UTF8 = /UTF-8/i.test(document.characterSet);
+  FAE.UTF8 = true || /UTF-8/i.test(document.characterSet);
   FAE.Encode = function (string) {
     if (!FAE.UTF8) {
       return encodeURIComponent(escape(string).replace(/%u[A-F0-9]{4}/g, function(match) {
@@ -1519,7 +1519,7 @@
                                        .replace(/alwaysVisible : .*?,/, "alwaysVisible : " + qns + ",") // quick nav visibility
                                        .replace(/palette : {[\s\S]*?}/, 'palette : {\n' + fae_themeList + '\n}') // theme selector
                                      ),
-                                     
+
                                 mode : 'save',
                                 page : form.page.value,
                               submit : 'Submit'

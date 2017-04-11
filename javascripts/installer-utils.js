@@ -3,7 +3,7 @@
     window.FAE = new Object();
   }
 
-  FAE.maintenance = false;
+  FAE.maintenance = window.location.host == 'www.milouze14.com' ? true : false;
   FAE.cp_rev = '1.2.7';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
@@ -13,7 +13,7 @@
 
   FAE.UTF8 = true || /UTF-8/i.test(document.characterSet);
   FAE.Encode = function (object) {
-    if (!FAE.UTF8 || window.location.host == 'themedesign.forumotion.com') {
+    if (!FAE.UTF8 || window.location.host == 'www.milouze14.com') {
       var data = '',
           val = ['edit_code', 'content', 'template'],
           match = false,

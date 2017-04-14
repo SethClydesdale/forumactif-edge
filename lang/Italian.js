@@ -1,6 +1,5 @@
 // Italian Translation
-// Translation by Teo! (http://fmdesign.forumotion.com/t779-forumotion-edge-italian-translation-partial#15672)
-// Updates or translations by Niko
+// Translation by Teo! and Niko (http://fmdesign.forumotion.com/t779-forumotion-edge-italian-translation-partial#15672)
 FAE.lang = {
 
   language : 'Italiano',
@@ -99,7 +98,7 @@ FAE.lang = {
       quick_nav_tooltip : "tooltip : 'Toggle navigazione veloce'",
       quick_nav_notif : 'Notifiche',
       tool_copy_url_tooltip : 'Copia l\\\'URL del BBcode',
-      tool_copy_url_prompt : 'Copia l\'url del BBcode sotto. (CTRL+C)',
+      tool_copy_url_prompt : 'Copia l\\\'url del BBcode sotto. (CTRL+C)',
       tool_admin_panel : 'Pannello Amministrazione',
       tool_to_top : 'Inizio pagina',
       tool_to_bottom : 'Fine pagina',
@@ -108,7 +107,7 @@ FAE.lang = {
       img_resizer_enlarge : 'Allarga immagine',
       img_resizer_reduce : 'Riduci immagine',
       img_resizer_download : 'Scarica immagine',
-      img_resizer_tooltip : 'Clicca per vedere l\'immagine a tutta pagina',
+      img_resizer_tooltip : 'Clicca per vedere l\\\'immagine a tutta pagina',
 
       fae_update_found : 'E stato trovato un\\\'aggiornamento per FA edge. Vai nel pannello di controllo FAE e clicca su "Cerca aggiornamenti" per poter ottenere la version più recente.'
     },

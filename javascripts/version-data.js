@@ -19,5 +19,6 @@ window.forumactif_edge_version_data = [
   '1.1.7',
   '1.2.0',
   '1.2.1',
-  '1.2.2'
+  '1.2.2',
+  '1.2.3'
 ];

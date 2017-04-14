@@ -323,7 +323,7 @@ function fa_navactif() {
 
   selector.appendChild(frag);
 
-  document.write('<style type="text/css">#fa_theme_selector { color:#FFF; border:1px solid transparent; float:left; outline:none; } #fae_custom-theme { margin:3px; }</style>');
+  document.write('<style type="text/css">#fa_theme_selector { color:#FFF; border:1px solid transparent; float:left; outline:none; } #fae_custom-theme { margin:3px; float:left; }</style>');
 
   fa_theme_color.selector = selector;
   fa_theme_color.picker = picker;
@@ -470,9 +470,10 @@ function fa_navactif() {
 
       $('head').append(
         '<style type="text/css">'+
+          '#footer_end #fae_theme_list,#page-footer #fae_theme_list{margin-top:-335px!important}'+
           'a#fae_theme_picker{color:#FFF;font-size:13px;font-family:Arial;background:#999;border:1px solid #888;position:relative;display:inline-block;padding:6px;margin:1px;float:left;text-decoration:none;outline:none;}'+
           '#fae_theme_picker:after{content:"\\f0dd";font-family:FontAwesome;position:absolute;right:4px}'+
-          '#fae_theme_list{background:#FFF;border:1px solid rgba(0,0,0,.175);position:absolute;max-height:335px;overflow:auto;overflow-x:hidden;z-index:1;white-space:nowrap;visibility:visible}'+
+          '#fae_theme_list{background:#FFF;border:1px solid rgba(0,0,0,.175);position:absolute;max-height:335px;overflow:auto;overflow-x:hidden;z-index:10;white-space:nowrap;visibility:visible}'+
           '#fae_theme_list.theme_list_hidden{visibility:hidden}'+
           '#fae_theme_list a{font-family:Arial;display:block;padding:6px;text-decoration:none}'+
           '#fae_theme_list a.pseudo-hover{color:#FFF!important;background:#28F!important}'+

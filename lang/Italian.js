@@ -1,5 +1,6 @@
 // Italian Translation
 // Translation by Teo! (http://fmdesign.forumotion.com/t779-forumotion-edge-italian-translation-partial#15672)
+// Updates or translations by Niko
 FAE.lang = {
 
   language : 'Italiano',
@@ -11,11 +12,11 @@ FAE.lang = {
     total_topics : 'Topic totali',
     total_users : 'Membri totali',
     record_users : 'Numero massimo di utenti in linea',
-    board_age : 'Età del forum(giorni)',
+    board_age : 'Età del forum (giorni)',
     newest_member : 'Ultimo registrato',
     hidebox : 'Nascosto:',
     chatbox_tip : 'Vedere chi è online',
-    chatbox_no_away : 'No members are currently away.',
+    chatbox_no_away : 'Nessun membro è via.',
     chatbox_no_online : 'Nessun membro online'
   },
 
@@ -79,35 +80,35 @@ FAE.lang = {
 
     '[FA EDGE] ALL.JS' : {
       widget_menu_title : '<div class="title module_column_title">Menu Widget</div>',
-      widget_menu_tooltip : "menu.title = 'Toggle widget menu';",
+      widget_menu_tooltip : "menu.title = 'Toggle menu widget';",
 
       select_theme : 'Seleziona un tema',
-      custom_theme : 'Custom theme',
+      custom_theme : 'Tema predefinito',
       random_theme : 'Tema casuale',
       default_theme : 'Tema base',
 
-      dark_mode : 'Dark Mode : ',
-      light_mode : 'Light Mode : ',
+      dark_mode : 'Modalità notte : ',
+      light_mode : 'Modalità chiara : ',
 
-      code_copy : 'Copy Code',
-      code_copied : 'Copied !',
+      code_copy : 'Copia codice',
+      code_copied : 'Copiato !',
 
       toolbar_search_placeholder : 'Cerca...',
 
-      quick_nav_title : "title : 'Quick Navigation'",
-      quick_nav_tooltip : "tooltip : 'Toggle quick navigation'",
+      quick_nav_title : "title : 'Navigazione veloce'",
+      quick_nav_tooltip : "tooltip : 'Toggle navigazione veloce'",
       quick_nav_notif : 'Notifiche',
       tool_copy_url_tooltip : 'Copia l\\\'URL del BBcode',
-      tool_copy_url_prompt : 'Copy the BBCode URL below. (CTRL+C)',
+      tool_copy_url_prompt : 'Copia l\'url del BBcode sotto. (CTRL+C)',
       tool_admin_panel : 'Pannello Amministrazione',
-      tool_to_top : 'Top of page',
-      tool_to_bottom : 'Bottom of page',
+      tool_to_top : 'Inizio pagina',
+      tool_to_bottom : 'Fine pagina',
 
       img_resizer_full_size : 'Dimensione intera',
       img_resizer_enlarge : 'Allarga immagine',
       img_resizer_reduce : 'Riduci immagine',
       img_resizer_download : 'Scarica immagine',
-      img_resizer_tooltip : 'Click to view full image',
+      img_resizer_tooltip : 'Clicca per vedere l\'immagine a tutta pagina',
 
       fae_update_found : 'E stato trovato un\\\'aggiornamento per FA edge. Vai nel pannello di controllo FAE e clicca su "Cerca aggiornamenti" per poter ottenere la version più recente.'
     },
@@ -150,7 +151,7 @@ FAE.lang = {
 
 
   fae_cp : {
-    fae_cp_main_title : 'Forumactif Edge pannello controllo',
+    fae_cp_main_title : 'Pannello di controllo di Forumactif Edge',
     fae_cp_desc : 'Con questo pannello, potrai installare, disinstallare e aggiornare <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif edge</a>. Forza, cosa aspetti, corri a rendere il tuo forum più moderno!',
     fae_log : 'Entra',
     fae_actions : 'Azioni',

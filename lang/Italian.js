@@ -1,5 +1,5 @@
 // Italian Translation
-// Translation by Teo! and Niko (http://fmdesign.forumotion.com/t779-forumotion-edge-italian-translation-partial#15672)
+// Translation by Teo!, MattiaDes and Niko (http://fmdesign.forumotion.com/t779-forumotion-edge-italian-translation-partial#15672)
 FAE.lang = {
 
   language : 'Italiano',
@@ -86,11 +86,11 @@ FAE.lang = {
       random_theme : 'Tema casuale',
       default_theme : 'Tema base',
 
-      dark_mode : 'Modalità notte : ',
-      light_mode : 'Modalità chiara : ',
+      dark_mode : 'Modalità notte: ',
+      light_mode : 'Modalità chiara: ',
 
       code_copy : 'Copia codice',
-      code_copied : 'Copiato !',
+      code_copied : 'Copiato!',
 
       toolbar_search_placeholder : 'Cerca...',
 
@@ -109,12 +109,12 @@ FAE.lang = {
       img_resizer_download : 'Scarica immagine',
       img_resizer_tooltip : 'Clicca per vedere l\\\'immagine a tutta pagina',
 
-      fae_update_found : 'E stato trovato un\\\'aggiornamento per FA edge. Vai nel pannello di controllo FAE e clicca su "Cerca aggiornamenti" per poter ottenere la version più recente.'
+      fae_update_found : 'È stato trovato un\\\'aggiornamento per FA edge. Vai nel pannello di controllo FAE e clicca su "Cerca aggiornamenti" per poter ottenere la version più recente.'
     },
 
 
     '[FA EDGE] TOPICS.JS' : {
-      thanked_message : '<i class="fa fa-thumbs-up"></i> {USERNAME} è stato ringraziato dall\\\'autore di questo topic !'
+      thanked_message : '<i class="fa fa-thumbs-up"></i> {USERNAME} è stato ringraziato dall\\\'autore di questo topic!'
     }
 
   },
@@ -151,7 +151,7 @@ FAE.lang = {
 
   fae_cp : {
     fae_cp_main_title : 'Pannello di controllo di Forumactif Edge',
-    fae_cp_desc : 'Con questo pannello, potrai installare, disinstallare e aggiornare <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif edge</a>. Forza, cosa aspetti, corri a rendere il tuo forum più moderno!',
+    fae_cp_desc : 'Con questo pannello potrai installare, disinstallare e aggiornare <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif edge</a>. Forza, cosa aspetti? Corri a rendere il tuo forum più moderno!',
     fae_log : 'Entra',
     fae_actions : 'Azioni',
 
@@ -178,28 +178,28 @@ FAE.lang = {
     fae_translate_start : 'La traduzione di FAE partirà tra poco..',
     fae_translate_get : 'Ottenendo la lingua {LANG} .',
     fae_translate_loaded : 'Lingua caricata con successo. Il processo di traduzione sta per iniziare. Non chiudere questa pagina.',
-    fae_translate_submit : 'Submit',
-    fae_translate_submit_option : 'Submit a New Translation',
-    fae_translate_submit_confirm : 'You have chosen to submit a new translation. If this is correct, please click "OK" and proceed to the translation page, otherwise click "cancel" and choose another language.',
+    fae_translate_submit : 'Invia',
+    fae_translate_submit_option : 'Invia una nuova traduzione',
+    fae_translate_submit_confirm : 'Hai scelto di inviare una nuova traduzione. Se questo è corretto, clicca su "OK" e procedi alla pagina di traduzione, altrimenti clicca su "Annulla" e scegli un\'altra lingua.',
 
-    configuration_title : 'Configuration',
-    configuration_desc : 'Clicking the buttons below will take you to different sections of the control panel, which allow you to manage the Configuration of Forumactif Edge. Go ahead and explore each of these sections, so you can get started on personalizing your theme. If you need more information, <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">click here</a> to view the control panel guide.',
+    configuration_title : 'Configurazione',
+    configuration_desc : 'Facendo clic sui pulsanti di seguito ti porteranno a diverse sezioni del pannello di controllo, che consentono di gestire la configurazione di Forumactif Edge. Andate avanti ed esplorate ognuna di queste sezioni, in modo da poter iniziare a personalizzare il tuo tema. Se hai bisogno di maggiori informazioni, <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">clicca qui</a> per visualizzare la guida del pannello di controllo.',
 
     fae_err_not_founder : 'Solo <a href="/u1">il fondatore</a> può usare il pannello.',
-    co_admin : 'Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core features for personalizing your forum via the "Configuration" section below.',
-    reload_page : 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.',
+    co_admin : 'Solo <a href="/u1">il fondatore</a> può accedere alle azioni di installazione, aggiornamento e traduzione. Poiché è stato installato Forumactif Edge, è ancora possibile accedere ad alcune funzionalità fondamentali per personalizzare il tuo forum tramite la sezione "Configurazione" qui sotto.',
+    reload_page : 'Per favore <a href="javascript:window.location.reload();">clicca qui</a> per ricaricare la pagina.',
 
 
-    welcome_message : 'Welcome to the FAE Control Panel! The FAE CP will allow you to install, update, translate, and customize Forumactif Edge. To learn more about using the FAE CP, it is recommended that you read over the <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">Control Panel Guide</a> on the Github wiki.',
-    auto_version_local : 'Your installed version of Forumactif Edge is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
-    auto_version_github : 'The current release of Forumactif Edge on Github is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
-    update_waiting : 'There are updates available for Foruactif Edge. Check out <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">the wiki</a> for more information about updating.',
-    release_list : '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of releases for Forumactif Edge.',
+    welcome_message : 'Benvenuti nel pannello di controllo FAE! Il FAE CP vi permetterà di installare, aggiornare, tradurre e personalizzare Forumactif Edge. Per ulteriori informazioni sull\'utilizzo del CP FAE, si consiglia di leggere il file <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">"Guida del pannello di controllo"</a> sul wiki di Github.',
+    auto_version_local : 'La versione installata di Forumactif Edge è <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
+    auto_version_github : 'L\'attuale versione di Forumactif Edge su Github è <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
+    update_waiting : 'Sono disponibili aggiornamenti per Foruactif Edge. Controlla <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">la wiki</a> per ulteriori informazioni sull\'aggiornamento.',
+    release_list : '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Clicca qui</a> per visualizzare l\'elenco completo delle versioni di Forumactif Edge.',
 
     left : 'Sinistra',
     center : 'Centro',
     right : 'Destra',
-    yes : 'Si',
+    yes : 'Sì',
     no : 'No',
     help : 'Aiuto!',
 
@@ -207,68 +207,68 @@ FAE.lang = {
       title : 'Impostazioni generali',
       fae_gen_desc : 'Qui potrai gestire le impostazioni generali di FAE.',
 
-      'fae_label-width' : 'Larghezza forum :',
+      'fae_label-width' : 'Larghezza forum:',
       'fae_gen_tip-width' : 'Muovi il segnalino sulla barra per scegliere la dimensione!',
 
-      'fae_label-navbar' : 'Posizione Menù :',
+      'fae_label-navbar' : 'Posizione Menù:',
       'fae_gen_tip-navbar' : 'Posizione dei tasti nel menù.',
 
-      'fae_label-logo' : 'Posizione logo :',
+      'fae_label-logo' : 'Posizione logo:',
       'fae_gen_tip-logo' : 'Posizione del banner del forum.',
 
-      'fae_label-profile' : 'Posizione profilo :',
+      'fae_label-profile' : 'Posizione profilo:',
       'fae_gen_tip-profile' : 'Posizione profilo nei topic.',
 
       fae_update_general : 'Salva',
-      fae_gen_updating : 'Aggiornamento delle impostazioni..',
-      fae_gen_updated : 'Le impostazioni sono state aggiornate !'
+      fae_gen_updating : 'Aggiornamento delle impostazioni...',
+      fae_gen_updated : 'Le impostazioni sono state aggiornate!'
     },
 
 
     colors : {
-      title : 'Colors',
-      fae_colors_desc : 'This section allows you to change the colors of your forum theme. Select a color from below and preview the result in the window on the right to get started. When you are finished, click "Update Colors" to apply your new colors.',
-      'fae_colors_title-preview' : 'Preview',
+      title : 'Colori',
+      fae_colors_desc : 'Questa sezione consente di modificare i colori del tema del forum. Seleziona un colore dal basso e premi il risultato nella finestra a destra per iniziare. Al termine, fai clic su "Aggiorna colori" per applicare i nuovi colori.',
+      'fae_colors_title-preview' : 'Anteprima',
 
-      'fae_colors_title-primary' : 'Primary Colors',
-      'fae_colors_desc-primary' : 'The options below allow you to adjust the 5 primary color shades for Forumactif Edge.',
-      'fae_label-color-p1' : 'Primary Color 1 : ',
-      'fae_label-color-p2' : 'Primary Color 2 : ',
-      'fae_label-color-p3' : 'Primary Color 3 : ',
-      'fae_label-color-p4' : 'Primary Color 4 : ',
-      'fae_label-color-p5' : 'Primary Color 5 : ',
+      'fae_colors_title-primary' : 'Colori primari',
+      'fae_colors_desc-primary' : 'Le seguenti opzioni consentono di regolare le 5 sfumature di colore primarie per Forumactif Edge.',
+      'fae_label-color-p1' : 'Colore primario 1: ',
+      'fae_label-color-p2' : 'Colore primario 2: ',
+      'fae_label-color-p3' : 'Colore primari 3: ',
+      'fae_label-color-p4' : 'Colore primari 4: ',
+      'fae_label-color-p5' : 'Colore primari 5: ',
 
-      'fae_colors_title-general' : 'General Colors',
-      'fae_colors_desc-general' : 'The options below allow you to change various colors of the forum.',
-      'fae_label-color-bg1' : 'Main Background Color 1 : ',
-      'fae_label-color-bg2' : 'Main Background Color 2 : ',
-      'fae_label-color-m1' : 'Main Border Color : ',
-      'fae_label-color-bg3' : 'Vote Bar / Checkbox Color : ',
-      'fae_label-color-bg4' : 'Forum Read / Offline Color : ',
-      'fae_label-color-bg5' : 'Online / Thanks Color : ',
-      'fae_label-color-bg6' : 'Row Hover Color : ',
-      'fae_label-color-m2' : 'Scrollbar Background Color : ',
+      'fae_colors_title-general' : 'Colori generali',
+      'fae_colors_desc-general' : 'Le opzioni riportate di seguito consentono di modificare vari colori del forum.',
+      'fae_label-color-bg1' : 'Colore di sfondo principale 1: ',
+      'fae_label-color-bg2' : 'Colore di sfondo principale 2: ',
+      'fae_label-color-m1' : 'Colore principale del bordo: ',
+      'fae_label-color-bg3' : 'Barra di voto / casella di controllo: ',
+      'fae_label-color-bg4' : 'Forum Read / Colore Offline: ',
+      'fae_label-color-bg5' : 'Online / Colore Ringraziamento : ',
+      'fae_label-color-bg6' : 'Colore hover riga: ',
+      'fae_label-color-m2' : 'Colore di sfondo della barra di scorrimento: ',
 
-      'fae_colors_title-font' : 'Font Settings',
-      'fae_colors_desc-font' : 'The options below allow you to change the font color, size, and family, of the forum.',
-      'fae_label-color-f0' : 'Text Color : ',
-      'fae_label-color-f5' : 'Link Color : ',
-      'fae_label-color-f6' : 'Visited Link Color : ',
-      'fae_label-color-f7' : 'Hover Link Color : ',
-      'fae_label-color-f8' : 'Active Link Color : ',
-      'fae_label-color-f1' : 'Main Font Size : ',
-      'fae_label-color-f2' : 'Main Font Face : ',
-      'fae_label-color-f3' : 'Title Font Face : ',
-      'fae_label-color-f4' : 'Code Font Face : ',
+      'fae_colors_title-font' : 'Impostazioni del carattere',
+      'fae_colors_desc-font' : 'Le opzioni sotto consentono di modificare il colore del font, la dimensione del forum.',
+      'fae_label-color-f0' : 'Colore del testo: ',
+      'fae_label-color-f5' : 'Colore dei link: ',
+      'fae_label-color-f6' : 'Colore Link Visitati: ',
+      'fae_label-color-f7' : 'Colore Link Hover: ',
+      'fae_label-color-f8' : 'Colore Link Cliccati: ',
+      'fae_label-color-f1' : 'Dimensione carattere principale: ',
+      'fae_label-color-f2' : 'Carattere Principale: ',
+      'fae_label-color-f3' : 'Titolo Font Face: ',
+      'fae_label-color-f4' : 'Codice Font Face: ',
 
-      fae_save_colors : 'Update Colors',
-      fae_default_colors : 'Revert Back to Default Colors',
+      fae_save_colors : 'Aggiorna i colori',
+      fae_default_colors : 'Ritorna ai colori predefiniti',
 
-      confirm_update : 'Are you sure you want to delete your custom color settings, and revert back to the default forum colors?',
-      updating : 'Updating the forum colors..',
-      updated : 'Forum colors have been updated successfully !',
-      reverting : 'Reverting back to default color settings..',
-      reverted : 'Forum colors have been changed back to their default settings !'
+      confirm_update : 'Sei sicuro di voler eliminare le impostazioni personalizzate del colore e tornare ai colori predefiniti del forum?',
+      updating : 'Aggiornamento dei colori del forum...',
+      updated : 'I colori del forum sono stati aggiornati con successo!',
+      reverting : 'Ripristino delle impostazioni predefinite del colore...',
+      reverted : 'I colori del forum sono stati modificati come nelle impostazioni predefinite!'
     },
 
 
@@ -276,16 +276,16 @@ FAE.lang = {
       title : 'Gestione tema',
       fae_theme_desc : 'Qui potrai gestire tutte le impostazioni del tema!',
 
-      'fae_label-theme' : 'Seleziona un tema :',
+      'fae_label-theme' : 'Seleziona un tema:',
       'fae_theme_tip-theme' : 'Seleziona il tema che si vuole importare!',
 
-      'fae_label-color' : 'Seleziona il colore :',
+      'fae_label-color' : 'Seleziona il colore:',
       'fae_theme_tip-color' : 'Colore Default.',
 
-      'fae_label-minify' : 'Minimizza foglio di stile :',
+      'fae_label-minify' : 'Minimizza foglio di stile:',
       'fae_theme_tip-minify' : 'Minimizzare il foglio di stile, non è l\'ideale per l\'editing. Se si vuole moifiare il foglio di stile, scegliere "NO".',
 
-      'fae_label-rtl' : 'Destra per Sinistra :',
+      'fae_label-rtl' : 'Destra per Sinistra:',
       'fae_theme_tip-rtl' : 'Cambia la direzione del testo: da destra a sinistra, o da sinistra a destra.',
 
       fae_import_theme : 'Importa tema',
@@ -294,30 +294,30 @@ FAE.lang = {
 
 
     plugin_management : {
-      title : 'Plugin Management',
-      fae_plugin_desc : 'This section allows you to manage the settings of core-plugins for Forumactif Edge.',
+      title : 'Gestione Plugin',
+      fae_plugin_desc : 'Questa sezione consente di gestire le impostazioni dei plug-in core per Forumactif Edge.',
 
-      'fae_label-qnp' : 'Quick Navigation Position : ',
-      'fae_plugin_tip-qnp' : 'Position of the Quick Navigation side menu.',
+      'fae_label-qnp' : 'Navigazione veloce Posizione: ',
+      'fae_plugin_tip-qnp' : 'Posizione del menu laterale di Navigazione rapida.',
 
-      'fae_label-qns' : 'Always show Quick Navigation : ',
-      'fae_plugin_tip-qns' : 'By default the Quick Navigation only shows when the navbar is out of view. Enabling this option will allow the Quick Navigation to always be visible.',
+      'fae_label-qns' : 'Mostra sempre la Navigazione rapida: ',
+      'fae_plugin_tip-qns' : 'Di default, la Navigazione rapida viene visualizzata solo quando la barra di navigazione è fuori visualizzazione. L\'attivazione di questa opzione permetterà che la Navigazione rapida sia sempre visibile.',
 
-      'fae_label-tso' : 'Theme Selector Options : ',
-      'fae_plugin_tip-tso' : 'This tool allows you to edit the theme selector list, giving you the option to add, delete, and edit themes.',
+      'fae_label-tso' : 'Opzioni del selettore dei temi: ',
+      'fae_plugin_tip-tso' : 'Questo strumento consente di modificare l\'elenco dei selettori di tema, dando la possibilità di aggiungere, eliminare e modificare i temi.',
 
-      fae_themer_add : 'New Theme',
-      fae_themer_import : 'Import Default',
-      fae_import_confirm : 'Do you want to import the default theme list from Github ?',
-      fae_importing : 'Contacting Github, please wait...',
-      fae_compiling : 'Compiling themes, please wait...',
+      fae_themer_add : 'Nuovo Tema',
+      fae_themer_import : 'Importa predefinito',
+      fae_import_confirm : 'Vuoi importare l\'elenco di temi predefinito da Github?',
+      fae_importing : 'Contattando Github, si prega di attendere...',
+      fae_compiling : 'Compilando i temi, si prega di attendere...',
 
-      fae_save_plugins : 'Update Plugins',
-      fae_finding_plugins : 'Locating [FA EDGE] ALL.JS...',
-      fae_plugins_found : '[FA EDGE] ALL.JS found !',
-      fae_getting_plugins : 'Getting [FA EDGE] ALL.JS...',
-      fae_updating_plugins : 'Updating your plugins...',
-      fae_plugins_updated : 'Plugins have been updated successfully !'
+      fae_save_plugins : 'Aggiornamento Plugins',
+      fae_finding_plugins : 'Individuazione [FA EDGE] ALL.JS...',
+      fae_plugins_found : '[FA EDGE] ALL.JS trovato!',
+      fae_getting_plugins : 'Ottenendo [FA EDGE] ALL.JS...',
+      fae_updating_plugins : 'Aggiornando i tuoi plugins...',
+      fae_plugins_updated : 'I plugin sono stati aggiornati correttamente!'
     }
 
   }

@@ -4,7 +4,7 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.2.7';
+  FAE.cp_rev = '1.2.8';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -168,7 +168,7 @@
       '#fae_maintenance i { font-size:28px; vertical-align:-4px; margin-right:6px; }'+
       '#fae_maintenance a { color:#666; text-decoration:underline; }'+
       '#fae_maintenance a:hover { color:#000; text-decoration:none; }'+
-      '#fae_themer { display:inline-block; }'+
+      '#fae_themer { display:inline-block; position:relative; }'+
       '#fae_themer_add { background:#8B5 !important; }'+
       '#fae_themer_add:hover { background:#7A4 !important; }'+
       '#fae_options [disabled] { opacity:0.5; }'+
@@ -1443,7 +1443,8 @@
           }
 
           opts.insertAdjacentHTML('beforeend', '<div class="theme_opt"><input class="color_block fae_color_picker" type="' + (FAE.colorSupport ? 'color' : 'text') + '" value="' + color + '"/><input class="color_name fae_text_input" type="text" value="' + ( (FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_themer_add) || 'New Theme' ) + ' ' + document.querySelectorAll('.theme_opt').length + '"/><i class="fa fa-times"></i><i class="fa fa-sort-up"></i><i class="fa fa-sort-desc"></i></div>');
-          opts.lastChild.scrollIntoView();
+
+          opts.scrollTop = opts.lastChild.offsetTop - 16;
         };
 
         // theme option events
@@ -1467,7 +1468,9 @@
               break;
           }
 
-          that.parentNode.scrollIntoView();
+          if (that && that.parentNode) {
+            opts.scrollTop = that.parentNode.offsetTop - 16;
+          }
         });
 
 

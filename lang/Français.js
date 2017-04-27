@@ -1,5 +1,5 @@
 // French Translation
-// Tanslation by DDril and Gae (http://fmdesign.forumotion.com/t960-forumactif-edge-french-translation#19376)
+// Tanslation by DDril, Gae, and Milouze14 (http://fmdesign.forumotion.com/t960-forumactif-edge-french-translation#19376)
 FAE.lang = {
 
   language : 'Français',
@@ -191,7 +191,7 @@ FAE.lang = {
 
 
     welcome_message : 'Bienvenue au Panneau de contrôle de Forumactif Edge! Le panneau de contrôle de Forumactif Edge vous permettra d\'installer, de mettre à jour, de traduire et de personnaliser Forumactif Edge. Pour en savoir plus sur l\'utilisation du panneau de contrôle de Forumactif Edge, il est recommandé de lire le <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">Guide du panneau de Contrôle</a> sur le wiki Github.',
-    auto_version_local : 'Votre version installé de Forumactif Edge est : <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
+    auto_version_local : 'Votre version installée de Forumactif Edge est : <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
     auto_version_github : 'La version actuelle de Forumactif Edge sur Github est : <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
     update_waiting : 'Des mises à jour sont disponibles pour Forumactif Edge. Consultez <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">le wiki</a> pour obtenir plus d\'informations à propos de la mise à jour.',
     release_list : '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Cliquez-ici</a> pour apercevoir la liste complète des mises à jours pour Forumactif Edge.',

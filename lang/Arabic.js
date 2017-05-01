@@ -82,15 +82,15 @@ FAE.lang = {
       widget_menu_tooltip : "menu.title = 'قائمة جانبية';",
 
       select_theme : 'الرجاء إختيار لون',
-      custom_theme : 'Custom theme',
+      custom_theme : 'ستايل مخصص',
       random_theme : 'لون عشوائي',
       default_theme : 'اللون الافتراضي',
 
-      dark_mode : 'Dark Mode : ',
-      light_mode : 'Light Mode : ',
+      dark_mode : 'الوضع الليلي:',
+      light_mode : 'الوضع المضىء:',
 
-      code_copy : 'Copy Code',
-      code_copied : 'Copied !',
+      code_copy : 'نسخ الكود',
+      code_copied : 'تم النسخ !',
 
       toolbar_search_placeholder : 'بحث...',
 
@@ -178,23 +178,23 @@ FAE.lang = {
     fae_translate_start : 'سيتم ترجمة منتداك خلال لحظات. الرجاء الانتظار...',
     fae_translate_get : 'الحصول على بيانات اللغة {LANG}',
     fae_translate_loaded : 'تم تحميل بيانات اللغة. سيتم الترجمة خلال لحظات... الرجاء عدم إقفال هذه النافذة!',
-    fae_translate_submit : 'Submit',
-    fae_translate_submit_option : 'Submit a New Translation',
-    fae_translate_submit_confirm : 'You have chosen to submit a new translation. If this is correct, please click "OK" and proceed to the translation page, otherwise click "cancel" and choose another language.',
+    fae_translate_submit : 'تأكيد',
+    fae_translate_submit_option : 'تأكيد الترجمة الجديدة',
+    fae_translate_submit_confirm : 'لقد إخترت تطبيق ترجمة جديدة. الرجاء الضغط على "موافق" للمتابعة، أو الضغط على "إلغاء" ثم اختيار لغة ترجمة أخرى',
 
-    configuration_title : 'Configuration',
-    configuration_desc : 'Clicking the buttons below will take you to different sections of the control panel, which allow you to manage the Configuration of Forumactif Edge. Go ahead and explore each of these sections, so you can get started on personalizing your theme. If you need more information, <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">click here</a> to view the control panel guide.',
+    configuration_title : 'الإعدادات',
+    configuration_desc : 'الضغط على أحد الأزرار التالية سينقلك نحو الاقسام المتعددة للوحة التحكم، و التي ستمكنك من إدارة نسختك من Forumactif Edge. هيا، قم بإكتشافها الآن!\\\n\\\n <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">إضغط هنا</a> لمعاينة دليل لوحة التحكم',
 
-    fae_err_not_founder : 'فقط <a href="/u1">مؤسس المنتدى</a> يمكنه إستعمال هذه اللوحة. ',
-    co_admin : 'Only <a href="/u1">the founder</a> can access the installation, update, and translation actions. Since Forumactif Edge is installed, you can still access some core features for personalizing your forum via the "Configuration" section below.',
-    reload_page : 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.',
+    fae_err_not_founder : 'وحده <a href="/u1">مؤسس المنتدى</a> يمكنه الدخول لصفحة التثبيت. الرجاء الاتصال به لمساعتدك في تثبيت Forumactif Edge',
+    co_admin : 'وحده <a href="/u1">مؤسس المنتدى</a> بإمكانه الوصول لصفحة التثبيت، التحديث، و الترجمة. بما أن Forumactif Edge مثبّت، يمكنك التحكم ببعض الميزات عير قسم "الإعدادات"',
+    reload_page : 'الرجاء <a href="javascript:window.location.reload();">الضغط هنا</a> لإعادة تحميل الصفحة',
 
 
-    welcome_message : 'Welcome to the FAE Control Panel! The FAE CP will allow you to install, update, translate, and customize Forumactif Edge. To learn more about using the FAE CP, it is recommended that you read over the <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">Control Panel Guide</a> on the Github wiki.',
-    auto_version_local : 'Your installed version of Forumactif Edge is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
-    auto_version_github : 'The current release of Forumactif Edge on Github is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
-    update_waiting : 'There are updates available for Foruactif Edge. Check out <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">the wiki</a> for more information about updating.',
-    release_list : '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of releases for Forumactif Edge.',
+    welcome_message : 'أهلا بك في لوحة التحكم! تمكّنك هذه اللوحة من تثبيت، تحديث، ترجمة و تخصيص منتداك من نسخة Forumactif Edge. للمزيد من المعلومات حول كيفية استعمال اللوحة، الرجاء الاطلاع على <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">دليل الاستعمال</a> على Github wiki.',
+    auto_version_local : 'الاصدار الحالي: <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
+    auto_version_github : 'آخر إصدار من Forumactif Edge هو: <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
+    update_waiting : 'توجد تحديثات جديدة لـForumactif Edge. الرجاء <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank"> الضغط هنا</a> للمزيد من المعلومات',
+    release_list : '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">إضغط هنا</a> لمعاينة جميع إصدارات FAE',
 
     left : 'يسار',
     center : 'وسط',
@@ -226,49 +226,49 @@ FAE.lang = {
 
 
     colors : {
-      title : 'Colors',
-      fae_colors_desc : 'This section allows you to change the colors of your forum theme. Select a color from below and preview the result in the window on the right to get started. When you are finished, click "Update Colors" to apply your new colors.',
-      'fae_colors_title-preview' : 'Preview',
+      title : 'الألوان',
+      fae_colors_desc : 'هذا القسم يسمح لك بتعديل ألوان منتداك. يمكنك إختيار لون أدناه و معاينة النتائج على يمين الشاشة. عند الانتهاء، الرجاء الضغط على "تحديث الالوان" لحفظ الالوان الجديدة.',
+      'fae_colors_title-preview' : 'معاينة',
 
-      'fae_colors_title-primary' : 'Primary Colors',
-      'fae_colors_desc-primary' : 'The options below allow you to adjust the 5 primary color shades for Forumactif Edge.',
-      'fae_label-color-p1' : 'Primary Color 1 : ',
-      'fae_label-color-p2' : 'Primary Color 2 : ',
-      'fae_label-color-p3' : 'Primary Color 3 : ',
-      'fae_label-color-p4' : 'Primary Color 4 : ',
-      'fae_label-color-p5' : 'Primary Color 5 : ',
+      'fae_colors_title-primary' : 'الألوان الرئيسيى',
+      'fae_colors_desc-primary' : 'يمكنك من هنا تعديل الالوان الاساسية الخمس لستايل FAE',
+      'fae_label-color-p1' : 'اللون الرئيسي 1 :',
+      'fae_label-color-p2' : 'اللون الرئيسي 2 :',
+      'fae_label-color-p3' : 'اللون الرئيسي 3 :',
+      'fae_label-color-p4' : 'اللون الرئيسي 4 :',
+      'fae_label-color-p5' : 'اللون الرئيسي 5 :',
 
-      'fae_colors_title-general' : 'General Colors',
-      'fae_colors_desc-general' : 'The options below allow you to change various colors of the forum.',
-      'fae_label-color-bg1' : 'Main Background Color 1 : ',
-      'fae_label-color-bg2' : 'Main Background Color 2 : ',
-      'fae_label-color-m1' : 'Main Border Color : ',
-      'fae_label-color-bg3' : 'Vote Bar / Checkbox Color : ',
-      'fae_label-color-bg4' : 'Forum Read / Offline Color : ',
-      'fae_label-color-bg5' : 'Online / Thanks Color : ',
-      'fae_label-color-bg6' : 'Row Hover Color : ',
-      'fae_label-color-m2' : 'Scrollbar Background Color : ',
+      'fae_colors_title-general' : 'الالوان العامة',
+      'fae_colors_desc-general' : 'يمكنك من هنا تشخيص ألوان منتداك بالكامل',
+      'fae_label-color-bg1' : 'اللون الرئيسي 1 للخلفية :',
+      'fae_label-color-bg2' : 'اللون الرئيسي 2 للخلفية :',
+      'fae_label-color-m1' : 'اللون الرئيسي للإطار :',
+      'fae_label-color-bg3' : 'لون شريط التصويت / مربع الاختيار :',
+      'fae_label-color-bg4' : 'لون منتدى بدون مساهمات جديدة / لون زر "غير متصل" :',
+      'fae_label-color-bg5' : 'لون زر "تم الشكر" و زر "متصل" :',
+      'fae_label-color-bg6' : 'لون الفئة (محددة) :',
+      'fae_label-color-m2' : 'لون خلفية شريط التمرير :',
 
-      'fae_colors_title-font' : 'Font Settings',
-      'fae_colors_desc-font' : 'The options below allow you to change the font color, size, and family, of the forum.',
-      'fae_label-color-f0' : 'Text Color : ',
-      'fae_label-color-f5' : 'Link Color : ',
-      'fae_label-color-f6' : 'Visited Link Color : ',
-      'fae_label-color-f7' : 'Hover Link Color : ',
-      'fae_label-color-f8' : 'Active Link Color : ',
-      'fae_label-color-f1' : 'Main Font Size : ',
-      'fae_label-color-f2' : 'Main Font Face : ',
-      'fae_label-color-f3' : 'Title Font Face : ',
-      'fae_label-color-f4' : 'Code Font Face : ',
+      'fae_colors_title-font' : 'إعدادات الخطوط',
+      'fae_colors_desc-font' : 'يمكنك من هنا تغيير نوع الخط، حجمه، و لونه.',
+      'fae_label-color-f0' : 'لون الكتابة :',
+      'fae_label-color-f5' : 'لون الروابط :',
+      'fae_label-color-f6' : 'لون الروابط التي تمت زيارتها من قبل :',
+      'fae_label-color-f7' : 'لون الروابط - عند تمرير الفأرة عليها - :',
+      'fae_label-color-f8' : 'لون الروابط النشيطة :',
+      'fae_label-color-f1' : 'حجم الخط الرئيسي :',
+      'fae_label-color-f2' : 'نوع الخط الرئيسي :',
+      'fae_label-color-f3' : 'نوع خط العناوين :',
+      'fae_label-color-f4' : 'نوع خط الاكواد البرمجية :',
 
-      fae_save_colors : 'Update Colors',
-      fae_default_colors : 'Revert Back to Default Colors',
+      fae_save_colors : 'تحديث الألوان',
+      fae_default_colors : 'العودة للألوان الافتراضية',
 
-      confirm_update : 'Are you sure you want to delete your custom color settings, and revert back to the default forum colors?',
-      updating : 'Updating the forum colors..',
-      updated : 'Forum colors have been updated successfully !',
-      reverting : 'Reverting back to default color settings..',
-      reverted : 'Forum colors have been changed back to their default settings !'
+      confirm_update : 'هل أنت متأكد من رغبتك حذف الالوان الحالية و استبدالها بالالوان الافتراضية للمنتدى؟',
+      updating : 'يتم تحديث الألوان...',
+      updated : 'تم تحديث ألوان المنتدى بنجاح!',
+      reverting : 'العودة إلى الالوان الافتراضية للمنتدى....',
+      reverted : 'تم العودة للألوان الافتراضية للمنتدى!'
     },
 
 
@@ -294,30 +294,30 @@ FAE.lang = {
 
 
     plugin_management : {
-      title : 'Plugin Management',
-      fae_plugin_desc : 'This section allows you to manage the settings of core-plugins for Forumactif Edge.',
+      title : 'إدارة الإضافات',
+      fae_plugin_desc : 'يمكنك هنا تعديل الاضافات الخاصة بـForumactif Edge',
 
-      'fae_label-qnp' : 'Quick Navigation Position : ',
-      'fae_plugin_tip-qnp' : 'Position of the Quick Navigation side menu.',
+      'fae_label-qnp' : 'موقع عارضة الجانبية :',
+      'fae_plugin_tip-qnp' : 'تحديد موقع عارضة التصفح الجانبية.',
 
-      'fae_label-qns' : 'Always show Quick Navigation : ',
-      'fae_plugin_tip-qns' : 'By default the Quick Navigation only shows when the navbar is out of view. Enabling this option will allow the Quick Navigation to always be visible.',
+      'fae_label-qns' : 'إظهار عارضة التصفح الجانبية دائما :',
+      'fae_plugin_tip-qns' : 'عادة، عارضة التصفح الجانبية تظهر فقط في حالة أزرار التصفح ليست ظاهرة. عند تفعيل هذا الخيار ستظهر العارضة دائما!',
 
-      'fae_label-tso' : 'Theme Selector Options : ',
-      'fae_plugin_tip-tso' : 'This tool allows you to edit the theme selector list, giving you the option to add, delete, and edit themes.',
+      'fae_label-tso' : 'إعدادات مدير الالوان :',
+      'fae_plugin_tip-tso' : 'يمكنك هنا تعديل كل ما يتعلق بمدير الالوان',
 
-      fae_themer_add : 'New Theme',
-      fae_themer_import : 'Import Default',
-      fae_import_confirm : 'Do you want to import the default theme list from Github ?',
-      fae_importing : 'Contacting Github, please wait...',
-      fae_compiling : 'Compiling themes, please wait...',
+      fae_themer_add : 'لون جديد',
+      fae_themer_import : 'تحميل الالوان الافتراضية',
+      fae_import_confirm : 'هل ترغب في تحميل لائحة الالوان الافتراضية من Github ؟',
+      fae_importing : 'يتم الاتصال مع Github، الرجاء الانتظار...',
+      fae_compiling : 'جاري العمل، الرجاء الانتظار...',
 
-      fae_save_plugins : 'Update Plugins',
-      fae_finding_plugins : 'Locating [FA EDGE] ALL.JS...',
-      fae_plugins_found : '[FA EDGE] ALL.JS found !',
-      fae_getting_plugins : 'Getting [FA EDGE] ALL.JS...',
-      fae_updating_plugins : 'Updating your plugins...',
-      fae_plugins_updated : 'Plugins have been updated successfully !'
+      fae_save_plugins : 'تحديث الاضافات',
+      fae_finding_plugins : 'يتم البحث عن ملف [FA EDGE] ALL.JS...',
+      fae_plugins_found : 'تم إيجاد ملف [FA EDGE] ALL.JS !',
+      fae_getting_plugins : 'جاري تحميل ملف [FA EDGE] ALL.JS...',
+      fae_updating_plugins : 'جاري تحديث الاضافات...',
+      fae_plugins_updated : 'تم تحديث الاضافات بنجاح !'
     }
 
   }

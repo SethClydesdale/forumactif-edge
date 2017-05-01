@@ -261,7 +261,7 @@ function fa_navactif() {
              'form.search-form { background-color:' + palette[2] + '; }'+
              'form.search-form input.search-keywords, input.search-button { border-color:' + palette[0] + '!important; }'+
              'input[type="text"]:hover, input.post:hover, input.inputbox:hover, textarea:hover, select:hover, input[type="text"]:focus, input.post:focus, input.inputbox:focus, textarea:focus, select:focus, body div.sceditor-dropdown input:focus, body div.sceditor-dropdown textarea:focus, .fa_pseudo_checkbox:hover, .fa_pseudo_radio:hover, .sceditor-container, h2.post-content, h3.post-content, h4.post-content, .lastpost-avatar, #wio_new_avatar, .avatar-mini img, .avatar, #chatbox, #chatbox_members, #chatbox_members > h4.away, #chatbox_members > ul.away-users, body #chatbox .cb-avatar { border-color:' + palette[1] + ' !important; }'+
-             'a { color:' + palette[3] + '; }'+
+             'a, a:link, a:visited { color:' + palette[3] + '; }'+
              'a:hover, a:active { color:' + palette[2] + '; }'+
              '::selection { background-color:' + palette[1] + '; } ::-moz-selection { background-color:' + palette[1] + '; }'+
              '::-webkit-scrollbar-thumb, ::-webkit-scrollbar-button:single-button { background-color:' + palette[1] + '; }'+

@@ -97,7 +97,12 @@ FAE.step = [
         FAE.translate({
           from : FAE.lang_current.javascripts['[FA EDGE] ALL.JS'],
             to : FAE.lang_new.javascripts['[FA EDGE] ALL.JS']
-        }, d) : d;
+        },
+          d.replace(
+            "FAE.board_lang = 'English';",
+            "FAE.board_lang =  '"+ FAE.lang_new.language +"';"
+          )
+        ) : d;
     }
   },
 

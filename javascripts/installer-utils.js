@@ -1791,8 +1791,8 @@
             '<span class="fae_label">Language : </span>'+
             FAE.lang_list
             .replace(/id=".*?"/, 'id="fae_install_lang"')
-            .replace('value="English"', 'value="English" selected')+
-            .replace('<option value="ADD" id="translate_submit_option">Submit a New Translation</option>', '')
+            .replace('value="English"', 'value="English" selected')
+            .replace('<option value="ADD" id="translate_submit_option">Submit a New Translation</option>', '')+
           '</div>'
         );
       }

@@ -32,7 +32,12 @@ FAE.step = [
     type : 'GET',
      url : FAE.raw + 'css/fa_edge.min.css',
     func : function(d) {
-      FAE.step[FAE.index + 1].data.edit_code = d;
+      FAE.step[FAE.index + 1].data.edit_code =
+      FAE.translate ?
+        FAE.translate({
+          from : FAE.lang_current.css,
+            to : FAE.lang_new.css
+        }, d) : d;
     }
   },
 
@@ -87,7 +92,12 @@ FAE.step = [
     type : 'GET',
      url : FAE.raw + 'javascripts/in-all-the-pages/all.js',
     func : function(d) {
-      FAE.step[FAE.index + 1].data.content = d;
+      FAE.step[FAE.index + 1].data.content =
+      FAE.translate ?
+        FAE.translate({
+          from : FAE.lang_current.javascripts['[FA EDGE] ALL.JS'],
+            to : FAE.lang_new.javascripts['[FA EDGE] ALL.JS']
+        }, d) : d;
     }
   },
 
@@ -133,7 +143,12 @@ FAE.step = [
     type : 'GET',
      url : FAE.raw + 'javascripts/in-the-topics/topics.js',
     func : function(d) {
-      FAE.step[FAE.index + 1].data.content = d;
+      FAE.step[FAE.index + 1].data.content =
+      FAE.translate ?
+        FAE.translate({
+          from : FAE.lang_current.javascripts['[FA EDGE] TOPICS.JS'],
+            to : FAE.lang_new.javascripts['[FA EDGE] TOPICS.JS']
+        }, d) : d;
     }
   },
 
@@ -569,7 +584,12 @@ FAE.step = [
     type : 'GET',
      url : FAE.raw + 'templates/general/overall_footer_end.html',
     func : function(d) {
-      FAE.step[FAE.index + 1].data.template = d;
+      FAE.step[FAE.index + 1].data.template =
+      FAE.translate ?
+        FAE.translate({
+          from : FAE.lang_current.templates['overall_footer_end.html'],
+            to : FAE.lang_new.templates['overall_footer_end.html']
+        }, d) : d;
     }
   },
 
@@ -599,7 +619,12 @@ FAE.step = [
     type : 'GET',
      url : FAE.raw + 'templates/general/overall_header.html',
     func : function(d) {
-      FAE.step[FAE.index + 1].data.template = d;
+      FAE.step[FAE.index + 1].data.template =
+      FAE.translate ?
+        FAE.translate({
+          from : FAE.lang_current.templates['overall_header.html'],
+            to : FAE.lang_new.templates['overall_header.html']
+        }, d) : d;
     }
   },
 
@@ -779,7 +804,12 @@ FAE.step = [
     type : 'GET',
      url : FAE.raw + 'templates/general/viewcomments_body.html',
     func : function(d) {
-      FAE.step[FAE.index + 1].data.template = d;
+      FAE.step[FAE.index + 1].data.template =
+      FAE.translate ?
+        FAE.translate({
+          from : FAE.lang_current.templates.logged_out_reply,
+            to : FAE.lang_new.templates.logged_out_reply
+        }, d) : d;
     }
   },
 
@@ -869,7 +899,12 @@ FAE.step = [
     type : 'GET',
      url : FAE.raw + 'templates/general/viewtopic_body.html',
     func : function(d) {
-      FAE.step[FAE.index + 1].data.template = d;
+      FAE.step[FAE.index + 1].data.template =
+      FAE.translate ?
+        FAE.translate({
+          from : FAE.lang_current.templates.logged_out_reply,
+            to : FAE.lang_new.templates.logged_out_reply
+        }, d) : d;
     }
   },
 
@@ -2890,14 +2925,14 @@ FAE.step = [
     type : 'POST',
      url : 'part=themes&sub=logos&mode=depart&page=general&mode=general&extended_admin=1',
     data : {
-      i_logo : 'http://i35.servimg.com/u/f35/18/21/41/30/fa_edg15.png',
+      i_logo : 'https://i35.servimg.com/u/f35/18/21/41/30/fa_edg15.png',
       i_background : FAE.eGIF,
       i_back_title : FAE.eGIF,
       i_back_catg : FAE.eGIF,
       i_back_catd : FAE.eGIF,
-      i_vote_lcap : 'http://i86.servimg.com/u/f86/18/21/41/30/poll_c10.gif?poll=cap_l',
-      i_voting_bar : 'http://i86.servimg.com/u/f86/18/21/41/30/poll_m10.gif?poll=m',
-      i_vote_rcap : 'http://i86.servimg.com/u/f86/18/21/41/30/poll_c10.gif?poll=cap_r',
+      i_vote_lcap : 'https://i86.servimg.com/u/f86/18/21/41/30/poll_c10.gif?poll=cap_l',
+      i_voting_bar : 'https://i86.servimg.com/u/f86/18/21/41/30/poll_m10.gif?poll=m',
+      i_vote_rcap : 'https://i86.servimg.com/u/f86/18/21/41/30/poll_c10.gif?poll=cap_r',
       i_icon_mini_index : FAE.eGIF,
       i_icon_mini_calendar : FAE.eGIF,
       i_icon_mini_gallery : FAE.eGIF,
@@ -2930,12 +2965,12 @@ FAE.step = [
     type : 'POST',
      url : 'part=themes&sub=logos&mode=depart&page=forum&mode=forum&extended_admin=1',
     data : {
-      i_category : 'http://illiweb.com/fa/empty.gif?type=category&state=old',
-      i_category_new : 'http://illiweb.com/fa/empty.gif?type=category&state=new',
-      i_category_locked : 'http://illiweb.com/fa/empty.gif?type=category&locked=true',
-      i_folder_big : 'http://illiweb.com/fa/empty.gif?type=forum&state=old',
-      i_folder_new_big : 'http://illiweb.com/fa/empty.gif?type=forum&state=new',
-      i_folder_locked_big : 'http://illiweb.com/fa/empty.gif?type=forum&locked=true',
+      i_category : 'https://illiweb.com/fa/empty.gif?type=category&state=old',
+      i_category_new : 'https://illiweb.com/fa/empty.gif?type=category&state=new',
+      i_category_locked : 'https://illiweb.com/fa/empty.gif?type=category&locked=true',
+      i_folder_big : 'https://illiweb.com/fa/empty.gif?type=forum&state=old',
+      i_folder_new_big : 'https://illiweb.com/fa/empty.gif?type=forum&state=new',
+      i_folder_locked_big : 'https://illiweb.com/fa/empty.gif?type=forum&locked=true',
       page : 'forum',
       submit : 'Save'
     }
@@ -2947,25 +2982,25 @@ FAE.step = [
     type : 'POST',
      url : 'part=themes&sub=logos&mode=depart&page=topics&mode=topics&extended_admin=1',
     data : {
-      i_folder : 'http://illiweb.com/fa/empty.gif?type=topic&state=old',
-      i_folder_new : 'http://illiweb.com/fa/empty.gif?type=topic&state=new',
-      i_folder_new_hot : 'http://illiweb.com/fa/empty.gif?type=topic&state=new&hot=true',
-      i_folder_lock : 'http://illiweb.com/fa/empty.gif?type=topic&state=old&locked=true',
-      i_folder_lock_new : 'http://illiweb.com/fa/empty.gif?type=topic&state=new&locked=true',
-      i_folder_hot : 'http://illiweb.com/fa/empty.gif?type=topic&state=old&hot=true',
-      i_folder_announce : 'http://illiweb.com/fa/empty.gif?type=announcement&state=old',
-      i_folder_announce_new : 'http://illiweb.com/fa/empty.gif?type=announcement&state=new',
-      i_folder_global_announce : 'http://illiweb.com/fa/empty.gif?type=global&state=old',
-      i_folder_global_announce_new : 'http://illiweb.com/fa/empty.gif?type=global&state=new',
-      i_folder_sticky : 'http://illiweb.com/fa/empty.gif?type=pinned&state=old',
-      i_folder_sticky_new : 'http://illiweb.com/fa/empty.gif?type=pinned&state=new',
-      i_topic_delete : 'http://i86.servimg.com/u/f86/18/21/41/30/delete11.png?color=primary&size=s',
-      i_topic_lock : 'http://i86.servimg.com/u/f86/18/21/41/30/lock-f10.png?color=primary&size=s',
-      i_topic_merge : 'http://i86.servimg.com/u/f86/18/21/41/30/merge-10.png?color=primary&size=s',
-      i_topic_move : 'http://i86.servimg.com/u/f86/18/21/41/30/move-f10.png?color=primary&size=s',
-      i_topic_split : 'http://i86.servimg.com/u/f86/18/21/41/30/split-10.png?color=primary&size=s',
-      i_topic_trashcan : 'http://i86.servimg.com/u/f86/18/21/41/30/basket10.png?color=primary&size=s',
-      i_topic_unlock : 'http://i86.servimg.com/u/f86/18/21/41/30/unlock10.png?color=primary&size=s',
+      i_folder : 'https://illiweb.com/fa/empty.gif?type=topic&state=old',
+      i_folder_new : 'https://illiweb.com/fa/empty.gif?type=topic&state=new',
+      i_folder_new_hot : 'https://illiweb.com/fa/empty.gif?type=topic&state=new&hot=true',
+      i_folder_lock : 'https://illiweb.com/fa/empty.gif?type=topic&state=old&locked=true',
+      i_folder_lock_new : 'https://illiweb.com/fa/empty.gif?type=topic&state=new&locked=true',
+      i_folder_hot : 'https://illiweb.com/fa/empty.gif?type=topic&state=old&hot=true',
+      i_folder_announce : 'https://illiweb.com/fa/empty.gif?type=announcement&state=old',
+      i_folder_announce_new : 'https://illiweb.com/fa/empty.gif?type=announcement&state=new',
+      i_folder_global_announce : 'https://illiweb.com/fa/empty.gif?type=global&state=old',
+      i_folder_global_announce_new : 'https://illiweb.com/fa/empty.gif?type=global&state=new',
+      i_folder_sticky : 'https://illiweb.com/fa/empty.gif?type=pinned&state=old',
+      i_folder_sticky_new : 'https://illiweb.com/fa/empty.gif?type=pinned&state=new',
+      i_topic_delete : 'https://i86.servimg.com/u/f86/18/21/41/30/delete11.png?color=primary&size=s',
+      i_topic_lock : 'https://i86.servimg.com/u/f86/18/21/41/30/lock-f10.png?color=primary&size=s',
+      i_topic_merge : 'https://i86.servimg.com/u/f86/18/21/41/30/merge-10.png?color=primary&size=s',
+      i_topic_move : 'https://i86.servimg.com/u/f86/18/21/41/30/move-f10.png?color=primary&size=s',
+      i_topic_split : 'https://i86.servimg.com/u/f86/18/21/41/30/split-10.png?color=primary&size=s',
+      i_topic_trashcan : 'https://i86.servimg.com/u/f86/18/21/41/30/basket10.png?color=primary&size=s',
+      i_topic_unlock : 'https://i86.servimg.com/u/f86/18/21/41/30/unlock10.png?color=primary&size=s',
       page : 'topics',
       submit : 'Save'
     }
@@ -2977,29 +3012,29 @@ FAE.step = [
     type : 'POST',
      url : 'part=themes&sub=logos&mode=depart&page=icons&mode=icons&extended_admin=1',
     data : {
-      i_icon_minicat : 'http://i86.servimg.com/u/f86/18/21/41/30/post-f10.png',
-      i_icon_minicat_new : 'http://i86.servimg.com/u/f86/18/21/41/30/post-n10.png',
-      i_icon_minicat_locked : 'http://i86.servimg.com/u/f86/18/21/41/30/lock-f11.png',
-      i_icon_minitime : 'http://i86.servimg.com/u/f86/18/21/41/30/clock-10.png',
-      i_icon_minipost : 'http://i86.servimg.com/u/f86/18/21/41/30/post-f10.png',
-      i_icon_minipost_new : 'http://i86.servimg.com/u/f86/18/21/41/30/post-n10.png',
-      i_icon_minipost_lock : 'http://i86.servimg.com/u/f86/18/21/41/30/lock-f11.png',
-      i_icon_minipost_participate : 'http://i86.servimg.com/u/f86/18/21/41/30/partic10.png',
-      i_icon_latest_reply : 'http://i86.servimg.com/u/f86/18/21/41/30/lastpo10.png',
-      i_icon_newest_reply : 'http://i86.servimg.com/u/f86/18/21/41/30/lastpo11.png',
-      i_icon_calendar : 'http://i86.servimg.com/u/f86/18/21/41/30/calend10.png',
-      i_icon_tiny_topic : 'http://i86.servimg.com/u/f86/18/21/41/30/calend11.png',
-      i_icon_tiny_profile : 'http://i86.servimg.com/u/f86/18/21/41/30/birthd10.png',
-      i_icon_gender_male : 'http://i86.servimg.com/u/f86/18/21/41/30/male-f10.png',
-      i_icon_gender_female : 'http://i86.servimg.com/u/f86/18/21/41/30/female10.png',
-      i_up_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/up-f10.png',
-      i_down_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/down-f10.png',
-      i_left_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/prev-f10.png',
-      i_right_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/next-f10.png',
-      i_tabs_less : 'http://i86.servimg.com/u/f86/18/21/41/30/minus-11.png',
-      i_tabs_more : 'http://i86.servimg.com/u/f86/18/21/41/30/plus-f11.png',
-      i_icon_mini_online : 'http://i86.servimg.com/u/f86/18/21/41/30/online10.png',
-      i_icon_mini_offline : 'http://i86.servimg.com/u/f86/18/21/41/30/offlin10.png',
+      i_icon_minicat : 'https://i86.servimg.com/u/f86/18/21/41/30/post-f10.png',
+      i_icon_minicat_new : 'https://i86.servimg.com/u/f86/18/21/41/30/post-n10.png',
+      i_icon_minicat_locked : 'https://i86.servimg.com/u/f86/18/21/41/30/lock-f11.png',
+      i_icon_minitime : 'https://i86.servimg.com/u/f86/18/21/41/30/clock-10.png',
+      i_icon_minipost : 'https://i86.servimg.com/u/f86/18/21/41/30/post-f10.png',
+      i_icon_minipost_new : 'https://i86.servimg.com/u/f86/18/21/41/30/post-n10.png',
+      i_icon_minipost_lock : 'https://i86.servimg.com/u/f86/18/21/41/30/lock-f11.png',
+      i_icon_minipost_participate : 'https://i86.servimg.com/u/f86/18/21/41/30/partic10.png',
+      i_icon_latest_reply : 'https://i86.servimg.com/u/f86/18/21/41/30/lastpo10.png',
+      i_icon_newest_reply : 'https://i86.servimg.com/u/f86/18/21/41/30/lastpo11.png',
+      i_icon_calendar : 'https://i86.servimg.com/u/f86/18/21/41/30/calend10.png',
+      i_icon_tiny_topic : 'https://i86.servimg.com/u/f86/18/21/41/30/calend11.png',
+      i_icon_tiny_profile : 'https://i86.servimg.com/u/f86/18/21/41/30/birthd10.png',
+      i_icon_gender_male : 'https://i86.servimg.com/u/f86/18/21/41/30/male-f10.png',
+      i_icon_gender_female : 'https://i86.servimg.com/u/f86/18/21/41/30/female10.png',
+      i_up_arrow : 'https://i86.servimg.com/u/f86/18/21/41/30/up-f10.png',
+      i_down_arrow : 'https://i86.servimg.com/u/f86/18/21/41/30/down-f10.png',
+      i_left_arrow : 'https://i86.servimg.com/u/f86/18/21/41/30/prev-f10.png',
+      i_right_arrow : 'https://i86.servimg.com/u/f86/18/21/41/30/next-f10.png',
+      i_tabs_less : 'https://i86.servimg.com/u/f86/18/21/41/30/minus-11.png',
+      i_tabs_more : 'https://i86.servimg.com/u/f86/18/21/41/30/plus-f11.png',
+      i_icon_mini_online : 'https://i86.servimg.com/u/f86/18/21/41/30/online10.png',
+      i_icon_mini_offline : 'https://i86.servimg.com/u/f86/18/21/41/30/offlin10.png',
       page : 'icons',
       submit : 'Save'
     }
@@ -3010,46 +3045,46 @@ FAE.step = [
     info : 'Installing images for "Buttons"',
     type : 'POST',
      url : 'part=themes&sub=logos&mode=depart&page=buttons&mode=buttons&extended_admin=1',
-    data : {
-      i_post : 'http://i86.servimg.com/u/f86/18/21/41/30/new-to11.png?color=primary&size=m',
-      i_reply : 'http://i86.servimg.com/u/f86/18/21/41/30/post-r10.png?color=primary&size=m',
-      i_reply_locked : 'http://i86.servimg.com/u/f86/18/21/41/30/locked11.png?color=secondary&size=m',
-      i_icon_quote : 'http://i86.servimg.com/u/f86/18/21/41/30/quote-12.png?color=primary&size=s',
-      i_icon_multiquote_off : 'http://i86.servimg.com/u/f86/18/21/41/30/multi-10.png?color=primary&size=s',
-      i_icon_multiquote_on : 'http://i86.servimg.com/u/f86/18/21/41/30/multi-10.png?color=secondary&size=s',
-      i_icon_thanks_off : 'http://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=primary&size=s',
-      i_icon_thanks_on : 'http://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=secondary&size=s',
-      i_icon_edit : 'http://i86.servimg.com/u/f86/18/21/41/30/edit-e11.png?color=primary&size=s',
-      i_icon_delete : 'http://i86.servimg.com/u/f86/18/21/41/30/delete10.png?color=primary&size=s',
-      i_icon_ip : 'http://i86.servimg.com/u/f86/18/21/41/30/ip-f10.png?color=primary&size=s',
-      i_icon_report : 'http://i86.servimg.com/u/f86/18/21/41/30/report10.png?color=primary&size=s',
-      i_icon_report_new : 'http://i86.servimg.com/u/f86/18/21/41/30/report10.png?color=secondary&size=s',
-      i_icon_report_locked : 'http://i86.servimg.com/u/f86/18/21/41/30/report12.png?color=secondary&size=s',
-      i_icon_lock_report : 'http://i86.servimg.com/u/f86/18/21/41/30/report12.png?color=primary&size=s',
-      i_icon_unlock_report : 'http://i86.servimg.com/u/f86/18/21/41/30/report13.png?color=primary&size=s',
+    data : FAE.lang_new ? FAE.lang_new.images.buttons : {
+      i_post : 'https://i86.servimg.com/u/f86/18/21/41/30/new-to11.png?color=primary&size=m',
+      i_reply : 'https://i86.servimg.com/u/f86/18/21/41/30/post-r10.png?color=primary&size=m',
+      i_reply_locked : 'https://i86.servimg.com/u/f86/18/21/41/30/locked11.png?color=secondary&size=m',
+      i_icon_quote : 'https://i86.servimg.com/u/f86/18/21/41/30/quote-12.png?color=primary&size=s',
+      i_icon_multiquote_off : 'https://i86.servimg.com/u/f86/18/21/41/30/multi-10.png?color=primary&size=s',
+      i_icon_multiquote_on : 'https://i86.servimg.com/u/f86/18/21/41/30/multi-10.png?color=secondary&size=s',
+      i_icon_thanks_off : 'https://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=primary&size=s',
+      i_icon_thanks_on : 'https://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=secondary&size=s',
+      i_icon_edit : 'https://i86.servimg.com/u/f86/18/21/41/30/edit-e11.png?color=primary&size=s',
+      i_icon_delete : 'https://i86.servimg.com/u/f86/18/21/41/30/delete10.png?color=primary&size=s',
+      i_icon_ip : 'https://i86.servimg.com/u/f86/18/21/41/30/ip-f10.png?color=primary&size=s',
+      i_icon_report : 'https://i86.servimg.com/u/f86/18/21/41/30/report10.png?color=primary&size=s',
+      i_icon_report_new : 'https://i86.servimg.com/u/f86/18/21/41/30/report10.png?color=secondary&size=s',
+      i_icon_report_locked : 'https://i86.servimg.com/u/f86/18/21/41/30/report12.png?color=secondary&size=s',
+      i_icon_lock_report : 'https://i86.servimg.com/u/f86/18/21/41/30/report12.png?color=primary&size=s',
+      i_icon_unlock_report : 'https://i86.servimg.com/u/f86/18/21/41/30/report13.png?color=primary&size=s',
       i_icon_search : FAE.eGIF,
-      i_icon_profile : 'http://i86.servimg.com/u/f86/18/21/41/30/profil12.png?color=primary&size=s',
-      i_icon_www : 'http://i86.servimg.com/u/f86/18/21/41/30/websit10.png?color=primary&size=s',
-      i_icon_email : 'http://i86.servimg.com/u/f86/18/21/41/30/email-10.png?color=primary&size=s',
-      i_icon_pm : 'http://i86.servimg.com/u/f86/18/21/41/30/pm-f11.png?color=primary&size=s',
-      i_icon_fb : 'http://i86.servimg.com/u/f86/18/21/41/30/facebo11.png?color=primary&size=s',
-      i_icon_twitter : 'http://i86.servimg.com/u/f86/18/21/41/30/twitte10.png?color=primary&size=s',
-      i_icon_pinterest : 'http://i86.servimg.com/u/f86/18/21/41/30/pinter10.png?color=primary&size=s',
-      i_icon_aim : 'http://i86.servimg.com/u/f86/18/21/41/30/aim-f10.png?color=primary&size=s',
-      i_icon_icq_add : 'http://i86.servimg.com/u/f86/18/21/41/30/icq-f10.png?color=primary&size=s',
-      i_icon_msnm : 'http://i86.servimg.com/u/f86/18/21/41/30/msn-f10.png?color=primary&size=s',
-      i_icon_yim : 'http://i86.servimg.com/u/f86/18/21/41/30/yahoo-10.png?color=primary&size=s',
-      i_icon_skype : 'http://i86.servimg.com/u/f86/18/21/41/30/skype-10.png?color=primary&size=s',
+      i_icon_profile : 'https://i86.servimg.com/u/f86/18/21/41/30/profil12.png?color=primary&size=s',
+      i_icon_www : 'https://i86.servimg.com/u/f86/18/21/41/30/websit10.png?color=primary&size=s',
+      i_icon_email : 'https://i86.servimg.com/u/f86/18/21/41/30/email-10.png?color=primary&size=s',
+      i_icon_pm : 'https://i86.servimg.com/u/f86/18/21/41/30/pm-f11.png?color=primary&size=s',
+      i_icon_fb : 'https://i86.servimg.com/u/f86/18/21/41/30/facebo11.png?color=primary&size=s',
+      i_icon_twitter : 'https://i86.servimg.com/u/f86/18/21/41/30/twitte10.png?color=primary&size=s',
+      i_icon_pinterest : 'https://i86.servimg.com/u/f86/18/21/41/30/pinter10.png?color=primary&size=s',
+      i_icon_aim : 'https://i86.servimg.com/u/f86/18/21/41/30/aim-f10.png?color=primary&size=s',
+      i_icon_icq_add : 'https://i86.servimg.com/u/f86/18/21/41/30/icq-f10.png?color=primary&size=s',
+      i_icon_msnm : 'https://i86.servimg.com/u/f86/18/21/41/30/msn-f10.png?color=primary&size=s',
+      i_icon_yim : 'https://i86.servimg.com/u/f86/18/21/41/30/yahoo-10.png?color=primary&size=s',
+      i_icon_skype : 'https://i86.servimg.com/u/f86/18/21/41/30/skype-10.png?color=primary&size=s',
       i_icon_online : FAE.eGIF,
-      i_msg_newpost : 'http://i86.servimg.com/u/f86/18/21/41/30/new-pm10.png?color=primary&size=m',
+      i_msg_newpost : 'https://i86.servimg.com/u/f86/18/21/41/30/new-pm10.png?color=primary&size=m',
       i_msg_inbox : FAE.eGIF,
       i_msg_sentbox : FAE.eGIF,
       i_msg_outbox : FAE.eGIF,
       i_msg_savebox : FAE.eGIF,
-      i_icon_ajax_edit : 'http://i86.servimg.com/u/f86/18/21/41/30/edit-f10.png',
-      i_icon_ajax_valid : 'http://i86.servimg.com/u/f86/18/21/41/30/valid-10.png',
-      i_icon_attachment_see : 'http://i86.servimg.com/u/f86/18/21/41/30/show-a10.png',
-      i_icon_attachment_download : 'http://i86.servimg.com/u/f86/18/21/41/30/downlo10.png',
+      i_icon_ajax_edit : 'https://i86.servimg.com/u/f86/18/21/41/30/edit-f10.png',
+      i_icon_ajax_valid : 'https://i86.servimg.com/u/f86/18/21/41/30/valid-10.png',
+      i_icon_attachment_see : 'https://i86.servimg.com/u/f86/18/21/41/30/show-a10.png',
+      i_icon_attachment_download : 'https://i86.servimg.com/u/f86/18/21/41/30/downlo10.png',
       page : 'buttons',
       submit : 'Save'
     }
@@ -3061,19 +3096,19 @@ FAE.step = [
     type : 'POST',
      url : 'part=themes&sub=logos&mode=depart&page=&mode=gallery&extended_admin=1',
     data : {
-      upload_pic : 'http://i86.servimg.com/u/f86/18/21/41/30/upload10.png?color=primary&size=m',
-      link_public_galleries : 'http://i86.servimg.com/u/f86/18/21/41/30/public10.png',
-      link_personal_galleries : 'http://i86.servimg.com/u/f86/18/21/41/30/person10.png',
-      link_personal_gallery : 'http://i86.servimg.com/u/f86/18/21/41/30/user-g10.png',
-      backup_folder : 'http://i86.servimg.com/u/f86/18/21/41/30/backup10.png',
-      icon_moderate : 'http://i86.servimg.com/u/f86/18/21/41/30/modera10.png',
-      icon_stats : 'http://i86.servimg.com/u/f86/18/21/41/30/statis10.png',
-      icon_left_arrow3 : 'http://i86.servimg.com/u/f86/18/21/41/30/prev-f10.png',
-      icon_right_arrow3 : 'http://i86.servimg.com/u/f86/18/21/41/30/next-f10.png',
-      rating_star : 'http://i86.servimg.com/u/f86/18/21/41/30/star-f10.png',
-      rating_star_empty : 'http://i86.servimg.com/u/f86/18/21/41/30/star-e10.png',
-      icon_first_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/first-10.png',
-      icon_last_arrow : 'http://i86.servimg.com/u/f86/18/21/41/30/last-f10.png',
+      upload_pic : FAE.lang_new ? FAE.lang_new.images.gallery.upload_pic : 'https://i86.servimg.com/u/f86/18/21/41/30/upload10.png?color=primary&size=m',
+      link_public_galleries : 'https://i86.servimg.com/u/f86/18/21/41/30/public10.png',
+      link_personal_galleries : 'https://i86.servimg.com/u/f86/18/21/41/30/person10.png',
+      link_personal_gallery : 'https://i86.servimg.com/u/f86/18/21/41/30/user-g10.png',
+      backup_folder : 'https://i86.servimg.com/u/f86/18/21/41/30/backup10.png',
+      icon_moderate : 'https://i86.servimg.com/u/f86/18/21/41/30/modera10.png',
+      icon_stats : 'https://i86.servimg.com/u/f86/18/21/41/30/statis10.png',
+      icon_left_arrow3 : 'https://i86.servimg.com/u/f86/18/21/41/30/prev-f10.png',
+      icon_right_arrow3 : 'https://i86.servimg.com/u/f86/18/21/41/30/next-f10.png',
+      rating_star : 'https://i86.servimg.com/u/f86/18/21/41/30/star-f10.png',
+      rating_star_empty : 'https://i86.servimg.com/u/f86/18/21/41/30/star-e10.png',
+      icon_first_arrow : 'https://i86.servimg.com/u/f86/18/21/41/30/first-10.png',
+      icon_last_arrow : 'https://i86.servimg.com/u/f86/18/21/41/30/last-f10.png',
       submit : 'Save'
     }
   },

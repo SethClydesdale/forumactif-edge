@@ -4,12 +4,33 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.2.8';
+  FAE.cp_rev = '1.3.0';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
-  FAE.eGIF = 'http://illiweb.com/fa/empty.gif';
+  FAE.eGIF = 'https://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
   FAE.cp_lang = {};
   FAE.colorSupport = document.createElement('INPUT');
+
+  // language list
+  FAE.lang_list =
+  '<select id="fae_selected_language">'+
+    '<option value="Arabic">العربية</option>'+
+    '<option value="Dutch">Dutch</option>'+
+    '<option value="English">English</option>'+
+    '<option value="Filipino">Tagalog</option>'+
+    '<option value="Français">Français</option>'+
+    '<option value="German">Deutsch</option>'+
+    '<option value="Greek">Ελληνικά</option>'+
+    '<option value="Hebrew">עברית</option>'+
+    '<option value="Hungarian">Hungarian</option>'+
+    '<option value="Italian">Italiano</option>'+
+    '<option value="Portuguese">Português</option>'+
+    '<option value="Romanian">Romana</option>'+
+    '<option value="Russian">Русский</option>'+
+    '<option value="Spanish">Español</option>'+
+    '<option value="Vietnamese">Tiếng Việt</option>'+
+    '<option value="ADD" id="translate_submit_option">Submit a New Translation</option>'+
+  '</select>';
 
   // encode form data to send over AJAX for non-utf8 forums
   FAE.UTF8 = /UTF-8/i.test(document.characterSet);
@@ -213,10 +234,42 @@
 
           }) : 'Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.').replace(/\\/g, '') )) {
 
-            $.get(FAE.raw + 'javascripts/install.js', function(d) {
-              FAE.script(d);
-              FAE.next();
-            });
+            var lang = document.getElementById('fae_install_lang').value,
+                install = function () {
+                  $.get(FAE.raw + 'javascripts/install.js', function(d) {
+                    FAE.script(d);
+                    FAE.next();
+                  });
+                };
+
+            if (lang != 'English') {
+              FAE.log('Getting English.js...');
+
+              $.get(FAE.raw + 'lang/English.js', function(d) {
+                FAE.script(d.replace('FAE.lang', 'FAE.lang_current'));
+                FAE.log('Getting ' + lang + '.js...');
+
+                $.get(FAE.raw + 'lang/' + lang + '.js', function(d) {
+                  FAE.log('Language data has been loaded. The installation process will now begin.');
+                  FAE.script(d.replace('FAE.lang', 'FAE.lang_new'));
+
+                  FAE.translate = function(o, str) {
+                    var i;
+
+                    for (i in o.from) {
+                      str = str.replace(new RegExp(o.from[i].replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), 'gm'), o.to[i]);
+                    }
+
+                    return str;
+                  };
+
+                  install();
+                });
+              });
+
+            } else {
+              install();
+            }
 
             document.getElementById('fae_options').style.display = 'none';
           }
@@ -306,24 +359,7 @@
         // create and insert the translation action
         $(opts).append(
           '<div id="fae_translation_block" style="float:right;">'+
-            '<select id="fae_selected_language">'+
-              '<option value="Arabic">العربية</option>'+
-              '<option value="Dutch">Dutch</option>'+
-              '<option value="English">English</option>'+
-              '<option value="Filipino">Tagalog</option>'+
-              '<option value="Français">Français</option>'+
-              '<option value="German">Deutsch</option>'+
-              '<option value="Greek">Ελληνικά</option>'+
-              '<option value="Hebrew">עברית</option>'+
-              '<option value="Hungarian">Hungarian</option>'+
-              '<option value="Italian">Italiano</option>'+
-              '<option value="Portuguese">Português</option>'+
-              '<option value="Romanian">Romana</option>'+
-              '<option value="Russian">Русский</option>'+
-              '<option value="Spanish">Español</option>'+
-              '<option value="Vietnamese">Tiếng Việt</option>'+
-              '<option value="ADD" id="translate_submit_option">Submit a New Translation</option>'+
-            '</select>'+
+            FAE.lang_list+
             '<input id="fae_translate" type="button" value="Change language" />'+
           '</div><div class="clear"></div>'
         );
@@ -1740,10 +1776,30 @@
           }
 
         } catch (e) {}
+
+      // add installation options if not installed
+      } else {
+        $('#fae_options').append(
+          '<div class="fae_cp_title" id="fae_install_otions" style="margin-top:24px;">Install Options</div>'+
+
+          '<p id="fae_install_options_desc">Use the options below to configure the installation of Forumactif Edge.</p>'+
+
+          '<div class="fae_cp_row">'+
+            '<span class="fae_help_me">?'+
+              '<span class="fae_help_tip">The install lanugage of Forumactif Edge. This can be changed at anytime after installation.</span>'+
+            '</span>'+
+            '<span class="fae_label">Language : </span>'+
+            FAE.lang_list
+            .replace(/id=".*?"/, 'id="fae_install_lang"')
+            .replace('value="English"', 'value="English" selected')+
+            .replace('<option value="ADD" id="translate_submit_option">Submit a New Translation</option>', '')
+          '</div>'
+        );
       }
 
     } else if (/page_html\?mode=preview/.test(window.location.href)) {
-      FAE.log(FAE.cp_lang.fae_err_no_preview || 'The Forumactif Edge Control Panel cannot be used in preview mode. Please go to Admin Panel > Modules > HTML pages management and click the magnifying glass (<img src="http://illiweb.com/fa/admin/icones/voir.png" style="vertical-align:middle;"/>) for this page once you\'ve saved it.', 'color:#E53;font-weight:bold;');
+      FAE.log(FAE.cp_lang.fae_err_no_preview || 'The Forumactif Edge Control Panel cannot be used in preview mode. Please go to Admin Panel > Modules > HTML pages management and click the magnifying glass (<img src="https://illiweb.com/fa/admin/icones/voir.png" style="vertical-align:middle;"/>) for this page once you\'ve saved it.', 'color:#E53;font-weight:bold;');
+
     }
   });
 

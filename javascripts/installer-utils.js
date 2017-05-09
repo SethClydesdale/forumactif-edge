@@ -89,7 +89,17 @@
   // function to execute when the DOC is ready
   FAE.ready = function (fn) {
     try {
-      document.addEventListener('DOMContentLoaded', fn);
+
+      function documentReady () {
+        if (document.readyState == 'interactive' || document.readyState == 'complete') {
+          fn();
+          return true;
+        }
+      };
+
+      if (!documentReady()) {
+        document.onreadystatechange = documentReady;
+      }
 
     } catch (error) {
       $(fn);

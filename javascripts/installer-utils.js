@@ -4,12 +4,20 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.3.0';
+  FAE.cp_rev = '1.3.1';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'https://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
   FAE.cp_lang = {};
+
+  // check for [type="color"] support
   FAE.colorSupport = document.createElement('INPUT');
+  try {
+    FAE.colorSupport.type = 'color';
+    FAE.colorSupport = true;
+  } catch (error) {
+    FAE.colorSupport.type = false;
+  }
 
   // language list
   FAE.lang_list =
@@ -67,13 +75,6 @@
     }
   };
 
-  try {
-    FAE.colorSupport.type = 'color';
-    FAE.colorSupport = true;
-  } catch (error) {
-    FAE.colorSupport.type = false;
-  }
-
   // parse variables in strings for translations
   FAE.parse_vars = function(str, o) {
     var i;
@@ -83,6 +84,16 @@
     }
 
     return str;
+  };
+
+  // function to execute when the DOC is ready
+  FAE.ready = function (fn) {
+    try {
+      document.addEventListener('DOMContentLoaded', fn);
+
+    } catch (error) {
+      $(fn);
+    }
   };
 
   // log messages to the logger so the user knows what's going on
@@ -215,7 +226,7 @@
 
 
   // stuff that needs to be executed when the doc is ready
-  $(function() {
+  FAE.ready(function() {
     var admin = $('a[href^="/admin/"]').not('.mainmenu')[0], // get the AP link so we can fetch the TID
         founder = _userdata.user_id == 1,
         installed = document.getElementById('fa_edge');

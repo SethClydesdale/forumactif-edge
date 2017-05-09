@@ -86,7 +86,7 @@ body {
 /* scrollbar buttons */
 ::-webkit-scrollbar-button:single-button {
   color:#FFF;
-  background:url(http://i86.servimg.com/u/f86/18/21/41/30/webkit10.gif) no-repeat 0 0 #69C;
+  background:url(https://i86.servimg.com/u/f86/18/21/41/30/webkit10.gif) no-repeat 0 0 #69C;
   height:17px;
   width:17px;
 }
@@ -405,7 +405,7 @@ img[src*="size=l"] { padding:9px 16px; }
 
 /* "more" button */
 .sprite-tabs_more {
-  background:url(http://i86.servimg.com/u/f86/18/21/41/30/plus-f11.png) no-repeat;
+  background:url(https://i86.servimg.com/u/f86/18/21/41/30/plus-f11.png) no-repeat;
   height:11px;
   width:11px;
 }

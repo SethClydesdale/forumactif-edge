@@ -89,15 +89,17 @@
   // function to execute when the DOC is ready
   FAE.ready = function (fn) {
     try {
+      var initialized = false,
+          documentReady = function () {
+            if (!initialized && /interactive|complete/.test(document.readyState)) {
+              fn();
+              initialized = true;
+            }
+          };
 
-      function documentReady () {
-        if (document.readyState == 'interactive' || document.readyState == 'complete') {
-          fn();
-          return true;
-        }
-      };
+      documentReady();
 
-      if (!documentReady()) {
+      if (!initialized) {
         document.onreadystatechange = documentReady;
       }
 

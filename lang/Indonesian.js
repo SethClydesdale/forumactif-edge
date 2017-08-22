@@ -1,4 +1,4 @@
-// Indonesian Translation
+// Indonesian Translation by rizamuharram
 FAE.lang = {
 
   language : 'Indonesian',

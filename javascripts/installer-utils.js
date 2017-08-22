@@ -31,6 +31,7 @@
     '<option value="Greek">Ελληνικά</option>'+
     '<option value="Hebrew">עברית</option>'+
     '<option value="Hungarian">Hungarian</option>'+
+    '<option value="Indonesian">Indonesian</option>'+
     '<option value="Italian">Italiano</option>'+
     '<option value="Portuguese">Português</option>'+
     '<option value="Romanian">Romana</option>'+

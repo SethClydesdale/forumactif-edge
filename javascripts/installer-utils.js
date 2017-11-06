@@ -4,7 +4,7 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.3.1';
+  FAE.cp_rev = '1.3.2';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'https://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -559,7 +559,7 @@
               width,
               dir;
 
-          if (form) {
+          if (form && form.edit_code) {
 
             // page width
             if (/\/\*!FAE_WIDTH\*\/#page-body\{width:\d+%;.*?\}/.test(form.edit_code.value)) {
@@ -592,6 +592,8 @@
               document.getElementById('fae_profil_dir-center').checked = true;
             }
 
+          } else {
+            FAE.log('CRITICAL ERROR : CSS STYLESHEET NOT FOUND', 'color:#E53;font-weight:bold;');
           }
         });
 
@@ -638,7 +640,7 @@
             FAE.index = 1;
             FAE.progress();
 
-            if (form) {
+            if (form && form.edit_code) {
               val = form.edit_code.value;
 
               // update stylesheet with new FORUM WIDTH rule
@@ -683,6 +685,8 @@
                 FAE.log(FAE.cp_lang.reload_page || 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
               });
 
+            } else {
+              FAE.log('CRITICAL ERROR : CSS STYLESHEET NOT FOUND', 'color:#E53;font-weight:bold;');
             }
           });
 
@@ -1366,7 +1370,7 @@
               FAE.index = 1;
               FAE.progress();
 
-              if (form) {
+              if (form && form.edit_code) {
                 val = form.edit_code.value;
                 regex = /\/\*!FAE_COLORS\*\/[\s\S]+\/\*FAE_COLORS!\*\//;
 
@@ -1387,6 +1391,8 @@
                   FAE.log(FAE.cp_lang.reload_page || 'Please <a href="javascript:window.location.reload();">click here</a> to reload the page.');
                 });
 
+              } else {
+                FAE.log('CRITICAL ERROR : CSS STYLESHEET NOT FOUND', 'color:#E53;font-weight:bold;');
               }
             });
 

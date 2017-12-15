@@ -179,7 +179,7 @@
         FAE.log(FAE.cp_lang.fae_update_error ? FAE.parse_vars(FAE.cp_lang.fae_update_error, {
           '{VERSION_STRING}' : FAE.update_queue[FAE.update_index]
 
-        }) : 'Update instructions for version ' + FAE.update_queue[FAE.update_index] + ' could not be found. Please <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
+        }) : 'Update instructions for version ' + FAE.update_queue[FAE.update_index] + ' could not be found. Please <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Support-and-Discussion" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
 
         FAE.getUpdates();
       });
@@ -419,7 +419,7 @@
 
           if (select.value == 'ADD') {
             if (confirm(FAE.cp_lang.fae_translate_submit_confirm || 'You have chosen to submit a new translation. If this is correct, please click "OK" and proceed to the translation page, otherwise click "cancel" and choose another language.')) {
-              window.location.href = 'http://fmdesign.forumotion.com/t706-forumactif-edge-translations#13996';
+              window.location.href = 'https://github.com/SethClydesdale/forumactif-edge/wiki/Translating#why-isnt-x-language-available-';
             }
 
             return;

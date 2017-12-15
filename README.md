@@ -20,7 +20,7 @@ Not ready to install yet ? No problem ! Take a look around, check out the FAQ an
 
 ## FAQ
 
-Do you have any questions or concerns about Forumactif Edge ? If so, feel free to check out [our FAQ](https://github.com/SethClydesdale/forumactif-edge/wiki/Frequently-Asked-Questions) page or contact us on the [support forum](http://fmdesign.forumotion.com/t700-forumactif-edge-support) ! We're always ready to answer your questions ! :wink:
+Do you have any questions or concerns about Forumactif Edge ? If so, feel free to check out [our FAQ](https://github.com/SethClydesdale/forumactif-edge/wiki/Frequently-Asked-Questions) page or contact us by [opening a new issue](https://github.com/SethClydesdale/forumactif-edge/issues/new) ! (requires github account) We're always ready to answer your questions ! :wink:
 
 ## Preview
 You can find various previews of the theme below. [Click here](http://fmdesign.forumotion.com/forum) if you'd like a live preview of Forumactif Edge.

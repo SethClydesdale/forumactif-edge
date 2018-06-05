@@ -187,7 +187,7 @@ fieldset dd {
 .nomargin { margin:0; }
 
 /* self clear floats */
-#logo-desc:after, .postprofile dl:after { content:""; display:table; clear:both; }
+#logo-desc:after, .postprofile dl:after, fieldset dl:after { content:""; display:table; clear:both; }
 
 /* ignore floats */
 .left.fld_connexion { float:none; }

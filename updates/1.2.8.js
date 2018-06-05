@@ -21,9 +21,9 @@ FAE.update_step = [
         FAE.step[FAE.index + 1].data = {
           edit_code : form.edit_code.value
           // unminified
-          .replace(/fieldset dl {\n  padding:4px 0;\n}/, 'fieldset dl { padding:4px 0; clear:both; }')
+          .replace(' { content:""; display:table; clear:both; }', ', fieldset dl:after { content:""; display:table; clear:both; }')
           // minified
-          .replace('fieldset dl{padding:4px 0}', 'fieldset dl{padding:4px 0;clear:both}'),
+          .replace('{content:"";display:table;clear:both}', ',fieldset dl:after{content:"";display:table;clear:both}'),
           submit : 'Submit'
         };
       }

@@ -4,7 +4,7 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.3.2';
+  FAE.cp_rev = '1.3.3';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'https://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -1637,7 +1637,7 @@
           FAE.script(d.replace('FAE.lang', 'FAE.cp_lang'));
 
           FAE.cp_custom_theme = FAE.cp_lang.javascripts['[FA EDGE] ALL.JS'].custom_theme || 'Custom theme';
-          fae_compileThemes((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_import_compiling) || 'Compiling themes, please wait...', fa_theme_color.palette, true);
+          fae_compileThemes((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_import_compiling) || 'Compiling themes, please wait...', fa_theme_color ? fa_theme_color.palette : {}, true);
 
           FAE.cp_lang = FAE.cp_lang.fae_cp;
 

@@ -1637,7 +1637,7 @@
           FAE.script(d.replace('FAE.lang', 'FAE.cp_lang'));
 
           FAE.cp_custom_theme = FAE.cp_lang.javascripts['[FA EDGE] ALL.JS'].custom_theme || 'Custom theme';
-          fae_compileThemes((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_import_compiling) || 'Compiling themes, please wait...', fa_theme_color ? fa_theme_color.palette : {}, true);
+          fae_compileThemes((FAE.cp_lang.plugin_management && FAE.cp_lang.plugin_management.fae_import_compiling) || 'Compiling themes, please wait...', window.fa_theme_color ? fa_theme_color.palette : {}, true);
 
           FAE.cp_lang = FAE.cp_lang.fae_cp;
 

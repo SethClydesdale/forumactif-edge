@@ -1656,35 +1656,44 @@
 
           // AUTOMATIC VERSION CHECK
           $.get(FAE.raw + 'javascripts/version-data.js', function (d) {
-            var local = 'v' + forumactif_edge_version_data[forumactif_edge_version_data.length - 1],
-                github = 'v' + d.replace(/[\s\S]*?'(.*?)'[^,][\s\S]*/, '$1'),
-                equal = local == github;
+            try {
+              var local = 'v' + forumactif_edge_version_data[forumactif_edge_version_data.length - 1],
+                  github = 'v' + d.replace(/[\s\S]*?'(.*?)'[^,][\s\S]*/, '$1'),
+                  equal = local == github;
 
-            FAE.log('<hr>'); // add separation
+              FAE.log('<hr>'); // add separation
 
-            // log local version
-            FAE.log(FAE.cp_lang.auto_version_local ? FAE.parse_vars(FAE.cp_lang.auto_version_local, {
-              '{VERSION_STRING}' : local
+              // log local version
+              FAE.log(FAE.cp_lang.auto_version_local ? FAE.parse_vars(FAE.cp_lang.auto_version_local, {
+                '{VERSION_STRING}' : local
 
-            }) : 'Your installed version of Forumactif Edge is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/' + local + '" target="_blank">' + local + '</a>.');
+              }) : 'Your installed version of Forumactif Edge is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/' + local + '" target="_blank">' + local + '</a>.');
 
-            // log latest github version
-            FAE.log(FAE.cp_lang.auto_version_github ? FAE.parse_vars(FAE.cp_lang.auto_version_github, {
-              '{VERSION_STRING}' : github
+              // log latest github version
+              FAE.log(FAE.cp_lang.auto_version_github ? FAE.parse_vars(FAE.cp_lang.auto_version_github, {
+                '{VERSION_STRING}' : github
 
-            }) : 'The current release of Forumactif Edge on Github is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/' + github + '" target="_blank">' + github + '</a>.');
+              }) : 'The current release of Forumactif Edge on Github is <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/' + github + '" target="_blank">' + github + '</a>.');
 
-            // log version status
-            FAE.log(
-              equal ? (FAE.cp_lang.fae_update_good || 'Forumactif Edge is up to date!') :
-                      (FAE.cp_lang.update_waiting || 'There are updates available for Foruactif Edge. Check out <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">the wiki</a> for more information about updating.'),
-              'color:' + ( equal ? '#8B5' : '#C93' ) + ';font-weight:bold;'
-            );
+              // log version status
+              FAE.log(
+                equal ? (FAE.cp_lang.fae_update_good || 'Forumactif Edge is up to date!') :
+                        (FAE.cp_lang.update_waiting || 'There are updates available for Foruactif Edge. Check out <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">the wiki</a> for more information about updating.'),
+                'color:' + ( equal ? '#8B5' : '#C93' ) + ';font-weight:bold;'
+              );
 
-            // log release list
-            FAE.log(FAE.cp_lang.release_list || '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of releases for Forumactif Edge.');
+              // log release list
+              FAE.log(FAE.cp_lang.release_list || '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click here</a> to see the full list of releases for Forumactif Edge.');
 
-            FAE.log('<hr>'); // add separation
+              FAE.log('<hr>'); // add separation
+              
+              // in the event the version data cannot be found
+            } catch (error) {
+              FAE.log('<hr>');
+              FAE.log(error, 'color:#E53;font-weight:bold;');
+              FAE.log('An error has occurred while trying to retrieve Forumactif Edge\'s version data. Please make sure JS Codes Management is enabled. If it is please <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Support-and-Discussion" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
+            }
+
           });
 
           // MAIN CP TRANSLATION

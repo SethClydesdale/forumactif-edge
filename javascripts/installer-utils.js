@@ -1692,6 +1692,9 @@
               FAE.log('<hr>');
               FAE.log(error, 'color:#E53;font-weight:bold;');
               FAE.log('An error has occurred while trying to retrieve Forumactif Edge\'s version data. Please make sure JS Codes Management is enabled. If it is please <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Support-and-Discussion" target="_blank">open a new issue</a> and provide this information for further assistance.', 'color:#E53;font-weight:bold;');
+              
+              // hide tools to prevent further errors
+              document.getElementById('fae_actions').style.display = 'none';
             }
 
           });

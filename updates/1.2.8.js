@@ -47,15 +47,21 @@ FAE.update_step = [
       var form = $('form[name="post"]', d)[0];
 
       if (form) {
-        FAE.step[FAE.index + 1].data.template = form.template.value
-        // add new form tag
-        .replace('<!-- END switch_fb_explain -->', '<!-- END switch_fb_explain -->\n<form method="GET" id="frmAgreement" action="{U_AGREE_OVER13}">')
-        // close the form tag
-        .replace(/<\/div>\n$/, '</form>\n</div>\n')
-        // add in new checkboxes
-        .replace('{MY_RULES}<br />', '{MY_RULES}<br />\n            <div align="center">\n                <div style="text-align:justify; display:inline-block;" align="justify">\n                    <input type="hidden" name="step" value="2" />\n                    <p>\n                        <input type="checkbox" name="agreement" id="frmAgreeChkAgree" value="1" data-validation="required"/> <label for="frmAgreeChkAgree">{AGREE_CONDITIONS}</label> <br />\n                    </p>\n                    <p>\n                        <input type="checkbox" name="privacy" id="frmAgreeChkPrivacy" value="1" data-validation="required"/> <label for="frmAgreeChkPrivacy">{AGREE_PRIVACY}</label>\n                    </p>\n                </div>\n            </div>')
-        // replace old agreement buttons
-        .replace(/<a class="button1 cgu-buttons" href="{U_AGREE_OVER13}">{AGREE_OVER_13}<\/a>&nbsp;&nbsp;\n[\s\S]*?<a class="button2 cgu-buttons" href="{U_INDEX}">{DO_NOT_AGREE}<\/a>/, '<input type="submit" value="{AGREE_OVER_13}" class="button1 cgu-buttons" />')
+        // update the template ONLY if the GDPR changes are not present
+        if (/frmAgreeChkPrivacy/.test(form.template.value)) {
+          FAE.step[FAE.index + 1].data.template = form.template.value;
+          
+        } else {
+          FAE.step[FAE.index + 1].data.template = form.template.value
+          // add new form tag
+          .replace('<!-- END switch_fb_explain -->', '<!-- END switch_fb_explain -->\n<form method="GET" id="frmAgreement" action="{U_AGREE_OVER13}">')
+          // close the form tag
+          .replace(/<\/div>\n$/, '</form>\n</div>\n')
+          // add in new checkboxes
+          .replace('{MY_RULES}<br />', '{MY_RULES}<br />\n            <div align="center">\n                <div style="text-align:justify; display:inline-block;" align="justify">\n                    <input type="hidden" name="step" value="2" />\n                    <p>\n                        <input type="checkbox" name="agreement" id="frmAgreeChkAgree" value="1" data-validation="required"/> <label for="frmAgreeChkAgree">{AGREE_CONDITIONS}</label> <br />\n                    </p>\n                    <p>\n                        <input type="checkbox" name="privacy" id="frmAgreeChkPrivacy" value="1" data-validation="required"/> <label for="frmAgreeChkPrivacy">{AGREE_PRIVACY}</label>\n                    </p>\n                </div>\n            </div>')
+          // replace old agreement buttons
+          .replace(/<a class="button1 cgu-buttons" href="{U_AGREE_OVER13}">{AGREE_OVER_13}<\/a>&nbsp;&nbsp;\n[\s\S]*?<a class="button2 cgu-buttons" href="{U_INDEX}">{DO_NOT_AGREE}<\/a>/, '<input type="submit" value="{AGREE_OVER_13}" class="button1 cgu-buttons" />')
+        }
       }
     }
   },

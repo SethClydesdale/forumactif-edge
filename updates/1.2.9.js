@@ -19,7 +19,8 @@ FAE.update_step = [
       if (form) {
         // update the template ONLY if the GDPR changes are not present
         if (/rgpd_generate_or_download/.test(form.template.value)) {
-          FAE.step[FAE.index + 1].data.template = form.template.value;
+          FAE.index = FAE.index + 2;
+          FAE.log('The template profile_add_body.html already contains the necessary changes. Skipping template modifications...', 'font-weight:bold;');
           
         } else {
           FAE.step[FAE.index + 1].data.template = form.template.value

@@ -50,6 +50,7 @@ FAE.update_step = [
         // update the template ONLY if the GDPR changes are not present
         if (/frmAgreeChkPrivacy/.test(form.template.value)) {
           FAE.step[FAE.index + 1].data.template = form.template.value;
+          FAE.log('The template agreement.html already has the necessary modifications. Skipping step...', 'font-weight:bold;');
           
         } else {
           FAE.step[FAE.index + 1].data.template = form.template.value

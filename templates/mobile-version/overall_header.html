@@ -36,7 +36,8 @@
 	<!-- END google_analytics_code -->
 	{HOSTING_JS}
   <script type="text/javascript">(function() {
-    window.location.href = _userdata.page_desktop;
+    my_setcookie('_mobile_version', '0', true);
+    window.location.reload();
   }());</script>
 </head>
 <body>

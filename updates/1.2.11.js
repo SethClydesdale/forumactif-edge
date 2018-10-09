@@ -45,8 +45,9 @@ FAE.update_step = [
 
 
   {
-    info : 'Publishing template overall_header.html (mobile)',
-    type : 'PUBLISH',
-     tpl : 1010
+      info : 'Publishing template overall_header.html (mobile)',
+      type : 'PUBLISH',
+    mobile : true,
+       tpl : 1010
   }
 ];

@@ -316,7 +316,8 @@ a.button:hover, .blueBlock a.button { background-color:#345; }
 .giveTip:hover:before, .giveTip:hover:after { opacity:0; }
 
 /* language specific offsets */
-[lang="el"] .giveTip:before { left:-125px; }
+[lang="el"] .giveTip:before,
+[lang="ru"] .giveTip:before { left:-125px; }
 [lang="it"] .giveTip:before { left:-100px; }
 [lang="pt"] .giveTip:before, 
 [lang="id"] .giveTip:before { left:-90px; }

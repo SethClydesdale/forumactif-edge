@@ -677,7 +677,7 @@ $(function() {
     // resize all images inside the "resizeIn" elements
     resize : function() {
       for (var a = $(fa_img_resizer.selector), i = 0, j = a.length; i < j; i++) {
-        if (!a[i].alt && (a[i].naturalWidth > fa_img_resizer.max_width || a[i].naturalHeight > fa_img_resizer.max_height)) {
+        if (!a[i].longdesc && (a[i].naturalWidth > fa_img_resizer.max_width || a[i].naturalHeight > fa_img_resizer.max_height)) {
           a[i].className += ' fa_img_reduced';
 
           // make the image a "link" if it's not wrapper with one

@@ -2,7 +2,7 @@
 
   # Changes in v1.2.13
 
-  - fixed missing elements in the search form
+  - fixed missing texts and checkboxes in the advanced search.
 
 */
 

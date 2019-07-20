@@ -28,7 +28,7 @@ FAE.update_step = [
           
           .replace(/\{L_SEARCH_ALL_TERMS\}<\/label><\/dd>/, '{switch_search_terms.L_SEARCH_ALL_TERMS}</label></dd>\n            <!-- END switch_search_terms -->')
           
-          .replace('{L_SEARCH_ALL_TERMS}', '{switch_search_terms.L_SEARCH_ANY_TERMS}')
+          .replace('{L_SEARCH_ANY_TERMS}', '{switch_search_terms.L_SEARCH_ANY_TERMS}')
         }
       }
     }

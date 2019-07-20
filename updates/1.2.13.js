@@ -26,7 +26,9 @@ FAE.update_step = [
           FAE.step[FAE.index + 1].data.template = form.template.value
           .replace(/<dd><label for="any">/, '<!-- BEGIN switch_search_full_text -->\n            <dd><label for="text"><input id="text" type="radio" name="search_by" value="text" checked="checked" /> {switch_search_full_text.L_SEARCH_BY_TEXT}</label></dd>\n            <dd><label for="subject"><input id="subject" type="radio" name="search_by" value="subject" /> {switch_search_full_text.L_SEARCH_BY_SUBJECT}</label></dd>\n            <!-- END switch_search_full_text -->\n            <!-- BEGIN switch_search_terms -->\n			<dd><label for="any">')
           
-          .replace(/\{L_SEARCH_ALL_TERMS\}<\/label><\/dd>/, '{L_SEARCH_ALL_TERMS}</label></dd>\n            <!-- END switch_search_terms -->')
+          .replace(/\{L_SEARCH_ALL_TERMS\}<\/label><\/dd>/, '{switch_search_terms.L_SEARCH_ALL_TERMS}</label></dd>\n            <!-- END switch_search_terms -->')
+          
+          .replace('{L_SEARCH_ALL_TERMS}', '{switch_search_terms.L_SEARCH_ANY_TERMS}')
         }
       }
     }

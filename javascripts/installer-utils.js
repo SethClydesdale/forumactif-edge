@@ -4,7 +4,7 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.3.3';
+  FAE.cp_rev = '1.4.0';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'https://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -1854,8 +1854,18 @@
     '</div>'
   );
 
+  // maintenance message
   if (FAE.maintenance) {
     $('#fae_cp').prepend('<div id="fae_maintenance"><i class="fa fa-warning"></i>Maintenance is currently being performed on the Control Panel. Don\'t worry if you notice anything strange, we\'ll get things back to normal shortly. For more information, please read about "<a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Maintenance" target="_blank">Maintenance</a>" on our wiki.</div>');
+  }
+  
+  // warning when leaving a page during an operation
+  window.onbeforeunload = function () {
+    var progress = document.getElementById('fae_prog_bar');
+    
+    if (progress && !/100/.test(progress.style.width)) {
+      return 'Are you sure you want to leave the page? Your changes may be lost.';
+    }
   }
 }());
 

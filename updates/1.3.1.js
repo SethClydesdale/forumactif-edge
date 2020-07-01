@@ -214,5 +214,31 @@ FAE.update_step = [
     info : 'Publishing template overall_header.html',
     type : 'PUBLISH',
      tpl : 116
+  },
+  
+  
+  {
+    info : 'Getting forum stylesheet',
+    type : 'GET',
+     url : '/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid,
+    func : function(d) {
+      var form = $('form[method="post"]', d)[0];
+
+      if (form) {
+        FAE.step[FAE.index + 1].data = {
+                edit_code : form.edit_code.value + '\n/* added in FAE v1.3.1 */\n.fa_like_div{clear:both;padding-top:2em}#blog_comments .fa_like_div{margin:0;width:96%}.rep-nb{border-left:1px solid #c7c3bf;display:inline-block;font-weight:700;line-height:9px;margin-left:11px;padding-left:6px}.rep-button,.rep-button:active,.rep-button:focus{background:linear-gradient(#ffffff0%,#e9e9e9100%);border:1px solid #858585;border-radius:4px;box-shadow:0 0 0 1px #fff inset;color:#d31141;cursor:pointer;font-family:Trebuchet MS;font-size:11px;font-weight:700;line-height:1;margin:3px 11px 0 0;outline:0;padding:1px 7px 1px 9px;position:relative;text-transform:uppercase;transition:color .4s}.rep-button i,.rep-button svg{color:#666;display:block;float:left;font-size:13px;margin-left:-12px;margin-right:6px;margin-top:-5px;text-shadow:0 0 1px #fff}.fa_disliked i{color:#f44336}.fa_disliked path{fill:#f44336}.fa_liked i{color:#4caf50}.fa_liked path{fill:#4caf50}.fa_dislike_list,.fa_like_list{background-color:rgba(0,26,60,.04);border-radius:3px;padding:5px}.fa_like_others{background:0 0;border:none;color:#0474bf;cursor:pointer;display:inline-block;font-family:inherit;font-size:inherit;outline:0;position:relative}.fa_like_others:focus,.fa_like_others:hover{color:#2b2b2b}.fa_like_others .fa_like_tooltip{background-color:#555;border-radius:6px;bottom:125%;color:#fff;left:50%;margin-left:-40px;min-width:80px;opacity:0;padding:5px 10px;position:absolute;text-align:left;transition:opacity .3s;visibility:hidden;z-index:10}.fa_like_others .fa_like_tooltip a{color:#fff}.fa_like_others .fa_like_tooltip::after{border-color:#555 transparent transparent;border-style:solid;border-width:5px;content:"";left:40px;margin-left:-5px;position:absolute;top:100%}.fa_like_others:focus .fa_like_tooltip{opacity:1;visibility:visible}.fa_like_others a{color:#fff}',
+                   submit : 'Submit'
+        };
+      }
+
+    }
+  },
+
+
+  {
+    info : 'Patching in updated styles',
+    type : 'POST',
+     url : 'part=themes&sub=logos&mode=css&extended_admin=1',
+    data : {}
   }
 ];

@@ -4,7 +4,7 @@
   }
 
   FAE.maintenance = false;
-  FAE.cp_rev = '1.4.0';
+  FAE.cp_rev = '1.4.1';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
   FAE.eGIF = 'https://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
@@ -258,7 +258,7 @@
 
           }) : 'Are you sure you want to ' + ( installed ? 're' : '' ) + 'install Forumactif Edge? This will overwrite your current theme and delete your current JavaScripts. \\\n\\\nPlease make sure to backup all your personal content files such as CSS, Templates, and JavaScripts before proceeding. Click "Cancel" if you\'re not ready to install Forumactif Edge.').replace(/\\/g, '') )) {
 
-            var lang = document.getElementById('fae_install_lang').value,
+            var lang = document.getElementById('fae_install_lang') ? document.getElementById('fae_install_lang').value : FAE.board_lang ? FAE.board_lang : 'English',
                 install = function () {
                   $.get(FAE.raw + 'javascripts/install.js', function(d) {
                     FAE.script(d);

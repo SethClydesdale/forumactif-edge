@@ -214,6 +214,21 @@
   </div>
 </div>
 <!-- END switch_login_popup -->
+
+<!-- BEGIN switch_like_popup -->
+<div id="like_popup" style="z-index: 10000 !important;">
+	<div class="h3">{SITENAME}</div>
+	{LIKE_POPUP_MSG}
+	<div id="like_popup_buttons">
+		<form action="{S_LOGIN_ACTION}" method="get">
+			<input type="submit" class="button1" value="{L_LOGIN}"/>
+			<input type="button" class="button1" value="{L_REGISTER}" onclick="parent.location='{U_REGISTER}';"/>
+			<input id="like_popup_close" type="button" class="button2" value="{L_LIKE_CLOSE}"/>
+		</form>
+	</div>
+</div>
+<!-- END switch_like_popup -->
+
 <a id="top" name="top" accesskey="t"></a>
 {JAVASCRIPT}
 

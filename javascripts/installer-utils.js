@@ -306,9 +306,9 @@
 
       // to prevent errors, make sure that the administration panel is accessible before proceeding.
       // this check is mainly for forums that have the security option "Confirm password to administration access" enabled
-      $.get('/admin/index.forum', function(d) {
+      $.get('/admin/', function(d) {
         if (!$('#page-body > #tabs', d)[0]) {
-          FAE.log('Error : You have not logged into your <a href="/admin/index.forum">administration panel</a>. Please log in so that you can use the FAE Control Panel. <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Frequently-Asked-Questions#wiki-wrapper" target="_blank" style="font-weight:normal;"><em>(What is this?)</em></a>', 'color:#E53;font-weight:bold;');
+          FAE.log('Error : You have not logged into your <a href="/admin/">administration panel</a>. Please log in so that you can use the FAE Control Panel. <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Frequently-Asked-Questions#wiki-wrapper" target="_blank" style="font-weight:normal;"><em>(What is this?)</em></a>', 'color:#E53;font-weight:bold;');
           document.getElementById('fae_options').style.display = 'none';
         }
       });
@@ -554,7 +554,7 @@
         };
 
         // get existing settings from the stylesheet
-        $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+        $.get('/admin/?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
           var form = $('form[method="post"]', d)[0],
               width,
               dir;
@@ -635,7 +635,7 @@
           ) + '/*!END_FAE_PROFIL_DIR*/';
 
           // get the stylesheet
-          $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+          $.get('/admin/?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
             form = $('form[method="post"]', d)[0];
             FAE.index = 1;
             FAE.progress();
@@ -673,7 +673,7 @@
               }
 
               // update the stylesheet
-              $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, FAE.Encode({
+              $.post('/admin/?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, FAE.Encode({
                 edit_code : val,
                 submit : 'Save'
 
@@ -1323,7 +1323,7 @@
 
 
         // get existing settings from the stylesheet
-        $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+        $.get('/admin/?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
           var css = $('form[method="post"]', d)[0];
 
           if (css) {
@@ -1363,7 +1363,7 @@
             }
 
             // get the stylesheet
-            $.get('/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+            $.get('/admin/?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
               var form = $('form[method="post"]', d)[0],
                   val, regex;
 
@@ -1379,7 +1379,7 @@
                 }
 
                 // update the stylesheet
-                $.post('/admin/index.forum?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, FAE.Encode({
+                $.post('/admin/?part=themes&sub=logos&mode=css&extended_admin=1&tid=' + FAE.tid, FAE.Encode({
                   edit_code : val + (save ? '\n' + fae_compileColors() : ''),
                   submit : 'Save'
 
@@ -1447,7 +1447,7 @@
 
 
         // get existing settings from ALL.JS
-        $.get('/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
+        $.get('/admin/?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
           for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/, all; i < j; i++) {
             if (regex.test(row[i].innerHTML)) {
               all = $('a', row[i])[1].href;
@@ -1574,7 +1574,7 @@
           FAE.index = 0;
           FAE.progress();
 
-          $.get('/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
+          $.get('/admin/?mode=js&part=modules&sub=html&tid=' + FAE.tid, function (d) {
             for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/, all; i < j; i++) {
               if (regex.test(row[i].innerHTML)) {
                 all = $('a', row[i])[1].href;

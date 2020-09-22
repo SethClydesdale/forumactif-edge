@@ -30,7 +30,7 @@ FAE.step = [
   {
     info : 'Getting and deleting all JavaScript files to prevent errors on the forum',
     type : 'GET',
-     url : '/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid,
+     url : '/admin/?mode=js&part=modules&sub=html&tid=' + FAE.tid,
     func : function(d) {
       var form = $('#pageListHtml', d),
           file = $('input[type="checkbox"]', form),
@@ -1204,7 +1204,7 @@ FAE.step = [
   {
      info : 'Deleting control panel navigation link',
      type : 'GET',
-      url : '/admin/index.forum?part=themes&sub=index&mode=navbar&extended_admin=1&tid=' + FAE.tid,
+      url : '/admin/?part=themes&sub=index&mode=navbar&extended_admin=1&tid=' + FAE.tid,
      func : function(d) {
        for (var a = $('fieldset tr', d), i = 0, j = a.length, regex = new RegExp('FAE Control Panel|' + window.location.pathname, 'ig'); i < j; i++) {
          if (regex.test(a[i].innerHTML)) {
@@ -1241,7 +1241,7 @@ FAE.next = function() {
     FAE.log(step.info + '...');
 
     if (step.type == 'POST') {
-      $.post('/admin/index.forum?' + step.url + FAE.tid, step.data, function() {
+      $.post('/admin/?' + step.url + FAE.tid, step.data, function() {
         window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
     } else if (step.type == 'GET') {

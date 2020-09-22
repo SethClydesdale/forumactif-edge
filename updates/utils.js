@@ -5,7 +5,7 @@ FAE.step = FAE.step.concat([
   {
     info : 'Locating version-data.js',
     type : 'GET',
-     url : '/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid,
+     url : '/admin/?mode=js&part=modules&sub=html&tid=' + FAE.tid,
     func : function(d) {
       for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] VERSION-DATA\.JS/; i < j; i++) {
         if (regex.test(row[i].innerHTML)) {
@@ -25,7 +25,7 @@ FAE.step = FAE.step.concat([
     func : function(d) {
       var form = $('#formenvoi', d)[0];
 
-      FAE.step[FAE.index + 1].url = form.action.replace(/^.*?\/admin\/index\.forum\?|&tid=.*$/g, '');
+      FAE.step[FAE.index + 1].url = form.action.replace(/^.*?\/admin\/\?|&tid=.*$/g, '');
       FAE.step[FAE.index + 1].data = {
                    title : '[FA EDGE] VERSION-DATA.JS',
         'js_placement[]' : 'allpages',
@@ -51,7 +51,7 @@ FAE.step = FAE.step.concat([
   {
     info : 'Getting overall_footer_end.html',
     type : 'GET',
-     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=133&l=main&extended_admin=1' + FAE.tid,
+     url : '/admin/?part=themes&sub=templates&mode=edit_main&t=133&l=main&extended_admin=1' + FAE.tid,
     func : function(d) {
       FAE.step[FAE.index + 1].data.template = $('form[name="post"]', d)[0].template.value.replace(/<span id="fae_version">.*?<\/span>/, '<span id="fae_version">' + FAE.update_queue[FAE.update_queue.length - 1] + '<\/span>');
     }
@@ -107,7 +107,7 @@ FAE.next = function() {
     FAE.log(step.info + '...');
 
     if (step.type == 'POST') {
-      $.post('/admin/index.forum?' + step.url + FAE.tid, FAE.Encode(step.data), function() {
+      $.post('/admin/?' + step.url + FAE.tid, FAE.Encode(step.data), function() {
         window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
 
@@ -118,7 +118,7 @@ FAE.next = function() {
       }).error(FAE.error);
 
     } else if (step.type == 'PUBLISH') {
-      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=' + ( step.mobile ? 'mobile' : 'main' ) + '&pub=1&tid=' + FAE.tid, function() {
+      $.get('/admin/?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=' + ( step.mobile ? 'mobile' : 'main' ) + '&pub=1&tid=' + FAE.tid, function() {
         window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
     }

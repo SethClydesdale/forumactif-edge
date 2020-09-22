@@ -55,7 +55,7 @@ FAE.step = [
   {
     info : 'Getting and deleting all JavaScript files to prevent installation errors',
     type : 'GET',
-     url : '/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid,
+     url : '/admin/?mode=js&part=modules&sub=html&tid=' + FAE.tid,
     func : function(d) {
       var form = $('#pageListHtml', d),
           file = $('input[type="checkbox"]', form),
@@ -3158,7 +3158,7 @@ FAE.step = [
   {
      info : 'Creating navigation link for control panel',
      type : 'GET',
-      url : '/admin/index.forum?part=themes&sub=index&mode=navbar&extended_admin=1&tid=' + FAE.tid,
+      url : '/admin/?part=themes&sub=index&mode=navbar&extended_admin=1&tid=' + FAE.tid,
      func : function(d) {
        for (var a = $('fieldset tr', d), i = 0, j = a.length, regex = new RegExp('FAE Control Panel|' + window.location.pathname, 'ig'), hit = false; i < j; i++) {
          if (regex.test(a[i].innerHTML)) {
@@ -3168,7 +3168,7 @@ FAE.step = [
        }
 
        if (!hit) {
-         $.post('/admin/index.forum?part=themes&sub=index&mode=navbar&tid=' + FAE.tid, {
+         $.post('/admin/?part=themes&sub=index&mode=navbar&tid=' + FAE.tid, {
            navbar_menu : 'FAE Control Panel',
            navbar_image : '',
            navbar_text : 'FAE Control Panel',
@@ -3208,7 +3208,7 @@ FAE.next = function() {
     FAE.log(step.info + '...');
 
     if (step.type == 'POST') {
-      $.post('/admin/index.forum?' + step.url + FAE.tid, FAE.Encode(step.data), function() {
+      $.post('/admin/?' + step.url + FAE.tid, FAE.Encode(step.data), function() {
         window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
 
@@ -3219,7 +3219,7 @@ FAE.next = function() {
       }).error(FAE.error);
 
     } else if (step.type == 'PUBLISH') {
-      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=' + ( step.mobile ? 'mobile' : 'main' ) + '&pub=1&tid=' + FAE.tid, function() {
+      $.get('/admin/?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=' + ( step.mobile ? 'mobile' : 'main' ) + '&pub=1&tid=' + FAE.tid, function() {
         window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
     }

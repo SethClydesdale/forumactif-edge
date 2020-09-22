@@ -3,7 +3,7 @@ FAE.step = [
   {
     info : 'Getting forum stylesheet',
     type : 'GET',
-     url : '/admin/index.forum?mode=colors&part=themes&sub=logos&tid=' + FAE.tid,
+     url : '/admin/?mode=colors&part=themes&sub=logos&tid=' + FAE.tid,
     func : function(d) {
       var form = $('form[method="post"]', d)[0];
 
@@ -49,7 +49,7 @@ FAE.step = [
   {
     info : 'Locating all.js',
     type : 'GET',
-     url : '/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid,
+     url : '/admin/?mode=js&part=modules&sub=html&tid=' + FAE.tid,
     func : function(d) {
       for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] ALL\.JS/; i < j; i++) {
         if (regex.test(row[i].innerHTML)) {
@@ -107,7 +107,7 @@ FAE.step = [
   {
     info : 'Locating topics.js',
     type : 'GET',
-     url : '/admin/index.forum?mode=js&part=modules&sub=html&tid=' + FAE.tid,
+     url : '/admin/?mode=js&part=modules&sub=html&tid=' + FAE.tid,
     func : function(d) {
       for (var row = $('#listJs tr', d), i = 0, j = row.length, regex = /\[FA EDGE\] TOPICS\.JS/; i < j; i++) {
         if (regex.test(row[i].innerHTML)) {
@@ -156,7 +156,7 @@ FAE.step = [
   {
     info : 'Getting template overall_header.html',
     type : 'GET',
-     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=116&l=main&extended_admin=1' + FAE.tid,
+     url : '/admin/?part=themes&sub=templates&mode=edit_main&t=116&l=main&extended_admin=1' + FAE.tid,
     func : function(d) {
       var form = $('form[name="post"]', d)[0];
 
@@ -194,7 +194,7 @@ FAE.step = [
   {
     info : 'Getting template overall_footer_end.html',
     type : 'GET',
-     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=133&l=main&extended_admin=1' + FAE.tid,
+     url : '/admin/?part=themes&sub=templates&mode=edit_main&t=133&l=main&extended_admin=1' + FAE.tid,
     func : function(d) {
       var form = $('form[name="post"]', d)[0];
 
@@ -232,7 +232,7 @@ FAE.step = [
   {
     info : 'Getting template viewtopic_body.html',
     type : 'GET',
-     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=127&l=main&extended_admin=1' + FAE.tid,
+     url : '/admin/?part=themes&sub=templates&mode=edit_main&t=127&l=main&extended_admin=1' + FAE.tid,
     func : function(d) {
       var form = $('form[name="post"]', d)[0];
 
@@ -270,7 +270,7 @@ FAE.step = [
   {
     info : 'Getting template viewcomments_body.html',
     type : 'GET',
-     url : '/admin/index.forum?part=themes&sub=templates&mode=edit_main&t=131&l=main&extended_admin=1' + FAE.tid,
+     url : '/admin/?part=themes&sub=templates&mode=edit_main&t=131&l=main&extended_admin=1' + FAE.tid,
     func : function(d) {
       var form = $('form[name="post"]', d)[0];
 
@@ -331,7 +331,7 @@ FAE.next = function() {
     FAE.log(step.info + '...');
 
     if (step.type == 'POST') {
-      $.post('/admin/index.forum?' + step.url + FAE.tid, FAE.Encode(step.data), function() {
+      $.post('/admin/?' + step.url + FAE.tid, FAE.Encode(step.data), function() {
         window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
 
@@ -342,7 +342,7 @@ FAE.next = function() {
       }).error(FAE.error);
 
     } else if (step.type == 'PUBLISH') {
-      $.get('/admin/index.forum?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=' + ( step.mobile ? 'mobile' : 'main' ) + '&pub=1&tid=' + FAE.tid, function() {
+      $.get('/admin/?part=themes&sub=templates&mode=edit_main&main_mode=edit&extended_admin=1&t=' + step.tpl + '&l=' + ( step.mobile ? 'mobile' : 'main' ) + '&pub=1&tid=' + FAE.tid, function() {
         window.setTimeout(FAE.next, FAE.delay);
       }).error(FAE.error);
     }

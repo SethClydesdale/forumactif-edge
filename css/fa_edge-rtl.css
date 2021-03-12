@@ -1707,7 +1707,7 @@ body .sceditor-container iframe, body .sceditor-container textarea { margin:0; }
 }
 
 /* hides "?" icon on the giphy and mention button */
-.sceditor-button-giphy:after, .sceditor-button-giphy:before, .sceditor-button-mention:after, .sceditor-button-mention:before {
+.sceditor-button-giphy:after, .sceditor-button-giphy:before, .sceditor-button-mention:after, .sceditor-button-mention:before, .sceditor-button-twemojifa:after, .sceditor-button-twemojifa:before {
   content:"";
 }
 

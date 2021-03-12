@@ -18,7 +18,7 @@ FAE.update_step = [
 
       if (form) {
         FAE.step[FAE.index + 1].data = {
-                edit_code : form.edit_code.value
+                edit_code : form.edit_code.value+
                             /*new css*/
                             '\n/* added in FAE v1.3.3 */\n.sceditor-button-twemojifa:after,.sceditor-button-twemojifa:before{content:""}',
                    submit : 'Submit'

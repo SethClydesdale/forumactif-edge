@@ -6,6 +6,7 @@
   FAE.maintenance = false;
   FAE.cp_rev = '1.4.1';
   FAE.raw = 'https://raw.githubusercontent.com/SethClydesdale/forumactif-edge/master/';
+  FAE.CSS = '/admin/?mode=css&part=themes&sub=logos&tid=';
   FAE.eGIF = 'https://illiweb.com/fa/empty.gif';
   FAE.delay = 1000;
   FAE.cp_lang = {};
@@ -554,7 +555,7 @@
         };
 
         // get existing settings from the stylesheet
-        $.get('/admin/?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+        $.get(FAE.CSS + FAE.tid, function(d) {
           var form = $('form[method="post"]', d)[0],
               width,
               dir;
@@ -635,7 +636,7 @@
           ) + '/*!END_FAE_PROFIL_DIR*/';
 
           // get the stylesheet
-          $.get('/admin/?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+          $.get(FAE.CSS + FAE.tid, function(d) {
             form = $('form[method="post"]', d)[0];
             FAE.index = 1;
             FAE.progress();
@@ -1323,7 +1324,7 @@
 
 
         // get existing settings from the stylesheet
-        $.get('/admin/?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+        $.get(FAE.CSS + FAE.tid, function(d) {
           var css = $('form[method="post"]', d)[0];
 
           if (css) {
@@ -1363,7 +1364,7 @@
             }
 
             // get the stylesheet
-            $.get('/admin/?mode=colors&part=themes&sub=logos&tid=' + FAE.tid, function(d) {
+            $.get(FAE.CSS + FAE.tid, function(d) {
               var form = $('form[method="post"]', d)[0],
                   val, regex;
 

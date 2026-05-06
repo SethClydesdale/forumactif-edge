@@ -114,6 +114,7 @@ FAE.step = [
     data : {
                  title : '[FA EDGE] ALL.JS',
       'js_placement[]' : 'allpages',
+          'js_auths[]' : [1, 2, 3, 4],
                   mode : 'save',
                 submit : 'Submit'
     }
@@ -137,6 +138,7 @@ FAE.step = [
     data : {
                  title : '[FA EDGE] HOMEPAGE.JS',
       'js_placement[]' : 'index',
+          'js_auths[]' : [1, 2, 3, 4],
                   mode : 'save',
                 submit : 'Submit'
     }
@@ -165,6 +167,7 @@ FAE.step = [
     data : {
                  title : '[FA EDGE] TOPICS.JS',
       'js_placement[]' : 'viewtopic',
+          'js_auths[]' : [1, 2, 3, 4],
                   mode : 'save',
                 submit : 'Submit'
     }
@@ -188,6 +191,7 @@ FAE.step = [
     data : {
                  title : '[FA EDGE] VERSION-DATA.JS',
       'js_placement[]' : 'allpages',
+          'js_auths[]' : [1, 2, 3, 4],
                   mode : 'save',
                 submit : 'Submit'
     }

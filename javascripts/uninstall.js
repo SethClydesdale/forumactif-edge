@@ -32,7 +32,7 @@ FAE.step = [
     type : 'GET',
      url : '/admin/?mode=js&part=modules&sub=html&tid=' + FAE.tid,
     func : function(d) {
-      var form = $('#pageListHtml', d),
+      var form = $('#mainForm', d),
           file = $('input[type="checkbox"]', form),
           i = 0,
           j = file.length;

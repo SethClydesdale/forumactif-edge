@@ -1,8 +1,8 @@
 // Romanian Translation
-// Translation by SSYT (http://fmdesign.forumotion.com/t751-forumactif-edge-romanian-translation-partial#14953)
+// Latest Update: 13.05.2026
 FAE.lang = {
 
-  language : 'Romana',
+  language : 'Romanian',
 
   css : {
     offline : 'DECONECTAT',
@@ -10,28 +10,28 @@ FAE.lang = {
     total_posts : 'Total Mesaje',
     total_topics : 'Total Topicuri',
     total_users : 'Total Membri',
-    record_users : 'Recordul de utilizatori conectati',
-    board_age : 'Varsta forum (zile)',
-    newest_member : 'Ultimul utilizator inregistrat',
+    record_users : 'Cei mai mulți membri online',
+    board_age : 'Vârsta forumului (zile)',
+    newest_member : 'Cel mai nou membru',
     hidebox : 'Ascuns:',
-    chatbox_tip : 'Treceți cursorul peste pentru a vedea cine este online.',
-    chatbox_no_away : 'Nu există membri sunt afk în prezent ..',
-    chatbox_no_online : 'Nu există membri online.'
+    chatbox_tip : 'Treceți cu mouse-ul peste pentru a vedea cine este online.',
+    chatbox_no_away : 'În prezent, niciun membru nu este absent.',
+    chatbox_no_online : 'În acest moment, niciun membru nu este online.'
   },
 
 
   images : {
 
     buttons : {
-      i_post : 'https://i35.servimg.com/u/f35/18/21/60/73/new-to13.png?color=primary&size=m',
-      i_reply : 'https://i35.servimg.com/u/f35/18/21/60/73/post-r13.png?color=primary&size=m',
-      i_reply_locked : 'https://i35.servimg.com/u/f35/18/21/60/73/locked13.png?color=secondary&size=m',
-      i_icon_quote : 'https://i35.servimg.com/u/f35/18/21/60/73/quote-13.png?color=primary&size=s',
-      i_icon_multiquote_off : 'https://i35.servimg.com/u/f35/18/21/60/73/multi-13.png?color=primary&size=s',
-      i_icon_multiquote_on : 'https://i35.servimg.com/u/f35/18/21/60/73/multi-13.png?color=secondary&size=s',
-      i_icon_thanks_off : 'https://i35.servimg.com/u/f35/18/21/60/73/thanks13.png?color=primary&size=s',
-      i_icon_thanks_on : 'https://i35.servimg.com/u/f35/18/21/60/73/thanks13.png?color=secondary&size=s',
-      i_icon_edit : 'https://i35.servimg.com/u/f35/18/21/60/73/edit-r10.png?color=primary&size=s',
+      i_post : 'https://i86.servimg.com/u/f86/18/21/41/30/new-to11.png?color=primary&size=m',
+      i_reply : 'https://i86.servimg.com/u/f86/18/21/41/30/post-r10.png?color=primary&size=m',
+      i_reply_locked : 'https://i86.servimg.com/u/f86/18/21/41/30/locked11.png?color=secondary&size=m',
+      i_icon_quote : 'https://i86.servimg.com/u/f86/18/21/41/30/quote-12.png?color=primary&size=s',
+      i_icon_multiquote_off : 'https://i86.servimg.com/u/f86/18/21/41/30/multi-10.png?color=primary&size=s',
+      i_icon_multiquote_on : 'https://i86.servimg.com/u/f86/18/21/41/30/multi-10.png?color=secondary&size=s',
+      i_icon_thanks_off : 'https://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=primary&size=s',
+      i_icon_thanks_on : 'https://i86.servimg.com/u/f86/18/21/41/30/thanks11.png?color=secondary&size=s',
+      i_icon_edit : 'https://i86.servimg.com/u/f86/18/21/41/30/edit-e11.png?color=primary&size=s',
       i_icon_delete : 'https://i86.servimg.com/u/f86/18/21/41/30/delete10.png?color=primary&size=s',
       i_icon_ip : 'https://i86.servimg.com/u/f86/18/21/41/30/ip-f10.png?color=primary&size=s',
       i_icon_report : 'https://i86.servimg.com/u/f86/18/21/41/30/report10.png?color=primary&size=s',
@@ -53,7 +53,7 @@ FAE.lang = {
       i_icon_yim : 'https://i86.servimg.com/u/f86/18/21/41/30/yahoo-10.png?color=primary&size=s',
       i_icon_skype : 'https://i86.servimg.com/u/f86/18/21/41/30/skype-10.png?color=primary&size=s',
       i_icon_online : FAE.eGIF,
-      i_msg_newpost : 'https://i35.servimg.com/u/f35/18/21/60/73/new-pm13.png?color=primary&size=m',
+      i_msg_newpost : 'https://i86.servimg.com/u/f86/18/21/41/30/new-pm10.png?color=primary&size=m',
       i_msg_inbox : FAE.eGIF,
       i_msg_sentbox : FAE.eGIF,
       i_msg_outbox : FAE.eGIF,
@@ -69,7 +69,7 @@ FAE.lang = {
     },
 
     gallery : {
-      upload_pic : 'https://i35.servimg.com/u/f35/18/21/60/73/upload12.png?color=primary&size=m'
+      upload_pic : 'https://i86.servimg.com/u/f86/18/21/41/30/upload10.png?color=primary&size=m'
     }
 
   },
@@ -78,43 +78,43 @@ FAE.lang = {
   javascripts : {
 
     '[FA EDGE] ALL.JS' : {
-      widget_menu_title : '<div class="title module_column_title">Meniu Widget</div>',
-      widget_menu_tooltip : "menu.title = 'Toggle widget menu';",
+      widget_menu_title : '<div class="title module_column_title">Meniul widgeturilor</div>',
+      widget_menu_tooltip : "menu.title = 'Comutați meniul widget-ului';",
 
-      select_theme : 'Selectează o tema',
-      custom_theme : 'Tema Custom',
-      random_theme : 'Tema Random',
-      default_theme : 'Tema Originala',
+      select_theme : 'Selectează o temă',
+      custom_theme : 'Tema personalizată',
+      random_theme : 'Tema aleatorie',
+      default_theme : 'Tema implicită',
 
-      dark_mode : 'Mod Intunecat :',
-      light_mode : 'Mod Lumina :',
+      dark_mode : 'Mod întunecat : ',
+      light_mode : 'Mod luminos : ',
 
-      code_copy : 'Copiaza Cod',
+      code_copy : 'Copiază codul',
       code_copied : 'Copiat !',
 
-      toolbar_search_placeholder : 'Caută...',
+      toolbar_search_placeholder : 'Căutare...',
 
       quick_nav_title : "title : 'Navigare rapidă'",
-      quick_nav_tooltip : "tooltip : 'Toggle quick navigation'",
+      quick_nav_tooltip : "tooltip : 'Comută navigarea rapidă'",
       quick_nav_notif : 'Notificări',
-      tool_copy_url_tooltip : 'Copiaza URL',
-      tool_copy_url_prompt : 'Copiaza codul BBCode URL. (CTRL+C)',
+      tool_copy_url_tooltip : 'Copiază adresa URL în format BBCode',
+      tool_copy_url_prompt : 'Copiază adresa URL BBCode de mai jos. (CTRL+C)',
       tool_admin_panel : 'Panou de administrare',
-      tool_to_top : 'In sus',
-      tool_to_bottom : 'In jos',
+      tool_to_top : 'Începutul paginii',
+      tool_to_bottom : 'Finalul paginii',
 
-      img_resizer_full_size : 'Arată in marime completa',
-      img_resizer_enlarge : 'Imagine marită',
-      img_resizer_reduce : 'Redu imaginea',
-      img_resizer_download : 'Descarcă imaginea',
-      img_resizer_tooltip : 'Click pentru a vedea in mod complet',
+      img_resizer_full_size : 'Afișează la dimensiune maximă',
+      img_resizer_enlarge : 'Mărește imaginea',
+      img_resizer_reduce : 'Reduce imaginea',
+      img_resizer_download : 'Descărcați imaginea',
+      img_resizer_tooltip : 'Faceți click pentru a vizualiza imaginea completă',
 
-      fae_update_found : 'O actualizare a fost găsită pentru Forumactif Edge. Când sunteți gata, vă rugăm să treceți la Panoul de Control al FAE și faceți clic pe „Verificare actualizări“ pentru a începe procesul de actualizare.'
+      fae_update_found : 'A fost găsită o actualizare pentru Forumactif Edge. Când sunteți gata, accesați Panou de administrare FAE și faceți click pe „Verificați actualizările” pentru a începe procesul de actualizare.'
     },
 
 
     '[FA EDGE] TOPICS.JS' : {
-      thanked_message : '<i class="fa fa-thumbs-up"></i> {USERNAME} a fost mulțumit autoru-lui acestui subiect !'
+      thanked_message : '<div class="thanked-message"><i class="fa fa-thumbs-up"></i> {USERNAME} a primit mulțumiri din partea autorului subiectului !</div>'
     }
 
   },
@@ -127,197 +127,199 @@ FAE.lang = {
 
 
     'overall_footer_end.html' : {
-      back_to_top : 'Inapoi sus',
-      fae_feedback : 'Trimite un Feedback',
-      fae_feedback_tooltip : 'Ajută la dezvoltarea Forumactif Edge'
+      back_to_top : 'Înapoi sus',
+      fae_feedback : 'Trimiteți feedback',
+      fae_feedback_tooltip : 'Ajută-ne să îmbunătățim Forumactif Edge'
     },
 
 
     logged_out_reply : {
-      main_title : '<h2 class="lor_maintitle">Crează un cont pentru a creat un subiect.</h2>',
-      main_desc : '<p class="lor_maindesc">Trebuie să fii membru pentru a lăsa un răspuns.</p>',
+      main_title : '<h2 class="lor_maintitle">Creează-ți un cont sau conectează-te pentru a lăsa un răspuns</h2>',
+      main_desc : '<p class="lor_maindesc">Trebuie să fii membru pentru a putea lăsa un răspuns.</p>',
 
-      create_account_title : '<h3 class="lor_subtitle">Crează un cont</h3>',
-      create_account_desc : '<p class="lor_subdesc">Alăturați-vă comunității noastre prin crearea unui cont nou. Este ușor!</p>',
-      create_account_button : '<a href="/register" class="button1">Creați un cont nou</a>',
+      create_account_title : '<h3 class="lor_subtitle">Creează un cont</h3>',
+      create_account_desc : '<p class="lor_subdesc">Alătură-te comunității noastre creând un cont nou. E simplu!</p>',
+      create_account_button : '<a href="/register" class="button1">Creează un cont nou</a>',
 
-      log_in_title : '<h3 class="lor_subtitle">Conectați-va</h3>',
-      log_in_desc : '<p class="lor_subdesc">Ai deja un cont? Nici o problemă, conecteaza-te aici.</p>',
-      log_in_button : '<a href="/login" class="button1">Conectați-va</a>'
+      log_in_title : '<h3 class="lor_subtitle">Autentificare</h3>',
+      log_in_desc : '<p class="lor_subdesc">Ai deja un cont? Nicio problemă, conectează-te aici.</p>',
+      log_in_button : '<a href="/login" class="button1">Autentificare</a>'
     }
 
   },
 
 
   fae_cp : {
-    fae_cp_main_title : 'Panou de control Forumactif Edge',
-    fae_cp_desc : 'Acest panou vă permite să instalați, dezinstalarea și actualizarea <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Pregateste-te pentru a experimenta pe forum într-un mod mai modern și receptiv!',
-    fae_log : 'Log',
-    fae_actions : 'Acțiune',
+    fae_cp_main_title : 'Panoul de control Forumactif Edge',
+    fae_cp_desc : 'Acest panou vă permite să instalați, să dezinstalați și să actualizați <a href="https://github.com/SethClydesdale/forumactif-edge" target="_blank">Forumactif Edge</a>. Pregătește-te să descoperi forumul tău într-un mod mai modern și mai adaptabil!',
+    fae_log : 'Loguri',
+    fae_actions : 'Acțiuni',
 
     fae_install : 'Instalează',
-    fae_reinstall : 'Re-instalează',
-    fae_install_complete : 'Acțiune Completă!',
-    fae_install_warning : 'Sunteți sigur că doriți să {INSTALL} Forumactif Edge? Aceasta va suprascrie tema curentă și șterge JavaScripts curente.\\\n\\\nAsigurați-vă că aveti rezervă la toate fișierele personale de conținut, cum ar fi CSS, template-uri, și JavaScript înainte de a continua. Faceți clic pe „Anulează“ dacă nu sunteți gata să instalați Forumactif Edge.',
+    fae_reinstall : 'Reinstalează',
+    fae_install_complete : 'COMPLET!',
+    fae_install_warning : 'Ești sigur că vrei să {INSTALL} Forumactif Edge? Aceasta va suprascrie tema actuală și va șterge fișierele JavaScript actuale. \\\n\\\nAsigurați-vă că faceți o copie de rezervă a tuturor fișierelor cu conținut personal, precum CSS, template-uri și fișiere JavaScript, înainte de a continua. Dă click pe „Anulare” dacă nu ești pregătit să instalezi Forumactif Edge.',
 
-    fae_uninstall : 'Dezinstalare',
-    fae_uninstall_warning : 'Sunteți sigur că doriți să dezinstalați Forumactif Edge? Toate CSS, JavaScript și schimbările de șabloane vor fi șterse; Forumul va reveni la tema implicită phpBB3.\\\n\\\nAsigurați-vă că aveti rezervă la toate fișierele personale de conținut, cum ar fi CSS, template-uri, și JavaScripts înainte de a continua. Faceți clic pe „Anulare“, dacă nu doriți să dezinstalați încă Forumactif Edge.',
+    fae_uninstall : 'Dezinstalează',
+    fae_uninstall_warning : 'Ești sigur că vrei să dezinstalezi Forumactif Edge? Toate modificările aduse fișierelor CSS, JavaScript și template-urilor vor fi șterse; forumul va reveni la tema implicită a phpbb3. \\\n\\\nAsigurați-vă că ați făcut o copie de rezervă a tuturor fișierelor cu conținut personal, precum CSS, template-uri și fișiere JavaScript, înainte de a continua. Faceți clik pe „Anulare” dacă nu doriți să dezinstalați încă Forumactif Edge.',
 
-    fae_update : 'Verfică actualizări',
-    fae_update_good : 'Forumactif Edge este la zi cu actualizările',
-    fae_update_check : 'Verfica actualizări pe Github...',
-    fae_update_prepare : 'Pregătirea pentru preluarea instrucțiunilor de actualizare, vă rugăm să nu închideți această filă ...',
-    fae_update_start : 'Actualizările sunt pe cale să înceapă, vă rugăm să nu închideți această filă.',
-    fae_update_fetch : 'Obținerea de instrucțiuni de actualizare pentru versiunea {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
-    fae_update_notes : 'Vă rog <a href="{RELEASE_TAG}" target="_blank">click aici</a> pentru a vedea modificările făcute în versiunea {VERSION_STRING}.',
-    fae_update_error : 'Update instructions for version {VERSION_STRING} could not be found. Please <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">open a new support ticket</a> and provide this information for further assistance.',
+    fae_update : 'Verificați dacă există actualizări',
+    fae_update_good : 'Forumactif Edge este la zi!',
+    fae_update_check : 'Verificarea actualizărilor pe GitHub...',
+    fae_update_prepare : 'Se pregătește încărcarea instrucțiunilor de actualizare; vă rugăm să nu închideți aceast tab...',
+    fae_update_start : 'Actualizările vor începe în curând, vă rugăm să nu închideți aceast tab.',
+    fae_update_fetch : 'Obținerea instrucțiunilor de actualizare pentru versiunea {VERSION_STRING}... ({UPDATE_MIN}/{UPDATE_MAX})',
+    fae_update_notes : 'Te rog <a href="{RELEASE_TAG}" target="_blank">fă click aici</a> pentru a vizualiza modificările aduse în versiunea {VERSION_STRING}.',
+    fae_update_error : 'Instrucțiuni de actualizare pentru versiunea {VERSION_STRING} nu a fost găsit. Te rog <a href="http://fmdesign.forumotion.com/t700-forumactif-edge-support#13923" target="_blank">deschide o nouă sesizare</a> și furnizați aceste informații pentru a beneficia de asistență suplimentară.',
 
     fae_translate : 'Schimbă limba',
-    fae_translate_same : 'Forumactif Edge este deja in {LANG}. Va rog să alegeți alta limba.',
-    fae_translate_warning : 'Sunteți sigur că doriți să schimbați limba in {LANG} ?',
-    fae_translate_start : 'Traducere Forumactif Edge va începe în scurt timp. Te rog asteapta..',
-    fae_translate_get : 'Obținerea datelor de limba {LANG} ...',
-    fae_translate_loaded : 'Datele pentru limba a fost încărcate. Procesul de traducere va începe acum, vă rugăm să nu închideți această filă.',
+    fae_translate_same : 'Forumactif Edge este deja disponibil în {LANG}. Vă rugăm să alegeți o altă limbă.',
+    fae_translate_warning : 'Ești sigur că vrei să schimbi limba Forumactif Edge în {LANG} ?',
+    fae_translate_start : 'Traducerea Forumactif Edge va începe în scurt timp. Vă rugăm să așteptați..',
+    fae_translate_get : 'Obținerea {LANG} datelor de limbă...',
+    fae_translate_loaded : 'Limba nu a fost încărcată. Procesul de traducere va începe acum; vă rugăm să nu închideți această tab.',
     fae_translate_submit : 'Trimite',
-    fae_translate_submit_option : 'Trimite o noua traducere',
-    fae_translate_submit_confirm : 'Ați ales să prezinte o nouă traducere. În cazul în care acest lucru este corect, vă rugăm să faceți clic pe „OK“ și mergeți la pagina de traducere, în caz contrar faceți clic pe „anulați“ și alegeți o altă limbă.',
+    fae_translate_submit_option : 'Trimite o traducere nouă',
+    fae_translate_submit_confirm : 'Ați ales să trimiteți o nouă traducere. Dacă datele sunt corecte, vă rugăm să faceți click pe „OK” și să treceți la pagina de traducere; în caz contrar, faceți click pe „Anulare” și alegeți o altă limbă.',
 
     configuration_title : 'Configurare',
-    configuration_desc : 'Făcând clic pe butoanele de mai jos vă va duce la diferite secțiuni ale panoului de control, care vă permit să gestionați configurația Forumactif Edge. Du-te mai departe și explorează fiecare dintre aceste secțiuni, astfel încât să puteți începe personalizarea temei. Dacă aveți nevoie de mai multe informații, <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">click aici</a> ghid de pe panoul de control.',
+    configuration_desc : 'Făcând click pe butoanele de mai jos, veți fi redirecționați către diferite secțiuni ale panoului de control, care vă permit să gestionați configurarea Forumactif Edge. Explorați fiecare dintre aceste secțiuni pentru a începe personalizarea temei. Dacă aveți nevoie de mai multe informații, <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">click aici</a> pentru a consulta ghidul panoului de control.',
 
-    fae_err_not_founder : 'Numai <a href="/u1"> fondatorul </a> poate avea acces la acțiunea de instalare. Vă rugăm să il contactați pentru asistență la instalarea Forumactif Edge.',
-    co_admin : 'Numai <a href="/u1"> fondatorul </a> poate avea acces la acțiunile de instalare, actualizare, și de traducere. Deoarece Forumactif Edge este instalat, puteți accesa în continuare unele caracteristici de bază pentru personalizarea forum prin intermediul secțiunii „Configurare“ de mai jos.',
-    reload_page : '<a href="javascript:window.location.reload();">Click aici</a> pentru a re-incarca pagina.',
+    fae_err_not_founder : 'Numai <a href="/u1">fondatorul</a> pot accesa procedura de instalare. Vă rugăm să îi contactați pentru asistență în instalarea Forumactif Edge.',
+    co_admin : 'Numai <a href="/u1">fondatorul</a> poate accesa acțiunile de instalare, actualizările și traducerile. Deoarece Forumactif Edge este instalat, puteți accesa în continuare unele funcții esențiale pentru personalizarea forumului dvs. prin secțiunea „Configurare” de mai jos.',
+    reload_page : 'Te rog <a href="javascript:window.location.reload();">click aici</a> pentru a reîncărca pagina.',
 
-    welcome_message : 'Bun venit la Control Panel FAE! FAE CP va permite să instalați, să actualizeze, traduceți, și personaliza Forumactif Edge. Pentru a afla mai multe despre utilizarea FAE CP, este recomandat să citiți <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">Control Panel Guide</a> pe Github wiki.',
-    auto_version_local : 'Versiunea instalată a Forumactif Edge este <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
-    auto_version_github : 'Versiunea curentă a Forumactif Edge pe Github este <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
-    update_waiting : 'Sunt disponibile actualizări pentru Forumactif Edge. Verifică <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">the wiki</a> pentru mai multe informații despre actualizarea.',
-    release_list : '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Click aici</a> pentru a vedea lista completă a versiunilor lansate pentru Forumactif Edge.',
 
-    left : 'Stanga',
-    center : 'Centru',
+    welcome_message : 'Bine ați venit în Panoul de control FAE! Panoul de control FAE vă permite să instalați, să actualizați, să traduceți și să personalizați Forumactif Edge. Pentru a afla mai multe despre utilizarea Panoului de control FAE, vă recomandăm să citiți <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/FAE-Control-Panel-Guide" target="_blank">Ghidul panoului de control</a> pe wiki-ul GitHub.',
+    auto_version_local : 'Versiunea instalată de Forumactif Edge este <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
+    auto_version_github : 'Versiunea actuală a Forumactif Edge de pe GitHub este <a href="https://github.com/SethClydesdale/forumactif-edge/releases/tag/{VERSION_STRING}" target="_blank">{VERSION_STRING}</a>.',
+    update_waiting : 'Sunt disponibile actualizări pentru Foruactif Edge. Verificați <a href="https://github.com/SethClydesdale/forumactif-edge/wiki/Checking-for-updates" target="_blank">wiki-ul</a> pentru mai multe informații despre actualizare.',
+    release_list : '<a href="https://github.com/SethClydesdale/forumactif-edge/releases" target="_blank">Faceți click aici</a> pentru a vedea lista completă a lansărilor pentru Forumactif Edge.',
+
+    left : 'Stânga',
+    center : 'Mijloc',
     right : 'Dreapta',
     yes : 'Da',
     no : 'Nu',
     help : 'Ajutor!',
 
     general_settings : {
-      title : 'Setari Generale',
+      title : 'Setări generale',
       fae_gen_desc : 'Această secțiune vă permite să gestionați setările generale ale Forumactif Edge.',
 
-      'fae_label-width' : 'Lățime Forum:',
-      'fae_gen_tip-width' : 'Trageți cursorul pentru a regla lățimea forumului.',
+      'fae_label-width' : 'Lățimea forumului : ',
+      'fae_gen_tip-width' : 'Trageți glisorul pentru a regla lățimea forumului.',
 
-      'fae_label-navbar' : 'Poziția bări de navigare:',
-      'fae_gen_tip-navbar' : 'Pozitia link-urile din bara de navigare.',
+      'fae_label-navbar' : 'Poziția barei de navigare : ',
+      'fae_gen_tip-navbar' : 'Poziția linkurilor din bara de navigare.',
 
-      'fae_label-logo' : 'Poziție Logo:',
-      'fae_gen_tip-logo' : 'Poziția logo-ului pe forum.',
+      'fae_label-logo' : 'Poziția logo-ului : ',
+      'fae_gen_tip-logo' : 'Position of the forum logo.',
 
-      'fae_label-profile' : 'Poziție profil:',
-      'fae_gen_tip-profile' : 'Poziția profilului în subiecte.',
+      'fae_label-profile' : 'Poziția profilului : ',
+      'fae_gen_tip-profile' : 'Poziția profilului postării în subiecte.',
 
       fae_update_general : 'Salvează modificările',
-      fae_gen_updating : 'Actualizarea setărilor generale ..',
-      fae_gen_updated : 'Setările generale au fost actualizate cu succes!'
+      fae_gen_updating : 'Actualizarea setărilor generale..',
+      fae_gen_updated : 'Setările generale au fost actualizate cu succes !'
     },
 
 
     colors : {
       title : 'Culori',
-      fae_colors_desc : 'Această secțiune vă permite să schimbați culorile de temă pe forum. Selectați o culoare de jos și examinați rezultatul în fereastra din dreapta pentru a începe. Când ați terminat, faceți clic pe „Culori Update“ pentru a aplica noile culori.',
+      fae_colors_desc : 'Această secțiune îți permite să modifici culorile temei forumului. Selectează o culoare din lista de mai jos și previzualizează rezultatul în fereastra din dreapta pentru a începe. Când ai terminat, dă click pe „Actualizează culorile” pentru a aplica noile culori.',
       'fae_colors_title-preview' : 'Previzualizare',
 
       'fae_colors_title-primary' : 'Culori primare',
-      'fae_colors_desc-primary' : 'Opțiunile de mai jos vă permit să ajustați 5 nuanțe de culori primare pentru Forumactif Edge.',
-      'fae_label-color-p1' : 'Culoare primara 1 :',
-      'fae_label-color-p2' : 'Culoare primara 2 :',
-      'fae_label-color-p3' : 'Culoare primara 3 :',
-      'fae_label-color-p4' : 'Culoare primara 4 :',
-      'fae_label-color-p5' : 'Culoare primara 5 :',
+      'fae_colors_desc-primary' : 'Opțiunile de mai jos îți permit să reglezi cele 5 nuanțe de culori primare pentru Forumactif Edge.',
+      'fae_label-color-p1' : 'Culoarea Primară 1 : ',
+      'fae_label-color-p2' : 'Culoarea Primară 2 : ',
+      'fae_label-color-p3' : 'Culoarea Primară 3 : ',
+      'fae_label-color-p4' : 'Culoarea Primară 4 : ',
+      'fae_label-color-p5' : 'Culoarea Primară 5 : ',
 
       'fae_colors_title-general' : 'Culori generale',
-      'fae_colors_desc-general' : 'Opțiunile de mai jos vă permit să modificați diferite culori ale forumului.',
-      'fae_label-color-bg1' : 'Culoare principală fundal 1:',
-      'fae_label-color-bg2' : 'Culoare principală fundal 2:',
-      'fae_label-color-m1' : 'Culoare principală chenar: ',
-      'fae_label-color-bg3' : 'Vote Bar / Checkbox Color :',
-      'fae_label-color-bg4' : 'Forum Read / Offline Color :',
-      'fae_label-color-bg5' : 'Online / Thanks Color :',
-      'fae_label-color-bg6' : 'Row Hover Color :',
-      'fae_label-color-m2' : 'Scrollbar Background Color :',
+      'fae_colors_desc-general' : 'Opțiunile de mai jos îți permit să modifici diverse culori ale forumului.',
+      'fae_label-color-bg1' : 'Culoarea principală de fundal 1 : ',
+      'fae_label-color-bg2' : 'Culoarea principală de fundal 2 : ',
+      'fae_label-color-m1' : 'Culoarea principală a marginii : ',
+      'fae_label-color-bg3' : 'Culoarea barei de vot / casetei de selectare : ',
+      'fae_label-color-bg4' : 'Culoare pentru citire / offline pe forum : ',
+      'fae_label-color-bg5' : 'Online / Mulțumesc Culoarea : ',
+      'fae_label-color-bg6' : 'Culoarea la trecerea cursorului peste rând : ',
+      'fae_label-color-m2' : 'Culoarea fundalului barei de derulare : ',
 
-      'fae_colors_title-font' : 'Font Settings',
-      'fae_colors_desc-font' : 'The options below allow you to change the font color, size, and family, of the forum.',
-      'fae_label-color-f0' : 'Text Color : ',
-      'fae_label-color-f5' : 'Link Color : ',
-      'fae_label-color-f6' : 'Visited Link Color : ',
-      'fae_label-color-f7' : 'Hover Link Color : ',
-      'fae_label-color-f8' : 'Active Link Color : ',
-      'fae_label-color-f1' : 'Main Font Size : ',
-      'fae_label-color-f2' : 'Main Font Face : ',
-      'fae_label-color-f3' : 'Title Font Face : ',
-      'fae_label-color-f4' : 'Code Font Face : ',
+      'fae_colors_title-font' : 'Setări font',
+      'fae_colors_desc-font' : 'Opțiunile de mai jos îți permit să modifici culoarea, dimensiunea și tipul de font al forumului.',
+      'fae_label-color-f0' : 'Culoarea textului : ',
+      'fae_label-color-f5' : 'Culoarea linkului : ',
+      'fae_label-color-f6' : 'Culoarea linkului vizitat : ',
+      'fae_label-color-f7' : 'Culoarea linkului la trecerea cu mouse-ul : ',
+      'fae_label-color-f8' : 'Culoarea linkului activ : ',
+      'fae_label-color-f1' : 'Dimensiunea fontului principal : ',
+      'fae_label-color-f2' : 'Fontul principal : ',
+      'fae_label-color-f3' : 'Tipul de font al titlului : ',
+      'fae_label-color-f4' : 'Codul tipului de font : ',
 
-      fae_save_colors : 'Update Colors',
-      fae_default_colors : 'Revert Back to Default Colors',
+      fae_save_colors : 'Actualizarea culorilor',
+      fae_default_colors : 'Reveniți la culorile implicite',
 
-      confirm_update : 'Are you sure you want to delete your custom color settings, and revert back to the default forum colors?',
-      updating : 'Updating the forum colors..',
-      updated : 'Forum colors have been updated successfully !',
-      reverting : 'Reverting back to default color settings..',
-      reverted : 'Forum colors have been changed back to their default settings !'
+      confirm_update : 'Ești sigur că vrei să ștergi setările personalizate de culori și să revii la culorile implicite ale forumului?',
+      updating : 'Actualizarea culorilor forumului..',
+      updated : 'Culorile forumului au fost actualizate cu succes !',
+      reverting : 'Revenirea la setările implicite de culoare..',
+      reverted : 'Culorile forumului au fost readuse la setările implicite !'
     },
 
 
     theme_management : {
-      title : 'Theme Management',
-      fae_theme_desc : 'This section allows you to manage the default theme and colors for Forumactif Edge by importing a new theme from the Github repository.',
+      title : 'Gestionarea temelor',
+      fae_theme_desc : 'Această secțiune vă permite să gestionați tema și culorile implicite pentru Forumactif Edge prin importarea unei noi teme din depozitul GitHub.',
 
-      'fae_label-theme' : 'Select a theme : ',
-      'fae_theme_tip-theme' : 'Select the type of theme you want to import.',
+      'fae_label-theme' : 'Selectați o temă : ',
+      'fae_theme_tip-theme' : 'Selectează tipul de temă pe care dorești să o importezi.',
 
-      'fae_label-color' : 'Select a color : ',
-      'fae_theme_tip-color' : 'Select the default color for the chosen theme.',
+      'fae_label-color' : 'Alege o culoare : ',
+      'fae_theme_tip-color' : 'Selectează culoarea implicită pentru tema aleasă.',
 
-      'fae_label-minify' : 'Minify Stylesheet : ',
-      'fae_theme_tip-minify' : 'Minified stylesheets take up less space, but aren\'t ideal for editing. If you want to edit the stylesheet of the selected theme, choose "No" instead.',
+      'fae_label-minify' : 'Minifică foaia de stil : ',
+      'fae_theme_tip-minify' : 'Fișierele CSS minimizate ocupă mai puțin spațiu, dar nu sunt ideale pentru editare. Dacă doriți să editați fișierul CSS al temei selectate, alegeți „Nu” în schimb.',
 
-      'fae_label-rtl' : 'Right-to-Left : ',
-      'fae_theme_tip-rtl' : 'Changes the theme\'s text direction from left-to-right (ltr) to right-to-left (rtl) for rtl scripts.',
+      'fae_label-rtl' : 'Dreapta-la-Stânga : ',
+      'fae_theme_tip-rtl' : 'Modifică direcția textului temei de la stânga la dreapta (ltr) la dreapta la stânga (rtl) pentru limbile care se scriu de la dreapta la stânga.',
 
-      fae_import_theme : 'Import theme',
-      fae_import_confirm : 'Are you sure you want to import the theme "{THEME_NAME}" ?\\\n\\\nPlease make sure to back up your current stylesheet if you want to keep it, because it will be overwritten when this new theme is imported. Choose "Cancel" if you\'re not ready to import a new theme.'
+      fae_import_theme : 'Importare temă',
+      fae_import_confirm : 'Ești sigur că vrei să importezi tema "{THEME_NAME}" ?\\\n\\\nAsigură-te că faci o copie de rezervă a foii de stil actuale dacă dorești să o păstrezi, deoarece aceasta va fi suprascrisă la importarea noii teme. Selectează „Anulare” dacă nu ești pregătit să importezi o temă nouă.'
     },
 
 
     plugin_management : {
-      title : 'Plugin Management',
-      fae_plugin_desc : 'This section allows you to manage the settings of core-plugins for Forumactif Edge.',
+      title : 'Gestionarea pluginurilor',
+      fae_plugin_desc : 'Această secțiune vă permite să gestionați setările pluginurilor de bază pentru Forumactif Edge.',
 
-      'fae_label-qnp' : 'Quick Navigation Position : ',
-      'fae_plugin_tip-qnp' : 'Position of the Quick Navigation side menu.',
+      'fae_label-qnp' : 'Poziția de navigare rapidă : ',
+      'fae_plugin_tip-qnp' : 'Poziția meniului lateral de navigare rapidă.',
 
-      'fae_label-qns' : 'Always show Quick Navigation : ',
-      'fae_plugin_tip-qns' : 'By default the Quick Navigation only shows when the navbar is out of view. Enabling this option will allow the Quick Navigation to always be visible.',
+      'fae_label-qns' : 'Afișează întotdeauna „Navigare rapidă” : ',
+      'fae_plugin_tip-qns' : 'În mod implicit, „Navigarea rapidă” apare doar atunci când bara de navigare nu este vizibilă. Activarea acestei opțiuni va face ca „Navigarea rapidă” să fie întotdeauna vizibilă.',
 
-      'fae_label-tso' : 'Theme Selector Options : ',
-      'fae_plugin_tip-tso' : 'This tool allows you to edit the theme selector list, giving you the option to add, delete, and edit themes.',
+      'fae_label-tso' : 'Opțiuni pentru selectarea temei : ',
+      'fae_plugin_tip-tso' : 'Acest instrument vă permite să editați lista de selectare a temelor, oferindu-vă posibilitatea de a adăuga, șterge și edita teme.',
 
-      fae_themer_add : 'New Theme',
-      fae_themer_import : 'Import Default',
-      fae_import_confirm : 'Do you want to import the default theme list from Github ?',
-      fae_importing : 'Contacting Github, please wait...',
-      fae_compiling : 'Compiling themes, please wait...',
+      fae_themer_add : 'Tema nouă',
+      fae_themer_import : 'Import implicit',
+      fae_import_confirm : 'Doriți să importați lista temelor implicite de pe GitHub ?',
+      fae_importing : 'Se contactează GitHub, vă rugăm să așteptați...',
+      fae_compiling : 'Se compilează temele, vă rugăm să așteptați...',
 
-      fae_save_plugins : 'Update Plugins',
-      fae_finding_plugins : 'Locating [FA EDGE] ALL.JS...',
-      fae_plugins_found : '[FA EDGE] ALL.JS found !',
-      fae_getting_plugins : 'Getting [FA EDGE] ALL.JS...',
-      fae_updating_plugins : 'Updating your plugins...',
-      fae_plugins_updated : 'Plugins have been updated successfully !'
+      fae_save_plugins : 'Actualizare pluginuri',
+      fae_finding_plugins : 'Localizez [FA EDGE] ALL.JS...',
+      fae_plugins_found : '[FA EDGE] ALL.JS găsit !',
+      fae_getting_plugins : 'Obținerea [FA EDGE] ALL.JS...',
+      fae_updating_plugins : 'Actualizarea pluginurilor...',
+      fae_plugins_updated : 'Pluginurile au fost actualizate cu succes !'
     }
+
   }
 
 };
